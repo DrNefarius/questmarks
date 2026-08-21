@@ -1,0 +1,1574 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cavernous Maws (Mission)",
+   "page_id": 19621,
+   "revision_id": 768706,
+   "source_sha256": "ef75b74eafe4ab7f066f8b1035382e09b28bbf849de865515cffdeda46fa730b",
+   "cache_file": "0019621_cavernous_maws_mission"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 0,
+   "dat_name": "Cavernous Maws",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Seven bullets, one action. Bullet 2 IS the mission -- the cutscene ends with the next mission ('Back to the Beginning') already active -- so bullets 3, 4 and 6 are consequences (what happens if you warp out before unlocking anything, what the maws do from now on, why a present-day maw is unresponsive) and none of them is a rung. Bullet 5, 'travel to the other two Shadowreign Cavernous Maws to unlock them', happens AFTER the handoff to the next mission and is travel plumbing, not this mission's work, so it is not a step either.\n\nGIVER: AGREES with chronicle. The header offers three maws -- Batallia Downs, Rolanberry Fields, Sauromugue Champaign -- and a player clicks exactly one, which is an OR no ordered ladder expresses; I took Batallia Downs because chronicle_snpc already reads 'cavernous maw in batallia downs', so the marker does not move. Writing the other two as a group would assert you must visit all three, which is false, so the alternatives live in the step note instead. 'Cavernous Maw' probes clean (keys ['cavernous maw'], not ambiguous), so this is a real marker and not a name that matches the world.\n\nBullet 1 ('Visit any Cavernous Maw in the following locations:') lists nothing -- its location table did not survive the prepass -- which is why the three zones here come from the Start field. No grid for any maw appears anywhere on the page, so grid is null rather than guessed. The Pure white feather is the header's Reward, so by hard rule 7 it is not evidence: it proves the mission is over, not that the click happened. Note also that the page is tagged Category:Disambiguation; the sibling article 'Cavernous Maws' (the location list) is a different page and was not read.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Cavernous Maw",
+   "zone": "Batallia Downs",
+   "grid": null,
+   "raw": "Cavernous Maw in Batallia Downs, Rolanberry Fields, or Sauromugue Champaign."
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "Batallia Downs",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "ANY one of three maws does: Batallia Downs, Rolanberry Fields or Sauromugue Champaign. Batallia Downs is recorded because that is the maw the shipped index already points at. You are dropped into one of the three Shadowreign zones at random regardless of which you used, and if you warp out before unlocking anything you must return to the maw in the zone you landed in."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Timeswept Butterfly",
+   "page_id": 37857,
+   "revision_id": 659498,
+   "source_sha256": "b425299d867317e4aac2f4a08f196be4b48fc99ed7def30b11f567ded9ac45f7",
+   "cache_file": "0037857_a_timeswept_butterfly"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 5,
+   "dat_name": "A Timeswept Butterfly",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "steps_from_after_section"
+  ],
+  "notes": "The walkthrough is one line: 'Zone into La Vaule (S).' Its sub-bullet ('next mission automatically begins at end of cutscene') is an outcome. There is no NPC anywhere in this mission and chronicle_snpc is empty, so start.npc stays null -- which AGREES with chronicle, nothing moves -- and start.zone keeps the header's East Ronfaure (S) even though the action is in Jugner Forest (S), because that field is corroborative only.\n\nA bare zone is not a markable thing, so a record of one travel step would have been emitted with nothing to draw. The 'Directions to La Vaule (S)' section saves it: BOTH routes it describes converge on the same door -- 'the Wooden Gate at (G-11) which will take you into La Vaule (S)' -- so the door, not the route, is what the player actually clicks, and that is the step's target. 'Wooden Gate' probes clean and the step carries its zone, so even if the name repeats elsewhere in the world the ambiguity gate cannot fire. Everything else in that section (the Survival Guide teleport, Recall-Jugner, the campaign warp, the Vunkerl Inlet detour with its one-way drops) is advice about getting there faster and is not a step.\n\nMedium, not high: the only markable entity on the page comes out of a directions section rather than the walkthrough, and the page gives no grid for the La Vaule (S) side of the door.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "While the Cat is Away",
+     "cat": "mission",
+     "area": "wotg",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "East Ronfaure (S)",
+   "grid": null,
+   "raw": "East Ronfaure (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Wooden Gate"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the walkthrough says only 'Zone into La Vaule (S)'; the gate is named in the 'Directions to La Vaule (S)' section, whose bullets restart at [1], and it is the door both of that section's routes end at. The cutscene fires on the far side and rolls straight into the next mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Purple, The New Black",
+   "page_id": 37858,
+   "revision_id": 695362,
+   "source_sha256": "629d3e25fee017ff2332467efc78f1fad452a4e5faf11e7f69a67a06109cffcb",
+   "cache_file": "0037858_purple_the_new_black"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 6,
+   "dat_name": "Purple, The New Black",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER -- I DISAGREE WITH CHRONICLE, WHICH IS EMPTY. chronicle_snpc is '' and the header Start is the bare zone 'La Vaule (S)', but the walkthrough's first action is on a named, resolvable entity: the Reinforced Gateway at (F-9). I put it in start.npc, so the builder will place a giver marker where today there is none. That is an addition, never a move -- rule 2 is safe -- and it is the same shape chronicle itself uses for other rows ('walnut door', 'spacial displacement', 'imperial whitegate'). 'Reinforced Gateway' probes clean, keys ['reinforced gateway'], not ambiguous.\n\nTwo bullets, one entity: bullet 1 examines the gateway for a cutscene and bullet 2 examines the SAME gateway to enter the battlefield, so they are one rung with the count in the note -- wedging them apart would put two markers on one object. The fight is its own rung because it is a different kind and because Galarhigg is a marker target in his own right. The page never names the arena zone, so the fight keeps La Vaule (S) rather than inventing one.\n\nNothing is observable here: no key item, no reward in the header, so evidence is null throughout and that is the correct answer rather than a gap. The 'Directions to Reinforced Gateway' section is a room-by-room route (including the Coinbiter Cjaknokk true-sight warning) and the 'Notes' section is two people's job setups; neither is a step. Bullet 3 is an outcome -- the mission hands off to the next automatically once the boss is dead.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Timeswept Butterfly",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 5
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Reinforced Gateway",
+   "zone": "La Vaule (S)",
+   "grid": "F-9",
+   "raw": "La Vaule (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Reinforced Gateway"
+    },
+    "zone": "La Vaule (S)",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "examine twice: the first is a cutscene, the second opens the battlefield. All buffs wear on entry, so Trusts are summoned inside."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "La Vaule (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Galarhigg",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "an instanced battlefield entered at the Reinforced Gateway; the page does not name the arena, so the step keeps the zone it is entered from. Petro Eyes is the danger the page reports."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In the Name of the Father",
+   "page_id": 37859,
+   "revision_id": 614045,
+   "source_sha256": "49580edbf7b6b72670bff666ca237c3b4406366c50377868853ab6341ca62fa4",
+   "cache_file": "0037859_in_the_name_of_the_father"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 7,
+   "dat_name": "In the Name of the Father",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "or_branch_unmodelled"
+  ],
+  "notes": "This mission is a container for a THREE-WAY NATIONAL BRANCH and only its last line is a step. Bullet 1 is cross-storyline advice (you may run Rhapsodies 2-16 alongside it). Bullet 2 says the mission triggers itself off the previous BCNM cutscene and then lists six quests in three pairs -- Bastok: Storm on the Horizon, Fire in the Hole; San d'Oria: Perils of the Griffon, In a Haze of Glory; Windurst: When One Man Is Not Enough, A Feast for Gnats -- of which a player does exactly the two for their own allegiance. Bullet 3 is the only instruction: after those, examine the Lion Springs Tavern door in Southern San d'Oria (S) at (K-6).\n\nI did NOT put those six quests in gates.prev. prev is an AND-list and four of the six are quests this character will never do, so listing them would gate the mission shut forever -- flagged or_branch_unmodelled and left in prose instead. I also did not author a leading rung for 'do your nation's two quests': it would be a target the runtime cannot mark, and with no evidence anywhere in this mission the ladder would sit on it and never draw the door, which costs a marker that is otherwise correct.\n\nGIVER: start.npc stays null, which AGREES with chronicle's empty string. The tavern door is the mission's END, not its start, so promoting it to giver would put a 'start here' marker on the hand-in -- unlike Purple, The New Black, where the same kind of object genuinely is the first thing you touch. The step still carries the door, so the record is emitted and drawn; only the giver row is left as it is. Medium confidence: the ladder is one rung out of a mission that is mostly two unmodellable quests.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Purple, The New Black",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 6
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "La Vaule (S)",
+   "grid": null,
+   "raw": "La Vaule (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lion Springs Tavern"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says 'the door of the Lion Springs Tavern'; the door entity is itself named Lion Springs Tavern and probes clean. Only reachable after your nation's two quests from bullet 2, which the ladder cannot express."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dancers in Distress",
+   "page_id": 43037,
+   "revision_id": 728327,
+   "source_sha256": "0e4815b552de08e1f6fe1a6acab29e670184dfe69a2ea0bb03d452f009c10bd2",
+   "cache_file": "0043037_dancers_in_distress"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 8,
+   "dat_name": "Dancers in Distress",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "or_branch_modelled"
+  ],
+  "notes": "GIVER -- I DISAGREE WITH CHRONICLE, WHICH IS EMPTY. The header Start is the bare zone 'Southern San d'Oria (S)' and chronicle_snpc is '', but bullet 1 names Raustigne outright and On Thin Ice (wotg 19) has chronicle itself recording 'raustigne' for the same NPC in the same spot, so this is a name the shipped index already trusts elsewhere. Writing it adds a giver marker where there is none today; it moves nothing.\n\nTHE REQUESTED ITEM IS AN OR AND IT IS MODELLED. Bullet 3 says the cutscene asks for ONE of Gold Beastcoin, Lynx Meat or Nyumomo Doll, decided by the day and the answers given, with no pattern known -- the page's own talk page collects the data. That is exactly what items plus items_alt say: hold the one in items OR any one of items_alt. All three probe clean. I deliberately did NOT author an obtain step for the Nyumomo Doll's orc drops: it is one outcome in three, so a marker on Batallia Downs orcs would be wrong two times out of three, and the page's insistence that it is the PRESENT-day Batallia Downs (not Batallia Downs (S)) is in the note where it cannot mislead.\n\nBullet 4's 'zone (logging out doesn't count)' is a precondition on the trade, not a rung of its own -- zoning is not observable and a rung nothing can satisfy would strand the ladder. The After-the-walkthrough note about farming a Cernunnos Bulb from Wandering Saplings belongs to the NEXT mission (Daughter of a Knight, wotg 9) and is recorded there, not here. Nothing in this mission is observable: no key item, no header reward, so evidence is null throughout.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Exactly one of the three items is asked for and which one is unpredictable, so items holds one and items_alt the other two: any single one satisfies the step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "In the Name of the Father",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 7
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Raustigne",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-7",
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raustigne"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page writes (I-7/8) for him; On Thin Ice and A Spoonful of Sugar both put him at (I-7), so I-7 is what is recorded."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Elegant Footprints"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "beside the tree stump near the (H-6)/(I-6) border, just across the makeshift bridge from East Ronfaure (S), whose Survival Guide is the quick way in. This cutscene is where the requested item is decided."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Elegant Footprints"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Gold Beastcoin",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Lynx Meat",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Nyumomo Doll",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "You must ZONE between the cutscene and this trade logging out does not count. The Nyumomo Doll, if it is the one, drops from Orcish Beastrider, Brawler, Impaler and Nightraider in present-day Batallia Downs NOT Batallia Downs (S) and Treasure Hunter is recommended."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Daughter of a Knight",
+   "page_id": 43038,
+   "revision_id": 673632,
+   "source_sha256": "8c6fc6565dc8d08e36280a744126dd2b6a5b41064289a8ceebc524f3423aaf69",
+   "cache_file": "0043038_daughter_of_a_knight"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 9,
+   "dat_name": "Daughter of a Knight",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "time_gated",
+   "item_reuse_ambiguous"
+  ],
+  "notes": "The longest ladder in this lane and the only one with any evidence at all -- three points, and every one of them is obtained AT its own step and absent from the header's Reward field, which is empty.\n\nGIVER -- I DISAGREE WITH BOTH THE HEADER AND CHRONICLE. chronicle_snpc is '' and the header Start says 'Jugner Forest (S)', which is where the PREVIOUS mission left you standing, not where this one asks you to go: bullet 1 sends you to Amaura at Home Point #4 in present-day Southern San d'Oria (G-6). Amaura is the ladder's start, she probes clean, and she is where the marker belongs; the header's zone is kept verbatim in start.raw. Note the era carefully -- Amaura is in Southern San d'Oria (zone 230), the modern city, while Raustigne in the neighbouring missions is in Southern San d'Oria (S) (zone 80). Getting that wrong is a marker on the far side of a time portal.\n\nTHE BULB IS TRADED TWICE AND THE PAGE DOES NOT SAY WHETHER IT COMES BACK. Bullet 2 trades a Cernunnos Bulb to Amaura, bullet 3 trades a Cernunnos Bulb to the Humus-rich Earth. Either she returns it or a second one is needed, and the page never says which, so both steps carry one bulb each and the ambiguity is flagged rather than resolved. This is also why the evidence on step 2 is safe in either reading: if she consumes it, holding no bulb correctly drops the mark back to the saplings, and if she returns it the mark stays ahead.\n\nSTEP 2 IS THE FARM AND IT IS A REAL RUNG, not a sub-bullet's commentary: bullet 1's sub-bullet says plainly that if you did not farm one after the previous mission you kill Wandering Saplings in Jugner Forest (S) for it. Mobs are marker targets, so this rung draws, and the Cernunnos Bulb is its evidence -- a player who took the previous mission's advice starts already holding one and the ladder skips straight past it to Amaura, who is also step 1's target, so no marker jumps anywhere.\n\nStep 9 is gated on a game-day change AND a zone, neither of which the addon can see (time_gated). The last two rungs are both on Amaura, which is one marker, and only the second carries the Bottle of treant tonic -- the same key item the next mission (A Spoonful of Sugar) is about, so per the brief it is this mission's evidence and that mission's business, never both. Route advice (Home Point #4, the Campaign Arbiter warp, the Norvallen Outpost, the Voidwatch warp), the Lobison aggro warning, the recycled-dialogue aside and the To Cure a Cough collision are all notes, not steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Dancers in Distress",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 8
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Amaura",
+   "zone": "Southern San d'Oria",
+   "grid": "G-6",
+   "raw": "Jugner Forest (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "present-day Southern San d'Oria, by Home Point #4. She asks for a Cernunnos Bulb; talking again only recycles dialogue."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Cernunnos Bulb",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Wandering Sapling",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from bullet 1's sub-bullet. The previous mission's Notes recommend farming this before starting; a player who did holds the bulb already and the ladder simply skips this rung. The page gives no grid for the saplings on THIS page, so grid is null."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Cernunnos Bulb",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Humus-rich Earth"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Cernunnos Bulb",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "plants the bulb. The page does not say whether Amaura returned the one from step 3 or a second is needed. Lobisons aggro here."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Humus-rich Earth"
+    },
+    "zone": "Jugner Forest",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "PRESENT-DAY Jugner Forest now -- the page says to time travel and examine 'at the same spot', so the grid carries over from step 4."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cernunnos",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "examining the Humus-rich Earth a second time spawns him. Treant-type; casts Protect IV, Shell IV, Stone IV and Stonega III."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Humus-rich Earth"
+    },
+    "zone": "Jugner Forest",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Cernunnos resin",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the third examine, after Cernunnos is dead, is what hands over the key item."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Cernunnos resin",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page says to return 'with the key item', so it is held, not traded."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Bottle of treant tonic",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "only after the game day has changed AND you have zoned -- neither is observable. Early she offers chores; after the day but without zoning she says she is brewing. If you are also on To Cure a Cough she may need several attempts, and Cough medicine is NOT this key item."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Spoonful of Sugar",
+   "page_id": 43042,
+   "revision_id": 106801,
+   "source_sha256": "2bc801dbea0e6bc68e4e9bf415c32678ef41302b41e7363a9508d6c5b9be00db",
+   "cache_file": "0043042_a_spoonful_of_sugar"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 10,
+   "dat_name": "A Spoonful of Sugar",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "One bullet, one action, and the page has not been touched since revision 106801 -- by far the oldest in this lane -- so there is nothing else on it to weigh.\n\nGIVER -- I DISAGREE WITH CHRONICLE, WHICH IS EMPTY. The header Start is the bare zone 'Southern San d'Oria (S)'; the walkthrough names Raustigne at the Victory Gate (I-7), the same NPC chronicle itself records for On Thin Ice. start.npc is Raustigne, which adds a marker where there is none and moves nothing.\n\nITEMS DELIBERATELY EMPTY. The header Description says Amaura's medicine is to be delivered to the knight at Chateau d'Oraguille, and the previous mission ends by handing you the [KI] Bottle of treant tonic -- but this page's walkthrough does not say you must be holding it, and items is a claim about what you must HOLD to perform the step. I left it empty rather than import a requirement the page does not state; if play shows the tonic is checked here, it belongs in step 1's items. The Victory Gate is a landmark in the sentence, not the thing you interact with, so it is in the note and not the target.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Daughter of a Knight",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 9
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Raustigne",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-7",
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raustigne"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he stands at the Victory Gate."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Affairs of State",
+   "page_id": 43043,
+   "revision_id": 744200,
+   "source_sha256": "bc69963c72a55598670f3b7de8dc7822e55cc8843c62acadba41e86fe689c620",
+   "cache_file": "0043043_affairs_of_state"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 11,
+   "dat_name": "Affairs of State",
+   "match_rule": "page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "unordered_group",
+   "header_name_mismatch"
+  ],
+  "notes": "AN UNORDERED PAIR, said outright: 'You must travel to both Bastok Markets (S) and Windurst Waters (S) to speak with their officials. (May be done in either order.)' So the two rungs share a group and draw together; a strict ladder would mark Bastok and stay silent about Windurst until you happened to arrive. Both NPCs and both zones probe clean, and each rung keeps its own zone as the one-step-one-zone rule requires.\n\nThe header's Mission Name reads 'Affairs of the State' while the client's name is 'Affairs of State' -- that extra 'the' is why identity came in on match_rule page_title rather than header_mission_name. Identity is bound upstream and I have not touched it; the mismatch is recorded here so nobody later reads it as a wrong match.\n\nEVIDENCE IS NULL AND THAT IS THE POINT. Bullet 2 says you receive [KI] Count Borel's letter once you have spoken to both -- and that same key item is the header's Reward, so by hard rule 7 it is not evidence: it proves the mission is over, not that either conversation happened. It resolves (ki 1062) and would have been tempting; it is left out on purpose. The next mission is about delivering it, but that page never states it as a requirement either, so it is not in this record's items anywhere.\n\nGIVER: start.npc stays null, AGREEING with chronicle's empty string. The Start field is a bare zone, the mission opens on a cutscene in Southern San d'Oria (S), and neither of the two officials is a 'giver' -- promoting one would put a start marker in another nation. The group's markers carry the mission instead. The Survival Guide and Home Point remarks are travel advice.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Spoonful of Sugar",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 10
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Southern San d'Oria (S)",
+   "grid": null,
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Radford"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "officials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Metalworks; the Survival Guide warp is the closest way in."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Velda-Galda"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "officials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page writes 'Windurst Waters (S) (North)', which is the same zone; he is near the Windurst Walls zoneline. Either order with step 1."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borne by the Wind",
+   "page_id": 43044,
+   "revision_id": 775196,
+   "source_sha256": "79e6dab3ec177cab09c1ad253a629e44e29f7889f0078ca22a168256b4f7c6e2",
+   "cache_file": "0043044_borne_by_the_wind"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 12,
+   "dat_name": "Borne by the Wind",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "One bullet and five sub-bullets, of which four are transport (the Pasts Atmacite Refiner, the Campaign Arbiter warp, the Rolanberry Survival Guide plus the Voidwatch passage) and one is a dialogue warning. The single action is examining the Bulwark Gate.\n\nGIVER -- I DISAGREE WITH CHRONICLE, WHICH IS EMPTY. The header Start is the bare zone 'Sauromugue Champaign (S)' and chronicle_snpc is ''; the walkthrough's only action is on the Bulwark Gate, which probes clean (keys ['bulwark gate']), so I put it in start.npc. That adds a marker where none exists and moves nothing, and chronicle uses object givers of exactly this kind on other rows.\n\nERA MATTERS HERE: Sauromugue Champaign (S) is zone 98, present-day Sauromugue Champaign is 120, and this gate is in the past one. EVIDENCE IS NULL: the [KI] Underpass hatch key arrives in this cutscene but it is also the header's Reward, so rule 7 forbids it as evidence -- it proves the mission ended. It reappears as a genuine held requirement in the NEXT mission (A Nation on the Brink), which is where it earns its place in items.\n\nTHE DIALOGUE CHOICE IS REAL BUT UNMODELLABLE: you must pick the first option to progress, and a Voidwatch-dependent cutscene can interpose, after which you examine the gate again. Both are in the step note; neither is a rung, because nothing about a dialogue choice is observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Affairs of State",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 11
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Bulwark Gate",
+   "zone": "Sauromugue Champaign (S)",
+   "grid": "E-6",
+   "raw": "Sauromugue Champaign (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page gives (E-6)/(F-6); E-6 is recorded. Choose the FIRST dialogue option -- the second is flavour and does not progress. If Voidwatch progress gives you a brief cutscene with the Jeunoan leader first, examine the gate again."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Nation on the Brink",
+   "page_id": 43045,
+   "revision_id": 668354,
+   "source_sha256": "33b37c671f3d2c05b96232aa70a0f7f05c8e8a29f194dbbd6390e3aaa2aaa21e",
+   "cache_file": "0043045_a_nation_on_the_brink"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 13,
+   "dat_name": "A Nation on the Brink",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "steps_from_after_section"
+  ],
+  "notes": "THE WALKTHROUGH IS ONE BULLET AND THE MISSION IS NOT. Everything after the first examine lives in the two After-the-walkthrough sections, whose bullets restart at [1] -- 'A Nation on the Brink' holds the battlefield entry and the objective, 'Wrap Up' holds the kill that ends it. Read them and the ladder is three rungs; skip them and this looks like a one-click mission, which it is not.\n\nGIVER -- I DISAGREE WITH CHRONICLE, WHICH IS EMPTY. The header Start is the bare zone 'Batallia Downs (S)'; the only entity in the mission is the Underpass Hatch, which probes clean, so it is start.npc. An addition, not a move.\n\nTHE KEY ITEM IS A HELD REQUIREMENT, NOT EVIDENCE. The [KI] Underpass hatch key is granted by the PREVIOUS mission (it is that mission's header Reward), and this page states it as an entry condition: the party leader must hold it to take a party in. That makes it step 2's items, exactly the pattern the brief describes -- earned there, spent here, evidence in neither place. The Jeunoan Flag is this mission's own header Reward and so is not evidence either; the ??? on the barrels north of the entrance that holds it when your inventory is full is reward retrieval, not a rung.\n\nWHAT IS NOT A STEP: the nine allied NPCs and the six beastman waves they fight are colour -- the player does not have to engage them and the page describes them as running off on their own. Trust rules, the Sleep immunity of everything inside, and the three national follow-up quests (Quelling the Storm / The Price of Valor / The Long March North, chosen by past allegiance) are outcomes and advice. Only One-eyed Gwajboj is a target.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Borne by the Wind",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 12
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Underpass Hatch",
+   "zone": "Batallia Downs (S)",
+   "grid": "J-9",
+   "raw": "Batallia Downs (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Underpass Hatch"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page gives (J-9)/(K-9); J-9 is recorded. The hatch is on the rampart inside a tower. The Sauromugue Champaign (S) Atmacite Refiner from the previous mission's cutscene is the quick way here if your Voidwatch progress allows it."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Underpass Hatch"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Underpass hatch key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the After-the-walkthrough section 'A Nation on the Brink', bullets 1-2, which restart their numbering at [1]. Clicking the hatch a second time enters Everbloom Hollow. Up to six players; the party LEADER must hold the [KI] Underpass hatch key, and anyone who has completed the mission before may enter without it."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "One-eyed Gwajboj",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the After-the-walkthrough sections: 'A Nation on the Brink' bullet 3 and 'Wrap Up' bullet 1, both of which restart at [1]. He spawns once the beastman waves are cleared -- the allied NPCs do that fighting -- is a Paladin who may use Invincible more than once, and everything inside the instance is immune to Sleep. Killing him gives the cutscene and the Jeunoan Flag that end the mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Sandswept Memories",
+   "page_id": 47165,
+   "revision_id": 732772,
+   "source_sha256": "b6c2a36c23bb726a5aacc599aaaa340622d68931f80559f6eac0e3de3e2e1531",
+   "cache_file": "0047165_sandswept_memories"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 15,
+   "dat_name": "Sandswept Memories",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "A single-bullet mission: touch the Lion Springs Tavern door at (K-6) for a cutscene, and that is all of it.\n\nGIVER -- I DISAGREE WITH CHRONICLE, WHICH IS EMPTY. The header Start is the bare zone 'Southern San d'Oria (S)'; the door is the only entity and it probes clean as 'Lion Springs Tavern' (a real door entity, not a building name), so it is start.npc as well as step 1's target. Unlike In the Name of the Father, where the same door is the mission's LAST act after two national quests, here it is the first and only thing a player does -- which is why it is promoted to giver there and not here.\n\nERA: the page's 'while still in Southern San d'Oria (S)' is doing real work. The (S) city is zone 80 and the modern one 230, and both hold a Lion Springs Tavern door, so a step without its zone would draw in the wrong century.\n\nNo key item, no reward in the header, nothing observable -- evidence is null and that is the correct reading rather than a hole. gates.prev takes the header's Previous, 'Crossroads of Time', whose numeric id is not in this lane, so cat and area are recorded and id is left null rather than guessed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Crossroads of Time",
+     "cat": "mission",
+     "area": "wotg",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Lion Springs Tavern",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "K-6",
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lion Springs Tavern"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says to touch the door; the door entity carries the tavern's name."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "On Thin Ice",
+   "page_id": 47169,
+   "revision_id": 597369,
+   "source_sha256": "5f571982a8d40b58fef7107fe12e3a26887bbfed58a4820bf25c0e4cb0698d36",
+   "cache_file": "0047169_on_thin_ice"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 19,
+   "dat_name": "On Thin Ice",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: AGREES WITH CHRONICLE. The header's Start field is empty -- so start.raw is null, a positive 'the page says nothing' rather than the literal string '(empty)' -- and the giver comes from the walkthrough instead: Raustigne at Southern San d'Oria (S) (I-7). chronicle_snpc already reads 'raustigne', which folds to the same key, so the shipped marker does not move; the only thing this record adds is his zone and grid.\n\nOne bullet, one cutscene, nothing held and nothing granted, so evidence is null and the ladder is a single rung. The (S) suffix is load-bearing as everywhere else in this lane: Raustigne stands in zone 80, not the modern city. gates.prev is the header's 'Betrayal at Beaucedine'; its numeric id is not in this lane, so cat and area are recorded and id left null rather than guessed. The Description's instruction to take word to Sir Ragelise at Chateau d'Oraguille is the game's mission text, not a second step -- the walkthrough resolves the whole mission at Raustigne.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Betrayal at Beaucedine",
+     "cat": "mission",
+     "area": "wotg",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Raustigne",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-7",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raustigne"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Proof of Valor",
+   "page_id": 47170,
+   "revision_id": 773667,
+   "source_sha256": "dbdcf51b2614f1ca5738ca147abd0b9a36e7c0e71c489b69b0130b877a57d900",
+   "cache_file": "0047170_proof_of_valor"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 20,
+   "dat_name": "Proof of Valor",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "steps_from_after_section",
+   "unordered_group",
+   "start_is_zone_entry",
+   "step_zone_inferred",
+   "no_handin_on_page"
+  ],
+  "notes": "THE WALKTHROUGH IS AN IMAGE AND THE IMAGE DID NOT SURVIVE. Bullet 1 reads, in full, 'If strictly interested in mission progression, use the image below for the fastest solution, following the :' -- it ends mid-sentence and the picture it points at is not in the render. Every rung here therefore comes from the After-the-walkthrough section 'Question and Answer - Total of 24 Signatures', whose bullets restart at [1].\n\nWHY THESE FOUR AND NOT THE OTHERS. Farouel, Vichauxdat, Aurfet and Corseihaut answer to 24 signatures between them, and the page's own Rewards List starts its table at '20-29 signatures', so 24 clears whatever the bar is -- that is the spine, and it is the same set the missing image was said to show. The 'Quests' section NPCs (Eumielle, Coucheutand, Hauberliond, Sabiliont, and Rongelouts N Distaud with his rock-paper-scissors game) buy EXTRA signatures with items for a BETTER REWARD -- 30 to 120 signatures walks up an orb/foulard/ingot table -- which is reward optimisation and not progress, so none of them is a rung. Their answers and prices are on the page for anyone who wants them.\n\nNO HAND-IN IS AUTHORED BECAUSE THE PAGE NAMES NONE. Bullet 6 of the Quests section implies a submission prompt ('if you choose to not turn in the current amount of signatures, or deny the confirmation, you will need to zone out and back'), but it names neither an NPC nor a place, and the Description's Vestillet and Noillurie are never given a location. A quest may end without an NPC; inventing one is worse.\n\nZONE IS INFERRED AND FLAGGED. The page gives a grid for every one of the four and a zone for none of them. The header Start ('Southern San d'Oria (S)') and the Description ('Kingdom troops stationed within the city') put them in the (S) city, which is what every step records -- but it is a reading, not a statement, so all four steps are medium and the record is medium with it. The four are an unordered set, hence the shared group: they draw together, which is also what a player wants when they are all inside one city.\n\nGIVER: start.npc stays null, AGREEING with chronicle's empty string -- the page names no starting NPC at all, only four equal ones, and elevating any of them would be an arbitrary pick.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "On Thin Ice",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 19
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Southern San d'Oria (S)",
+   "grid": null,
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Farouel"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Question and Answer' section, bullet 1, whose numbering restarts at [1]. Answers: Smilodons, Tauri, Ghosts. Zone taken from the header Start, which the page does not restate for him."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vichauxdat"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Question and Answer' section, bullet 2. Answers: Three, Gutrenders, Grradhod."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aurfet"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Question and Answer' section, bullet 3. On the UPPER level at (G-9). Answers: Yrvaulair S Coussereaux, Febrenard C Brunnaut, Valaineral R Davilles, Knights of the Rustwing Hawk."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Corseihaut"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Question and Answer' section, bullet 4. Answers: Uwe Prien, Mythril Musketeers, Klara Bester, Robel Akbel, Twelve, Choh Moui."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Sanguinary Prelude",
+   "page_id": 47171,
+   "revision_id": 587449,
+   "source_sha256": "9095e1617c6cc1633164d1ab757beedb80775177bd35fa5a3a36d30e7ee0912b",
+   "cache_file": "0047171_a_sanguinary_prelude"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 21,
+   "dat_name": "A Sanguinary Prelude",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "no_markable_entity"
+  ],
+  "notes": "'Zone into Beaucedine Glacier (S) for a cutscene.' That is the entire mission and the reading is not in doubt, which is why this is high rather than low -- but it is high on a record that has nothing to draw, and the difference matters to whoever reads the build report.\n\nNOTHING HERE IS MARKABLE. There is no NPC, no door, no ??? -- not even a grid; unlike A Timeswept Butterfly, which is also a zone entry but whose Directions section names the Wooden Gate you click, this page names no entity at all and has no After-the-walkthrough section to recover one from. So the single step is a travel step whose target is the zone itself, start.npc is null (AGREEING with chronicle's empty string), and stage C will find neither a start NPC nor a markable step and quarantine the record with start_npc_unresolved. That is the correct outcome, not a defect in the reading: chronicle has no giver for this row either, so nothing is lost and nothing moves. If it is ever to draw, it needs a first-hand observation of what the cutscene trigger is, not a better reading of this page.\n\nThe [KI] Aroma bug is the header's Reward, so rule 7 keeps it out of evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Proof of Valor",
+     "cat": "mission",
+     "area": "wotg",
+     "id": 20
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Beaucedine Glacier (S)",
+   "grid": null,
+   "raw": "Beaucedine Glacier (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beaucedine Glacier (S)"
+    },
+    "zone": "Beaucedine Glacier (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene fires on zoning in; the page names no entity, no grid and no entrance."
+   }
+  ]
+ }
+]

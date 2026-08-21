@@ -1,0 +1,2255 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Delta Strike III (W)",
+   "page_id": 23841,
+   "revision_id": 764504,
+   "source_sha256": "0a6dc61edb153b7e1e6b7506b67657b75955c0de56278879bbded3549dbb2c49",
+   "cache_file": "0023841_delta_strike_iii_w_d7017767f8"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 488,
+   "dat_name": "Delta Strike III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "Five rungs and no ambiguity: accept from Emhi Tchaoryo, click a ??? in West Sarutabaruta (S) (J-6), kill what pops, click the SAME ??? again, report back. Bullet 1 gives the zone and grid outright and the header's Description repeats (J-6), so no step here needs a zone inherited from the giver.\n\nMob count is the load-bearing difference from its siblings and it is written under the key \"count\": THREE Goblin Picaroon NMs (1 WAR, 1 RNG, 1 RDM). The (S) page of the same family, Delta Strike II (S), pops two, and Delta Strike II (S)'s page carries no repop warning at all -- I read each page for its own numbers rather than copying the sibling's ladder.\n\nBullet 3's two sub-bullets are not steps but they are the reason step 4 exists as its own rung: zoning back to Windurst Waters (S) before the second click loses the pop and fails the Op, and in a party one player pops while every player must click for credit. Evidence is null throughout -- the op pays Experience Points and Allied Notes, neither of which is an item the addon can see in inventory.\n\nTime: None -- there is no time limit, and nothing in the walkthrough contradicts that. Level 70+ is the character-level gate and is the one header field that maps onto the schema. Campaign Rank is \"Iron Emblem of Service §§\". Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: A ??? can never carry a marker; the rung is kept because it is a real position in the ladder.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 70,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op. The header names him as the Campaign Ops NPC and bullet 4 sends you back to him by name."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Zone and grid are stated in bullet 1 and again in the header Description."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Picaroon",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Three NMs named Goblin Picaroon pop from the ??? -- 1 WAR, 1 RNG, 1 RDM. The page gives no separate name per job, so one mob row with count 3."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The SAME ??? again, after the NMs are dead, to bank the Experience Points. Bullet 3's sub-bullets: if you zone back to Windurst Waters (S) first you cannot repop the goblins and the Op fails; with several players one person pops and then every player clicks for credit."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Return hand-in for the Allied Notes. Kept as its own rung: this op ends back at the giver, not at the ???."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Iron Anvil III (B)",
+   "page_id": 23998,
+   "revision_id": 84413,
+   "source_sha256": "60e73f4994e72eded6315ea1a11b9ed8c11a6214e9951ecbf5b275b7238043c5",
+   "cache_file": "0023998_iron_anvil_iii_b_8116f77b05"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 303,
+   "dat_name": "Iron Anvil III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "repeatable_from_notes_section",
+   "bullets_merged"
+  ],
+  "notes": "Three rungs: Hieronymus forwards you, the Adjutant runs two synth tests, Hieronymus pays. Bullets 2 and 3 are MERGED into one rung because both happen standing at the same NPC -- picking a craft and answering his questions is one conversation, and wedging an unmarkable quiz rung between two turns of the same dialogue would add a ladder position the player can never be tracked through.\n\nThe Adjutant's zone is the one judgement call. The page gives only \"(J-9)\", and the header's Zone is Bastok Markets (S); each nation has its own adjutant standing in the giver's own city, which the sibling pages show plainly -- Iron Anvil I (S) sends you to \"Adjutant at (D-8)\" from Rasdinice in Southern San d'Oria (S), and Iron Anvil III (W) to \"(F-9)\" from Emhi Tchaoryo in Windurst Waters (S). So Bastok Markets (S) (J-9) here. BG Wiki's own Adjutant NPC page (fetched, not part of this page) lists only the San d'Oria entry and leaves its Bastok and Windurst sections empty, so it neither confirms nor contradicts (J-9); I am recording where that came from rather than presenting it as this page's own words.\n\ngates.repeatable is TRUE, and it is the one repeatable value in this batch that is not null. It is not inferred from the op being a Campaign Op -- the \"After the walkthrough: Notes\" section says it in words: \"This is repeatable (as long as you have Op Credits, and it's available)\". Op Credits are a further gate the schema cannot express.\n\nNot steps: the ten sub-bullets under bullet 3 are the shape of the quiz prompts, the Notes section's alphabetical alchemy list is reference material, and the \"Recipes\" section is an EMPTY wikitable template -- every cell literally reads \"Item name\" / \"Ingredients\". Nothing in either section is an action.\n\nLevel: Any, so gates.level is null. Campaign Rank is \"Iron Emblem of Service §§\". Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op; he forwards you to the Adjutant."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adjutant"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Bullets 2 and 3 merged -- one conversation at one NPC. He asks you to pick a craft, then tests you on TWO synths in it, asking the crystal and then each ingredient in turn from a list. \"No more materials required\" is often the last entry in the ingredient list. Zone from the header (Bastok Markets (S)); the page states only the grid (J-9)."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Return hand-in for 340 Experience Points and 980 Allied Notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crimson Domino III (B)",
+   "page_id": 24560,
+   "revision_id": 87738,
+   "source_sha256": "8616fc19e62bf48ef24dc022c4234127bba507577041073e2afe3447abda0e7f",
+   "cache_file": "0024560_crimson_domino_iii_b_e778e350af"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 283,
+   "dat_name": "Crimson Domino III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "or_branch_unmodelled",
+   "unordered_group",
+   "nil_zone_step",
+   "grid_conflict",
+   "unit_requirement_unmodelled"
+  ],
+  "notes": "A supply-transport op with a four-way choice of theatre, and the whole reading is about how that choice is expressed. The player picks ONE Bastokan-controlled area and does the whole errand there.\n\nWhere the alternatives are NAMED, MARKABLE NPCs I split them into one rung per zone sharing a group, each carrying its own zone and grid: the Gate Sentry at North Gustaberg (S) (F-7), Grauberg (S) (L-5), Pashhow Marshlands (S) (I-11) and Rolanberry Fields (S) (I-14) as group \"sentry\", and the four differently-named Campaign NPCs -- Jagged Onyx, L.C. (North Gustaberg (S) D-10), Polished Fang, L.C. (Grauberg (S) I-8), Stray Boar, L.C. (Pashhow Marshlands (S) K-6), Wayward Echo, L.C. (Rolanberry Fields (S) J-7) -- as group \"deliver\". Group members are all current together and all draw, which is exactly what \"go to any one of these\" wants; only ONE member need actually be done, which a group cannot say, hence both or_branch_modelled and unordered_group. Giving each rung its real zone matters twice over: it stops the row inheriting the giver's Bastok Markets (S) in the where-readout, and \"Gate Sentry\" is the same name in four places, so without a zone the row is an ambiguous NPC.\n\nThe ??? stage is the exception and is deliberately ONE rung with a null zone, the four positions written out verbatim in its note. Splitting it four ways would have put the [KI] Campaign Supplies on four rungs, and duplicated evidence is fatal in stage C -- it would have cost this record its whole ladder to gain zone labels on an object that can never carry a marker anyway. That rung is also optional: bullet 2 says the Gate Sentry EITHER hands you the Campaign Supplies outright OR tells you to go find them, and only the second branch sends you to a ???. Holding the key item is true either way, which is why it sits on that rung.\n\nGrid conflict worth a human's eye: this page puts the Grauberg (S) Gate Sentry at (L-5); BG Wiki's Gate Sentry NPC page (fetched separately, not part of this page) puts it at (L-4). I kept this page's (L-5) because the ladder is this page's reading, and I am naming the other source rather than silently averaging them.\n\n\"List of Gate Sentries:\", \"List of ??? positions:\" and \"List of Campaign NPCs:\" are HEADINGS, not names, and none of them appears in any target. The last two sentences of the page (\"Once you've arrived at the Campaign NPC, talk to him/her...\" and \"After talking to Hieronymus, the mission is complete.\") render as trailing lines under bullet 14 rather than as bullets of their own, so the deliver group and the final rung both cite [14]. Bullet 1 (\"Easily soloable mission\") is advice.\n\nThe Gate Sentry may also impose extra conditions -- deliver fast because the cargo will spoil, or avoid all combat because it is fragile. Those are per-run modifiers announced in dialogue, not a header Time limit (Time is empty) and not something the addon can observe, so they are recorded in the step note only. Unit Requirement is \"1~6 members.\", another gate with no schema field. Level is empty, so gates.level is null. Campaign Rank is \"Iron Emblem of Service §§\". Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: see the record notes.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Confirm the op before travelling."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "sentry",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Any ONE member of this group. He either hands over the Campaign Supplies or sends you to find them, and he may add a condition -- hurry, because some items will spoil; or avoid all confrontation, because some are fragile."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "L-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "sentry",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     4
+    ],
+    "note": "Any ONE member of this group. This page says (L-5); BG Wiki's Gate Sentry NPC page says (L-4)."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "sentry",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     5
+    ],
+    "note": "Any ONE member of this group."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "Rolanberry Fields (S)",
+    "grid": "I-14",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "sentry",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     6
+    ],
+    "note": "Any ONE member of this group."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Campaign Supplies",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     7,
+     8,
+     9,
+     10
+    ],
+    "note": "Only needed when the Gate Sentry did NOT hand the supplies over directly, hence optional. One rung with a null zone rather than four, so the key item is not duplicated across rungs; the ??? sits in whichever zone you chose. Positions as listed: North Gustaberg (S) (F-9) next to a few boxes; Grauberg (S) (L-6) off the main path to the east, next to a tree; Pashhow Marshlands (S) (H-8) at the intersection of two paths; Rolanberry Fields (S) (I-9) near a small shed."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jagged Onyx, L.C."
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "D-10",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Campaign Supplies",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "deliver",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "Deliver in the zone you chose; any ONE member of this group. He tells you to report to Hieronymus."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Polished Fang, L.C."
+    },
+    "zone": "Grauberg (S)",
+    "grid": "I-8",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Campaign Supplies",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "deliver",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "Deliver in the zone you chose; any ONE member of this group."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Stray Boar, L.C."
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "K-6",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Campaign Supplies",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "deliver",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "Deliver in the zone you chose; any ONE member of this group."
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wayward Echo, L.C."
+    },
+    "zone": "Rolanberry Fields (S)",
+    "grid": "J-7",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Campaign Supplies",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "deliver",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     14
+    ],
+    "note": "Deliver in the zone you chose; any ONE member of this group."
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     14
+    ],
+    "note": "The official report. Rendered as a trailing line under bullet 14, not as a numbered bullet -- \"After talking to Hieronymus, the mission is complete.\" This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Delta Strike II (S)",
+   "page_id": 26567,
+   "revision_id": 84436,
+   "source_sha256": "8ea38ecba995a7b0fcaddbde3fe2771cd55fb4f2e2989d149083d31df4a7bb9e",
+   "cache_file": "0026567_delta_strike_ii_s_edad8da62e"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 147,
+   "dat_name": "Delta Strike II (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "The San d'Orian sibling of Delta Strike III (W) and NOT a copy of it. Same five-rung shape -- accept, click the ???, kill, click again, report -- but the numbers and the warnings are this page's own: TWO Goblin Picaroon NMs, not three, and no job breakdown; East Ronfaure (S) (I-5), \"on the road\"; and no repop warning and no multi-player note anywhere on this page. Mob count is under the key \"count\".\n\nBullet 1 says only \"the Campaign Ops NPC\", which is a role and not a name -- but this page names him twice elsewhere, in the header (NPC Name: Rasdinice) and in bullet 4 (\"Go back to Rasdinice\"), so the target is a real name read off this page and not a fallback. No generic_npc_name flag, because I did not have to fall back to {\"type\": \"none\"}.\n\nEvidence is null on every rung: the op pays Experience Points and Allied Notes and hands over no item or key item at any point.\n\nTime: None -- no time limit, and nothing in the walkthrough disagrees. Level 70+ is the character-level gate. Campaign Rank is \"Sterling Star §§\", which is a lower band than the (W) III page's \"Iron Emblem of Service §§\" -- the rank is per op, not per family. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 70,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bullet 1 calls him only \"the Campaign Ops NPC\"; the header and bullet 4 give the name."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "On the road. Zone and grid both stated in bullet 1."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Picaroon",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Two NMs named Goblin Picaroon. This page states no jobs and no third mob -- the (W) III page's three-with-jobs does not apply here."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The same ??? again after the NMs are dead, for the 160 experience points."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Return hand-in for the allied notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover I (B)",
+   "page_id": 28099,
+   "revision_id": 775177,
+   "source_sha256": "d792b6421fa06be1e814dccff4591c73134859b4b82023c6327d25b5d7fadb64",
+   "cache_file": "0028099_deep_cover_i_b_c747cfb177"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 216,
+   "dat_name": "Deep Cover I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step",
+   "npc_zone_from_wiki_lookup",
+   "ends_at_op_npc_not_giver",
+   "evidence_carryover_risk",
+   "rendered_dropped_strikethrough"
+  ],
+  "notes": "This op does NOT end at the giver, and that is the difference a human should check first. Hieronymus hands the op out and is never mentioned in the walkthrough again; the whole errand runs through Mariette and finishes the moment she accepts the third plate. There is no return-to-giver bullet to drop, so there is no return rung -- inventing one would leave the op reading as unfinished forever.\n\nMariette's zone: the page gives only \"(G-9)\", in bullet 2 and in the header Description. BG Wiki's Mariette NPC page (fetched separately -- not this page's words) records Location=Bastok Markets (S), Position=G-9, which agrees with the header's Zone, so the rung carries Bastok Markets (S) (G-9) rather than an inherited zone by accident.\n\nThe photograph rung has no target. Bullet 5 links [[:Category:Quadav|Quadavs]] and [[:Category:Campaign Battle]] -- both are CATEGORIES, not entities, and \"Quadav\" is a family rather than a mob name, so the target is {\"type\": \"none\"} and the mob list is empty. Putting \"Quadav\" or \"Campaign NPC\" in target.name would mint a marker key with nothing behind it.\n\nEvidence, which is the only real judgement here. Holding three Fiend Plates is exactly the allowed observable form (item x n) and is the only progress signal the op has, so it sits on the photograph rung. The carry-over risk is real and flagged: these ops can be run again, and a leftover plate would pre-satisfy it. Note that bullet 9 -- \"If you have extra Fiend Plates after completing the mission they may be used for Deep Cover II (B)\" -- is STRUCK THROUGH in the wikitext (<s>...</s>) and the rendered page shows it as an ordinary bullet, so the rendering silently loses a retraction; bullet 10, that unused BLANK plates carry over, is not struck. I read that off the cached source, not the rendered page.\n\nThe Fiendtrapper is deliberately NOT evidence for the Mariette rung even though she hands it over there. Bullet 11 says you must DROP it to start Deep Cover II (B), which proves it survives the op -- so holding one does not prove you spoke to her on this run. It is recorded as `items` on the photograph rung instead, which is the honest way to say \"you must be carrying this\".\n\nNot steps: bullet 1 (\"Solo mission\"), bullet 4 (the Fiendtrapper fails under Sneak or Invisible or at range -- a caveat, folded into the photograph rung's note), bullet 6 (an inventory consequence), and bullets 9-11, which are all about the NEXT op.\n\nLevel: Any. Campaign Rank and Time are both {{question}} on this page and render as \"(empty)\" -- so this page states no rank; the gate still exists in game and is flagged rather than asserted. {{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "She provides a Fiendtrapper and 5 Blank fiend plates. Zone from the header and from BG Wiki's Mariette NPC page; the page itself states only (G-9). No evidence here: the Fiendtrapper persists past the op (bullet 11), so holding one proves nothing about this run."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "kind": "item",
+      "name": "Fiendtrapper",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fiend Plate",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Photograph three different Quadavs with the Fiendtrapper. The page links a category, not a mob, so no target and no mob row. Campaign Battle mobs are valid; the shot must be from the FRONT -- she rejects back and side shots -- and the Fiendtrapper will not fire under Sneak or Invisible or at range. Each shot makes one non-stacking Fiend Plate. No zone: the page names none."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Fiend Plate",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "Trade her ONE Fiend Plate at a time; the op completes when she has accepted three. This is the last rung -- the page never sends you back to Hieronymus."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover II (B)",
+   "page_id": 28100,
+   "revision_id": 84392,
+   "source_sha256": "0f2597a0f4c2f8677b395ad75d59c2d77606694bd5abb3d6faebd08ef49bb33e",
+   "cache_file": "0028100_deep_cover_ii_b_34d4c5a40c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 217,
+   "dat_name": "Deep Cover II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step",
+   "npc_zone_from_wiki_lookup",
+   "ends_at_op_npc_not_giver",
+   "evidence_carryover_risk"
+  ],
+  "notes": "Nearly the same errand as Deep Cover I (B) and I did not copy that record: this page has an extra opening bullet and is missing two of the other page's, and both differences change the ladder.\n\nBullet 2 is a real precondition and gets a rung: if you are still carrying the Fiendtrapper from Deep Cover I (B) you must DROP it or you cannot start the op at all. It is marked optional because it only applies when you still hold one -- optional here means conditional, not skippable-if-you-like. It has no target and no zone: dropping an item happens nowhere in particular.\n\nAlso absent here and present on Deep Cover I (B): the Sneak/Invisible caveat, and the three trailing bullets about the next op. And the wording of the finish differs -- I (B) says \"after she accepts 3 Fiend Plates\", this page says \"after she accepts 3 pictures\". Same count either way.\n\nLike Deep Cover I (B) this op ENDS AT MARIETTE. Hieronymus gives it out and the walkthrough never sends you back to him, so there is no return-to-giver rung.\n\nMariette's zone again comes from the header (Bastok Markets (S)) plus BG Wiki's Mariette NPC page (Location=Bastok Markets (S), Position=G-9), fetched separately; this page states only \"(G-9)\".\n\nEvidence is Fiend Plate x3 on the photograph rung, same as the I (B) record, and the carry-over risk is sharper here: Deep Cover I (B) bullet 10 (not struck through) says unused BLANK plates carry into this op, and its bullet 9 about exposed plates carrying over is struck through, so whether an exposed plate can survive into this op is genuinely undetermined by either page. Flagged rather than resolved. The Fiendtrapper is not evidence for the same reason as on I (B), and here the reason is stated by this page itself in bullet 2.\n\nBullet 5 links [[:Category:Quadav]] -- a category, not an NPC -- so the photograph rung has no target name. Bullet 1 (\"Solo mission\") and bullet 6 (inventory consequence) are not steps.\n\nLevel: Any. Campaign Rank and Time are both {{question}}, rendering as \"(empty)\": this page states no rank. {{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "Drop the Fiendtrapper from Deep Cover I (B) if you still have it -- without this the op cannot be started. Conditional, hence optional; no target and no zone."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "She provides a fresh Fiendtrapper and 5 Blank fiend plates. Zone from the header and BG Wiki's Mariette NPC page; the page states only (G-9). No evidence: a Fiendtrapper in inventory may be the one bullet 2 just told you to drop."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "kind": "item",
+      "name": "Fiendtrapper",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fiend Plate",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Photograph three different Quadavs. Category link, so no target and no mob row. Campaign Battle mobs are valid; the shot must be from the FRONT. Each shot makes one non-stacking Fiend Plate."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Fiend Plate",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "Trade her one plate at a time; the op completes when she has accepted three pictures. Last rung -- no return to Hieronymus."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aegis Scream II (B)",
+   "page_id": 30816,
+   "revision_id": 106834,
+   "source_sha256": "ad1a71df786c6b54b7f311588dafad3e7c24dea0c1a926e405643b75615c5b92",
+   "cache_file": "0030816_aegis_scream_ii_b_5e725eb4a7"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 192,
+   "dat_name": "Aegis Scream II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step"
+  ],
+  "notes": "Two rungs, and the first one is deliberately not a talk-to-the-giver. Unlike almost every other op in this batch, this page's walkthrough never says to speak to Hieronymus first -- bullet 1 is simply \"Participate in a Campaign battle on a Bastokan stonghold\". I did not manufacture an opening rung to make it match its siblings; Aegis Scream I (B) and III (B) open with the identical bullet, so the shape is the family's, not a truncation. The giver is still recorded in start, and the runtime falls back to the giver's marker while the op is unstarted, so nothing is lost.\n\nRung 1 has no target and no zone on purpose. Bullet 1 links [[:Category:Campaign_Battle|Campaign battle]] -- a CATEGORY, not an entity -- and \"a Bastokan stonghold\" (the page's own typo) names no zone and no fortification. There is no mob to list either: the op is satisfied by participating well enough to earn the \"Objective Completed\" message, not by any stated kill, so kind is \"other\" rather than \"fight\" and mobs is empty. Any name written in here would be invented.\n\nRung 2 is the return, and bullet 3 is the reason it must stay a rung of its own rather than being folded away: reporting to Hieronymus BEFORE the \"Objective Completed\" message ends the op in failure. That is an ordering constraint the ladder can express and a note cannot.\n\nNo evidence anywhere -- the completion signal is a chat message, and no packet-observable item or key item changes hands.\n\nLevel: Any, Time: None. Campaign Rank is \"Allied Ribbon of Glory §§§§\". The page also carries an empty \"Notes\" heading with nothing under it. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Take part in a Campaign battle at a Bastokan stronghold until you receive \"Objective Completed\". The page links a category rather than naming a battle, a stronghold or a zone, so there is nothing to target and nothing to mark."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Report back -- but only AFTER the \"Objective Completed\" message. Reporting before it ends the op in failure."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve I (W)",
+   "page_id": 32574,
+   "revision_id": 89456,
+   "source_sha256": "24fbebc3b81a0293c144d101f1a71c6b2eb5b3b5034111e3eb6f563055622998",
+   "cache_file": "0032574_steel_resolve_i_w_f5c0a9b418"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 491,
+   "dat_name": "Steel Resolve I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step",
+   "unit_requirement_unmodelled",
+   "bullets_merged"
+  ],
+  "notes": "Three rungs -- accept, run the fortification-crystal minigame at the arbiter, report back -- and the middle one is unmarkable for a reason worth stating.\n\nThe page says \"speak to the active Campaign arbiter\", which is a ROLE, not a name, and it is not even a wikilink in the source. I looked it up rather than guess: BG Wiki's Campaign Arbiter page is a redirect to Campaign Arbiters, which lists the actual NPCs under individual names -- Saphiriance, T.K.; Arlayse, R.K.; Uriah, C.A.; Jagged Onyx, L.C. and so on -- and explains that \"Campaign Arbiters\" is a designation, with the nation ones signified by rank suffixes. So there is no in-game entity called \"Campaign arbiter\", and writing that string into target.name would mint a marker key that can never draw. Target is {\"type\": \"none\"} and the detail lives in the step note. That lookup is from the wiki, not from this page.\n\nThe zone is null for the same kind of reason: the page says only \"a Windurst controlled Campaign area\" and \"the Fortification tower in the zone\" -- it enumerates no zones at all, so there is nothing to record and nothing to split into a group. A null zone matches anywhere, which is the honest answer; it is flagged so the where-readout falling back to the giver's Windurst Waters (S) is not mistaken for a claim.\n\nBullets 2 through 11 are merged into that single rung -- see the step note, which carries the full crystal answer key. Bullet 12 (you receive the experience points) is an outcome, not a step. Bullet 13 is the return to Emhi Tchaoryo and stays a rung: this op ends back at the giver.\n\nEvidence is null everywhere; nothing observable changes hands. Unit Requirement is \"1 member.\" and Level is \"Any\", so gates.level is null. Campaign Rank on this page is \"Brass Ribbon of Service §§\", carrying a {{verification}} template in the source -- the wiki itself flags the value as unconfirmed. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nThis is the only one of the three Steel Resolve (W) pages with real numbers filled in (80 Experience Points, 460 Allied Notes) and a stated rank; II and III are placeholder copies of this text, which is recorded on their own records.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: see the record notes",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op, then head for a Windurst controlled Campaign area -- the page names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "note": "Speak to the active Campaign arbiter at the Fortification tower and hand out crystals. \"Campaign arbiter\" is a role, not an NPC name so this rung cannot be marked. Bullets 2-11 merged into one rung: everything from greeting the arbiter through the last crystal happens standing in front of the same entity, in a menu, with no second location and no second target. Crystal answer key, which is the substance of the op Menu 1: Fire = Elvaan man in a Smithy's Apron and a red hat; Ice = Tarutaru female with blonde pigtails and a Field Tunica; Wind = Hume female in a Goldsmith's Apron. Menu 2: Earth = Elvaan man in a Woodworker's Apron with a black Voulge on his back; Lightning = Mithra in a Dark Cloak; Water = Tarutaru male in a blue Aketon. Menu 3: Light = Hume male in a Jujitsu Gi and a Jaridah Khud; Dark = Elvaan female in a Chocobo Jackcoat and a Walahra Turban. Wait until an NPC has stopped moving before giving a crystal; a wrong element hurts your score and delays the menu, while letting an NPC leave empty-handed hurts it less."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "Return hand-in for the Allied Notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve II (W)",
+   "page_id": 32575,
+   "revision_id": 84177,
+   "source_sha256": "8101a52915ed336b821185bb9a7376d647b835a896a2d93e2eef0df3aa50752e",
+   "cache_file": "0032575_steel_resolve_ii_w_fd6b73bc82"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 492,
+   "dat_name": "Steel Resolve II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step",
+   "unit_requirement_unmodelled",
+   "bullets_merged",
+   "page_is_placeholder_copy"
+  ],
+  "notes": "Three rungs -- accept, run the fortification-crystal minigame at the arbiter, report back -- and the middle one is unmarkable for a reason worth stating.\n\nThe page says \"speak to the active Campaign arbiter\", which is a ROLE, not a name, and it is not even a wikilink in the source. I looked it up rather than guess: BG Wiki's Campaign Arbiter page is a redirect to Campaign Arbiters, which lists the actual NPCs under individual names -- Saphiriance, T.K.; Arlayse, R.K.; Uriah, C.A.; Jagged Onyx, L.C. and so on -- and explains that \"Campaign Arbiters\" is a designation, with the nation ones signified by rank suffixes. So there is no in-game entity called \"Campaign arbiter\", and writing that string into target.name would mint a marker key that can never draw. Target is {\"type\": \"none\"} and the detail lives in the step note. That lookup is from the wiki, not from this page.\n\nThe zone is null for the same kind of reason: the page says only \"a Windurst controlled Campaign area\" and \"the Fortification tower in the zone\" -- it enumerates no zones at all, so there is nothing to record and nothing to split into a group. A null zone matches anywhere, which is the honest answer; it is flagged so the where-readout falling back to the giver's Windurst Waters (S) is not mistaken for a claim.\n\nBullets 2 through 11 are merged into that single rung -- see the step note, which carries the full crystal answer key. Bullet 12 (you receive the experience points) is an outcome, not a step. Bullet 13 is the return to Emhi Tchaoryo and stays a rung: this op ends back at the giver.\n\nEvidence is null everywhere; nothing observable changes hands. Unit Requirement is \"1 member.\" and Level is \"Any\", so gates.level is null. Campaign Rank is EMPTY on this page, so it states no rank; the gate still exists in game and is flagged rather than invented. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nThis page and Steel Resolve III (W) are BYTE-IDENTICAL in the cache -- both carry source_sha256 8101a52915ed336b821185bb9a7376d647b835a896a2d93e2eef0df3aa50752e, with different page ids and revisions -- and both are the Steel Resolve I (W) text with the numbers blanked to \"???\". Rewards read \"??? Experience Points\" and \"??? Allied Notes\", Campaign Rank is empty, and bullet 13 has had its notes figure stripped where I (W) says 460. So the ladder is readable but the page is a stub for its own tier, which is why this is medium and not high: I can be confident about the three rungs and not at all confident that this page describes THIS op rather than its predecessor.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: see the record notes",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op, then head for a Windurst controlled Campaign area -- the page names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "note": "Speak to the active Campaign arbiter at the Fortification tower and hand out crystals. \"Campaign arbiter\" is a role, not an NPC name so this rung cannot be marked. Bullets 2-11 merged into one rung: everything from greeting the arbiter through the last crystal happens standing in front of the same entity, in a menu, with no second location and no second target. Crystal answer key, which is the substance of the op Menu 1: Fire = Elvaan man in a Smithy's Apron and a red hat; Ice = Tarutaru female with blonde pigtails and a Field Tunica; Wind = Hume female in a Goldsmith's Apron. Menu 2: Earth = Elvaan man in a Woodworker's Apron with a black Voulge on his back; Lightning = Mithra in a Dark Cloak; Water = Tarutaru male in a blue Aketon. Menu 3: Light = Hume male in a Jujitsu Gi and a Jaridah Khud; Dark = Elvaan female in a Chocobo Jackcoat and a Walahra Turban. Wait until an NPC has stopped moving before giving a crystal; a wrong element hurts your score and delays the menu, while letting an NPC leave empty-handed hurts it less."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "Return hand-in for the Allied Notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve III (W)",
+   "page_id": 32576,
+   "revision_id": 84176,
+   "source_sha256": "8101a52915ed336b821185bb9a7376d647b835a896a2d93e2eef0df3aa50752e",
+   "cache_file": "0032576_steel_resolve_iii_w_e9343a5d25"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 493,
+   "dat_name": "Steel Resolve III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step",
+   "unit_requirement_unmodelled",
+   "bullets_merged",
+   "page_is_placeholder_copy"
+  ],
+  "notes": "Three rungs -- accept, run the fortification-crystal minigame at the arbiter, report back -- and the middle one is unmarkable for a reason worth stating.\n\nThe page says \"speak to the active Campaign arbiter\", which is a ROLE, not a name, and it is not even a wikilink in the source. I looked it up rather than guess: BG Wiki's Campaign Arbiter page is a redirect to Campaign Arbiters, which lists the actual NPCs under individual names -- Saphiriance, T.K.; Arlayse, R.K.; Uriah, C.A.; Jagged Onyx, L.C. and so on -- and explains that \"Campaign Arbiters\" is a designation, with the nation ones signified by rank suffixes. So there is no in-game entity called \"Campaign arbiter\", and writing that string into target.name would mint a marker key that can never draw. Target is {\"type\": \"none\"} and the detail lives in the step note. That lookup is from the wiki, not from this page.\n\nThe zone is null for the same kind of reason: the page says only \"a Windurst controlled Campaign area\" and \"the Fortification tower in the zone\" -- it enumerates no zones at all, so there is nothing to record and nothing to split into a group. A null zone matches anywhere, which is the honest answer; it is flagged so the where-readout falling back to the giver's Windurst Waters (S) is not mistaken for a claim.\n\nBullets 2 through 11 are merged into that single rung -- see the step note, which carries the full crystal answer key. Bullet 12 (you receive the experience points) is an outcome, not a step. Bullet 13 is the return to Emhi Tchaoryo and stays a rung: this op ends back at the giver.\n\nEvidence is null everywhere; nothing observable changes hands. Unit Requirement is \"1 member.\" and Level is \"Any\", so gates.level is null. Campaign Rank is EMPTY on this page, so it states no rank; the gate still exists in game and is flagged rather than invented. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nThis page and Steel Resolve II (W) are BYTE-IDENTICAL in the cache -- both carry source_sha256 8101a52915ed336b821185bb9a7376d647b835a896a2d93e2eef0df3aa50752e, with different page ids and revisions -- and both are the Steel Resolve I (W) text with the numbers blanked to \"???\". Rewards read \"??? Experience Points\" and \"??? Allied Notes\", Campaign Rank is empty, and bullet 13 has had its notes figure stripped where I (W) says 460. So the ladder is readable but the page is a stub for its own tier, which is why this is medium and not high: I can be confident about the three rungs and not at all confident that this page describes THIS op rather than its predecessor.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: see the record notes",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op, then head for a Windurst controlled Campaign area -- the page names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "note": "Speak to the active Campaign arbiter at the Fortification tower and hand out crystals. \"Campaign arbiter\" is a role, not an NPC name so this rung cannot be marked. Bullets 2-11 merged into one rung: everything from greeting the arbiter through the last crystal happens standing in front of the same entity, in a menu, with no second location and no second target. Crystal answer key, which is the substance of the op Menu 1: Fire = Elvaan man in a Smithy's Apron and a red hat; Ice = Tarutaru female with blonde pigtails and a Field Tunica; Wind = Hume female in a Goldsmith's Apron. Menu 2: Earth = Elvaan man in a Woodworker's Apron with a black Voulge on his back; Lightning = Mithra in a Dark Cloak; Water = Tarutaru male in a blue Aketon. Menu 3: Light = Hume male in a Jujitsu Gi and a Jaridah Khud; Dark = Elvaan female in a Chocobo Jackcoat and a Walahra Turban. Wait until an NPC has stopped moving before giving a crystal; a wrong element hurts your score and delays the menu, while letting an NPC leave empty-handed hurts it less."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "Return hand-in for the Allied Notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slaughterhouse II (W)",
+   "page_id": 32620,
+   "revision_id": 84389,
+   "source_sha256": "bdf8ab6bdffa2b00e2dea7d0151fa2b0a9879f95299eb4404363da261519bcb2",
+   "cache_file": "0032620_slaughterhouse_ii_w_b64457c83c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 392,
+   "dat_name": "Slaughterhouse II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "nil_zone_step",
+   "unit_requirement_unmodelled"
+  ],
+  "notes": "Four rungs: accept, bomb the ???, check the ??? again, report back. The second check is kept as a rung of its own rather than folded into the first, because bullet 5 says failing to do it makes the Op a failure -- exactly the kind of trailing required action a ladder exists to keep visible.\n\nBoth ??? rungs carry a null zone, and that is a deliberate reading, not an omission. The page offers a CHOICE of theatre and a step has one zone, so the alternatives cannot all sit on one rung; splitting them per zone would double the ??? rungs for a target that can never carry a marker anyway. Every zone and grid the page gives is written out verbatim in the first ??? rung's note instead, where a human can read it. (Contrast Crimson Domino III (B) in this same batch, where the alternatives are NAMED, markable NPCs and therefore are split one rung per zone.)\n\nThe list the page gives: Fort Karugo-Narugo (S) (H-8); Meriphataud Mountains (S) (E-5). Two choices, both valid.\n\nBullet 1 (\"Easily soloable mission\") is advice. The bomb's explosion and the \"The stronghold has sustained considerable damage.\" message are outcomes, folded into the first ??? rung's note. Evidence is null throughout -- the op pays Experience Points and Allied Notes and hands over nothing observable.\n\nTime and Level are both empty in the header, so gates.level is null and no time limit is claimed. Unit Requirement is \"1\", another gate with no schema field. Campaign Rank is \"Sterling Star §§\", carrying a {{Verification}} template in the source -- the wiki flags the value as unconfirmed. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nTwo ??? locations only -- Slaughterhouse III (W), the next op in the same family, lists five (one of them explicitly invalid). I read each page's own list rather than sharing one between them.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Confirm the op, then head for a Beastmen controlled area near Windurst."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Find the ??? near the fortification and click it to place a bomb; it explodes after some time and you get \"The stronghold has sustained considerable damage.\" together with the experience points. Zone left null because the player picks one of the listed areas -- Fort Karugo-Narugo (S) (H-8); Meriphataud Mountains (S) (E-5). Two choices, both valid."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Check the SAME ??? once more to bank the XP reward. Failing to do so causes the Op to be a failure. Same zone as rung 2, whichever the player chose."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Return hand-in for the Allied Notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slaughterhouse III (W)",
+   "page_id": 32621,
+   "revision_id": 674016,
+   "source_sha256": "1c0e2e31a1f9e70d1d76e873a79d9fd74aca483e3dac6145fc85afe806bdfb2b",
+   "cache_file": "0032621_slaughterhouse_iii_w_f4899cef55"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 393,
+   "dat_name": "Slaughterhouse III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "nil_zone_step",
+   "unit_requirement_unmodelled",
+   "zone_name_normalised"
+  ],
+  "notes": "Four rungs: accept, bomb the ???, check the ??? again, report back. The second check is kept as a rung of its own rather than folded into the first, because bullet 5 says failing to do it makes the Op a failure -- exactly the kind of trailing required action a ladder exists to keep visible.\n\nBoth ??? rungs carry a null zone, and that is a deliberate reading, not an omission. The page offers a CHOICE of theatre and a step has one zone, so the alternatives cannot all sit on one rung; splitting them per zone would double the ??? rungs for a target that can never carry a marker anyway. Every zone and grid the page gives is written out verbatim in the first ??? rung's note instead, where a human can read it. (Contrast Crimson Domino III (B) in this same batch, where the alternatives are NAMED, markable NPCs and therefore are split one rung per zone.)\n\nThe list the page gives: West Sarutabaruta (S) (H-6) (East Side); Fort Karugo-Narugo (S) (H-8); Meriphataud Mountains (S) (E-5); Sauromugue Champaign (S) (H-7). Pashhow Marshlands (S) is listed too but the page marks it an INVALID choice -- both of its ???s answer \"Nothing out of the ordinary here.\" -- so it is excluded rather than carried along as a fifth option.\n\nBullet 1 (\"Easily soloable mission\") is advice. The bomb's explosion and the \"The stronghold has sustained considerable damage.\" message are outcomes, folded into the first ??? rung's note. Evidence is null throughout -- the op pays Experience Points and Allied Notes and hands over nothing observable.\n\nTime and Level are both empty in the header, so gates.level is null and no time limit is claimed. Unit Requirement is \"1\", another gate with no schema field. Campaign Rank is \"Iron Emblem of Service §§\", carrying a {{Verification}} template in the source. Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nZone name normalised: the page writes the Sauromugue entry as the raw wikilink \"Sauromugue_Champaign_(S)\", with underscores. Underscores are wikilink syntax, not part of the zone name, and the resolver rejects that spelling outright while \"Sauromugue Champaign (S)\" resolves -- an unresolved zone is simply dropped, so the note carries the corrected form. Every zone on this page already carries its (S) suffix, which is the resolvable Wings-of-the-Goddess form; none needed the suffix added.\n\nFive listed areas against Slaughterhouse II (W)'s two, and one of the five is a dead end -- I did not reuse the sibling's list.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Confirm the op, then head for a Beastmen controlled area near Windurst."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Find the ??? near the fortification and click it to place a bomb; it explodes after some time and you get \"The stronghold has sustained considerable damage.\" together with the experience points. Zone left null because the player picks one of the listed areas -- West Sarutabaruta (S) (H-6) (East Side); Fort Karugo-Narugo (S) (H-8); Meriphataud Mountains (S) (E-5); Sauromugue Champaign (S) (H-7). Pashhow Marshlands (S) is listed too but the page marks it an INVALID choice -- both of its ???s answer \"Nothing out of the ordinary here.\" -- so it is excluded rather than carried along as a fifth option."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Check the SAME ??? once more to bank the XP reward. Failing to do so causes the Op to be a failure. Same zone as rung 2, whichever the player chose."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Return hand-in for the Allied Notes. This op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye II (W)",
+   "page_id": 32622,
+   "revision_id": 758376,
+   "source_sha256": "9fc884997e4fee546e0586d1cc55ae85e1609809ebc819a8ec1b6818976bf7d3",
+   "cache_file": "0032622_hawk_eye_ii_w_b5657d1c5e"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 382,
+   "dat_name": "Hawk Eye II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "nil_zone_step",
+   "unit_requirement_unmodelled"
+  ],
+  "notes": "Three rungs: accept, click the ??? at the base of a Yagudo fortification tower, report back. Everything between is automatic.\n\nThe zone is null on the middle rung and there is nothing to recover: this page says only \"a Yagudo controlled Campaign area\" and \"the fortification tower in the zone\", and unlike the Slaughterhouse (W) pages in this batch it gives no list of areas and no grid refs at all. That incompleteness -- not the ladder -- is why this record is medium. I did not borrow a zone list from a sibling to fill the hole.\n\nBullets 3 and 4 are merged into the ??? rung: /blockaid is applied automatically the moment you touch it, your character then prepares and gathers intelligence in the healing position for roughly 90 seconds, and no further input is required. That is a wait, not a second action, so it does not get a rung. Bullet 2's sub-bullet matters more and is in the note: there are TWO ??? at the base of the tower and the wrong one answers \"You find nothing out of the ordinary.\"\n\nBullet 5 (you receive 190 Experience Points) and bullet 6 (/blockaid is removed) are outcomes, not steps. Bullet 7 is the return and stays a rung -- this op ends back at the giver.\n\nEvidence is null throughout; the op pays experience points and Allied Notes and hands over nothing an addon can see. Time and Level are both empty in the header, so gates.level is null. Unit Requirement is \"1 member.\", a gate with no schema field. Campaign Rank is \"Allied Ribbon of Glory §§§§\". Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nWorth a human's eye: this op's stated rank is \"Allied Ribbon of Glory §§§§\" while Hawk Eye III (W) -- the LATER op in the same family -- states \"Golden Star §§§§\", and Hawk Eye I (W) states \"Bronze Ribbon of Service §\". The two share a section count, so they sit in the same band; I have recorded both verbatim rather than deciding which outranks which, because neither page says.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op, then head for a Yagudo controlled Campaign area -- the page names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Click the ??? at the base of the fortification tower. There are TWO of them; if you get \"You find nothing out of the ordinary.\" check the other. /blockaid goes on automatically on touch, the gather runs about 90 seconds in the healing position with no further input, and /blockaid comes off again on success. Zone null -- the page names no area."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Return hand-in for the Allied Notes."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye III (W)",
+   "page_id": 32623,
+   "revision_id": 758377,
+   "source_sha256": "0361568f13058edcea8ed17168eab3cab79478350f571203370ff22e369970cb",
+   "cache_file": "0032623_hawk_eye_iii_w_69d4f2d5ab"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 383,
+   "dat_name": "Hawk Eye III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "nil_zone_step",
+   "unit_requirement_unmodelled"
+  ],
+  "notes": "Three rungs: accept, click the ??? at the base of a Yagudo fortification tower, report back. Everything between is automatic.\n\nThe zone is null on the middle rung and there is nothing to recover: this page says only \"a Yagudo controlled Campaign area\" and \"the fortification tower in the zone\", and unlike the Slaughterhouse (W) pages in this batch it gives no list of areas and no grid refs at all. That incompleteness -- not the ladder -- is why this record is medium. I did not borrow a zone list from a sibling to fill the hole.\n\nBullets 3 and 4 are merged into the ??? rung: /blockaid is applied automatically the moment you touch it, your character then prepares and gathers intelligence in the healing position for roughly 90 seconds, and no further input is required. That is a wait, not a second action, so it does not get a rung. Bullet 2's sub-bullet matters more and is in the note: there are TWO ??? at the base of the tower and the wrong one answers \"You find nothing out of the ordinary.\"\n\nBullet 5 (you receive 290 Experience Points) and bullet 6 (/blockaid is removed) are outcomes, not steps. Bullet 7 is the return and stays a rung -- this op ends back at the giver.\n\nEvidence is null throughout; the op pays experience points and Allied Notes and hands over nothing an addon can see. Time and Level are both empty in the header, so gates.level is null. Unit Requirement is \"1 member.\", a gate with no schema field. Campaign Rank is \"Golden Star §§§§\". Campaign Rank is a real availability gate with no schema field: the schema's gates.level means CHARACTER level, so the rank is recorded here in words and flagged rank_gate_unmodelled instead of being smuggled into a numeric field.\n\nThe walkthrough here is word-for-word Hawk Eye II (W)'s apart from the experience figure (290 against 190) and the rank, and the pages have different source_sha256 values so they are genuinely separate revisions rather than one page seen twice. See the Hawk Eye II (W) record for the rank ordering oddity between the two.\n\n{{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the op, then head for a Yagudo controlled Campaign area -- the page names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Click the ??? at the base of the fortification tower. There are TWO of them; if you get \"You find nothing out of the ordinary.\" check the other. /blockaid goes on automatically on touch, the gather runs about 90 seconds in the healing position with no further input, and /blockaid comes off again on success. Zone null -- the page names no area."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Return hand-in for the Allied Notes."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover I (W)",
+   "page_id": 36731,
+   "revision_id": 425557,
+   "source_sha256": "20df36823ceb0ad8d38b1f6066073ab70e4deb0beabc8747d71079580dac6850",
+   "cache_file": "0036731_deep_cover_i_w_6b5d3c0114"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 386,
+   "dat_name": "Deep Cover I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "unnamed_target",
+   "nil_zone_step",
+   "npc_zone_from_wiki_lookup",
+   "ends_at_op_npc_not_giver",
+   "evidence_carryover_risk"
+  ],
+  "notes": "The Windurst twin of Deep Cover I (B), and the differences are all real ones I read off this page rather than assumed: the op NPC is Pelpopo, not Mariette; the quarry is Yagudos, not Quadavs; bullet 3 says \"They will provide\" where the (B) page says \"She\"; and bullet 9, about extra Fiend Plates carrying into Deep Cover II (W), is NOT struck through here whereas the corresponding bullet on Deep Cover I (B) is struck through in the wikitext. The two pages disagree about the same mechanic in their own nations' lines and I have not reconciled them.\n\nLike the Bastok version, this op does NOT end at the giver. Emhi Tchaoryo hands it out and never appears in the walkthrough again; the op finishes when Pelpopo accepts the third plate. No return-to-giver rung, because the page has no return-to-giver bullet.\n\nPelpopo's zone: the page gives only \"(G-9)\", in bullet 2 and in the header Description. BG Wiki's Pelpopo NPC page (fetched separately -- not this page's words) records Location=Windurst Waters (S), Position=G-9, agreeing with the header's Zone. So the rung carries a zone that was checked, not one inherited by default.\n\nThe photograph rung has no target: bullet 5 links [[:Category:Yagudo|Yagudos]] and [[:Category:Campaign Battle]], both categories rather than entities, and \"Yagudo\" is a family rather than a mob name. Evidence is Fiend Plate x3 there -- the allowed observable form and the op's only progress signal -- with the carry-over risk flagged, since this page's own bullet 9 says spare plates survive into the next op. The Fiendtrapper is not evidence: bullet 11 says you must drop it to start Deep Cover II (W), which proves it outlives this op, so holding one proves nothing about this run. It is recorded as `items` on the photograph rung instead.\n\nNot steps: bullet 1 (\"Solo mission\"), bullet 4 (the Fiendtrapper fails under Sneak or Invisible or at range -- folded into the photograph rung's note), bullet 6 (an inventory consequence), and bullets 9-11, which are all about Deep Cover II (W).\n\nLevel: Any. Campaign Rank and Time are both {{question}} in the source and render as \"(empty)\", so this page states no rank; the gate still exists in game and is flagged rather than asserted. The page also carries an empty \"Notes\" heading with nothing under it. {{Campaign Header}} has no Start field, no Fame field, no Repeatable field and no Expansion field, so start.raw is composed from the header's NPC Name / Zone / pos, fame is all-null, and repeatable and expansion stay null rather than being guessed from the fact that this is a Wings of the Goddess op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "They provide a Fiendtrapper and 5 Blank fiend plates. Zone from the header and from BG Wiki's Pelpopo NPC page; this page states only (G-9). No evidence: the Fiendtrapper persists past the op (bullet 11)."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "kind": "item",
+      "name": "Fiendtrapper",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fiend Plate",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Photograph three different Yagudos with the Fiendtrapper. The page links a category, not a mob, so no target and no mob row. Campaign Battle mobs are valid; the shot must be from the FRONT -- back and side shots are rejected -- and the Fiendtrapper will not fire under Sneak or Invisible or at range. Each shot makes one non-stacking Fiend Plate. No zone: the page names none."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Fiend Plate",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "Trade ONE Fiend Plate at a time; the op completes once three have been accepted. Last rung -- the page never sends you back to Emhi Tchaoryo."
+   }
+  ]
+ }
+]

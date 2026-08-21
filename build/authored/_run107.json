@@ -1,0 +1,1399 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 06 (Altepa)",
+   "page_id": 67180,
+   "revision_id": 625709,
+   "source_sha256": "33a3ec3551f2881f5cb937ffa2cfce7cd0fc6ca238d5eb038eea5c4339500e3c",
+   "cache_file": "0067180_dominion_op_06_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 92,
+   "dat_name": "Dominion Op #06 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "The standard three-rung Dominion Op shape, identical to Op 01 and Op 02 (Altepa) already in the corpus: accept, cull, report. 'Dominion Sergeant' is one of the generic names that would otherwise mark every matching entity in the world, so every step carries the resolved zone -- Abyssea - Altepa, which needs the Abyssea-scoped zone rule, since a bare 'Altepa' would land on Western/Eastern Altepa Desert. The DAT writes the name with a '#' the wiki title omits, hence match_rule 'exact' rather than 'exact_verbatim'. The kill quota (5) is recorded on the mob but is not observable -- no packet counts kills -- so step 2 has no evidence and the ladder relies on the session latch between accepting and reporting. The trailing 'For more information, see Dominion Ops.' is a cross-reference, not a bullet and not a step. Fame 'aalt' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #7; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Camelopardalis",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five of them, around (F-7); the count is not observable. The description's plural is 'camelopardalii' -- the walkthrough's 'Camelopardalis' is the singular and is what is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 11 (Grauberg)",
+   "page_id": 67213,
+   "revision_id": 625742,
+   "source_sha256": "a3be8b1dcb8131bc1841a01b4d8920ef43a5844637dc2312d5b1f07c8f086b1f",
+   "cache_file": "0067213_dominion_op_11_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 188,
+   "dat_name": "Dominion Op #11 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "The Grauberg member of the same three-rung family: accept, cull, report. Abyssea - Grauberg resolves, which is what makes the generic 'Dominion Sergeant' safe to index -- without a zone it would match every sergeant in Vana'diel. The walkthrough names the quarry only in the plural, 'Seelies', so the singular 'Seelie' is recorded; nothing on the page gives a more specific mob name, and inventing a family prefix would be exactly the guessing this pass exists to avoid. The kill quota is not observable, so step 2 carries no evidence. Fame 'agra' is an Abyssea zone code, not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #7; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Seelie",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five, around (F-6). The page only ever writes 'Seelies'/'seelies', so the singular is inferred and may be a family name rather than a live mob name; the count is not observable either way."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Give Peace a Chance",
+   "page_id": 38770,
+   "revision_id": 756542,
+   "source_sha256": "ef256cdfba4c54f7f470e866bbd076e7d8f5493ead82e7c61333f6b3fa38ea1c",
+   "cache_file": "0038770_give_peace_a_chance"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 9,
+   "dat_name": "Give Peace a Chance",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "A clean six-bullet page that reads as six steps, with Mishhar three times over. No evidence anywhere: the quest hands out nothing but cutscenes until the Imperial Silver Piece, which is the header's Reward and therefore proves the quest is over rather than that a step is done. Both waypoints are bare ??? objects -- they keep their rungs but can never carry a marker, and the Mamook one has no grid at all, only 'at the tunnel exit'. Step 2 is gated on game time (after 20:00) which the addon cannot see, so it is unmarkable in practice as well. Bullet 4 is kept as its own travel rung because getting into Mamook is a real instruction with a named entrance, (E-12) in Wajaom Woodlands; its sub-bullet is a Voidwatch shortcut, which is advice and stays in the note. The header's 'Next: Moment of Truth' is a successor, not a gate.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: A ??? carries no marker, so this rung keeps its place and loses its point.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Mishhar",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "H-8",
+   "raw": "Mishhar, Aht Urhgan Whitegate (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mishhar"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Night only, after 20:00 game time the addon cannot see the clock."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mishhar"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "cutscene only"
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mamook"
+    },
+    "zone": "Mamook",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in through the (E-12) entrance in Wajaom Woodlands -- that grid belongs to the zone you leave, so it is not recorded on this step. The sub-bullet's Voidwatch teleport to Mamook (Entrance) is the fast route."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Mamook",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "at the tunnel exit; the page gives no grid for it"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mishhar"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Candlelight Vigil",
+   "page_id": 38695,
+   "revision_id": 761129,
+   "source_sha256": "f184e05426e5b4840b7ffad7aa1fd7f405ba1bc2db8fdba1aef637e00a9f0966",
+   "cache_file": "0038695_a_candlelight_vigil"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 6,
+   "dat_name": "A Candlelight Vigil",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "prereq_from_walkthrough_unmodelled"
+  ],
+  "notes": "Four bullets, three steps. Bullet 3 is not an action of yours: it is the outcome of bullet 2 plus a hard precondition, so it merges into step 2 and supplies that step's evidence -- the Holy candle key item, which the header also names as the Item Req. The precondition is the real judgement call here. The page says Rouliette only hands the candle over 'once you complete the quest Candle-making', but the header's Previous field is EMPTY, and gates.prev is deliberately left empty to match it: prereq evaluation runs before a quest is started, and you can start this one by speaking to Ilumida whether or not Candle-making is done. Gating on it would hide a marker a player is entitled to. Flagged instead so a human can decide. The sub-bullet about farming a Lanolin Cube from Battering Rams in La Theine Plateau or Rams in Lufaise Meadows, Abyssea - La Theine or Caedarva Mire is material for Candle-making, a DIFFERENT quest, and is not a step here. 'Temple of the Goddess' is not a zone -- it is the cathedral inside Upper Jeuno, it resolves to no zone id, and the page's own category is Upper Jeuno Quests -- so Rouliette's (H-9) is recorded as an Upper Jeuno grid. Step 3 holds the candle rather than trading it, since key items are handed over through dialogue. VERIFY (stage D): demoted to medium. The ladder is right and every step checks out, but the quest object asserts prev=[] against a walkthrough that states a hard prerequisite quest outright -- bullet 3, 'once you complete the quest Candle-making'. That is the 'ladder is right but a gate is unmodelled' case, and a player who has not done Candle-making will sit on step 2's marker with no way to advance and nothing telling them why. Nothing is added here; the confidence is lowered so a human decides whether Candle-making belongs in gates.prev.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 4,
+    "raw": "Jeuno / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ilumida",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Ilumida, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ilumida"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rouliette"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Holy candle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in the Temple of the Goddess, which is a building inside Upper Jeuno and not a zone of its own. She only hands the candle over once the quest Candle-making is complete -- see the quest note."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ilumida"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Holy candle",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "you hold the key item rather than trading it; the Flower Necklace is the reward, not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Confessions of a Bellmaker",
+   "page_id": 74,
+   "revision_id": 467736,
+   "source_sha256": "415c3aad8c009b17cc1ce487867db2c7c8e113200d1583f84ebd0fa227620539",
+   "cache_file": "0000074_confessions_of_a_bellmaker"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 79,
+   "dat_name": "Confessions of a Bellmaker",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "walkthrough_incomplete",
+   "bullet_split"
+  ],
+  "notes": "A marker GAIN at the start. The header writes the giver as a bare '???', which can never match a live entity, but bullet 1 names the thing you actually check: the Stone Monument at (C-7) in Riverne - Site #A01. That name resolves, so start moves to it and the header string is kept in start.raw. Same object, better handle.\n\nWhat the page does NOT say is where the four Giant Scale go. The header's Item Reqs demands them and the walkthrough never mentions them once -- not a trade, not a hand-in, nowhere. Rather than guess a step for them (the second monument check at bullet 5 is the plausible place, but plausible is not read), no step carries them and the quest is demoted to medium. That is the honest loss: readiness will under-report, which is better than a step that reads ready on the wrong inventory.\n\nBullet 2 is the outcome of bullet 1, so they merge and the Ornamented scroll is step 1's evidence. Bullets 5 and 6 are two checks on the same monument with nothing observable between them and no way to tell them apart, so they are one rung with the order in the note -- the same call Divine Might's 'examine twice' makes. Bullet 7 is the opposite case: it is a kill AND a final check, so it splits into two. The quest ends on the monument; there is no NPC hand-in and none is invented. Note this Stone Monument is not one of An Explorer's Footsteps' seventeen -- only the zone separates them.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Stone Monument",
+   "zone": "Riverne - Site #A01",
+   "grid": "C-7",
+   "raw": "???, Riverne - Site #A01"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Monument"
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": "C-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ornamented scroll",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 2 is what this check gives you, not a second action: the cutscene and the Ornamented scroll both come from the one examine"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Reinberta"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mevreauche"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page gives no ordering against Reinberta, but writes them in sequence, so they are kept ordered rather than grouped"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Monument"
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": "C-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Arcane Phantasm",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "check it TWICE: the first gives a cutscene, the second spawns Arcane Phantasm. Neither is observable and both are the same object, so they are one rung."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": "C-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Arcane Phantasm",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "at the monument; bullet 7 is a kill and a check, and this is the kill half"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Stone Monument"
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": "C-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the check half of bullet 7 -- clicking the monument once more completes the quest. There is no NPC to hand in to. If the four Giant Scale from the header are traded anywhere, this is the likeliest place, but the page never says so and no items are recorded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 07 (Altepa)",
+   "page_id": 67181,
+   "revision_id": 625710,
+   "source_sha256": "c979ec3c09434bac88523f99647534b9a24e1f67c5190a6b461134a70481ac45",
+   "cache_file": "0067181_dominion_op_07_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 93,
+   "dat_name": "Dominion Op #07 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Same three-rung Dominion Op shape as Op 06: accept near Conflux #5, kill 5 Desert Puks around (G-10), report to any sergeant. 'Dominion Sergeant' is generic and is only safe to index with the resolved zone Abyssea - Altepa attached, which is why every step carries it. The kill quota is not observable, so step 2 has no evidence. The DAT name carries a '#' the wiki title drops. The trailing 'For more information, see Dominion Ops.' is a cross-reference, not a step. Fame 'aalt' is a zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #5; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Desert Puk",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five, around (G-10); the count is not observable"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 13 (Altepa)",
+   "page_id": 67187,
+   "revision_id": 625716,
+   "source_sha256": "d5eb8bb261943cf06cfd582ca99410f9fb7162438547eeed629e63e40ac64309",
+   "cache_file": "0067187_dominion_op_13_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 99,
+   "dat_name": "Dominion Op #13 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Same three-rung Dominion Op shape: accept near Conflux #8, kill 5 Fear Deargs around (E-9), report to any sergeant. Every step carries Abyssea - Altepa because 'Dominion Sergeant' is a generic name that must not be indexed without a resolved zone. The kill quota is not observable, so step 2 has no evidence and the ladder relies on the session latch between accepting and reporting. The DAT name carries a '#' the wiki title drops. Fame 'aalt' is a zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #8; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "E-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fear Dearg",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five, around (E-9); the count is not observable"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 10 (Altepa)",
+   "page_id": 67184,
+   "revision_id": 625713,
+   "source_sha256": "920f26544043c308782a3fdd952775ce14ccdcef8cc0b7d3030985ab349b35dc",
+   "cache_file": "0067184_dominion_op_10_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 96,
+   "dat_name": "Dominion Op #10 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "malformed_grid"
+  ],
+  "notes": "The three-rung Dominion Op shape again -- accept near Conflux #5, kill 5 Gastornis, report -- but this page's hunting ground is written '(I-89)', which is not a grid reference. It is almost certainly a mangled '(I-8/9)', the range form the rest of the corpus uses, but 'almost certainly' is not read, so the grid is recorded as null and the page's literal string is kept here for a human. The quest is demoted to medium for it. The loss is small: the fight rung's marker comes from the mob name, not the grid, and the two sergeant rungs are unaffected. 'Gastornis' is the same in singular and plural, so nothing is inferred there. Every step carries Abyssea - Altepa because 'Dominion Sergeant' is generic and must not be indexed without a resolved zone. The kill quota is not observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #5; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gastornis",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five of them; the count is not observable. The page writes the location as '(I-89)', which is not a valid grid ref -- probably (I-8/9) -- so no grid is recorded rather than a guessed one."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 05 (Altepa)",
+   "page_id": 67179,
+   "revision_id": 625708,
+   "source_sha256": "6e812a43bdf2ccf15a3472aa64eff528d67d6f3a1ca030bbd05c31fac90e468d",
+   "cache_file": "0067179_dominion_op_05_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 91,
+   "dat_name": "Dominion Op #05 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Same three-rung Dominion Op shape: accept near Conflux #7, kill 5 Manigordos around (G-8), report to any sergeant. Every step carries Abyssea - Altepa because 'Dominion Sergeant' is a generic name that must not be indexed without a resolved zone -- and the zone itself needs the Abyssea-scoped rule, since a bare 'Altepa' would resolve to the Altepa Deserts. The kill quota is not observable, so step 2 has no evidence. The DAT name carries a '#' the wiki title drops. Fame 'aalt' is a zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #7; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Manigordo",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five, around (G-8); the count is not observable"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 11 (Altepa)",
+   "page_id": 67185,
+   "revision_id": 625714,
+   "source_sha256": "8096c1563dd282eca6b77ec9a1377232ab133a4d5f0a6b4771954bf6c411c1e3",
+   "cache_file": "0067185_dominion_op_11_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 97,
+   "dat_name": "Dominion Op #11 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Same three-rung Dominion Op shape: accept near Conflux #7, kill 5 Nannakolas around (I-6), report to any sergeant. Note this is the ALTEPA #11 and quest/abyssea id 97 -- Dominion Op #11 (Grauberg) is a different page and a different id (188) in this same batch; only the area suffix separates the two DAT names. Every step carries Abyssea - Altepa because 'Dominion Sergeant' is generic and must not be indexed without a resolved zone. The kill quota is not observable, so step 2 has no evidence. Fame 'aalt' is a zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #7; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nannakola",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five, around (I-6); the count is not observable"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ }
+]

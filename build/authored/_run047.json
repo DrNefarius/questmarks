@@ -1,0 +1,1870 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Talekeeper's Gift",
+   "page_id": 15049,
+   "revision_id": 772416,
+   "source_sha256": "2aea0fc6471b171424a09ebfcf48a530a626d62d459bb14ad2b201ae55da65a1",
+   "cache_file": "0015049_the_talekeeper_s_gift"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 56,
+   "dat_name": "The Talekeeper's Gift",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "time_gated"
+  ],
+  "notes": "A clean seven-bullet page with exactly one thing to decide. Bullet 1 is a PRECONDITION -- wait for the next game day after The Talekeeper's Truth -- not an action, so it is a note on step 1 rather than a rung; game time is invisible to the addon. Bullet 4 says 'Obtain a Ginger Cookie and trade it to Deidogg', but the cookie is player-supplied (it is the header's Item Reqs and there is no bullet telling you where to get one), so an 'obtain' rung would be an unmarkable, zone-less step that says nothing the trade's own item list does not already say. One step, one trade. Bullet 7 IS two actions and is split: kill the three goblins, then zone out to Qufim Island -- the zoning is what fires the cutscene and pays the reward, and a reader who stopped at 'defeat the NMs' would leave the player standing in Behemoth's Dominion wondering. Nothing in this quest is observable: the Ginger Cookie is consumed by the trade and no key item is ever granted, so every step's evidence is null. That is the honest answer, not a gap. The three Notes bullets after the walkthrough are a flag-timing restatement, a job note and an [unverified] pop cooldown -- none is a step. 'Repeatable: af' is the artifact-armour category leaking into the field and means false.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [
+    {
+     "title": "The Talekeeper's Truth",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "WAR"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Deidogg",
+   "zone": "Bastok Mines",
+   "grid": "H-6",
+   "raw": "Deidogg, Bastok Mines (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deidogg"
+    },
+    "zone": "Bastok Mines",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is a precondition, not an action: you must wait until the next game day after finishing The Talekeeper's Truth before he will talk about this one, and game time is invisible to the addon"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Detzo"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the alleyway around the corner from Deidogg; speak to him again if he mentions a Mythril Sallet"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Deidogg"
+    },
+    "zone": "Bastok Mines",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Ginger Cookie",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the cookie is player-supplied -- the page never says where to get one. Nothing appears in your quest log until this trade goes through, which the Notes section repeats."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Behemoth's Dominion"
+    },
+    "zone": "Behemoth's Dominion",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "without the Survival Guide warp, in via Qufim Island: follow the tunnel that starts at (G-5) until you zone"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Behemoth's Dominion",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Doglix Muttsnout",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Moxnix Nightgoggle",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Picklix Longindex",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "all three pop at once: Doglix Muttsnout (58 WHM), Moxnix Nightgoggle (58 RNG), Picklix Longindex (60 THF), and all three throw bombs freely. The Notes section says -- unverified -- they can only be popped once per game day; otherwise the ??? answers 'It is too blurry to read.'"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Behemoth's Dominion",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Doglix Muttsnout",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Moxnix Nightgoggle",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Picklix Longindex",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the Notes section says the fight itself may be done on any job, as long as you already hold the quest"
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Qufim Island"
+    },
+    "zone": "Qufim Island",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "bullet 7 is two actions. Zoning OUT of Behemoth's Dominion, back into Qufim Island, is what runs the cutscene and pays the reward -- there is no NPC to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crimson Carpet II (Misareaux)",
+   "page_id": 59013,
+   "revision_id": 729881,
+   "source_sha256": "d2b7726f8230ac91a713332a21f233f57d682ad32cbeaf893fe60d72595f833c",
+   "cache_file": "0059013_crimson_carpet_ii_misareaux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 140,
+   "dat_name": "Crimson Carpet II (Misareaux)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeatable_no_stepping",
+   "time_gated",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Three rungs and both of them observable, which for an Abyssea errand is unusually good -- and then wasted, because the quest is Repeatable and repeatable quests do not step (the same two key items recur every run, so evidence from the last one would advance a fresh one). Authored anyway, flagged repeatable_no_stepping. Bullets 2, 3 and 4 are ONE visit to ONE entity and merge: you walk to a Fore Trap, click it to prime, step back to the distance it names, and click it again to infuse. Splitting them would put two unmarkable rungs on the same object for no gain, and only the second click produces anything. There are two traps, (K-8) and (G-4), and you use exactly one -- an OR over places, not a set to be visited, so it is NOT a group; the step takes the page's own 'nearby one' at (K-8) and the note keeps the other. The bottle is the best kind of evidence there is: the page says outright that you obtain the [KI] Weakening trap fluid bottle 'but you will have no indication of this', so the packet sees a step the player cannot. The unnumbered line above bullet 1 is a cooldown -- one Ward Warden / Desert Rain / Crimson Carpet per Vana'dielian day across ALL Abyssea areas -- and gates nothing observable. Fame 'amis' is an Abyssea zone code, not one of the nine regions, so region is null and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Misareaux)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "I-7",
+   "raw": "Resistance Sapper (Misareaux), Abyssea - Misareaux (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weakening trap fluid",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at base camp beside Veridical Conflux #00. The wiki's '(Misareaux)' suffix is a disambiguator and folds away to the live entity name."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fore Trap"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Weakening trap fluid",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weakening trap fluid bottle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "one visit, two clicks: 'Prime the trap for infusion' tells you the distance it wants, you step to it, then click again and choose 'Cease trap fluid infusion'. 1 yalm is just inside the fringe, 2 yalms is beside it without touching, 5 yalms is as far as it accepts, and how close you get sets the payout. The trap used here is the page's nearby one -- east from Veridical Conflux #02 to (K-8); the other is at (G-4) and either will do."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Weakening trap fluid bottle",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cruor and Resistance Credits scale with how accurate your distance was; the seal is a chance, not a guarantee"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Boxwatcher's Behest",
+   "page_id": 58971,
+   "revision_id": 639720,
+   "source_sha256": "59eaee9867e2106fc8359598be81033b2b8c19e3049e7afcca497cb8c2d52def",
+   "cache_file": "0058971_the_boxwatcher_s_behest"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 31,
+   "dat_name": "The Boxwatcher's Behest",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeatable_no_stepping",
+   "or_branch_modelled"
+  ],
+  "notes": "A courier run: three rungs, all three markable, all three observable. Bullet 2 is not a step -- it is the choice Deraquien offers you during bullet 1's conversation, and you leave with exactly ONE of the three packs, never all three. That makes it the textbook alt-list: evidence.all is empty and evidence.alt carries Pocket, Standard and Hefty, so holding any one of them reads step 1 done; an AND-list would have read false forever. The same shape repeats on step 2's requirement, where items takes the Pocket pack and items_alt the other two. The remaining sub-bullets under 2 and 3 are the rules of the errand rather than actions: heavier pack = slower walk = bigger payout, movement bonuses cancel the handicap, fighting is harmless, and logging out, disconnecting, zoning or -- the trap worth knowing -- touching a Veridical Conflux turns your pack into a [KI] Pack of molten slag and ends the run. The trailing unnumbered line ('Zoning is not required to repeat this quest') is a repeat note, not a step. Repeatable, so the ladder is authored and then not used, the same as every other Abyssea errand. Fame 'avun' is a zone code, not one of the nine regions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Deraquien (A)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "F-4",
+   "raw": "Deraquien (A) (F-4), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [],
+     "alt": [
+      {
+       "kind": "ki",
+       "name": "Pocket supply pack",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Standard supply pack",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Hefty supply pack",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "base camp, Veridical Conflux #01. Bullet 2 is the choice inside this conversation, not a second errand: you carry ONE pack -- Pocket (-24% movement), Standard (-48%) or Hefty (-72%) -- and the heavier it is the more Cruor it pays, so all three are alternatives to each other."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Elmemague (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Pocket supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Standard supply pack",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Hefty supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter of receipt",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "near Veridical Conflux #00, and you must WALK: taking a Conflux turns the pack into a [KI] Pack of molten slag and the run is lost, as does logging out, disconnecting or zoning. Fighting on the way is harmless. He hands back the Letter of receipt and gives you Flee for the return leg."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-4",
+    "items": [
+     {
+      "name": "Letter of receipt",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Conflux is safe again once the pack is gone, so warp back"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Quaternary Trial in Tandem",
+   "page_id": 83779,
+   "revision_id": 736515,
+   "source_sha256": "26de0f8b762f786e9f971a1d7a6961ed7f12606949fc27e1b2174db57c15e7a1",
+   "cache_file": "0083779_a_quaternary_trial_in_tandem"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 163,
+   "dat_name": "A Quaternary Trial in Tandem",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "evidence_unresolvable_ki",
+   "fellow_level_gate_unmodelled"
+  ],
+  "notes": "A Magian trial wrapped in a quest: six rungs, four of them markable, and two real observables. The one loss is step 1's [KI] Magian Mooglehood missive -- res/key_items.lua holds FIVE key items with that exact name (1768-1772), and the resolver rejects a non-unique name rather than guess an id, so it is deliberately not used as evidence and step 1 falls back on the accept latch. Checked before writing rather than after. Bullet 5 is not a step: it is the chat-log counter telling you how many weapon skills remain, i.e. feedback on bullet 4. Bullet 4 itself is the only unmarkable rung and it is genuinely unmodellable -- your Adventuring Fellow, not you, must land 20 weapon skills on XP-worth Vermin while you WEAR the necklace, and nothing in a packet counts them; the named Wamourae, Wamoura Princes, Spinners and Gnats are suggestions for a level-85-capped Fellow, not required targets, so no mobs are recorded. The Tandem Necklace +3 comes straight back from the Magian Moogle (Blue) with trial 4449 attached, so it is step 2's evidence once and never again -- listing it twice would jump the mark to step 5 the moment you first received it. The header's 'Job level 75+' is the level gate for ANY job, so jobs stays empty; 'Adventuring Fellow level 81+' has no slot in the schema and no observable predicate. The wiki's (Blue) is a colour disambiguation and folds to the same entity key as the plain Magian Moogle, so steps 2, 3 and 5 all mark the same moogle.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: grants the [KI] Magian Mooglehood missive, which cannot be recorded as evidence: five key items share that name in res/key_items.lua and the resolver refuses non-unique names rather than pick one",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Yet Another Trial in Tandem",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 75,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tandem Necklace +3",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle (Blue)"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Tandem Necklace +3",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Magian trial log",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "starts Magian Trial 4449. The necklace comes back with the trial attached, so it stays step 2's evidence and is not counted again here; the trial log is the header's Item Reqs, needed to hold any trial at all."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Tandem Necklace +3",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "your Adventuring Fellow -- not you -- must land 20 weapon skills on Vermin that give XP, while you wear the necklace; misses do not count and nothing observable tracks the tally, so bullet 5's chat-log counter is the only progress you get. Set the Fellow to Fierce Attacker and keep it off clubs, since Moonlight and Starlight do not count. The page's Wamourae, Wamoura Princes (Mount Zhayolm), Spinners (Mamook) and Gnats (Meriphataud Mountains (S)) are suggestions for a Fellow capped at 85, not required targets."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle (Blue)"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Tandem Necklace +3",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Dark Meed",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Dark Meed",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the reward is a Fellow level cap of 90, not an item"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Navigating the Unfriendly Seas",
+   "page_id": 15074,
+   "revision_id": 731048,
+   "source_sha256": "dc8f97fd579903b49125b12f0e3c65deb64677ddb203427fedfe4aff6a07e33e",
+   "cache_file": "0015074_navigating_the_unfriendly_seas"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 25,
+   "dat_name": "Navigating the Unfriendly Seas",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "start_is_object",
+   "bullet_split",
+   "or_branch_unmodelled"
+  ],
+  "notes": "The quest both starts and ends on a ???, so it can never carry a start marker: '??? - Arrapago Reef (H-10)' resolves as an object with no entity key, and start.npc keeps it anyway to hold the rung. Two markable steps survive in the middle -- Leleroon and the Leypoint, which is a real targetable entity -- so the quest is still emitted. Bullet 1's sub-bullets are promoted to their own step: the Lamian Fang Key is the header's Item Reqs, it is what lets you reach (H-10) at all, and holding it is the only observable in the first half of the quest, so a rung that says 'get the key from the ??? in Caedarva Mire (I-7)' is worth more than a sentence in a note. It carries items_partial because the other route -- farming the key off Lamiae and Draugers -- is a drop table, not an item list, and because the page writes only plural family names that would never match a live mob, no mob rows are recorded. Bullet 3's fishing spans FOUR zones (Al Zahbi, Aht Urhgan Whitegate, Nashmau, the Nashmau/Al Zahbi ferry) as alternatives, not as a route; a step has one zone, so this one has none and the note keeps all four. Bullets 5 and 6 are one visit to the Leypoint -- trade, wait a minute, examine again -- and merge. Bullet 2 ('you no longer have to be on Corsair') is a note on the job gate, not an action. The Hydrogauge is evidence exactly once, at the fishing step where you first obtain it; Leleroon hands it straight back, so recording it again would jump the mark forward the moment you caught it. ADVERSARY (stage D): step 1 is demoted to optional and the quest to medium. The page gives no instruction to fetch the Lamian Fang Key -- bullet 1's only instruction is 'Examine the ??? in Arrapago Reef'; the key appears solely in sub-bullets that state a requirement ('A Lamian Fang Key is required to reach this point') and then two permissive ways to satisfy it ('Lamian Fang Keys drop from...', 'You can also receive a Lamian Fang Key from a ??? spot in Caedarva Mire'). That is a precondition, and the guide puts preconditions in `optional`, never in a ladder position. Nothing is lost by the demotion: the rung's target is a ??? and can never carry a marker, and step 2 already lists the key in `items`, so the readiness signal survives. It is also the same shape this batch's The Talekeeper's Gift correctly refused to make a rung (the Ginger Cookie, also a header Item Req with no stated source). The remaining ladder -- examine the ??? at (H-10), fish the Hydrogauge, Leleroon, the Leypoint, back to the ??? -- is the page's own order and is left untouched, as is the Hydrogauge evidence at the fishing step. The rung is kept rather than deleted so the key's observable is not thrown away, but it is no longer asserted as ladder position 1, which would have put a rung before the cutscene that accepts the quest.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: a drop table an item list cannot express, hence items_partial, and the page names only the plural families so no mob rows are recorded.\n  step 2: a ??? can never carry a marker, so the rung is kept and the marker is not\n  step 3: four alternatives, so the step records no zone rather than the wrong one.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "AU / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Equipped for All Occasions",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "COR"
+   ],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "???",
+   "zone": "Arrapago Reef",
+   "grid": "H-10",
+   "raw": "??? - Arrapago Reef (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Lamian Fang Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "Map 1, southern part of the block; this ??? gives one key per game day. The other route is farming the drop off Lamiae and Draugers in the reef."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Lamian Fang Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Map 1, and this is the quest's giver as well as its first action."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Hydrogauge",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Fished up, and only in Al Zahbi, Aht Urhgan Whitegate, Nashmau or on the Ferry - Nashmau/Al Zahbi Any rod, any bait; the bite is the ordinary 'You feel something pulling at your line.' A large-fish rod and Insect Balls in Whitegate keeps the junk catches down. Bullet 2 belongs here too: from this point on the job gate is off and any job may finish the quest."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Leleroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Hydrogauge",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he gives it back -- the next step trades the same Hydrogauge -- so it stays step 3's evidence and is not recorded twice"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Leypoint"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Hydrogauge",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "one visit, two clicks: trade the Hydrogauge, wait a minute, then examine the Leypoint again. Quickest in with an Olduum Ring, or the Survival Guide nearby."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "back to the same ??? on Map 1. There is no hand-in NPC anywhere in this quest, so the last rung is unmarkable by nature rather than by failure; the page does not say whether getting back in costs a second Lamian Fang Key."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "To Paste a Peiste",
+   "page_id": 56771,
+   "revision_id": 746990,
+   "source_sha256": "de8587754e2f3c082d0a6588c4a6f97af344ccda35372d9274b1d7f5199f08db",
+   "cache_file": "0056771_to_paste_a_peiste"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 164,
+   "dat_name": "To Paste a Peiste",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_absent_from_walkthrough",
+   "unnamed_target",
+   "reward_in_table",
+   "no_evidence"
+  ],
+  "notes": "Four bullets, of which three are steps: bullet 3 is a strategy warning ('Beware!') and belongs in a note, not on the ladder. The header's giver, Norrah, never appears in the walkthrough at all -- it opens at the Cavernous Maw -- but she resolves, she stands in the same zone as the maw, and nothing contradicts her, so start keeps her and the flag records that the page never confirms it. The Traverser stone is a real requirement and cannot be recorded as one: res/key_items.lua has SIX key items named 'traverser stone' (1271-1276), the resolver rejects non-unique names rather than guess, and items_partial on step 1 is how the ladder says its item list is short by one. Nothing here is evidence. Every reward in the table -- Lunar abyssite through Ivory abyssite of destiny, which one depending on how far into the Abyssea storyline you are -- is a REWARD, and a reward proves the quest is over rather than that a step is done. Step 3 is the exit: leaving Abyssea - Konschtat is what runs the closing cutscene, and since the page never says where the maw puts you down, the target stays unnamed instead of being guessed at Konschtat Highlands.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: you must be holding a Traverser stone, which cannot go in the item list: six key items in res/key_items.lua carry that exact name and the resolver will not guess between them, so items_partial marks the list as incomplete",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Vision of Abyssia / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Norrah",
+   "zone": "Konschtat Highlands",
+   "grid": null,
+   "raw": "Norrah, Konschtat Highlands"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "Konschtat Highlands",
+    "grid": "I-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kukulkan",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "bullet 3 is a warning, not a step: terror, petrify, poison and curse strong enough to kill level 99 masters. Offensive-magic Trusts keep casting through the terror, and the Cruor Prospector's HP Boost helps if you are solo."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "leaving the zone is what finishes the quest; the page never names what you exit into, so the destination is left unnamed rather than assumed"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bugi Soden",
+   "page_id": 12117,
+   "revision_id": 732248,
+   "source_sha256": "a80b900b69cfe88d3feb7a3f1a7bc5150ac5822456474fc60c409a2ca63b0200",
+   "cache_file": "0012117_bugi_soden"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 147,
+   "dat_name": "Bugi Soden",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "latent_unmodelled",
+   "transclusion",
+   "skill_gate_unmodelled"
+  ],
+  "notes": "The weapon-skill quest shape, identical to Blood and Glory and read the same way. Bullet 1 is a PRECONDITION -- you cannot hold two weapon-skill quests at once -- not an action, and is dropped from the ladder. Bullet 2 hands over two things, and only one of them is usable as evidence: the Kodachi of Trials is traded back at step 3, so an AND-list over both would read false for the rest of the quest, exactly as the pilot found; the key item stays. The page spells that key item 'Weapons Training Guide' and the game's id 343 is 'weapon training guide' -- the resolver's spelling is used, since a name that does not resolve costs the entry. The 'Breaking the Latent' sub-bullet is a transclusion from Category:WSNM that is not in the cache, so the step exists with no detail; it is a real rung between two Ryoma visits (the page really does put it there) but nothing observable reports a broken latent, hence its own confidence of low and the quest's of medium. Step 3 deliberately lists NO requirement even though you obviously trade the kodachi back: you have held it since step 1, so listing it would promise a hand-in the moment Ryoma gave it to you -- items_partial says the list is short on purpose. Bullet 4 is one step, not two: the long route through Onzozo ends at the ??? it describes, so the journey is the note and the ??? is the rung. Bullet 4 calls the spawn only 'the NM'; bullet 5 names it, which is why both bullets are cited. 'Katana skill 250+' has no slot in the schema and no observable predicate, so only the character level 71 is recorded and jobs stays empty. Fame 'OT' is not one of the nine regions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "OT / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Ryoma",
+   "zone": "Norg",
+   "grid": "H-8",
+   "raw": "Ryoma - Norg (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ryoma"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon Training Guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he also hands over the Kodachi of Trials, which is consumed at step 3 -- only the key item keeps reading true, so only the key item is evidence. The page writes 'Weapons Training Guide'; the game's key item 343 is 'weapon training guide'. Bullet 1 is the precondition that you may hold only one weapon-skill quest at a time."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "low",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "break the Kodachi of Trials' latent -- the header says wield it until it is drained of power. The 'Breaking the Latent' block is transcluded from Category:WSNM, which is not in the cache, so the step is real but has no detail, and nothing in inventory changes when it breaks."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ryoma"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "trade the Kodachi of Trials back. It is left out of the item list on purpose: you have carried it since step 1, so listing it would show a ready hand-in before the latent is broken."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": "I-5/6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Megapod Megalops",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "route: in to (H-9), take the eastern tunnel, northeast through the large room to the tunnel at (J-8), curve around the eastern wall to the tunnel at (H-7), north at the intersection and on to the (I-5)/(I-6) border. Silent Oil and Prism Powder; the Survival Guide teleport if you have it. Bullet 4 calls it only 'the NM' -- bullet 5 is where it gets a name."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": "I-5/6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Megapod Megalops",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a crab, weak to Ice and Lightning. The Notes section is difficulty advice -- soloable by a careful 71 NIN, trivial in 119 gear -- not a step."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": "I-5/6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, once the crab is dead"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ryoma"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Annals of Truth",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Yomi Okuri",
+   "page_id": 15069,
+   "revision_id": 755758,
+   "source_sha256": "56fee380cbee345ccb104dec51c62127baa39742558304963c2c587f67052127",
+   "cache_file": "0015069_yomi_okuri"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 141,
+   "dat_name": "Yomi Okuri",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "start_disagrees_with_header",
+   "time_gated"
+  ],
+  "notes": "The densest ladder in this batch: twelve rungs, four key items in sequence, and every one of the four obtained at a different rung, which is the best shape step tracking can be given. The judgement call is the giver. The header says Gilgamesh, Norg (L-8); the walkthrough opens 'Speak to Jaucribaix in Norg (K-8)' and then returns to Jaucribaix four more times, while Gilgamesh is never mentioned again. Unlike the Summoner AF pages, where the header's giver was a cutscene and could be ruled out, BOTH of these are real standing NPCs that resolve, so this is a genuine contradiction rather than a decodable one -- the walkthrough wins because it is the operative instruction and it is where the player is actually told to go, the header's string is kept in raw, and the quest is demoted to medium to say plainly that I could not settle it. They are two grid squares apart in the same zone, so the cost of being wrong is small either way. Bullets 4-5 and 8-9 are each three actions on one ???: pop, kill, re-examine, and the re-examine is where the key item lands, so each becomes three rungs sharing the ??? -- consecutive rungs on the same object are one marker anyway. Bullets 6 and 7 are two conversations with Jaucribaix separated by a zone-out and back; the page really does that, so both are kept and only the second carries evidence. The Valkurm ??? is time-gated to 18:00-4:00 game time, which the addon cannot see. Item Reqs writes the third trade item as 'G. Sheep Meat Giant Sheep Meat' -- the short and long names run together; both resolve to item 4372 and the long one is recorded, per the guide. 'Repeatable: af' is the artifact-armour category and means false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Outlands / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Sacred Katana",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "SAM"
+   ],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Jaucribaix",
+   "zone": "Norg",
+   "grid": "K-8",
+   "raw": "Gilgamesh, Norg (L-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header names Gilgamesh at (L-8) as the giver and the walkthrough never mentions him again; the walkthrough's own first instruction is used instead, and the two are two grid squares apart"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Washu"
+    },
+    "zone": "Norg",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Washu"
+    },
+    "zone": "Norg",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Bastore Sardine",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Frost Turnip",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Giant Sheep Meat",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Hecteyes Eye",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Washu's tasty wurst",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all four together. Item Reqs runs the third one's short and long names together as 'G. Sheep Meat Giant Sheep Meat'; both are the same item and the long name is recorded."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ubume",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Survival Guide lands you at (G-11) beside the Buburimu Peninsula zone line; walking in from Buburimu also works. Ubume is a BRD-type greater bird around level 60-65 that leans on Horde Lullaby."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ubume",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yomotsu feather",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, once Ubume is dead"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Yomotsu feather",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yomotsu Hirasaka",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "you must leave Norg and come back before this conversation happens -- the page really does put two Jaucribaix visits in a row"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "B-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Doman",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Onryo",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "only between 18:00 and 4:00 game time, which the addon cannot see. The Gustav Tunnel Survival Guide lands you just outside (B-7). Doman is a Fomor and Onryo a Ghost, both around level 52."
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "B-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Doman",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Onryo",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "both of them"
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "B-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Faded Yomotsu Hirasaka",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "wait for both corpses to disappear first, or the ??? will not answer"
+   },
+   {
+    "n": 12,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Faded Yomotsu Hirasaka",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   }
+  ]
+ }
+]

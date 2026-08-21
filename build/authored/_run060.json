@@ -1,0 +1,1672 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Fluttery Fiend",
+   "page_id": 59028,
+   "revision_id": 731240,
+   "source_sha256": "5126b4dba974ab72dc54bbaee86a3e3a483e2cd9fbf227bcbb2071b8760bea9d",
+   "cache_file": "0059028_a_fluttery_fiend"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 174,
+   "dat_name": "A Fluttery Fiend",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "unresolvable_key_item"
+  ],
+  "notes": "Three real bullets and a reward table. The header's giver is 'Reinhard, Buburimu Peninsula', but bullet 1 says you EXAMINE the Cavernous Maw at (F-7) and that Reinhard is who the cutscene is with -- he is not something you walk up to and click. So start moves to the Cavernous Maw, which is a genuine markable object standing exactly where the header wanted to send you; that is a marker move, not a removal. The [KI] Traverser stone is a real requirement but res/key_items.lua carries six ids under that one name (1271-1276), so the resolver rejects it rather than guess, and it is recorded in the note instead of items -- an unresolvable entry in items would make the step permanently un-ready. The abyssite in Reward is a nine-row table keyed on how many storyline quests you have already finished: a reward, never evidence. Bullet 2's sub-bullet punts the spawn conditions to the Abyssea - Attohwa page, so nothing about spawning Itzpapalotl is recorded here.\n\nAdversary pass: demoted to medium, ladder left untouched. Two medium triggers were already admitted in the notes above and neither was priced in. The [KI] Traverser stone is a genuine gate on step 1 -- without one the Maw does nothing -- and it could not be modelled at all, so the step will read ready when it is not. And bullet 2 hands the whole spawn procedure for Itzpapalotl off to the Abyssea - Attohwa page, so the fight rung is incomplete by the page's own admission. The Beast of Bastore in this same batch and A Delectable Demon are the identical page shape and are both medium; high here was internally inconsistent. Every step, target, zone and bullet mapping was re-checked against the page and is correct as drafted.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: you must be holding a [KI] Traverser stone; that name maps to six key item ids and cannot be resolved, so it is not recorded in items.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aatt / 1"
+   },
+   "prev": [
+    {
+     "title": "Dawn of Death",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Cavernous Maw",
+   "zone": "Buburimu Peninsula",
+   "grid": "F-7",
+   "raw": "Reinhard, Buburimu Peninsula"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The cutscene is with Reinhard, who is not a standing entity here."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Itzpapalotl",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "a wamoura NM. The sub-bullet sends you to the Abyssea - Attohwa page for the spawn flowchart, so no spawn chain is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Buburimu Peninsula"
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "leave Abyssea - Attohwa; the cutscene as you come out is what finishes the quest. There is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Beast of Bastore",
+   "page_id": 59026,
+   "revision_id": 731233,
+   "source_sha256": "f3b4849ff6e6aac830488dcb625ae73c728c551141c926b07bc9653244c32fbe",
+   "cache_file": "0059026_the_beast_of_bastore"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 172,
+   "dat_name": "The Beast of Bastore",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "unresolvable_key_item"
+  ],
+  "notes": "Structurally identical to A Fluttery Fiend, but this page contradicts itself about who gives it: the header says 'Moniquaurie, Jugner Forest' and bullet 1 says the cutscene is with Kuchi Eyjhann. Neither is something you click -- the entity is the Cavernous Maw at (J-8) -- so the disagreement costs the ladder nothing, but it is why this one is demoted to medium and both names are kept in the notes rather than one being picked. The [KI] Traverser stone is required and unresolvable for the same reason as in A Fluttery Fiend (six ids share the name), so it lives in the note, not in items. The abyssite table is a reward. Bullet 2's sub-bullet defers Sedna's spawn conditions to the Abyssea - Vunkerl page.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: you must be holding a [KI] Traverser stone, which cannot be resolved to a single key item id and so is not recorded in items.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [
+    {
+     "title": "Dawn of Death",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Cavernous Maw",
+   "zone": "Jugner Forest",
+   "grid": "J-8",
+   "raw": "Moniquaurie, Jugner Forest"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "Jugner Forest",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The header calls the giver Moniquaurie; this bullet says the cutscene is with Kuchi Eyjhann. Neither is clicked."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sedna",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the ruszor NM. Spawn conditions are on the Abyssea - Vunkerl page, not here."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Jugner Forest"
+    },
+    "zone": "Jugner Forest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "leave Abyssea - Vunkerl; the cutscene on the way out finishes the quest. There is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Imperial Espionage II",
+   "page_id": 67141,
+   "revision_id": 671975,
+   "source_sha256": "31b7016717a9b609e91d60420bc833f6f68bea5355d4f95d23fe5dbe42d1427a",
+   "cache_file": "0067141_imperial_espionage_ii"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 71,
+   "dat_name": "Imperial Espionage II",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "unnamed_target",
+   "count_unobservable"
+  ],
+  "notes": "Bullet 2 is what Tyamah asks for, not a second action, so it merges into the talk. Bullet 3 is a real step -- you have to collect the soulgauger and buy plates -- but the page calls the source only 'the chests next to him', so the target is none and the note says so. Only the Soulgauger SGR-1 is used as its evidence: the twelve Blank Gauger Plates are ammunition (res id 18680, stack 12) and are spent taking pictures, so an AND-list over them would read false halfway through the quest for no gain. Bullet 4's four monsters are an unordered set -- the page says 'for each of the following' and gives four unrelated corners of the zone -- so they are four grouped steps that all draw at once rather than a ladder that would mark one murex and hide the rest. The four-plate evidence sits on the LAST group member only: duplicate evidence across steps is a hard gate, and putting it last is what lands the mark back on Tyamah rather than inside the group. That evidence is imperfect and flagged: a Gauger Plate is one item id (2480) with no per-monster distinction, so four plates of the wrong four monsters would read as done. It is still the only observable this quest has. The sub-sub-bullets are directions and stay as notes.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The '(A)' is a wiki disambiguator; the entity is named plainly and the normaliser folds it.\n  step 3: 'drop' is the nearest role the schema has.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "aule / 3"
+   },
+   "prev": [
+    {
+     "title": "Imperial Espionage",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Tyamah (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": "F-7",
+   "raw": "Tyamah (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tyamah (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "At Conflux #7. The unnumbered lead line says you must zone after finishing Imperial Espionage before this can start."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Soulgauger SGR-1",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "from the chests beside Tyamah, which the page does not name. Twelve Blank Gauger Plates are bought here too, but they are spent taking pictures, so only the soulgauger is used as evidence."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Blank Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Iceberg Murex",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "plates",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "At the base of the mountain, walking from the base camp / Conflux #1 towards Conflux #2. The plate comes from photographing it with the soulgauger, not from a drop Take three pictures once it is down to about 20% HP, standing in front of it."
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Blank Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Floe Amoeban",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "plates",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "same ground as the Iceberg Murex"
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Blank Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Crag Limule",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "plates",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "up on the mountain, in the hole you land in for the quest Slip Slidin' Away"
+   },
+   {
+    "n": 6,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Blank Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gauger Plate",
+       "count": 4
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Range Clionid",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "plates",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in the tunnels near Conflux #3, reached by falling a third of the way along the southern side of the western slope. This is the group's LAST member, which is why it carries the four-plate evidence for all four -- see the quest note."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Tyamah (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Gauger Plate",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "all four plates in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Potential Within",
+   "page_id": 12119,
+   "revision_id": 712443,
+   "source_sha256": "f1cb6082ed22ac2cab4567dd89bcc679cd05f690caf8cce07a4932fa0b1e1985",
+   "cache_file": "0012119_the_potential_within"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 146,
+   "dat_name": "The Potential Within",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "latent_unmodelled",
+   "skill_gate_unmodelled",
+   "transcluded_section_empty"
+  ],
+  "notes": "A weapon-skill quest, so the shape is: get the trial weapon, break its latent somewhere off-page, bring it back, then a spawn-fight-reexamine loop in a dungeon. Bullet 1 is a precondition about not holding two WS quests at once, not an action. Bullet 4 is Unity Warp advice and bullet 5 is a route, so both fold into the note on the ??? step. The one judgement call worth arguing over is the latent: it is a real piece of work the page insists on ('You will need to break the latent ... before completing the rest of the quest'), and it genuinely sits between two visits to Jaucribaix, so it keeps a rung even though it is unmarkable and unobservable -- the sub-bullet that should explain it is a transclusion and rendered empty. The page writes the key item 'Weapons Training Guide'; the game's key item is 'Weapon training guide' (id 343, singular), and the resolving form is what is recorded. The Tachi of Trials is granted at the same moment but is traded away three steps later, so only the guide is evidence. 'Quest Reqs: Great Katana skill 250+' has no slot in the schema and no observable predicate; the Level 71 half of it is a real gate and is recorded.\n\nAdversary pass: demoted to medium, ladder left untouched. The notes and review flags already state two things the confidence table calls medium outright: the 'Breaking the Latent' sub-section is a transclusion that rendered empty, so the walkthrough is literally incomplete exactly where step 2 lives, and 'Great Katana skill 250+' is a gate with no slot in the schema and no observable predicate. Every other Weapon Skill quest of this shape in the corpus is medium for these same two reasons. Re-checked and left alone: evidence sits on the step that grants it in all three cases, no item is evidence twice, the Tachi of Trials is correctly items-only, and the reward (Tachi: Kasha) is nowhere near the evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "OT / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Jaucribaix",
+   "zone": "Norg",
+   "grid": "K-8",
+   "raw": "Jaucribaix - Norg (K-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is a precondition -- quit any other Weapon Skill quest first -- not an action. He also hands over the Tachi of Trials, which is traded back at step 3, so only the key item is used as evidence."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Tachi of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "break the latent on the Tachi of Trials. The page's 'Breaking the Latent' sub-section is a transclusion and rendered empty, and nothing about the latent is observable, so this rung has no zone, no target and no evidence -- it exists only because the page really does put work between the two visits to Jaucribaix."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Tachi of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he sends you to Kuftal Tunnel"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kettenkaefer",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "bring Silent Oil and Prism Powder. From the entrance take the first junction north, keep north through the large tunnel to (I-5), then southeast. Unity Warp (125) lands relatively close. A ??? can never carry a marker, so this step keeps only its zone and grid."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kettenkaefer",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "a beetle, weak to Ice and Light"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same ??? again, after it dies -- bullet 6 is two actions"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Unfinished Waltz",
+   "page_id": 27303,
+   "revision_id": 757468,
+   "source_sha256": "f2f7236e7ba9aadbebcf5e8cfe912f7cd90b617f1f4e074b721c1773b3e69b39",
+   "cache_file": "0027303_the_unfinished_waltz"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 96,
+   "dat_name": "The Unfinished Waltz",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate"
+  ],
+  "notes": "Dancer AF, so 'Level: 40+ Dancer' is both gates: level 40 and jobs ['DNC']. 'Repeatable: af' is the artifact-armour category leaking into the field and means false. Bullets 3 and 4 are two examines of the SAME ??? in the same spot with nothing observable between them -- the first is a cutscene, the second spawns the NM -- so they merge into one rung with the order in the note; two unmarkable rungs on one ??? would be noise. The examine after the kill is kept separate because it is the only observable moment in the quest. The key item's real name carries quotation marks -- res/key_items.lua 962 is '\"The Essence of Dance\"' -- and the bare form does not resolve, so the quoted form is recorded; the page writes it without them. Bullet 6 is a genuine action (you 'open' the key item from the menu) rather than an outcome, so it keeps a rung even though nothing observable changes. The 'Item Reqs: [KI] The Essence of Dance' is something the quest gives you, not something you bring.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: The key item's resolving name includes the quotation marks.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "Lakeside Minuet",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 40,
+   "jobs": [
+    "DNC"
+   ],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Laila",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Laila, Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Laila"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on Dancer. The cutscene where she asks about seeing you dance is the quest opening."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rhea Myuliah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "standing next to Laila"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Grauberg [S]",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Migratory Hippogryph",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Witchfire Glen -- the middle ??? of three closely-packed trees just NW of the Veridical Conflux. Examine it twice: the first time is a cutscene, the second spawns the NM. Both on Dancer, and if you zone in between you must examine again. Fastest route is the lightsworm at any maw outside Jeuno into Walk of Echoes, then out by the conflux. The page writes the zone 'Grauberg (S)'; the resource name is 'Grauberg [S]'."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Grauberg [S]",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Migratory Hippogryph",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "stay on Dancer for the whole fight"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Grauberg [S]",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"The Essence of Dance\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "The same ??? once more, after the kill."
+   },
+   {
+    "n": 6,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "\"The Essence of Dance\"",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "'open' the key item from the Permanent Key Items menu, just after any Gate Crystals. Nothing observable changes, and it happens wherever you are, so there is no zone."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Laila"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Methods Create Madness",
+   "page_id": 486,
+   "revision_id": 754676,
+   "source_sha256": "3c0d56ee29f1056d49598440387163da8265ca7a299ab7951664eeb0645444aa",
+   "cache_file": "0000486_methods_create_madness"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 98,
+   "dat_name": "Methods Create Madness",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "latent_unmodelled",
+   "skill_gate_unmodelled",
+   "transcluded_section_empty"
+  ],
+  "notes": "The polearm twin of The Potential Within, and read the same way. Bullet 1 is a precondition, not an action. Bullet 3 is the 'Breaking the Latent' heading itself -- here it is a top-level bullet rather than a sub-bullet, and its body is a transclusion that rendered empty -- so it keeps a rung: the page really does put work between the two visits to Balasiel, even though nothing about a latent is observable. The page writes 'Weapons Training Guide'; the game's key item is 'Weapon training guide' (id 343), which is what is recorded. The Spear of Trials is granted with it but traded away, so only the guide is evidence. The Ornamented Door at (J-10) is a named, targetable entity and gets its own rung -- that is a real marker where 'head to Sea Serpent Grotto' would have been none. items_partial is set on that step because the page says a PARTY MEMBER's Sahagin Key will do, which is not something the addon can see in your inventory. 'Polearm skill 240+' has no slot and no observable predicate; the Level 71 half of the same field is a real gate.\n\nAdversary pass: demoted to medium for the same two reasons as The Potential Within -- bullet 3 is a 'Breaking the Latent' heading whose body is an empty transclusion, leaving the page incomplete at step 2, and 'Polearm skill 240+' is unmodellable. The ladder was re-checked and left unchanged: the Ornamented Door is a real named entity you act on rather than a bystander, items_partial on that rung is the right answer for the party-member key, bullet 6 genuinely splits into the door and the ???, and bullet 7 genuinely splits into the fight and the re-examine that grants the Annals of Truth.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: Inside the Grotto head south into the first large room, take the southwestern tunnel and keep south to the door. items_partial is set because the page says a party member's Sahagin Key will do instead of your own, which cannot be expressed.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "S / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Balasiel",
+   "zone": "Southern San d'Oria",
+   "grid": "F-7",
+   "raw": "Balasiel - Southern San d'Oria (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is a precondition -- quit any other Weapon Skill quest first -- not an action. He also hands over the Spear of Trials, which is traded back at step 3, so only the key item is used as evidence."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Spear of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "break the latent on the Spear of Trials. Bullet 3 is the section heading and its body is a transclusion that rendered empty; nothing about the latent is observable, so this rung has no zone, no target and no evidence."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Spear of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he sends you to Sea Serpent Grotto"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Ornamented Door"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Sahagin Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Bring Silent Oil."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Water Leaper",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "south across the bridge beyond the door. A ??? can never carry a marker, so this step keeps only its zone and grid."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Water Leaper",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "a pugil, weak to Ice and Lightning"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the same ??? again, after it dies -- bullet 7 is two actions"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Refuel and Replenish (Vunkerl)",
+   "page_id": 59017,
+   "revision_id": 627887,
+   "source_sha256": "ef53ac05e455acd909df5d39955c20013b243df9d944e4b46a4862202fbeda5b",
+   "cache_file": "0059017_refuel_and_replenish_vunkerl"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 147,
+   "dat_name": "Refuel and Replenish (Vunkerl)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name"
+  ],
+  "notes": "A short repeatable that steps cleanly, because both of its key items resolve: the Vat of martello fuel (1559) proves the talk is done and the Empty fuel vat (1561) proves the martello is done. Six bullets collapse to three rungs -- bullet 2 is what bullet 1 gives you, and bullets 4 and 5 are the menu you work through once you are already standing at a martello, so they belong to the same rung as bullet 3's 'find a Martello'. The unnumbered lead line is a cooldown, not a step: one Refuel and Replenish or A Mightier Martello per Vana'dielian day across all Abyssea areas, which no packet reports. The 'you cannot zone' warning is likewise a warning. 'Machine Outfitter' and 'Martello' are both names shared across every Abyssea area, so each step carries its zone explicitly; neither is in the ambiguous-name list, and with the zone resolved they mark correctly. The martello marker deliberately covers all of them -- the page says any one in the zone will do.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Vunkerl)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": null,
+   "raw": "Machine Outfitter (Vunkerl), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vat of martello fuel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "near the zone entrance; choose 'Assist with replenishment'. Zoning at any point after this loses the vat and you start over. Only one of these per Vana'dielian day, which is not observable."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [
+     {
+      "name": "Vat of martello fuel",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Empty fuel vat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "any martello in the zone -- they cluster around the Confluxes, and one already at full health still counts. Choose 'Prepare to replenish martello', confirm, then stand in the direction the MENU gives; the log gives a different one and is wrong. The vat quietly becomes an Empty fuel vat, which the page only mentions in a sub-bullet."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [
+     {
+      "name": "Empty fuel vat",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the cruor paid depends on which martello you chose -- a reward, not a step"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Refuel and Replenish (Grauberg)",
+   "page_id": 67160,
+   "revision_id": 625406,
+   "source_sha256": "9caa1141c48153bc895f2f6a0b15fe0d9700049ead58d1c971cfbc57c82499e8",
+   "cache_file": "0067160_refuel_and_replenish_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 150,
+   "dat_name": "Refuel and Replenish (Grauberg)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name"
+  ],
+  "notes": "Word for word the Vunkerl page with the zone swapped, and read identically: three rungs out of six bullets, both key items resolving (Vat of martello fuel 1559, Empty fuel vat 1561), the daily cooldown and the do-not-zone warning kept as notes rather than steps. The cooldown is shared with the Vunkerl copy and with A Mightier Martello -- one per Vana'dielian day across ALL Abyssea areas -- so a player who has just done the Vunkerl version cannot do this one, and nothing in the packets says so. 'Machine Outfitter' and 'Martello' are names repeated in every Abyssea area, so both steps carry Abyssea - Grauberg explicitly.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Grauberg)",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Machine Outfitter (Grauberg), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Grauberg)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vat of martello fuel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "near the zone entrance; choose 'Assist with replenishment'. Zoning at any point after this loses the vat and you start over. Only one of these per Vana'dielian day, which is not observable."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Vat of martello fuel",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Empty fuel vat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "any martello in the zone -- they cluster around the Confluxes, and one already at full health still counts. Choose 'Prepare to replenish martello', confirm, then stand in the direction the MENU gives; the log gives a different one and is wrong. The vat quietly becomes an Empty fuel vat."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Grauberg)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Empty fuel vat",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the cruor paid depends on which martello you chose -- a reward, not a step"
+   }
+  ]
+ }
+]

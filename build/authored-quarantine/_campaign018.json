@@ -1,0 +1,2117 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Materiel Storm IV (W)",
+   "page_id": 145971,
+   "revision_id": 764509,
+   "source_sha256": "bb30c60f8a32aa25c40909a0b25fafdf81279622c3a0d8fa3530c96fa3475baa",
+   "cache_file": "0145971_materiel_storm_iv_w_a1894f74e4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 434,
+   "dat_name": "Materiel Storm IV (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "looked_up_npc_location"
+  ],
+  "notes": "A resource-procurement op, not a fight: the whole thing is a shopping list handed out by the Quartermaster and handed back to him. Bullet [1] ('Solo mission') is advice, not a step. The ladder is therefore two rungs on ONE NPC, which is right -- consecutive steps on the same NPC are one marker and readiness looks ahead across them. The walkthrough never mentions signing up with, or reporting back to, Emhi Tchaoryo even though he is the op's giver; no step is invented for it and the header's giver is recorded in start. That gap is why walkthrough_incomplete is flagged. Bullet [3]'s list of candidate supplies is DROPPED by the renderer -- the wikitext has 21 ':*' sub-entries under it (Bretzel x33, Meat Mithkabob x6, Tomato Soup x1, Iron Bread x12, Pepper Biscuit x9, Nebimonite Bake x1, Ginger Cookie x33, Black Bread x12, Melon Juice x1, Grape Juice x1, Beaugreen Saute x1, Eel Kabob x1, Salmon Roe x1, Windurst Salad x1, Acorn Cookie x33, Tomato Juice x1, Pamama Tart x1, Icecap Rolanberry x1, Apple Pie x4, and two repeats). It is a list of POSSIBLE requests -- 'different players' get different sets -- so it is not an AND-list and none of it is recorded as items; items_partial carries the fact that the real requirement cannot be expressed. No evidence anywhere: the supplies are ordinary stackable food that a player may hold for any reason, and they are consumed on submission. The bullet gives the Quartermaster by landmark and no grid; BG Wiki's Quartermaster page (fetched from the REST API) puts the Windurst Waters (S) Quartermaster at (F-9), which is recorded in the step note rather than in grid, because the page being read states no grid for this step. Campaign Rank is empty on this page, so no rank gate. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in front of the Tavern -- facing the West Sarutabaruta exit arch he is behind you, across the bridge from the tents. The bullet names no zone; the header's Zone is Windurst Waters (S) and BG Wiki's Quartermaster page agrees, putting him there at (F-9). Grid left null because this page states none. He hands out the list."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "submit the supplies he asked for. The set varies per player, so no items are recorded and items_partial is set; bullet [3]'s 21 candidate entries are in the wikitext but stripped from the rendered page. The header's Orders ('submit items to him') is what makes the Quartermaster, not Emhi Tchaoryo, the hand-in."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Materiel Storm IV (S)",
+   "page_id": 145975,
+   "revision_id": 763997,
+   "source_sha256": "562cc804a9927a4eaf1f63d71f9ea176e38d8a94804d5e8aaba816468289e56c",
+   "cache_file": "0145975_materiel_storm_iv_s_9cc8bbaf08"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 94,
+   "dat_name": "Materiel Storm IV (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "grid_conflict",
+   "looked_up_npc_location"
+  ],
+  "notes": "Same op as the (W) copy and read the same way: bullet [1] is advice (its sub-bullet -- each party member is asked for different materials -- is commentary on that), bullet [2] is the pickup and bullet [3] is the hand-in, both on the Quartermaster. The header's Orders ('Obtain list of wanted items from Quartermaster and submit items to her') is what settles that the hand-in is the Quartermaster and not Rasdinice; the walkthrough never mentions signing up with or reporting back to Rasdinice at all, hence walkthrough_incomplete. GRID CONFLICT: bullet [2] says the Quartermaster is at (I-9), which is also exactly Rasdinice's own position from the header, while BG Wiki's Quartermaster page (REST API) lists the Southern San d'Oria (S) Quartermaster at (H-9). The bullet giving the instruction wins, so (I-9) is recorded and (H-9) is kept in the note; that step is demoted to medium for it. The bullet names no zone -- the header's Zone is Southern San d'Oria (S) and the Quartermaster page agrees. The 'After the walkthrough: Notes' section (its bullets restart at [1]) is a list of item requests players have OBSERVED, not a set you must bring: 4 Apple Pie, 6 Salmon Roe, 1 Eel Kabob, 3 Roast Trout, 1 Icecap Rolanberry, 33 Ginger Cookie, 33 Bretzel. Recording any of it as items would invent a requirement, so items_partial carries it instead. No key items and no evidence. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice - Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "bullet [2] gives (I-9), which is Rasdinice's position too; BG Wiki's Quartermaster page puts this Quartermaster at (H-9). The instructing bullet wins and the conflict is recorded rather than reconciled. Zone from the header."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "bring her the items she asked for. Which items varies per player, so none are recorded; the seven entries under 'After the walkthrough: Notes' are observed requests, not a required set."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "By Light of Fire I (W)",
+   "page_id": 146019,
+   "revision_id": 631448,
+   "source_sha256": "6e1e61653fd0f15dd83ccf3aa04512c12b8c2b02275d36a4a9254da1a0f26b82",
+   "cache_file": "0146019_by_light_of_fire_i_w_94f5cb802c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 354,
+   "dat_name": "By Light of Fire I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "grid_conflict"
+  ],
+  "notes": "A fixed-location BCNM op, so unlike the supply/escort ops this ladder can carry real places all the way through. Bullet [1] is TWO steps -- speak to Emhi Tchaoryo, then click the Beastman Ensign in Fort Karugo-Narugo (S) -- so both rungs cite it. Bullet [3] (the 30 minute cap) is not a step and rides in the fight step's note. Bullet [5] looks like pure commentary and is half a step: most of it is eligibility (only the party leader needs the Ops orders, anyone from any nation may assist, everyone gets the XP), but it also says the Allied Notes come from SPEAKING TO Emhi Tchaoryo, which is the report-back. That is the last rung. The 15 Yagudos are deliberately NOT recorded as mobs: 'Yagudo' is a race, not a mob name, and mobs are matched live against the entity list by folded name, so it would either match nothing or match the wrong thing. The count that matters (9 of 15) is in the note. GRID CONFLICT: the header's Description routes you 'via Fort Karugo-Narugo (I-8)', the walkthrough puts the Beastman Ensign on the borderline of H-8/I-8. The walkthrough's form is recorded because it is the one giving the instruction. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "sign up for the op; zone and grid are the header's"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Beastman Ensign"
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": "H-8/I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the entry object into Ghoyu's Reverie. The header's Description says (I-8); the walkthrough's H-8/I-8 borderline is what is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ghoyu's Reverie",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "defeat at least 9 of the 15 Yagudos. The page names no individual monster -- only the race -- so mobs is empty rather than carrying a name that cannot match a live entity. Bullet [3]: capped at 30 minutes. Unit requirement from the header is 1-6 members."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Twilight Aureole"
+    },
+    "zone": "Ghoyu's Reverie",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "leaving the BC through the aureole is what ends it"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "bullet [5] is mostly eligibility commentary, but it is also where the page says the Allied Notes are paid on speaking to him -- that is the report-back"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cut and Cauterize I (S)",
+   "page_id": 146081,
+   "revision_id": 632420,
+   "source_sha256": "c31f11fc3d9958ee3fd1bbbad3ad3d47e7449429ca4a40e9fe18d07697f051f6",
+   "cache_file": "0146081_cut_and_cauterize_i_s_dc21e4a355"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 71,
+   "dat_name": "Cut and Cauterize I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "era_suffix_missing",
+   "unordered_group",
+   "unnamed_target",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "A HEALING escort op, not a fight -- nothing here is killed, and a verb scan would have made steps out of the healer AI. Of ten bullets only six are things the player does. Bullet [5] (the four conversation options) and bullet [6] (how the healer AI behaves, including that they wander off and that forcing them to rest gains nothing) are commentary. Bullet [8] is the completion THRESHOLD and an appraisal tier, not an action, so it rides in the objective step's note. Bullet [4]'s sub-bullet is the actual instruction -- talk to the two Pupil Palliators to make them follow -- so the two of them are one unordered group and both draw at once; a strict ladder would mark Palliator I and nothing else. ERA: the page writes the destination as 'East Ronfaure', bare, in both the Description and bullet [2], and it is not even a wiki link there. Campaign runs in the past era, so the live zone is almost certainly East Ronfaure (S) (zone 81) and not the present-day East Ronfaure (zone 101) that the written name resolves to. The page's own word is recorded because inventing the (S) would be inventing a name, and era_suffix_missing is flagged so a human can settle it. Everbloom Hollow needs no suffix. The injured NPCs are the objective and the page names almost none of them, so that step has no target and the counts live in its note. The header's Campaign Rank is a Bronze Ribbon of Service tier -- a CAMPAIGN rank, which has no schema field and is not a character level, so it is recorded here and flagged instead of being forced into gates.level. Bullet [8] also notes the healers have the MP for 4 of 5 without resting but not all 5. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice - Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "East Ronfaure"
+    },
+    "zone": "East Ronfaure",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes the zone without the (S) suffix, so it is recorded that way; a campaign op happens in the past era, so this may point at the wrong side of the time portal. The grid is the header Description's 'East Ronfaure (G-5)' -- bullet [2] gives none. Hug the left wall on the way out."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Everbloom Hollow"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the party leader selects to enter and you are transported in; this page names no entry object, so there is nothing to click here"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pupil Palliator I"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "healers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page writes the pair as '(Pupil Palliator I and II)'; talking makes them follow you. Either order, so both draw at once."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pupil Palliator II"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "healers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the second of the two healers; either order"
+   },
+   {
+    "n": 6,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "heal 5 injured NPCs scattered through the maze by telling the healers to heal. They spawn at 40-60% HP and count as healed at 80% HP with status ailments removed. Bullet [7] names one of them: Royal Knight, the furthest, always carries a status ailment. Bullet [8]: 4 of 5 completes the objective, but all 5 are needed for the enthusiastic appraisal. The page names only some of the injured and never as a targetable set, so no target is recorded."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dawn Aureola"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "leaving any other way loses the credit"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cut and Cauterize II (S)",
+   "page_id": 146082,
+   "revision_id": 632699,
+   "source_sha256": "5c570fae7c19a930627241825b33b826ab2953b15b4d8a7ea584936b9e37b723",
+   "cache_file": "0146082_cut_and_cauterize_ii_s_988cedf7d8"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 72,
+   "dat_name": "Cut and Cauterize II (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "era_suffix_missing",
+   "unordered_group",
+   "unnamed_target",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "A HEALING escort op, not a fight -- nothing here is killed, and a verb scan would have made steps out of the healer AI. Of ten bullets only six are things the player does. Bullet [5] (the four conversation options) and bullet [6] (how the healer AI behaves, including that they wander off and that forcing them to rest gains nothing) are commentary. Bullet [8] is the completion THRESHOLD and an appraisal tier, not an action, so it rides in the objective step's note. Bullet [4]'s sub-bullet is the actual instruction -- talk to the two Pupil Palliators to make them follow -- so the two of them are one unordered group and both draw at once; a strict ladder would mark Palliator I and nothing else. ERA: the page writes the destination as 'East Ronfaure', bare, in both the Description and bullet [2], and it is not even a wiki link there. Campaign runs in the past era, so the live zone is almost certainly East Ronfaure (S) (zone 81) and not the present-day East Ronfaure (zone 101) that the written name resolves to. The page's own word is recorded because inventing the (S) would be inventing a name, and era_suffix_missing is flagged so a human can settle it. Everbloom Hollow needs no suffix. The injured NPCs are the objective and the page names almost none of them, so that step has no target and the counts live in its note. The header's Campaign Rank is left as '???' by the page, so there is nothing to record; the flag marks that a rank requirement exists for this tier and the page does not state it. Otherwise word-for-word the tier I page apart from the counts, so the ladder is the same shape for the same reasons rather than by copying. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice - Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "East Ronfaure"
+    },
+    "zone": "East Ronfaure",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes the zone without the (S) suffix, so it is recorded that way; a campaign op happens in the past era, so this may point at the wrong side of the time portal. The grid is the header Description's 'East Ronfaure (G-5)' -- bullet [2] gives none. Hug the left wall on the way out."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Everbloom Hollow"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the party leader selects to enter and you are transported in; this page names no entry object, so there is nothing to click here"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pupil Palliator I"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "healers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page writes the pair as '(Pupil Palliator I and II)'; talking makes them follow you. Either order, so both draw at once."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pupil Palliator II"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "healers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the second of the two healers; either order"
+   },
+   {
+    "n": 6,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "heal 8 injured NPCs scattered through the maze by telling the healers to heal. They spawn at 40-60% HP and count as healed at 90% HP with status ailments removed. Bullet [7] names the four enfeebled ones: Aragoneu Knight, Royal Knight, Savage Hound Condottiere and the further Royal Guard (H-8). Bullet [8]: 6 of 8 completes the objective, but all 8 are needed for the enthusiastic appraisal. The page names only some of the injured and never as a targetable set, so no target is recorded."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dawn Aureola"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "leaving any other way loses the credit"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cut and Cauterize III (S)",
+   "page_id": 146089,
+   "revision_id": 632700,
+   "source_sha256": "5d678675acb8b04047c1d94313326747eea25ff31b37a400ca535e5e8235d4ad",
+   "cache_file": "0146089_cut_and_cauterize_iii_s_e5d97fa83f"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 73,
+   "dat_name": "Cut and Cauterize III (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "era_suffix_missing",
+   "unordered_group",
+   "unnamed_target",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "A HEALING escort op, not a fight -- nothing here is killed, and a verb scan would have made steps out of the healer AI. Of ten bullets only six are things the player does. Bullet [5] (the four conversation options) and bullet [6] (how the healer AI behaves, including that they wander off and that forcing them to rest gains nothing) are commentary. Bullet [8] is the completion THRESHOLD and an appraisal tier, not an action, so it rides in the objective step's note. Bullet [4]'s sub-bullet is the actual instruction -- talk to the two Pupil Palliators to make them follow -- so the two of them are one unordered group and both draw at once; a strict ladder would mark Palliator I and nothing else. ERA: the page writes the destination as 'East Ronfaure', bare, in both the Description and bullet [2], and it is not even a wiki link there. Campaign runs in the past era, so the live zone is almost certainly East Ronfaure (S) (zone 81) and not the present-day East Ronfaure (zone 101) that the written name resolves to. The page's own word is recorded because inventing the (S) would be inventing a name, and era_suffix_missing is flagged so a human can settle it. Everbloom Hollow needs no suffix. The injured NPCs are the objective and the page names almost none of them, so that step has no target and the counts live in its note. The header's Campaign Rank is left as '???' by the page, so there is nothing to record; the flag marks that a rank requirement exists for this tier and the page does not state it. This page's bullet [5] carries a long sub-tree about healer morale decay and how often to offer moral support; it is tactics, not steps. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice - Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "East Ronfaure"
+    },
+    "zone": "East Ronfaure",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes the zone without the (S) suffix, so it is recorded that way; a campaign op happens in the past era, so this may point at the wrong side of the time portal. The grid is the header Description's 'East Ronfaure (G-5)' -- bullet [2] gives none. Hug the left wall on the way out."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Everbloom Hollow"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the party leader selects to enter and you are transported in; this page names no entry object, so there is nothing to click here"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pupil Palliator I"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "healers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page writes the pair as '(Pupil Palliator I and II)'; talking makes them follow you. Either order, so both draw at once."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pupil Palliator II"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "healers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the second of the two healers; either order"
+   },
+   {
+    "n": 6,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "heal 10 injured NPCs scattered through the maze by telling the healers to heal. They spawn at 40-60% HP and count as healed at 95% HP with status ailments removed. Bullet [7] names the six enfeebled ones with positions: Norvallen Knight (South H-8), Aragoneu Knight (South H-8), Scarlet Boar Esquire (South I-8), Royal Guard (North H-8), Royal Knight (North I-8), Savage Hound Condottiere (North I-8). Bullet [8]: 8 of 10 completes the objective, but all 10 are needed for the enthusiastic appraisal. The page names only some of the injured and never as a targetable set, so no target is recorded."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dawn Aureola"
+    },
+    "zone": "Everbloom Hollow",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "leaving any other way loses the credit"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bailey Borer (S)",
+   "page_id": 146312,
+   "revision_id": 766918,
+   "source_sha256": "c11740e0cb401f51c91b47c31a2b76df3c861469d293be9a5fda606ccb64e74e",
+   "cache_file": "0146312_bailey_borer_s_f9c1fcc717"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 56,
+   "dat_name": "Bailey Borer (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "Four bullets, three steps, and the middle one is an OR the schema cannot hold. Bullets [2] and [3] merge because the destination is 'Castle Zvahl Baileys (S) OR Castle Zvahl Keep (S)' and a step has exactly one zone: picking either would put the marker somewhere half the players are not, so zone stays null and both names are kept in the step note. The Zvahl Fortalice is recorded as a mob instead, which is the marker that actually helps -- mobs are matched against the live entity list, so it draws in whichever of the two the player chose. 'Kill ONE of the Zvahl Fortalice that spawn there' -- count 1, however many are up. Bullet [3]'s sub-bullet (the Castle Zvahl Keep (S) Home Point #1 warp) is routing advice. The 'After the walkthrough: Notes' section is version-update history -- when the op was added and when its rewards were raised -- and 'Related Links' is a category link; neither holds a step. The header's Campaign Rank is a Wings of Honor tier: a campaign rank, which has no schema field and is emphatically not gates.level, so it is noted and flagged. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice - Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Zvahl Fortalice",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in Castle Zvahl Baileys (S) or Castle Zvahl Keep (S) -- either works, so neither is recorded as the step's zone. Kill one Fortalice. The sub-bullet recommends the Castle Zvahl Keep (S) Home Point #1 warp."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bailey Borer (B)",
+   "page_id": 146313,
+   "revision_id": 635796,
+   "source_sha256": "4795b5916a214f833e5f4f6418e3d547bbd33b19ee461628d86279481bfdb2f6",
+   "cache_file": "0146313_bailey_borer_b_87d16f72c0"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 226,
+   "dat_name": "Bailey Borer (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "Four bullets, three steps, and the middle one is an OR the schema cannot hold. Bullets [2] and [3] merge because the destination is 'Castle Zvahl Baileys (S) OR Castle Zvahl Keep (S)' and a step has exactly one zone: picking either would put the marker somewhere half the players are not, so zone stays null and both names are kept in the step note. The Zvahl Fortalice is recorded as a mob instead, which is the marker that actually helps -- mobs are matched against the live entity list, so it draws in whichever of the two the player chose. 'Kill ONE of the Zvahl Fortalice that spawn there' -- count 1, however many are up. Bullet [3]'s sub-bullet (the Castle Zvahl Keep (S) Home Point #1 warp) is routing advice. The 'After the walkthrough: Notes' section is version-update history -- when the op was added and when its rewards were raised -- and 'Related Links' is a category link; neither holds a step. The header's Campaign Rank is a Wings of Honor tier: a campaign rank, which has no schema field and is emphatically not gates.level, so it is noted and flagged. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Zvahl Fortalice",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in Castle Zvahl Baileys (S) or Castle Zvahl Keep (S) -- either works, so neither is recorded as the step's zone. Kill one Fortalice. The sub-bullet recommends the Castle Zvahl Keep (S) Home Point #1 warp."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bailey Borer (W)",
+   "page_id": 146314,
+   "revision_id": 635798,
+   "source_sha256": "9a806f2cd8d7a50ab9081075711272e70d4047433a818392c8db93ade9a46b7e",
+   "cache_file": "0146314_bailey_borer_w_28963071b1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 396,
+   "dat_name": "Bailey Borer (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "Four bullets, three steps, and the middle one is an OR the schema cannot hold. Bullets [2] and [3] merge because the destination is 'Castle Zvahl Baileys (S) OR Castle Zvahl Keep (S)' and a step has exactly one zone: picking either would put the marker somewhere half the players are not, so zone stays null and both names are kept in the step note. The Zvahl Fortalice is recorded as a mob instead, which is the marker that actually helps -- mobs are matched against the live entity list, so it draws in whichever of the two the player chose. 'Kill ONE of the Zvahl Fortalice that spawn there' -- count 1, however many are up. Bullet [3]'s sub-bullet (the Castle Zvahl Keep (S) Home Point #1 warp) is routing advice. The 'After the walkthrough: Notes' section is version-update history -- when the op was added and when its rewards were raised -- and 'Related Links' is a category link; neither holds a step. The header's Campaign Rank is a Wings of Honor tier: a campaign rank, which has no schema field and is emphatically not gates.level, so it is noted and flagged. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Zvahl Fortalice",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in Castle Zvahl Baileys (S) or Castle Zvahl Keep (S) -- either works, so neither is recorded as the step's zone. Kill one Fortalice. The sub-bullet recommends the Castle Zvahl Keep (S) Home Point #1 warp."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kinslayer: Baileys (B)",
+   "page_id": 146321,
+   "revision_id": 759094,
+   "source_sha256": "d3cdb945b14126de5fd251b85c7d617bc74eb561541a4f3a03ce6c0df256c9b3",
+   "cache_file": "0146321_kinslayer_baileys_b_8fd3bcf371"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 177,
+   "dat_name": "Kinslayer: Baileys (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "The twin of Kinslayer: Keep (B) and NOT the same op: this one is pinned to Castle Zvahl Baileys (S) and the 'After the walkthrough: Notes' section says so twice -- killing a Shadowguard Demon in Castle Zvahl Keep (S) will NOT count, and the two to use are in the Baileys near the entrance to the Keep. So unlike Bailey Borer, whose destination is an OR, this step has a real zone. Those Notes bullets restart their own numbering at [1]; they are cited as the step note rather than as walkthrough bullets. Bullet [3]'s sub-bullet (Survival Guide to the Baileys, then through the Dark Spark gate) is routing. Bullet [5] -- Kinslayer: Keep (B) becoming active on completion -- is an OUTCOME, not a step; it is the same fact the header lists as a reward ('Access to Kinslayer: Keep (B) Campaign Op'). 'Kill one of the Shadowguard Demon': count 1. Campaign Rank is a Moonlight Medals tier -- a campaign rank with no schema field, noted and flagged rather than pushed into gates.level. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shadowguard Demon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "kill one Shadowguard Demon, and it must be one of the ones in the Baileys -- the Notes section states that a kill in Castle Zvahl Keep (S) does not count, and points at the two standing near the entrance to the Keep. Route: Survival Guide to Castle Zvahl Baileys (S), then through the Dark Spark gate."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet [5] is the outcome -- Kinslayer: Keep (B) opens in Offensive operations once this is done -- not a step"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kinslayer: Keep (B)",
+   "page_id": 146322,
+   "revision_id": 764403,
+   "source_sha256": "04abfcc831a794f7fdff7b3458205bc30db6210dd50de0fe303373cea3135309",
+   "cache_file": "0146322_kinslayer_keep_b_82eee0fec3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 178,
+   "dat_name": "Kinslayer: Keep (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "prev_from_sibling_page"
+  ],
+  "notes": "The Keep half of the pair, and the difference from Kinslayer: Baileys (B) is the one thing the title does not tell you: the zone is Castle Zvahl Keep (S), and the page says there are FOUR Shadowguard Demon there of which you kill one ('Kill one of the four Shadowguard Demon'). Count stays 1 -- four is how many are up, not how many die. This page has no Notes section at all, so nothing outside the four walkthrough bullets was read. gates.prev is the one thing NOT taken from this page: Kinslayer: Baileys (B), which is in the same batch, states outright that 'Kinslayer: Keep (B) becomes active in Offensive operations once you complete this Campaign Op' and lists access to it as a reward. That is a real prerequisite and it is recorded here with prev_from_sibling_page flagged, because this page never mentions it. Campaign Rank is a Dawnlight Medal tier -- a campaign rank, noted and flagged, never gates.level. The header's Rewards list has an empty third bullet, which is a wiki typo and not a missing reward. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [
+    {
+     "title": "Kinslayer: Baileys (B)",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shadowguard Demon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "one of the four Shadowguard Demon in the Keep; the page gives no grid for them"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Prying Eyes II (S)",
+   "page_id": 147519,
+   "revision_id": 648248,
+   "source_sha256": "48dc94242f8b30749030d1076138c8ae1ebc8d7e6620f2d133649dacc6b56a59",
+   "cache_file": "0147519_prying_eyes_ii_s_6faab545ed"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 49,
+   "dat_name": "Prying Eyes II (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "or_branch_unmodelled"
+  ],
+  "notes": "This page is a stub and the honest answer is a two-rung ladder that stops in mid-air. The walkthrough has exactly two bullets: talk to Rasdinice, and travel to Castle Zvahl Baileys (S) or Castle Zvahl Keep (S). What you do once you are there, and whether you report back, is nowhere on the page -- the only statement of the objective is the header's Orders field ('Infiltrate the castle with the Knights of the Iron Ram and obtain intelligence on weapon stores and any unidentified military devices'), which names no entity, no place and no action a marker could sit on. No hand-in step is invented for it, even though every other Intel gathering op in this batch ends by returning to the giver; guessing that rung is exactly the pattern-matching this rebuild exists to avoid. The destination is an OR of two zones and a step has one zone, so the travel step's zone is null and both names stay in its note. It keeps its rung with no marker, which is the intended outcome. The 'After the walkthrough: Notes' bullet ('There seems to be no time limit') is an observation, not a step. Campaign Rank and Time are both empty, so no rank gate. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice - Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Castle Zvahl Baileys (S) or Castle Zvahl Keep (S) -- either, so neither is recorded as the zone. The page says the survival guide is the fastest route to the Baileys. The walkthrough ends here: it never says what to do inside or whether to report back to Rasdinice."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Magna Cache I (W)",
+   "page_id": 150175,
+   "revision_id": 673439,
+   "source_sha256": "1abbc6cfbd48b1b93ab631269a31a902995bb246c6a3bd46ebda51a0ca25af3a",
+   "cache_file": "0150175_magna_cache_i_w_d8584339eb"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 496,
+   "dat_name": "Magna Cache I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled",
+   "time_gated",
+   "looked_up_npc_location"
+  ],
+  "notes": "A timed chocobo delivery, and the shape that matters is that the DESTINATION is a choice of four. Bullet [1] is two steps: talk to the op's giver (the bullet calls him only 'the Campaign Ops NPC'; bullet [3] names him Emhi Tchaoryo), then talk to Yasmina, who asks which stronghold you will ride to. Bullet [1]'s sub-bullets are that menu of four with their measured times -- a list of candidates, not steps, and not an order to visit all four. So the ride step carries no zone: recording one of the four would put the marker in a place three players out of four cannot use. Bullet [2] is the delivery. There is nothing to click -- arriving at the Campaign Arbiter dismounts you and starts a cutscene by itself -- so it is a travel step whose target is the Arbiter. Yasmina's zone is not stated in the bullet, only her (G-5); BG Wiki's Yasmina page (REST API) gives Windurst Waters (S) (G-5), Chocobo NPC, which matches the op's own zone, so it is recorded and the lookup is named here. The op is timed and the target time depends on which stronghold you pick, which no packet reports -- time_gated. Times to beat, from bullet [1]: West Sarutabaruta (S) between 1:09 and 1:41, Fort Karugo-Narugo (S) 5:02 fast enough and 5:05 too slow, Meriphataud Mountains (S) 8:14 fast enough and 8:31 not, Sauromugue Champaign (S) 10:27 fast enough and 13:41 not. The 'After the walkthrough: Notes' bullet -- Northern Front strongholds do not contribute -- is a constraint on the choice, carried in the ride step's note. The header's Campaign Rank is a Brass Ribbon of Service tier -- a campaign rank, which has no schema field and is not a character level, so it is noted and flagged rather than written into gates.level. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bullet [1] calls him only 'the Campaign Ops NPC'; bullet [3] gives the name. Zone and grid from the header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yasmina"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she gives the details and asks which stronghold you want to ride to. The bullet gives (G-5) but no zone; BG Wiki's Yasmina page puts her in Windurst Waters (S) at G-5 as the Chocobo NPC."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "ride to whichever stronghold you chose -- West Sarutabaruta (S), Fort Karugo-Narugo (S), Meriphataud Mountains (S) or Sauromugue Champaign (S) -- so no zone is recorded. Arrival at the Campaign Arbiter dismounts you and starts a cutscene; nothing is clicked. The Fort Karugo-Narugo option is the odd one: you must ride through Fivespires to Lamurara, C.C., entering by the small brick doors (the Phosphorous Ward will not open while mounted), and dismounting before that cutscene fires FAILS the op. Northern Front strongholds do not count."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Magna Cache II (W)",
+   "page_id": 150202,
+   "revision_id": 673681,
+   "source_sha256": "fd99ca0d15c7208fb634cd83d471ea6abf6a6b4c6cb1a1e894609e6c85843442",
+   "cache_file": "0150202_magna_cache_ii_w_1c1c058162"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 497,
+   "dat_name": "Magna Cache II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled",
+   "time_gated",
+   "looked_up_npc_location"
+  ],
+  "notes": "A timed chocobo delivery, and the shape that matters is that the DESTINATION is a choice of four. Bullet [1] is two steps: talk to the op's giver (the bullet calls him only 'the Campaign Ops NPC'; bullet [3] names him Emhi Tchaoryo), then talk to Yasmina, who asks which stronghold you will ride to. Bullet [1]'s sub-bullets are that menu of four with their measured times -- a list of candidates, not steps, and not an order to visit all four. So the ride step carries no zone: recording one of the four would put the marker in a place three players out of four cannot use. Bullet [2] is the delivery. There is nothing to click -- arriving at the Campaign Arbiter dismounts you and starts a cutscene by itself -- so it is a travel step whose target is the Arbiter. Yasmina's zone is not stated in the bullet, only her (G-5); BG Wiki's Yasmina page (REST API) gives Windurst Waters (S) (G-5), Chocobo NPC, which matches the op's own zone, so it is recorded and the lookup is named here. The op is timed and the target time depends on which stronghold you pick, which no packet reports -- time_gated. Times to beat, from bullet [1]: West Sarutabaruta (S) 1:22, Fort Karugo-Narugo (S) 4:28 fast enough and 4:33 not, Meriphataud Mountains (S) 7:38 fast enough and 8:04 not, Sauromugue Champaign (S) 11:30 not fast enough. The 'After the walkthrough: Notes' bullet says this tier is the same op as the last one with faster required times. It stops short of saying the previous tier is a PREREQUISITE, so gates.prev stays empty rather than inventing one. The header's Campaign Rank is a Sterling Star tier -- a campaign rank, noted and flagged, never gates.level. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bullet [1] calls him only 'the Campaign Ops NPC'; bullet [3] gives the name. Zone and grid from the header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yasmina"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she gives the details and asks which stronghold you want to ride to. The bullet gives (G-5) but no zone; BG Wiki's Yasmina page puts her in Windurst Waters (S) at G-5 as the Chocobo NPC."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "ride to whichever stronghold you chose -- West Sarutabaruta (S), Fort Karugo-Narugo (S), Meriphataud Mountains (S) or Sauromugue Champaign (S) -- so no zone is recorded. Arrival at the Campaign Arbiter dismounts you and starts a cutscene; nothing is clicked. The Fort Karugo-Narugo option is the odd one: you must ride through Fivespires to Lamurara, C.C., entering by the small brick doors (the Phosphorous Ward will not open while mounted), and dismounting before that cutscene fires FAILS the op. Northern Front strongholds do not count."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Magna Cache III (W)",
+   "page_id": 150209,
+   "revision_id": 673802,
+   "source_sha256": "0b1e27ccb39d7bf38a3820b2458f0d4822054993ba6e425393face3ae20ed828",
+   "cache_file": "0150209_magna_cache_iii_w_3728d50f4a"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 498,
+   "dat_name": "Magna Cache III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled",
+   "time_gated",
+   "looked_up_npc_location"
+  ],
+  "notes": "A timed chocobo delivery, and the shape that matters is that the DESTINATION is a choice of four. Bullet [1] is two steps: talk to the op's giver (the bullet calls him only 'the Campaign Ops NPC'; bullet [3] names him Emhi Tchaoryo), then talk to Yasmina, who asks which stronghold you will ride to. Bullet [1]'s sub-bullets are that menu of four with their measured times -- a list of candidates, not steps, and not an order to visit all four. So the ride step carries no zone: recording one of the four would put the marker in a place three players out of four cannot use. Bullet [2] is the delivery. There is nothing to click -- arriving at the Campaign Arbiter dismounts you and starts a cutscene by itself -- so it is a travel step whose target is the Arbiter. Yasmina's zone is not stated in the bullet, only her (G-5); BG Wiki's Yasmina page (REST API) gives Windurst Waters (S) (G-5), Chocobo NPC, which matches the op's own zone, so it is recorded and the lookup is named here. The op is timed and the target time depends on which stronghold you pick, which no packet reports -- time_gated. Times to beat, from bullet [1]: West Sarutabaruta (S) 1:09 fast enough and 1:20 not, Fort Karugo-Narugo (S) 4:10 fast enough and 4:14 not, Meriphataud Mountains (S) 7:36, Sauromugue Champaign (S) 10:01 fast enough and 10:23 not. This page's Sauromugue Champaign sub-bullets are a turn-by-turn riding route through Fort Karugo-Narugo (S) and Meriphataud Mountains (S); it is route advice for one of the four choices, not a sequence of steps, and the zones it names are waypoints rather than destinations. The Notes bullet again says only that this tier wants faster times, not that the previous tier gates it. The header's Campaign Rank is an Iron Emblem of Service tier -- a campaign rank, noted and flagged, never gates.level. gates.repeatable and gates.expansion are left null: the Campaign Header carries no Repeatable and no Expansion field, and an explicit null is the tri-state 'the page did not say' rather than a claim that it does not repeat.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bullet [1] calls him only 'the Campaign Ops NPC'; bullet [3] gives the name. Zone and grid from the header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yasmina"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she gives the details and asks which stronghold you want to ride to. The bullet gives (G-5) but no zone; BG Wiki's Yasmina page puts her in Windurst Waters (S) at G-5 as the Chocobo NPC."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "ride to whichever stronghold you chose -- West Sarutabaruta (S), Fort Karugo-Narugo (S), Meriphataud Mountains (S) or Sauromugue Champaign (S) -- so no zone is recorded. Arrival at the Campaign Arbiter dismounts you and starts a cutscene; nothing is clicked. The Fort Karugo-Narugo option is the odd one: you must ride through Fivespires to Lamurara, C.C., entering by the small brick doors (the Phosphorous Ward will not open while mounted), and dismounting before that cutscene fires FAILS the op. Northern Front strongholds do not count."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ }
+]

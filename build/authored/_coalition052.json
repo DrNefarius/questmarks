@@ -1,0 +1,1325 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Survey: Cirdas Caverns",
+   "page_id": 99044,
+   "revision_id": 761506,
+   "source_sha256": "67d8dce6715db5e6911eabaa3648beecab45be016d43a31763501c8f2bb50985",
+   "cache_file": "0099044_survey_cirdas_caverns_3162df6c3c"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 55,
+   "dat_name": "Survey: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "time_gated",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Coalition assignment, not a quest: no Start field, and the walkthrough never names an NPC. The giver is the '## Giver' block stage A resolved from the Scouts' Coalition page -- Task Delegator, Eastern Adoulin (F-9), giver_conflict null -- and that is what start and step 1 use. The table's Rank is 'Contributor', a Scouts' Coalition rank; it gates receiving the assignment, it is NOT gates.level (which is character level), and the schema has no field for it, so it lives here and in rank_gate_unmodelled. Ladder as read: accept at the desk, then examine an Ergon Locus in Cirdas Caverns. Step 1 has no bullet of its own -- the walkthrough opens at 'Travel to Cirdas Caverns', which presumes the assignment is already in hand -- so it is cited to bullet 1 and its NPC/zone/grid come from the Giver block, not from prose. Bullets 1 and 2 merge: bullet 1 is the journey, bullet 2 the interaction, and a journey with no named waypoint is not a markable rung. The page names TWO loci and either one satisfies the objective -- Sanctum of Life (E-9) and Prominence of the Soil (M-9), both behind a Colonization Reive -- so grid is null rather than picking one square the other assignment-taker would not use. The real difficulty is unmodellable: the locus must be examined from a distance band that rotates with Vana'diel time (six windows, 0.5-3.4), and no packet reports distance or game time. Bullets 3 and 4 are NOT steps -- they are lists of measured (time, distance) readings, one per locus, reference data for the positioning table above them. The walkthrough never describes returning to the Task Delegator or reporting, so no turn-in rung is recorded; inventing one would be importing a step this page does not have. Flagged walkthrough_incomplete so a human can rule on it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: so NPC, zone and grid come from the '## Giver' block (resolved by stage A from the Scouts' Coalition page).",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The walkthrough has no accept bullet it starts from the premise that you hold the assignment Rank Contributor is required to be offered it."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Cirdas Caverns",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Either locus completes it, so no single grid is recorded: Sanctum of Life (E-9) and Prominence of the Soil (M-9), both in Cirdas Caverns, both behind a Colonization Reive, easiest reached from the Augural Conveyor. Must be examined from the correct distance for the current Vana'diel time window; that requirement is unobservable and is not modelled."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Research: Ceizak Battlegrounds",
+   "page_id": 99046,
+   "revision_id": 646348,
+   "source_sha256": "22985f0010afe113b0c6835df16a20cb21c1582183e771ad870e8459ada08eef",
+   "cache_file": "0099046_research_ceizak_battlegrounds_ed5720c907"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 87,
+   "dat_name": "Research: Ceizak Battlegrounds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "count_unobservable",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Coalition assignment with no Start field and no NPC named anywhere in the walkthrough. Giver from the '## Giver' block: Task Delegator, Western Adoulin (G-10), resolved from the Mummers' Coalition page. THE PAGE CARRIES A giver_conflict -- the coalition page says (G-11), the Task Delegator NPC page says (G-10) -- and stage A took the NPC page. That is the square recorded; flagged grid_conflict so the disagreement stays visible. Rank is 'Probationer', a Mummers' Coalition rank: a real gate on being offered the assignment, no schema field, not gates.level -- rank_gate_unmodelled. The objective is unusual and the ladder has to say so honestly: you must BE HIT by a chapuli's Sanguinary Slash, not kill anything. So the mob entry is a marker hint, not a kill requirement -- role 'kill' is the closest of the three roles the schema allows and count 1 is not a kill count (count_unobservable). The assignment spans two zones with a different chapuli in each -- Fernfelling Chapuli in Ceizak Battlegrounds or Calfcleaving Chapuli in Yahse Hunting Grounds, and EITHER satisfies it. A step has one zone and 'group' means an unordered set you do ALL of, which would be a lie about an OR, so the step is placed in Ceizak Battlegrounds -- the zone this assignment is named for -- and the Yahse alternative is recorded here only (or_branch_unmodelled). Bullet 2 is an outcome, not a step ('the assignment will be complete'), so it merges into the fight; its sub-bullets are play advice (remove your shield, the move is at least conal so stacked characters can be done together). The page positively asserts completion on being hit and never describes returning to report, so no turn-in rung is recorded.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The assignment page says (G-11) and the Task Delegator NPC page says (G-10); stage A used the NPC page and so does this record.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment; no accept bullet exists, the NPC and square are the '## Giver' block."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fernfelling Chapuli",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "You do not have to defeat it -- you have to be hit by Sanguinary Slash, so the count is a marker hint and not a kill target. Fernfelling Chapuli are just south of Waypoint #1 in Ceizak Battlegrounds. Calfcleaving Chapuli in Yahse Hunting Grounds is the equally valid alternative and is not modelled. Remove any equipped shield -- the page reports it can prevent completion even when the move lands."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Analyze: Foret de Hennetiel",
+   "page_id": 99339,
+   "revision_id": 510504,
+   "source_sha256": "b493c9b88a2b50ca0f448fb840a3e2e72a7be19efaa4f5ea2df32e2f41767dc3",
+   "cache_file": "0099339_analyze_foret_de_hennetiel_4e0acc244c"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 57,
+   "dat_name": "Analyze: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_from_assignment_table"
+  ],
+  "notes": "The cleanest shape in the batch and the one the three-rung ladder was written for. Giver from the '## Giver' block: Task Delegator, Eastern Adoulin (F-9), Scouts' Coalition, giver_conflict null. Rank 'Contributor' gates being offered it and has no schema field -- rank_gate_unmodelled, and it is not gates.level. The whole walkthrough is one bullet, 'After receiving the assignment, trade one Gnatbane to the Task Delegator to complete the assignment', which contains both ends of the ladder: the receipt (step 1) and the completing trade (step 3). The middle rung is the objective itself, 'Procure 1 branch of Gnatbane'. Its zone is read from the assignment table's Zone column (Foret de Hennetiel), which is where the work happens -- the walkthrough sentence itself does not say where to get the branch, so that is flagged rather than presented as prose. Item recorded as the walkthrough writes it, 'Gnatbane', singular, count 1; the Objective line's longer phrasing is 'a branch of Gnatbane' and 'Gnatbane' resolves. Holding one Gnatbane is exactly what proves the procure step is behind you, so it is that step's evidence and NOT step 3's -- rule 4, the mark would jump forward the instant you obtained it. Step 3 is the turn-in: the trade IS the completion, the page describes no separate Report visit.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'After receiving the assignment' -- this is the receipt. NPC, zone and grid from the '## Giver' block (Scouts' Coalition page); the walkthrough names no NPC but the Task Delegator."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gnatbane",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The objective, 'Procure 1 branch of Gnatbane'. Zone is the assignment table's Zone column, not a bullet -- the walkthrough only says to trade one. Nothing is named to target inside the zone, so target is none rather than a guess."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Gnatbane",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'trade one Gnatbane to the Task Delegator to complete the assignment' -- the trade is the turn-in and the page describes no separate Report step. No evidence here: the Gnatbane is already step 2's evidence and the same item may not mark two rungs."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Analyze: Morimar Basalt Fields",
+   "page_id": 99340,
+   "revision_id": 436598,
+   "source_sha256": "e5e57240cf40b4f7a19632cb9605e762d56d8b1c0d8f407b492795baec4ecb15",
+   "cache_file": "0099340_analyze_morimar_basalt_fields_e82ffb76fd"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 58,
+   "dat_name": "Analyze: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_from_assignment_table"
+  ],
+  "notes": "Same one-bullet shape as Analyze: Foret de Hennetiel, but every value here is read off THIS page -- the item, the zone and the square were not carried across. Giver from the '## Giver' block: Task Delegator, Eastern Adoulin (F-9), Scouts' Coalition, giver_conflict null. Rank 'Contributor' is a coalition rank gate with no schema field and is not gates.level -- rank_gate_unmodelled. The single bullet, 'After receiving the assignment, trade one Marble Nugget to the Task Delegator to complete the assignment', holds the receipt and the completing trade; the objective 'Procure one Marble Nugget' is the rung between them. That rung's zone is the assignment table's Zone column, Morimar Basalt Fields, since the walkthrough sentence never says where to obtain the nugget -- flagged rather than dressed up. Item name is written as the page writes it and is already singular with count 1. Holding one Marble Nugget proves the procure step is done, so it is that step's evidence and not the turn-in's.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'After receiving the assignment' -- the receipt. NPC, zone and grid from the '## Giver' block (Scouts' Coalition page)."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Marble Nugget",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The objective, 'Procure one Marble Nugget'. Zone from the assignment table's Zone column; the walkthrough does not say where to get it and names nothing to target, so target is none."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Marble Nugget",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'trade one Marble Nugget to the Task Delegator to complete the assignment' -- the trade is the turn-in. No evidence: the nugget already marks step 2."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Preserve: Morimar Basalt Fields",
+   "page_id": 99382,
+   "revision_id": 696852,
+   "source_sha256": "377569889fce7ec8a3e8277fc8ae9140a68a91a757909a3efa77f17e32f9de17",
+   "cache_file": "0099382_preserve_morimar_basalt_fields_9431e793ae"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 67,
+   "dat_name": "Preserve: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "unnamed_target",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Giver from the '## Giver' block: Task Delegator, Eastern Adoulin (F-7), Peacekeepers' Coalition, giver_conflict null. Rank is 'Disciple', the highest of the three coalition ranks in this batch; it gates being offered the assignment, has no schema field and is not gates.level -- rank_gate_unmodelled. The objective is to complete one Lair Reive in Morimar Basalt Fields, which is a battle EVENT and not an entity, so the fight step's target is {none, null} rather than an invented object name -- the page names no ??? and no NPC to interact with. Bullet 2 is not a second step: it is the location list for bullet 1's reive, four squares each with the pair of monsters that spawn there -- (G-7) Matamata and Alpine Eft, (G/H-9) Matamata and Wivre Cragdweller, (I-7) Matamata and Basalt Lizard, (E-9) Matamata and Outlands Peiste -- so it merges in and the squares go in the step note. Grid is null because any ONE of the four satisfies it (or_branch_unmodelled) and writing one square would send the marker to a reive the player is not doing. The four monster pairs are deliberately NOT recorded as mobs: 'complete a Lair Reive' is not 'defeat these five', and a mob list would read as a kill requirement the page never states. You may join a reive mid-battle as long as you are present for the final evaluation. The walkthrough never describes returning to the Task Delegator or reporting, so no turn-in rung is recorded.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; NPC, zone and grid come from the '## Giver' block (Peacekeepers' Coalition page). Rank Disciple is required to be offered it."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Lair Reive. Four listed locations and any one counts, so no grid: (G-7) Matamata and Alpine Eft; (G/H-9) Matamata and Wivre Cragdweller; (I-7) Matamata and Basalt Lizard; (E-9) Matamata and Outlands Peiste. Those monsters are what the reive spawns, not a kill list, so they are not recorded as mobs. You may join mid-battle provided you are there for the final evaluation."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deliver: Foret de Hennetiel",
+   "page_id": 99383,
+   "revision_id": 510410,
+   "source_sha256": "81fefa7e6a03b54745eecfc76a935c12e9d465d281e8b8739f5b601918bd9ecc",
+   "cache_file": "0099383_deliver_foret_de_hennetiel_0519d7e839"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 21,
+   "dat_name": "Deliver: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "route_bullets_merged",
+   "consumed_key_item"
+  ],
+  "notes": "Delivery work, and the one assignment in this batch whose walkthrough spells the whole loop out including the return, so the turn-in is on the page and is kept. Giver from the '## Giver' block: Task Delegator, Western Adoulin (G-7), Couriers' Coalition, giver_conflict null. Rank 'Contributor' gates the offer, has no schema field, is not gates.level -- rank_gate_unmodelled. Bullet 1 is the accept and its warning that you are NOT handed supplies at the desk. Bullets 2-5 are an overland route across three zones -- Western Adoulin (C-9) out to Ceizak Battlegrounds, southwest to Sih Gates at the (G-11)/(H-11) border, south to Foret de Hennetiel at (H-11), then the south path to (J-7). They are NOT four rungs: bullet 1's own sub-bullet says that since the Feb 18 2014 update Waypoints can be used for this task, which makes the route advisory, and four unmarkable rungs in four zones is exactly the noise AUTHORING warns about. They fold into step 2 with the route in the note. Step 2's real content is bullet 6, speak to the Station Administrator at (J-7) to receive the container. That container resolves as a KEY ITEM (kind 'ki'), not an item, and holding it is precisely what proves the pickup happened -- so it is step 2's evidence and step 3's required carry, never evidence twice. Step 3 is bullet 7, 'Return to the Task Delegator to deliver the supplies and receive your reward'. The 'After the walkthrough: Notes' section is one line of advice about movement speed and is not a step.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "Task Delegator - Western Adoulin (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Once you accept the assignment, you will -not- be provided with any supplies' -- the accept, and the page is explicit that nothing is handed over here. NPC, zone and grid from the '## Giver' block (Couriers' Coalition page)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hen. FS resource container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "Collect the container at the Frontier Station. Bullets 2-5 are the walking route and are folded in rather than given rungs, because bullet 1 says Waypoints work for this task since the Feb 18 2014 update: Western Adoulin (C-9) to Ceizak Battlegrounds, southwest to Sih Gates at the (G-11)/(H-11) border, south to Foret de Hennetiel at (H-11), then the south path from the first open area to (J-7). The container is a key item, not an inventory item, and the page notes it will not break."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Hen. FS resource container",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Return to the Task Delegator to deliver the supplies and receive your reward.' No evidence here -- the container is step 2's evidence and is consumed by this delivery."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deliver: Morimar Basalt Fields",
+   "page_id": 99384,
+   "revision_id": 510411,
+   "source_sha256": "b50d13f930b75918e7f5db7285f40545f00719c331b9b3ab49c77b16e0130ac0",
+   "cache_file": "0099384_deliver_morimar_basalt_fields_52e8333b6c"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 22,
+   "dat_name": "Deliver: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "route_bullets_merged",
+   "consumed_key_item"
+  ],
+  "notes": "The sibling of Deliver: Foret de Hennetiel and read independently of it -- the container, the destination square and the route here are all this page's own and none were carried across. Giver from the '## Giver' block: Task Delegator, Western Adoulin (G-7), Couriers' Coalition, giver_conflict null. Rank 'Contributor' gates the offer and has no schema field -- rank_gate_unmodelled, not gates.level. Bullet 1 accepts and warns you are given no supplies at the desk. Bullets 2-5 are an advisory overland route -- and note the page's own oddity, which is left as the page has it: the route departs from EASTERN Adoulin at (G-5) into Yahse Hunting Grounds, northwest to Moh Gates at (H-5), north to Morimar Basalt Fields at (G-5), while the desk this assignment is taken and returned at is in Western Adoulin. Bullet 1's sub-bullet makes the whole route optional anyway (Waypoints usable since the Feb 18 2014 update), so those four bullets fold into step 2 rather than becoming rungs. Step 2 is bullet 6: speak to the Station Administrator at (K-10) to receive the container -- bullet 5 says only 'the northern end', bullet 6 gives the square, and the square is what is recorded. The container resolves as a KEY ITEM, so kind 'ki'; holding it proves the pickup, making it step 2's evidence and step 3's carry, not evidence twice. Step 3 is bullet 7, the return to the Task Delegator. The trailing Notes section is one line about movement speed and is not a step.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "Task Delegator - Western Adoulin (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Once you accept the assignment, you will -not- be provided with any supplies.' NPC, zone and grid from the '## Giver' block (Couriers' Coalition page)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mor. FS resource container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "Collect the container at the Frontier Station, (K-10) per bullet 6; bullet 5 places it loosely at 'the northern end' of the first open area. Bullets 2-5 are the advisory walking route folded in here, since bullet 1 says Waypoints work for this task: Eastern Adoulin (G-5) out to Yahse Hunting Grounds, northwest to Moh Gates at (H-5), north to Morimar Basalt Fields at (G-5). The container is a key item and the page notes it will not break."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Mor. FS resource container",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Return to the Task Delegator to deliver the supplies and receive your reward.' The container is step 2's evidence and is consumed here, so no evidence on this rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Boost: Foret de Hennetiel",
+   "page_id": 99392,
+   "revision_id": 771527,
+   "source_sha256": "6f8f961ae16a37995360c3a4797f6193c010d3e7f681a4ad7b675774129cd506",
+   "cache_file": "0099392_boost_foret_de_hennetiel_a7a2dc1476"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 93,
+   "dat_name": "Boost: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "time_gated",
+   "repeating_loop",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Giver from the '## Giver' block: Task Delegator, Western Adoulin (G-10), Mummers' Coalition. The page CARRIES A giver_conflict -- the assignment page says (G-11), the Task Delegator NPC page says (G-10) -- and stage A took the NPC page; (G-10) is what is recorded and grid_conflict flags it. Rank 'Probationer' gates the offer, has no schema field and is not gates.level -- rank_gate_unmodelled. gates.repeatable is the one gate this batch can actually assert, and only because bullet 4 says it in words: 'it is possible to warp back and forth from the Mummers' Coalition and rapidly repeat this quest once you figure out the proper emote/direction'. That is the page's own sentence, not the family assumption, so repeatable is true here and null on the other eleven records. Bullets 1-3 are one interaction with one NPC and become one rung: find the Station Worker, get the emote menu, pick the right emote while facing both the worker and a compass direction. Consecutive rungs on the same NPC are one marker, so they are not split. The emote and the direction both rotate every three Vana'diel hours; the eight windows for Foret de Hennetiel are in the step note, and nothing about game time is observable, hence time_gated. Morimar Basalt Fields is the page's equally valid alternative zone with its own eight-row column; a step has one zone and 'group' means do-all, so the step sits in Foret de Hennetiel -- the zone this assignment is named for -- and the alternative is recorded in prose only (or_branch_unmodelled). NO GRID: this page never gives the Foret de Hennetiel frontier station a square, and taking one from a sibling Deliver page would be exactly the import this pipeline forbids. Bullet 4 is a repeatability remark, not a step. The page describes completion at the emote and never a return to the desk, so no turn-in rung is recorded.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; NPC, zone and grid from the '## Giver' block (Mummers' Coalition page). The assignment page says (G-11), the Task Delegator NPC page says (G-10), and (G-10) is used."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Station Worker"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Speak to the Station Worker at the frontier station, then pick the right emote from the menu while facing BOTH the worker and the listed compass direction (the direction is where you face, not where you stand). Grid is null because this page never gives the station a square. Foret de Hennetiel windows: 00:00-03:00 Look pleased (NW); 03:00-06:00 Cry a River (N); 06:00-09:00 Act Surprised (NE); 09:00-12:00 Rue your life (E); 12:00-15:00 Cheer (SE); 15:00-18:00 Pretend to be flustered (S); 18:00-21:00 Blush like a maiden (SW); 21:00-00:00 Rally the troops (W). Morimar Basalt Fields is an equally valid alternative with a different rotation and is not modelled. First-person view helps line the direction up; a dialogue after each attempt says whether the direction or the emote was wrong."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Cirdas Caverns",
+   "page_id": 99393,
+   "revision_id": 510465,
+   "source_sha256": "3d1019aa9572f6346ffe7a1140ef037c88380a25b491622da871a06cff8c0fcc",
+   "cache_file": "0099393_gather_cirdas_caverns_fa6279b280"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 42,
+   "dat_name": "Gather: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "objective_count_conflict",
+   "zone_from_assignment_table"
+  ],
+  "notes": "The textbook three-rung coalition ladder, and the page that states the turn-in in words: 'Trade these to the NPC and then Report on the quest outcome.' The unnamed 'NPC' of both bullets is the giver stage A resolved into the '## Giver' block -- Task Delegator, Western Adoulin (J-10), Inventors' Coalition, giver_conflict null -- and that is what steps 1 and 3 use. Rank 'Contributor' gates the offer, has no schema field and is NOT gates.level -- rank_gate_unmodelled. THE COUNT IS 3, NOT 5: the page says outright that the in-game quest description incorrectly states 5 and only three are needed, so 3 is recorded and objective_count_conflict flags the disagreement between the client text and the wiki. Item written singular from the plural phrasing, '3 Jars of Umbril Ooze' -> name 'Umbril Ooze' count 3; the wikilink target is Umbril Ooze and 'Jar of Umbril Ooze' resolves to the same item id, so the short form is used. Holding 3 proves the gather rung is done, so it is that rung's evidence and not the turn-in's -- the mark would otherwise jump forward the moment the third one landed. Zone on the gather rung is the assignment table's Zone column, but the page's own sub-bullet weakens it: the NPC specifically notes it does not matter how the player obtains the ooze -- bought, traded or farmed -- so Cirdas Caverns is where you would farm it and not a required destination. Bullet 2 is one visit to the desk, trade then Report, so it is one rung rather than two.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Task Delegator - Western Adoulin (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'NPC asks you to obtain 3 Jars of Umbril Ooze' -- the accept. The walkthrough only ever says 'the NPC'; it is the Task Delegator from the '## Giver' block (Inventors' Coalition page)."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cirdas Caverns",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Umbril Ooze",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Three, not five: the page says the in-game description is wrong. Recorded singular from '3 Jars of Umbril Ooze'. Zone is the assignment table's work zone, but the page's sub-bullet says it does not matter how you get them -- bought, traded or farmed -- so this is not a required destination. Nothing in the zone is named, hence target none."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Umbril Ooze",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Trade these to the NPC and then Report on the quest outcome' -- trade and Report are one visit to the Task Delegator, so one rung. No evidence: the ooze already marks step 2."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Patrol: Moh Gates",
+   "page_id": 99395,
+   "revision_id": 766660,
+   "source_sha256": "3f4517cb8f0b0c31cc5efeffbb4d05e1c762adc4c7d9b3d61a0214fee1a41aaa",
+   "cache_file": "0099395_patrol_moh_gates_f6c9bd7cbe"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 75,
+   "dat_name": "Patrol: Moh Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "count_unobservable",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Kill work. Giver from the '## Giver' block: Task Delegator, Eastern Adoulin (F-7), Peacekeepers' Coalition, giver_conflict null. Rank 'Probationer' gates the offer, has no schema field, is not gates.level -- rank_gate_unmodelled. One real rung of work: defeat 5 Ruby Raptors in Moh Gates. The Objective line says only '5 Raptors'; the walkthrough names the species, Ruby Raptors, and that is what is recorded, singular with count 5. Two caveats from the page that the schema cannot carry and that matter to a player: the Ruby Raptors at the Reive do NOT count, and an unbulleted line dated 5/27/26 reports they must be killed one at a time -- AoEing four after a first kill credited only one more. Kills are display-only in this addon and never advance a rung, so count_unobservable is the honest flag. Credit does not require EXP range as long as you are in Moh Gates when your party or alliance kills them. The remaining sub-bullet is travel advice (come in from the Morimar Basalt Fields Frontier Station). The walkthrough never describes returning to the desk or reporting, so no turn-in rung is recorded rather than one being imported.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; NPC, zone and grid from the '## Giver' block (Peacekeepers' Coalition page)."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Moh Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ruby Raptor",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Five Ruby Raptors, recorded singular from the page's plural. You need not be in EXP range so long as you are in Moh Gates when your party or alliance defeats them. The Ruby Raptors at the Reive do not count, and a dated note on the page says they must be killed one at a time -- an AoE on four credited only one."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Patrol: Rala Waterways",
+   "page_id": 99396,
+   "revision_id": 769221,
+   "source_sha256": "77d3dccce39374af5e1ae1d83d3434e01dd78f60d65c714ec9d78250c1d836f1",
+   "cache_file": "0099396_patrol_rala_waterways_331c486158"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 73,
+   "dat_name": "Patrol: Rala Waterways",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "count_unobservable",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Kill work, and the count is the interesting part. Giver from the '## Giver' block: Task Delegator, Eastern Adoulin (F-7), Peacekeepers' Coalition, giver_conflict null. Rank 'Probationer' gates the offer, has no schema field, is not gates.level -- rank_gate_unmodelled. The objective is 'Vanquish 5 Toads'; the walkthrough names two species and joins them with 'and/or' -- 'Defeat 5 Rustwater Toads and/or Spoutdrenched Toads' -- which means FIVE TOTAL in any mix, not five of each. The schema has no way to share one count across two mob entries, so 5 is written on both and this note carries the truth; count_unobservable and or_branch_unmodelled flag it. In practice this costs little: kill counts in this addon are display-only, they never advance a rung or decide a marker, and both species are legitimate marker targets in the same zone. Credit does not require EXP range as long as you are in Rala Waterways when your party or alliance kills them, and the page warns that AoEing them credits only one kill. Sub-bullet travel advice: the closest entrance is from Western Adoulin southeast of the Mog House, and the toads are in the southwest corner of the zone -- no square is given for them, so grid stays null. The walkthrough never describes returning to the desk or reporting, so no turn-in rung is recorded.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: not five of each; the 5 on both entries is the schema's limit, not the requirement.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; NPC, zone and grid from the '## Giver' block (Peacekeepers' Coalition page)."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rala Waterways",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Rustwater Toad",
+      "count": 5,
+      "role": "kill"
+     },
+     {
+      "name": "Spoutdrenched Toad",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "FIVE TOTAL across the two species in any mix 'and/or' Names recorded singular from the page's plurals. Closest entrance is from Western Adoulin southeast of the Mog House; the toads sit in the southwest corner of Rala Waterways, which the page does not reduce to a square. AoE credits only one kill."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Recover: Foret de Hennetiel",
+   "page_id": 99475,
+   "revision_id": 580397,
+   "source_sha256": "9ead6d007940dc3c042481a705b936242bed875a901de55a7fa4ef6a950b6139",
+   "cache_file": "0099475_recover_foret_de_hennetiel_c1fc2c5d1a"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 81,
+   "dat_name": "Recover: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Giver from the '## Giver' block: Task Delegator, Western Adoulin (G-10), Mummers' Coalition. The page CARRIES A giver_conflict -- the assignment page says (G-11), the Task Delegator NPC page says (G-10) -- and stage A took the NPC page, so (G-10) is recorded and grid_conflict flags it. Rank 'Disciple' gates the offer, has no schema field and is not gates.level -- rank_gate_unmodelled. One rung of work: find a Lost article. It is a retrievable object rather than an NPC, so target.type is object with the page's own name, 'Lost article'. Bullets 2, 3 and 4 are not further steps -- they are the object's behaviour (exactly one is up per zone at a time; it despawns and immediately respawns when retrieved, possibly in the same spot; it does not appear on Wide Scan) and its known positions -- so they fold into the one rung. Grid is null on purpose: the page lists FIVE known positions in Foret de Hennetiel and only one article is up at a time, so any single square would be wrong four times in five. The assignment also accepts Sih Gates, with its own four positions, and either zone completes it; a step has one zone and 'group' means do-all, so the rung sits in Foret de Hennetiel -- the zone this assignment is named for -- and the alternative is prose only (or_branch_unmodelled). No evidence: the page never says the article becomes a key item or an inventory item you can be seen holding, and inventing one would move the mark on nothing. The walkthrough stops at 'locate a Lost article' and never describes carrying it back or reporting, so despite the assignment being called Recover no turn-in rung is recorded.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; NPC, zone and grid from the '## Giver' block (Mummers' Coalition page). The assignment page says (G-11), the Task Delegator NPC page says (G-10), and (G-10) is used."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lost article"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "note": "Exactly one Lost article is up in the zone at a time and it does not show on Wide Scan, so no single square is recorded. Known Foret de Hennetiel positions: (H-6); the (H/I-7) border; (E-8) north of the reive; (E/F-9) where E-9 and F-9 join; (J-8). Sih Gates is the equally valid alternative zone -- (F-11), (I-7), (I-8), (J-11) -- and is not modelled. Retrieving it despawns and immediately respawns the article, possibly in the same position."
+   }
+  ]
+ }
+]

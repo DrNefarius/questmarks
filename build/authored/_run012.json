@@ -1,0 +1,1208 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "All the Way to the Bank",
+   "page_id": 102306,
+   "revision_id": 661567,
+   "source_sha256": "c3a218104ded0ed1b9dc3286a8121347dfb8525d6eeb54b01b2dc32d9b92ac7b",
+   "cache_file": "0102306_all_the_way_to_the_bank"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 103,
+   "dat_name": "All the Way to the Bank",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "or_branch_unmodelled",
+   "repeating_loop",
+   "gil_as_item",
+   "zone_from_sibling_page"
+  ],
+  "notes": "Bullet 3's top line is shopping advice (buy Quickening from Farso-Dafarso) and is NOT a step, but its five sub-bullets are the whole of bullet 2 -- the invoice's merchant list, with a name, a zone, a grid and an amount each. So bullets 2 and 3 together make five trade steps, sharing a group because bullet 2 says 'in any order'. Two of the five are in Eastern Adoulin, three in Western; one step, one zone, so they keep their own.\n\nBullet 4 is an OUTCOME, not a step -- there is nothing to do to get the receipt beyond finishing the fifth merchant -- so it becomes the group's evidence rather than a rung of its own. It sits on Malgrom, the LAST member, for the same reason the Clay Tablet sits on the last Stone Monument in An Explorer's Footsteps: duplicating it across five steps is a hard gate, and putting it anywhere earlier would land the mark past merchants still unpaid.\n\nGil is recorded as a real item (res id 65535) with the per-merchant amount, because trading gil IS the step and the amounts are exact; the five sum to the header's 39,432. If the client's inventory sweep does not surface gil the only cost is that the glyph stays 'progress' instead of 'turnin' -- reqs pick the glyph, not whether the marker draws.\n\nBullet 6's hat mechanic is genuinely unmodellable: you need one hat from each of five type-groups of five, no repeats, in an order where consecutive picks are at least two types apart, and a failure sends you back to a random one of the five stalls. That is a product of ORs the schema has no shape for, so items stays empty with items_partial set and the whole rule goes in the note. Bullet 6's zone is not stated on this page -- it says only 'Travel to (J-11)' -- but the sibling pages in this same rendered corpus (A Barrel of Laughs, No Laughing Matter) put the Mischief Marker at (J-11) in Western Adoulin, so that is what is recorded rather than a nil zone that would match everywhere.\n\nBullet 7 sits under a 'Bonus:' heading and is a post-completion gil trade to Westerly Breeze -- not a step. The 'wait till the next game day' condition on bullet 1 is unobservable and stays a note.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 8: Five ORs of five is not expressible, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Seekers of Adoulin / 3"
+   },
+   "prev": [
+    {
+     "title": "No Laughing Matter",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Peladi Shalmohr",
+   "zone": "Western Adoulin",
+   "grid": null,
+   "raw": "Peladi Shalmohr, Western Adoulin"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Peladi Shalmohr"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tarutaru Sauce invoice",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Mummers' Coalition; this page gives no grid for her. If you have just finished No Laughing Matter you must wait for the next game day, which nothing in the packets reports."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Defliaa"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-11",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 19440,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "invoice",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Bakery, near the Mog House. 19,440 gil; you may round up and overpay."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Hujette"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 3000,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "invoice",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Sweets Shop, near the Platea Triumphus. 3,000 gil."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Flapano"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 5600,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "invoice",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Cafeteria, near the Platea Triumphus. 5,600 gil."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bernegeois"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 4560,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "invoice",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Cafe des Larnes, near the Statue of the Goddess. 4,560 gil."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Malgrom"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 6832,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tarutaru Sauce receipt",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "invoice",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "the Fishmonger's Stall, near the Big Bridge. 6,832 gil. This is the group's LAST member, so it carries bullet 4's receipt as evidence for all five -- see the quest note."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Peladi Shalmohr"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tarutaru Sauce receipt",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "back at the Mummers' Coalition, for a cutscene only -- the quest does not end here"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "The quest ENDS here, not on an NPC. Five successful hat choices for Tuffle-Buffle: one hat from each of five types Costume, Beastman, Heavy, Medium, Light never repeating a type or a piece, and each pick at least two types away from the last, e.g. 1,3,5,2,4. Progress is cumulative, and a failure means fetching a randomly named food item from one of the five invoice stalls before retrying. The page does not name the zone for (J-11); Western Adoulin comes from the sibling pages A Barrel of Laughs and No Laughing Matter."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Further Founts",
+   "page_id": 92010,
+   "revision_id": 773564,
+   "source_sha256": "6636dc5885b0a8e02d092a5e8496cded2a1adc1d90f19ea6d67baff0c5e9a8f4",
+   "cache_file": "0092010_further_founts"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 173,
+   "dat_name": "Further Founts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "unordered_group",
+   "row_recovered_from_source_cache",
+   "or_branch_modelled",
+   "route_heavy"
+  ],
+  "notes": "This walkthrough has NO numbered bullets -- it is four short paragraphs around one wikitable. source_bullets therefore numbers the paragraphs in reading order: 1 the zoning precondition, 2 'Speak to Anastase and select the first option', 3 the ten-fount table, 4 'After attuning ... return to Anastase'. The trailing Granddaddy Dearest sentence is a blocking note on the hand-in, not a step.\n\nThe ten founts are one unordered group: the page gives hints rather than an order and you may attune them in any sequence, so all ten draw at once. Each keeps its own zone. Nothing here is observable -- no fount grants a key item and EXP is not visible to the addon -- so every step's evidence is null and the ladder relies on the session latch between accepting and handing in. That is the honest shape; inventing per-fount progress would be worse than none.\n\nThe 'Shrine' row arrived MANGLED in the rendered page: 'A temple where those who have lost darkness reside | Unity Warp (125)]] puts you closest to this one', with the zone and grid eaten by the row's trailing Unity-Warp footnote. The row is intact in the page's own cached wikitext -- Temple of Uggalepih (H-8), Map Two, in the hidden room next to a potential coffer spawn -- so that is what is recorded. The alternative was a zone-less Geomagnetic Fount row, and 'Geomagnetic Fount' with no zone matches every fount in Vana'diel, including the eleven that belong to the previous quest. Flagged so a human can confirm the recovery.\n\nQuicksand Caves needs a Loadstone, a Galka, or extra bodies to open its doors; Loadstone does not resolve as an item name, so that step is items_partial with the requirement in the note. Riverne - Site B01 is the one real OR: two Giant Scales normally, one if you already hold the zone's Home Point, which nothing reports -- modelled as items two, items_alt one. The Oldton Movalpolos row carries three paragraphs of Movalpolos routing (Twinkbrix's gamble for the Shaft gate operating dial, Mineshaft 2716, Firesand for the furnace gate); it is how you reach the fount, not a separate objective, so it stays a note.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: Loadstone does not resolve as an item name, hence items_partial.\n  step 9: All of that is routing, not objectives, so it stays here; items_partial because the gil and Firesand are conditional.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Middle Lands Investigation",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Anastase",
+   "zone": "Ru'Lude Gardens",
+   "grid": "G-9",
+   "raw": "Anastase, Ru'Lude Gardens (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you must have zoned since Middle Lands Investigation. Choose 'Must have more warp destinations!', then ask about his predictions for the ten hints."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Davoi",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Abandoned Village' -- on a ledge to your left just before the broken bridge going west"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Beadeaux",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Malediction' -- in the basement behind the first mute"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Faeries' -- close to the entrance, behind the statue; you have to go around it"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'City Ruins' in via the (D-12) entrance from Western Altepa Desert. The doors need a Loadstone, or several players, or a Galka."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "J-5",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Grotto' -- behind the Mythril Door"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Shrine' -- Map Two, inside the hidden room next to a potential coffer spawn; Unity Warp (125) lands closest. This row's zone and grid were LOST in the rendered page and were read back out of the page's own cached wikitext -- see the quest note."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "D-4",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Forest' -- Map One, on a ledge north of the northern tree"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "K-11",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Urban Locale' reached through Newton Movalpolos, and the route is the hard part: at Oldton (E-13) gamble with Twinkbrix for the [KI] Shaft gate operating dial (10,000 gil, or 2,716 gil on Lightsday, for the best odds), then trade 2,000 gil to reach Mineshaft 2716, out into Newton Movalpolos, to the furnace at (K-8) trade a Firesand if the gate blocks you south drop off at I/J-9, south to E-9 and back into Oldton. The fount is on the left by the tunnel mouth."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Riverne - Site B01",
+    "grid": "C-10",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Giant Scale",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Giant Scale",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Belfry' -- two Giant Scales normally, one if you already hold this zone's Home Point, which the addon cannot see; if you do not, pick the HP up at (E-8) on the same trip"
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": "Castle Zvahl Keep",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "founts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Darkness' -- in the middle of the first room"
+   },
+   {
+    "n": 12,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all ten attuned. If Granddaddy Dearest is open at the same time Anastase will finish that one first and refuse this, which nothing observable distinguishes."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beyond Infinity",
+   "page_id": 86429,
+   "revision_id": 766781,
+   "source_sha256": "5509549e0fe468d2a2752b64be0f504ea4b331ea4ce4b513d7e9ba9217713cb2",
+   "cache_file": "0086429_beyond_infinity"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 137,
+   "dat_name": "Beyond Infinity",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "generic_npc_name",
+   "sidequest_inlined",
+   "zone_inferred"
+  ],
+  "notes": "Demoted to medium for two things the page cannot answer. The header's Item Reqs are 'Soul gem clasp, Soul gem, Seasoning Stone' and the Description says to acquire a soul gem and a soul gem clasp, but the walkthrough never mentions either again -- the Seasoning Stone turns up only in the Degenhard trade. And bullet 2 says the Moogle warps you 'once you have given him the stone' without ever saying which stone, when, or where it came from. Neither is invented into a step; both are recorded here.\n\n'Nomad Moogle' is one of the addon's known-ambiguous names -- there is one in every city -- so every step that targets it carries Ru'Lude Gardens explicitly. Without a resolved zone that target is structurally dropped, which would cost this quest its start marker as well.\n\nThe '== Sidequest ==' block (bullets 7 to 10) is not an appendix in play order: bullet 7 says outright that once the quest is accepted you must NOT warp yet, and that Degenhard will not trade before the quest is flagged and before Maat has raised him in conversation. So its three steps are threaded into the ladder between accepting and warping, where a player actually does them, and marked optional because the page calls the enfeebling item 'optional, but STRONGLY recommended'. Bullet 10 is what the Olde Rarab Tail does, not a step; bullet 5's sub-bullets are advice on buying seals; bullet 3's Home Point and Domenic notes are conveniences, and Domenic only works AFTER this quest, so he is no route in.\n\nMaat's zone is not stated anywhere on the page. It is set to Ru'Lude Gardens because bullet 7 places the conversation between accepting at the Nomad Moogle and warping, i.e. without leaving -- flagged rather than left nil, since a nil zone on a name this common is the worse error.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Prelude to Puissance",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 91,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nomad Moogle",
+   "zone": "Ru'Lude Gardens",
+   "grid": null,
+   "raw": "Nomad Moogle, Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     7
+    ],
+    "note": "answer 'But of course!' to 'Accept the challenge?' to flag the quest, then pick 'Nowhere yet' instead of a destination -- do NOT warp yet if you want the enfeebling item"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "talk until he brings up paying a visit to Degenhard; without this conversation Degenhard will not take the trade at all. The page never states his zone -- see the quest note."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Degenhard"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "by Home Point #4; you must hear him name the items at least once or he refuses them"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Degenhard"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Seasoning Stone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fossilized Fang",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fossilized Bone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Olde Rarab Tail",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     9
+    ],
+    "note": "the three ingredients came from the Repeat Login Campaign for years and were pulled in May 2025; they also drop from level 90+ monsters in specific zones. The page recommends making three tails, to use one after another as each wears off."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "he offers several Burning Circle destinations and the fight is identical in all of them, so the page says the choice does not matter and none is named. Bring the party -- he will not warp anyone who has already finished the quest. Bullet 2's 'once you have given him the stone' is unexplained; see the quest note."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Atori-Tutori",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "six-person battlefield; the zone varies with the destination you picked, so none is recorded. An Olde Rarab Tail removes his roughly 100-damage-per-hit cap and terrorises him for two minutes. A loss costs 1 Merit Point or 5 High Kindred's Crests to the Nomad Moogle to re-enter."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "warp back first; this is what raises the cap to 99"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Transformations",
+   "page_id": 15077,
+   "revision_id": 771214,
+   "source_sha256": "7030968bf62fbff7622e12ea47657c4e3e4444017fb6f433696f7999818cc59d",
+   "cache_file": "0015077_transformations"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 23,
+   "dat_name": "Transformations",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "unnamed_target",
+   "route_heavy",
+   "transclusion_unavailable",
+   "start_names_two_givers"
+  ],
+  "notes": "'Repeatable: af' is the artifact-armour category leaking into the field and means false. 'Level: 50+ Blue Mage' is both gates: level 50 AND jobs BLU. Bullets 1 and 2 are one interaction with Waoud -- walk up, ask for the divination -- so they are one step and one marker; the 1,000 gil he takes is recorded as a held item, since gil resolves and the header lists it as a requirement.\n\nThe header names the giver 'Waoud/Raubahn'. The walkthrough only ever uses Waoud, at the grid the header gives, so Waoud is the start and the header string is kept in start.raw.\n\nBullet 3's door is recorded as the object 'Imperial Whitegate', which is what the seven other Aht Urhgan pages in this corpus call it and what an earlier batch already authored. Bullet 4 is an outcome plus the note that the job gate stops applying, not a step.\n\nBullet 5's two cutscenes are ONE step. They are in the same zone, neither is a clickable entity, and neither is observable, so two rungs would be two positions the player can never be tracked through; the whole teleporter route lives in the note instead. The Runic Portal is the way in, but the header lists the Runic Portal Use Permit as one of four mutually alternative passes, so nothing is asserted as required on that step.\n\nBullet 6 is the genuine OR: an Imperial Silver Piece, a Remnants Permit, or a Captain Wildcat badge, and it gates Nasheefa, who is the ONLY way into the part of the ruins where the battle sits -- the page says the rest of the ruins does not connect to it.\n\nThe target of bullets 7 and 8 is 'the blank spot', which is exactly what the page calls it -- not a '???'. It is in the addon's OBJECT_DENY list, so those steps keep their rungs and lose their markers, which is the honest outcome rather than promoting it to a name the page never used. Nothing in this quest is observable: no key item is granted anywhere and the Magus Keffiyeh is the reward, so every evidence is null. The page ends with content transcluded from 'Lathuya' that the renderer could not fetch; it sits after the final cutscene and reward, so no step should be hiding in it, but it is flagged.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Omens",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BLU"
+   ],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Waoud",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-10",
+   "raw": "Waoud/Raubahn, Aht Urhgan Whitegate - (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Waoud"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 1000,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "as a level 50+ Blue Mage. Choose 'Gaze away.' for the divination; he answers 'Your fate lies beyond the gate of nobility' and takes 1,000 gil. Keep talking and he will sell you the same divination again for more gil."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "this door hands out cutscenes for whatever else you have in progress, so keep examining it until the quest shows as Active in your log. From here on you no longer need to be on Blue Mage."
+   },
+   {
+    "n": 3,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "two cutscenes, one step. Runic Portal in Whitegate to Nyzul Isle Staging Point, north exit, north-east teleporter at (H-8) toward Silver Sea Remnants, then the east teleporter, then the west one; at (H-9) walk toward the exit for the first cutscene, turn round and take the west teleport in the same room, then walk south toward the exit for the second. Avoid the Apex Archaic Cogs -- true sight, true sound and magic."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Nasheefa"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "E-11",
+    "items": [
+     {
+      "name": "Remnants Permit",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Imperial Silver Piece",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Captain Wildcat badge",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Home Point straight to Caedarva Mire, or Nashmau's west exit. She is the only entrance to the part of Alzadaal Undersea Ruins where the battle happens; you cannot walk there from the rest of the ruins."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "blank spot"
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nepionic Soulflayer",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "take the teleporter at (I-9), the right-hand one as you enter the room; the spot is the north-west corner of (G-7). Examine once for a cutscene, again to spawn the Soulflayer. If nothing spawns after doing everything above, log out and back in."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nepionic Soulflayer",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "blank spot"
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same spot a third time, after the kill, for the closing cutscene and the reward. There is no hand-in NPC. Zone out after the kill without doing this and the Soulflayer has to be fought again."
+   }
+  ]
+ }
+]

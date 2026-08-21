@@ -1,0 +1,1612 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Royal Painter Escort",
+   "page_id": 38791,
+   "revision_id": 767295,
+   "source_sha256": "4a17a5da221f190029246218b30466ec901cf7a1429b4cdc92353ad14b65aef8",
+   "cache_file": "0038791_royal_painter_escort"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 102,
+   "dat_name": "Royal Painter Escort",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "time_gated"
+  ],
+  "notes": "Only two of the seven bullets are things you do outside the battlefield: trade the silver piece, then go click the Cutter. Everything from bullet 4 on happens inside an escort battle and none of it can carry a marker. Bullet 3 (a 30 minute limit) is a rule of the fight, not a step, and folds into the Cutter step's note. Bullet 7 is the reward chest -- an outcome of the painter finishing, not an action, and the chest contents are the header's Reward list, so nothing there is evidence. The walkthrough refuses to name the painter ('you will find a NPC who will ask you to open the door for her'); only the header's Description calls her Faluuya, and even then she is not what you interact with -- the door is, and the door is unnamed. So that step's target is honestly none. The page also never names the battlefield interior as a zone and the client has no zone called Ashu Talif, so the interior steps stay in Arrapago Reef, which is where you must be to reach them. Fame reads 'Treasures of Aht Urhgan', the expansion's name rather than a region's, but it is the Aht Urhgan fame area and the resolver folds it to aht_urhgan; FLevel is empty so it gates nothing either way. The 24 hour repeat cooldown is invisible to the addon.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Scouting the Ashu Talif",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Halshaob",
+   "zone": "Nashmau",
+   "grid": "H-10",
+   "raw": "Halshaob, Nashmau (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Halshaob"
+    },
+    "zone": "Nashmau",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Imperial Silver Piece",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header writes the item twice, as its short name and its long one. Once every 24 hours, which nothing in the packets reports."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cutter"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Dvucca Isle Staging Point out into Caedarva Mire, east to (G-9) and zone in, then north. The Caedarva Mire Survival Guide lands on the north side, a short run to (G-8), and the Arrapago Ring (100 Imperial standing accolades) warps you in front of it. The battle it opens has a 30 minute limit."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the door the painter asks you to open. The walkthrough names neither her nor the door -- only the header's Description calls her Faluuya -- so there is nothing to target. Get the whole party ready before opening it."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ashu Talif Crew",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "they spawn continuously and ignore players, rushing the painter instead; damaging one makes it aggro you. She must be kept alive -- if she dies the mission is over -- and she can be cured. Hurt, she runs to the back of the ship until whatever is on her is dead."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Black Bartholomew",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "optional: the quest ends when the painting is finished whether or not he dies. He appears shortly after the crew start spawning, on the far side of the hull from where you entered; killing him despawns the crew, stops the spawns, and makes a second treasure chest appear on deck."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Axe the Competition",
+   "page_id": 11920,
+   "revision_id": 712438,
+   "source_sha256": "fe284942eb24f9ca5bac1c383b53402ef8a190255401bba4bcf549bac6637d6b",
+   "cache_file": "0011920_axe_the_competition"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 59,
+   "dat_name": "Axe the Competition",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "latent_unmodelled",
+   "walkthrough_incomplete",
+   "skill_gate_unmodelled"
+  ],
+  "notes": "A weapon skill quest, and the page has a hole in it: bullet 2's 'Breaking the Latent' sub-bullet is a transclusion (the front matter flags it) and this render carries the heading with no body, so the actual latent condition -- the bulk of the quest by time spent -- is simply not on the page. It is kept as a rung anyway because the page really does put an action between two Brutus steps, and it is flagged rather than guessed at. Bullet 1 is a precondition, not a step: you cannot hold two weapon skill quests at once. Step 1 grants both the key item and the Pick of Trials, and the Pick is traded back two steps later, so only the guide is used as evidence -- an AND-list over both would read false for the rest of the quest. The wiki spells that key item 'Weapons Training Guide'; the client's is 'weapon training guide', so the client's spelling is written here. Bullet 5 is four levels of routing advice, but its deepest sub-bullet is the only place the ??? at (G-9) is named, so the spawn step is sourced to it. 'Axe skill 240+' has no slot in the schema and nothing observable behind it; 'Level 71' is a plain level gate on any job.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "J / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Brutus",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Brutus - Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he also hands over the Pick of Trials, which is traded back at step 3, so only the guide is used as evidence. You cannot start this while another weapon skill quest is open -- quit that one with its own giver first."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Pick of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "break the latent on the Pick of Trials. The page's 'Breaking the Latent' section is transcluded and this render has only its heading, so the condition, the place and the count are all absent -- nothing here is markable or observable, and none of it is invented."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Pick of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he sends you to the Temple of Uggalepih"
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Temple of Uggalepih"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "bring Sneak and Invisible. In conventionally from the Jungle: follow the path to the T-intersection, north, and out again. The Voidwatch warp (outside, exit 1) and the Survival Guide (inside, exit 2) both leave you following the left wall to the granite door at (J-7), through it and out at (K-3) via exit 4; then right wall north, immediately east, and back in at exit 5 on Temple map 3."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yallery Brown",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "south along the path from exit 5 on Temple map 3. The ??? is named only in the deepest sub-bullet of bullet 5."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yallery Brown",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "a sapling; weak to Fire and Dark"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same ??? again, after the kill"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the reward is the Decimation weapon skill, not an item"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Thirst Before Time",
+   "page_id": 117017,
+   "revision_id": 572158,
+   "source_sha256": "62dc39226d9a68d5990084d7129fe92136cfad965dc9615cb9299a7f50f0132d",
+   "cache_file": "0117017_a_thirst_before_time"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 117,
+   "dat_name": "A Thirst Before Time",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "steps_from_after_section",
+   "consumed_key_item"
+  ],
+  "notes": "A clean cutscene chain with two real evidence points in the middle of it. Bullet 1 is a shouted precondition, not a step -- without The Curious Case of Melvien nothing happens at all -- and it merges into the first Roskin talk. Bullet 6 is split: examining the cache a second time spawns the NM, killing it drops the hat, and those are a spawn and a kill. Bullet 7 is a third examine of the same cache, so the Well-Kept Cache carries four separate rungs; that is what the page describes and each one is a real click. The Weathered Haverton hat is the NM's drop and therefore the fight's evidence, and the Forgotten memory is the third examine's -- neither is a reward, so both are usable. The quest's own reward -- a necklace or bayld -- is not evidence and is not used. The '== Optional ==' heading sits inside the walkthrough rather than after it and its bullet keeps the numbering at 12, so it is the same section; it is recorded as an optional step that consumes the hat, which is why the fight's evidence stops being true if you take it. Header start has no grid; bullet 2 gives Roskin's as (H-8) and that is used. Palomel gets no grid ref anywhere, only 'near Scouts' Coalition'. Fame reads 'Adoulin', which is not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Curious Case of Melvien",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "A Thirst for Eternity",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Roskin",
+   "zone": "Eastern Adoulin",
+   "grid": "H-8",
+   "raw": "Roskin, Eastern Adoulin"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "choose 'Who made all these requests' then 'Let's barrel in headfirst, then.'. The quest requires the optional portion of A Thirst for Eternity and all of The Curious Case of Melvien, or there is no cutscene."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Polished Pebble"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Inventors' Coalition"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Well-Kept Cache"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "just north of Frontier Bivouac #2"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Well-Kept Cache"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Inquisitor Mortuus",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same cache again; a Fomor Ranger notorious monster, content level 115"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weathered Haverton hat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Inquisitor Mortuus",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "capable of Eagle Eye Shot more than once; skillchains seem to blue-proc it into standing still"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Well-Kept Cache"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Forgotten memory",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "a third examine of the same cache"
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Eastern Adoulin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the cutscene fires on zoning in, before you reach Roskin"
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Palomel"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "near the Scouts' Coalition; the page gives no grid for her"
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the Erudition Necklace or 30,000 Bayld, your choice. Swapping the reward later means trading him a Frontier Soda, bought from Bernegeois at (G-8) -- that is after the quest, not part of it."
+   },
+   {
+    "n": 12,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Wegellion"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Weathered Haverton hat",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     12
+    ],
+    "note": "the page's own '== Optional ==' section, in the Scouts' Coalition. He names the hat's owner as Cedricaste and takes the key item, which is why step 6's evidence stops being true once you do this. Worth 10,000 experience points and 3 pinches of High-Purity Bayld."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Memories: Of Malign Maladies",
+   "page_id": 58949,
+   "revision_id": 749176,
+   "source_sha256": "ccd1c42507e5a341ab5c0c715d0973fab7b416064ceb687e2fe8131e89543869",
+   "cache_file": "0058949_her_memories_of_malign_maladies"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 72,
+   "dat_name": "Her Memories: Of Malign Maladies",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "route_heavy"
+  ],
+  "notes": "Seven bullets, seven steps, and the page is careful about which era each one is in -- it writes '(S)' where it means the past and leaves it off where it does not, so bullets 1 and 2 are present-day Southern San d'Oria and Upper Jeuno while bullets 4 and 7 are Grauberg (S) and Southern San d'Oria (S). Both parenthesised forms resolve, so they are kept as written. Bullet 3's 'Windurst Waters North' is the north half of zone 238 and not a zone of its own, so it is recorded as Windurst Waters. Bullet 4 carries three nested alternative routes into Witchfire Glen -- Campaign Arbiter warp, the Glimmer of Hope Conflux shortcut, and a Lightsworm blue ??? by a Cavernous Maw -- all of which are ways to arrive, not steps, and none of which changes what you trade or where. Bullet 5 is a genuine action but an unobservable one: zone out and let a game day pass, and the addon sees neither the zoning nor the clock. The Fey stone is the only evidence in the quest; the Large memory fragment on bullet 7 is the header's Reward, and on top of that the client has more than one key item by that name, so it is not used.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Her Memories",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Amaura",
+   "zone": "Southern San d'Oria",
+   "grid": "G-6",
+   "raw": "Amaura, Southern San d'Oria"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by Home Point #4; the header gives no grid, bullet 1 does"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Home Point #3"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Library Book"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "on the east wall of the Optistery, by Home Point #1. The page says 'Windurst Waters North', which is half of one zone rather than a zone."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Fey Blossoms"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "F-5",
+    "items": [
+     {
+      "name": "Philosopher's Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at Witchfire Glen. Survival Guide, or the Campaign Arbiter warp to Grauberg (S) and run northwest. With Glimmer of Hope done: Survival Guide to Pashhow Marshlands (S), into the Walk of Echoes at the Veridical Conflux (J-9), then the centre Conflux. With the Lightsworm key item, any blue ??? by a Cavernous Maw around Jeuno in either era works, which the Batallia Downs Survival Guide puts you next to."
+   },
+   {
+    "n": 5,
+    "kind": "wait",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "zone out and let a game day pass; the Veridical Conflux counts as zoning out. Neither the zoning nor the clock is visible to the addon, so this rung can never be marked or observed."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fey Blossoms"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fey stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same blossoms, after the wait -- an examine this time, not a trade"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Raustigne"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the past era, unlike Amaura. The Large memory fragment he gives you is the header's Reward and its name is not unique in the client, so it is not used as evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Past Reflections",
+   "page_id": 15027,
+   "revision_id": 727389,
+   "source_sha256": "5eb67f473330c71ff7020bdd1647978a835f71157be0334f3e8c0bd86107af52",
+   "cache_file": "0015027_past_reflections"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 80,
+   "dat_name": "Past Reflections",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table"
+  ],
+  "notes": "The whole substance of bullet 3 is in a wikitable: six foods in the left column, and where to buy or cook each in the right. The right column is shopping advice and not steps, but the left column is a real, fully named, fully resolvable AND-list, so it becomes an obtain step whose evidence is holding all six at once -- one of the few places in this batch where the addon can actually see progress. The trade at bullet 4 then consumes them, so the ladder falls back on the session latch for the last two steps; nothing after that is observable. The sub-bullet under bullet 4 is doing the reader a favour and me one too: 'Looking Glass Legends' is neither an item nor a key item, just text, so there is deliberately no evidence on the hand-in. Bullet 1's 'zone after the previous quest' is a precondition and its Fellow Points aside is a warning, neither a step. Tosuka-Porika is in the north half of Windurst Waters, which is one zone with the south. Fame and FLevel are both empty, so the gate is inert but the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Mirror, Mirror",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must have zoned since Mirror, Mirror. If she talks about Fellow Points instead, speak to her again."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the north half of Windurst Waters, by Home Point #1. The cutscene is what asks for the food."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bison Steak",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "San d'Orian Tea",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Icecap Rolanberry",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "White Bread",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Whitefish Stew",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Windurst Salad",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the six are in a table, not in bullets. Bison Steak is a level 65 cooking recipe or an auction house buy; the other five are all vendor stock, several of them conquest-dependent -- Glyke in Upper Jeuno (F-7) covers White Bread and Windurst Salad, Taajiji in Windurst Waters (F-10) covers Whitefish Stew and Windurst Salad, Yoskolo in Lower Jeuno (H-8) the Icecap Rolanberry, Shilah in Southern San d'Oria (K-6) or Bernegeois in Eastern Adoulin (G-8) the San d'Orian Tea."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Bison Steak",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "San d'Orian Tea",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Icecap Rolanberry",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "White Bread",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Whitefish Stew",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Windurst Salad",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all six. 'Looking Glass Legends' is only text -- neither an item nor a key item -- so this hand-in leaves nothing to observe."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Khumo Daramasteh"
+    },
+    "zone": "Port Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "by Home Point #1; the cutscene here completes the quest and raises the Fellow familiarity limit to 50"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Brygid the Stylist Strikes Back",
+   "page_id": 67156,
+   "revision_id": 625824,
+   "source_sha256": "60cbcbc8b474652971b2d3020512c9b5308282514ffb497fb7c345dc97f9b0d7",
+   "cache_file": "0067156_brygid_the_stylist_strikes_back"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 86,
+   "dat_name": "Brygid the Stylist Strikes Back",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "equip_gate_unmodelled",
+   "random_requirement"
+  ],
+  "notes": "Two bullets, two talks, one NPC, and the entire difficulty of the quest is in a requirement that cannot be written down. Brygid picks a body piece and a legs piece at random from the pool for whichever job you approach her as, so there is no item to name and nothing to hold that the page states; items stays empty rather than guessing. items_partial is set on the second step because the page does describe an alternative it cannot enumerate -- HQ (+1) versions satisfy the request as well as the base pieces. The Empyrean Armor gate is real (at least one original piece worn, not an iLvl 119 upgrade) but equipment is not something the addon inspects, so it is flagged and gates nothing. Both steps are on the same NPC and consecutive, which is one marker, and that is right: the whole quest happens at (D-11). The sub-bullets are all tactics -- unequip your body and legs first so she is less likely to name something you do not own, and quitting via her dialogue clears the quest from the log so you can rezone and reroll. The trailing 'Zoning is required in order to repeat this quest' is a repeat condition, not a step. Fame 'aalt' is an Abyssea zone code, not one of the nine regions, so it gates nothing even with FLevel 2.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: HQ (+1) versions count too, which is the alternative items_partial stands for.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aalt / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Brygid (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "D-11",
+   "raw": "Brygid (A) (D-11), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brygid (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "D-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Conflux #8, wearing at least one piece of original Empyrean Armor -- upgraded iLvl 119 gear does not count. Consider unequipping your body and legs first, since she never picks something you are already wearing."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Brygid (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "D-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Speak to her again with both requested pieces equipped. The body and legs she asks for are chosen at random for the job you came as, so the page names nothing; Talking to her without them offers to quit, which drops the quest from the log rezone and start again to reroll the pair."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slip Slidin' Away",
+   "page_id": 67146,
+   "revision_id": 760561,
+   "source_sha256": "0badb8ce4593809344f5ed4ba29aeb09600a10cb8576eaf9d54a87a1441216aa",
+   "cache_file": "0067146_slip_slidin_away"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 76,
+   "dat_name": "Slip Slidin' Away",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "count_unobservable"
+  ],
+  "notes": "Nine bullets and three of them are one step: bullets 2, 3 and 4 are a single journey from Conflux #7 to a specific spot on the western cliff and a controlled fall into a hole, with no named entity anywhere in them, so they merge into one travel step inside Abyssea - Uleguerand rather than becoming three unmarkable rungs. Bullet 8 is the way home afterwards, not a step. Bullet 6 is the quest: three waves of two or three falling NPCs that you target and talk to or examine, and the page never names a single one of them, so the target is honestly none and the wave count is nothing the addon can see. That leaves an unmarkable rung wedged between two Perfaumand (A) steps, which normally I would avoid -- but the page really does put the whole rescue between speaking to him and speaking to him again, and bullet 7 says the second one is mandatory before leaving. Nothing in this quest is observable: no key item, no item, no drop. The trailing 'Zoning is required in order to repeat this quest' is a repeat condition and the youtube tag is a link, neither a step. Fame 'aule' is an Abyssea zone code, so it gates nothing even with FLevel 2. Michilca (A) gets no grid ref anywhere on the page, only 'at the base camp'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aule / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Michilca (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Michilca (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Michilca (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the base camp; the page gives no grid for her"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Conflux #7, south past the Surveyors, then west to the cliff by the gears. Start the slide about a third of the way out from the north wall; zoom the camera all the way out and angle it down to find the small dip in the terrain, with the hole you must fall into just below it. Running backwards up the slope while sliding slows you enough to hit it. Nothing here is a named entity, so there is nothing to mark."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perfaumand (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "right inside the entrance at the bottom of the fall; speaking to him is what starts the NPCs falling"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "three waves of two or three NPCs each; target every one and talk to or examine it to stop its fall and slide it toward the cliff. The page names none of them. Wobble toward whichever side they are falling on without going over yourself, and note that interacting in time still saves one that has already passed you."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perfaumand (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "mandatory, and before you leave the area"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Michilca (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "bullet 8 is only the way out -- Conflux #2 off the edge, past the imps and into the tunnel"
+   }
+  ]
+ }
+]

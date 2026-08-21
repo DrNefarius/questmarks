@@ -1,0 +1,704 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 8-2",
+   "page_id": 13180,
+   "revision_id": 737217,
+   "source_sha256": "3e38f4bd12a8b94073d53e91acf55002ffbba7fc60cc8efd997e0ac4bd5f2e64",
+   "cache_file": "0013180_bastok_mission_8_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 21,
+   "dat_name": "Enter the Talekeeper",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "unordered_group"
+  ],
+  "notes": "A clean seven-bullet walkthrough that reads as a real ladder with one genuine evidence point. GIVER: header 'Any Bastok Gate Guard' is generic and chronicle_snpc is 'argus'; I kept Argus, so my start AGREES with the shipped index and no marker moves. 'Gate Guard' resolves ambiguous:true, so writing the header's string would trip validate's ambiguous_npc_no_zone gate and cost the mission its marker. The walkthrough itself never mentions the guard -- it opens at Drake Fang -- so the ladder starts where the page starts, which is the normal mission shape and not a disagreement.\n\nTHREE ???s, TWO OF THEM THE SAME ONE. Bullet 2 puts the first ??? at Kuftal Tunnel (H-8); bullets 4 to 6 are all about the second ??? at the bottom of the cliff, which is checked once to spawn the ghosts and again afterwards for the key item. Steps 3 and 5 are therefore the same entity twice with a fight wedged between them, exactly as the page describes it, and only the second check carries evidence. The Old piece of wood is the one observable thing in the mission: it is granted AT step 5, it is not in the header's Reward list (Rank 9 and 80,000 gil are), and it appears on no other step.\n\nBullet 5's sub-bullet offers an alternative to killing all three ghosts -- pull Gordov's Ghost alone and let the other two depop -- so all three are recorded as kill targets with the shortcut in the note rather than pruning two mobs the player may well fight. The '(Optional)' sub-bullet under bullet 7 is three mini-cutscenes in any order after the mission is over; they are marked optional and share a group so they draw together rather than one at a time. The Survival Guide lines are route advice, not steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Chains that Bind Us",
+     "cat": "mission",
+     "area": "bastok",
+     "id": 20
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Drake Fang"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Zeruhn Mines Survival Guide is the fastest way in"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "map 1, just inside the Western Altepa Desert entrance the page writes as (H-4); the Kuftal Tunnel Survival Guide warp also works. Answer yes to extract the piece of wood -- it falls off the cliff, which is why there is a second ??? below. Every party member must check this one, but anyone who missed it may check it after the ghosts and still get the key item."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dervo's Ghost",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Gizerl's Ghost",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Gordov's Ghost",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the second ???, down around the cliff directly under the first one; Sneak on the way down. The page gives it no grid."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dervo's Ghost",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Gizerl's Ghost",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Gordov's Ghost",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "three level 68 NMs. The page's sub-bullet offers a shortcut: pull Gordov's Ghost and wait for the other two to depop, instead of defeating all three."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Old piece of wood",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same ??? as step 3, checked again once the ghosts are down; a cutscene and the key item follow"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Drake Fang"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "final cutscene; the grid is bullet 1's"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "mini_cutscenes",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page's own '(Optional)' sub-bullet: a mini-cutscene, in any order with the other two"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Detzo"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "mini_cutscenes",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "optional mini-cutscene"
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "mini_cutscenes",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "optional mini-cutscene"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 9-1",
+   "page_id": 13181,
+   "revision_id": 760788,
+   "source_sha256": "a9404d2953cc37f7ed855878af0198efdf76014c34643da08814a0a34cb1687c",
+   "cache_file": "0013181_bastok_mission_9_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 22,
+   "dat_name": "The Salt of the Earth",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Seven bullets, of which five are steps and the rest is slime tactics. GIVER: header 'Any Bastok Gate Guard' is generic, chronicle_snpc is 'argus', and I kept Argus -- my start AGREES with the shipped index and no marker moves. 'Gate Guard' resolves ambiguous:true and would trip validate's ambiguous_npc_no_zone gate.\n\nBullet 3 and bullet 4 are one action: reaching the ??? in the pond and checking it are not two rungs, and the check is what spawns Gigaplasm. Bullet 5 IS two: killing the slime chain, and then checking the ??? again for the key item. Miraclesalt is the mission's only observable and it is obtained at that second check -- the header's Reward is 'Rank Points' and nothing else, so this is evidence and not a reward, and it appears on no other step.\n\nBullet 2 is the page's own warning that Dancing Wolf may need several conversations, and a zone-and-return cycle repeated up to three times, before he mentions Miraclesalt. Nothing in the packets distinguishes a right cutscene from a wrong one, so that rung is honestly unobservable and the ladder simply sits on him until the player moves on; it is recorded in the note rather than pretended away. The counts on the splitting slimes are only the ones the page actually states -- one Gigaplasm and two Macroplasms. It says each of those divides in two again and again but never gives a total, and multiplying it out myself would be arithmetic the page did not do. The whole 'After the walkthrough: Notes' section is a two-RDM gravity strategy, not steps; its one useful fact -- credit lands as long as a single Nanoplasm dies -- is carried into the fight step's note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Enter the Talekeeper",
+     "cat": "mission",
+     "area": "bastok",
+     "id": 21
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alois"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the President's Office Conference Room"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dancing Wolf"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "talk until he mentions Miraclesalt -- if the text repeats, zone and come back; the page reports up to three cycles. Nothing observable separates the right cutscene from the wrong one."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gigaplasm",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "map 2, in the pond. Everything in the area aggroes; the page suggests parking the rest of the party at (H-7), which is safe. Unity Warp 128 lands on the right map just south of the pond, the Survival Guide only reaches map 1."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gigaplasm",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Macroplasm",
+      "count": 2,
+      "role": "kill"
+     },
+     {
+      "name": "Microplasm",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Nanoplasm",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "each kill splits into two of the next kind -- Gigaplasm into 2 Macroplasms, each of those into Microplasms, each of those into Nanoplasms. The page never states a total, so only the counts it gives are recorded. High melee resistance; keep everything asleep. The Notes section says credit is granted as long as one Nanoplasm is defeated."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Miraclesalt",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? as step 3, once the slimes are down; Sneak everyone back to it"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dancing Wolf"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "cutscene; the grid is bullet 2's"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Alois"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 9-2",
+   "page_id": 13183,
+   "revision_id": 727892,
+   "source_sha256": "780a890b9b7668cf06b40fed710ddf60b369a109e38c6f9a9296c1f35aa4c128",
+   "cache_file": "0013183_bastok_mission_9_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 23,
+   "dat_name": "Where Two Paths Converge",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "steps_from_after_section"
+  ],
+  "notes": "The walkthrough proper is three bullets and stops at the battlefield door; the mission's last rung is in the 'After the walkthrough: Boss Fight' section, whose bullet [7] says to return to the President's Office and speak to Iron Eater. That is a real step and it is the only place the mission ends, so it is authored with steps_from_after_section flagged and the note saying where it came from -- that section's bullets restart at [1], so source_bullets [7] is ITS seventh bullet, not the walkthrough's. Its bullet [8] ('you will be rewarded, and complete the Bastok story') is an outcome and not a step, and the second 'After the walkthrough: Notes' section is entirely low-man tactics.\n\nGIVER: header 'Any Bastok Gate Guard' is generic, chronicle_snpc is 'argus', and I kept Argus -- my start AGREES with the shipped index and no marker moves. 'Gate Guard' resolves ambiguous:true and would trip validate's ambiguous_npc_no_zone gate.\n\nNO EVIDENCE ANYWHERE, and that is correct. The header's Reward is Rank 10, 100,000 gil, the Bastokan Flag and the ability to BUY the Atma of the Hero key item; a reward proves the mission is over, not that a rung is done, and that atma is a purchase after the fact rather than something obtained at a step. Nothing else in the mission is a held item.\n\nThe boss fight is one step, not six. Bullets [1] to [6] of the Boss Fight section are the phases and tactics of a single battlefield entry -- shared HP across two phases, Volker joining at about 65 percent and having to survive, resummoned Shadows -- and none of them is a separate thing the player goes and does. The page never names the battlefield's own zone, so the fight keeps Castle Zvahl Keep, which is where the page puts the player; it carries no marker either way since its target is none. Previous is written 'Salt of the Earth' on this page while the client and the 9-1 page both call it 'The Salt of the Earth'; the header string is kept verbatim as instructed, and the cat/area/id are filled in from the same binding that produced this lane so the link is unambiguous whichever end reads it.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Salt of the Earth",
+     "cat": "mission",
+     "area": "bastok",
+     "id": 22
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "cutscene"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Keep"
+    },
+    "zone": "Castle Zvahl Keep",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Throne Room; the page points at Home Point #1 as the way in. No grid is given."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Keep",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Zeid",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shadow of Rage",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "gather first, then enter the 'Where Two Paths Converge' battlefield; buffs wear off on entry, so cast inside. The detail comes from the 'After the walkthrough: Boss Fight' section, bullets [1] to [6] of that section: two phases sharing one HP pool, a cutscene near 65 percent after which Volker fights alongside you and must not fall or you are ejected, and Shadows of Rage that Zeid resummons when killed. The battlefield is its own zone, which the page never names, so the step keeps Castle Zvahl Keep."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "from the 'After the walkthrough: Boss Fight' section, whose bullets restart at [1] -- this is ITS bullet [7], 'return to the President's Office and speak to Iron Eater'. The zone and grid are bullet 1's of the walkthrough proper; the President's Office is in the Metalworks."
+   }
+  ]
+ }
+]

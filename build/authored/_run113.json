@@ -1,0 +1,1391 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Intermediate Teamwork",
+   "page_id": 479,
+   "revision_id": 511088,
+   "source_sha256": "7e94cbc776b0efbaebbd4d4fee70adada208ac34f26a09ed5345365681f2354f",
+   "cache_file": "0000479_intermediate_teamwork"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 64,
+   "dat_name": "Intermediate Teamwork",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "party_gate_unobservable"
+  ],
+  "notes": "Four bullets, two steps. Bullets 1 and 2 are not a journey -- they are how you REACH Vilatroire: he stands in a walled watchtower in West Ronfaure that can only be entered through the zone line at (C-7) in Northern San d'Oria, so a player already standing in West Ronfaure cannot walk to him. That is route information about step 1's own target, not a rung of its own, and a 'travel to West Ronfaure' step would be an unmarkable duplicate of the zone step 1 already carries. Bullet 4's real content is the party condition: two members, both the same race as each other. Nothing in the packets reports party composition or race, so it is a note on the final talk rather than a step -- a rung the player cannot be tracked through. 'Quest Reqs: Level 10 and up' is the level gate; no job is named, so jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 3,
+    "raw": "S / 3"
+   },
+   "prev": [
+    {
+     "title": "Introduction To Teamwork",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Vilatroire",
+   "zone": "West Ronfaure",
+   "grid": "H-5",
+   "raw": "Vilatroire - West Ronfaure (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vilatroire"
+    },
+    "zone": "West Ronfaure",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "reached only through the zone line at (C-7) in Northern San d'Oria, which puts you in the watchtower with him directly ahead"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vilatroire"
+    },
+    "zone": "West Ronfaure",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "first form a party of exactly two, yourself and one other of the same race; party size and race are invisible to the addon, so nothing gates this step"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Clock Most Delicate",
+   "page_id": 38693,
+   "revision_id": 767985,
+   "source_sha256": "74299daa8993cb1c1ce1a5477ea912ebef45816b9c0bd8e754e95168c7ccb10f",
+   "cache_file": "0038693_a_clock_most_delicate"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 2,
+   "dat_name": "A Clock Most Delicate",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 6
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "unverified_door_name",
+   "cross_quest_dependency",
+   "evidence_precedes_quest",
+   "precondition_not_a_rung"
+  ],
+  "notes": "The door is the problem. The page names the same entity two different ways -- 'Door: House to the West of Collet' in bullet 2 and 'Door: House West of Collet' in bullet 4 -- and NEITHER reads like a client entity name: every real door already in the index is abbreviated to fit the client's field ('Door: Prince Royal's Rm', 'Door: Svenja's Rm', 'Door: Research Chamber'). These are wiki descriptions of a door's position, not its name. The shorter bullet-4 form is recorded because it is the one attached to the completing step, the longer form is kept here, and the quest stays at medium: the ladder is certainly right, but steps 2 and 4 will probably fail to bind to a live entity and lose their markers. Worth a qmprobe dump of Upper Jeuno to settle. VERIFY PASS: the draft made bullet 3 an observable rung with the [KI] Clock tower oil as its evidence. That breaks the rule that evidence must be obtained AT the step -- the oil is obtained by finishing Deal with Tenshodo, a different quest, and the header lists it under Item Reqs, which means the ordinary player already holds it when this quest is accepted. Its evidence would have fired immediately and jumped the mark to the final door, skipping two cutscenes the quest genuinely requires. Bullet 3 is a cross-quest precondition, not a ladder position: evidence nulled, the rung marked optional and demoted, and the oil kept where it is actually used -- as the items requirement on step 4. Nothing observable now remains in this quest, which is the honest result. Reward is gil and Engineer's Gloves, so no reward is being used as evidence anywhere.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 5,
+    "raw": "Jeuno / 5"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Collet",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Collet, Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Collet"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "cutscene"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: House West of Collet"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "west of Collet, to the right of the Marble Bridge; bullet 2 writes the name as 'Door: House to the West of Collet'. Grid is Collet's own, since the page only ever locates the door relative to him."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "bullet 3 states a requirement, it does not give an instruction: the [KI] Clock tower oil is granted by the separate quest Deal with Tenshodo and is listed in the header under Item Reqs, so a player will normally already be holding it before this quest is even accepted. Holding it therefore proves nothing about a position in THIS ladder. Evidence removed and the rung marked optional -- as evidence it would have satisfied step 3 at accept time and thrown the marker forward to the final door check, skipping the Collet cutscene and the first door cutscene that the quest really does require."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Door: House West of Collet"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Clock tower oil",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same door again; there is no NPC hand-in for this quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Squire's Test",
+   "page_id": 456,
+   "revision_id": 721901,
+   "source_sha256": "2d89f2d572a06c4ba10bf7745f06504e0783dea1b09102516ebd4e324f4cc622",
+   "cache_file": "0000456_a_squire_s_test"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 10,
+   "dat_name": "A Squire's Test",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "header_disagrees_with_walkthrough"
+  ],
+  "notes": "The header Description says 'Obtain a revival tree root from King Ranperre's Tomb' and the walkthrough's own sub-bullet flatly contradicts it: it does NOT need to come from there, the auction house will do. The walkthrough wins, so no step is placed in King Ranperre's Tomb and the obtain step carries no zone at all. Bullet 2 is a position note on Balasiel, not a step. Bullet 3 names 'Ghost type enemies' -- a family, not an entity -- so mobs stays empty rather than guessing at a name the live matcher would have to hit exactly. Item Reqs renders as 'Revival Root Revival Tree Root', which is one wiki link and its display text; both spellings resolve to item 940 and the long form is recorded, per the guide. 'Quest Reqs: Level 10 and up' is a level gate on any job.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Balasiel",
+   "zone": "Southern San d'Oria",
+   "grid": "F-7",
+   "raw": "Balasiel - Southern San d'Oria (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "up on the walkway, on the upper level"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Revival Tree Root",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "auction house under Materials > Alchemy 1, or off Ghost type undead anywhere -- explicitly NOT restricted to King Ranperre's Tomb despite the header"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Revival Tree Root",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Lerene's Lament",
+   "page_id": 108890,
+   "revision_id": 613125,
+   "source_sha256": "beb5fabf527f441d09a2cf5b5318b7bfe061623b50f8c2a284c0350c9352b2ca",
+   "cache_file": "0108890_lerene_s_lament"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 126,
+   "dat_name": "Lerene's Lament",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unverified_mob_name",
+   "start_grid_from_walkthrough"
+  ],
+  "notes": "Two bullets, two steps, both on Lerene at the same spot -- one marker that simply changes what it wants from you. The header gives no grid at all; the walkthrough's (N-7) is the only location on the page, so it is used for the start and for both steps. The sub-bullet is a farming hint, not a step, but its drop source is worth keeping: the page writes 'Fomors (Shunned)', which is a wiki link with a disambiguator rather than a clean entity name, so the mob is recorded as 'Fomor' and flagged -- mobs are matched live, so a near miss costs nothing but a marker that never draws. The header's Item Reqs '2x Ancestral Cloth' agrees with the walkthrough, so the count is certain. Fame 'Adoulin' is not one of the nine fame regions and gates nothing; the raw string is kept. Repeatable is blank on this page, so it is recorded false rather than guessed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Lerene",
+   "zone": "Outer Ra'Kaznar",
+   "grid": "N-7",
+   "raw": "Lerene, Outer Ra'Kaznar"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lerene"
+    },
+    "zone": "Outer Ra'Kaznar",
+    "grid": "N-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "just inside the entrance of Outer Ra'Kaznar"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Lerene"
+    },
+    "zone": "Outer Ra'Kaznar",
+    "grid": "N-7",
+    "items": [
+     {
+      "name": "Ancestral Cloth",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fomor",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both cloths; they drop easily around the corner at (K-8), from what the page calls 'Fomors (Shunned)'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Old Man and the Harpoon",
+   "page_id": 98196,
+   "revision_id": 676029,
+   "source_sha256": "5b705febe3ad78e1df42f7ce311b01a288fde1b31cf022fb6eff75df2b7b18c4",
+   "cache_file": "0098196_the_old_man_and_the_harpoon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 77,
+   "dat_name": "The Old Man and the Harpoon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "The cleanest page in the batch: three bullets, three steps, a key item handed over at each of the first two so the ladder is fully observable end to end. Both harpoons are key items and both are named in full on the page, so evidence is real rather than reached for -- holding the Broken harpoon draws Shipilolo, holding the Extravagant harpoon draws Jorin. The Broken harpoon is carried as a requirement on step 2 as well as being step 1's evidence, which is not the duplicate-evidence hazard: it is evidence exactly once. Both NPCs are in Western Adoulin -- (J-4) at the Waterfront and (J-9) outside the Inventors' Coalition -- so no step spans a zone. Fame 'Adoulin' is not one of the nine regions, so it gates nothing and only FLevel 1 and the raw string survive.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Jorin",
+   "zone": "Western Adoulin",
+   "grid": "J-4",
+   "raw": "Jorin, Western Adoulin - (J-4)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jorin"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Broken harpoon",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Adoulin Waterfront"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shipilolo"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Broken harpoon",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Extravagant harpoon",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "outside the Inventors' Coalition; the page says speak, not trade -- the exchange happens in dialogue"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jorin"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-4",
+    "items": [
+     {
+      "name": "Extravagant harpoon",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Imperial Espionage",
+   "page_id": 67140,
+   "revision_id": 651781,
+   "source_sha256": "802d849de095290e723c02684765590b59009d67ef4a06bdced4ca32042edc4b",
+   "cache_file": "0067140_imperial_espionage"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 70,
+   "dat_name": "Imperial Espionage",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "conflux_locations_not_grids"
+  ],
+  "notes": "Bullet 2's four NPCs are one bullet holding four visits with no order stated anywhere on the page, so they share a group and all four draw at once. A strict ladder would mark Purere alone and leave the other three dark until you happened to walk past them, which is exactly the failure the group mechanism exists for. All five NPCs are inside Abyssea - Uleguerand, so the group members each keep the same zone. The page locates them by Conflux number rather than by grid -- only Conflux #7 is given a grid, (F-7) -- so Purere inherits (F-7) because the page says she is at the same Conflux as Tyamah, and the other three carry no grid rather than a fabricated one. The wiki '(A)' suffix is kept on every name because the guide says to write the wiki form and let the normaliser fold it; it does, all four fold to the plain in-game name. Fame 'aule' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw string and FLevel 2 survive.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aule / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Tyamah (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": "F-7",
+   "raw": "Tyamah (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tyamah (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Conflux #7"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Purere (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "informants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "same Conflux as Tyamah, so she takes his grid"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Latifah (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "informants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Conflux #6; the page gives no grid"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Valderotaux (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "informants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Conflux #5, through the southern tunnel; the page gives no grid"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Polly (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "informants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Conflux #1; the page gives no grid"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Tyamah (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Dismayed Customer",
+   "page_id": 504,
+   "revision_id": 770038,
+   "source_sha256": "bdc40a991d02672e43825bfcec882b39866cc3ca92ebd30b8628152ed6bab95d",
+   "cache_file": "0000504_the_dismayed_customer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 6,
+   "dat_name": "The Dismayed Customer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "grid_unfixable"
+  ],
+  "notes": "Bullets 2 and 3 are one step, not two: 'travel to West Ronfaure to locate a ???' and 'touch it' are the same act of finding and clicking one object, and a separate travel rung would be an unmarkable duplicate of the zone the examine step already carries. The ??? spawns in ONE of three places -- the G-10/G-11 border, (G-9) at the outpost, or (F-11) by the wall in the south of the square -- and which one is not knowable ahead of time, so the grid is deliberately null and all three are written into the note. Picking one would point the player at the wrong corner of the zone two times in three. The ??? resolves as an object with no key, so it keeps its rung and carries no marker, which is the expected outcome for every ??? in the corpus. The step is still worth having: it holds the Gulemont's document key item, which is what makes the return trip to Gulemont readable.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [
+    {
+     "title": "A Taste For Meat",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Gulemont",
+   "zone": "Port San d'Oria",
+   "grid": "G-7",
+   "raw": "Gulemont - Port San d'Oria (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gulemont"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "West Ronfaure",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Gulemont's document",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "one of three spots, and the page does not say which: the border of (G-10) and (G-11), (G-9) at the outpost, or (F-11) in the south part of the square close to a wall. No single grid is recordable."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gulemont"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Gulemont's document",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Chocobilious",
+   "page_id": 70,
+   "revision_id": 702395,
+   "source_sha256": "fb5470770f4aa439b9fb886df4a3f56d33f8b259e21232700f9d3c8a503aafac",
+   "cache_file": "0000070_chocobilious"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 27,
+   "dat_name": "Chocobilious",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Three bullets, three steps, and no observable state anywhere -- the medicine changes hands in dialogue and the page names no key item, so every evidence field is null rather than reached for. Bullet 2 is one visit to one NPC, not two rungs: you speak to Tapoh Lihzeh and trade her the Papaka Grass at the same spot, so it is a single trade step with the conversation in the note. The page never says Tapoh Lihzeh is in another zone and the page is filed under Windurst Woods, so (I-8) is read as Windurst Woods; the Dhalmel farm and the medicine shop are landmarks within it. Header Item Reqs 'Papaka Grass' agrees with the walkthrough's 'one Papaka Grass', so the count is certain. Repeatable renders as 'N', which is false.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 2,
+    "raw": "Windurst / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kuoh Rhel",
+   "zone": "Windurst Woods",
+   "grid": "K-12",
+   "raw": "Kuoh Rhel, Windurst Woods (K-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kuoh Rhel"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the corral at the Chocobo Stables"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tapoh Lihzeh"
+    },
+    "zone": "Windurst Woods",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Papaka Grass",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Mithran apothecary at the medicine shop, past the Dhalmel farm; speak to her first, then trade the grass she is missing"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kuoh Rhel"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Old Lady",
+   "page_id": 289,
+   "revision_id": 699516,
+   "source_sha256": "d890cea4fd7cdd364ecf26bded33c70e1d8c0712c396bfd538f7205a463f8d8c",
+   "cache_file": "0000289_the_old_lady"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 10,
+   "dat_name": "The Old Lady",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "note_paragraph_is_quest_content"
+  ],
+  "notes": "This is the subjob quest, so getting it wrong is expensive. Bullet 2 is three trades, not one: the page says the Wild Rabbit Tail 'then' the Dhalmel Saliva 'and finally' the Bloody Robe, which is an explicit order, and they are not held as a set -- you can hand them over one at a time. Three ordered steps on the same NPC is one marker that keeps asking for the next thing, and it means holding only the rabbit tail already reads as ready. Folding them into a single AND-list of three would demand all three at once, which the page never says. The trailing NOTE paragraph is not a step but it IS quest content, and the header backs it: [KI] Gilgamesh's introductory letter, from the Rhapsodies of Vana'diel mission Set Free, 'replaces the need for the requested items'. That is a genuine second way to satisfy the same steps, so the letter is carried in items_alt on all three trades. Demoted to medium for one honest reason: the page never says what you DO with the letter -- show it, trade it, or simply talk -- so the branch's shape is modelled from the header's OR and not from an instruction. 'Quest Reqs: Level 18' is the level gate, any job. The reward is a Support Job, which is not an item and cannot be evidence of anything.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": 18,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Vera",
+   "zone": "Mhaura",
+   "grid": "G-10",
+   "raw": "Vera, Mhaura (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vera"
+    },
+    "zone": "Mhaura",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Vera"
+    },
+    "zone": "Mhaura",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Wild Rabbit Tail",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Gilgamesh's introductory letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "first of three, in the order the page gives; the Gilgamesh letter replaces the whole set"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Vera"
+    },
+    "zone": "Mhaura",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Dhalmel Saliva",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Gilgamesh's introductory letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "second"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vera"
+    },
+    "zone": "Mhaura",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Bloody Robe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Gilgamesh's introductory letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "last of the three; this one completes the quest and unlocks support jobs"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promotion: Private First Class",
+   "page_id": 13567,
+   "revision_id": 769273,
+   "source_sha256": "b56fe136a0180683cdae3cd8c1b62b7c166f91a05b3892b9336c0bfa6b312189",
+   "cache_file": "0013567_promotion_private_first_class"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 90,
+   "dat_name": "Promotion: Private First Class",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "bullet_split",
+   "start_grid_repaired"
+  ],
+  "notes": "One top-level bullet, split into two steps because its sub-bullet moves you to another zone and the schema is one step, one zone: the Imp Wings come off Orderly Imps in Caedarva Mire (Map 1), and the trade happens in Aht Urhgan Whitegate. The obtain step is what makes the zone and the mob markable at all; folded into the trade step, Caedarva Mire would have vanished from the record entirely. Holding an Imp Wing is real evidence -- it is a normal item, not the reward, which is the PFC Wildcat badge. The auction house is the other source (Materials > Alchemy 1) and needs no marker. The header writes the start grid as '(1-10)', which is not a legal grid reference: columns are letters, and this is the familiar I-to-1 transcription slip, so (I-10) is recorded and the header string is preserved verbatim in start.raw. The real gate is 'Complete 25 points worth of Assaults as Private Second Class' -- a mercenary rank plus an Assault point total, neither of which has a slot in the schema nor any observable predicate, so it is flagged and gates nothing. It is not a level gate and not a job gate; jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem - Aht Urhgan Whitegate (1-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Imp Wing",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Orderly Imp",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Map 1; the auction house sells them too, under Materials > Alchemy 1, which needs no place"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Imp Wing",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the whole quest is this one trade"
+   }
+  ]
+ }
+]

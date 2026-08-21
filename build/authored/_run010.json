@@ -1,0 +1,1009 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Secrets of Ovens Lost",
+   "page_id": 245,
+   "revision_id": 770704,
+   "source_sha256": "c8a83f1b00eabec871a34e33bf143ba1ce09d5c74fdc498ad706836bddfd1992",
+   "cache_file": "0000245_secrets_of_ovens_lost"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 73,
+   "dat_name": "Secrets of Ovens Lost",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "time_gated"
+  ],
+  "notes": "The middle of this quest is an OR over two ZONES, which the schema has no field for: items_alt is an alternative set of items, not an alternative place. Phomiuna Aqueducts and Sacrarium are therefore written as two steps sharing a group, which is the closest honest fit -- the runtime draws every member of a group at once, so both branches appear and the player takes whichever zone their Chains of Promathia progress opens. It costs nothing in markers either way, because the target in both branches is a ???, which is in OBJECT_DENY and can never carry one; the rungs are kept for the zone and the route, per the guide. The Tavnazian cookbook sits on the SECOND group member only, so obtaining it lands the mark on Jonette rather than back inside the group -- the same placement An Explorer's Footsteps needed.\n\nBullet 1 puts Despachiaire BEFORE the header's giver. The header is not wrong -- Jonette is who asks for the cookbook and who takes it -- so start is left on her and Despachiaire is simply step 1. No start_disagrees flag: the giver is in the walkthrough, just not first.\n\nThe long paragraph between bullets 2 and 3 is not a step, it is the statement of the branch. Bullet 5 is a conquest-week cooldown plus a warning about losing the repeat, and the sub-bullets under 3 and 4 are route and aggro advice -- neither is a step. Fame reads 'O', which is not one of the nine regions, so it gates nothing and only raw is kept. The ??? moves rooms about every ten minutes of earth time in both zones, which no packet reports, so no grid is recorded for either branch and the candidate rooms live in the note.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The Bronze Key opens that door; a Thief can pick it instead, which is why items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "O / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Spice Gals",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Jonette",
+   "zone": "Tavnazian Safehold",
+   "grid": "G-9",
+   "raw": "Jonette, Tavnazian Safehold, (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Despachiaire"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "top floor. The walkthrough puts him ahead of the header's giver."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jonette"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "middle floor, near the stream"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": null,
+    "items": [
+     {
+      "name": "Bronze Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": "cookbook",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "First of two alternative branches do this OR the Sacrarium one, not both. Third map: the ??? is on the north or south bookshelf of one of the four libraries at (F-7), (F-9), (J-7), (J-9), and moves to the next room about every ten minutes earth time, so no single grid is recorded. In via the iron door at (G-8) or (J-6), then the ladder at (E-8) or (M-8). Two true-sight Taurus in each corridor cannot be avoided."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sacrarium",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tavnazian cookbook",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "cookbook",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Second branch, and the group's LAST member, which is why it carries the Tavnazian cookbook for both -- duplicate evidence across steps is a hard gate, and putting it here is what lands the mark on Jonette. The ??? is on the inner face of a bookshelf in one of the four corner rooms (F-5), (H-5), (F-11), (H-11), moving every ten minutes; the page's claimed order NE > NW > SE > SW is tagged [unverified]. Sneak, not Invisible; true-sight Stegotaur guard the maze entrances, and only one of the two maze paths is open on a given day."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jonette"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Tavnazian cookbook",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the return is written out at the end of BOTH branch lists, hence two source bullets. She takes the cookbook; the Page from Miratete's Memoirs is the reward, not evidence. It must be collected inside the same conquest week or the quest cannot be repeated the next one."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Totoroon's Treasure Hunt",
+   "page_id": 38777,
+   "revision_id": 742842,
+   "source_sha256": "bb41fbe5d16de9cec4dc3505981df00775117692fba97a52c017254377a2ce93",
+   "cache_file": "0038777_totoroon_s_treasure_hunt"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 18,
+   "dat_name": "Totoroon's Treasure Hunt",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "time_gated",
+   "walkthrough_unnumbered"
+  ],
+  "notes": "Almost all of this walkthrough is unnumbered prose; only seven lines carry a [n], and those seven are consequences and caveats rather than the instructions. Where a step comes from prose its source_bullets is empty and the note says so -- inventing bullet numbers would be worse than admitting there are none.\n\nTwo ORs. The first is real and expressible: one sweet of three, so Date is items and Pamamas and Kazham Pineapple are items_alt. Wild Pamamas explicitly do not work. The second is an OR over four ZONES that the schema cannot express, and which is decided by the first: Date or Pamamas send you to Bhaflau Thickets or Wajaom Woodlands, Kazham Pineapple to Caedarva Mire or Mount Zhayolm. The page tags that mapping [unverified]. The four are written as a group so all four draw and the player gathers in whichever one they were sent to; the ??? Box sits on the last member alone, so finding it advances past all four to Totoroon.\n\nThe NM is not a kill: bullets 5 and 6 say killing it is not required and that killing it REMOVES the box from further attempts, so every NM is role spawn and none is role kill. There is no clickable target at all -- you gather at ordinary Harvesting, Logging and Mining points, which the page never names -- so those four steps are target none and carry only their tool. 'Ancient Bombs' is recorded exactly as the page writes it, plural and all; if that is the wiki pluralising 'Ancient Bomb' the live match will miss, which costs a glyph and nothing else. Bullet 7 is a repeat-run caveat, not a contradiction of the turn-in: on a repeat there is no ending cutscene and no reason to walk back. Memeroon is kept as an optional final step because appraising the box is where the reward actually comes from, but it happens after the quest is over. The Fame field holds the expansion name; the resolver folds 'Treasures of Aht Urhgan' to the same region as 'Aht Urhgan', which is what is written.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: but the page marks that mapping [unverified], and the schema cannot make the next step depend on which alternative was used.\n  step 3: The page gives only 'the Bhaflau Thickets Harvesting points map', so there is no grid and no named target to record.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Totoroon",
+   "zone": "Nashmau",
+   "grid": "G-8",
+   "raw": "Totoroon, Nashmau (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Totoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered opening line of the walkthrough, which has no bullet number to cite. He asks for something sweet."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Totoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Date",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Pamamas",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Kazham Pineapple",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "ONE of the three, not all three. Wild Pamamas do not work. Which sweet you trade decides the treasure zone Date or Pamamas for Bhaflau Thickets or Wajaom Woodlands, Kazham Pineapple for Caedarva Mire or Mount Zhayolm."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Bhaflau Thickets",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Berried Chigoe",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Chigoe's Nit",
+      "count": 5,
+      "role": "spawn"
+     }
+    ],
+    "group": "treasure",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Harvesting. One of four alternative zones do whichever one your sweet sent you to. Bring several Sickles, they break. The NM need not be killed, and killing it removes the box from later attempts."
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [
+     {
+      "name": "Hatchet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ravin Raven",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": "treasure",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Logging. Bring several Hatchets, they break. Reached by trading Kazham Pineapple."
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mount Zhayolm",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ancient Bombs",
+      "count": null,
+      "role": "spawn"
+     }
+    ],
+    "group": "treasure",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Mining. Bring several Pickaxes, they break. 'Ancient Bombs' is the page's own wording and may be a plural of Ancient Bomb; it is recorded verbatim rather than guessed at."
+   },
+   {
+    "n": 6,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "??? Box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Berried Chigoe",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Chigoe's Nit",
+      "count": 5,
+      "role": "spawn"
+     }
+    ],
+    "group": "treasure",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Harvesting. Last member of the group, so it carries the ??? Box for all four zones -- the same item may not be evidence twice, and putting it last is what advances the mark out of the group and onto Totoroon. Only one box can ever be found, and the NM stops spawning once you have it."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Totoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "??? Box",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "speak, not trade -- he does not take the box. Bullet 7 is a repeat-run caveat: if you have completed this before there is no ending cutscene and no point walking back, so on repeats this rung is dead."
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Memeroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "??? Box",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [],
+    "note": "unnumbered final line. Behind the Survival Guide. This is after the quest is over, but it is the only way to learn what is in the box, so it is kept as an optional rung rather than dropped as a reward table."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seeing Blood-red",
+   "page_id": 27300,
+   "revision_id": 771990,
+   "source_sha256": "f1f6a4b3fd13b61e5b258f3d822571629c09b41e869781a900403bee72270fc1",
+   "cache_file": "0027300_seeing_blood_red"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 34,
+   "dat_name": "Seeing Blood-red",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "af_job_gate",
+   "steps_from_after_section",
+   "time_gated",
+   "unnamed_target"
+  ],
+  "notes": "A clean ladder with two key items on it. The header says Erlene is in Batallia Downs (S); bullet 2 says The Eldieme Necropolis (S) at (J-8), the page's own category agrees, and Erlene moves through the Scholar artifact line, so the walkthrough wins and the header string is kept in start.raw. Both zone names resolve as written, including the (S) forms.\n\nBullet 1 is a precondition -- wait for the next game day and zone -- not a step; neither game time nor a zone change is observable, so it is a note on step 1. The '(Optional) speak to her again' sub-bullet is more dialogue from the SAME NPC one rung later, which would be a wedge between two Erlene markers for nothing, so it is a note too.\n\nBullet 4 is kept as a rung even though it is a menu action with no world target: reading the letter is required, the page numbers it separately, and its evidence already belongs to bullet 3 under the obtained-at rule. Bullet 6's target is one the page explicitly declines to name -- 'the unnamed shimmering light on the ground' -- so it is target none and the note says why rather than a name being invented for it.\n\nThe fight itself is nowhere in the numbered walkthrough; bullet 8 only says 'after clearing the battlefield'. Ulbrecht, the zone, the party size and the 20% end condition all come from the 'Battlefield' section after the walkthrough, whose own bullets restart at [1] -- the source_bullets on that step are the walkthrough's 7 and 8, and the note credits the section. Trading Erlene a Sheet of Vellum for a replacement transcript is loss recovery, not a ladder position.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: but it is required and the page numbers it, so the rung is kept.\n  step 5: the page calls it 'the unnamed shimmering light on the ground', so there is no name to record and the step keeps its place without a marker.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Downward Helix",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [
+    "SCH"
+   ],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Erlene",
+   "zone": "The Eldieme Necropolis (S)",
+   "grid": "J-8",
+   "raw": "Erlene, Batallia Downs (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "as Scholar. Bullet 1 is a precondition, not a step: wait for the next game day and zone after Downward Helix, neither of which the addon can see. Speaking to her a second time is optional extra dialogue on the same NPC and is not given its own rung. Everything after this cutscene can be done on any job."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Indescript Markings"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "E-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Unaddressed sealed letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "along the north edge of (E-11), next to the wall. The Recall-Pashh telepoint and the Survival Guide both land at the south end of the map, leaving a shorter walk west than the Campaign Arbiter warps."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Unaddressed sealed letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Read the letter by examining it in the Temporary Key Item menu. A menu action with no place and no target, so it draws nothing Its key item was granted by step 2 and is that step's evidence, not this one's."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Porting magic transcript",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Grauberg (S)",
+    "grid": "E-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "In the cave opposite the waterfall; the entrance sits on the E-10/F-10 line, on dry land if you reach the waterfall you have gone too far and must walk all the way back around. The Campaign Arbiter warps land closest."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Indescript Markings"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "E-10",
+    "items": [
+     {
+      "name": "Porting magic transcript",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "on the wall of the same cave -- a second Indescript Markings, distinct from the one in Pashhow Marshlands (S). Only the party leader with the quest active can bring a party in. A loss means trading Erlene a Sheet of Vellum for a replacement Porting magic transcript before re-entering; that is recovery, not a rung."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ruhotz Silvermines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ulbrecht",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "the numbered walkthrough never describes the fight -- Ulbrecht, the 30 minute limit, the six-player cap and the ends-at-20%-HP rule all come from the 'Battlefield' section after the walkthrough, whose bullets restart at [1]. A level 67 Scholar with about 12,000 HP, immune to Silence but not to Bind, Gravity or Sleep; Trusts are allowed. The instance is held in Ruhotz Silvermines, which bullet 7's sub-bullet names."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Forging a New Myth",
+   "page_id": 37856,
+   "revision_id": 745107,
+   "source_sha256": "0654cd6d4b34038cd17551812020c86dcecd64792426a750a7bfb733dcc705f5",
+   "cache_file": "0037856_forging_a_new_myth"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 72,
+   "dat_name": "Forging a New Myth",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "job_gate_unmodelled",
+   "zone_unnamed"
+  ],
+  "notes": "The header's giver is Nashmeira in the Imperial Ward, but nothing in the walkthrough talks to her: bullet 1 examines the Palace Door in Aht Urhgan Whitegate, and the follow-on quest Coming Full Circle examines the same door again. Start is moved to the door with the header string kept in raw -- the Carbuncle Debacle / House of the Hero correction, and a marker move rather than a removal. 'Palace Door' is written exactly as the page has it; it is not a 'Door: X' form, so whether it matches a live entity is unproven, and if it does not the rung survives without its marker.\n\nNo evidence on step 1 even though the cutscene hands you two things: the Imperial Gold Piece and the Incomplete Mythic Weapon are BOTH in the header's Reward, which makes them proof the quest is over rather than proof a step is done -- and gold pieces accumulate from unrelated content, so the predicate would fire for the wrong reason anyway.\n\nStep 3 is the one real loss. The Runic Seal stands at the Nyzul Isle Staging Point, which is not a zone in res/zones.lua and which the page never restates as one; writing 'Nyzul Isle' instead would be actively wrong, since that is the instance rather than the staging area. The step therefore keeps its grid (I-9) and its name and loses its zone. 'Runic Seal' is distinctive enough that an any-zone match is safe.\n\nBullets 4 and 5 are two phases of a single battlefield, not two steps -- Zahak vanishes and Balrahn spawns with nothing observable in between -- so they merge, with both mobs on one rung and the relief shard from bullet 6 as its evidence. The page never names the battlefield's zone, so it is null. There is no hand-in: the walkthrough ends when the battlefield does, and no return NPC is invented for it. 'You must be on the job for the Mythic Weapon you are obtaining' is a genuine job gate but it varies per player, so jobs stays empty and it lives in a note.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: at the Nyzul Isle Staging Point, which is not a zone in res/zones.lua and which the page never names as one, so the zone is null rather than guessed at",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Duties, Tasks, and Deeds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Palace Door",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": null,
+   "raw": "Nashmeira, Imperial Ward"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Palace Door"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header names Nashmeira in the Imperial Ward; the walkthrough interacts with the door, so the door is what is recorded. The cutscene grants 1 Imperial Gold Piece and the statless Mythic Weapon -- both are header Rewards, so neither is used as evidence."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Seaprince's Tombstone"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "E-10",
+    "items": [
+     {
+      "name": "Tinnin's Fang",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sarameya's Hide",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tyger's Tail",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Serpentking Zahak relief",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the cemetery at (E-10), out of the west exit of Nashmau or from the Caedarva Mire home point. All three in one trade. They come from the Zeni NM system, and much more rarely from Nyzul Isle Uncharted Campaign or the Gobbie Mystery Box."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Runic Seal"
+    },
+    "zone": null,
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Serpentking Zahak relief",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Nyzul Isle' would be the instance, not this room. Select 'Forging a New Myth' from the seal. No Trusts inside. You must be on the job whose Mythic Weapon you are making and able to wield it; Ranger and Corsair must bring ammunition or the fight cannot be finished. Losing costs the relief and all three trade items."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Serpentking Zahak relief shard",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Zahak",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Balrahn",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "one battlefield in two phases, kept as one rung because nothing observable separates them. Zahak loses a head per landed weaponskill or critical hit and vanishes at three, and only the main-hand statless Mythic Weapon damages him. Balrahn then spawns with heavy Regen and must be beaten by taking all three aftermath tiers of your Nyzul Isle weaponskill -- one use at 1000-1999, 2000-2999 and 3000 TP, in any order. The page never names the zone the battlefield sits in, so none is recorded. This is where the quest ends; there is no return to any NPC."
+   }
+  ]
+ }
+]

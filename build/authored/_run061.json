@@ -1,0 +1,1797 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Wrath of the Griffon",
+   "page_id": 27293,
+   "revision_id": 725210,
+   "source_sha256": "d46a389777cc10c8222058b6a8b9637a75da3106d2e9cc27a9b5e052b1d3da8b",
+   "cache_file": "0027293_wrath_of_the_griffon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 25,
+   "dat_name": "Wrath of the Griffon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "A clean six-bullet page that reads into a short ladder around a single ???. Bullet 3 ('prepare yourself for a NM fight') is advice, not an action -- there is nothing to click and nowhere to go -- so it is folded into step 2's note rather than made a rung. Bullet 5 is genuinely two things, a kill and then another click on the same ???, and is split accordingly with the bullet recorded on both. The ??? at Jugner Forest (S) (H-10) is the whole middle of the quest but resolves as npc_kind 'object' with no key, so steps 2 to 5 keep their rungs and lose their markers -- that is the expected cost of a ??? quest and not a reading failure. The [KI] Military scrip is the header's Reward, so by rule it proves the quest is over rather than that step 6 is done, and is not used as evidence. The Wyatt sub-bullet on bullet 6 is a gil exchange for that reward after the fact and is not a step. Fame 'Crystal War' is not one of the nine addon regions, so it gates nothing; the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Boy and the Beast",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Rholont",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "E-7",
+   "raw": "Rholont, Southern San d'Oria (S) (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "at the foot of one of the watch platforms. The Survival Guide to Jugner Forest (S) is the fastest way in, and the page recommends picking up the Recall-Jugner key item while there. Bullet 3 is only 'prepare for a NM fight' and adds no action."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cobraclaw Buchzvotch",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same ??? a second time, which pops the NM"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cobraclaw Buchzvotch",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Notes section reports it soloable at 75RDM/NIN and a fair fight at 60 with Trusts; it lands Sleep, Gravity and Bind"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? a third time, after the NM is dead, for the closing cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "hands over the [KI] Military scrip, which is the header Reward and so is not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Refuel and Replenish (Attohwa)",
+   "page_id": 59015,
+   "revision_id": 627886,
+   "source_sha256": "d043d468f12ab3b015c7d8f5a661b37f33d2d8e4fea3a72d0ec89f92a1e6e50d",
+   "cache_file": "0059015_refuel_and_replenish_attohwa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 145,
+   "dat_name": "Refuel and Replenish (Attohwa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name"
+  ],
+  "notes": "A three-rung errand and one of the better-observable quests in the corpus: both of its key items resolve uniquely and they are consumed in sequence, so holding the Vat of martello fuel draws the Martello and holding the Empty fuel vat draws the outfitter again. Bullets 1 and 2 are one act -- you pick the 'Assist with replenishment' menu option and the vat lands in the same breath -- so bullet 2 is step 1's evidence, not a rung of its own. Bullets 3, 4 and 5 are one interaction with one Martello: find it, open its menu, stand where the MENU (not the log) tells you. Splitting them would put two unmarkable rungs in front of the one thing the player can actually be tracked through. The unnumbered line above bullet 1 is a per-Vana'dielian-day cooldown shared with A Mightier Martello across every Abyssea zone, and nothing in the packets reports it. The 'You cannot zone at any point' warning is a real failure mode but not an action. 'Machine Outfitter (Attohwa)' folds to the bare key 'machine outfitter', which exists in every Abyssea zone -- every step carries its zone, so that is disambiguated rather than dangerous. Fame code 'aatt' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aatt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Attohwa)",
+   "zone": "Abyssea - Attohwa",
+   "grid": null,
+   "raw": "Machine Outfitter (Attohwa), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vat of martello fuel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "near the zone entrance; choose 'Assist with replenishment'. Only one Refuel and Replenish or A Mightier Martello can be completed per Vana'dielian day across all of Abyssea, which the addon cannot see."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Vat of martello fuel",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Empty fuel vat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "the Martellos sit around the Confluxes; any one will do, and it works even at 100% health. Choose 'Prepare to replenish martello', confirm, then face the direction the MENU gives -- the log gives a different and wrong one. Do not zone: that destroys the vat and restarts the quest."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Empty fuel vat",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "pays Cruor, the amount depending on which Martello was refuelled"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Making Amens!",
+   "page_id": 174,
+   "revision_id": 743117,
+   "source_sha256": "7074bbcceedb133cbe919bd2671626d41df3a823c5c7557a91c6fd12f61a8cb8",
+   "cache_file": "0000174_making_amens"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 8,
+   "dat_name": "Making Amens!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target"
+  ],
+  "notes": "Both of the header's Item Reqs are earned inside the walkthrough and both resolve, so this ladder carries two honest evidence points: the Garlaige Key off the Fallen Evacuees and the Broken wand key item off Mashira. The page writes the mob as the plural 'Fallen Evacuees'; the singular is recorded, since mobs are folded and matched live against the mob list. Bullet 4's own body is the step -- unlock the Incinerator Room at (I-7) on map 3 -- while its three sub-bullets are route: the two Banishing Gates on the way, and a Pouch of weighted stones from a ??? at (G-8) on map 1 that lets a solo player through them. That pouch is a real optional detour, but it is a persistent key item a player may already be carrying from any earlier visit, so making it a rung with evidence would let the high-water mark jump forward on something this quest never granted. It stays in the note. The door the Garlaige Key opens is never named on the page, so step 4's target is none rather than an invented door. Bullets 7 and 8 sit under a 'Note:' heading and are a Windurst Mission 8-1 conflict and a suggestion to run Rubbish Day alongside -- neither is a step.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 4,
+    "raw": "Windurst / 4"
+   },
+   "prev": [
+    {
+     "title": "Making Amends",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kuroido-Moido",
+   "zone": "Port Windurst",
+   "grid": "E-7",
+   "raw": "Kuroido-Moido, Port Windurst (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kuroido-Moido"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "rezone first if you have just finished Making Amends. If Orastery Woes is also open you may have to talk past it."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Garlaige Citadel"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Garlaige Citadel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Garlaige Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Fallen Evacuee",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the small rooms near the entrance; farm until the key drops. The page writes the mob as the plural 'Fallen Evacuees'."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Garlaige Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Incinerator Room is at (I-7) on the third map. The page never names the door the key opens, so no target is invented. Route: Banishing Gate #1 at (I-9) on map 1, then Banishing Gate #2 at (H-10) on map 2. A solo player can take a Pouch of weighted stones from the ??? on the ground at (G-8) on map 1 to pass the gates alone -- a real optional detour, kept out of the ladder because that key item persists and would otherwise jump the mark."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mashira"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Broken wand",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "he stands inside the Incinerator Room"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kuroido-Moido"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Broken wand",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "cannot be completed while on Windurst Mission 8-1"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Refuel and Replenish (Altepa)",
+   "page_id": 67158,
+   "revision_id": 625405,
+   "source_sha256": "e5bda56b57a8dd0898fed2c0ab76995636080d4e4b7584807c70f1afc0b6b64d",
+   "cache_file": "0067158_refuel_and_replenish_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 148,
+   "dat_name": "Refuel and Replenish (Altepa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name"
+  ],
+  "notes": "Word-for-word the Attohwa page with the zone swapped, and it is read the same way. Bullets 1 and 2 are one act, so the Vat of martello fuel is step 1's evidence; bullets 3, 4 and 5 are one interaction with one Martello, ending in the Empty fuel vat. Both key items resolve uniquely and are consumed in order, so the ladder is fully observable end to end. The unnumbered lead line is the shared per-Vana'dielian-day cooldown across every Abyssea area, unobservable. 'Machine Outfitter (Altepa)' folds to the bare 'machine outfitter' shared with every other Abyssea zone; each step carries its zone, so it is disambiguated. Fame code 'aalt' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Altepa)",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Machine Outfitter (Altepa), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Altepa)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vat of martello fuel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "near the zone entrance; choose 'Assist with replenishment'. Only one Refuel and Replenish or A Mightier Martello can be completed per Vana'dielian day across all of Abyssea, which the addon cannot see."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Vat of martello fuel",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Empty fuel vat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "the Martellos sit around the Confluxes; any one will do, and it works even at 100% health. Choose 'Prepare to replenish martello', confirm, then face the direction the MENU gives -- the log gives a different and wrong one. Do not zone: that destroys the vat and restarts the quest."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Altepa)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Empty fuel vat",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "pays Cruor, the amount depending on which Martello was refuelled"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Raptor Rapture",
+   "page_id": 98192,
+   "revision_id": 773595,
+   "source_sha256": "bdd88ce39ec23b1ef450ca5e7c8b2421556c49f0d1806b4e44dfb252ed7f5941",
+   "cache_file": "0098192_raptor_rapture"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 73,
+   "dat_name": "Raptor Rapture",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "evidence_dropped_duplicate_ki"
+  ],
+  "notes": "A courier ladder that returns to Pagnelle three times; the four Pagnelle rungs are separated by real errands, so they are genuinely distinct positions and not a same-NPC merge. The one place this page could have paid off does not: the three rockberries ARE key items, but res/key_items.lua holds them as ids 2201, 2202 and 2203 all named 'rockberry', and the resolver rejects non-unique key-item names by design rather than guessing an id. So step 4 has no evidence at all and the ladder falls back on the session latch across the harvest -- an honest loss, not an oversight, and worth a human's attention because a three-of-three key item is exactly the shape this addon wants. The Sickle IS recorded as a requirement: the page says to bring several because it breaks on nearly every harvest, but a count cannot express 'as many as it takes', so one is recorded and the rest is a note. The six harvesting point locations are alternatives for one act, not six steps, so no grid is committed and they live in the note; they are flagged unordered because any of them will do. Bullet 6 is a proximity cutscene at Rala Waterways (E-11) -- Relentless Storm and Jaroney-Baroney are landmarks the page uses to describe the spot, not entities you interact with, so they are not targets. Fame 'Adoulin' is not one of the nine regions and gates nothing. VERIFY: the 'harvest' group string is removed. A group is an unordered set of STEPS -- \"do these in any order\" -- and this quest has exactly one harvesting rung, so a group of one asserted nothing and drew nothing extra. The six known harvesting points are alternative locations INSIDE one step, which the step note already carries; the unordered_group flag went with the group.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: No evidence is recorded: the rockberry key item exists three times over (ids 2201-2203) under one name and the resolver rejects non-unique names rather than guess.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Pagnelle",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Pagnelle, Western Adoulin - (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pagnelle"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Mummers' Coalition"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gontrain"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "next to the residential area"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pagnelle"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Harvesting Point"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Three rockberries, harvested. They are key items and come at random but with priority over normal drops, so all three can come from one point gathering fatigue still applies, and the Sickle breaks on nearly every harvest, so bring several. Known points: E/F-8 boundary, G/H-8 boundary, the far southeast corner, (E-10), Bivouac #3 at (F-9), and (F-6)."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pagnelle"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Rala Waterways"
+    },
+    "zone": "Rala Waterways",
+    "grid": "E-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "in from (J-12) in Western Adoulin at the 'Your Rent-a-Room' waypoint. The cutscene fires on approach to (E-11), on the bridge near a door -- Relentless Storm and Jaroney-Baroney only mark the spot; there is nothing to click."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pagnelle"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Did You Feel That?",
+   "page_id": 104678,
+   "revision_id": 770220,
+   "source_sha256": "9191510b866853ba0307e7da3714ffff2e50d0efe851ed5bcde1a0c980610b55",
+   "cache_file": "0104678_did_you_feel_that"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 62,
+   "dat_name": "Did You Feel That?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "mob_role_approximate"
+  ],
+  "notes": "Three rungs, and the middle one is the whole quest. You do not kill Spinescent Protuberances and you do not collect anything from them -- you stand in front of them until five of their attacks land Amnesia on you. That fits none of the three mob roles cleanly, so 'kill' is used because it is the role that draws the sword glyph on the thing you have to go and engage, and the note says plainly that kills are not what is counted. No count is put on the mob for the same reason: five is the number of amnesia afflictions, not of monsters. Bullet 3 is not a step at all, it is the game telling you the counter has filled, plus a long complaint that the counter is unreliable and advice to strip to a Bullwhip Belt so the effect lands -- an outcome and a tactic, and it is folded into step 2's note. Nothing about the count is in any packet, so step 2 has no evidence and the ladder relies on the session latch to reach the hand-in. The [KI] Restrainment resilience is a header Reward and so proves the quest is over, not that step 3 is done. Fame 'Adoulin' is not one of the nine regions and gates nothing; FLevel is empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Udip Ferawoh",
+   "zone": "Marjami Ravine",
+   "grid": null,
+   "raw": "Udip Ferawoh, Marjami Ravine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Udip Ferawoh"
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Marjami Ravine Frontier Station; the page gives no grid"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Marjami Ravine",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Spinescent Protuberance",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "take five Amnesia afflictions -- not five kills, which is why no count is set. Only the Marjami Ravine protuberances count. Around (H-10) through the tunnel with the Riverscum, or one at (L-12) off Bivouac #1. Shell and magic evasion gear make it LESS likely to land; with only a Bullwhip Belt and nothing else equipped it is near-guaranteed, at the cost of the surrounding Velkk hitting hard. Bullet 3 is the completion message and a warning that afflictions sometimes fail to register."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Udip Ferawoh"
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "500 bayld and the [KI] Restrainment resilience, both header Rewards and so not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Personal Hygiene",
+   "page_id": 38737,
+   "revision_id": 745740,
+   "source_sha256": "f36e8299c5654363469fa54f33c11026664769fe24d4b63e68e75146e8a75d27",
+   "cache_file": "0038737_personal_hygiene"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 10,
+   "dat_name": "Personal Hygiene",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "latent_unmodelled"
+  ],
+  "notes": "Demoted to medium for the gate, not the ladder. 'Quest Reqs: The scent from Even More Gullible's Travels' is a real precondition -- without the Rafflesia scent Gatih Mijurabi has nothing to fix -- and it is a latent state with no key item, no item and no packet behind it, so it cannot be modelled at all. Bullet 1 states that precondition rather than asking you to do anything, so it is folded into step 1 instead of becoming a rung. The middle of this quest is the strangest step in the batch and the honest answer is a bare wait: the page calls the target 'the hot springs' and 'the waterfall', which are descriptions and not entity names, so no object is invented and the step has target none. Nothing about standing under water for five minutes is observable, so there is no evidence and the ladder relies on the session latch to reach the hand-in. Bullet 5 is a warning that leeches there aggro even at level 99 -- not a fight you are asked to take, so it is a note and not a step. Bullet 7 sits under a '== Note: ==' heading and belongs to a DIFFERENT quest, The Opo-opo and I: it explains how to re-apply the scent afterwards by checking the Yuhtunga Jungle Rafflesias. It is not a step here. Fame code 'k' resolves to Kazham.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": null,
+    "raw": "k / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Even More Gullible's Travels",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Gatih Mijurabi",
+   "zone": "Kazham",
+   "grid": "I-8",
+   "raw": "Gatih Mijurabi, Kazham (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gatih Mijurabi"
+    },
+    "zone": "Kazham",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is the precondition, not an action: finishing Even More Gullible's Travels leaves the Rafflesia scent on you, which repulses every Mithra in Kazham and is also what starts The Opo-opo and I. Nothing observable carries that state."
+   },
+   {
+    "n": 2,
+    "kind": "wait",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Korroloka Tunnel",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "the hot spring is at (G-9) on map 4. Stand under the waterfall for about five minutes; you are in the right spot when the water reads 'pleasant and tepid', and a second message on leaving confirms the smell is gone. The page names neither the spring nor the waterfall as an entity, so no target is invented. Bullet 5 is a warning that the leeches guarding it aggro even at level 99, not a fight you are asked to take."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gatih Mijurabi"
+    },
+    "zone": "Kazham",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unbridled Passion",
+   "page_id": 316,
+   "revision_id": 755954,
+   "source_sha256": "cfe16d69f284d70c1c0201b9fa03a54197127008b510c1c96ff739c9f5d7fb38",
+   "cache_file": "0000316_unbridled_passion"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 74,
+   "dat_name": "Unbridled Passion",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "bullet_split",
+   "unverified_page"
+  ],
+  "notes": "Ranger AF. 'Level: 50+ Ranger' is both gates -- level 50 AND jobs ['RNG'] -- and 'Repeatable: af' is the artifact-armour category leaking into the field, so repeatable is false. Bullet 2 is one NPC doing two things back to back: talk twice for the cutscene, then trade the Gold Earring. Consecutive acts on the same NPC are one marker, so they are one trade rung carrying the earring as a requirement and Koh's letter as evidence; splitting them would buy nothing. Bullet 4 is genuinely two acts and is split: examining the ??? at the (E-7) cave pops Koenigstiger, and killing it is separate. The three ??? steps all resolve as npc_kind 'object' with no key, so they keep their rungs and lose their markers -- unavoidable. Bullet 6 is marked '[unverified]' on the page and the page itself carries Category:Verification, so that rung is recorded as optional; its 99 Ice Arrows are a header Reward and therefore not evidence by rule, which is the right answer twice over here. Koh's letter is the quest's only observable, and it lands early, so everything after Xarcabard rides the session latch.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [
+    {
+     "title": "Fire and Brimstone",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "RNG"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Perih Vashai",
+   "zone": "Windurst Woods",
+   "grid": "K-7",
+   "raw": "Perih Vashai, Windurst Woods (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perih Vashai"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a Ranger; she sends you to Mhaura"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Koh Lenbalalako"
+    },
+    "zone": "Mhaura",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Gold Earring",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Koh's letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "speak with her twice for the first cutscene, then trade the earring for the second. A free Gold Earring comes from the first completion of the RoE objective Conflict: Xarcabard."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Xarcabard"
+    },
+    "zone": "Xarcabard",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zoning in fires a cutscene pointing you near Castle Zvahl Baileys; the Survival Guide to Castle Zvahl Baileys is the closest warp"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Koenigstiger",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in the cave at (E-7); the cutscene comes first, then the pop"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Koenigstiger",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in a group every Ranger needs their own cutscene and their own kill; roughly a three minute repop"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a different ??? in the cave just south, at (E-8)"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same (E-8) ??? again, for 99 Ice Arrows. The page tags this '[unverified]' and says it may be optional, so it is marked optional. The arrows are a header Reward and so cannot be evidence."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Perih Vashai"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "final cutscene and the Hunter's Socks"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Circle of Time",
+   "page_id": 13268,
+   "revision_id": 730986,
+   "source_sha256": "1f28b536bd11aa29b72f08def62a34e0ed7b9c59f22c71806de411e11da2049c",
+   "cache_file": "0013268_the_circle_of_time"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 65,
+   "dat_name": "The Circle of Time",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "evidence_dropped_duplicate_ki",
+   "prestep_before_log_entry"
+  ],
+  "notes": "Bard AF, and the longest ladder in this batch. 'Level: 50+ Bard' is both gates -- level 50 AND jobs ['BRD'] -- and unlike most AF pages this one really does say 'Repeatable: Yes' and carries Category:Repeatable Quests, so it is taken at its word rather than corrected to false. The header's giver is Imasuke, and Imasuke is where the quest actually enters the log; bullet 1's visit to Mertaire happens BEFORE that, which the page says outright ('Quest wont be listed in log yet'). Mertaire is therefore step 1 and Imasuke stays as start -- and because the runtime treats acceptance as proof step 1 is done, that ordering is exactly right. Both Star ring key items are lost to the resolver, not to the reading: res/key_items.lua holds ids 225 and 226 both named plainly 'star ring', and non-unique key-item names are rejected rather than guessed. So the (tarnished) ring is not recorded as a requirement anywhere and the (indecipherable) ring is not step 4's evidence, and this quest's only observable is the Moon ring (id 227, unique) from Chalvatot. That is a real loss worth flagging. Steps 3 and 4 are two rungs on the same Perennial Snow with a one-Earth-minute wait between them; they are the page's own structure and cost nothing, since consecutive steps on one target are one marker. Bullet 8 is route inside Monastic Cavern and is merged into the travel rung; its sub-bullet about the True Sight Orcish Warlord is a warning. Bullet 10 is two acts, kill then click, and is split. The page writes the object as lowercase 'the altar'; 'Altar' resolves as a real targetable entity, so it carries a marker. VERIFY: demoted to medium, and step 1 (Mertaire) is marked optional. The page says outright that the quest is not in the log until after Imasuke, so Mertaire is a PRECONDITION and by the guide's own rule never a ladder position. The draft's reasoning that the accept-latch makes this ordering right is backwards: core/steps.lua sets best=1 the moment 0x056 reports in_progress, so with Mertaire holding rung 1 the mark lands on rung 2 -- Imasuke, the giver the player has just finished with -- which is precisely the 'talk to me for a quest you just took from me' failure the accept-latch exists to prevent. The real next stop is the Perennial Snow. Marking the rung optional records what it is but cannot move the mark, since the latch sets best=1 whether or not step 1 is optional; only dropping the rung would, and that shifts every step after it, so it is left for a human. Everything from Imasuke onward is read correctly and is unchanged.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: The Star ring (tarnished) is not recorded as a requirement because the key item name is not unique (ids 225 and 226) and cannot be resolved.\n  step 4: That key item would be perfect evidence but its in-game name 'star ring' covers two ids (225 and 226), so the resolver rejects it and this rung carries none.\n  step 6: the quest's only resolvable observable",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "J / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Requiem",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BRD"
+   ],
+   "repeatable": true,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Imasuke",
+   "zone": "Port Jeuno",
+   "grid": "E-6",
+   "raw": "Imasuke - Port Jeuno (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mertaire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "he tells you to take the Star ring (tarnished) to an antique collector. The quest is NOT in the log yet at this point -- it appears after Imasuke, which is why the header's giver is the next rung and not this one. The page gives no grid."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Imasuke"
+    },
+    "zone": "Port Jeuno",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Main job must be Bard for this cutscene; any job is fine from here on."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Perennial Snow"
+    },
+    "zone": "Xarcabard",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the end of the short tunnel. One Earth minute must pass before the ring can be retrieved."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Perennial Snow"
+    },
+    "zone": "Xarcabard",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "The same snow again, after the minute, for the Star ring (indecipherable)."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Imasuke"
+    },
+    "zone": "Port Jeuno",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "he sends you to find someone who can translate the ring"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chalvatot"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Moon ring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monastic Cavern"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "in from Davoi at (H-11), then to the small circular room at (I-8) that holds the altar. A True Sight Orcish Warlord roams the way in."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Altar"
+    },
+    "zone": "Monastic Cavern",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bugaboo",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "clear the surrounding Orcs first; the page writes it lowercase as 'the altar'"
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Monastic Cavern",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bugaboo",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Altar"
+    },
+    "zone": "Monastic Cavern",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same altar again, once Bugaboo is dead, for the cutscene"
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chalvatot"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "he pays out the Choral Justaucorps, not Imasuke"
+   }
+  ]
+ }
+]

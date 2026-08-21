@@ -1,0 +1,1150 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 2-3",
+   "page_id": 12758,
+   "revision_id": 768889,
+   "source_sha256": "8c6756f9f9bd0b323f471ead8f7ec9a4f6bbe03ef38958bc6b21632501ba0152",
+   "cache_file": "0012758_bastok_mission_2_3_cdf198bc08"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 8,
+   "dat_name": "The Emissary (San d'Oria)",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "generic_npc_name",
+   "multi_option_giver",
+   "rank_gate_unmodelled",
+   "one_page_two_dat_ids"
+  ],
+  "notes": "SHAPE 1, THE DESTINATION SPLIT. One wiki page, two client ids. My front matter says branch = 'the San d'Oria destination', so this record is the route that leaves Bastok for SAN D'ORIA first -- the page's '## After the walkthrough: Option 1: San d'Oria Path' -- and mission/bastok/9 is the same page's 'Option 2: Windurst Path'. The split point is bullet [2] of the shared '## Walkthrough': President Karst hands you the [KI] Letter to the consuls and asks you to 'head to either San d'Oria or Windurst'. Everything up to and including that bullet is common to both records (my step 1), which is why the two records are identical at rung 1 and share nothing after it. That is not sibling-importing: both halves are on THIS page, at this revision.\n\nWHICH BULLETS BELONG TO THE OTHER RECORD. All thirteen bullets of 'Option 2: Windurst Path' are mission/bastok/9's, and none of them are here: Melek first, Kupipi for the [KI] Sword offering, Gold Skull for the [KI] Dull sword, Uu Zhoumo in Giddeus, Eyy Mon the Ironbreaker for the Aspir Knife, the Horlais Peak BCNM against the Dread Dragon, and the [KI] Kindred crest / [KI] Kindred report. I split where the page splits -- at its own two 'Option' headings -- because the routes share no content after Karst and a merged ladder would send half the players to the wrong battlefield.\n\nBULLET NUMBERING. Steps 2-12 come from the 'Option 1: San d'Oria Path' After-section, whose bullets restart at [1]; that section carries two '==' sub-headings ('Bastok to San d'Oria', 'San d'Oria to Windurst') but the numbering runs continuously [1]..[9] across them, so a source_bullets value of 5 here means Option 1's [5], not the shared walkthrough's. Step 1 alone cites the shared '## Walkthrough' [1] and [2].\n\nGIVER. The header's Start is the ROLE string 'Any Bastok Gate Guard' -- no NPC of that name exists and normalize_npc drops anything beginning 'Any ' as generic, so a literal copy would cost this mission its marker outright. The rendered '## Giver' block names all four Bastok gate guards from Category:Gate Guard, and any one of them opens the mission, so start.npc is the four-way multi-option string that build_index splits on ' or ' into one marker key each. start.zone and start.grid are null on purpose: the four stand in four different zones, so a single zone would be false for three of them, and each key resolves its own. Their squares, from the Giver block: Argus Port Bastok (L-7), Cleades Bastok Markets (D-11), Malduc Metalworks (J-8), Rashid Bastok Mines (H-10). I did NOT add a rung for accepting the mission -- the start block is where the giver lives and the walkthrough's lead-in line ('accept it from the Gate Guard') is not a numbered bullet.\n\nRANK GATE, UNMODELLED. The walkthrough's unnumbered lead-in says to trade 3+ Crystals to the Conquest NPC to raise the Rank bar before the mission unlocks. That is a rank-bar requirement and the schema has no field for it; it is emphatically NOT gates.level, which means character level, so gates.level stays null and this goes here with rank_gate_unmodelled.\n\nEXPANSION. The header's Expansion field reads 'bastok', which is a nation code the template picked up, not an expansion. gates.expansion is null rather than an invented value. gates.repeatable is false because the header says 'Repeatable: No' in words.\n\nJUDGEMENT CALLS. (a) Bullets [1] and [2] of the shared walkthrough are one rung on Naji: he escorts you in to President Karst by cutscene rather than you walking to Karst, and the [KI] Letter to the consuls arrives at the end of the interview, so the key item is rung 1's evidence. The bottom option 'No questions.' skips the interview. (b) Baraka is her own rung -- the page tells you to speak to her, then to Helaku 'in the back room', so she is an instruction and not a bystander -- but the page gives her no square, so her grid is null. (c) Helaku's (K-10) is not stated in Option 1; the SAME page states it in Option 2 bullet [8] ('Helaku in Northern San d'Oria (K-10)'), and I used it. That is this record's own page, not a sibling. (d) Bullet [7] is two rungs: examining the Burning Circle and the fight it starts. I put both in Balga's Dais because that is the order the page itself writes ('enter Balga's Dais, and examine the Burning Circle'); a player normally reaches the Dais through that circle from Giddeus, so the zone on rung 9 may be a page infelicity -- rung 9 is medium for that reason. (e) THE BCNM ON THIS ROUTE HAS NO EVIDENCE. The Option 2 section says its battlefield yields the [KI] Kindred crest; the Option 1 section says nothing of the kind for the Black Dragon fight, so I left rung 10's evidence null rather than carry the other branch's outcome across the split. (f) Rung 12 (Naji again) is a real return-to-giver bullet on the page -- Option 1 [9], 'to complete the Mission and advance to Rank 3' -- so it is recorded, not invented. The sub-bullet about Malduc giving the NEXT mission is not a step. (g) The Cipher: Halver / Cipher: Semih, Rhapsodies of Vana'diel and Voracious Resurgence sub-bullets are Trust-system commentary, and the travel routes under both '==' sub-headings are itineraries, not steps.\n\nGROUNDING GATE. check_grounded.py reports start.npc as ungrounded because it matches whole strings and the page never writes the four names joined by ' or ' -- but every one of Argus, Cleades, Malduc and Rashid is on this record's own rendered page, in the '## Giver' block. That is the tool's own first documented hole ('IT MATCHES STRINGS, NOT ENTITIES'), not an imported value. I did not touch the baseline file. | CORRECTED: start.npc is the page's own phrase again. An earlier draft expanded it to the four guards by hand; data/npc_overrides.lua already maps \"any bastok gate guard\" to exactly those names with zone=false (any zone), so expanding it in the record bypassed a tested mechanism and produced ONE marker key out of the whole sentence -- which matches no entity, so all four guards lost their marker.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the only rung the two destination records have in common. Karst then asks you to head to either San d'Oria or Windurst; taking San d'Oria is what makes this record rather than mission/bastok/9.\n  step 3: The square (K-10) is not given in the Option 1 section; it is given for Helaku by the SAME page in Option 2 [8] ('Speak to Helaku in Northern San d'Oria (K-10) inside the Consulate of Bastok'), which is this record's own page and not a sibling.\n  step 6: Back to the Consulate of Bastok; he now orders you on to Windurst, which is the half of this route the other record does first.\n  step 10: EVIDENCE DELIBERATELY NULL: the Option 2 section says its battlefield yields the [KI] Kindred crest, but the Option 1 section names no key item for this one, and carrying the other branch's outcome across the split is exactly the import this record must not make.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Wading Beasts",
+     "cat": "mission",
+     "area": "bastok",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Any Bastok Gate Guard",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the consuls",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Shared '## Walkthrough' [1] and [2] Naji stands outside the President's Office, HP #1 (J-8), and escorts you in to President Karst by cutscene, so Karst is not a separate rung. The [KI] Letter to the consuls arrives at the end of the interview, which is why both bullets are one rung and the key item is this rung's evidence. Selecting the bottom option 'No questions.' skips the questions."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baraka"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "From the 'Option 1: San d'Oria Path' After-section, whose bullets restart at [1]. The receptionist at the Consulate of Bastok; the page instructs you to speak with her before Helaku, so she is a rung. It gives her no square, so grid is null -- (K-10) is stated for Helaku, not for her, and I did not spread it."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Helaku"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Option 1 [1]. In the back room of the Consulate of Bastok."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Option 1 [2]. He sends you to the Ghelsba Outpost. The sub-bullets are Trust-system commentary (Cipher: Halver, Rhapsodies of Vana'diel 1-6) and a note that a Voracious Resurgence epilogue cutscene makes you zone and talk again -- none of them are rungs."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ghelsba Outpost",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Warchief Vatgit",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Option 1 [3]. An Orc NM at (H-7) inside the Ghelsba Outpost. The Survival Guide sub-bullet is a shortcut, not a rung. Nothing observable is granted for the kill, so evidence is null."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Helaku"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Option 1 [4]. Square as on rung 3."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melek"
+    },
+    "zone": "Port Windurst",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Option 1 [5], under its second '==' sub-heading 'San d'Oria to Windurst'; the numbering runs on from [4] rather than restarting. Behind the Bastokan Consul door on the right of the Consulate of Bastok. The Machu-Kuchu warp sub-bullet is a convenience, not a rung."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Windurst Walls",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Dark key",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Option 1 [6]. Heavens Tower is a building inside Windurst Walls, so the zone is Windurst Walls and the square the page gives for it is (H-7); you speak to her through the Clerical Chamber door. She hands over the [KI] Dark key at this rung, which is why it is this rung's evidence. The Cipher: Semih sub-bullets are Trust commentary."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Burning Circle"
+    },
+    "zone": "Balga's Dais",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Option 1 [7], split into an examine and a fight. The page writes 'Travel to Giddeus, enter Balga's Dais, and examine the Burning Circle', which places the circle inside the Dais; a player normally reaches the Dais THROUGH that circle from Giddeus, so the zone here follows the page's own ordering and the rung is medium for it. No square is given. The sub-bullet about a Giddeus home point is a shortcut."
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Balga's Dais",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Black Dragon",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Seeker",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Option 1 [7], the battlefield the circle on rung 9 opens. The header's Title line credits 'Black Dragon Slayer' for it, which is a title and not an observable."
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melek"
+    },
+    "zone": "Port Windurst",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "Option 1 [8]. He directs you back to Bastok."
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "Option 1 [9], the page's own return-to-giver bullet: 'Speak with Naji outside the President's Office in the Metalworks to complete the Mission and advance to Rank 3.' Recorded because the page says it, not inferred. Square from the shared walkthrough [1]. The sub-bullet that Malduc beside him gives the NEXT mission is not a rung of this one. Rank 3 is an outcome, not an observable, so no evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 2-3",
+   "page_id": 12758,
+   "revision_id": 768889,
+   "source_sha256": "8c6756f9f9bd0b323f471ead8f7ec9a4f6bbe03ef38958bc6b21632501ba0152",
+   "cache_file": "0012758_bastok_mission_2_3_cdf198bc08"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 9,
+   "dat_name": "The Emissary (Windurst)",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "generic_npc_name",
+   "multi_option_giver",
+   "rank_gate_unmodelled",
+   "one_page_two_dat_ids",
+   "consumed_key_item",
+   "route_doubtful"
+  ],
+  "notes": "SHAPE 1, THE DESTINATION SPLIT. Same page and same revision as mission/bastok/8; my front matter says branch = 'the Windurst destination', so this record is the route that leaves Bastok for WINDURST first -- the page's '## After the walkthrough: Option 2: Windurst Path'. mission/bastok/8 is the same page's 'Option 1: San d'Oria Path'. The two records share source.cache_file and source.page_id, which is correct for this split; identity.id is what separates them.\n\nWHERE I SPLIT AND WHY. The shared '## Walkthrough' is two bullets long and ends with President Karst handing over the [KI] Letter to the consuls and asking you to 'head to either San d'Oria or Windurst'. That sentence is the branch point, so bullet [2] is the last bullet both records own (my rung 1) and everything after it belongs to exactly one of them. WHICH BULLETS BELONG TO THE OTHER RECORD: all nine bullets of 'Option 1: San d'Oria Path' are mission/bastok/8's -- Baraka and Helaku at the Consulate first, Halver, Warchief Vatgit in the Ghelsba Outpost, then Melek, Kupipi for the [KI] Dark key, and the Black Dragon and Seeker at Balga's Dais. None of that is here, and none of this is there; the routes visit the same four NPCs in the opposite order and fight different battlefields for different key items, so a merged ladder would send half the players to the wrong one.\n\nBULLET NUMBERING. Rungs 2-14 come from the 'Option 2: Windurst Path' After-section, whose bullets restart at [1] and run continuously [1]..[13] across its two '==' sub-headings ('Bastok to Windurst', 'Windurst to San d'Oria'). A source_bullets value of 8 here means Option 2's [8]. Rung 1 alone cites the shared '## Walkthrough' [1] and [2].\n\nGIVER. Identical to mission/bastok/8 and for the same reason: the header's Start is the ROLE 'Any Bastok Gate Guard', which is no NPC and which normalize_npc discards as generic (it drops anything starting 'Any '). The rendered '## Giver' block names all four Bastok gate guards and any of them opens the mission, so start.npc is the four-way multi-option string build_index splits on ' or '. start.zone and start.grid are null because the four stand in four different zones and each key resolves its own: Argus Port Bastok (L-7), Cleades Bastok Markets (D-11), Malduc Metalworks (J-8), Rashid Bastok Mines (H-10). No rung for accepting the mission -- that lives in the start block, and the walkthrough's 'accept it from the Gate Guard' lead-in is not a numbered bullet.\n\nRANK GATE, UNMODELLED. The same unnumbered lead-in requires trading 3+ Crystals to the Conquest NPC to raise the Rank bar before the mission unlocks. There is no schema field for a rank bar and it is not gates.level (character level), so gates.level is null and the requirement is recorded here with rank_gate_unmodelled.\n\nEXPANSION AND REPEATABLE. The header's Expansion reads 'bastok', a nation code rather than an expansion, so gates.expansion is null rather than guessed. gates.repeatable is false because the header says 'Repeatable: No' in words.\n\nJUDGEMENT CALLS. (a) Rung 1 merges shared bullets [1] and [2] on Naji: he escorts you to Karst by cutscene, and the [KI] Letter to the consuls arrives at the end of the interview, so it is rung 1's evidence. (b) Kupipi's square is not given in Option 2 [2]; the SAME page gives Heavens Tower as Windurst Walls (H-7) in Option 1 [6] and I used it -- own page, not a sibling. (c) Option 2 [8] spans two zones ('Helaku in Northern San d'Oria (K-10) ... and then to Halver in Chateau d'Oraguille (I-9)'), so it is two rungs, both citing [8]. (d) [9] and [10] are one rung: [9] is the journey and [10] is the interaction at the end of it, and a bare travel rung the player cannot be tracked through adds nothing. THE PAGE'S ROUTE THERE LOOKS WRONG -- it says 'travel to Horlais Peak through Yughott Grotto', and I have recorded only the destination it instructs you to reach, with no route of my own, and demoted that rung to medium (flag route_doubtful). I did not substitute a route from anywhere else. (e) [11] ('You will obtain the [KI] Kindred crest') is an OUTCOME of the battlefield, not a rung, so it is folded into the fight rung as its evidence and cited alongside [10]. (f) Only the Dread Dragon is listed as a kill: the page says in so many words 'You only need to defeat the Dread Dragon to win the battle.' The Spotter is in the arena with it and the page recommends sleeping the dragon and killing the Spotter first, but it is not a required kill, so naming it as one would be wrong. (g) The Aspir Knife is evidence on rung 6 (the kill that drops it) and NOT on rung 7 (the trade that consumes it) -- the same object may not be evidence twice, and rung 3's rule puts it where it is obtained. Flagged consumed_key_item because the ladder passes through a state where it is spent. (h) Rung 14 (Naji) is the page's own final bullet, recorded because [13] says it; the sub-bullet about Malduc giving the next mission is not a rung. (i) The travel itineraries under both '==' sub-headings, and the BCNM strategy sub-bullets (sleep, Trusts, 'trivial at level 30'), are advice.\n\nGROUNDING GATE. check_grounded.py reports start.npc as ungrounded because it matches whole strings and the page never writes the four guards joined by ' or '; each of Argus, Cleades, Malduc and Rashid is on this record's own rendered page in the '## Giver' block. That is the tool's documented 'matches strings, not entities' hole, not an imported value, and I did not touch its baseline. | CORRECTED: start.npc is the page's own phrase again. An earlier draft expanded it to the four guards by hand; data/npc_overrides.lua already maps \"any bastok gate guard\" to exactly those names with zone=false (any zone), so expanding it in the record bypassed a tested mechanism and produced ONE marker key out of the whole sentence -- which matches no entity, so all four guards lost their marker.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the only rung this record shares with mission/bastok/8. Karst then asks you to head to either San d'Oria or Windurst, and taking Windurst is what makes this record rather than mission/bastok/8.\n  step 3: this record's own page, not a sibling.\n  step 7: The knife from rung 6 goes back to Uu Zhoumo, so it is `items` here and evidence on rung 6 only; the ladder passes through a state where it has been spent, which is why this record carries consumed_key_item.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Wading Beasts",
+     "cat": "mission",
+     "area": "bastok",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Any Bastok Gate Guard",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the consuls",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Shared '## Walkthrough' [1] and [2] Naji stands outside the President's Office, HP #1 (J-8), and escorts you in to President Karst by cutscene, so Karst is not a separate rung. The [KI] Letter to the consuls arrives at the end of the interview and is this rung's evidence; the bottom option 'No questions.' skips the questions."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melek"
+    },
+    "zone": "Port Windurst",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "From the 'Option 2: Windurst Path' After-section, whose bullets restart at [1]. Inside the Bastokan Consulate at Port Windurst (F-6). The travel itinerary above this bullet is an itinerary, not a rung."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Windurst Walls",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Sword offering",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Option 2 [2]. She hands over the [KI] Sword offering here, so it is this rung's evidence. This bullet gives no square; the SAME page gives Heavens Tower as 'located in Windurst Walls (H-7)' in Option 1 [6], and that is where the square comes from Medium for that reason."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gold Skull"
+    },
+    "zone": "Port Windurst",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Dull sword",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Option 2 [3]. Back inside the Bastokan Consulate at Port Windurst (F-6), a second NPC in the same room as Melek. He gives the [KI] Dull sword, this rung's evidence."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Uu Zhoumo"
+    },
+    "zone": "Giddeus",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Option 2 [4]. (F-7) on the page's Map 2 of Giddeus, reached via West Sarutabaruta. The sub-bullet gives two ways down to him -- dropping at (G-8) or the ramp at (F-8) -- which is routing inside the zone, not a rung."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Giddeus",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Aspir Knife",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Eyy Mon the Ironbreaker",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Option 2 [5]. Spawns on the same map as Uu Zhoumo, at (G-7). The page marks the Aspir Knife a guaranteed drop, so holding it is what proves this rung is behind you -- role 'drop' rather than plain 'kill' for that reason. It is evidence HERE and not on rung 7, which spends it."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Uu Zhoumo"
+    },
+    "zone": "Giddeus",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Aspir Knife",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Option 2 [6]. The page names nothing you receive in return."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melek"
+    },
+    "zone": "Port Windurst",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Option 2 [7], 'Return to Melek' -- back to the Bastokan Consulate at Port Windurst. Square from Option 2 [1]."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Helaku"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "Option 2 [8], first half. Inside the Consulate of Bastok at (K-10). The bullet spans two zones, so it is split; the travel-itinerary sub-bullets under it are not rungs."
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "Option 2 [8], second half -- 'and then to Halver in Chateau d'Oraguille (I-9)'. A step has one zone, so the bullet is two rungs and both cite [8]."
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Burning Circle"
+    },
+    "zone": "Horlais Peak",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "Option 2 [9] and [10] as one rung: [9] is the journey and [10] is the interaction that ends it ('Examine the Burning Circle inside to enter the \"The Rank 2 Final Mission\" BCNM'), and a bare travel rung would not be trackable. THE PAGE'S ROUTE LOOKS WRONG: it says to reach Horlais Peak 'through Yughott Grotto', which is not how a player gets there. I have recorded only the destination the bullet instructs you to reach and no route of my own, and demoted this rung to medium rather than substitute a route from anywhere else. No square is given."
+   },
+   {
+    "n": 12,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Horlais Peak",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Kindred crest",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Dread Dragon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10,
+     11
+    ],
+    "note": "Option 2 [10] for the battlefield and [11] for what it gives you -- [11] ('You will obtain the [KI] Kindred crest Key Item') is an outcome, not a rung, so it is folded in here as this rung's evidence. ONLY THE DREAD DRAGON IS LISTED: the page says outright 'You only need to defeat the Dread Dragon to win the battle.' A Spotter is in the arena with it and the page recommends sleeping the dragon and taking the Spotter out first, but it is not a required kill and recording it as one would be false. Trusts can be summoned; 'trivial at level 30' is advice."
+   },
+   {
+    "n": 13,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Helaku"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Kindred report",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "Option 2 [12], 'Return to Helaku. You will obtain the [KI] Kindred report Key Item.' The key item is granted at this rung, so it is this rung's evidence. Square from [8]."
+   },
+   {
+    "n": 14,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "Option 2 [13], the page's own final bullet: 'Finally, speak to Naji to complete this Mission and gain Bastok Rank 3.' Recorded because the page says to go back, not inferred. Square from the shared walkthrough [1]. The sub-bullet that Malduc beside him gives the NEXT mission is not a rung of this one, and Rank 3 is an outcome rather than an observable."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 8-1",
+   "page_id": 13179,
+   "revision_id": 775145,
+   "source_sha256": "6664869b9b42266c791b23f662da97150bfc358c7b1223cb1561fa5b6ef82218",
+   "cache_file": "0013179_bastok_mission_8_1_8736f1668c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 20,
+   "dat_name": "The Chains That Bind Us",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "multi_option_giver",
+   "rank_gate_unmodelled",
+   "walkthrough_missing_from_rendered_page",
+   "grid_conflict",
+   "unnamed_target"
+  ],
+  "notes": "THE RENDERED PAGE SAYS THERE IS NO WALKTHROUGH AND THAT IS A RENDERER ARTEFACT, NOT THE TRUTH ABOUT THE PAGE. My rendered .md prints '(the page has no Walkthrough section)', and an earlier machine reading of this mission concluded from that the page 'is an infobox and nothing else' and authored it start-only with zero steps. That is wrong. The cached wikitext at THIS revision (775145, sha 6664869b...) carries a full eleven-bullet walkthrough. It is invisible to stage A only because the page writes its heading as a level-one '=Walkthrough=' while lib/wikitext.py's _HEADING regex requires two or more '=' signs, so section() finds nothing and the prepass prints its placeholder. Everything below is read from that walkthrough -- the same page, the same revision, the same source_sha256 this record is pinned to. Nothing here comes from a sibling page, and check_grounded.py's haystack includes this page's own raw wikitext, which is exactly the text I read.\n\nBULLET NUMBERING IS MINE. The walkthrough's top-level bullets are plain '*' items with no numbers, so I numbered them 1..11 in page order and source_bullets refers to that numbering: [1] Iron Eater, [2] the (G-5) tunnel, [3] the (H-8) door, [4] the (I-10) door, [5] the ??? at the Galka Statue, [6] the Galka Statue again, [7] the (D-12) entrance, [8] the (K-8) doors, [9] the (G-8) weight device, [10] the ??? at the mural, [11] return to Iron Eater. The unnumbered lead-in line about Crystals is cited by no rung.\n\nGIVER. The header's Start is the ROLE 'Any Bastok Gate Guard'. There is no NPC of that name, and normalize_npc discards any string beginning 'Any ' as generic, so copying the header literally costs the mission its marker. The rendered '## Giver' block names all four Bastok gate guards from Category:Gate Guard and any one of them opens the mission, so start.npc is the four-way multi-option string that build_index splits on ' or ' into one marker key each. start.zone and start.grid are null because the four stand in four different zones and each key resolves its own; their squares, from the Giver block, are Argus Port Bastok (L-7), Cleades Bastok Markets (D-11), Malduc Metalworks (J-8) and Rashid Bastok Mines (H-10). This corrects the earlier record, which kept only Argus.\n\nRANK GATE, UNMODELLED. The walkthrough's lead-in requires trading enough Crystals to the Conquest NPC to raise the Rank bar before the mission unlocks. There is no schema field for a rank bar, and it is not gates.level (character level), so gates.level stays null and the requirement is recorded here with rank_gate_unmodelled.\n\nGATES. gates.repeatable is false because the header says 'Repeatable: No' in words. gates.expansion is 'Rise of the Zilart' in the header, written here as the corpus's short code 'rotz'. The header's Level field is empty and no bullet states a level, so gates.level is null -- 'trivial at 99 with Trusts' is advice about difficulty, not a requirement.\n\nTHE ORNATE DOORS AND THE LOADSTONE. A red note above the walkthrough says completing the quest Open Sesame lets you pass the weighted Ornate Doors SOLO with the [KI] Loadstone, and that getting through the Quicksand Caves is required to reach the objective. The door bullets themselves state the alternative: three weight points open a door, and a Galka counts 3, a Hume/Elvaan/Mithra 2, a Tarutaru 1 -- so a lone Galka or two of anyone else also opens it. None of that is expressible as an item you hold, so the door rungs carry items [] with items_partial true and the alternatives written out in their notes; Loadstone is not put in items because the doors are passable without it.\n\nJUDGEMENT CALLS. (a) Bullet [5] is two rungs: checking the ??? in front of the Galka Statue, and the three Antica NMs it spawns. 'Clear out the room' comes first in the same bullet and names nothing, so it lives in the examine rung's note rather than becoming a rung with no target and no mobs. (b) Bullet [7] contradicts itself on the square: the bullet says to proceed to (D-12) of Western Altepa Desert while its own sub-bullet says the entrance 'is accessed at (C/D-11) in the far south-west corner'. I recorded (D-12), which is the square the instruction gives, noted the other, and demoted that rung to medium (grid_conflict). (c) Bullet [9] says 'another weight device' and names nothing, so its target is {type: none, name: null} -- by context it is another weighted Ornate Door, but the page does not say so and naming it would be inventing (unnamed_target). (d) (H-8) appears twice, on rung 3 (Map 7) and rung 11 (Map 6); those are different rooms on different maps that share a square label, not a contradiction. (e) The page writes 'Ornate Door' singular in one bullet and 'Ornate Doors' plural in another for the same kind of entity; I used the singular consistently and both forms are on the page. (f) NOTHING IN THIS MISSION IS OBSERVABLE. No bullet grants a key item or an item -- the Loadstone is a precondition you bring, not something this mission gives -- and the header's only Reward is Rank Points, so every rung's evidence is null. That is the honest answer, not a gap. (g) Rung 12 is the page's own 'Return to Iron Eater for a final cutscene' bullet: a real return-to-giver instruction, recorded because it is written, and the page gives Iron Eater no square in either mention so both his rungs have grid null.\n\nGROUNDING GATE. check_grounded.py reports start.npc as ungrounded because it matches whole strings and the page never writes the four guards joined by ' or '; each of Argus, Cleades, Malduc and Rashid is on this record's own rendered page in the '## Giver' block. That is the tool's documented 'matches strings, not entities' hole rather than an imported value, and I did not touch its baseline. | CORRECTED: start.npc is the page's own phrase again. An earlier draft expanded it to the four guards by hand; data/npc_overrides.lua already maps \"any bastok gate guard\" to exactly those names with zone=false (any zone), so expanding it in the record bypassed a tested mechanism and produced ONE marker key out of the whole sentence -- which matches no entity, so all four guards lost their marker.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Neither the weight total nor the race rule is an item you hold, so items is empty and items_partial is true;\n  step 5: A ??? can never carry a marker; the rung is kept because it is a real thing the player does.\n  step 10: The rung is kept because it is a real obstacle between rungs 9 and 11.\n  step 11: A ??? cannot carry a marker; the rung keeps the position in the ladder.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "On My Way",
+     "cat": "mission",
+     "area": "bastok",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Any Bastok Gate Guard",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Walkthrough bullet [1] in my numbering of the page's unnumbered '*' bullets. He is at the President's Office in the Metalworks and the sub-bullet says to keep talking to him until the text stops changing, which is one conversation and one rung. The page gives him no square, so grid is null; the header's Description names him too."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Quicksand Caves"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Bullet [2]. The rung happens in Western Altepa Desert, at the tunnel at (G-5), and the zone you enter is Quicksand Caves (the page's Map 7). The sub-bullet about taking a Survival Guide to Kuftal Tunnel and zoning out near this entrance is a shortcut, not a rung."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Door"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Bullet [3], on Map 7. You do not click the door: you stand on the nearby weight sensor for a few seconds. Opening it needs 3 weight points and the sub-bullet gives the table Galka 3, Hume/Elvaan/Mithra 2, Tarutaru 1 or the [KI] Loadstone from the quest Open Sesame, which lets any race do it solo. Loadstone is deliberately NOT in items, because the door is passable without it."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Door"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Bullet [4], the next weighted Ornate Door, at (I-10). Same weight-sensor mechanic and the same unexpressible alternatives as rung 3. Through it you reach the small room at (G-11) where rungs 5 to 7 happen."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Bullet [5], split into an examine and the fight it starts. The ??? stands in front of the Galka Statue in the small room at (G-11); checking it spawns three level 70 Antica NMs. The bullet also says to clear the room first, but it names none of that trash, so it is recorded here rather than as a rung with no target."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Quicksand Caves",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Triarius IV-XIV",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Princeps IV-XLV",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Centurio IV-VII",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Bullet [5], the three level 70 Antica NMs the ??? on rung 5 spawns -- a black mage, a paladin and a warrior. The sub-bullets say they can be slept and recommend that order, and that the fight is trivial at 99 with Trusts; that is advice. They drop nothing the page names, so evidence is null."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Galka Statue"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Bullet [6]. The statue itself, not the ??? in front of it, and only once the bodies have disappeared. It gives a cutscene with Zeid, who is a cutscene and not a standing entity, so he is not the target."
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Quicksand Caves"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "D-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Bullet [7]: leave the caves and re-enter them by a second, hidden entrance -- the page's Map 5. THE BULLET CONTRADICTS ITS OWN SUB-BULLET on the square: the instruction says (D-12) of Western Altepa Desert, the sub-bullet says the entrance is accessed at (C/D-11) in the far south-west corner. I recorded (D-12) because that is the square the instruction gives, and this rung is medium for it. The other sub-bullet, about picking up the Geomagnetic Fount Waypoint for Quicksand Caves around (F-7) on Map 5, is a shortcut for later visits, not a rung."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Door"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "Bullet [8], the eastern weighted doors at (K-8) on Map 5, which take you to Map 6. The page writes this pair in the plural, 'Ornate Doors'; I used the singular form the earlier bullets use, and both spellings are on the page. Same weight-sensor mechanic and same unexpressible alternative as rung 3."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Quicksand Caves",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "Bullet [9], on Map 6: 'Go east to another weight device at (G-8) and proceed east again.' THE PAGE NAMES NOTHING HERE it says 'another weight device', so the target is none rather than a guessed 'Ornate Door', even though by context that is almost certainly what it is."
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Quicksand Caves",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "Bullet [10], the objective: the ??? on the floor in front of the mural, in the room at (H-8) on Map 6. Checking it gives the second cutscene with Zeid. (H-8) is also rung 3's square, but that one is on Map 7 two different rooms sharing a square label, not a conflict."
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "Bullet [11], 'Return to [[Iron Eater]] for a final cutscene.' The page's own return-to-giver instruction, recorded because it is written rather than inferred. Zone from rung 1; the page gives him no square either time, so grid is null. The only reward the header names is Rank Points, which is not observable, so no evidence."
+   }
+  ]
+ }
+]

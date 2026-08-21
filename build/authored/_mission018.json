@@ -1,0 +1,3429 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 1-1",
+   "page_id": 13283,
+   "revision_id": 766618,
+   "source_sha256": "e583b8a995147272529282809462ecbfd04a2c8fddda689f5d09ee97a1fdc9cf",
+   "cache_file": "0013283_windurst_mission_1_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 0,
+   "dat_name": "The Horutoto Ruins Experiment",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "GIVER: the header says only 'Any Windurst Gate Guard', which is a generic string and resolves to nothing useful; chronicle_snpc says 'rakoh buuma'. Bullet 1 of THIS page names all four guards with zone and grid, and Rakoh Buuma - Windurst Woods (K-10) is one of them, so chronicle's answer is confirmed by the page rather than merely preferred. start.npc is Rakoh Buuma and therefore AGREES with the shipped index; no marker moves. The other three (Mokyokyo, Janshura-Rashura, Zokima-Rokima) are alternatives, not a set to visit, so they stay in step 1's note instead of becoming a group -- a group draws all four at once and would say 'do all of these'.\n\nEVIDENCE: exactly one thing on this page is observable, the Cracked mana orb from the Ancient Magical Gizmos, and it is obtained at its own step. The header's Reward is rank points and a gatehouse-dependent title, neither of which is an item, so rule 7 costs nothing here.\n\nNOT STEPS: the four title lines in the header (the title depends only on which gatehouse you accepted at), the Survival Guide shortcut sub-bullet, and bullet 5's 'head down the stairs', which is the same journey as bullet 3 and is folded into it. Bullet 4 IS kept, as the page's own '(Optional)', because Sama Gohjima is a real standing NPC you can walk to.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Rakoh Buuma is the one chronicle ships as this line's giver; the gatehouse you pick only decides the title.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": "Windurst Woods",
+   "grid": "K-10",
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakoh Buuma"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Any of the four Windurstian gate guards flags the mission Mokyokyo (Windurst Waters F-5), Janshura-Rashura (Port Windurst B-5), Rakoh Buuma (Windurst Woods K-10), Zokima-Rokima (Windurst Walls H-7)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hakkuru-Rinkuru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Orastery; cutscene only"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Inner Horutoto Ruins"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     5
+    ],
+    "note": "the large stone tower (the Lily Tower); the stairs inside go down to Inner Horutoto Ruins. The Inner Horutoto Ruins Survival Guide lands at the right tower if it is unlocked."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sama Gohjima"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page marks this '(Optional)' -- dialogue only, near the tower entrance; the page gives no grid for him"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cracked Wall"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "Lily Tower, Map 1: down the stairs into the main room, across to the far side; pass through the wall and go left"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate: Magical Gizmo"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "cutscene with the Minister"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ancient Magical Gizmo"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Cracked mana orb",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "six of them, back out through the wall; which one gives the orb is random, so this is one step and not six rungs the player cannot be tracked through"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hakkuru-Rinkuru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Cracked mana orb",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "hand the orb back to finish; the page gives his grid only in bullet 2"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 1-2",
+   "page_id": 13284,
+   "revision_id": 775265,
+   "source_sha256": "688bf5e0670f7feb39bc76bdfef235a3f9a385d9cf5fb431b984ad2dec19ae52",
+   "cache_file": "0013284_windurst_mission_1_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 1,
+   "dat_name": "The Heart of the Matter",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "consumed_key_item"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard' again, chronicle says 'rakoh buuma', and bullet 1 of this page names him at Windurst Woods (K-10) among the four guards. start.npc is Rakoh Buuma, which AGREES with chronicle.\n\nEVIDENCE, and the one judgement call on this page. Three observable points: the six dark Mana Orbs from Apururu, the Southeastern star charm from Pore-Ohre, and the six glowing Mana Orbs off the pedestals. The two orb sets are AND-lists of six and each of them stops reading true the moment the first orb of the set is spent, so under core/steps.lua's high-water rule they carry the mark forward and then, after a logout, let it LAG to the last thing still visible. Lagging is the safe direction (the marker points where you have been, never where you have not earned), and the session latch stops it walking backwards while you play, so I kept them. The star charm is the sturdy one -- it is a permanent key item and is never handed back.\n\nNOT STEPS: bullet 4 ('you are now instructed to go to the Outer Horutoto Ruins') is the instruction that bullets 5-6 carry out. Bullet 9's zone-out cutscene is not a rung either: the page's own sub-bullet says you may leave the zone by any other route, skip it entirely and go straight to Apururu for a slightly different cutscene, so it is not something the ladder can require. It is folded into the final step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Horutoto Ruins Experiment",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 0
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": "Windurst Woods",
+   "grid": "K-10",
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakoh Buuma"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any of the four guards: Mokyokyo (Windurst Waters F-5), Janshura-Rashura (Port Windurst B-5), Rakoh Buuma (Windurst Woods K-10), Zokima-Rokima (Windurst Walls H-7)"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Apururu"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "First dark mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Second dark mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Third dark mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Fourth dark mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Fifth dark mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Sixth dark mana orb",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Manustery. She may need to be spoken to twice if you hold the Windurst Trust permit, because she talks about her brother Ajido-Marujido first. All six orbs come at once, which is why they are one AND-list; they are spent one at a time at the pedestals."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pore-Ohre"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Southeastern star charm",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "at the entrance to Marguerite Tower. The page warns in its own sub-bullet that without the charm the orbs cannot be energised later, so this is a hard rung and not a detour."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Pedestal"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": null,
+    "items": [
+     {
+      "name": "First dark mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Second dark mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Third dark mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Fourth dark mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Fifth dark mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Sixth dark mana orb",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "six orbs but EIGHT pedestals: six in the open and two more in hidden rooms behind the Cracked Walls on the north and south sides. One step, because no pedestal is distinguishable from another in anything the client reports."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate: Magical Gizmo"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "behind the Cracked Wall on the east side; only after all six orbs are set"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Pedestal"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "First glowing mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Second glowing mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Third glowing mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Fourth glowing mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Fifth glowing mana orb",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Sixth glowing mana orb",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "check each pedestal again after the cutscene; the AND-list reads true only when all six glowing orbs are in hand, which is exactly when this step is done"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Apururu"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "First glowing mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Second glowing mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Third glowing mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Fourth glowing mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Fifth glowing mana orb",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Sixth glowing mana orb",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "bullet 9's zone-out cutscene is folded in here: it is skippable by leaving the zone any other way, so it cannot be a rung. Quh Berhuja by the tower is the page's own '(Optional)' dialogue and is not one either."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 1-3",
+   "page_id": 13285,
+   "revision_id": 766620,
+   "source_sha256": "bf3f81e1f3128b4a8667db421e817bd29c06de4b45c93a7bafaa8cdb8802ce07",
+   "cache_file": "0013285_windurst_mission_1_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 2,
+   "dat_name": "The Price of Peace",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "unnamed_target",
+   "consumed_key_item"
+  ],
+  "notes": "GIVER: 'Any Windurst Gate Guard' in the header, 'rakoh buuma' in chronicle, and bullet 1 names him at Windurst Woods (K-10). start.npc is Rakoh Buuma -- AGREES with chronicle.\n\nThis mission ends where it started, which is why the last rung is the gate guard again: bullet 7 says 'Return to the Gate Guard', and the only guard names on this page are bullet 1's four. Rakoh Buuma is the one chronicle ships, so the ladder closes on him rather than on an ambiguous 'Gate Guard' string, which resolve.lua reports ambiguous and validate.py would drop.\n\nEVIDENCE: the Food offering and the Drink offering arrive together from Leepe-Hoppe and are the only observable things on the page. They are handed over at steps 3 and 4, two rungs before the mission ends, so the AND-list goes false while the ladder is still running; the session latch holds the mark and a relogged player simply sees it lag back to the giver, which is the safe direction. The 1,000 gil and the Rank 2 promotion are header rewards and cannot be evidence.\n\nBullet 6's cutscene is a real rung -- it fires on the Rhinostery stairs and gates the hand-back -- but the page names no entity for it at all, so its target is 'none' rather than an invented door. Flagged unnamed_target.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: the page says only 'the Gate Guard'; this is the one bullet 1 names in Windurst Woods and the one chronicle ships as the giver",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Heart of the Matter",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 1
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": "Windurst Woods",
+   "grid": "K-10",
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakoh Buuma"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any of the four guards; the other three are Mokyokyo (Windurst Waters F-5), Janshura-Rashura (Port Windurst B-5) and Zokima-Rokima (Windurst Walls H-7)"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Leepe-Hoppe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Food offering",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Drink offering",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on the roof of the Rhinostery, southern half of the zone; the page puts the building at (J-8) and the NPC at (J-9), which is a building-versus-NPC difference and not a contradiction"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Laa Mozi"
+    },
+    "zone": "Giddeus",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Food offering",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Giddeus is entered at (F-8) in West Sarutabaruta; all left turns from the Sarutabaruta entrance reach him"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ghoo Pakya"
+    },
+    "zone": "Giddeus",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Drink offering",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "back to the Sarutabaruta entrance, then all right turns. The page gives the two deliveries in a fixed order; nothing on the page says they may be swapped, so they are two ordered rungs and not a group."
+   },
+   {
+    "n": 5,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the cutscene fires as you climb the stairs to the Rhinostery roof. The page names no NPC, door or object for it, so the target stays null rather than being guessed at Leepe-Hoppe."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakoh Buuma"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 2-1",
+   "page_id": 13286,
+   "revision_id": 766621,
+   "source_sha256": "dc75a7664561f461dac3d3e1bb3eb83dbdd8438b123eee57acecf9c932d1d2f6",
+   "cache_file": "0013286_windurst_mission_2_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 3,
+   "dat_name": "Lost for Words",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "steps_from_after_section",
+   "consumed_key_item"
+  ],
+  "notes": "GIVER: the header is the generic 'Any Windurst Gate Guard' and, unlike missions 1-1 to 1-3, THIS page never names a guard anywhere -- its walkthrough opens at the Optistery. So start.npc is chronicle's 'rakoh buuma' (written 'Rakoh Buuma'), which AGREES with the shipped index and moves nothing, while start.zone and start.grid stay null because this page does not say where he stands. The ladder starts at Tosuka-Porika, the first thing the walkthrough actually tells a player to do; naming Rakoh Buuma as a STEP target would be importing a name this page does not carry.\n\nSTRUCTURE: three of the four sections are 'After the walkthrough' and all three are the rest of the mission, not notes -- the top-level Walkthrough stops after the monocle. Their bullets restart at [1], so each such step's source_bullets are that section's numbers and the note names the section.\n\nEVIDENCE: three clean key items, one per leg -- Lapis monocle (lent by Nanaa), Lapis coral (from the Fossil Rocks), Hideout key (back from Nanaa). Each is obtained at its own rung and none repeats. The monocle and the key are both taken back later, which is why the flag is consumed_key_item: the mark rides the latch in-session and lags after a relog, which is the safe direction.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: The page says 'check the door' of the House of the Hero; the House of the Hero is the entity the client names and the one that resolves, the same reading AUTHORING.md records for the Summoner AF quests.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Price of Peace",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 2
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Optistery on the northern map, near Home Point #1; the east door"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Lapis monocle",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "she LENDS the monocle; you may need to speak twice or more if you hold the Windurst Trust permit or have Lure of the Wildcat running. Her cronies are the page's own '(Optional)'."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fossil Rock"
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Lapis monocle",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Lapis coral",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "from the 'Maze of Shakrami' after-the-walkthrough section, whose bullets restart at [1]. In at (K-5) in Tahrongi Canyon, (G-6) on Map 1 down to Map 2, then (H-5). About twelve rocks and which one holds the coral is random; the page lists (H-5),(I-7),(H-7),(G-7),(G-8),(I-8). One step, not twelve."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [
+     {
+      "name": "Lapis coral",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Hideout key",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet [4] of the 'Maze of Shakrami' section"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mahogany Door"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Hideout key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "from the 'Inner Horutoto Ruins' after-section (bullets restart at [1]). In at the Lily Tower (J-7) East Sarutabaruta, southwest room, Cracked Wall at (G-9) to Map 2, then (G-8). Sneak and Invisible: the monsters there are 90+ and there is blood aggro below 75% HP."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "House of the Hero"
+    },
+    "zone": "Windurst Walls",
+    "grid": "G-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "From the 'Windurst' after-section."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "bullet [2] of the 'Windurst' after-section: back to Home Point #1 and the Optistery to finish"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 2-2",
+   "page_id": 13288,
+   "revision_id": 770779,
+   "source_sha256": "6d05725a037bcf6752c6e8de800844c7745e22e794c5438a5a8f94bdbdf901bf",
+   "cache_file": "0013288_windurst_mission_2_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 4,
+   "dat_name": "A Testing Time",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "time_gated",
+   "count_unobservable",
+   "repeating_loop",
+   "steps_from_after_section"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard' and bullet 1 says 'Accept the mission from the Gate Guard' without naming one. start.npc is chronicle's Rakoh Buuma -- AGREES with the index -- with zone and grid null because this page does not place him. Step 1 is Moreno-Toeno, the first named action.\n\nWHY MEDIUM: the ladder itself is only three rungs and I am confident in all three, but the mission is a stopwatch and the addon cannot see a clock. You have 24 game hours (one Earth hour) on the first run, 48 on a repeat, you must kill THIRTY monsters, and you must report in the FINAL game hour -- earlier only tells you how long is left, later fails the mission outright. None of kills, game time or the deadline is in any packet, so the middle rung can never be observed to be done and the last one can never be known to be safe.\n\nTHE REPEAT IS A DIFFERENT ZONE. First time it is Tahrongi Canyon; repeating it is Buburimu Peninsula with double the time. Only one of the two can be the ladder, so the spine is the first-time run and the repeat is on the step's note. Both 'After the walkthrough' sections are steps; 'Getting Assessed' is the reporting rule and the failure clause, so its bullet [2] (what happens if you fail) is not a step.\n\nEVIDENCE: exactly one thing, the '\"Creature Counter\" magic doll' -- and note the literal quote marks, which are part of the key item's name; the unquoted form does not resolve.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Lost for Words",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 3
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moreno-Toeno"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "\"Creature Counter\" magic doll",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "inside the Aurastery. The doll is the objective tracker and the clock starts here. Students on the roof are the page's own '(Optional)'."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Tahrongi Canyon",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "from the 'First-Time' after-section (bullets restart at [1]): thirty monsters, ANY monsters -- the page names none, so mobs stays empty rather than inventing one, and the tally is not observable. On a REPEAT the zone is Buburimu Peninsula and the limit is 48 game hours instead of 24; the ladder can only carry one, so it carries the first-time run."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moreno-Toeno"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Getting Assessed' after-section. Report in the LAST game hour of the limit: sooner and he only reports time remaining, later and the mission fails. Accepting at 11:30 means turning in at 11:30 the next game day, not at the whole hour. None of this is visible to the addon."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 2-3",
+   "page_id": 13289,
+   "revision_id": 767470,
+   "source_sha256": "1d911596c1aa8299349e0fe3487a7cd62df30b70364ed5b642ba7541c7325ec7",
+   "cache_file": "0013289_windurst_mission_2_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 5,
+   "dat_name": "The Three Kingdoms",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "or_branch_unmodelled",
+   "unordered_group",
+   "steps_from_after_section"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', no guard named on this page, chronicle says 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- with null zone and grid. The walkthrough itself starts at Kupipi.\n\nTHE BRANCH IS THE WHOLE PAGE. Four 'After the walkthrough' sections are two complete alternative routes: Windurst-to-Bastok then Bastok-to-San d'Oria, or Windurst-to-San d'Oria then San d'Oria-to-Bastok. Both nations are visited either way, but WHAT you do in each depends on which you did first -- go to Bastok first and the Bastok leg is Pius, Grohm's three Pickaxes, Mine Gravel from the Mythril Seams in Palborough Mines and Mythril Sand from the refiner, and San d'Oria then ends in the Horlais Peak BCNM 'The Rank 2 Final Mission' against the Dread Dragon; go to San d'Oria first and that leg ends by killing Warchief Vatgit in Ghelsba Outpost, and Bastok then ends in the Waughroon Shrine BCNM against the Dark Dragon. No single ordered ladder is true for both players, so I modelled the SPINE only: Kupipi, the two consulates as an unordered pair (which is exactly what the page's own bullet 1 says -- pick whichever nation you like first), and Kupipi again. The two legs' interiors are in the notes and are deliberately not rungs; a merged path would send somebody to a BCNM they are not doing.\n\nEVIDENCE: only the Letter to the consuls, given by Kupipi and carried through both legs. It resolves to three key item ids (5,6,7), one per nation of origin, and resolve.lua says any of them satisfies it. The Adventurer's Certificate, the 3,000 gil and the Rank 3 promotion are all header rewards and so are not evidence. Cipher: Semih and Cipher: Halver are Trust rewards, not steps.\n\nHeavens Tower is its own zone off Windurst Walls in the client (zone 242), so Kupipi's rungs are zoned there and not to Windurst Walls. Patt-Pott is in 'Metalworks' -- the wiki's 'Bastok Metalworks' does not resolve.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Testing Time",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 4
+    }
+   ],
+   "level": 25,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the consuls",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the Clerical Chamber. Bullet 1 is advice about which nation to do first and is not a step."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Patt-Pott"
+    },
+    "zone": "Metalworks",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Letter to the consuls",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "legs",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Bastok leg, from the 'Windurst to Bastok' / 'San d'Oria to Bastok' after-sections (bullets restart at [1] in each). Top floor of the Windurstian Consulate, Metalworks HP#1. The rest of the leg is Pius in the President's Office (J-8), Grohm in the Craftsmen's Eatery (H-9) for three Pickaxes, Mine Gravel traded from the Mythril Seams in Palborough Mines ((I-8) and (I-9)), the refiner and levers at (I-7) for Mythril Sand, then back to Patt-Pott -- UNLESS Bastok is your second nation, in which case it ends with the Waughroon Shrine BCNM against the Dark Dragon instead. Grouped with San d'Oria because the page lets you take them in either order."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kasaroro"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Letter to the consuls",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "legs",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the San d'Oria leg, from the 'Bastok to San d'Oria' / 'Windurst to San d'Oria' after-sections. Heruze-Moruze stands with him at (H-9). Halver in Chateau d'Oraguille sends you on: first-nation San d'Oria means killing Warchief Vatgit at (H-7) in Ghelsba Outpost; second-nation San d'Oria means clearing Horlais Peak's 'The Rank 2 Final Mission' against the Dread Dragon and the Seeker. Either way you report back to Kasaroro."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     7
+    ],
+    "note": "both routes end here (bullet [5] of 'Bastok to San d'Oria', bullet [7] of 'San d'Oria to Bastok')"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 3-1",
+   "page_id": 13290,
+   "revision_id": 766624,
+   "source_sha256": "538b5d510662415c272756b185c76687ff3788fb6d5632404f7fe93ca2c455cf",
+   "cache_file": "0013290_windurst_mission_3_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 10,
+   "dat_name": "To Each His Own Right",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "reward_ki_is_midquest_evidence"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', no guard named on the page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null.\n\nEVIDENCE IS EMPTY ON PURPOSE, and that is the interesting decision here. The one key item the walkthrough hands out, the Starway Stairway bauble, is ALSO listed in the header's Reward line, and hard rule 7 says a reward proves the mission is over rather than that a step is done. So the bauble is not used, and this five-rung ladder carries no evidence at all -- which the brief says is normal and correct for missions. It is worth saying plainly, because the bauble is granted at step 1 and is permanent (it is what unlocks the upper tower), so it would otherwise have been the sturdiest evidence in the batch; the rule forbids it and I did not reach around the rule.\n\nSTEP 4: the page says to FALL down the trap door -- the cutscene is in the pit, so the failure mode is opening the door instead. Two switches flank an obvious floor panel and which one drops you changes daily, and the sub-bullet is explicit that the person on the mission must pull it themselves. The page calls them 'switches' in one line and 'the lever' in the next; 'Lever' is the name that resolves, and it is zoned to Castle Oztroja so validate.py's ambiguous-name-without-zone gate does not bite. The Blank Target in that room belongs to the Onion Rings quest and is not a step here.\n\nCORRECTION under the rewritten hard rule 7: the 'EVIDENCE IS EMPTY ON PURPOSE' paragraph above is superseded -- walkthrough bullet 1 of 5 explicitly hands over the Starway Stairway bauble rather than the header's Reward line being its only mention, so it is now recorded as step 1's evidence (name resolves, ki id 36), and the older review flag reward_blocks_evidence is left in place only because this narrow pass does not remove flags; it should be dropped. || LEAD: the flag(s) ['reward_blocks_evidence'] were removed -- they asserted the reward key item was NOT used as evidence, which the rule-7 rewrite reversed. A flag that now reads false is worse than no flag; the reversal is recorded in the CORRECTION sentence above.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: That is what rule 7 asks for, and it is why the Reward listing does not bar it here; the bauble is permanent (it is what unlocks the upper tower), so it is sturdy evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Three Kingdoms",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 5
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Starway Stairway bauble",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "She grants the Starway Stairway bauble, which opens the door on the left to the upper tower. The bauble is ALSO listed in the header's Reward line, but bullet 1 of 5 hands it over outright 'Speak to Kupipi in Heavens Tower who will give you the [KI] Starway Stairway bauble' four bullets before the mission ends, so holding it proves THIS step is behind you rather than that the mission is over."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rhy Epocan"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Starway Stairway bauble",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the top of the tower; the blue teleporter takes you back down"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hakkuru-Rinkuru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Orastery, closest to Home Point #1; hints on Ajido-Marujido's whereabouts"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lever"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Map 1. You want the TRAP, not the door: the cutscene is in the pit you fall into. Stand between the two switches and check one; if the door opens, check the other. Which is which changes daily, and the player on the mission must pull it personally."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rhy Epocan"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 3-2",
+   "page_id": 13292,
+   "revision_id": 773123,
+   "source_sha256": "98a3cfc6ecf68abc134992d87548ebf6488f43c4621038500e84ffc99daf9cce",
+   "cache_file": "0013292_windurst_mission_3_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 11,
+   "dat_name": "Written in the Stars",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "or_branch_unmodelled"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', unnamed on this page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null. The walkthrough's own bullet 1 ('accept the mission and make your way to Heavens Tower') is the journey to step 1 and not a rung of its own.\n\nTHE SECOND ROUTE IS NOT A LADDER. The 'Repeating or Skipping the Mission' section is a genuinely different way to finish: accept, speak to Zubaba, and trade her three Rusty Daggers (Wendigo drops past the Three Mage Gate, or the Auction House), which skips the ruins entirely and still grants the Portal charm. It replaces steps 2 and 3 rather than extending them, so it cannot be expressed as one ordered ladder and is not modelled -- it is written on the last step and flagged or_branch_unmodelled. I deliberately did NOT put the daggers in items_alt: the normal completion requires holding nothing, so an items_alt against an empty items list asserts an alternative to nothing.\n\nEVIDENCE: only the Charm of light, from Zubaba at step 1. The Portal charm is the header's Reward and so is barred by rule 7 -- which is right in a second way here, because on the dagger route you get the Portal charm without doing steps 2 or 3 at all.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "To Each His Own Right",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 10
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zubaba"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Charm of light",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "second floor, past Kupipi"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Three Mage Gate"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": null,
+    "items": [
+     {
+      "name": "Charm of light",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the tower at (J-7) in East Sarutabaruta -- the same one the Inner Horutoto Ruins Survival Guide warp lands at. The Charm of light is what gets you through, and past it is the small room at (G-7)."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate of Light"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Map 4"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zubaba"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the alternative ending, from the 'Repeating or Skipping the Mission' section: trade her three Rusty Daggers instead and the mission completes with the Portal charm just the same, with no trip to the ruins at all"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 3-3",
+   "page_id": 13293,
+   "revision_id": 773992,
+   "source_sha256": "c2eae47394a6cf75bfc09c88c15acc77b8e0d92ffe06965d3c325444793d10d1",
+   "cache_file": "0013293_windurst_mission_3_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 12,
+   "dat_name": "A New Journey",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "or_branch_modelled",
+   "steps_from_after_section"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', unnamed on this page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null.\n\nTHE TWO KEY ROUTES CONVERGE, so they are ONE rung. 'Obtaining Delkfutt Key Short Way' and 'Obtaining Delkfutt Key Long Way' (with 'Navigation') differ only in how you reach Porphyrion -- the short way opens the door at (J-8), rides the ??? at the foot of the stairs in Upper Delkfutt's Tower and lands next to him; the long way is a twelve-floor climb past Mimas. Both end with the same NM and the same key item, and bullet 4 says a player who already holds either the item Delkfutt Key or the key item skips the whole thing. Modelling that as two ladders would send half the players up a tower they do not need; modelling it as one rung anchored on Porphyrion marks the thing they both have to reach.\n\nEVIDENCE: the Letter to the ambassador at step 1 and the Delkfutt key at step 3. Neither is in the header's Reward line (which is Rank 4 and 5,000 gil), and each is obtained at its own step.\n\nNAMES: the page calls it 'the Vestal Chamber door'; 'Door: Vestal Chamber' is the client's own name, is used verbatim on Windurst 5-1, 5-2 and 6-2 in this same batch, and is what resolve.lua accepts. The Basement's zone is not stated on the page -- it is entered by clicking the Cermet Door at (E-8) on Lower Delkfutt's Tower Map 1 -- so I zoned the (L-7) door to Lower Delkfutt's Tower rather than invent a zone name. The 'Notes' after-section (you need not be on the mission to get a key from Porphyrion) is not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Written in the Stars",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 11
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Vestal Chamber"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the ambassador",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "top of Heavens Tower; cutscene with the Star Sibyl"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pakh Jatalfih"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Letter to the ambassador",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Windurstian Embassy"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Upper Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Delkfutt key",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Porphyrion",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "both routes end here (the 'Short Way' section's bullets [1]-[3] and the 'Long Way'/'Navigation' sections' twelve floors past Mimas at (H-7)). Killing Porphyrion spawns a glowing ??? that gives the KEY ITEM, and also drops the ITEM Delkfutt Key; if you miss the ???, trade the item to the Elevator at (H-8) in his room or to the Cermet Door at (E-8) on floor 1 to convert it. The ??? can never carry a marker, but Porphyrion can, which is what keeps this rung markable. Anyone already holding either form skips this entirely."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Door"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Delkfutt key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     1
+    ],
+    "note": "from bullet 4 and from the 'Finishing the Mission' after-section, whose bullets restart at [1]. Into the Basement through the Cermet Door at (E-8) on Map 1, then east into the large room; the page warns that no cutscene means the wrong door. Another player's key does not work."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Windurstian Emb."
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "bullet [2] of 'Finishing the Mission'. It is the THIRD door inside the embassy -- several doors carry the same name -- and Pakh Jatalfih has to acknowledge your return first, which the page treats as part of the same visit, so it is one rung and not two."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 4-1",
+   "page_id": 13294,
+   "revision_id": 767352,
+   "source_sha256": "287d596b3e233a1af2d3dc2fed6d6efcb1a571ee5c6a489fafa4e7b7c5095401",
+   "cache_file": "0013294_windurst_mission_4_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 13,
+   "dat_name": "Magicite",
+   "match_rule": "header_mission_name+category",
+   "match_conf": "category_disambiguated"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "steps_from_after_section",
+   "unordered_group",
+   "grid_conflict",
+   "prereq_quest_unmodelled"
+  ],
+  "notes": "GIVER: the header's Start is a PLACE, not an NPC ('Windurstian Embassy in Ru'Lude Gardens'), and the walkthrough's first line names the clerk Pakh Jatalfih there at (I-9). chronicle_snpc is 'pakh jatalfih', so start.npc AGREES with the shipped index and nothing moves.\n\nTHE LONGEST LADDER IN THIS LANE, and the one place I let 'After the walkthrough' sections become rungs wholesale: bullet 4 is a single line, 'Obtain the 3 Magicite Key Items. See below for details', and the six sections below it are those details. The three magicites themselves are an unordered set -- the page asks for all three and names no order -- so they share the group 'magicite' and draw at once. Their PREREQUISITES are ordered inside themselves (an NM must die before its drop can be traded, Paya-Sabya before Muckvix), so they are not grouped; the note says they are independent of one another.\n\nGRID CONFLICT: bullet 2 puts the Audience Chamber door at (H-6) and bullet 5 and the Conclusion section put it at (H-5). Both are on the page and I did not pick a winner -- each rung keeps the grid its own bullet gave it, which is why the first Audience Chamber rung is (H-6) and the last is (H-5).\n\nUNMODELLED GATES: Aldo is behind Tenshodo membership, a separate quest with a fame requirement, and the two Sattal-Mansal trades are the separate quests Mysteries of Beadeaux I and II. Neither is expressible as a mission gate. The page also lists the Crest of Davoi among the required key items but never uses it in any of the three magicite sections, so it keeps its own rung with its own evidence rather than being guessed onto the Davoi trip.\n\nEVIDENCE is unusually rich for a mission -- twelve rungs carry it, every one obtained at its own step and no item repeated. The Airship Pass and the Message to Jeuno (Windurst) are barred: both are in the header's Reward line, and the pass is conditional on not already holding one.\n\nNOT STEPS: the 'Maps' section (map vendors), the Beadeaux prerequisite section's silence/Echo Drops gimmick and route, the level and party advice, and the 'Conclusion' section, which restates bullets 5 and 6.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: See the record note",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A New Journey",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 12
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Pakh Jatalfih",
+   "zone": "Ru'Lude Gardens",
+   "grid": "I-9",
+   "raw": "Windurstian Embassy in Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pakh Jatalfih"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the clerk at the reception desk; speaking to him is what flags the mission"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Windurstian Emb."
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Archducal audience permit",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "through the door left of the reception desk, ambassador's office at the end of the corridor; the cutscene is on the door, not on an NPC"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Archducal audience permit",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to Aldo",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "(H-6) is bullet 2's own grid; bullet 5 and the Conclusion section say (H-5) for the second visit. I kept each bullet's grid rather than choosing."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aldo"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Letter to Aldo",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Silver bell",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the back of the Tenshodo H.Q. inside Neptune's Spire. Getting in needs Tenshodo membership -- a separate quest, or a Tenshodo Invite traded to Ghebi Damomohe -- which is a prerequisite and not a rung. If another nation's run already gave you the bell you still need this cutscene."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Baudin"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Coeurl Meat",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Crest of Davoi",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "bullet [3] of the 'Key Items' after-section. Coeurl Meat off a Coeurl in Sauromugue Champaign or Meriphataud Mountains, or the Auction House. The page never says what the crest opens, so it stays its own rung."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Paya-Sabya"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bullet [1] of the 'Key Items' after-section; the first half of the Yagudo torch"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Muckvix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Yagudo torch",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside Muckvix's Junk Shop. The Castle Oztroja section says twice that the torch is required even when somebody else opens the doors for you."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Quadav Charm",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "De'Vyu Headhunter",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "from the 'Beadeaux (Prerequisite)' after-section, bullets [5]-[11]: in from Pashhow Marshlands (L-11), left wall to the tunnel at (H-7), silence yourself at the Mute devices to pass the Afflictors uncursed, ramp at (E-10), three bridges, then (H-9/10). Level 40-45 NM."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Quadav Augury Shell",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Go'Bhu Gascon",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12,
+     13,
+     14
+    ],
+    "note": "northwest again and right wall to (F-6); the second Warrior NM"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sattal-Mansal"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Quadav Charm",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Coruscant rosary",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "behind the Tenshodo Guild Doors; this is the quest Mysteries of Beadeaux I"
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sattal-Mansal"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Quadav Augury Shell",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Black matinee necklace",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     16
+    ],
+    "note": "Mysteries of Beadeaux II. TWO SEPARATE TRADES -- the page says trading both at once loses one of the key items and leaves the second item in your inventory, which is why this is a second rung on the same NPC rather than a two-item trade."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Magicite: Optistone",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the 'Davoi Magicite' after-section: into Davoi, (G-7), drop invisible and click the Wall of Dark Arts to enter the Monastic Cavern; no enemies inside. One of three, any order."
+   },
+   {
+    "n": 13,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo torch",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Magicite: Orastone",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the 'Castle Oztroja Magicite' after-section: Brass Door at (I-8) by lever (the other lever drops you in a pit), Map 2 to (G-7), courtyard, (I-7) to Map 7, right wall to the door at (H-9) which the lit torch opens, then the Brass Door into the Altar Room -- which is its own zone in the client. Fickie's cutscene fires before the magicite one."
+   },
+   {
+    "n": 14,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Qulun Dome",
+    "grid": null,
+    "items": [
+     {
+      "name": "Coruscant rosary",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Black matinee necklace",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Magicite: Aurastone",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the 'Beadeaux Magicite' after-section: left wall from the Beadeaux entrance to the tunnel at (H-7), left at the intersection zones into Qulun Dome; the two key items are what open the Door inside. No monsters in the Dome."
+   },
+   {
+    "n": 15,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Magicite: Optistone",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Magicite: Orastone",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Magicite: Aurastone",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "only after all three magicites. Grid is bullet 5's own (H-5); bullet 2 said (H-6) for the earlier visit. The Airship Pass (or 20,000 gil instead, if you already hold one) comes here and is a header reward, so it is not evidence."
+   },
+   {
+    "n": 16,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pakh Jatalfih"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Rank 5, 10,000 gil and the Message to Jeuno (Windurst) -- all rewards, none of them evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 5-1",
+   "page_id": 13295,
+   "revision_id": 766628,
+   "source_sha256": "553a634377a791e6529eb492f4c188182fde2b9e61e4fbde35cbe30a06595c5a",
+   "cache_file": "0013295_windurst_mission_5_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 14,
+   "dat_name": "The Final Seal",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "consumed_key_item"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', unnamed on this page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null. Note that the walkthrough does not start at a guard at all: bullet 1 says the Vestal Chamber door is what starts the mission, which is why step 1 is that door and not an NPC.\n\nEVIDENCE: two seals, and they are the same object in two states -- the New Fei'Yin seal from the door and the Burnt seal handed back after the fight. They are separate key items with separate ids, so they are two rungs' worth of evidence and not a repeat; the first is consumed when the second appears, which the session latch covers and a relog lets lag safely.\n\nNOT STEPS: bullets 3 and 4's tactics (the Archlich is a BLM, sleep the adds, Paladin/Monk advice), the quick-travel list, and the Fei'Yin aggro notes. Only Archlich Taber'quoan is recorded as a mob because the page says outright that killing it alone wins; the Ancient Sorcerers and Ancient Warriors are adds and marking them would send people at monsters they do not have to fight.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Magicite",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 13
+    }
+   ],
+   "level": 50,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Vestal Chamber"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "New Fei'Yin seal",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "top of the tower; clicking the door is what starts the mission"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Portal"
+    },
+    "zone": "Fei'Yin",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "New Fei'Yin seal",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Fei'Yin is the northeast corner of Beaucedine Glacier and Zeid's cutscene fires on arrival. From the entrance go east to (K-8); two Dolls stand in front of the portal, which opens into Qu'Bia Arena. Home Point #1 lands right at it."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qu'Bia Arena",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Burnt seal",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Archlich Taber'quoan",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "the BCNM 'The Rank 5 Mission'. Only the Archlich has to die -- it spawns with two Ancient Sorcerers and Ancient Warriors run in from the hallway, and neither is recorded as a target for that reason."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Vestal Chamber"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Burnt seal",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 5-2",
+   "page_id": 13296,
+   "revision_id": 766629,
+   "source_sha256": "a025dab6ad538fcb7a2fd9ffc03f6acb28b8391bde9e42d00080367b3ffccf4d",
+   "cache_file": "0013296_windurst_mission_5_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 15,
+   "dat_name": "The Shadow Awaits",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "steps_from_after_section"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', unnamed on this page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null. The mission actually starts on the Vestal Chamber door, which is step 1.\n\nTHE WALKTHROUGH HAS A HOLE AND THE AFTER-SECTIONS FILL IT: bullet 2 is only 'Castle Zvahl Keep Home Point #1 is the fastest way' and bullet 3 opens with 'After you clear the BCNM', so the fight itself is never stated at top level. The two navigation sections ('Castle Zvahl Baileys', 'Castle Zvahl Keep') are pure route advice and are NOT rungs, but they are what says where you are going, and the 'BCNM Fight' section is what says whom you fight. So step 2 is the journey, anchored at Xarcabard (D-7/8) where the page puts the castle, and step 3 is the Shadow Lord in the Throne Room.\n\nEVIDENCE: only the Shadow fragment, granted with the post-fight cutscene. The Rank 6 promotion, the 20,000 gil, Dynamis and Zilart access, and Trust: Ajido-Marujido are all header rewards. Apururu is named in a sub-bullet only as where you go to LEARN that trust, which is a reward errand and not a step -- the same for Trion and Volker.\n\nHeavens Tower is a real zone in the client, so bullet 4's 'zone into Heavens Tower for a brief cutscene' is a genuine zone-entry rung and is recorded as one.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Final Seal",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 14
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Vestal Chamber"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "top of Heavens Tower, off Windurst Walls HP #1. The page names no key item here, so there is nothing observable on this rung."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Keep"
+    },
+    "zone": "Xarcabard",
+    "grid": "D-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the castle is on the far west of Xarcabard at (D-7/8); in through Castle Zvahl Baileys and on into the Keep, then the teleporters four times and west to the door that zones to the Throne Room. Castle Zvahl Keep Home Point #1 skips all of it. The two navigation after-sections are that route and are not rungs of their own."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Throne Room",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Shadow fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Shadow Lord",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "two forms, from the 'BCNM Fight' after-section: the first alternates physical and magical immunity, the second is AoE-only with about 4,000 HP. You are returned to the entrance of Castle Zvahl Baileys afterwards."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Heavens Tower"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "zoning in is what fires the cutscene; Heavens Tower is its own zone off Windurst Walls"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Vestal Chamber"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "final cutscene, Rank 6 and 20,000 gil"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 6-1",
+   "page_id": 13636,
+   "revision_id": 762092,
+   "source_sha256": "60bfcfe2bbf9853fa2ad8c2d5e6edc65195227b4510c2d2990aa9824b8db2a17",
+   "cache_file": "0013636_windurst_mission_6_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 16,
+   "dat_name": "Full Moon Fountain",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "grid_from_sibling_page"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', unnamed on this page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null.\n\nEVIDENCE: one key item, the Southwestern star charm from Hakkuru-Rinkuru, and it is a good one -- star charms are permanent, so unlike most of this lane's evidence it never disappears mid-ladder. The header's Reward is rank points only, so rule 7 costs nothing.\n\nGRID: this page places Hakkuru-Rinkuru only as 'the Orastery in Port Windurst HP #1'. Windurst Mission 1-1 and 3-1, both in this same batch and both about the same NPC in the same building, give (E-7), and I used that rather than leaving it null -- said here because it is a fact from another page.\n\nTHE GIZMO IS CLICKED TWICE and the page means it: bullet 4 clicks it to SPAWN four Jack Cardians, bullet 5 clicks it again after they are dealt with for the cutscene. That is three rungs (examine, fight, examine) rather than one, exactly the 'click the ??? again' case AUTHORING.md describes. The sub-bullets are the reason: if the other three Cardians have not despawned when you finish the one you pulled, the cutscene does not fire and you get 'A mysterious force is interfering'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Shadow Awaits",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 15
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hakkuru-Rinkuru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Southwestern star charm",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Orastery, at Port Windurst Home Point #1; the grid is from Windurst Mission 1-1/3-1, which put him at (E-7) -- this page gives none"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Outer Horutoto Ruins"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": "F-11",
+    "items": [
+     {
+      "name": "Southwestern star charm",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the southwestern tower, Dahlia Tower"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cracked Wall"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Map 4"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate: Magical Gizmo"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Jack of Batons",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Jack of Coins",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Jack of Cups",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Jack of Swords",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "a second Cracked Wall at (J-8) first, then on to the gizmo; clicking it spawns the four Jack Cardians. Sneak up before clicking if you are low level and keep mages back -- the Cardians are magic-aggressive."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Jack of Batons",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Jack of Coins",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Jack of Cups",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Jack of Swords",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "you need not kill all four: pull one and let the others despawn first, or the cutscene will not fire. Batons is BLM, Coins RDM, Cups WHM, Swords PLD. They do not link with each other but do link with the natural Cardians nearby."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate: Magical Gizmo"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "click the door again once they are gone; 'A mysterious force is interfering' means they have not despawned off screen yet"
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Full Moon Fountain"
+    },
+    "zone": "Toraimarai Canal",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the entrance is on Toraimarai Canal Map 1 (Home Point #1 is closest); entering is what completes the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 6-2",
+   "page_id": 13637,
+   "revision_id": 715145,
+   "source_sha256": "ac25369536f82a08f983150723ed85d0e2684a6cd5c9b30d8f1da4467a1ac6a7",
+   "cache_file": "0013637_windurst_mission_6_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 17,
+   "dat_name": "Saintly Invitation",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "steps_from_after_section",
+   "conflicting_door_requirement"
+  ],
+  "notes": "GIVER: header 'Any Windurst Gate Guard', unnamed on this page, chronicle 'rakoh buuma'. start.npc is Rakoh Buuma -- AGREES with chronicle -- zone and grid null. The mission itself starts on the Vestal Chamber door.\n\nMOST OF THIS MISSION IS IN THE AFTER-SECTIONS. The top-level walkthrough is two bullets and stops at the BCNM; 'Castle Oztroja' and 'Maps' carry everything after it, and 'BCNM' is tactics. Their bullets restart at [1] and the notes say which section each rung came from.\n\nWHY MEDIUM -- THE PAGE CONTRADICTS ITSELF ABOUT THE KEY. The 'Castle Oztroja' section says the Brass Door on the top floor (Map 4, H-5) is the one that needs the key that drops from Yagudo Flagellants; the 'Maps' section says the large Brass Door up there is opened by lighting the unlit Torch in a corner room, and that the Judgment Key is traded to a SMALLER Brass Door on the platform after you fall through the Brass Statue's trapdoor. Both are on the page. I followed the Maps section, which is the one giving step-by-step instructions, put the Judgment Key trade on the door after the fall, and recorded the (H-5) door and the torch in the notes -- but a player who reads the other section will be looking at a different door, so this is flagged rather than smoothed over.\n\nEVIDENCE: four rungs carry it -- the Holy One's invitation from the door, the Balga champion certificate from the BCNM, the Judgment Key (an ITEM, not a key item) off the Flagellants, and the Holy One's oath from Kaa Toru the Just. The Ashura Necklace arrives with the oath but is in the header's Reward line, so rule 7 bars it; the oath is not in that line and is obtained at its own step, so it stands.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: see this record's note about the two sections disagreeing on which door the Judgment Key is for.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Full Moon Fountain",
+     "cat": "mission",
+     "area": "windurst",
+     "id": 16
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rakoh Buuma",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Vestal Chamber"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Holy One's invitation",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "top of Heavens Tower; also grants the title 'Hero on Behalf of Windurst'"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Balga's Dais",
+    "grid": null,
+    "items": [
+     {
+      "name": "Holy One's invitation",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Balga champion certificate",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Nuu Kofu the Gentle",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Chaa Paqa the Profound",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Buu Xolo the Bloodfaced",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Juu Zeni the Poisonmist",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the BCNM 'Saintly Invitation'; Balga's Dais is its own zone inside Giddeus and Home Point #1 is the fastest way. All four use their two-hours and may be slept; the page recommends WHM then SMN then SAM then NIN, and pulling the WHM out of AoE range so Benediction does not wake the rest."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Judgment Key",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Yagudo Flagellant",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "from the 'Castle Oztroja' section (bullet [2]) and the 'Maps' section (bullet [3]). The Flagellants on Map 4 drop the key; how many you must kill is not stated. Getting there: the Brass Door at (I-8) on Map 1 by the correct lever, then the four-lever Brass Door at (G-8) on Map 2, up at point G to Map 3 and point H to Map 4."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Brass Statue"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "The trapdoor you need is unlocked by cracking the statue's passwords; the page sends you to the Brass Statue page for the combinations. Before it, the large Brass Door on Map 4 (H-5) is opened by interacting with the unlit Torch in one of the four corner rooms."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Brass Door"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [
+     {
+      "name": "Judgment Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "after the fall, past a true-sight Yagudo High Priest, the smaller Brass Door on the platform. The key has ONE use and the door closes, so the whole party must be through; the page's fallback is another key, or dying outside and being tractored in."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kaa Toru the Just"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Holy One's oath",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "inside the door. He also hands over the Ashura Necklace, which is a header reward and so is not used as evidence."
+   }
+  ]
+ }
+]

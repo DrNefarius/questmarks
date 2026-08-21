@@ -1,0 +1,1574 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Titus Touch",
+   "page_id": 67150,
+   "revision_id": 682184,
+   "source_sha256": "fa4e0af7384750606fd8e1f5a74c538c994f5d9fb29695991dc467891daa85ca",
+   "cache_file": "0067150_the_titus_touch"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 80,
+   "dat_name": "The Titus Touch",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item"
+  ],
+  "notes": "A clean three-rung courier quest. The one trap on the page is its own sub-bullet: Titus synthesizes the [KI] Bottle of military ink but it is NEVER given to you -- it exists only inside the cutscene -- so it is deliberately not evidence anywhere, even though it resolves (ki 1765). The thing you actually carry is the [KI] Military ink package, which is step 2's evidence because that is where it is granted, and step 3's requirement because that is what you deliver. Bullet 5 ('you will complete the quest') is the outcome, not a step. The two Conflux numbers are travel advice and stay in the notes. Fame 'aalt' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Titus (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "G-11",
+   "raw": "Titus (A), Abyssea - Altepa (G-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Titus (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Conflux #5. Bullet 2 is him stating the request, not a separate action."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Titus (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-11",
+    "items": [
+     {
+      "name": "Windurstian Tea Leaves",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Military ink package",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Bottle of military ink he synthesizes is cutscene-only and is never handed over, so the package is the only observable thing here"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Military ink package",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "at the Oasis near Revelation Rock; nearest Conflux is #7. Bullet 5 is the completion, not an action."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "All in the Cards",
+   "page_id": 76696,
+   "revision_id": 769315,
+   "source_sha256": "69e07726bc62e59fd46c9624a569cf2b2da3d39943e6b8f27bfb93b9277b80eb",
+   "cache_file": "0076696_all_in_the_cards"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 166,
+   "dat_name": "All in the Cards",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "player_trade_dependent"
+  ],
+  "notes": "The unnumbered line above bullet 1 is an explanation of why the quest exists, not a step. Bullet 2 is what talking to Chululu GIVES you -- five of one randomly chosen card -- so it is folded into step 1 rather than made a step of its own. It is tempting to make 'five of any one card' step 1's evidence as a four-way alt, but every one of those four names reappears in step 2's AND-list and the duplicate-evidence gate is on the resolved id, not the count: that would demote the whole quest. So step 1 rests on quest acceptance, and the only evidence in the ladder sits where it is genuinely diagnostic -- holding one of each of the four cards, which is exactly the state bullet 3 tells you to reach. Step 2 is unmarkable by nature: the cards come from other players and bazaars, not from any entity in the world. Bullet 5 is a real-life-day cooldown on re-obtaining cards, not a step. The page names only four cards, so only four are recorded even though the parent quest uses more.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 5,
+    "raw": "Jeuno / 5"
+   },
+   "prev": [
+    {
+     "title": "Collect Tarut Cards",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chululu",
+   "zone": "Lower Jeuno",
+   "grid": "I-8",
+   "raw": "Chululu, Lower Jeuno (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chululu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he hands over five copies of ONE of Tarut:Death, Tarut:The Hermit, Tarut:The King or Tarut:The Fool, chosen at random -- which one is not predictable, so it is not used as evidence. Another five are available every real-life day."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tarut:Death",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tarut:The Hermit",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tarut:The King",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tarut:The Fool",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "trade your spare four to other players, or buy the missing ones out of bazaars. Nothing in the world can be marked for this."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chululu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Tarut:Death",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tarut:The Hermit",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tarut:The King",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tarut:The Fool",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all four in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fertile Ground",
+   "page_id": 98201,
+   "revision_id": 608688,
+   "source_sha256": "4ba7b3d51ec1051e26296d69f112e70eb4f212ef527d812d7f4330d15feee9f8",
+   "cache_file": "0098201_fertile_ground"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 85,
+   "dat_name": "Fertile Ground",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_unstated"
+  ],
+  "notes": "Three bullets, three steps, no traps in the ladder -- but two things about the page are worth recording. First, the header's 'Quest Reqs: Bottle of fertilizer X' is not a prerequisite at all: it is the thing you fetch DURING the quest, so it gates nothing and lives on step 2 instead. It resolves as a KEY ITEM (2263), not an item, which is why kind is 'ki' on both steps. Second, the page never says which zone Shipilolo is in -- only 'in front of the Inventors' Coalition' -- and the one zone the sub-bullets mention, Western Adoulin, is about the Rala Waterways entrance and nothing to do with him. Rather than guess a coalition's city half, step 2 carries a null zone; the resolver reports the name as unambiguous, so a nil zone costs nothing here. Fame 'Adoulin' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "Adoulin / 2"
+   },
+   "prev": [
+    {
+     "title": "The Old Man and the Harpoon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Chalvava",
+   "zone": "Rala Waterways",
+   "grid": "F-11",
+   "raw": "Chalvava, Rala Waterways - (F-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chalvava"
+    },
+    "zone": "Rala Waterways",
+    "grid": "F-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the quickest way down is the entrance at (I-12) in Western Adoulin, by the Mog House. If she only talks about where to find a Blightberry, talk again -- the second conversation flags this quest."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shipilolo"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Bottle of fertilizer X",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he stands in front of the Inventors' Coalition; the page does not name his zone, so none is recorded rather than guessed"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chalvava"
+    },
+    "zone": "Rala Waterways",
+    "grid": "F-11",
+    "items": [
+     {
+      "name": "Bottle of fertilizer X",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "finishing this can conflict with 'Keep Your Bloomers On, Erisa', which the page says must be completed first"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Pioneer's Best (Imaginary) Friend",
+   "page_id": 98194,
+   "revision_id": 543474,
+   "source_sha256": "c5f468014ef5ff2e033a0c5c32753ed3863f9af93eb168497dc384f0af7d1a85",
+   "cache_file": "0098194_a_pioneer_s_best_imaginary_friend"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 75,
+   "dat_name": "A Pioneer's Best (Imaginary) Friend",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "status_gate_unmodelled"
+  ],
+  "notes": "What the quest actually asks for is a STATUS EFFECT -- Ionis -- and no packet reports one, so there is no evidence anywhere in this ladder and the header's 'Quest Reqs: Have Ionis Cast on the Player' gates nothing. The sub-bullet under bullet 2 is the interesting one: if Ionis is already up when you first speak to Merleg, the quest opens and closes in that single conversation and Fleuricette is never visited. That is a shortcut, not a branch -- most players do need her -- so step 2 stays a normal ladder position rather than being marked optional, and the shortcut is recorded in its note. Both NPCs are in Western Adoulin, so the whole quest is one zone. Fame 'Adoulin' is not one of the nine regions.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Ionis is a status effect and cannot be observed, so this step carries no evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Merleg",
+   "zone": "Western Adoulin",
+   "grid": "H-11",
+   "raw": "Merleg, Western Adoulin - (H-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Merleg"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Rent-a-Room Waypoint"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fleuricette"
+    },
+    "zone": "Western Adoulin",
+    "grid": "D-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "She casts Ionis; she is by the Pioneers' Coalition Waypoint. Skippable if Ionis is already active in that case bullets 1 and 3 happen in one conversation."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Merleg"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "you must still be under Ionis when you show up"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Go! Go! Gobmuffin!",
+   "page_id": 132,
+   "revision_id": 543328,
+   "source_sha256": "086a4776c5c2f5a73eed118c2513c8c98069027975bcdcbc561b48e0246e720e",
+   "cache_file": "0000132_go_go_gobmuffin"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 69,
+   "dat_name": "Go! Go! Gobmuffin!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "mission_gate_unmodelled",
+   "bullet_split"
+  ],
+  "notes": "Bullet 1 is not a step: it is the flag condition -- be at or past Promathia Mission 4-2 AND have already zoned into Riverne - Site B01 -- so it folds into step 1's note. The mission requirement comes from 'Quest Reqs', which the schema has no slot for and no packet can observe, so it is flagged rather than dropped into prev (the header's own 'Previous' field is empty). Bullets 3 and 4 are one journey to one place and merge into a single travel step; bullet 5 is not an action at all, it is what happens TO you when you step out of the spatial distortion, so the three NMs are attached to the fight instead of getting a spawn step of their own. The job tags after each NM name are the mob's job, not part of the name. The Map of Cape Riverne is a reward and so is not evidence -- and it is conditional on not already owning it, which makes it doubly unusable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Epinolle",
+   "zone": "Tavnazian Safehold",
+   "grid": "F-8",
+   "raw": "Epinolle, Tavnazian Safehold (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Epinolle"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he will not offer this until you are on or past Promathia Mission 4-2 and have zoned into Riverne - Site B01 at least once"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Riverne - Site B01"
+    },
+    "zone": "Riverne - Site B01",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the island at (J-6), reached through a spatial distortion"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Riverne - Site B01",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Book Browser Bokabraq",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Chemical Cook Chemachiq",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Spell Spitter Spilospok",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "all three pop by themselves the moment you leave the distortion; nothing is clicked to spawn them"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Epinolle"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cleansing the Canyon",
+   "page_id": 56716,
+   "revision_id": 684250,
+   "source_sha256": "b855fccface7ee5b08ddd77a04d95c39b852e0d1b9a108988e06ed5be35d7d8d",
+   "cache_file": "0056716_cleansing_the_canyon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 22,
+   "dat_name": "Cleansing the Canyon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two rungs and both are on Kupipi, which is one marker. Bullet 2 is her stating the request, so it merges into both steps rather than becoming one. No obtain step: the three Sanguinets have no source the addon could point at -- the page says they drop from whole Abyssea monster FAMILIES (Clionid, Murex, Amoeban are given as examples, not as mobs) across every Abyssea zone, or come off the Auction House. Recording family names as mobs would scatter markers over half of Abyssea for no gain, so they stay in the note, and the trade step's item list is what makes the hand-in read as ready. Fame 'atah' is an Abyssea zone code, not one of the nine regions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "atah / 1"
+   },
+   "prev": [
+    {
+     "title": "Refuel and Replenish (Tahrongi)",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Kupipi (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "H-12",
+   "raw": "Kupipi (A) (H-12), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [
+     {
+      "name": "Sanguinet",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "all three at once. They drop from Abyssea-unique monster families in any Abyssea zone -- the page names Clionid, Murex and Amoeban only as examples of families -- or can be bought on the Auction House."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crystal Guardian",
+   "page_id": 89099,
+   "revision_id": 221423,
+   "source_sha256": "1771399e77ee69e33c17a0e2492fdd2a93626058e2f30ca645ea239d7b15d424",
+   "cache_file": "0089099_crystal_guardian"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 96,
+   "dat_name": "Crystal Guardian",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "items_unnamed",
+   "consumed_key_item",
+   "bullet_split"
+  ],
+  "notes": "The header has NO Start field at all, so start is recovered from the walkthrough: the first and only thing bullet 1 tells you to interact with is the Provenance Protocrystal, in Provenance. It folds to a markable key, so the quest gets a marker it would otherwise never have had. Bullet 1 is genuinely two actions -- examine the crystal to open the fight, then win the fight -- and is split accordingly. The real loss is the requirement: 'the three key item petrifacts' are never NAMED anywhere on this page, only counted, so no item list can be written for them; items_partial is set on step 1 to say the requirement list is knowingly short, and nothing is invented. They are consumed on entry and the fight can be re-entered by reobtaining them, but the quest itself completes once, so Repeatable stays false. Bullet 2's Regal Pawprints is given no location; victory happens in Provenance and the pawprints are checked 'upon victory', so Provenance is carried across -- that inference is the reason this quest is medium rather than high. Fame 'Wings of the Goddess' is an expansion, not one of the nine regions.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: you need the three key item petrifacts from the previous quest, and so does every other member of the alliance; the page never names them, so items is empty and items_partial marks the list as knowingly incomplete.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Provenance",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Provenance Protocrystal",
+   "zone": "Provenance",
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Provenance Protocrystal"
+    },
+    "zone": "Provenance",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "They are lost on entry."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Provenance",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Provenance Watcher",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the battle can be repeated by reobtaining the three petrifacts, but the quest only completes once"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Regal Pawprints"
+    },
+    "zone": "Provenance",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "checked upon victory; the cutscene ends this quest and starts Endings and Beginnings automatically. The page gives no location for the pawprints -- Provenance is carried over from bullet 1 because that is where the victory happens."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Elvaan Goldsmith",
+   "page_id": 25925,
+   "revision_id": 721807,
+   "source_sha256": "714b1c3fd3a42a06acf25cf94ca3f5f4c02c4e5d273237b11acedebd668a18b2",
+   "cache_file": "0025925_the_elvaan_goldsmith"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 13,
+   "dat_name": "The Elvaan Goldsmith",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeat_gate_unmodelled"
+  ],
+  "notes": "A three-rung fetch quest. Bullet 2 IS an instruction ('Obtain a Copper Ingot'), unlike the request-restatements elsewhere in this batch, so it earns an obtain step -- and holding the ingot is genuinely observable, which turns it into the one evidence point in the quest. Its whole sub-tree is shopping advice: four ore vendors in two cities and a synthesis recipe. None of them is a step -- you are not required to visit any of them, the Auction House is an equally valid route -- so they stay in the note; a keyword parser would have produced four 'talk' steps here. Bullet 4 is the repeat rule, not an action, and it hides a real gate the schema cannot express: the quest is Repeatable, but only until you reach Bastok fame level 2, after which it is not. Repeatable stays true and the ceiling is flagged.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Michea",
+   "zone": "Bastok Markets",
+   "grid": "F-10",
+   "raw": "Michea - Bastok Markets F-10"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Michea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Copper Ingot",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Auction House, a Goldsmithing guild shop, or synthesis from a Fire Crystal and 4 Copper Ore. The page's recommended ore vendors are Teerth and Visala in Bastok Markets (H-8) and Yabby Tanmikey and Celestina in Mhaura (G-8) -- advice, not steps, and no zone is recorded because the AH route needs none."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Michea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Copper Ingot",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "repeat by zoning out and back, but only while your Bastok fame is below level 2"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Bitter Past",
+   "page_id": 3,
+   "revision_id": 767595,
+   "source_sha256": "b98850ead9b188c6f3db112dbb86be0e292584856d4e3ceb52646de790742b43",
+   "cache_file": "0000003_a_bitter_past"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 66,
+   "dat_name": "A Bitter Past",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "unnamed_target"
+  ],
+  "notes": "The longest ladder in this batch and the cleanest. Three conversations in the Safehold, then the classic ???/fight/??? triple: bullet 4 clicks the ??? to pop the two Orc NMs, bullet 5 is both the kill AND a second click on the same ???, which is where the [KI] Tiny wristlet actually arrives -- so bullet 5 splits into two steps and the wristlet sits on the second click, not on the fight. The ??? resolves as an object with no marker key, so those two rungs keep their place and lose their pin; that is expected and worth keeping, because they are what tells the ladder where the player is. The floor numbers in bullets 1 to 3 are height, not grid, and stay in the notes. Bullet 7 is the page's own 'additional cutscene' and is optional. The Yinyang Lorgnette is the reward, so it is not evidence anywhere.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Frescheque",
+   "zone": "Tavnazian Safehold",
+   "grid": "H-8",
+   "raw": "Frescheque, Tavnazian Safehold (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Frescheque"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "3rd floor"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raminey"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "3rd floor"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Equette"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "2nd floor"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Blackbone Frazdiz",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Rainbringer Vjatvot",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page names no landmark beyond the grid ref; the (DRK) and (BLM) after the NM names are their jobs"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Blackbone Frazdiz",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Rainbringer Vjatvot",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "both. They can be slept but only briefly, and the other Orcs around will link."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tiny wristlet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, after the NMs are dead"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Frescheque"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Tiny wristlet",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Equette"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "an additional cutscene only"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cid's Secret",
+   "page_id": 25961,
+   "revision_id": 772631,
+   "source_sha256": "8bdef17c03fff24b197f4d45a3c24c18661fbb26718c0fcbc2cdc56f8fcd943f",
+   "cache_file": "0025961_cid_s_secret"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 26,
+   "dat_name": "Cid's Secret",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Bullet 2 is routing, not a step -- 'travel to Port Bastok and visit the Steaming Sheep Restaurant' is how you reach Hilda, and the restaurant is not an entity you interact with -- so it merges into the step that talks to her. Bullet 4 is a real obtain instruction with two routes, one of which is the Auction House, so the step carries no zone: a nil zone matches everywhere, which is right when half the answer is 'buy it'. The Drone Crawler is recorded as a drop mob rather than a kill because the Rolanberry is what you are after and the page sends you to another quest, Cargo, for the multi-step spawn; that spawn chain is deliberately NOT unrolled here. Step 4 is the ladder's hinge -- trading the Rolanberry is where the [KI] Unfinished letter arrives, so that is where the evidence sits, and it is also what step 5 must be holding.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 4,
+    "raw": "Bastok / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": "H-8",
+   "raw": "Cid - Metalworks (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hilda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in the Steaming Sheep Restaurant, nearest Home Point #3. She is upstairs, but you can talk to her through the floor by standing under her near the bar."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rolanberry 874",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Drone Crawler",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Auction House under Food > Ingredients, or off the Drone Crawler in Crawler's Nest (Survival Guide > Derfland Region). The Crawler is a multi-step spawn the page defers to the quest Cargo, so that chain is not unrolled here; no zone is recorded because the Auction House route needs none."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Hilda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Rolanberry 874",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Unfinished letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Unfinished letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ }
+]

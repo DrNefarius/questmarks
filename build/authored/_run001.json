@@ -1,0 +1,590 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In Defiant Challenge",
+   "page_id": 25394,
+   "revision_id": 767476,
+   "source_sha256": "8d93905655940b21c3c4bf6aef2e9be86f97dd588624922d2c7ac0c1d3139760",
+   "cache_file": "0025394_in_defiant_challenge"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 128,
+   "dat_name": "In Defiant Challenge",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "or_branch_modelled",
+   "count_unobservable",
+   "route_heavy"
+  ],
+  "notes": "Five bullets of the seven are steps, and the shape is simple once the OR is seen for what it is. Bullet 2 states the quest's central choice -- kill the mobs for the drop, or click three ???s in the zone for key items that combine into the same item -- and its sub-bullets are Sneak/Invisible advice. Bullet 3 is Trust strategy and is not a step; neither is the 'Maps are located below' line, the map table, nor the 'Note:' paragraph. That Note is nonetheless the best confirmation on the page that the ITEM is the right observable: once you hold one of the three, the ???s in that zone go quiet regardless of how many fragments you have. So each collection step carries its item as evidence and the OR vanishes into it -- both routes end with the same thing in your inventory, and nothing needs an items_alt.\n\nThe fragment key items cannot serve instead even if I wanted them to: 'Bomb coal fragment', 'Exoray mold crumb' and 'Ancient papyrus shred' are all non-unique names in res/key_items.lua and the resolver rejects them rather than guess an id. They are also counted three-at-a-time, which no key item can express.\n\n'The required items may be obtained in any order' is explicit, so the three collection steps share a group and all draw at once. Each zone is ONE step and not three examines: the three ???s in a zone are unmarkable and individually unobservable, which is exactly the case the guide merges -- so their grids sit in the note instead of the grid field. Everything else under bullets 4-6 is routing (the Pouch of weighted stones for the first Banishing Gate, the East Plate versus the Magicked astrolabe in the Necropolis, the Survival Manual detour, which graves drop you through the floor) and stays in notes.\n\nBullet 5 writes the zone 'Crawler's Nest' and the map table writes 'Crawlers' Nest'; both resolve to 197 and the game's spelling is used. The monsters are written only in the plural in bullets 4-6, but 'Explosure' and 'Exoray' also appear in the singular in bullet 3; 'Lich' is the plain singular of the page's 'Liches'. Level 50 on any job is the level gate restated, so jobs stays empty. The reward is a level cap raise, not an item, so the final trade has no evidence and none was reached for.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [],
+   "level": 50,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Maat",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Maat, Ru'Lude Gardens (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on a level 50 job; he names the three items and the dungeons they come from"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bomb Coal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Explosure",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "materials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     4
+    ],
+    "note": "three ???s on Map 2 at (I-8), (H-7) and (G-6) -- no grid is recorded because the step covers all three -- or kill Explosures for the drop instead. The route needs the Pouch of weighted stones key item to pass the first Banishing Gate; it is on the floor at (G-8) on Map 1, south of the entrance. Undead here aggro low HP through Sneak and Invisible, and Invisible must be dropped to click a ???."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Crawlers' Nest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Exoray Mold",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Exoray",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "materials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     5
+    ],
+    "note": "three ???s: on the path from (I-10) on Map 1 heading for Map 3, at (I-6) on Map 3 further along that path, and at (G-10) on Map 2 among the Exorays -- or kill Exorays for the drop instead. Both routes run out of the 'sack room'; the third takes the northwest tunnel, not the dead end with scorpions. Sneak keeps the Exorays off you."
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Ancient Papyrus",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Lich",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "materials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     6
+    ],
+    "note": "three ???s at (F-7), (F-9) and (H-9) on Map 1, each in the corner of a room of Liches around a Brazier; zone in from Batallia Downs (I/J-10). Or kill Liches for the drop instead -- the page writes them only as 'Liches'. If the left path is walled off, take the East Plate behind the Gravestone to open it, or carry a Magicked astrolabe (10,000 gil from Churano-Shurano, Windurst Waters (F-8)) and open the gates yourself. Do not walk over the square graves; some drop you to a lower level."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Ancient Papyrus",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Exoray Mold",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Bomb Coal",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "all three items; the reward is the level cap raised to 55, which is nothing you can hold, so this step has no evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Epiphany",
+   "page_id": 117014,
+   "revision_id": 762395,
+   "source_sha256": "99092db66224637ead343b978743dcb596e36230507f1bf0b45c474bbb6f1290",
+   "cache_file": "0117014_epiphany"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 143,
+   "dat_name": "Epiphany",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 7
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "af_job_gate",
+   "time_gated",
+   "walkthrough_has_branch_headings"
+  ],
+  "notes": "Twenty-six bullets, but the middle three quarters of them are one choice made three times. Bullet 3 hands you ONE of three Iridal cores and the '== Iridal core of the ... ==' headings are branches, not stages: bullets 4-8 are the level 109 fight, 9-14 the 125, 15-22 the 135. Read as a sequence this page would produce a fifteen-rung ladder that nobody can ever complete.\n\nThe three branch entries are modelled as three grouped 'examine Hazy Rune' steps, one per zone, each carrying its own core in items. A step has one zone, so they cannot be merged; and all three have to be drawable while the player is still deciding, which is what the group gives. That is the group mechanism used for an OR rather than for a set, which is a deliberate stretch and is flagged -- but nothing depends on 'all done', because none of the three carries evidence.\n\nThe fight is then ONE step with no zone, the Waking the Beast shape: the same Arcus Blades in whichever battlefield you entered, so no zone is honest and the target is none. It carries the Arcus fiber. Here is the one real weakness: the page states the Refined Ra'Kaznar fiber transforming into an Arcus fiber ONLY in bullet 7, the 109 branch -- bullets 13 and 20 list Bayld, synthesis materials and a Codex and say nothing about the fiber. Arcus fiber is in the header's own Item Reqs and the Afterwards section is shared by all three branches, so I read it as universal. That inference is why this quest is medium and not high; if it is wrong, the two harder branches simply lose an anchor and fall back on the session latch.\n\nNot steps: bullets 6, 12 and 19 are the monster's spell list, 7, 13 and 20 are rewards, 21 is a title, and 8, 14 and 22 are 'proceed to the Afterwards section below' -- navigation inside the page. Bullet 1's sub-bullets are eligibility notes (one relic piece is enough, a Kupon A-AF +3 flag does not work, this is not the Rune Fencer quest NPC). Bullet 26 is the repeat, once per conquest tally, which nothing observable reports.\n\nThe '== Afterwards ==' bullets 23-26 are still inside the Walkthrough and keep their numbering, so no restart applies to them; bullet 23 is the page's own 'Optional:'. The separate '## After the walkthrough: The Rest of the Armor' section, whose bullets do restart at [1], is post-quest armour forging -- it begins after the Surcoat is already in hand, is gated one piece per game day, and is a different transaction from this quest -- so none of it is a step here.\n\n'Adoulin' is not one of the nine fame regions and resolves to nothing, so region is null and only the raw string is kept. 'Level: 99 Rune Fencer' is both gates.\n\nADVERSARIAL PASS (stage D): the reading survives on evidence, ordering, zones, targets and gates -- every name is in the page text and resolves, no item is evidence twice, no reward was used as evidence (Arcus fiber is an Item Req, not a Reward; the Erilaz Surcoat and the title are Rewards and carry none), and bullets 23-26 really do continue the Walkthrough's numbering. The one thing that did not survive is the confidence on steps 4-6. They are an XOR the schema has no way to say: 'group' means an unordered set in which every member is done, and these three are alternatives of which exactly one is done. Marking them optional would be worse -- it would suppress the marker for the one place the player actually has to go -- so the shape is kept and the three steps are demoted to medium instead. The Arcus fiber inference on step 7 was re-checked and left standing: the page is silent for the 125 and 135 branches rather than contradictory, the Afterwards section is shared by all three, and nulling it would cost the 109 branch its only anchor to buy nothing.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 7: The Refined Ra'Kaznar fiber becoming an Arcus fiber is stated by the page only for the 109 branch; it is read as universal here, which is the quest's medium confidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Rune Fencer Relic Armor",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 99,
+   "jobs": [
+    "RUN"
+   ],
+   "repeatable": true,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Octavernost",
+   "zone": "Western Adoulin",
+   "grid": "K-9",
+   "raw": "Octavernost, Western Adoulin (K-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavernost"
+    },
+    "zone": "Western Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Big Bridge waypoint, as Rune Fencer. One piece of Rune Fencer relic armour is enough; flagging with a Kupon A-AF +3 does not work. The page warns he is not the NPC who gives the Rune Fencer job quest."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Meeting Point"
+    },
+    "zone": "Outer Ra'Kaznar",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Refined Ra'Kaznar fiber",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "close to the enigmatic waypoint warp; the cutscene and the key item come together"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavernost"
+    },
+    "zone": "Western Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [],
+     "alt": [
+      {
+       "kind": "ki",
+       "name": "Iridal core of the tomb",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Iridal core of the ruins",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Iridal core of the pass",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he offers three key items, one per difficulty, and you take one -- so any one of the three proves this step. The blank option is the level 135 Iridal core of the pass. All three fights are solo and must be faced as Rune Fencer."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hazy Rune"
+    },
+    "zone": "King Ranperre's Tomb",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Iridal core of the tomb",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "fight_choice",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the level 109 branch, and one of three alternatives -- not something to do as well as steps 5 and 6. Examine the ??? in the middle of the concrete slab at (H-10) first to reach Map 2, then follow the right wall to the NW corner and run through the fake wall; the Hazy Rune is behind the Strange Apparatus. Check it a second time to start the fight. Buffs and TP are reset (food, Vallation and Valiance survive), Trusts are allowed and you may change jobs. Downgraded by the adversarial pass: this is one of three mutually exclusive branch entries, so for any given player two of these three steps are never performed. 'group' expresses an unordered SET whose members are all required, not an XOR, so optional:false here asserts a ladder position the page does not actually require."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hazy Rune"
+    },
+    "zone": "Fei'Yin",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Iridal core of the ruins",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "fight_choice",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10,
+     11
+    ],
+    "note": "the level 125 branch, one of three alternatives. Cross to Map 2 at (G-9), back to Map 1 at (E-7), then the Hazy Rune behind the Strange Apparatus at (G-6). Check twice; same reset, Trusts allowed, jobs may be changed. Downgraded by the adversarial pass: this is one of three mutually exclusive branch entries, so for any given player two of these three steps are never performed. 'group' expresses an unordered SET whose members are all required, not an XOR, so optional:false here asserts a ladder position the page does not actually require."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hazy Rune"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": null,
+    "items": [
+     {
+      "name": "Iridal core of the pass",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "fight_choice",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "note": "the level 135 branch, one of three alternatives. The page gives no grid at all, only 'the Strange Apparatus in Ranguemont Pass', so none is recorded. Check the Hazy Rune twice. No Trusts here, and you must be on RUN for this fight -- the other two let you change job. Downgraded by the adversarial pass: this is one of three mutually exclusive branch entries, so for any given player two of these three steps are never performed. 'group' expresses an unordered SET whose members are all required, not an XOR, so optional:false here asserts a ladder position the page does not actually require."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Arcus fiber",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Arcus Blades",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7,
+     11,
+     12,
+     13,
+     19,
+     20
+    ],
+    "note": "The same Animated Weapon in all three battlefields, so no zone is recorded it is whichever branch you took. Very low HP, but dispelga and single-target elemental tier IV-VI that can one-shot you or your Trusts."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavernost"
+    },
+    "zone": "Western Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     23
+    ],
+    "note": "at the Big Bridge; the page marks this 'Optional:'. He points you at Amchuchu."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Amchuchu's Laboratory"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     24
+    ],
+    "note": "at the Inventor's Coalition; a cutscene, and the only required stop between the fight and the reward"
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Octavernost"
+    },
+    "zone": "Western Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     25
+    ],
+    "note": "one game day after the cutscene -- the wait is not observable to the addon. 15,000 XP and an Erilaz Surcoat; repeating waits on the conquest tally."
+   }
+  ]
+ }
+]

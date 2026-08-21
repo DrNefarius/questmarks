@@ -1,0 +1,1252 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 11 (Uleguerand)",
+   "page_id": 67199,
+   "revision_id": 625728,
+   "source_sha256": "5604ad68048125c880aa91c6f20e6ebbae6cffe81204b267ff31728cf152636c",
+   "cache_file": "0067199_dominion_op_11_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 111,
+   "dat_name": "Dominion Op #11 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Three beats and no ambiguity: take it, kill the quota, hand it back. The quota itself is the only thing worth deciding about. Nothing in the packets counts mob kills, so step 2 carries no evidence and the ladder cannot advance off it -- the marker sits on a Dominion Sergeant at both ends and the player judges the middle. Recording the 5 anyway is display only.\n\n'Dominion Sergeant' is one of the AMBIGUOUS_NPCS the normaliser refuses to index without a resolved zone, and Abyssea - Uleguerand resolves (253), so this is safe. Here the generic key is actually the RIGHT answer rather than a tolerated one: bullet 3 says ANY sergeant, so drawing every sergeant in the zone is what the page asks for. Bullet 1's 'near Conflux #7' is the one you must use to accept, and it is a position, not a name, so it stays in the note. The DAT writes the title with a '#' the wiki omits, which is why the match is by table lookup and not by the visible title. The trailing 'For more information, see Dominion Ops.' is a see-also link, not a bullet and not a step. Fame code 'aule' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #7; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ermit Imp",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Ermit Imps'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 01 (Grauberg)",
+   "page_id": 67203,
+   "revision_id": 625732,
+   "source_sha256": "e57817669c892693d14374cee768ec7b6596c5d4a705b913f169c3b2dfc554fa",
+   "cache_file": "0067203_dominion_op_01_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 115,
+   "dat_name": "Dominion Op #01 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Same three-beat Dominion Op shape, in Grauberg. The giver is near Conflux #8 and the seidels are around (J-5), a long way apart, but both sit in one zone so no step needs splitting.\n\n'Dominion Sergeant' is an AMBIGUOUS_NPCS name and may only be indexed with a resolved zone; Abyssea - Grauberg resolves (254). Because bullet 3 lets you report to ANY sergeant, the generic key drawing all of them is correct rather than merely tolerable. The kill quota is unobservable -- no packet reports mob kills -- so step 2 has no evidence and the 5 is recorded for display. Fame 'agra' is an Abyssea zone code and gates nothing; the raw is kept. The DAT spells the name with a '#' the wiki title drops.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #8; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "J-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sinister Seidel",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Sinister Seidels'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 06 (Uleguerand)",
+   "page_id": 67194,
+   "revision_id": 625723,
+   "source_sha256": "116cbc03ab6fff9ed8f2ebea4f8b97647940a368e2b85e6424c64b105ffed222",
+   "cache_file": "0067194_dominion_op_06_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 106,
+   "dat_name": "Dominion Op #06 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "The Uleguerand three-beat again, this one keyed to the Conflux #6 sergeant and the olyphants around (F-6). Note the accept and the report are NOT the same instruction: bullet 1 names a specific sergeant by his Conflux, bullet 3 says any of them. Both steps therefore carry the same generic name, which is right for bullet 3 and merely imprecise for bullet 1 -- the Conflux goes in the note because it is a position and never a name.\n\n'Dominion Sergeant' is in AMBIGUOUS_NPCS and needs a resolved zone; Abyssea - Uleguerand resolves. Kill counts are invisible to the addon, so step 2 has no evidence. Fame 'aule' gates nothing. The see-also line at the foot of the page is not a bullet.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #6; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Olyphant",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Olyphants'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 13 (Uleguerand)",
+   "page_id": 67201,
+   "revision_id": 625730,
+   "source_sha256": "177cf22f5962a2b32899197cad8896cce21eb9b13f24397daa1728d18382024f",
+   "cache_file": "0067201_dominion_op_13_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 113,
+   "dat_name": "Dominion Op #13 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Conflux #5 sergeant, bluffalo around (K-9). The page writes the target as '5 Bluffalo' -- a singular used as a plural -- while the header's description says 'bluffaloes'; the mob is recorded as 'Bluffalo', which is the form the walkthrough uses and the form the client uses, rather than back-forming a singular from the description.\n\n'Dominion Sergeant' is an AMBIGUOUS_NPCS name that may only be indexed with a resolved zone, and Abyssea - Uleguerand resolves. Bullet 3's 'any' sergeant makes the generic key correct. No packet counts kills, so step 2 carries no evidence and the quota is display only. Fame 'aule' is an Abyssea zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #5; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bluffalo",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Bluffalo'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 09 (Uleguerand)",
+   "page_id": 67197,
+   "revision_id": 625726,
+   "source_sha256": "22f9ea862ad69279fc37279bf08b40e2bc6da9f12b778982fde628451b6b648f",
+   "cache_file": "0067197_dominion_op_09_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 109,
+   "dat_name": "Dominion Op #09 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Conflux #5 sergeant again -- ops 09, 10 and 13 all start at the same one -- with ectozoons around (L-8). As with op 13 the walkthrough writes the plural as 'Ectozoon' and the header description as 'ectozoons'; the walkthrough's form is recorded, since inventing a different singular would be exactly the guessing this pass exists to avoid.\n\n'Dominion Sergeant' is in AMBIGUOUS_NPCS and requires a resolved zone; Abyssea - Uleguerand resolves. The report step accepts any sergeant, so the generic key is what the page means. Kill quotas are unobservable, so step 2 has no evidence and the marker rests on the sergeants either side of it. Fame 'aule' gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #5; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ectozoon",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Ectozoon'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 10 (Uleguerand)",
+   "page_id": 67198,
+   "revision_id": 625727,
+   "source_sha256": "f6cd1ea0ce23d7fd65dd0cfcbef68c20aa5e241fc9e2d4bd4eae36111c5bd496",
+   "cache_file": "0067198_dominion_op_10_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 110,
+   "dat_name": "Dominion Op #10 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "The third of the Conflux #5 ops, hoarmites around (K-7). 'Defeat 5 Hoarmite' is again a singular doing plural duty against the header's 'hoarmites'; the walkthrough's spelling is kept.\n\n'Dominion Sergeant' is an AMBIGUOUS_NPCS name and may only be indexed with a resolved zone; Abyssea - Uleguerand resolves. Bullet 3 lets you report to any sergeant, which is what the shared generic key gives you. Nothing observable counts the five kills, so step 2 has no evidence -- the count is carried on the mob for display and nothing depends on it. Fame 'aule' is an Abyssea zone code, not a region, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #5; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Hoarmite",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Hoarmite'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 04 (Grauberg)",
+   "page_id": 67206,
+   "revision_id": 625735,
+   "source_sha256": "bc793734f9b016e1bb1afd80f03942ed6746e693194bae000b7ff9a54a5c5af1",
+   "cache_file": "0067206_dominion_op_04_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 118,
+   "dat_name": "Dominion Op #04 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Grauberg's Conflux #4 sergeant, faunus wyverns around (I-10). Ops 04 and 05 share that sergeant and hunt in adjacent squares, so the only thing separating them on the page is the monster.\n\n'Dominion Sergeant' is one of the AMBIGUOUS_NPCS and needs a resolved zone to be indexed at all; Abyssea - Grauberg resolves (254). Bullet 3's 'any Dominion Sergeant' makes the generic key the right target rather than a compromise. The five kills are unobservable to the addon, so step 2 carries no evidence and the quota is recorded for display only. Fame 'agra' is an Abyssea zone code and gates nothing; the DAT title carries a '#' the wiki omits.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #4; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Faunus Wyvern",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Faunus Wyverns'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 03 (Grauberg)",
+   "page_id": 67205,
+   "revision_id": 625734,
+   "source_sha256": "6a3ca3998c6138dcd29fd0443e15dd7df0915f330012550b87199626af127c5d",
+   "cache_file": "0067205_dominion_op_03_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 117,
+   "dat_name": "Dominion Op #03 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Conflux #8 sergeant, the same one op 01 uses, with stygian djinns around (K-7). Nothing in the page is anything but the standard three beats.\n\n'Dominion Sergeant' is an AMBIGUOUS_NPCS name and may only be indexed with a resolved zone; Abyssea - Grauberg resolves. Because the report step accepts any sergeant, drawing every one of them is correct. No packet counts mob kills, so step 2 has no evidence and cannot advance the ladder; the 5 rides on the mob for display. Fame 'agra' is an Abyssea zone code rather than one of the nine regions and gates nothing, so only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #8; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Stygian Djinn",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Stygian Djinns'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 05 (Grauberg)",
+   "page_id": 67207,
+   "revision_id": 625736,
+   "source_sha256": "728c3827f6efe88a8d9ada3984b37363401caa4eaa2c3137b02ab557e04450b3",
+   "cache_file": "0067207_dominion_op_05_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 119,
+   "dat_name": "Dominion Op #05 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "The Conflux #4 sergeant again, putrid peapuks around (I-9) -- one square from op 04's wyverns, same giver, so only the monster distinguishes the two quests.\n\n'Dominion Sergeant' is in AMBIGUOUS_NPCS and requires a resolved zone; Abyssea - Grauberg resolves. Bullet 3 says any sergeant, so the generic key matches the instruction exactly. The kill quota is invisible to the addon, so step 2 carries no evidence and the marker sits on the sergeants at either end. Fame 'agra' gates nothing; the trailing Dominion Ops link is a see-also, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #4; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Putrid Peapuk",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes them as 'Putrid Peapuks'; nothing reports kills, so the 5 is for display and this step can never be proven done"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you accepted from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Boiling Over",
+   "page_id": 98177,
+   "revision_id": 770801,
+   "source_sha256": "36b7146b1d0af643a7f8cb75911ba9d702930e8fbda4b380efb2ca0a634d9452",
+   "cache_file": "0098177_boiling_over"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 9,
+   "dat_name": "Boiling Over",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A clean errand with one genuine observable in the middle: the Magma survey report is a key item granted by the examine at step 2, so it is step 2's evidence and nothing else in the quest is evidence at all. The reward is experience and Bayld, which are not holdable and would not count anyway.\n\nThe Magma Vein is a clickable object rather than an NPC, so it is typed 'object'; it is not in OBJECT_DENY and resolves, so step 2 keeps a real marker. Two zones are involved and each step gets exactly one: Leautiere is in Yahse Hunting Grounds and the vein is in Moh Gates. The header puts Leautiere at (G-7) and bullet 1 places him at Bivouac #2 -- these agree, the Bivouac is just the landmark, so there is no grid conflict to record.\n\nBullet 2's two sub-bullets are the only judgement call: 'normally blocked by a Colonization Reive' and 'entry from the Morimar Basalt Fields Frontier Station is fastest' are a world-state warning and a route tip, not steps -- the reive state is not visible to the addon and cannot gate anything, so it stays in the note. No travel step is added for reaching Moh Gates: the page never gives it its own bullet, and step 2 already carries the zone. The header is bare -- no fame level, no level, no prerequisite -- and 'Repeatable: (empty)' is read as false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Leautiere",
+   "zone": "Yahse Hunting Grounds",
+   "grid": "G-7",
+   "raw": "Leautiere, Yahse Hunting Grounds - (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Leautiere"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Bivouac #2, which is the header's (G-7)"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magma Vein"
+    },
+    "zone": "Moh Gates",
+    "grid": "K-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magma survey report",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the area is normally shut behind a Colonization Reive, which nothing observable reports; in via the Morimar Basalt Fields Frontier Station is fastest, and the Moh Gates entrances are in the north and west of Yahse Hunting Grounds"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Leautiere"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ }
+]

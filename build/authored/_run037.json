@@ -1,0 +1,1471 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Breaking the Ice",
+   "page_id": 104679,
+   "revision_id": 772269,
+   "source_sha256": "4ea3349f87c9e450abea0cdaa93aefbc1ac0dd87d0e867c0dd14779d2f3f7cd5",
+   "cache_file": "0104679_breaking_the_ice"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 54,
+   "dat_name": "Breaking the Ice",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "dialogue_branch",
+   "multi_source_item"
+  ],
+  "notes": "A three-rung fetch quest with only one real decision in it. Bullet 1 is not an instruction to go anywhere -- it is the page telling you what to bring, so it merges into the obtain step rather than becoming a rung of its own, and bullet 3 is Traiffeaux's request restated plus a shopping guide, so its first half merges into the talk and its second half into the obtain. That leaves talk, gather, trade.\n\nThe four sub-bullets under bullet 2 are a dialogue path (1,1,1 then 1 then 2 then 1) and not four steps -- nothing observable separates them and they all happen inside one conversation. They are kept in the note because getting the branch wrong means the quest never opens, which is the only way this quest can go wrong.\n\nThe two key items are in the header's Reward field, so by rule they prove the quest is over rather than that a step is done, and bullet 5 which announces them is an outcome, not a step. The obtain step therefore carries the only evidence: three Rabbit Hide and one Raaz Tusk held together. That reads true for a player who brought them before ever meeting Traiffeaux, which is exactly what bullet 1 tells you to do, and the mark correctly lands straight on the trade.\n\nItem sourcing spans two zones and a vendor -- Cicatricose Raaz in Kamihr Drifts for the tusk, Serac Rabbits in Woh Gates for the hides, Cletae in Southern San d'Oria as a shop alternative -- so the obtain step carries no zone at all and the mobs are recorded without one. The page is explicit that Snowpelt Rabbits in Kamihr Drifts do NOT drop hides, which is the sort of negative a keyword pass would have turned into a kill target.\n\nThe black-screen material under bullet 4 is Windower/Ashita troubleshooting, three levels deep, and is not a step. Fame is 'Adoulin', which is not one of the nine regions the addon knows, so it gates nothing and only the raw survives. Both reward key items are written with literal double quotes in the game's own tables ('\"Fragmenting\"'); the bare form does not resolve, which is worth knowing if anyone later promotes them to evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Three sources in three zones, so this step carries none.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Traiffeaux",
+   "zone": "Kamihr Drifts",
+   "grid": "K-10",
+   "raw": "Traiffeaux, Kamihr Drifts (K-10) (Frontier Station)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Traiffeaux"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "at the Frontier Station. He is deaf: pick option 1 three times to make him speak up, option 1 to confirm you can hear him, option 2 to ask him to teach you instead, then option 1 to show you are dedicated. Only that path opens the quest."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rabbit Hide",
+       "count": 3
+      },
+      {
+       "kind": "item",
+       "name": "Raaz Tusk",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Cicatricose Raaz",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Serac Rabbit",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "The tusk comes from Cicatricose Raaz in Kamihr Drifts and the hides from Serac Rabbits in Woh Gates next door Snowpelt Rabbits in Kamihr Drifts do NOT drop hides. Cletae in Southern San d'Oria (D-8) sells hides for 80g, and the Green Thumb Moogle sells them too if you hold the Baby rabbit memento."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Traiffeaux"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": "K-10",
+    "items": [
+     {
+      "name": "Rabbit Hide",
+      "count": 3,
+      "kind": "item"
+     },
+     {
+      "name": "Raaz Tusk",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "all four in one trade. The cutscene that follows can black-screen under Windower or Ashita; the fix is to relog without them, and none of that is a step. Bullet 5 is the reward."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Eco-Warrior (San d'Oria)",
+   "page_id": 465,
+   "revision_id": 698702,
+   "source_sha256": "1c8dc74aa920ea321661b4a2a9543a5f217a6f94072854bac43d8dc75921aa8a",
+   "cache_file": "0000465_eco_warrior_san_d_oria"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 97,
+   "dat_name": "Eco-Warrior",
+   "match_rule": "paren_strip_verbatim",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "level_is_cap_not_gate",
+   "time_gated",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Thirteen bullets, of which five (4, 5, 6, 7 and half of 8) are turn-by-turn directions inside Ordelle's Caves and one (13) is a cooldown. Bullets 4 to 7 do not describe anything you do -- they describe a walk -- so they collapse into the note on the ??? step rather than becoming four rungs the player is never observed passing.\n\nThe header's 'Level: 25' is the level CAP Rojaireaut applies, not a minimum you must reach: bullet 3 says outright that he is there 'to have your level capped at 25', and nothing in the page bars a lower-level player from accepting. Recording it in gates.level would hide the quest from exactly the players who can do it, so gates.level is null and the 25 is described here instead. If a human decides the wiki means it as a requirement after all, this is the one field to flip.\n\nBullet 11 is two actions in one sentence -- kill the NM, then check the ??? again -- so it splits, and the second half carries the Indigested stalagmite. That is the quest's only observable. The level sync is deliberately NOT modelled: it survives the fight, cannot be cancelled from the UI, and returning to Rojaireaut to shed it is aftercare rather than a step, so it stays in a note.\n\nBullet 1's sub-bullet (you may not hold this while the Bastok or Windurst Eco-Warrior is active) is a genuine precondition the addon cannot see, and bullet 13's 'one Eco-Warrior a week, gated on the conquest tally' is the same story from the other end -- hence Repeatable true plus time_gated. The or_branch flag is for 'someone in your group will need to examine it': the examiner need not be you, so the step can be satisfied without you touching anything.\n\nADVERSARY (stage D): downgraded to medium. gates.level is null here, but the two sibling quests already in the corpus -- Eco-Warrior (Bastok) in _batch1 and Eco-Warrior (Windurst) in _batch3 -- both record level 25 out of the identical header field, so as written this quest disagrees with its own family on the same reading of the same line. Stage D may not add a gate, so the field stays null and the disagreement is recorded instead: a human should reconcile all three together, and if 25 is meant as a requirement this is the single field to set. The weekly conquest-tally cooldown and 'someone in your group will need to examine it' remain unmodellable on top of that.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "San d'Oria / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Norejaie",
+   "zone": "Southern San d'Oria",
+   "grid": "K-6",
+   "raw": "Norejaie, Southern San d'Oria (K-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Norejaie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she will not give it to you while Eco-Warrior (Bastok) or Eco-Warrior (Windurst) is active."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ordelle's Caves"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in through the (F-7) entrance in La Theine Plateau; the Survival Guide warp lands right at it."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rojaireaut"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "G-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he caps you at 25, and every member of the party or alliance needs the cap applied separately. There is no timer on it; while it is on, Goblins and Hognosed Bats that would ignore you now aggro, and Stink Bats link to the Hognosed."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Necroplasm",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "note": "north-east corner of (G-9). Bullets 4 to 7 are the route from Rojaireaut and are folded in here: east through the puddle, south along the path to the large room at (G-7), then hug the west wall south and turn left toward the centre of the map before the next tunnel. Anyone in the group may be the one to examine it."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Necroplasm",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10,
+     11
+    ],
+    "note": "Trusts are allowed. It spawns on top of the stalagmite and tab-cycling may not find it -- pull it off the rock first if you are casting."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Indigested stalagmite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the same ??? again once Necroplasm is dead. The level sync does not lift here; warp out, or go back to Rojaireaut and speak to him twice."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Norejaie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "bullet 13 is the weekly conquest-tally cooldown across all three Eco-Warrior quests, not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Recollections",
+   "page_id": 230,
+   "revision_id": 750996,
+   "source_sha256": "e4e963ffbf3e427880df4c6daec0a3a5e3b09f7272b1c97b9a1e26002d0def32",
+   "cache_file": "0000230_recollections"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 67,
+   "dat_name": "Recollections",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "weather_unobservable",
+   "or_branch_unmodelled"
+  ],
+  "notes": "A clean AF ladder: every one of the three header Item Reqs is obtained at a distinct step and each one is that step's evidence, so this quest tracks end to end. Bag of Seeds, Whine Cellar Key and the '\"Foe Finder Mk. I\"' key item land on steps 3, 5 and 6 respectively, none of them twice, and the Wizard's Sabots are the reward and therefore not evidence.\n\nChumimi is in Heavens Tower, which is its own zone (242) and not part of Windurst Walls, so the two Chumimi steps and the turn-in all sit there. The header gives no grid and neither does the walkthrough -- only 'the basement' -- so grid stays null rather than being guessed.\n\nBullet 1 is a precondition (you must have zoned since The Three Magi) and rides on step 1 as a note. Laityn in Ru'Lude Gardens is the page's own 'optional cutscene ... if you wish to learn more about the story', so it is a real optional step rather than a note; it is the only rung a player may skip entirely.\n\nBullets 6 and 7 are one step. Bullet 6 is nothing but the zone change from Baileys into the Keep and bullet 7 is the trade inside the Keep, so keeping them apart would wedge a markerless travel rung between the Whine Cellar Key and the Ore Door and put the mark on the zone line instead of on the door. The Ore Door is a real named entity and carries the marker.\n\nTwo things are honestly unmodellable. The Fire and Water Elementals in Crawlers' Nest only spawn during weather, which no packet reports -- Appollonia in Upper Jeuno reads Rolanberry Fields weather, which the Nest shares, and that is a human's job. And the Garden Furrow route to the seeds (tell Kuyin Hathdenna to 'look for seeds' before harvesting) is a second, entirely different way to satisfy the same step that no item list can express; the evidence is the same seed bag either way, so the ladder survives it.\n\nThe drop mobs are recorded expanded. The page writes 'Demon Generals, Magistrates, Chancellors or Commanders' -- one elided list sharing the Demon prefix -- and only 'Demon General' appears as a contiguous string. The other three are written out here because a mob name that matches nothing simply draws nothing, whereas dropping them would lose three real targets; flagged so a human can check them.\n\nADVERSARY (stage D): removed the three reconstructed mob names -- Demon Magistrate, Demon Chancellor and Demon Commander. Only 'Demon General' occurs in the page as a contiguous string; the other three were recovered by re-attaching the elided 'Demon' prefix to 'Magistrates, Chancellors or Commanders', which is precisely the inference hard rule 1 forbids, and the resolver returns no id for ANY mob name, so nothing independent confirms them. Demon General survives and still carries the drop marker on step 5, and the Whine Cellar Key evidence is unaffected, so the ladder is unchanged and confidence stays high. The mob_names_expanded flag went with the names. Anyone restoring the other three should take them from a mob table, not from this sentence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: the bare form does not resolve.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [
+    {
+     "title": "The Three Magi",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BLM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chumimi",
+   "zone": "Heavens Tower",
+   "grid": null,
+   "raw": "Chumimi - Heavens Tower"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "in the basement of Heavens Tower, as a level 50 Black Mage. Bullet 1 is a precondition: you must have zoned out of the tower after finishing The Three Magi."
+   },
+   {
+    "n": 2,
+    "kind": "cutscene",
+    "target": {
+     "type": "npc",
+     "name": "Laityn"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page's own optional cutscene, story only; skipping it changes nothing."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Crawlers' Nest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bag of Seeds",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Fire Elemental",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Water Elemental",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the basement -- the 'donut room' on map 3 with the Strange Apparatus. The elementals only appear during weather; check Appollonia in Upper Jeuno (G-6) for Rolanberry Fields, which the Nest shares. Alternative route: tell Kuyin Hathdenna to 'look for seeds' before harvesting your Garden Furrow."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Bag of Seeds",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Whine Cellar Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Demon General",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "at the bottom of the four corner areas on map 3; fall from map 2 to get down there. The page elides the shared 'Demon' prefix -- it reads 'Demon Generals, Magistrates, Chancellors or Commanders' -- and the four names are written out here."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Ore Door"
+    },
+    "zone": "Castle Zvahl Keep",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Whine Cellar Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"Foe Finder Mk. I\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "Bullet 6 is only the zone change into the Keep, so it merges here. Hug the right wall on the way in and go through the iron gate; the first ore door before the second iron gate is the one. The key item's game name carries literal double quotes."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the Wizard's Sabots are the reward, so they prove the quest is over rather than that this step is done."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borghertz's Chasing Hands",
+   "page_id": 13071,
+   "revision_id": 678703,
+   "source_sha256": "9228522c064a6b3ee72e95662b26ba9629f3bbd75da0c9189e1710283b05072c",
+   "cache_file": "0013071_borghertz_s_chasing_hands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 54,
+   "dat_name": "Borghertz's Chasing Hands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "object_name_not_in_page",
+   "optional_first_af_branch",
+   "unnumbered_lead_bullet"
+  ],
+  "notes": "The page opens with an UNNUMBERED line above bullet 1 -- 'Travel to the Durable Shields shop and speak with Guslam ... on Ranger to begin the quest' -- which is the actual first action. It gets a step with an empty source_bullets, because there is no bullet number to cite; the same is true of nothing else in this batch except Promotion: Sergeant Major.\n\nThe coffer is the interesting decision. Bullet 1 is only the journey to Garlaige Citadel and bullet 3 is only the key item you come away with, so 1, 2 and 3 are one step: open the coffer, receive the Old gauntlets. The header's own 'Grl. Coffer Key -OR- Thief's Tools' is a genuine second, independent way to satisfy the step, so it goes in items_alt rather than being hidden behind items_partial as the corresponding step in Under Oath had to be. You need not be on Ranger to open it -- only to receive the armour.\n\nThe page never names the coffer; it says 'the coffer'. 'Treasure Coffer' is the entity's own in-game name and is what the rest of this corpus uses, so it is recorded and flagged rather than nulled, on the grounds that this is a normalisation of the page's own noun and not an invention. Same reasoning for 'Torch' from 'one of the torches'.\n\nBullet 5 is explicitly conditional -- 'If this is your first AF you must do the following, otherwise skip these steps' -- so Deadly Minnow and Yin Pocanakhu are optional. They are NOT a group: the page orders them, and Yin Pocanakhu wants 1,000 gil, which no item list can express.\n\nBullet 10 is two actions, kill and then examine, so it splits; the Shadow flames sit on the examine. Bullets 6+7 and 8+9 are each a journey plus the click at the end of it and merge. The quest ends on the Port Jeuno ??? with no hand-in NPC at all, exactly like Operation Teatime, so no turn-in is invented.\n\nThe 'Two Additional Coffers' section after the walkthrough restarts its numbering at [1], and its two bullets are recorded as optional steps in an unordered group -- the page says outright they are not required and that the quest is 'completed' without them. They deliberately carry NO evidence even though Hunter's Braccae and Hunter's Jerkin would qualify: a player who opens the Crawler's Nest coffer early would otherwise jump the mark past the whole middle of the quest. Their coffer key is never named, hence items_partial.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: from the unnumbered lead line above bullet 1: the Durable Shields shop, on Ranger. source_bullets is empty because the line carries no number.\n  step 5: gil is not an inventory item, which is why items_partial is set and items is empty.\n  step 11: The page never names the coffer key for this zone, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Fire and Brimstone",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "RNG"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Guslam",
+   "zone": "Upper Jeuno",
+   "grid": "H-8",
+   "raw": "Guslam, Upper Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": null,
+    "items": [
+     {
+      "name": "Garlaige Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old gauntlets",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "bullet 1 is the journey and bullet 3 the key item, so all three are one step. Key or lockpick, either works, and you need not be on Ranger to open it. The page says only 'the coffer'; Treasure Coffer is the entity's own name."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he tells you he cannot repair them."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Minnow"
+    },
+    "zone": "Upper Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "only if this is your first AF hands quest; inside the Durable Shields shop."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yin Pocanakhu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "Only on your first AF hands quest, and it follows Deadly Minnow rather than sitting beside him. Inside the Tenshodo area; speak first, then trade 1,000 gil."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "the crates near the Auction House and the Jeuno Duty-Free Shop. Bullet 6 is the walk to them and bullet 7 the click."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "first map. The page says 'one of the torches', so any of them will do; the singular is recorded as the target name."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "bullet 10 is a kill and then an examine, so it splits across this step and the next."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shadow flames",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "a torch again once Dark Spark is dead."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the same ??? as step 6. The cutscene ends the quest -- there is no NPC to hand in to, and the Hunter's Bracers are the reward."
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Crawler's Nest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra_coffers",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "From the 'Two Additional Coffers' section, whose bullets restart at [1] this is that section's bullet 1, not the walkthrough's. Hunter's Braccae. Not required: the quest is already complete. Ranger must be your main job when you open it and the quest active or finished. No evidence, deliberately the Braccae would otherwise jump the mark past the middle of the quest."
+   },
+   {
+    "n": 12,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra_coffers",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the 'Two Additional Coffers' section's bullet 2. Hunter's Jerkin. Same conditions as step 11, and the two may be done in either order, which is why they share a group."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Everyone's Grudging",
+   "page_id": 38732,
+   "revision_id": 650247,
+   "source_sha256": "72e0293527829ab17435e2797130650ac5d3818710e2bb05137d06c0e7067e5e",
+   "cache_file": "0038732_everyone_s_grudging"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 4,
+   "dat_name": "Everyone's Grudging",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "repeating_loop",
+   "count_unobservable",
+   "zone_unknown_for_step",
+   "ki_as_held_requirement"
+  ],
+  "notes": "This is a LOOP wearing a list's clothing, and reading it as a straight ladder is the mistake to avoid. There are two entities both named 'Altar of Rancor' in the Den of Rancor: the one at (D/E-5) turns an Unlit Lantern into a Rancor Flame, and the one at (I/J-13) burns the flame to light a lamp. Four lamps must burn. Bullet 3 says so plainly -- four players with a lantern each, or one player making four round trips. Nothing in the packets counts lit lamps, so the count cannot be laddered.\n\nWhat CAN be laddered is the loop itself, and it falls out of the evidence for free: holding an Unlit Lantern draws the (D/E-5) altar, holding a Rancor Flame draws the (I/J-13) altar. That is exactly the round trip the page describes, and it is why the Rancor Flame sits on step 5 rather than being left off for fear of a premature advance. Both are ordinary items (1138 and 1139), not key items.\n\nBullet 1 is a precondition inherited from A Question of Taste, not a step: you must already have traded a lantern to an altar once and used the flame it gave you -- using it is what curses you and lets Jakoh throw you out. Because using it consumes it, a player arriving at bullet 2 normally holds no flame, so the ladder starts where it should.\n\nBullet 4 is pure routing and folds into the Temple Guardian fight. Its (F-5) and (H-11) belong to a zone the page never names -- it says only 'exit' and 're-enter the temple' -- so nothing is guessed from them. Bullet 3 has the same problem worse: it never says where Tonberry Maledictors live, only that the complex is 'Den of Rancor/Temple of Uggalepih', so the obtain step carries no zone at all.\n\nBullet 6's Paintbrush of souls is a key item used as a gate rather than traded, so it is recorded as a held requirement on the travel step into the Den. Bullet 9 is the outcome of bullet 8 (the fourth lamp pops the Rancor Torch) and merges into it as a spawn. Bullet 10 is two actions and splits: kill the bomb, then go home to Kazham. 'The Chieftainess' in bullet 10 is Jakoh Wahcondalo, named in the header and in bullet 2 -- no new NPC is invented for the hand-in.\n\nADVERSARY (stage D): downgraded to medium. Bullet 1 does not merely permit a pre-held Rancor Flame, it recommends one -- 'It helps to have a Rancor Flame on you' -- so a correctly prepared player accepts this quest already holding step 5's evidence and the mark jumps straight to the (I/J-13) altar deep inside the Den of Rancor, skipping the Temple Guardian and the Paintbrush of souls gate entirely. The evidence is deliberately LEFT in place: removing it strands the mark on the (D/E-5) altar forever and destroys the lantern/flame cycle the draft correctly identified, which is the best available model of a four-lap loop. But pre-obtainable evidence plus an uncountable four lamps is not a high-confidence ladder. Compare A Stygian Pact in _run025, flagged evidence_preobtainable at medium.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: The page never says which half of the complex the Maledictors are in, so this step carries no zone.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": null,
+    "raw": "k / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Question of Taste",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Jakoh Wahcondalo",
+   "zone": "Kazham",
+   "grid": "J-9",
+   "raw": "Jakoh Wahcondalo, Kazham (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is the precondition carried over from A Question of Taste -- you must already have traded an Unlit Lantern to an Altar of Rancor and used the Rancor Flame it gave you. She orders you out of the village; the other NPCs in the room point you at the Den of Rancor / Temple of Uggalepih complex. The title arrives with the quest, not with a step."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Unlit Lantern",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Tonberry Maledictor",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "At least one; four lamps must be lit in the end, so four lanterns between the party or four solo round trips."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Temple Guardian",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "bullet 4 is the route and folds in here: from the main entrance take every right turn to the exit at (F-5), then hug the left wall to re-enter at (H-11). The page does not name the zone those two grids are in. Killing the Guardian opens the door behind it."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Den of Rancor"
+    },
+    "zone": "Den of Rancor",
+    "grid": null,
+    "items": [
+     {
+      "name": "Paintbrush of souls",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "north from the Guardian's door to the paintings room at (I-7) in the Temple of Uggalepih. The Paintbrush of souls is a key item used as a gate rather than traded, and is carried here as a held requirement."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Altar of Rancor"
+    },
+    "zone": "Den of Rancor",
+    "grid": "D/E-5",
+    "items": [
+     {
+      "name": "Unlit Lantern",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rancor Flame",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "hug the right wall from where you enter the Den. Lantern in, flame out -- the first half of the loop."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Altar of Rancor"
+    },
+    "zone": "Den of Rancor",
+    "grid": "I/J-13",
+    "items": [
+     {
+      "name": "Rancor Flame",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Rancor Torch",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "the OTHER Altar of Rancor, same name and same zone as step 5, different corner. Four flames burn here; the fourth pops the Rancor Torch. The lamp count is invisible to the addon, so the ladder cycles between this step and step 5 instead of counting."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Den of Rancor",
+    "grid": "I/J-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Rancor Torch",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "a bomb NM at the altar you just lit."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the page calls her 'the Chieftainess'; that is Jakoh Wahcondalo, named in bullet 2 and in the header."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promotion: Sergeant Major",
+   "page_id": 13130,
+   "revision_id": 612433,
+   "source_sha256": "e64fba05fedd8fb04cfb994e9dcc2a33bc0e903dc50d152edcc4d8c85ee4ef13",
+   "cache_file": "0013130_promotion_sergeant_major"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 95,
+   "dat_name": "Promotion: Sergeant Major",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "grid_typo_in_header",
+   "minigame_unobservable",
+   "unnumbered_lead_bullet"
+  ],
+  "notes": "The whole quest happens in one conversation with one NPC, and the honest ladder is three rungs on Naja Salaheem -- which is one marker, since consecutive steps on the same NPC collapse. A keyword pass would have produced eight or nine steps out of the trial descriptions; none of them is a place you go or a thing you click.\n\nThe three trials are ONE step, not three. They are menu mini-games run through Naja, they must be done in the page's order, nothing observable separates them, and failing any of them puts you back at the start after a one real-life minute wait. Three rungs the player cannot be tracked through would be noise, so all the detail lives in that step's note where a human can read it.\n\nThe first and last actions both come from unnumbered lines (the paragraph above 'Trial 1' and the closing sentence below Trial 3), so their source_bullets are empty -- there are no numbers to cite. Only bullets 1, 2 and 3 exist and all three are on step 2.\n\nThe header writes Naja's position as '(1-10)', which is not a grid reference; it is a typo for (I-10), where she stands in Aht Urhgan Whitegate, and that is what is recorded. The raw string is kept verbatim in start.raw.\n\nTwo things are unmodellable, which is why this is medium rather than high. 'Quest Reqs: Complete 25 points worth of Assaults as Sergeant' has no slot in the schema and no observable predicate, so it gates nothing. And the trials' location is inferred rather than stated -- the page never says where they happen, only that you speak to Naja again after a failure, so Aht Urhgan Whitegate comes from the header rather than the walkthrough. Abquhbah, who lets you practise the sit-up timing indefinitely, is practice and not progress, so he stays in a note rather than becoming an optional rung.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [
+    {
+     "title": "Promotion: Sergeant",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem - Aht Urhgan Whitegate (1-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered lead line: she sets three mini-games and you must pass all of them. Fail any portion and you wait one real-life minute before speaking to her again."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "all three trials, in order, as one step -- none is observable and none happens anywhere else. 1) Push-ups: count three NPCs' push-ups and name whichever did fewest; the answer may be none of them. 2) Sit-ups: hit the message-advancement prompt as the SLOWEST of the three finishes his animation, 9 of 10 correct to pass -- a sharp whistle means the timing was right, a dull one wrong, and the Windower addon Enternity must be unloaded or it queues the prompt for you. Abquhbah lets you practise this indefinitely. 3) Running: when an NPC falls behind, pick his name to whistle him forward, but whistling at one who is not behind is a penalty and can fail the trial; choose 'Not now' once they stop. The page does not say where the trials take place; the zone and grid come from the header."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered closing line below Trial 3. The SM Wildcat badge and access to SM Assaults are the reward."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1030 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Goblin Tailor",
+   "page_id": 38713,
+   "revision_id": 770215,
+   "source_sha256": "1de45c2584c914464e00e85732dc96c15fd711fdb10120ce813b14bd378bf360",
+   "cache_file": "0038713_the_goblin_tailor"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 42,
+   "dat_name": "The Goblin Tailor",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated",
+   "or_branch_modelled",
+   "unordered_group",
+   "walkthrough_in_table"
+  ],
+  "notes": "Most of this page's numbering is not the quest. Bullets 4-31 are the four-piece RSE armour table -- the wikitable gave every cell its own number, which is why a three-action quest counts to 41 -- bullet 32 is the upgrade path plus the effective four-clear limit, and the whole '== Ammo ==' section (33-41) is a different activity the page itself says is 'not obtained from Guttrix, but NMs instead': RSE sachets off Aroma Crawler, Aroma Fly and Aroma Leech spawned from a ???. None of it advances this quest, so none of it is a step -- the same call An Explorer's Footsteps made about the Shadowreign monuments.\n\nThe pattern chest is an OR over three zones, not a sequence. Any one of Gusgen Mines, Ordelle's Caves or the Maze of Shakhrami will do and each wants its own key, which is exactly what the header's 'Ordelle Chest Key, or Gusgen Chest Key, or Shk. Chest Key' means. Three grouped steps draw all three at once and give each its correct key; a single zone-less Treasure Chest step could not, because a nil-zone 'treasure chest' row matches chests in every zone in the game. The Magical pattern sits on the LAST group member so that obtaining it lands the mark on Guttrix rather than back inside the group, and because the same item may not be evidence twice.\n\nWhat the addon cannot see is the RSE calendar. The pattern only appears during your race's game week (Firesday to Darksday, roughly eight real hours, cycling Hume M -> Hume F -> Elvaan M -> Elvaan F -> Taru M -> Taru F -> Mithra -> Galka), and no packet reports Vana'diel time or whose turn it is, so the chest steps will draw whether or not it is yours. The three sections after the walkthrough are zone maps and route notes rather than steps; the only fact worth keeping out of them is Ordelle's extra chest spawn near Morbolger on map 3, carried on that step.\n\nADVERSARY (stage D): downgraded high -> medium. The ladder survives every attack -- bullet order is the page's order, all ten names resolve, the three keys are the header's three keys and each sits in its own zone -- but two things the reading pass documented are compromises rather than readings, and the guide's own table calls that medium. First, the RSE week is an unmodellable gate of the worst kind: the chest steps draw during all eight races' weeks, so the marker is pointing at a chest that cannot hold your pattern seven times out of eight. Second, the Magical pattern is evidence on the Maze of Shakhrami step but is obtained at whichever ONE of the three chests you actually opened -- rule 4 forbids putting it on all three and the last member is the only placement that advances past the group, so the choice is right, but it is a convention and not something the page says. Related: `group` here means OR (do exactly one), not the unordered SET the field is defined as. Nothing was removed -- the Ammo section (bullets 33-41) is correctly excluded, the page itself says the sachets are 'not obtained from Guttrix, but NMs instead' and that they are for players 'if they wish to obtain them', which is optional besides; but nine of forty-one bullets being judged out-of-quest is itself a reason not to claim high.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 3,
+    "raw": "Jeuno / 3"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Guttrix",
+   "zone": "Lower Jeuno",
+   "grid": "H-10",
+   "raw": "Guttrix, Lower Jeuno (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guttrix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he offers to make Race Specific Equipment in exchange for a Magical pattern; his sub-bullets are where the patterns come from, not further steps"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Gusgen Mines",
+    "grid": null,
+    "items": [
+     {
+      "name": "Gusgen Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "pattern_chest",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "ONE of the three zones is enough -- this group is an OR, not a set to finish. Chest spawns are the blue squares on the page's maps. The key is 2,500g from a Curio Vendor Moogle if you hold Rhapsody in White. In from Konschtat Highlands (L-7)."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": null,
+    "items": [
+     {
+      "name": "Ordelle Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "pattern_chest",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "same OR branch. In from La Theine Plateau (F-7), down the ramp in the cliff; the section after the walkthrough adds that a chest may also spawn near Morbolger on map 3."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": null,
+    "items": [
+     {
+      "name": "Shk. Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magical pattern",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "pattern_chest",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "same OR branch, and the group's LAST member, which is why it carries the Magical pattern evidence for all three -- see the quest note. In from Tahrongi Canyon (K-5). You may hold only one pattern at a time, though you may re-obtain it freely within your week."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Guttrix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Magical pattern",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he offers the four armour pieces for your race; each piece is given only once, so the quest has an effective limit of four clears whatever the header says about repeating"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Inside the Belly",
+   "page_id": 154,
+   "revision_id": 770209,
+   "source_sha256": "c164867e44e7caa3e6b8c6212a38b45a6457390cfcbb8198e7ad429a413df1fe",
+   "cache_file": "0000154_inside_the_belly"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 26,
+   "dat_name": "Inside the Belly",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "walkthrough_in_table",
+   "page_unverified",
+   "skill_gate_deliberately_unmodelled"
+  ],
+  "notes": "Two actions and a sixty-row reward table. Bullets 3, 4 and 5 are all outcome or mechanic -- he buys the fish at a fixed price and hands you whatever was in its stomach, a bigger fish is likelier to hold something since the 2021-11-10 update, and the skill requirement stops applying once the quest is flagged -- so only bullets 1 and 2 are things you do, and both are on Zaldon, which is one marker anyway.\n\nThe fish list is the one thing on this page worth modelling. Every row of the table is an independent way to satisfy the same trade, which is precisely what items_alt is for, so Giant Catfish sits in items and the other 59 in items_alt; all sixty resolved against the item table. That makes holding any single listed fish read as ready-to-hand-in, which is the only thing this quest can ever tell the runtime. The right-hand columns -- gil, the stomach item, its probability and the title -- are rewards, so nothing there is evidence.\n\nDemoted to medium for the gate and not the ladder. 'Level 30+ Fishing skill' has no slot in the schema and no observable predicate, and the page is careful that gear, Advanced Synthesis Image Support and the latent on Trainee's spectacles all count toward it, none of which is visible either; nor is the fact that the requirement lapses after the first clear. The page also carries Category:Information Needed and is flagged unverified upstream.\n\nTHE FISHING GATE IS OBSERVABLE AND IS DELIBERATELY NOT MODELLED. That is a decision, not a gap, and it should not be re-opened without reading this. Packet 0x062 carries Fishing skill exactly (core/skills.lua), so the sensor exists. Three separate reasons say not to use it here, any one of which is sufficient:\n1. The page's own requirements line offers gear and Advanced Synthesis Image Support as ways to \"help hit level 30\", and 0x062 reports NATURAL skill only -- so a player correctly geared to 30 reads as 25 and would be greyed.\n2. The requirement lapses once the quest is flagged, and the page says so.\n3. `Repeatable=Yes`, and prereq.marker_state re-runs evaluate on a completed repeatable -- so the gate would grey it permanently for exactly the players who had already finished it.\nReason 1 alone is handled by the runtime, which returns nil rather than false for any skill LEVEL; reasons 2 and 3 are why this quest gets no craft entry at all.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: any ONE of the sixty fish the table lists; the first is in items and the rest in items_alt.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Real Gift",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zaldon",
+   "zone": "Selbina",
+   "grid": "H-9",
+   "raw": "Zaldon, Selbina - (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zaldon"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "needs 30 fishing skill at this moment, real or borrowed from gear, Image Support or the Trainee's spectacles latent. He changes his line below 30 and sends you to Gabwaleid, but once flagged he takes fish at any skill."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Zaldon"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Giant Catfish",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Dark Bass",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ogre Eel",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Zafmlug Bass",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Giant Donko",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Bhefhel Marlin",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Silver Shark",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Jungle Catfish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Emperor Fish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Titanictus",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Takitaro",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Giant Chirai",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ryugu Titan",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tricorn",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sea Zombie",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Cave Cherax",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lik",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gugrusaurus",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Bladefish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gavial Fish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Veydal Wrasse",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Morinabaligi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Turnabaligi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Kalkanbaligi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Pterygotus",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gerrothorax",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Pirarucu",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Megalodon",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Yayinbaligi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lakerda",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Kilicbaligi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Monke-Onke",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ahtapot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Armored Pisces",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mola Mola",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gugru Tuna",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Istavrit",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gigant Octopus",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Three-eyed Fish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gigant Squid",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rhinochimera",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Grimmonite",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Titanic Sawfish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Pelazoea",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dorado Gar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Crocodilos",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Abaia",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Matsya",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Kokuryu",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Soryu",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Hakuryu",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sekiryu",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Far East Puffer",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Shen",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Apkallufa",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Yawning Catfish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Malicious Perch",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Bloodblotch",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Bonefish",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tiger Shark",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "He guts it, buys it at a fixed price and gives you what was inside, so this step is also the end of the quest there is nothing to return to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Opo-opo and I",
+   "page_id": 38738,
+   "revision_id": 771497,
+   "source_sha256": "23cb19353281301dcb12fcce0589da6f5a651a0e6f9235c6bb6d8aa40f1835da",
+   "cache_file": "0038738_the_opo_opo_and_i"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 11,
+   "dat_name": "The Opo-opo and I",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "strict_order",
+   "progress_unobservable",
+   "wandering_npc"
+  ],
+  "notes": "The walkthrough IS the table. Bullet 2 says to trade the items in order and the ten rows under it are the ten rungs; there is nothing else to the quest. Bullet 1's cutscene is with Lulupp and the first trade is also to Lulupp, so those two consecutive steps share one marker -- the page really does put him twice, so nothing is wedged between them.\n\nNothing here is observable. No key item is granted at any rung, and bullet 4 says the only way to find out how far you are is to talk to each Opo-opo and watch for a /bow, so every step's evidence is null. What rescues the ladder is that each rung wants a DIFFERENT item, so the item you are carrying is effectively your position -- hold the Wandering Bulb and Popopp is the one that lights up. That also blunts bullet 3's trap, where trading out of order loses all progress: the page notes a do-over needs a second copy only up to the point you failed, because the repeat trades register without being consumed, so two of each is the worst case.\n\nThe 'Obtained' column is where each item comes from, and its named drop sources are recorded as mobs with role drop even though they live in other zones -- the same treatment Divine Might gave Cursed Puppet and Magic Flagon. The two rows with no monster behind them, the auction-house Bkn. Mithran Rod and the crafted Workbench, get none, and bullets 5 and 6 -- a guide to breaking a rod by hooking something too heavy, and a woodworking guide by way of Forest for the Trees -- stay as notes on those two steps rather than becoming steps of their own. Tatapp gets no grid because the page gives him none: he walks a counter-clockwise circuit of the whole town and has to be traded on the move. The quest ends on the tenth trade; there is no return to Lulupp and none is invented.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": null,
+    "raw": "k / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Even More Gullible's Travels",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Lulupp",
+   "zone": "Kazham",
+   "grid": "G-7",
+   "raw": "Lulupp, Kazham (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lulupp"
+    },
+    "zone": "Kazham",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by the docks; you must have finished Even More Gullible's Travels and be carrying its scent"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Lulupp"
+    },
+    "zone": "Kazham",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Bkn. Mithran Rod",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "first of ten, in strict order. Off the Auction House, or break your own rod: buy a Mithran Fish. Rod from Babubu in Port Windurst (C-8) and hook something 'too heavy' for it -- the East Ronfaure method works at fishing skill 1."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kukupp"
+    },
+    "zone": "Kazham",
+    "grid": "I-11",
+    "items": [
+     {
+      "name": "Workbench",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "second. Level 7 woodworking or the Auction House; the page's fallback is Forest for the Trees for the Trainee Axe, then the Maple Lumber step of the woodworking guide."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Mumupp"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Ten of Coins",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ten of Coins",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "third. The monster of the same name in the Outer Horutoto Ruins, in the same place as the Ten of Cups for The Kind Cardian."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Roropp"
+    },
+    "zone": "Kazham",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Sands of Silence",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Demon Magistrate",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Demon Chancellor",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "fourth. Castle Zvahl Baileys: west from the Survival Guide to map 2, then the stairs at H-6 or H-10, or fall into the large holes."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Popopp"
+    },
+    "zone": "Kazham",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Wandering Bulb",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Utukku",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "fifth. Fei'Yin: downstairs at G-9 from the entrance or Home Point 1 and north, or south if you have Home Point 2. Wide Scan finds them in the small doored rooms."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bubupp"
+    },
+    "zone": "Kazham",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Giant Fish Bones",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tonberry Stalker",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "sixth. The page names the monster but not its zone."
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tatapp"
+    },
+    "zone": "Kazham",
+    "grid": null,
+    "items": [
+     {
+      "name": "Blackened Toad",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Brook Sahagin",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "seventh, and the awkward one: no grid, because he walks a counter-clockwise circuit of the whole town and you have to move and work the trade menu at once. The toads drop around the lake at (J-12) in Sea Serpent Grotto, with more in the room at (M-14)."
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kakapp"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Wyvern Skull",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Hurricane Wyvern",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "eighth. Ifrit's Cauldron: north and east into map 7, off the ledge at (J-4), south and clockwise round the crater to (J-8) into map 6, north to map 3, then west to the square room."
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Lalapp"
+    },
+    "zone": "Kazham",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Ancient Salt",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sand Digger",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "ninth. Quicksand Caves, the same spot as the ??? for Zilart Mission 12."
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Nenepp"
+    },
+    "zone": "Kazham",
+    "grid": "I-11",
+    "items": [
+     {
+      "name": "Lucky Egg",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Knight Crawler",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "tenth and last -- the reward follows this trade and there is no hand-in afterwards. From The Boyahda Tree. Nenepp drifts in and out of interaction range, so target, wait, and menu quickly."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1445 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Prankster",
+   "page_id": 38782,
+   "revision_id": 546947,
+   "source_sha256": "2963c2972c7b306f78771fba708a71abe177c6382d7f156a59ccf395b6a91db7",
+   "cache_file": "0038782_the_prankster"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 60,
+   "dat_name": "The Prankster",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "no_evidence"
+  ],
+  "notes": "Fame reads 'Treasures of Aht Urhgan' -- the expansion name where the region belongs -- but it folds to the aht_urhgan region, so it is recorded as 'Aht Urhgan' with the raw kept. Bullets 2 and 3 name no zone; they continue from bullet 1 and bullet 4 is the one that says 'in Bhaflau Thickets', so both are read as Aht Urhgan Whitegate. Neither names an entity -- they are cutscenes triggered by standing somewhere -- so both are target none and keep only a zone and a grid. Bullet 5 is the classic two-in-one the pilot warned about: 'Once defeated, check the ??? for...' is a fight and then an examine, so it splits, and the ??? examined for the map is the same one that popped the NM. The Map of Caedarva Mire is NOT used as evidence: it is the header's own Reward, and it is conditional on top of that ('If you do not already own it'), so holding it proves the quest is over rather than that the last step is done. That leaves this quest with no evidence at all, which is the honest answer.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Ahaadah",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "G-6",
+   "raw": "Ahaadah, Aht Urhgan Whitegate (G-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ahaadah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the description names Alcander as a second petitioner, but the walkthrough never sends you to him"
+   },
+   {
+    "n": 2,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "walk under the roof of a shack; nothing to click, so there is nothing to mark. The page does not name the zone -- it is still Aht Urhgan Whitegate, since bullet 4 is the one that changes zone."
+   },
+   {
+    "n": 3,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "upper level; walk to the end of the walkway"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Bhaflau Thickets",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Plague Chigoe",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Bhaflau Thickets",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Plague Chigoe",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "hits far faster than a normal Chigoe and Aspirs MP on every hit"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Bhaflau Thickets",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, after the NM dies. It hands over the Map of Caedarva Mire, which is the header's Reward and is skipped if you already own it -- so it is deliberately not recorded as evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Moogles in the Wild",
+   "page_id": 196,
+   "revision_id": 686410,
+   "source_sha256": "8716f2ceabb511dd39efac729a89c0e5dfffcd339a37165a90e812bb74fc4c21",
+   "cache_file": "0000196_moogles_in_the_wild"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 102,
+   "dat_name": "Moogles in the Wild",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "moghouse_zone_unresolved",
+   "time_gated",
+   "home_nation_fame",
+   "no_evidence"
+  ],
+  "notes": "The whole quest happens inside your own Mog House, and that is what costs it. 'Mog House' comes back from the resolver as the moghouse SENTINEL rather than a zone id, and 'Moogle' comes back flagged ambiguous -- the 'every Moogle in Vana'diel' shape -- so validate will pair an ambiguous name with a nil zone and demote this to start-only. That is the correct outcome and I have not tried to dodge it by blanking the zone, because blanking it changes nothing and loses the one true fact on the step. In practice the mark would have been harmless, since the only Moogle in a Mog House is yours, but the guard is structural.\n\nBullets 2 and 3 merge: zoning out and back, then waiting an Earth minute, then talking are one visit to one NPC, and wedging an unmarkable zone-out rung between two talks on the same Moogle would only add noise. The Noble's Bed is carried as an item requirement even though the page says 'place' rather than 'hold' -- installed furniture stays in the inventory, so the runtime's held check is the right proxy; the note says so. Bullet 5 is the outcome (the Mog Safe grows to 80), not a step. Nothing in this quest grants a key item, so there is no evidence anywhere. FLevel 7 is fame in your HOME nation, which varies per character and is why the region is left null rather than guessed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 7,
+    "raw": "Other / 7"
+   },
+   "prev": [
+    {
+     "title": "The Moogle's Picnic!",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Moogle",
+   "zone": "Mog House",
+   "grid": null,
+   "raw": "Moogle, Mog House"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Mog House",
+    "grid": null,
+    "items": [
+     {
+      "name": "Noble's Bed",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the bed must be INSTALLED in the Mog House, not merely carried; installed furniture still occupies an inventory slot, so the held-item check is a workable proxy"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Mog House",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "zone out of the Mog House and back in first, then wait one Earth minute; you may have to talk twice. The cutscene only happens at fame level 7 in your home nation. Neither the real-time wait nor the zone cycle is visible to the addon."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Mog House",
+    "grid": null,
+    "items": [
+     {
+      "name": "Raptor Mantle",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Wool Hat",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "both in one trade. Bullet 5 is the reward -- the Moogle 'returns from his trip' after another Earth minute and the Mog Safe grows to 80 -- and is not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 004: Bibiki Bombardment",
+   "page_id": 87837,
+   "revision_id": 709754,
+   "source_sha256": "af317c68ce65ad219a0683ed59809d5e9ce8680b587825d657b14e2695ec16f9",
+   "cache_file": "0087837_vw_op_004_bibiki_bombardment"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 85,
+   "dat_name": "VW Op. #004: Bibiki Bombardment",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "auto_flagged_from_previous",
+   "no_evidence"
+  ],
+  "notes": "Bullet 1 is not a step. It says the quest is flagged AUTOMATICALLY when you finish the previous one by speaking to Owain -- that is 'the quest appears in your log', which the runtime already knows, and turning it into a talk step would put a marker back on Owain at the exact moment the player should be heading for Bibiki Bay. Owain still stands as start.npc, which is where he belongs. The Hyacinth stratum abyssite II is both the header's Reward and something handed over during the PREVIOUS quest, so it fails the reward rule and the obtained-at-this-step rule at once; no evidence is recorded anywhere. Purgonorgo Isle is map 2 of Bibiki Bay and not a zone of its own, so the zone is Bibiki Bay and the three rift grids stay in the note -- picking one of three at random would be a made-up fact.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "VW Op. 026: Tavnazian Terrors",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Owain",
+   "zone": "Tavnazian Safehold",
+   "grid": null,
+   "raw": "Owain, Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Bibiki Bay",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bismarck",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "rift locations are map 2 (Purgonorgo Isle) at (F-9), (J-9) or (I-10) -- three alternatives, so no single grid is recorded. Voidwatch Teleportation is the fast way in, otherwise the Manaclipper ferry."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Owain"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ducal Hospitality",
+   "page_id": 38718,
+   "revision_id": 118232,
+   "source_sha256": "12b4e64bdf62e221a03ada438e437d5e56f122e90192ff279682f970e5e002d0",
+   "cache_file": "0038718_ducal_hospitality"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 68,
+   "dat_name": "Ducal Hospitality",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "random_item_request",
+   "no_evidence"
+  ],
+  "notes": "Bullet 2 is not a step -- it is the POOL Taillegeas draws from, twenty items of which he asks for 'a few', chosen per run. That cannot go in items (holding one of twenty does not satisfy the trade) and it cannot go in items_alt either, because items_alt means any ONE alternative suffices and here you need several at once. So the trade carries an empty items list with items_partial set and the full pool in the note, which is exactly what items_partial is for. The pool: Chocobo Bedding, Counterfeit Gil, Dart, Eastern Paper, Fernan's Diaries, Goblin Bread, Goblin Doll, Goblin Mushpot, Goblin Pie, Kaiserin Cosmetics, Kongou Inaho, My First Magic Kit, Naphille Pochette, Nyumomo Doll, Shuriken, Silver Obi, Snoll Gelato, Sphene Earring, Tonosama Rice Ball, Turquoise Ring. Steps 1 and 3 are both Taillegeas and consecutive, so they draw as one marker and readiness looks ahead across them. 'Quest Reqs: Mission: Promathia Mission 3-2' is recorded as a prev entry; the Previous field itself is empty.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Nothing here can be expressed as a fixed AND-list, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Promathia Mission 3-2",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Taillegeas",
+   "zone": "Ru'Lude Gardens",
+   "grid": "I-7",
+   "raw": "Taillegeas, Ru'Lude Gardens (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Taillegeas"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he names the items he wants; the request varies per run"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Taillegeas"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "He asks for a few of a twenty-item pool, different each time; the header's Item Reqs says only 'Varies'. The pool is listed in the quest note."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Thorn in the Side",
+   "page_id": 101775,
+   "revision_id": 681068,
+   "source_sha256": "4b18f12456bb14d86e77cc5d30619f966fff11a61b0fc9e52e8d52c63eba8302",
+   "cache_file": "0101775_thorn_in_the_side"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 121,
+   "dat_name": "Thorn in the Side",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "item_name_singularised",
+   "grid_conflict",
+   "no_evidence"
+  ],
+  "notes": "The Occultist Footprints are a real, resolvable entity, so both the cutscene click and the trade carry a marker -- this quest keeps everything it has. 'Snapweed Tendrils' does not resolve; the item is 'Snapweed Tendril' (singular), so the plural on the page is folded to it with count 2. That is a form change, not a new name. The two grids disagree in the mildest possible way: the header description says 'Trek to J-6' and the walkthrough says the (I-6)/(J-6) border, so the border form is used on both steps and both readings are recorded here. The Quest Reqs field wants two Secretions, but bullet 3 says Nashu volunteers one of them, so the trade is one Secretion and two Tendrils -- the walkthrough wins, since it is the one giving the instruction. The reward is Bayld, which is currency and cannot be evidence, so this quest carries none.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The page writes 'Snapweed Tendrils'; the resolvable item name is the singular.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Adoulin / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Zaffeld",
+   "zone": "Eastern Adoulin",
+   "grid": "J-8",
+   "raw": "Zaffeld, Eastern Adoulin - (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zaffeld"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Castle"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Occultist Footprints"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I/J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on the (I-6)/(J-6) border; the header description says (J-6). The Frontier Station is the closest waypoint."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Occultist Footprints"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I/J-6",
+    "items": [
+     {
+      "name": "Snapweed Secretion",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Snapweed Tendril",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Quest Reqs asks for two Secretions but Nashu volunteers one of them, so only one is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beneath a Blood-red Sky",
+   "page_id": 67167,
+   "revision_id": 579390,
+   "source_sha256": "8f844561a1a89f178292d241f74ece716592bde94f058f510ce8d0b3072e6d4e",
+   "cache_file": "0067167_beneath_a_blood_red_sky"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 183,
+   "dat_name": "Beneath a Blood-red Sky",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "start_unused_in_walkthrough",
+   "ki_name_not_unique",
+   "no_evidence"
+  ],
+  "notes": "Four bullets and only one of them is an action. Bullets 1, 2 and 3 are one visit to one object: go to Qufim Island (F-7), click the Transcendental Radiance, then pick 'Proceed' from its menu. Splitting that into a travel rung, a click rung and a menu rung would be three rungs for one click, so they merge and the route goes in the note. Bullet 4 (the next quest auto-flags) is an outcome.\n\nEsha'ntarl never appears in the walkthrough at all, which is the shape the pilot warns about -- either the page is truncated or the quest flags off the previous one. She is kept as start.npc because that is what the header binds and Hall of the Gods resolves cleanly, but no talk step is invented for her, and the quest is medium for it.\n\nTwo things cost this quest at validate. 'Traverser stone' is NOT a unique name in res/key_items.lua, so the resolver rejects it rather than guessing an id -- the requirement is still recorded, and validate will drop the entry and set items_partial itself, which is the honest degradation. And the Crimson traverser stone is the header's Reward, so it cannot be evidence even though it arrives mid-bullet. The 10,000 Cruor is currency and has no slot at all.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The Traverser stone key item name is not unique in the resource table, so the requirement will not resolve.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Abyssea / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Emissaries of God",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Esha'ntarl",
+   "zone": "Hall of the Gods",
+   "grid": null,
+   "raw": "Esha'ntarl, Hall of the Gods"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Transcendental Radiance"
+    },
+    "zone": "Qufim Island",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Traverser stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Follow the wall northwest from Home Point #1. Choose 'Proceed' to spend 10,000 Cruor; the Crimson traverser stone, the trip into Abyssea - Empyreal Paradox and the closing cutscene all follow from this one click."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Eye for Revenge",
+   "page_id": 56697,
+   "revision_id": 743626,
+   "source_sha256": "ddd1123351b8dbde64d4502adf216cc28f20b857cbeb92fb44a2157825f5f258",
+   "cache_file": "0056697_an_eye_for_revenge"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 3,
+   "dat_name": "An Eye for Revenge",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "pop_item_required"
+  ],
+  "notes": "A clean three-rung ladder with one real evidence point. The sub-bullet under bullet 2 is not commentary -- it holds the pop condition, so the Filthy Gnole Claw becomes step 2's item requirement and the Luisons that drop it become a mob with role drop, the same shape Divine Might uses for its ingredient mobs. The page never names a ??? for the pop, so none is invented and the step stays target none with Lugarhoo carrying the marker. Lugarhoo's eyeball is evidence on the kill, where it is obtained, and a requirement on the return -- never evidence twice. The Scarlet abyssite of furtherance is the header's Reward and is not used at all. Curilla (A) folds to the same key as the San d'Oria Curilla, so every step keeps its Abyssea - La Theine zone to separate them.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "alth / 5"
+   },
+   "prev": [
+    {
+     "title": "Lost Memories",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Curilla (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "E-3",
+   "raw": "Curilla (A) (E-3), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Curilla (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [
+     {
+      "name": "Vial of lambent potion",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the vial comes from the previous quest, so it is a requirement here and not evidence of anything done in this one"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "G/H-11",
+    "items": [
+     {
+      "name": "Filthy Gnole Claw",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Lugarhoo's eyeball",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Lugarhoo",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Luison",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "southwest of Veridical Conflux #05, on the (G-11)/(H-11) border. The claw drops from nearby Luisons. No proc is needed and every party member with the quest active gets the key item."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Curilla (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [
+     {
+      "name": "Lugarhoo's eyeball",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Basics",
+   "page_id": 281,
+   "revision_id": 696266,
+   "source_sha256": "c2be64d48bb7b111495392135079e52cc6b8d0c910c42ea3faa00c0440d0226a",
+   "cache_file": "0000281_the_basics"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 6,
+   "dat_name": "The Basics",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "evidence_ambiguous_common_item"
+  ],
+  "notes": "Bullet 1 sits under a 'Note' heading and is an eight-real-hour cooldown after The Clue, not a step -- and nothing in the packets can see it. Bullet 5 is the reward. Bullets 6 and 7 are the page's own '(Optional)' epilogue; they are kept as optional rungs in the order the page gives them rather than grouped, because bullet 7's 'one last time to conclude' reads as following bullet 6.\n\nThe deliberate omission is the Popoto. It is obtained at step 2 and is not in the header's Reward, so it is legal evidence -- but Popoto is one of the most commonly carried cooking ingredients in the game, and any player who happens to hold one would have the mark jump straight past Valgeir to the hand-in. That is a wrong marker for a real player, so it is left out and the note says why. The Mhauran couscous key item at step 1 is the anchor that actually carries this ladder; the gap from Valgeir to Rycharde falls back on the session latch. Valgeir has no grid anywhere on the page, so his steps carry the zone only.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Clue",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rycharde",
+   "zone": "Mhaura",
+   "grid": "H-8",
+   "raw": "Rycharde, Mhaura (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mhauran couscous",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "eight real hours must have passed since The Clue before he offers this. He will buy you a Ferry ticket to Selbina, but any route works."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Valgeir"
+    },
+    "zone": "Selbina",
+    "grid": null,
+    "items": [
+     {
+      "name": "Mhauran couscous",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he hands back a Popoto to deliver. The Popoto is NOT recorded as evidence -- it is a common cooking ingredient and holding one proves nothing about this quest."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Popoto",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the Tea Set arrives here; bullet 5 is that reward, not a further step"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Valgeir"
+    },
+    "zone": "Selbina",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page marks this Optional; extra dialogue only"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page marks this Optional; 'one last time to conclude the questline'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Missing in Action",
+   "page_id": 58988,
+   "revision_id": 626687,
+   "source_sha256": "6bf44a9ab7687e2a1804c2dddd37835d787c2a1b44e05b5c7ec3324d09d5a1f0",
+   "cache_file": "0058988_missing_in_action"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 48,
+   "dat_name": "Missing in Action",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "possible_unordered_group"
+  ],
+  "notes": "Five bullets, five steps, all inside Abyssea - Misareaux, and every one of the four NPCs resolves -- this is about as clean as an Abyssea page gets. The one judgement call is whether the three stranded soldiers are a group. The page does NOT say 'in any order': it gives them as a numbered route by Conflux (#3, #5, #6), and the rule is to read the page rather than to guess at the game, so they stay an ordered ladder. It is flagged, because a search-and-rescue of three scattered NPCs is exactly the shape that usually turns out to be unordered, and if a verifier confirms it they should share a group and draw at once.\n\nIron Eater's pearlsack is the only observable thing here and it lands on step 1 where it is granted. Mathurin (A) gets no grid because the page gives him none -- only 'Conflux #3' -- and a conflux number is not a grid reference. Iron Eater (A) folds to the same key as the Bastok Iron Eater, so the zone on every step is what keeps them apart.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Iron Eater (A)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "K-7",
+   "raw": "Iron Eater (A), Abyssea - Misareaux (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Iron Eater's pearlsack",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mathurin (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Conflux #3; the page gives no grid for him"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quasim (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "northeast corner of (G-5), out from Conflux #5"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fariel (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "south from Conflux #6, northwest corner of (G-8)"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "No Rime Like the Present",
+   "page_id": 98180,
+   "revision_id": 769296,
+   "source_sha256": "cfd08b20c8708ef241bdaf5b8763e5d89954a39d61dcffe5398dd21f4c04f247",
+   "cache_file": "0098180_no_rime_like_the_present"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 16,
+   "dat_name": "No Rime Like the Present",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "weather_unobservable"
+  ],
+  "notes": "Bullets 2 and 3 are one step: walking to (K-7/8) and waiting for weather is not a rung of its own, it is the precondition on the ??? that is standing right there. Merging them keeps the ladder honest at three rungs -- talk, take, return -- rather than padding it with a wait the addon cannot observe. The weather gate is the whole difficulty of this quest and none of it is visible: ice, snow or blizzard must be up before the ??? gives anything, and no packet reports weather. Inthius is named only as a forecaster in a sub-bullet, so he is advice and not a step; inventing a talk rung for him would put a marker on an NPC the quest never requires. The Rime ice fragment is a proper key item and lands on the examine where it is obtained, then becomes the requirement on the hand-in. The Quest Reqs field lists that same fragment, which is the quest describing its own mid-point rather than a real prerequisite.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Hegnor",
+   "zone": "Morimar Basalt Fields",
+   "grid": "K-10",
+   "raw": "Hegnor, Morimar Basalt Fields - (K-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hegnor"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-7/8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rime ice fragment",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "near Bivouac #1, on one of the coniferous trees. It only gives the fragment while ice, snow or blizzard weather is up, which the addon cannot see; Inthius forecasts the weather but talking to him is not a required step."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hegnor"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [
+     {
+      "name": "Rime ice fragment",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ }
+]

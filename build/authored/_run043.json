@@ -1,0 +1,1854 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Knight Stalker",
+   "page_id": 481,
+   "revision_id": 722906,
+   "source_sha256": "d1990f1f7c0e65602e7495a30648ed2914d495c8498996e32e7c9a97d0b1b437",
+   "cache_file": "0000481_knight_stalker"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 96,
+   "dat_name": "Knight Stalker",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "unnamed_target",
+   "bullet_split"
+  ],
+  "notes": "A clean Dragoon AF ladder that reads exactly as written. Bullets 2 and 3 are both Ceraulian and are merged -- consecutive talks on one NPC are one marker. Bullet 4 is split: getting a Kuftal Coffer Key is one thing you can be observed holding, opening the coffer is another and yields the [KI] Challenge to the Royal Knights, and both of the header's Item Reqs land as evidence that way. The coffer itself is deliberately unnamed: the page says only 'any coffer in Kuftal Tunnel' and never names the entity, so the target is none rather than a guessed 'Treasure Coffer'. Bullet 9 (find the ???) and bullet 10 (click it) are one examine; bullet 10's spawn and bullet 11's kill-then-check are a fight and a second examine, because the page really does say to click the same ??? again afterwards. The wyvern requirement is a spawn condition, not a step, and is carried as a note on the examine. Bullets 12 and 13 sit under the page's own 'Note:' heading and are explicitly 'not necessary', so they are optional epilogue talks. Drachen Armet is the header Reward and is not used as evidence. 'Repeatable: af' is the artifact-armour category leaking into the field and means false.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "San d'Oria / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Chasing Quotas",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "DRG"
+   ],
+   "repeatable": false,
+   "expansion": "zilart"
+  },
+  "start": {
+   "npc": "Rahal",
+   "zone": "Chateau d'Oraguille",
+   "grid": "H-9",
+   "raw": "Rahal, Chateau d'Oraguille (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Royal Knight Quarters; as a Dragoon"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ceraulian"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "inside Cargo Room A; speak to him once more after the cutscene -- bullets 2 and 3 are one marker"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Kuftal Coffer Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page says only 'Obtain a Kuftal Coffer Key' and never says where from, so no zone and no target"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [
+     {
+      "name": "Kuftal Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Challenge to the Royal Knights",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'use the key to open any coffer in Kuftal Tunnel' -- the page never names the coffer entity, so the target stays unnamed rather than guessed. A Survival Guide or UNM warp is the way in."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Temple of Uggalepih"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the Survival Guide is the fastest warp. Someone in the party must be on Dragoon with a wyvern out; everyone else can be any job and still gets the reward."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cleuvarion M Resoaix",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Rompaulion S Citalle",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "first map; the spot is in a hidden area the map draws at (F-9). Nothing spawns unless your wyvern is out."
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Rompaulion S Citalle",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10,
+     11
+    ],
+    "note": "only Rompaulion S Citalle has to be defeated; Cleuvarion M Resoaix can be left alone. Manageable at 60 with a full party of Trusts."
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the same ??? again once the NMs are dead; the cutscene and the Drachen Armet follow. The Armet is the header Reward, so it is not evidence."
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ceraulian"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "epilogue",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     12
+    ],
+    "note": "the page's own 'not necessary' -- an additional cutscene after the fight"
+   },
+   {
+    "n": 13,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "epilogue",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     13
+    ],
+    "note": "additional dialogue only"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ward Warden I (Vunkerl)",
+   "page_id": 58999,
+   "revision_id": 639827,
+   "source_sha256": "c9e1780878417f1425c9d3b014ec82d2680fb240e4a7b57a07c4125fdc047bd8",
+   "cache_file": "0058999_ward_warden_i_vunkerl"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 126,
+   "dat_name": "Ward Warden I (Vunkerl)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "unnamed_target"
+  ],
+  "notes": "Three real steps out of five bullets. The unnumbered line above bullet 1 is a daily lockout -- one Ward Warden / Desert Rain / Crimson Carpet per Vana'dielian day across all of Abyssea -- which nothing in the packets reports, so it is a flag and a note. Bullet 2 ('travel to the Target marked on your map') names no place at all: the trunk location is generated per run, so it merges into bullet 3's Repair Trunk rather than becoming a zone-less rung of its own, and that step keeps the zone but no grid. Bullet 3's long sub-bullet is packing advice -- sharp first, drop to round when the message changes, stop at 'about to reach the limit' -- and how full the sack is is not observable, so the only evidence in the quest is the [KI] Magicked hempen sack handed over at step 1. Bullet 5 is a Bastion outcome, not a step. Fame 'avun' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "Abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Vunkerl)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "I-9",
+   "raw": "Resistance Sapper (Vunkerl) (I-9), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magicked hempen sack",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00. The page reads 'This sack will disappear when you zone or log out only if it is filled first!' -- the draft had that inverted. Recorded as the page has it; the sentence is garbled either way, so nothing about the sack's survival is modelled."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [
+     {
+      "name": "Magicked hempen sack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "bullet 2's 'Target marked on your map' has no fixed location on the page, so it merges here. Pack sharp material first, switch to round when the message changes and stop at 'about to reach the limit' -- overpacking tears the sack and fails the quest. How full it is is not observable."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Magicked hempen sack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Cruor and Resistance Credits scale with how full the sack was"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Atop the Highest Mountains",
+   "page_id": 25395,
+   "revision_id": 767257,
+   "source_sha256": "7fc97cd5e55d510c13866c428a461ace95ba138533d44a641c4a2d328f21eb1e",
+   "cache_file": "0025395_atop_the_highest_mountains"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 129,
+   "dat_name": "Atop the Highest Mountains",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 7
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "unordered_group"
+  ],
+  "notes": "The whole quest is in the mangled wikitable at the top: the opening line 'Speak to Maat on a level 51 job' and the three-row Monster / Position / Key Item table are inside the [TABLE] block and carry no bullet numbers, so step 1 and the three collection steps have source_bullets [] or [1] and say so. The three frigicite are collected in any order, so they share a group and all three draw at once; because each cave yields a DIFFERENT key item, each step carries its own evidence without breaking the one-item-one-step rule, and the group shrinks as you collect. Since the February 2012 update the ??? at the far end of each cave always exists and gives the key item on touch, so the NMs need not be killed at all -- you can hold them, outrun them, or ride through the cave on a mount. ADVERSARY PASS: the three Boreal NMs were removed from mobs. role 'kill' asserts a kill the page explicitly denies ('you do not need to defeat the Notorious Monsters'), the corpus uses 'kill' only on fight steps and never on an examine, and the ??? already carries the marker and the grid, so the mob entry added nothing but a false instruction. Their names are kept in the step notes. Bullet 2 is Trust/Mount advice and not a step. The level 51 requirement is any job at 51, so jobs stays empty. All three frigicite resolve as key items and not as items.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: from the unnumbered [TABLE] block that opens the walkthrough ('Speak to Maat on a level 51 job'), which is why source_bullets is empty; the grid is the header's.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "In Defiant Challenge",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 51,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Maat",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Maat, Ru'Lude Gardens (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "A Unity level 125 warp reaches Xarcabard if you have never been."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Round frigicite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "frigicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the ??? is at the far end of the cave; Boreal Tiger guards it and, since the February 2012 update, does NOT have to be defeated -- hold it, outrun it or ride past on a mount -- so it is not recorded as a mob. Monster, position and key item come from the unnumbered table. Roughly 5 minute respawn, large aggro range, no draw-in unless engaged."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Square frigicite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "frigicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "same pattern; the guard is Boreal Coeurl and likewise need not be defeated. The page's own tester reports the Coeurl still drew in several times, so this is the one to be careful of."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Triangular frigicite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "frigicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "same pattern; the guard is Boreal Hound and likewise need not be defeated."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Round frigicite",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Square frigicite",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Triangular frigicite",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all three key items at once; the reward is the level 60 cap"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Moral Manifest?",
+   "page_id": 16,
+   "revision_id": 759827,
+   "source_sha256": "532784d8f1e295a879b18072cf22eb6598a5426e4f394ffd0275485b794f2eb2",
+   "cache_file": "0000016_a_moral_manifest"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 108,
+   "dat_name": "A Moral Manifest?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_disagrees_with_header",
+   "time_gated",
+   "crafting_step"
+  ],
+  "notes": "The header names Hooknox as the giver but bullet 1 says only 'Enter Altar Room for a cutscene that starts this quest' -- there is nobody to talk to, so step 1 is a zone entry and Hooknox is kept in start only because the header claims her and the name is on the page; if she is a cutscene-only Goblin the marker simply never appears. Altar Room resolves as a zone of its own (Castle Oztroja's inner sanctum), and the sub-bullet route -- past the left/right switch gate with the trap door, out at (G-7), back into the castle, then (G-10) -- is travel advice, so it is a note. Bullets 2 and 3 stay separate steps on Ponono, as talk-then-trade always does, because only the second one needs items; the 10,000 gil is carried in the items list since gil resolves as an item. Bullet 4 is a game-day wait and then a talk, modelled as the talk with the wait in the note, since game time is not observable. Bullet 5's crafting recipe was stripped by the prepass, so the synthesis is one obtain step whose evidence is the Yagudo Headgear itself. Bullet 7 spawns seven NMs but only the Yagudo Avatar has to die, and bullet 8 is a second check of the same Stone Lid, so those are three steps on one object. Tsoo's Headgear is in the header Reward and so is NOT used as evidence at bullet 9 even though it is genuinely obtained mid-quest -- the hard rule wins and the note records the cost. The final step is a zone-out-and-back with Tsoo's Headgear equipped; the Gold Beastcoin is a reward.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: synthesis; the recipe itself was stripped to a [CRAFTING RECIPE] placeholder by the prepass, so no ingredients beyond the Cutting are recorded",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": 60,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hooknox",
+   "zone": "Altar Room",
+   "grid": null,
+   "raw": "Hooknox, Altar Room"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Altar Room"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zoning in is what starts the quest -- there is no NPC to speak to. In through Castle Oztroja: past the left/right switch gate with the trap door, to (G-7) for a different map, right and straight to re-enter the castle, then (G-10). Declining costs you until the next Conquest Tally."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ponono"
+    },
+    "zone": "Windurst Woods",
+    "grid": "G-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ponono"
+    },
+    "zone": "Windurst Woods",
+    "grid": "G-12",
+    "items": [
+     {
+      "name": "Velvet Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rainbow Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gil",
+      "count": 10000,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one trade of both cloths and 10,000 gil"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ponono"
+    },
+    "zone": "Windurst Woods",
+    "grid": "G-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Yagudo Cutting",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "wait until the next game day first -- game time is not observable, so the wait is not a rung. Zoning is no longer required."
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo Cutting",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Yagudo Headgear",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Altar Room"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo Headgear",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vault quipus",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "wearing the Yagudo Headgear; the cutscene grants the [KI] Vault quipus"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Lid"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo Headgear",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Avatar",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Duu Masa the Onecut",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Fee Jugu the Ramfist",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Goo Pake the Bloodhound",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Kee Taw the Nightingale",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Laa Yaku the Austere",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Poo Yozo the Babbler",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the headgear must be equipped, not merely held"
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Avatar",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "only the Avatar; the other six despawn the moment it dies"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Lid"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo Headgear",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same lid again, still with the headgear equipped, for a cutscene"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Stone Lid"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo Headgear",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the headgear is swapped for Tsoo's Headgear. Tsoo's Headgear would be the natural evidence here, but it is in the header Reward, so the hard rule keeps it out and this step stays unobserved."
+   },
+   {
+    "n": 11,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Altar Room"
+    },
+    "zone": "Altar Room",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tsoo's Headgear",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "equip Tsoo's Headgear, zone out to the south and back in for the last cutscene and the Gold Beastcoin"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Proper Burial",
+   "page_id": 34237,
+   "revision_id": 764025,
+   "source_sha256": "e93af7c6f221b64ad32ebf7d88b753f334e809c21c4ef03dca6c3223bfd4c42e",
+   "cache_file": "0034237_a_proper_burial"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 87,
+   "dat_name": "A Proper Burial",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "repeating_loop",
+   "count_unobservable"
+  ],
+  "notes": "Four bullets, but bullet 3 is the whole quest and it forks. A dialogue choice at the past Offa sends you down either 'Somewhere in the City' (Markets > Markets (S) > Markets > Markets (S) trade > Markets > Markets (S) > Markets) or 'Conceal the burial spot with a Rock' (Markets > Markets (S) trade > Markets > Markets (S) > Markets); the choice itself is not observable and neither is any individual visit, so the branch is unmodelled and the shuttling is collapsed into one repeating_loop step whose note carries both orders verbatim. The recommended path is what the ladder is shaped to: a first return to present Offa, the Fish Bones trade to Offa (S), then the remaining alternation. The Rolanberry that ends bullet 3 would be the natural evidence for that loop, but it is in the header Reward, and it is also an ordinary AH fruit anyone might be carrying, so it is left out on both counts. Fish Bones is the header's Item Req and is the one honest evidence in the quest, though 'some Fish Bones' gives no count and 1 is assumed. Present and past Offa are one name in two zones; the past one is written 'Offa (S)' as the page writes it, which the normaliser folds to both the (S) and the plain key. Demoted to medium for the fork and the unstated visit counts. ADVERSARY PASS: the Fish Bones that are step 3's evidence are traded away at step 5, so the quest's one observable goes false again the moment it is used and the ladder drops back to the bottom for the whole second half. consumed_key_item belongs in review_flags and this pass may not add it; the ladder itself is unchanged and the quest stays medium, now for three reasons rather than two.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Offa",
+   "zone": "Bastok Markets",
+   "grid": "F-10",
+   "raw": "Offa - Bastok Markets (F-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Offa"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Offa (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the young Offa of the past. He offers two options here -- 'Somewhere in the City' or 'Conceal the burial spot with a Rock' -- and the choice decides how many round trips follow. The page gives him no grid."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fish Bones",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'obtain some Fish Bones from the auction house' -- no count is given, so 1 is assumed"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Offa"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the first return visit to present Offa; on the longer 'Somewhere in the City' path there is an extra Markets (S) then Markets pair before the trade below"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Offa (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fish Bones",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Fish Bones go to the past Offa on both paths -- on the second visit on the recommended path, on the fourth on the longer one"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Offa"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "keep shuttling: after the trade the recommended path is Markets > Markets (S) > Markets, and the longer one Markets > Markets (S) > Markets as well, speaking to Offa each time, until the last present-day conversation hands you a Rolanberry. No individual visit is observable, so the whole loop is this one rung. The Rolanberry is a header Reward and an ordinary AH item, so it is not used as evidence."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Offa (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Rolanberry",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "one more trip to the past, whichever path you took"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Offa"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he ends the quest and gives the Withered Berry"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Frozen Flame Redux",
+   "page_id": 67145,
+   "revision_id": 757883,
+   "source_sha256": "41713d871182f6e58567bfa67ff4354f29fa5834e4d26239bd32e10eba607b22",
+   "cache_file": "0067145_frozen_flame_redux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 75,
+   "dat_name": "Frozen Flame Redux",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item"
+  ],
+  "notes": "Bullet 2 is not a step, it is what bullet 1 gives you, so it becomes step 1's evidence. Of the two key items only the [KI] Experiment cheat sheet is used: the [KI] Snoll reflector is plainly the thing that becomes the [KI] Frosted snoll reflector at the Impact Point (ids 1735 and 1736 sit next to each other), and an AND-list over both would read false the moment step 4 succeeds, exactly the trap As Thick as Thieves records. Bullet 4 is an observation about where the NM appears and bullet 6 is how to use it, so bullets 4 to 6 are one fight. That fight is unusual and the note says so: you attack the Frost Bomb Mk-II to RAISE its HP past 50%, then pull it to the Impact Point so it uses Hypothermal Combustion on the point -- role 'kill' is the closest the schema has to 'this is the thing you engage', and killing it is not the goal. Disengaging fails the quest outright. The 25-completions fame line, the reward table and the 'zoning is required to repeat' line are not steps. Fame 'aule' is an Abyssea zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "Abyssea"
+  },
+  "start": {
+   "npc": "Guilboire (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Guilboire (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guilboire (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Experiment cheat sheet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Conflux #7. He also hands over the [KI] Snoll reflector, which is not used as evidence because it becomes the Frosted snoll reflector at step 4."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Impact Point"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-5",
+    "items": [
+     {
+      "name": "Snoll reflector",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "north of the Conflux"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Frost Bomb Mk-II",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "it spawns west of the Impact Point. Attacking it RAISES its HP -- get it to at least 50% (higher pays more Cruor), then pull it onto the Impact Point, where it uses Hypothermal Combustion regardless of TP and damages the point, not you. Do NOT disengage: that fails the quest, which also makes Trusts risky if they take hate."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Impact Point"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Frosted snoll reflector",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "every player who clicks the point before the Combustion gets one off the same Frost Bomb Mk-II"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Guilboire (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Frosted snoll reflector",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "25 completions max this zone's fame; you must zone before repeating it"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Honor Under Fire",
+   "page_id": 44855,
+   "revision_id": 751337,
+   "source_sha256": "ce1d4e16c14bfe1f703992f0c7f21faa405eea300c6065496999918e514b115b",
+   "cache_file": "0044855_honor_under_fire"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 43,
+   "dat_name": "Honor Under Fire",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item"
+  ],
+  "notes": "Straight ladder, two zones, one real evidence point. Bullets 5 and 6 are the same Beastman Ensign twice in a row -- a cutscene then the click that opens the battlefield -- so they are one examine and the battlefield fight is split off, since a fight and an examine are not the same rung. The [KI] Flare grenade from bullet 4 is the quest's only observable, and it is carried as the items requirement on the Ensign step; the page never says it is consumed there, hence the flag rather than a second evidence claim. The replicas of Volker, Five Moons and Nicolaus are recorded only in the note: they are phases of the Arch Ahriman fight, the page says the battle can now end after a single Arch Ahriman without any of them appearing, and naming them as mobs would assert kills that may never happen. Everything under bullet 6 is tactics. The closing 'if you are working on missions then return to Crossroads of Time' is mission advice, not a step. Fame 'Wings of the Goddess' is not one of the nine regions, so it gates nothing and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Quelling the Storm",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Gentle Tiger",
+   "zone": "Bastok Markets (S)",
+   "grid": "H-6",
+   "raw": "Gentle Tiger, Bastok Markets (S) (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "just east of the bridge; the zone's Survival Guide or an Atmacite Refiner is the quickest way there"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Beastman Ensign"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Flare grenade",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Beastman Ensign"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "J-7",
+    "items": [
+     {
+      "name": "Flare grenade",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "one cutscene first, then examine it again to open the battlefield -- bullets 5 and 6 are one marker on the same ensign"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Arch Ahriman",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "a battlefield entered at the ensign. The Ahriman may vanish and put up replicas of Volker, Five Moons or Nicolaus in turn -- they are phases, not separate mobs, and since January 2021 the fight can end on a single Arch Ahriman with no replicas at all. Expect Sleepga II, Blindga and Poisonga II; easy at 99 with Trusts."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "keep the Elixir Tank for The Truth Lies Hid"
+   }
+  ]
+ }
+]

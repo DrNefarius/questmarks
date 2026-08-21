@@ -1,0 +1,1632 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Tenshodo Showdown",
+   "page_id": 297,
+   "revision_id": 771149,
+   "source_sha256": "f7cb926916982717fabe16b110952fa11b0980dc41728c3bd2f140a33ae85ae3",
+   "cache_file": "0000297_the_tenshodo_showdown"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 69,
+   "dat_name": "The Tenshodo Showdown",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "membership_gate_unmodelled",
+   "mission_conflict_unmodelled"
+  ],
+  "notes": "A clean nine-bullet page that is really six rungs, because three of the bullets are outcomes rather than actions. Bullet 3 ('you will be given the Tenshodo envelope') is what bullet 2's cutscene hands you, and bullet 8 ('you will receive the Signed envelope') is what bullet 7's trade hands you -- both fold into the step that earns them and become its evidence. Bullet 5 is background ('Quadav Stew can only be stolen from certain Quadavs in Beadeaux') attached to bullet 6's actual instruction, so the two merge.\n\nFour evidence points, all distinct key items or items and each obtained at the step that carries it: Letter from the Tenshodo, Tenshodo envelope, Quadav Stew, Signed envelope. The stew is evidence on the theft step and a held requirement on the trade step, which is legal and is the point -- holding it draws Elfriede.\n\nThe Beadeaux step is 'obtain' and not 'fight': the page says Steal, not kill, and role 'drop' is the nearest thing the schema has for a Steal. Bullet 5's own sub-bullet says the stew may be taken BEFORE the trip to Selbina, so the order of steps 3 and 4 is free; the ladder keeps the page's order because Elfriede must be talked to before she will accept a trade, and holding the stew early simply pre-satisfies step 4.\n\nTwo gates cannot be modelled. The 'Tenshodo Membership' the sub-bullet under bullet 1 demands is a separate quest chain with no header slot and no observable predicate here, and the Notes section's warning that an active Windurst Mission 2-1 blocks the quest entirely is a mission-state check nothing in the packets reports. Notes bullet 2 (Nanaa Mihgo gives several quests, so you may have to talk past them) is advice, not a rung. 'Repeatable: af' is the artifact-armour category leaking into the field and means false.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: the schema has no theft role so the four Quadavs are recorded as 'drop'.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [],
+   "level": 40,
+   "jobs": [
+    "THF"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nanaa Mihgo",
+   "zone": "Windurst Woods",
+   "grid": "J-3",
+   "raw": "Nanaa Mihgo, Windurst Woods (J-3)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from the Tenshodo",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a Thief. You must already hold the Tenshodo Membership to get past this, and having Windurst Mission 2-1 active blocks the quest outright -- neither is observable. She gives several quests, so you may have to talk past unrelated dialogue."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Harnek"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tenshodo envelope",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "inside the Tenshodo. Bullet 3 is the cutscene's outcome, not a separate rung."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Elfriede"
+    },
+    "zone": "Selbina",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in the Shepherd's Muster Inn. The cutscene is with Sneaking Tiger, who asks for the Quadav Stew; Elfriede is the entity you click."
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Quadav Stew",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Garnet Quadav",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Silver Quadav",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Zircon Quadav",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Bronze Quadav",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "STEAL, not kill Any of the four will do. The page says this may be done before the trip to Selbina, so the order of steps 3 and 4 is free."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Elfriede"
+    },
+    "zone": "Selbina",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Quadav Stew",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Signed envelope",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "bullet 8 is this trade's outcome, not a rung"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Harnek"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the Marauder's Knife is the reward, so it is not evidence for anything"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Prelude of Black and White",
+   "page_id": 492,
+   "revision_id": 763180,
+   "source_sha256": "0def543ea9359ef28a7730bde58483c65324d587218019ff202aa9beeceb6e77",
+   "cache_file": "0000492_prelude_of_black_and_white"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 88,
+   "dat_name": "Prelude of Black and White",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 4
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled",
+   "start_disagrees_with_header"
+  ],
+  "notes": "The same door pattern as Under Oath, and it pays off the same way: the header names Pieuje, but Pieuje never appears in the walkthrough at all -- what starts the quest is examining 'Door: Prince Regent's Rm' at (H-8), and that door is a real targetable entity the normaliser folds to the client's 'Door:Name' form. Start keeps Pieuje because the header's grid agrees with the door's and he is a live NPC in the same room, so the marker lands in the right place either way; the disagreement is flagged rather than silently reconciled, and step 1 targets the door because that is what you click.\n\nBullet 2 is an OR the schema cannot hold: Yagudo Abbots in Castle Oztroja OR in Castle Zvahl Keep, and a step has exactly one zone. Castle Oztroja is recorded because it is the branch the page leads with and the only one it gives directions for (behind the brass door at G-8 on map 3, levers behind the secret door at I-10); the Zvahl alternative is in the note and the branch is flagged. Bullet 3 is entirely commentary on where those Abbots stand, so it merges into bullet 2's step.\n\nThe Moccasins step has no zone and no target on purpose -- 'Find a pair of Moccasins' is a shopping instruction, satisfied at the Auction House, off multiple enemies, or from a level 59 Leathercraft synth, none of which is a place. It keeps its rung because holding the shoes is genuinely observable and is half of the final trade. The order of the shoes and the holy water is free; the ladder keeps the page's order because only the Abbot step can draw anything anyway.\n\n'Quest Reqs: Ability to access Chateau d'Oraguille' expands in the sub-bullets to San d'Oria rank 2, or Bastok/Windurst Mission 2-3 or later -- no schema slot and no observable predicate, so it is flagged and gates nothing. 'Repeatable: af' means false.\n\nSTAGE D: demoted to medium over the Moccasins rung. The draft says itself that the order of the shoes and the holy water is free, and the position rule is a high-water mark over positive evidence -- so the later of two free-order rungs wins whichever way round the player does them. That is harmless when both mis-advances land in the same place, but here it does not: Moccasins are a level 1 auction-house commodity with a resource id, the sweep reads safe, storage, locker and the wardrobes as well as inventory, and a stray pair sitting in a mule bag from a hundred levels ago satisfies step 3 before step 2 has been touched. The mark then reads 4 and the marker moves off Castle Oztroja and onto Narcheral in Northern San d'Oria, for a player who has no holy water and cannot hand anything in. The evidence is kept rather than stripped -- without it the ladder never reaches the turn-in at all, which is worse on the ordinary path -- but the free order is genuinely not expressible here and the quest should not claim high.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: and cannot be expressed as a second zone on one step, so only Oztroja is recorded.\n  step 3: STAGE D: Moccasins are generic auction-house stock, not a quest item, so holding a pair proves nothing about this quest and can pre-advance the ladder past the Castle Oztroja rung.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [
+    {
+     "title": "Messenger From Beyond",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "WHM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Pieuje",
+   "zone": "Chateau d'Oraguille",
+   "grid": "H-8",
+   "raw": "Pieuje, Chateau d'Oraguille (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Prince Regent's Rm"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a White Mage. You must be able to enter Chateau d'Oraguille: San d'Orians need rank 2, players of other nations need Bastok or Windurst Mission 2-3 or later. The header names Pieuje here; the walkthrough names only the door."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Yagudo Holy Water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Yagudo Abbot",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Behind the brass door at (G-8) on map 3; the lever combination is behind the secret door at (I-10) on the same map. Castle Zvahl Keep is an equally valid alternative Abbots at (G-9) and (G-10) on map 2, fewer of them but 1-7 levels lower."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Moccasins",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Auction House, dropped from multiple enemies, or a level 59 Leathercraft synth no zone, so this rung is deliberately unmarkable. Order against step 2 is free."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Narcheral"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [
+     {
+      "name": "Moccasins",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Yagudo Holy Water",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "both together. The Healer's Duckbills are the reward, so they are not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Searching for the Right Words",
+   "page_id": 38715,
+   "revision_id": 677082,
+   "source_sha256": "c15635f5f23f42eba51cfb8dc32a55e39fbf23c03448df966c7425d3a0565fa0",
+   "cache_file": "0038715_searching_for_the_right_words"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 66,
+   "dat_name": "Searching for the Right Words",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "moon_phase_unobservable",
+   "unnamed_zone",
+   "bullet_split"
+  ],
+  "notes": "Five walkthrough bullets and then a whole '== Agas ==' section that is a mob dossier, not a continuation: bullets 6 to 12 are the New Moon restriction, Level 5 Petrify, spell lists, and four different soloing strategies. None is a rung. Only bullet 6 carries anything real -- Agas will not spawn during a New Moon -- and the addon can see neither moon phase nor game time, so both that and the 19:00-04:00 window live in notes.\n\nBullet 4 is two actions in one sentence: 'once defeated, examine the ??? again'. It splits into the kill and the second examine, both citing bullet 4, exactly the case the guide calls out. The Moondrop key item sits on the second examine because that is where it is handed over -- the first examine only spawns the NM, and the kill drops nothing.\n\nBullet 1 is the weak spot. 'Speak to Kurou-Morou after completing the prerequisite quests' names an NPC and no place at all, and the only zone on the page belongs to Ilumida. Guessing Upper Jeuno for him would be inference dressed as fact, so his zone is null: the row then matches wherever he actually stands, which is the honest behaviour. That step alone is medium.\n\nStart stays with the header. Ilumida is the one who gives the cutscene that opens the quest in bullet 2; Kurou-Morou is a gate you pass through first.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 6,
+    "raw": "Jeuno / 6"
+   },
+   "prev": [
+    {
+     "title": "A Candlelight Vigil",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Rubbish Day",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Never to Return",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ilumida",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Ilumida, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kurou-Morou"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page gives him no zone and no grid, so none is recorded rather than inferred from Ilumida's. All three previous quests must be finished first."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ilumida"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "talk until the cutscene comes; she asks for a Moondrop but hands over nothing here"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Agas",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "2nd map, and only between 19:00 and 04:00 game time, which the addon cannot see. Agas will not pop during a New Moon either. Home Point #1 (Cloister of Storms) is the close warp."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Agas",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "an Ahriman. Level 5 Petrify hits anyone whose level divides by 5. Only one person needs to have spawned it for the whole party to get their Moondrop."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Moondrop",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same ??? again, after the kill, and again only between 19:00 and 04:00"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ilumida"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Moondrop",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "3,000 gil and a Scroll of Sleepga II are the reward, so neither is evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beam Me Up...No, Not There!",
+   "page_id": 92011,
+   "revision_id": 271878,
+   "source_sha256": "d834f05606914fbcc5bcf87eca61287434b4ed86a440e666ce180d438c973752",
+   "cache_file": "0092011_beam_me_up_no_not_there"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 174,
+   "dat_name": "Beam Me Up...No, Not There!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "random_destination",
+   "unnamed_zone",
+   "repeatable_evidence_may_persist"
+  ],
+  "notes": "Three bullets, three rungs, and the middle one is a zone the page cannot name because the game picks it at random. The whole point of the quest is that you are warped somewhere unexpected, so the Geomagnetic Fount step gets zone null and grid null; the Fount is a real named entity, so the row still draws wherever the fount you were dumped next to happens to be. That is the best this schema can do and it is why the quest is medium rather than high.\n\nThe three sub-bullets under bullet 2 -- 'tough as butter', 'tough as nails', 'tough as diamond' -- are a difficulty choice with a reward table hanging off each, not three different objectives, so they are one step and the table is not recorded at all. The sub-bullet under bullet 3 (failing earns you one Trail Cookie and you may retry) is an outcome, not a rung.\n\nThe unnumbered line above bullet 1 ('you must zone after completing Further Founts before you are able to accept this quest') is a precondition on a previous quest, not a step.\n\nOne real risk is recorded rather than hidden: the Geomagnetic compass is handed over at bullet 1 and is the only observable thing in the quest, but this is a repeatable and the page never says whether the compass is consumed on completion. If it survives a run, holding it stops proving that THIS run's step 1 is done and the ladder will sit pre-advanced at step 2 from the moment you first accept the quest. It is still recorded, because it is genuinely granted at step 1 and the alternative is a quest with no signal at all. The Prototype attuner is carried in from Further Founts, so it is a held requirement on step 2 and never evidence.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Further Founts",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Anastase",
+   "zone": "Ru'Lude Gardens",
+   "grid": "G-9",
+   "raw": "Anastase, Ru'Lude Gardens (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Geomagnetic compass",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "select the blank option. You must have zoned since finishing Further Founts. See the quest note on whether the compass survives a completed run."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Geomagnetic Fount"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Geomagnetic compass",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Prototype attuner",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the destination is RANDOM, which is why no zone is recorded. Pick one of three difficulties -- tough as butter, tough as nails, tough as diamond -- and the harder ones can drop you straight into aggro even at 99. Realign the Prototype attuner against the Fount in whatever zone you land in; Escape can reposition you to a nearer dungeon entrance where one exists."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "experience, Trail Cookies and conquest points scale with the difficulty you chose, so all of it is reward and none of it is evidence. Returning after a failure still gets you one cookie and you may try again."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (Konschtat)",
+   "page_id": 56727,
+   "revision_id": 627902,
+   "source_sha256": "eb55840b92605ba769cd15f7c9a6f58bb062cfb0589cfee5ef17e24204c9f044",
+   "cache_file": "0056727_a_mightier_martello_konschtat"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 152,
+   "dat_name": "A Mightier Martello (Konschtat)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item",
+   "unnamed_grid",
+   "zoning_forfeits_quest"
+  ],
+  "notes": "Five bullets, three rungs, and the merge in the middle is the whole judgement. Bullets 2, 3 and 4 are one interaction with one Martello: find it, choose 'Prepare to upgrade martello', confirm, then stand where the menu tells you. 'Find a Martello in the zone' is not an action, it is where the next action happens, and the menu confirm is not a rung the player can be tracked through. Splitting them into three would produce two markers on the same object and two rungs nothing observable ever crosses.\n\nBoth key items are honest evidence and neither is duplicated: the Fuel reservoir is handed over at bullet 1 and the Cracked fuel reservoir replaces it at bullet 4 -- the page even notes the swap is silent in the log, which is exactly the kind of signal the addon can see and the player cannot. That gives this repeatable a real two-point ladder.\n\nThe page names no grid for anything. Machine Outfitters sit 'near the entrance of zone' and Martellos are 'usually around the various Confluxes, or you can see a list on the Martello page' -- a cross-page reference this stage does not follow -- so both rows carry the zone and nothing finer.\n\nThe standing line above bullet 1, that only one Refuel and Replenish or A Mightier Martello quest may be completed per Vana'dielian day regardless of Abyssea area, is a real gate on a repeatable and nothing in the packets reports Vana'diel days. Flagged, modelled nowhere. The other hazard is worth recording too: zoning at any point forfeits the key item and the run. Fame 'akon' is an Abyssea zone code and not one of the nine regions, so region is null and only raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "akon / 3"
+   },
+   "prev": [
+    {
+     "title": "Of Malnourished Martellos",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Konschtat)",
+   "zone": "Abyssea - Konschtat",
+   "grid": null,
+   "raw": "Machine Outfitter (Konschtat), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Konschtat)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Do NOT zone after this -- you lose the key item and start over. Only one Refuel and Replenish or A Mightier Martello may be completed per Vana'dielian day across all of Abyssea."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "one interaction, not three: pick 'Prepare to upgrade martello', confirm, then stand where told. The LOG and the MENU name different directions -- follow the menu. Martellos are usually near the Confluxes and the page gives no grids. One already at 100% still works. The Fuel reservoir silently becomes the Cracked fuel reservoir here, which is the only progress signal in the quest."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Konschtat)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cruor varies with the direction the upgrade was finished from, so it is a reward and not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (Vunkerl)",
+   "page_id": 59020,
+   "revision_id": 639744,
+   "source_sha256": "076555075e73d3276545d798c1aa60c718848be939c9e6b71b33c1cac2c507d6",
+   "cache_file": "0059020_a_mightier_martello_vunkerl"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 156,
+   "dat_name": "A Mightier Martello (Vunkerl)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item",
+   "unnamed_grid",
+   "zoning_forfeits_quest",
+   "header_fame_mismatch"
+  ],
+  "notes": "The Vunkerl twin of A Mightier Martello (Konschtat) and read the same way: bullets 2, 3 and 4 are one interaction with one Martello -- locate it, choose 'Prepare to upgrade martello', confirm, stand where the menu says -- so they merge into a single rung rather than becoming two markers on the same object and two rungs nothing observable ever crosses. The Fuel reservoir at bullet 1 and the Cracked fuel reservoir that silently replaces it at bullet 4 are the two evidence points, neither duplicated.\n\nThe page's header is internally inconsistent and it is worth saying so rather than quietly picking one: Fame is 'aatt' at FLevel 2, which is the Attohwa code on a quest whose Start, description and every walkthrough bullet are Vunkerl, and the category list carries both 'Abyssea - Attohwa Quests' and 'Abyssea - Vunkerl Quests'. It looks like the page was copied from an Attohwa sibling. Nothing is lost by it -- neither code is one of the nine fame regions, so the region is null either way and only the raw string survives -- but the mismatch is flagged. Unlike the Konschtat version this one has no Previous quest.\n\nNo grid anywhere: the Outfitter is only 'near the entrance of zone' and Martellos are 'usually around the various Confluxes, or you can see a list on the Martello page', a cross-page reference this stage does not follow. The daily limit above bullet 1 -- one Refuel and Replenish or A Mightier Martello per Vana'dielian day across all of Abyssea -- and the rule that zoning forfeits the key item are both real and both unobservable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aatt / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Vunkerl)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": null,
+   "raw": "Machine Outfitter (Vunkerl), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Do NOT zone after this -- you lose the key item and start over. Only one Refuel and Replenish or A Mightier Martello may be completed per Vana'dielian day across all of Abyssea."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "one interaction, not three: pick 'Prepare to upgrade martello', confirm, then stand where told. The LOG and the MENU name different directions -- follow the menu. Martellos are usually near the Confluxes and the page gives no grids. One already at 100% still works. The Fuel reservoir silently becomes the Cracked fuel reservoir here, which is the only progress signal in the quest."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cruor varies with the direction the upgrade was finished from, so it is a reward and not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Tea with a Tonberry?",
+   "page_id": 501,
+   "revision_id": 755503,
+   "source_sha256": "6d20aa09810d725420c5b385b36fdb2d99cf246af71a5bd9e1ab141894670ee3",
+   "cache_file": "0000501_tea_with_a_tonberry"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 109,
+   "dat_name": "Tea with a Tonberry?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "bullet_split",
+   "repeatable_unstated",
+   "zone_inferred_from_resolver"
+  ],
+  "notes": "Ten bullets across six zones and it reads cleanly, with both of the header's Item Reqs -- Attohwa Ginseng and Treasury Gold -- earning their own farming rung and their own evidence, which is what a well-formed page looks like.\n\nTwo merges and one split. Bullet 3 ('enter Carpenters' Landing by taking the entrance from Jugner Forest (J-8)') is routing to the NPC in bullet 4, not a destination of its own, so it folds into Anguenet's step; a travel rung immediately before a marked NPC in the same zone adds a marker and tells the player nothing the Anguenet marker does not. Bullet 5 (buy a ticket, board the barge) folds into bullet 6 for a harder reason: the page names nobody to buy the ticket from, so that rung would have no target at all, while Riche is a real name the moment you are aboard. The 00:50 departure survives as a note. Bullet 9 splits the way the guide describes -- 'after the Hematic Cyst is defeated, check the ??? again' is a kill and an examine.\n\nThe barge step's zone is the one soft call. The page sends you to 'Central Landing via Emfea Way', and neither resolves as a zone; Carpenters' Landing does, and the barge boards from the docks beside Anguenet without leaving it, so Carpenters' Landing is recorded and that step alone is medium.\n\nBullet 6 is worth reading properly: Riche does not give you anything, he TAKES the Tonberry blackboard. So the blackboard is evidence on the Anguenet step that hands it over and only a held requirement here, and the ladder crosses the gap after it on the Treasury Gold instead. Bullet 9's cutscene is the quest's climax but a cutscene is not observable, so that step carries no evidence and the Willpower Torque is a reward.\n\n'Repeatable' is blank in the header rather than Yes or No. Read as false, which is the safe default, and flagged.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: 'Central Landing' and 'Emfea Way' do not resolve as zones and the barge does not leave Carpenters' Landing, so that is the zone recorded.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 4,
+    "raw": "San d'Oria / 4"
+   },
+   "prev": [
+    {
+     "title": "Signed in Blood",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Sobane",
+   "zone": "Southern San d'Oria",
+   "grid": "D-6",
+   "raw": "Sobane, Southern San d'Oria (D-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sobane"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must have zoned since finishing Signed in Blood"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Attohwa Chasm",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Attohwa Ginseng",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Gallinipper",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Ogrefly",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Monarch Ogrefly",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any of the three drops it; the page gives no grid"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Anguenet"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Attohwa Ginseng",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tonberry blackboard",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "in from Jugner Forest (J-8), or the Carpenters' Landing Survival Guide, which lands right beside him -- bullet 3 is routing to this NPC, not a destination of its own"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Riche"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tonberry blackboard",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Buy a ticket and board the barge for Central Landing via Emfea Way, from the docks beside Anguenet; it leaves at 00:50 every game day, which the addon cannot see. Riche is aboard ask him ALL FIVE questions, after which he takes the Tonberry blackboard, so nothing is gained here."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Treasury Gold",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Shadow",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "only one is needed per party"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Davoi",
+    "grid": "J-11",
+    "items": [
+     {
+      "name": "Treasury Gold",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Hematic Cyst",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Davoi",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Hematic Cyst",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the NM drops nothing the quest needs, so there is no evidence here"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Davoi",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the same ??? again, after the kill; a cutscene follows and a cutscene is not observable"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sobane"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the Willpower Torque and the title Talks with Tonberries are the reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crimson Carpet I (Attohwa)",
+   "page_id": 59009,
+   "revision_id": 640324,
+   "source_sha256": "73e50e24d2ddf70f0f4885539ba28c71fa62cbbbc08e78ce52cef91e158254db",
+   "cache_file": "0059009_crimson_carpet_i_attohwa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 136,
+   "dat_name": "Crimson Carpet I (Attohwa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item",
+   "unnamed_grid",
+   "distance_gate_unobservable"
+  ],
+  "notes": "Structurally the same shape as the two Martello quests in this batch and merged on the same reasoning: bullets 2, 3 and 4 are one visit to one Rear Trap. Bullet 2 is walking to it, bullet 3 is the check that tells you which distance to stand at, and bullet 4 is the second check that performs the infusion. Only the last of those changes anything, and the first check is not something the player can be tracked through, so three bullets become one rung on one object rather than two markers on the same trap.\n\nThe evidence is unusually good for a repeatable and the page says so itself: bullet 4's sub-bullet notes you obtain the Paralysis trap fluid bottle 'but you will have no indication of this'. The addon can see exactly the key item the player cannot, which is the best case this schema has. The Paralysis trap fluid at bullet 1 and the bottle at bullet 4 are two distinct key items, neither duplicated.\n\nThe distance mechanic is real and completely unobservable: 1 yalm is just inside the fringe of the trap, 2 is beside it without touching, 5 is the maximum, and the Cruor and Resistance Credits scale with how accurately you stood. Nothing in the packets reports position relative to an object, so it is a note and a flag.\n\nThe Sapper is gridded at (I-9) near Veridical Conflux #00. The Rear Trap has no grid at all -- the page places it only as 'a 30 second walk southwest of the Resistance Sapper' -- so that row carries the zone and nothing finer. The standing line above bullet 1, one Ward Warden / Desert Rain / Crimson Carpet completion per Vana'dielian day regardless of Abyssea area, is a real gate on a repeatable that nothing reports. Fame 'aatt' is an Abyssea zone code, not one of the nine regions, so region is null and only raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aatt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Attohwa)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "I-9",
+   "raw": "Resistance Sapper (Attohwa) (I-9), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Paralysis trap fluid",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Veridical Conflux #00. Only one Ward Warden / Desert Rain / Crimson Carpet quest may be completed per Vana'dielian day across all of Abyssea."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rear Trap"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Paralysis trap fluid",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Paralysis trap fluid bottle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "one visit, not three rungs: the nearest trap is about a 30 second walk southwest of the Sapper, the first check names the distance to stand at, then check again in place to infuse. 1 yalm is just inside the fringe, 2 is beside it without touching, 5 is the maximum -- none of which the addon can see. The page gives no grid. Success is silent apart from the log telling you to report back; the Paralysis trap fluid bottle arrives with no indication at all, which is exactly what makes this rung observable."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Paralysis trap fluid bottle",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Cruor, Resistance Credits and possibly an Empyrean +1 head seal, scaled by how accurately you stood -- all reward, so none of it is evidence"
+   }
+  ]
+ }
+]

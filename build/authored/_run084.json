@@ -1,0 +1,1482 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Behind the Smile",
+   "page_id": 37,
+   "revision_id": 755547,
+   "source_sha256": "1b5bd1cd51de3ef4e2f22d6871a74315e907344e502d49d20307b461db9ac8d9",
+   "cache_file": "0000037_behind_the_smile"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 77,
+   "dat_name": "Behind the Smile",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "A clean six-bullet page and the ladder follows it almost one-to-one. The only judgement calls: bullet 3 ('go to Carpenters' Landing where you will fight an Orc NM') is a journey plus a preview of bullet 4, so it carries no step of its own -- its two sub-bullets are zone-entry routing and fold into the ??? step's note. Bullet 5 is TWO actions in one sentence, the kill and the second touch, so it splits; the Red oil key item comes from the second touch, which is why the evidence sits on the examine and not on the fight. Red oil is a key item (id 704) and is NOT the header's reward -- the reward is Mannequin Pumps -- so using it as evidence is clean. The final talk carries the Red oil as items rather than evidence: it is what you must be holding to hand in. The ??? resolves as an object with no marker key, so steps 3 and 5 keep their rungs and lose their markers, which is the expected cost of a ???.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "It's Raining Mannequins",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Enaremand",
+   "zone": "Tavnazian Safehold",
+   "grid": "J-7",
+   "raw": "Enaremand, Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Enaremand"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "upper level, by Home Point #3. The header gives no grid; (J-7) is the walkthrough's."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fyi Chalmwoh"
+    },
+    "zone": "Mhaura",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the mannequin craftswoman the description points at"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bullheaded Grosvez",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "on a red mushroom near the southwest corner. In from Jugner Forest at (J-8), or the Carpenters' Landing Survival Guide via Norvallen, which lands one square east of the spot."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bullheaded Grosvez",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     5
+    ],
+    "note": "the Orc NM bullet 3 warns about"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Red oil",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, after Grosvez is dead"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Enaremand"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-7",
+    "items": [
+     {
+      "name": "Red oil",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "a talk, not a trade -- the key item goes on its own"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Gobbiebag Part III",
+   "page_id": 20678,
+   "revision_id": 702105,
+   "source_sha256": "bc2f9ea2441c4dd9598634a5fb15f80eedc58ea918ff016346c3943bd1b21df0",
+   "cache_file": "0020678_the_gobbiebag_part_iii"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 29,
+   "dat_name": "The Gobbiebag Part III",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Two bullets, two steps, one NPC -- so one marker either way, and readiness looks ahead across them. The four sub-bullets under bullet 2 are Auction House category paths, not steps. The '== Required Item Comparison ==' table is a price comparison (~54,000g of parts versus 100,000g for the stew) and is not a step. The OR is real and expressible: the four crafted materials as an AND-list, the single Goblin Stew 880 (item 4094, distinct from plain Goblin Stew 4465) as the alternative. There is no evidence anywhere -- the reward is inventory capacity, which no packet reports as an item, and holding the four materials is readiness for the trade rather than proof of progress.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "J / 1"
+   },
+   "prev": [
+    {
+     "title": "The Gobbiebag Part II",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Bluffnix",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Bluffnix, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in Muckvix's Junk Shop"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Tiger Leather",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gold Ingot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Velvet Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Painite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Goblin Stew 880",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all four in one trade, or a single Goblin Stew 880 instead"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Voidwatch Ops: Border Crossing",
+   "page_id": 83781,
+   "revision_id": 709743,
+   "source_sha256": "77da61d6a64acf7a72b98815c6de0dfadb27591968a03cb043ba4dfc57a5720f",
+   "cache_file": "0083781_voidwatch_ops_border_crossing"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 100,
+   "dat_name": "Voidwatch Ops: Border Crossing",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 5
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "keyitem_gate_unmodelled",
+   "reward_ki_is_midquest_evidence"
+  ],
+  "notes": "Three bullets, but bullet 2 is two NPCs in two different cities and bullet 3 is two different things, so the ladder is five rungs. The two briefings are an unordered set -- the page lists them as peers and the sub-bullet only insists both be started before any Voidwatch NM dies -- so they share a group and both draw at once. Step 4 ('complete both subquests') is a real thing the player must do and is kept as an unmarkable rung -- the two VW Op quests are separate quests with their own pages and nothing here can track them. 'Quest Reqs: Adventurer's Certificate' is a key-item prerequisite with no slot in the schema; 'Level 75 or higher' from the same field is a plain level gate and is recorded as one, even though the header's own Level row is empty. VERIFY: the draft put the Ashen stratum abyssite on step 1 as evidence, on the strength of bullet 1 saying Kieran hands it over at the start, and flagged that it was breaking hard rule 7 to do it. It is verbatim the header's Reward line, so the evidence is removed and the quest now has no observable at all -- nothing advances this ladder and it will sit on Kieran until a human overrides it. That is the deliberate cost of the rule; if the walkthrough is judged to beat the header here, step 1 is where the abyssite goes back. CORRECTION: hard rule 7 has since been rewritten so that a reward IS evidence when the walkthrough hands it over before the last bullet, and this is exactly that case -- bullet 1 of 3 gives you the Ashen stratum abyssite -- so it is restored as step 1's evidence and the ladder has an observable again.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The abyssite is ALSO listed verbatim on the header's Reward line, but it is still this step's evidence: rule 7 only bars a reward the walkthrough never grants earlier, and this one is granted at bullet 1 of 3 rather than paid out at completion, so holding it proves this bullet is behind you. Resolves as ki id 1447.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "None / N/A"
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "zilart"
+  },
+  "start": {
+   "npc": "Kieran",
+   "zone": "Norg",
+   "grid": "I-8",
+   "raw": "Kieran, Norg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kieran"
+    },
+    "zone": "Norg",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Ashen stratum abyssite",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Cutscene. Bullet 1 hands over the [KI] Ashen stratum abyssite here 'Speak to Kieran in Norg (I-8) to receive a cutscene and the Key Item'. The header gives no grid; (I-8) is the walkthrough's."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hildegard"
+    },
+    "zone": "Kazham",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "briefings",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "begins VW Op. 054: Elshimo List. Either briefing may be taken first, but BOTH must be open before you kill any Voidwatch NM."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gushing Spring"
+    },
+    "zone": "Rabao",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "briefings",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "begins VW Op. 101: Detour to Zepwell. Same warning as the Kazham briefing."
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "finish both subquests. They are separate quests on their own pages, so this rung has no target, no zone and nothing observable; it exists so the gap between the briefings and the hand-in is visible rather than silently skipped."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kieran"
+    },
+    "zone": "Norg",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gourmet",
+   "page_id": 25924,
+   "revision_id": 63770,
+   "source_sha256": "f2220577590180d349c6ca8d1ce7974b0c2062265eecfc7e4c82ac9bf3e5dd41",
+   "cache_file": "0025924_gourmet"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 12,
+   "dat_name": "Gourmet",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Four bullets, two steps. Bullet 3 (farm from Funguars, Saplings, Goblin Thugs or gardening, or buy at the Auction House, and avoid Wild Onions because cooks bid them up) is shopping advice, and bullet 4 is a repeat cooldown -- neither is a step. The three-way OR is the whole quest and it models exactly: Sleepshroom as the AND-list, Treant Bulb and Wild Onion as the two alternatives. The time of day does NOT gate completion -- the page says a mismatched item still completes it for 100g -- so nothing here is time-gated in the sense that would need flagging; the windows are recorded in the step note only. No evidence: the reward is gil, and holding one of the three mushrooms is readiness for the trade, not proof of a completed step. The NPC has no zone in the walkthrough at all; Bastok Markets (L-8) comes from the header's Start line.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Salimah",
+   "zone": "Bastok Markets",
+   "grid": "L-8",
+   "raw": "Salimah - Bastok Markets (L-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Salimah"
+    },
+    "zone": "Bastok Markets",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Salimah"
+    },
+    "zone": "Bastok Markets",
+    "grid": "L-8",
+    "items": [
+     {
+      "name": "Sleepshroom",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Treant Bulb",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Wild Onion",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any one of the three finishes it; the clock only changes the payout -- Sleepshroom 18:00-05:59 for 200g, Treant Bulb 06:00-11:59 for 200g, Wild Onion 12:00-17:59 for 350g, and 100g for a mismatch. Repeating requires zoning between trades."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Paying Lip Service",
+   "page_id": 213,
+   "revision_id": 751548,
+   "source_sha256": "176a9cb22d83500cfc0f35e7fa44dea1107c7045e596a748e06bbdb8bffd565d",
+   "cache_file": "0000213_paying_lip_service"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 60,
+   "dat_name": "Paying Lip Service",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "blocked_by_other_quest"
+  ],
+  "notes": "Two steps out of three bullets: bullet 3 is the reward split (150g for chips, 200g for shells) and is not a step. The OR carries different COUNTS on each side -- three Beehive Chips or two Remi Shells -- which items/items_alt express exactly. The sub-bullet 'Will not start quest if Chocobilious is active' is a genuine blocker but not a prerequisite in the gates sense: Chocobilious is a concurrent quest, not a finished one, so it goes in the step note and a flag rather than into gates.prev, where it would read as 'you must have completed it'. No evidence: the reward is gil, and the chips or shells are readiness for the trade.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Tapoh Lihzeh",
+   "zone": "Windurst Woods",
+   "grid": "I-8",
+   "raw": "Tapoh Lihzeh, Windurst Woods (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tapoh Lihzeh"
+    },
+    "zone": "Windurst Woods",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "a little northeast of Home Point #1. She will not open the quest at all while Chocobilious is active."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tapoh Lihzeh"
+    },
+    "zone": "Windurst Woods",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Beehive Chip",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Remi Shell",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "three chips (150g) or two shells (200g), in one trade. Chips are 40 gil each from Odoba at the Bastok Mines Alchemy Guild (K-6), Home Point #3 being the nearest warp; both drop in West Sarutabaruta, chips from bees and shells from river crabs."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Gobbiebag Part IV",
+   "page_id": 20677,
+   "revision_id": 702106,
+   "source_sha256": "22dce11f75497ff616b15fbfbe18f184fe06e10256363463e0074950dc7afc75",
+   "cache_file": "0020677_the_gobbiebag_part_iv"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 30,
+   "dat_name": "The Gobbiebag Part IV",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Structurally identical to Part III, with a different shopping list: Cermet Chunk, Darksteel Ingot, Silk Cloth and Goshenite as the AND-list, and the same Goblin Stew 880 escape hatch as the alternative. Sub-bullets are Auction House category paths and the '== Required Item Comparison ==' table is a price comparison (~53,000g against 100,000g), neither of which is a step. Two steps on one NPC means one marker, and the reward is inventory capacity, which is not observable as an item, so there is no evidence anywhere.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "J / 1"
+   },
+   "prev": [
+    {
+     "title": "The Gobbiebag Part III",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Bluffnix",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Bluffnix, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in Muckvix's Junk Shop"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Cermet Chunk",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Darksteel Ingot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Silk Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Goshenite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Goblin Stew 880",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all four in one trade, or a single Goblin Stew 880 instead"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Old Monument",
+   "page_id": 26810,
+   "revision_id": 744152,
+   "source_sha256": "ec2fe9ddbf660114e59b34ecfad3885e2702f1613ebab9bf99db5d76a0ed093c",
+   "cache_file": "0026810_the_old_monument"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 11,
+   "dat_name": "The Old Monument",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "not_in_quest_log"
+  ],
+  "notes": "Five bullets, five steps, and the good news is that 'Song Runes' is a real markable entity rather than a ???, so the last two rungs both carry a marker. The line above the walkthrough -- 'This quest will not appear on your quest list until completion' -- is not a step but it matters to the runtime, so it is flagged: anything that reads quest status from the log will never see this one in progress, and the item ladder is the only handle there is. The Parchment obtain step keeps its evidence, following the pilot's Operation Teatime precedent, but it is the weakest evidence in this batch: Parchment is an ordinary Leathercraft material, so a player who already owns one starts the ladder at the Song Runes and never sees the Bki Tbujhja marker. The cost is small because he stands in the same room as Mertaire. The Poetic Parchment you get back is the header's Reward, so hard rule 7 keeps it off the final step.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Mertaire",
+   "zone": "Lower Jeuno",
+   "grid": "I-8",
+   "raw": "Mertaire, Lower Jeuno (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mertaire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Merry Minstrel"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bki Tbujhja"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the counter in the same room as Mertaire"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Parchment",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Auction House under Leathercraft, or crafted, or from Pikini-Mikini in the Mhaura warehouse (G-9) for just over 2,000 gil. No single source, so no target and no zone. See the quest note about pre-owned Parchment."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Song Runes"
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "cutscene. Out to the beach west of Mhaura by the ramp at (H-9), then the southwest corner and into the water; a tunnel leads to the next beach along, where the runes are."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Song Runes"
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Parchment",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the quest ends here on the runes, not back with Mertaire. The Poetic Parchment that comes back is the reward, so it is not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Memories: Grave Resolve",
+   "page_id": 58946,
+   "revision_id": 739719,
+   "source_sha256": "db3ec4370def0fef99d5b84a2e2ebf04f67203a40342d33c9a86c1102ae2df98",
+   "cache_file": "0058946_her_memories_grave_resolve"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 67,
+   "dat_name": "Her Memories: Grave Resolve",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "evidence_unavailable"
+  ],
+  "notes": "The header's Start row is EMPTY, so the giver is recovered from bullet 1: Halver, whom you speak to first. The page writes his location as 'in Chateau d'Oraguille in Northern San d'Oria (I-9)', which is the wiki's habit of naming the room and then the city -- Chateau d'Oraguille is a zone in its own right and is what the step records; Northern San d'Oria would put the marker outside the castle. The reward key items are unusable as evidence twice over: hard rule 7 puts the Tiny memory fragment out of bounds as the header's Reward, and both it and the Large memory fragment turn out to have non-unique names in res/key_items.lua, so the resolver refuses them anyway. That leaves the Lilac as the only observable, on the obtain step where it is bought. Fame reads 'Wings of the Goddess', which is an expansion and not one of the nine fame regions, so it gates nothing and only the raw string survives.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: You get the Tiny memory fragment, or a Large memory fragment instead if this is the last of the three Her Memories quests; both are rewards and neither resolves uniquely, so neither is evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Her Memories: Homecoming Queen",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": "I-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by Home Point #2. The page says 'in Chateau d'Oraguille in Northern San d'Oria'; the Chateau is its own zone and is the one recorded."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Areebah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Lilac",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the M&P's Market by Home Point #1. This is the page's own suggested source and it earns a marker; any Lilac will do, so the marker is a convenience rather than a requirement."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Weathered Gravestone"
+    },
+    "zone": "Batallia Downs",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "on the hill just above the entrance to The Eldieme Necropolis; the Necropolis Survival Guide and a walk outside is the fast way. This is Sir Ragelise's gravestone the description points at."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Weathered Gravestone"
+    },
+    "zone": "Batallia Downs",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Lilac",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Cutscene, and the quest ends at the gravestone there is no hand-in."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Offer You Can't Refuse",
+   "page_id": 58983,
+   "revision_id": 767155,
+   "source_sha256": "4500b37d36559dbba3f79bf9d81471febdf6ddf9b5087f48f4c0e2e3e312c170",
+   "cache_file": "0058983_an_offer_you_can_t_refuse"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 43,
+   "dat_name": "An Offer You Can't Refuse",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A two-step Abyssea fetch. The five bullets numbered [3] to [7] sit under an '== Augments ==' heading and are the possible augments on the Elite Beret -- reward detail, not steps, and a verb-scanner would have made five of them. The trailing line 'Zoning is required in order to repeat this quest' is a cooldown and goes in the note. No obtain step for the Malachite: the page gives only sources in a sub-bullet, not a place to go, and the trade step's items already say you need one. Garnev is written 'Garnev (A)' in the wiki's Abyssea style and folds to 'garnev', so the wiki form is kept as the guide says. Fame 'aatt' is an Abyssea zone code, not one of the nine regions, so it gates nothing; the level 3 beside it is kept in raw and in the fame level for the record.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "aatt / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Garnev (A)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "F-9",
+   "raw": "Garnev (A) (F-9), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Garnev (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Garnev (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Malachite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Malachite comes out of a Gold Sturdy Pyxis or off Attohwa NMs such as Maahes. Zoning is required before the quest can be repeated."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Collect Tarut Cards",
+   "page_id": 38698,
+   "revision_id": 695230,
+   "source_sha256": "7ba1ba41e5bf87620cc5a63b5e8ab29ad1249da4e7c3d30b5eaeccc88135ebc7",
+   "cache_file": "0038698_collect_tarut_cards"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 10,
+   "dat_name": "Collect Tarut Cards",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable"
+  ],
+  "notes": "Six bullets and only three of them are things you do. Bullet 2 is what happens when you talk to Chululu, not a separate action, so it folds into step 1; bullet 5 (another random card per real-life day) is a cooldown; bullet 6 is a pointer at the follow-on quest All in the Cards. The five random cards from bullet 2 are deliberately NOT evidence: which of the four you get is random and unobservable in advance, and an alt-list over all four would collide with step 2's AND-list over the same four items, which the duplicate gate rejects outright and which would jump the mark to the hand-in the moment you got your first stack. So the one evidence point is 'you hold one of each', on the collecting step, and it lands the marker on Chululu exactly when you are ready to hand in. All four card names resolve as items (558, 559, 561, 562). The reward is 'Fortunetelling...', which is not an item at all.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 2,
+    "raw": "Jeuno / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chululu",
+   "zone": "Lower Jeuno",
+   "grid": "I-8",
+   "raw": "Chululu, Lower Jeuno (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chululu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "she hands over five copies of ONE of the four cards, chosen at random"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tarut:Death",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tarut:The Hermit",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tarut:The King",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tarut:The Fool",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "trade with other players until you hold at least one of each. No target and no zone -- there is no place to go. The cards can be sold in bazaars but not on the Auction House."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chululu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Tarut:Death",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tarut:The Hermit",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tarut:The King",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tarut:The Fool",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all four at once, for what the page calls a measly reward"
+   }
+  ]
+ }
+]

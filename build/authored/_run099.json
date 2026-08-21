@@ -1,0 +1,1324 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Flower Child",
+   "page_id": 119,
+   "revision_id": 767321,
+   "source_sha256": "a113d133c80ff236201a633eb244c6b287f2e0215d966b0015ed51a8bdcaccfc",
+   "cache_file": "0000119_flower_child"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 65,
+   "dat_name": "Flower Child",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A two-rung quest on one NPC. Bullet 1 is marked '(optional)' by the page itself, so it is a step with optional set rather than the ladder's first position -- the quest is really the trade. Bullet 2 is not an action at all: it is the page telling you what she wants (a Lilac) and where to buy it, so it merges into the talk. The Fame field is the single letter 'W', which is the wiki's abbreviation for Windurst; the raw string is kept as written. The reward is a Mog House exit privilege, not an item, so there is nothing observable anywhere in this quest and both steps carry null evidence. The warning under bullet 3 is about the two sibling flower quests, not this one, and stays in a note.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "W / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ojha Rhawash",
+   "zone": "Windurst Walls",
+   "grid": "C-13",
+   "raw": "Ojha Rhawash, Windurst Walls (C-13)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ojha Rhawash"
+    },
+    "zone": "Windurst Walls",
+    "grid": "C-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the page writes this bullet as '(optional)'. She never asks outright; bullet 2 is the wiki explaining that she wants a Lilac."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ojha Rhawash"
+    },
+    "zone": "Windurst Walls",
+    "grid": "C-13",
+    "items": [
+     {
+      "name": "Lilac",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "auction house, or 120 gil from Areebah in Upper Jeuno (H-6). Trade the wrong flower and she keeps it -- that warning is about the two sibling flower quests."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Great Sword Moogle Magic",
+   "page_id": 106239,
+   "revision_id": 428888,
+   "source_sha256": "1d1dcf15e328ddb437d1eed8e5dbe246dacb8736b24443db330073917650a343",
+   "cache_file": "0106239_kupofried_s_great_sword_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 38,
+   "dat_name": "Kupofried's Great Sword Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "level_gate_is_weapon_level",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "One of four identical Kupofried weapon-skill unlocks in this batch; they differ only in the two weapons and the skill named. Bullets 1 and 2 are ONE interaction -- you click the ??? and then pick the weapon type off its menu -- so they are one examine step, and the sub-bullet under 2 is a caveat about picking a type you are not holding. Bullet 3 is a separate trade to the same ???.\n\nStart is left as the header's 'Kupofried' rather than moved to the ???: the ??? can never carry a marker, Kupofried resolves to an npc key, and if no such live entity stands in the Walk of Echoes the quest simply shows nothing, which is exactly today's behaviour. Nothing is lost by trying.\n\nThe OR is real and expressible: Xiphias in items, Caladbolg in items_alt, so either one alone satisfies both steps. The 'level 90~99' qualifier on the Caladbolg is a weapon upgrade tier and cannot be expressed in an item entry. That is also what the header's Level field means -- it is the weapon's level, not the character's -- but 90 is recorded as the level gate anyway since you cannot equip either weapon below it. 'Quest Reqs: Guardian of the Void' is a prerequisite QUEST even though the Previous field is empty, so it is recorded in prev. No key item and no item is granted anywhere, so evidence is null throughout; the reward is a weapon skill.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Xiphias",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Caladbolg",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the weapon must be EQUIPPED, not merely held. Bullet 2 is the menu that follows the click, not a second action: choosing a type other than the one you have equipped means bringing that weapon instead. The header writes the giver as 'Kupofried, (???)', so this ??? is him."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Xiphias",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Caladbolg",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the weapon is consumed for the scene that unlocks Torcleaver. The Caladbolg must be level 90~99, which an item entry cannot say."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Twinstone Bonding",
+   "page_id": 315,
+   "revision_id": 702394,
+   "source_sha256": "c15bbb9435cacc094214e75ff744d32357c546db35e71c340ed4d9b097545a81",
+   "cache_file": "0000315_twinstone_bonding"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 62,
+   "dat_name": "Twinstone Bonding",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "Two bullets, three rungs. Bullet 1 is the talk; its two sub-bullets are not commentary but the only place the page says where the earring comes from, so they become a middle obtain step carrying the Hill Lizard as a drop marker in Meriphataud Mountains. That step holds the quest's one piece of evidence -- once you have the Twinstone Earring the mark belongs back on Gioh Ajihri, not out in the mountains -- and the earring is deliberately NOT repeated as evidence on the trade, which would make the mark jump. The auction house alternative is a note: it is the same item, obtained somewhere the addon cannot mark, so it changes nothing about readiness. The Wrapped Bow is the first-completion reward and is not evidence of anything.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 3,
+    "raw": "Windurst / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Gioh Ajihri",
+   "zone": "Windurst Woods",
+   "grid": "K-5",
+   "raw": "Gioh Ajihri, Windurst Woods (K-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gioh Ajihri"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she asks for a single Twinstone Earring"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Meriphataud Mountains",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Twinstone Earring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Hill Lizard",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from bullet 1's sub-bullets. The auction house is the other route and needs no marker; the page gives no grid for the lizards."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Gioh Ajihri"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-5",
+    "items": [
+     {
+      "name": "Twinstone Earring",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "repeatable for 900 gil after the first completion"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rock Bottom",
+   "page_id": 38779,
+   "revision_id": 553402,
+   "source_sha256": "011454325c459cfb9e723a1b9603ba8d441c0e70f26454631a948834cb5fed0e",
+   "cache_file": "0038779_rock_bottom"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 20,
+   "dat_name": "Rock Bottom",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 6
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "start_disagrees_with_header"
+  ],
+  "notes": "Every action in this quest happens at one clickable on a manhole cover at (L-7) in Mount Zhayolm. The page calls it 'the unnamed target' and nothing else -- that is the wiki author's own prose, not a rendering of a bare ???, so target.name is null on steps 1, 2 and 4. Nothing is lost by that: a ??? could not carry a marker either, and the grid ref is the only locating information the page gives, which survives on each step.\n\nStart is deliberately LEFT on the header's Zurtermor: he resolves to an npc key and stands at the same grid ref, and if he turns out to be cutscene-only the quest shows nothing, which is exactly what it does today.\n\nThe trap on this page is bullet 1's sub-bullet: the Plasma rock key item is named in the dialogue, DOES resolve against res/key_items.lua, and is explicitly not obtainable. It is not evidence and appears nowhere but this note. Nothing else observable is granted either -- the Map of Mount Zhayolm is a reward -- so the whole ladder runs on nulls and is driven by the two traded picks. Bullet 3's zone-out-and-back is a real, ordered step that separates the two trades; the page says 'head South' but never names the zone you step into, so only the return to Mount Zhayolm is recorded.\n\nDemoted to medium at verify: the ladder is faithful, but not one step on this quest has a nameable target, and the only named entity anywhere is a start NPC the walkthrough never has you speak to.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "au / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Zurtermor",
+   "zone": "Mount Zhayolm",
+   "grid": "L-7",
+   "raw": "Zurtermor, Mount Zhayolm (L-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on a manhole cover at (L-7). The page -- and the wikitext behind it -- says only 'the unnamed target' and never gives it a name, so the target is left unnamed rather than guessed at; Zurtermor is the voice down the crevasse. The Plasma rock the cutscene mentions is NOT obtainable, so it is not evidence for anything."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the same unnamed target as step 1"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mount Zhayolm"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "out through the southern exit and straight back in; the page does not name the zone you step into, so only the return is recorded"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Mythril Pick",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same unnamed target again; the final cutscene and the map follow immediately, with no hand-in NPC"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Polearm Moogle Magic",
+   "page_id": 106243,
+   "revision_id": 428892,
+   "source_sha256": "054dd6a5ea77a791729dfb1d5fcff28a06ba958b37e0675de97e91b02ba40e6c",
+   "cache_file": "0106243_kupofried_s_polearm_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 42,
+   "dat_name": "Kupofried's Polearm Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "level_gate_is_weapon_level",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Same page shape as the other three Kupofried unlocks in this batch, with Daboya or a level 90~99 Rhongomiant and Camlann's Torment. Bullets 1 and 2 are one click plus its menu, so one examine step; bullet 3 is the trade to the same ???. Start stays on the header's Kupofried because the ??? can never carry a marker and Kupofried resolves. The OR goes in items_alt so either weapon alone satisfies both steps; the '90~99' on the Rhongomiant is an upgrade tier no item entry can express, and it is also what the header's Level field is describing, though 90 is recorded as the gate since neither weapon can be equipped below it. 'Quest Reqs: Guardian of the Void' is a prerequisite quest and goes in prev even though Previous is empty. No item or key item is granted, so evidence is null on both steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Daboya",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Rhongomiant",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the weapon must be EQUIPPED. Bullet 2 is the menu that follows the click; picking a type you do not have equipped means bringing that weapon instead."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Daboya",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Rhongomiant",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the weapon is consumed for the scene that unlocks Camlann's Torment. The Rhongomiant must be level 90~99."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Great Axe Moogle Magic",
+   "page_id": 106241,
+   "revision_id": 428886,
+   "source_sha256": "b59ef1902e89bc5845f754c2fa2bfb0ef2de29c057177f38c821731aedb3848c",
+   "cache_file": "0106241_kupofried_s_great_axe_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 40,
+   "dat_name": "Kupofried's Great Axe Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "level_gate_is_weapon_level",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Same page shape as the other three Kupofried unlocks in this batch, with Shamash or a level 90~99 Ukonvasara and Ukko's Fury. Bullets 1 and 2 are one click plus its menu, so one examine step; bullet 3 is the trade to the same ???. Start stays on the header's Kupofried because the ??? can never carry a marker and Kupofried resolves. The OR goes in items_alt so either weapon alone satisfies both steps; the '90~99' on the Ukonvasara is an upgrade tier no item entry can express, and it is also what the header's Level field is describing, though 90 is recorded as the gate since neither weapon can be equipped below it. 'Quest Reqs: Guardian of the Void' is a prerequisite quest and goes in prev even though Previous is empty. No item or key item is granted, so evidence is null on both steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Shamash",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Ukonvasara",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the weapon must be EQUIPPED. Bullet 2 is the menu that follows the click; picking a type you do not have equipped means bringing that weapon instead."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Shamash",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Ukonvasara",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the weapon is consumed for the scene that unlocks Ukko's Fury. The Ukonvasara must be level 90~99."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fear of the Dark III",
+   "page_id": 56696,
+   "revision_id": 762438,
+   "source_sha256": "d9b3ec72587ec59dc7776c7879e9807162ee8fe03287fb01ad98416d7b7e23e9",
+   "cache_file": "0056696_fear_of_the_dark_iii"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 2,
+   "dat_name": "Fear of the Dark III",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "fame_region_unmodelled"
+  ],
+  "notes": "A three-line fame grinder, and the whole quest is in bullets 1 and 2. Bullet 2 -- 'Bring back 3 Clionid Wings' -- is two things at once: farming them and handing them over, so it splits into an obtain step carrying the Veld Clionid as a drop marker and a trade back to Secodiand (A). The obtain step holds the only observable state in the quest, three Clionid Wings, and the trade deliberately does not repeat it.\n\nBullet 3 is not a step: it is the page saying the quest repeats and that rank 6 fame costs about 120 wings. The second sub-bullet under 2 is advice about saving Sanguinets for an unrelated Vunkerl quest. The Fame field is 'alth', the Abyssea - La Theine zone code, which is not one of the nine fame regions and gates nothing, so region is null and only the raw string survives. The NPC keeps its wiki '(A)' suffix -- the normaliser folds it to 'secodiand'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "alth / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "A"
+  },
+  "start": {
+   "npc": "Secodiand (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "E-3",
+   "raw": "Secodiand (A), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Secodiand (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid ref comes from the walkthrough; the header gives none"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "D-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Clionid Wing",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Veld Clionid",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says the (D-4)/(D-5) area of the same zone; D-4 is recorded. The auction house is the other route. Keep the Sanguinets these drop if you also want Vunkerl fame -- that is a different quest."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Secodiand (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [
+     {
+      "name": "Clionid Wing",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "200 cruor, repeatable; around 10 stacks of wings is rank 6 fame in this zone"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beans Ahoy!",
+   "page_id": 27297,
+   "revision_id": 718036,
+   "source_sha256": "6c9c4f2bc54626cad7100311b5aa9dff6f44ce68a35628c2eb5017682fb761d3",
+   "cache_file": "0027297_beans_ahoy"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 29,
+   "dat_name": "Beans Ahoy!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "bullet_split"
+  ],
+  "notes": "Everything happens at Thierride, so the whole ladder is one marker; what the ladder buys here is readiness, not position. Bullet 2 is two trades, not one -- 'trade him a Lufet Salt, then after the cutscene trade him another' -- so it splits into two steps of one salt each rather than a single step demanding both at once, which is not what the page says even though Item Reqs totals x2. Bullet 3 waits one game day AND requires a zone before the final conversation; neither is visible to the addon, so it is a note and a flag. Bullet 4 is labelled 'Note:' by the page and is a post-completion cooldown -- a free Angler's Cassoulet once per conquest tally -- not a step. Nothing observable is granted along the way: the Cassoulet is the reward, and the salts are consumed rather than exchanged for anything, so every evidence field is null. The zone is written the way the page writes it, 'Southern San d'Oria (S)', which resolves to the same id as the client's bracket form.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Lufet's Lake Salt",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Thierride",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "F-8",
+   "raw": "Thierride, Southern San d'Oria (S) (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "cutscene; this is what opens the quest"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Lufet Salt",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "first of two, one at a time, with a cutscene between them -- the header's 'Lufet Salt x2' is the total, not a single trade"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Lufet Salt",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "second salt, after the first cutscene ends"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one game day must pass and you must zone before this works; neither is observable to the addon. Afterwards he hands out an Angler's Cassoulet once per conquest tally with no further salts -- that is bullet 4's note, not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Brace for the Unknown",
+   "page_id": 89095,
+   "revision_id": 674993,
+   "source_sha256": "67349c8cb9baafceeb885f2b8b0686388f68ae57c6e5111ea86d17ae7760ef46",
+   "cache_file": "0089095_brace_for_the_unknown"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 94,
+   "dat_name": "Brace for the Unknown",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_missing",
+   "unnamed_target",
+   "zone_unknown"
+  ],
+  "notes": "This quest has no Start field at all and the walkthrough never names a zone or a grid ref for anything you click, so there is nothing to recover a start from and start.npc is an explicit null rather than a guess. The reading itself is not in doubt -- take the warp offered during the previous quest's ending cutscene, or go back to the glimmering ??? afterwards and take it there, then sit through the cutscene in Provenance -- but neither rung can be marked: the ??? is a ??? and its zone is unknown, and Provenance is a zone rather than an entity.\n\nThe ??? rung is also CONDITIONAL and is marked optional: bullet 1 tells you to choose the warp during the PREVIOUS quest's cutscene, and the click exists only in the sub-bullet's 'if you chose not to warp' branch, so a player who took the warp never performs it at all. That leaves the quest with no unconditional markable step; expect it to fall out at validate as start-unresolved-with-no-markable-step, which is the honest outcome. Inventing a location for the ??? to save it would be exactly the wrong trade.\n\nBullet 1's '????' is the warp destination as the game labels it, not a second object. The reward is rendered as 'Clairvoy ant', which is a mangling of the Clairvoyant key item; it does not resolve, and it is a reward, so it is not evidence. Fame reads 'Wings of the Goddess', which is an expansion and not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Glimmer of Hope",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": null,
+   "zone": null,
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page calls it 'the glimmering ???' and never says which zone it is in. Marked optional at verify: bullet 1's instruction is to take the warp during Glimmer of Hope's closing cutscene, which happens before this quest exists, and the click only appears in the sub-bullet's 'if you chose not to warp' branch -- a conditional recovery path, not a ladder position."
+   },
+   {
+    "n": 2,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Provenance",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the warp lands you in Provenance and the lengthy cutscene there ends the quest; there is nobody to hand in to. The reward is Provenance access and the key item the page renders as 'Clairvoy ant'."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Archery Moogle Magic",
+   "page_id": 106248,
+   "revision_id": 428881,
+   "source_sha256": "187e39c1da31216750bf3053b5abe1d87d4050ed64c5bc29ef23ca37d217fd0b",
+   "cache_file": "0106248_kupofried_s_archery_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 47,
+   "dat_name": "Kupofried's Archery Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "level_gate_is_weapon_level",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Same page shape as the other three Kupofried unlocks in this batch, with Circinae or a level 90~99 Gandiva and Jishnu's Radiance. Bullets 1 and 2 are one click plus its menu, so one examine step; bullet 3 is the trade to the same ???. Start stays on the header's Kupofried because the ??? can never carry a marker and Kupofried resolves. The OR goes in items_alt so either weapon alone satisfies both steps; the '90~99' on the Gandiva is an upgrade tier no item entry can express, and it is also what the header's Level field is describing, though 90 is recorded as the gate since neither weapon can be equipped below it. 'Quest Reqs: Guardian of the Void' is a prerequisite quest and goes in prev even though Previous is empty. No item or key item is granted, so evidence is null on both steps. The reward line says 'any bow' while the quest is titled Archery -- same thing, the skill is the bow skill.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Circinae",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Gandiva",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the weapon must be EQUIPPED. Bullet 2 is the menu that follows the click; picking a type you do not have equipped means bringing that weapon instead."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Circinae",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Gandiva",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the weapon is consumed for the scene that unlocks Jishnu's Radiance. The Gandiva must be level 90~99."
+   }
+  ]
+ }
+]

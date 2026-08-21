@@ -1,0 +1,1353 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Twitherym Dust",
+   "page_id": 98172,
+   "revision_id": 728141,
+   "source_sha256": "95771275d63893db17bdbe9c5adfd868cfdae1e558ad4fbc4c1b29ed2a33f4a3",
+   "cache_file": "0098172_twitherym_dust"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 0,
+   "dat_name": "Twitherym Dust",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A clean three-rung fetch. The title and the header description both talk about twitherym and the dust on their wings, but the walkthrough never asks you to fight one -- what you actually do is click a tree for sap, so no mobs are recorded and there is no fight step. Bullet 2 is one sentence doing two things (go south, take the sap) but it is one action in one zone at one grid, so it stays one step. 'Twinkling Tree' resolves as a live markable entity, which is the whole value here: without it the middle rung would be a bare grid reference. The Cupful of dust-laden sap is a KEY item (key_items 2179), not an inventory item, and it is granted at the tree, so it is step 2's evidence and step 3's requirement.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Gurren-Murren",
+   "zone": "Ceizak Battlegrounds",
+   "grid": "K-7",
+   "raw": "Gurren-Murren, Ceizak Battlegrounds - (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gurren-Murren"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Twinkling Tree"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cupful of dust-laden sap",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "south of the Frontier Station, at the northern part of (I-10)"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gurren-Murren"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "K-7",
+    "items": [
+     {
+      "name": "Cupful of dust-laden sap",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Darksmith",
+   "page_id": 26321,
+   "revision_id": 603491,
+   "source_sha256": "8c19690c39775f0afbf3bed4327ccf6fd3f1a1e75d50f0b8d083292274510dbe",
+   "cache_file": "0026321_the_darksmith"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 40,
+   "dat_name": "The Darksmith",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_reordered"
+  ],
+  "notes": "The page's bullets are in shopping order, not ladder order: bullet 1 tells you to buy two Darksteel Ores and bullet 2 only then sends you to Mighty Fist to open the quest. The ladder has to start with the talk, because the runtime treats 'the quest is in your log' as proof that step 1 is done -- put the shopping first and accepting the quest would tick it off with an empty bag. So the two are swapped and both bullet numbers are kept on their steps. Bullet 4 ('You may immediately repeat this quest') is a cooldown statement, not an action, and is carried as the Repeatable gate instead. The header's Gusgen/Zeruhn mining hint is in the description, not the walkthrough, and names no monster or object to point at, so it stays a note. Metalworks resolves as its own zone (237), so both Mighty Fist rungs are properly placed rather than floating in Bastok.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Mighty Fist",
+   "zone": "Metalworks",
+   "grid": "G-9",
+   "raw": "Mighty Fist - Metalworks (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mighty Fist"
+    },
+    "zone": "Metalworks",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "first floor of the Metalworks, by Home Point #2"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Darksteel Ore",
+       "count": 2
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Auction House, Mog Garden or mining; the description adds Gusgen Mines and Zeruhn Mines but names nothing there to point at. No zone, because there is no one place to do it."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Mighty Fist"
+    },
+    "zone": "Metalworks",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Darksteel Ore",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "both ores in one trade; repeatable immediately afterwards with no wait"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gates to Paradise",
+   "page_id": 473,
+   "revision_id": 698690,
+   "source_sha256": "0f1c8de9d9c3420bcab6980d3e04105481e55f168135eb2aabde36c3f9b9924e",
+   "cache_file": "0000473_gates_to_paradise"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 18,
+   "dat_name": "Gates to Paradise",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "name_spelling_conflict",
+   "bullet_merge"
+  ],
+  "notes": "The page spells the friar two different ways one line apart: bullet 2 says 'an NPC named Faurbellant' and bullet 3 says 'Speak to Faubellant'. Both fold to a legal key, so the resolver cannot arbitrate -- one of them is simply a live entity and the other is nothing, and picking wrong costs the middle rung its marker. Bullet 2 is the one that is actually introducing the name ('an NPC named ...'), and Faurbellant is the form the rest of the wiki uses, so that is what is recorded; the quest is demoted to medium for the conflict rather than hiding it. Bullets 2 and 3 are one step: bullet 2 is how to find him and bullet 3 is the conversation, both at (K-8) in La Theine Plateau. The two Scriptures are key items and neither is a reward, so each is evidence exactly once, on the step that grants it -- Wind at Olbergieut, Water at Faurbellant -- and each is then carried as a requirement of the following step. The Cotton Cape and the title are the reward and are not evidence of anything.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 2,
+    "raw": "San d'Oria / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Olbergieut",
+   "zone": "Northern San d'Oria",
+   "grid": "L-7",
+   "raw": "Olbergieut - Northern San d'Oria (L-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Olbergieut"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Scripture of Wind",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Faurbellant"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Scripture of Wind",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Scripture of Water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "at the tail end wall of the Crag of Holla. The page also spells him 'Faubellant' one line later -- see the quest note. He takes the Scripture of Wind and hands back the Scripture of Water."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Olbergieut"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Scripture of Water",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Wisdom of Elders",
+   "page_id": 26190,
+   "revision_id": 729795,
+   "source_sha256": "5b2724724eed9742ff854b1bc57a38381149896d7770c21f56fb50feeda6d395",
+   "cache_file": "0026190_the_wisdom_of_elders"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 36,
+   "dat_name": "The Wisdom of Elders",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Four bullets, four real steps, and unusually the middle two are both genuine: Tete is the elderly woman the description sends you to consult, so talking to her is an action and not commentary, even though nothing observable comes of it. The header description also mentions Benita's daughter and mother-in-law; only Tete is named, so only Tete is a target. Bullet 3 is a shopping trip with no single place to do it (Auction House, Tenshodo, alchemy vendors, or farming Lanterns and bomb-type mobs), so it gets a zone-less obtain step -- and no mobs, because 'Lanterns/Bomb type mobs' is a family, not a name I can point the runtime at. Holding the Bomb Ash is the one observable moment in the quest and it lands there, which then draws Benita for the trade.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Benita",
+   "zone": "Port Bastok",
+   "grid": "J-6",
+   "raw": "Benita - Port Bastok (J-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Benita"
+    },
+    "zone": "Port Bastok",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside her house"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tete"
+    },
+    "zone": "Port Bastok",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the mother-in-law of the description; she is the one who names Bomb Ash"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bomb Ash",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Auction House, Tenshodo or alchemy vendors, or farmed from Lanterns and bomb-type monsters -- a family rather than a named mob, so none is recorded"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Benita"
+    },
+    "zone": "Port Bastok",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Bomb Ash",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Introduction to Teamwork",
+   "page_id": 38686,
+   "revision_id": 460230,
+   "source_sha256": "15d607b6b943dcc9342a40c5d5fcf95ba62137e7fd24de89a1d2ce30ffd49f0c",
+   "cache_file": "0038686_introduction_to_teamwork"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 63,
+   "dat_name": "Introduction to Teamwork",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "party_gate_unobservable"
+  ],
+  "notes": "Four bullets but only two actions. Bullets 1 and 2 are directions to a man who is already in the header -- zone out of Northern San d'Oria at (C-7) and he is in the watchtower just past the line -- so they are route advice folded into step 1's note rather than a travel rung; West Ronfaure is a starting zone one gate from the city and a zone marker there would say nothing the start marker does not. Bullets 3 and 4 are two conversations with the same NPC either side of a condition, so they are two rungs and one marker, which is exactly the case the runtime handles by looking ahead. The condition itself -- being in a party of two whose members share San d'Oria allegiance -- is real and is what the quest is about, but no packet reports party allegiance, so it can only be a note; there is no evidence anywhere in this quest. 'Level 10 and up' in Quest Reqs is a level gate for any job, so jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 2,
+    "raw": "S / 2"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Vilatroire",
+   "zone": "West Ronfaure",
+   "grid": "H-5",
+   "raw": "Vilatroire - West Ronfaure (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vilatroire"
+    },
+    "zone": "West Ronfaure",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "zone out at (C-7) in Northern San d'Oria; he is in the watchtower straight ahead of the zone line"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vilatroire"
+    },
+    "zone": "West Ronfaure",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "first form a party of two -- yourself and one other of the same allegiance -- then talk to him again. Nothing in the packets reports party allegiance, so this rung cannot be tracked."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Never to Return",
+   "page_id": 38700,
+   "revision_id": 773428,
+   "source_sha256": "a298b759ea1846b10c09d4d08afa23ee79216a91884f03115515ca30cb8c6ddd",
+   "cache_file": "0038700_never_to_return"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 14,
+   "dat_name": "Never to Return",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "repeating_loop",
+   "count_unobservable"
+  ],
+  "notes": "Bullets 1 and 2 are one thing said twice: you ask Kurou-Morou for your fortune on three separate game days, and the fourth request is what opens the quest. That is one repeating conversation with one NPC, not two rungs -- and the count is invisible to the addon, since nothing reports how many game days have passed or how many readings you have had. It resolves itself in practice: while the count is short the quest does not exist and nothing is marked, and the moment it does exist step 1 is already satisfied by definition. The Horn Hairpin gets no obtain rung -- the only mention of where it comes from is a sub-bullet saying it is craft-only and sold at the Auction House, which is commentary; the trade step carries it as a requirement and readiness handles the rest. Reward is gil and a Garnet Ring, so nothing here is evidence.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 5,
+    "raw": "Jeuno / 5"
+   },
+   "prev": [
+    {
+     "title": "Your Crystal Ball",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kurou-Morou",
+   "zone": "Lower Jeuno",
+   "grid": "I-7",
+   "raw": "Kurou-Morou, Lower Jeuno (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kurou-Morou"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "after Your Crystal Ball, have him read your fortune on at least three different game days; asking for the fourth reading is what triggers the quest"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kurou-Morou"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Horn Hairpin",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the hairpin is crafted only, though it can be bought off the Auction House"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Undying Pledge",
+   "page_id": 38748,
+   "revision_id": 729855,
+   "source_sha256": "fbcb72c9fd233b0e0d10aada5e7048f10014858dd533a3cd5afb449c4fb40bcd",
+   "cache_file": "0038748_an_undying_pledge"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 149,
+   "dat_name": "An Undying Pledge",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target"
+  ],
+  "notes": "The textbook '??? twice with a fight in between' shape, so bullet 5 is split: killing Glyryvilu and clicking the ??? again are two different things and only the second one hands you anything. The ??? keeps its rungs even though it can never carry a marker -- both are placed at Sea Serpent Grotto (K-6) so the player at least has the grid. Bullet 2 is a real journey and gets a travel rung, but the cutscene it promises fires 'shortly before you reach the zoneline', i.e. in the zone OUTSIDE the grotto, which the page never names; I will not supply a name it does not give, so the step is placed on the destination and the note says where the cutscene actually happens. Gubokka is named in the header description only and is never something you interact with, so he is not a target. The Caliginous Blade is a key item granted at the second ??? click and is the quest's only observable moment.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "Outlands / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Stray Cloud",
+   "zone": "Norg",
+   "grid": "H-9",
+   "raw": "Stray Cloud, Norg (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Stray Cloud"
+    },
+    "zone": "Norg",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "cutscene"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sea Serpent Grotto"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "a second cutscene fires shortly before you reach the zone line, so it happens in the zone outside the grotto -- which the page does not name"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Glyryvilu",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Glyryvilu",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Caliginous Blade",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, once Glyryvilu is dead"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Stray Cloud"
+    },
+    "zone": "Norg",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Caliginous Blade",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Mysteries of Beadeaux II",
+   "page_id": 38712,
+   "revision_id": 700366,
+   "source_sha256": "325348ad7638eb5be457269bd2966836f1366cce06639944294f1666f214ec51",
+   "cache_file": "0038712_mysteries_of_beadeaux_ii"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 32,
+   "dat_name": "Mysteries of Beadeaux II",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "mission_gate_unmodelled",
+   "or_branch_unmodelled",
+   "evidence_is_not_reward"
+  ],
+  "notes": "Quest Reqs is 'Bastok Mission 4-1, or San d'Oria Mission 4-1, or Windurst Mission 4-1' -- a three-way OR over MISSIONS, not quests. gates.prev holds quest titles and the header's own Previous field is empty, so putting mission names in there would invent a prerequisite the schema cannot evaluate; the gate is flagged and left unmodelled instead. The one trap on this page is the reward: [KI] Black matinee necklace is what Sattal-Mansal gives you at the END, so it proves the quest is over and is not evidence of any step. The observable moment is the Quadav Augury Shell, which is an ordinary inventory item (494) and not a key item despite the header's phrasing, and it drops from Go'Bhu Gascon -- so it is the kill step's evidence and the hand-in's requirement. Go'Bhu Gascon carries the 'drop' role rather than 'kill' because what the step is for is the shell.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Sattal-Mansal",
+   "zone": "Lower Jeuno",
+   "grid": "J-8",
+   "raw": "Sattal-Mansal, Lower Jeuno (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sattal-Mansal"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Quadav Augury Shell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Go'Bhu Gascon",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sattal-Mansal"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Quadav Augury Shell",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he gives the Black matinee necklace, which is the reward and opens the depths of Beadeaux"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Starving",
+   "page_id": 98200,
+   "revision_id": 286583,
+   "source_sha256": "4c042605a556b49e0608b96c5e08947476a9267fb234cbe203d7a2814a86ec4a",
+   "cache_file": "0098200_the_starving"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 84,
+   "dat_name": "The Starving",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "header_field_misused"
+  ],
+  "notes": "Two bullets, two rungs, same NPC -- one marker, with readiness looking across the pair, which is the right shape for a quest that is only 'talk to him, then hand him a drink'. The header is filled in wrongly: Quest Reqs holds 'Goblin Drink' while Item Reqs is empty, so the item requirement is read out of Quest Reqs and no quest prerequisite is created from it; the real prerequisite is Previous, Hunger Strikes, which is where it goes. Goblin Drink resolves as an ordinary item (4541). The wait -- zone and let a game day pass after Hunger Strikes -- is invisible to the addon and can only be a note, but it costs nothing here, because until it elapses the quest simply is not offered.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "Adoulin / 2"
+   },
+   "prev": [
+    {
+     "title": "Hunger Strikes",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Westerly Breeze",
+   "zone": "Western Adoulin",
+   "grid": "I-5",
+   "raw": "Westerly Breeze, Western Adoulin - (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Westerly Breeze"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must zone and wait until the game day after finishing Hunger Strikes before he will talk about this one"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Westerly Breeze"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Goblin Drink",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page lists the Goblin Drink under Quest Reqs, but it is an item requirement"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cook's Pride",
+   "page_id": 38702,
+   "revision_id": 700361,
+   "source_sha256": "42aafcce24f40952c8cd93a22cf5abcfb3a59aa6716515302b6705ce428ce2cf",
+   "cache_file": "0038702_cook_s_pride"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 16,
+   "dat_name": "Cook's Pride",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "item_from_other_quest",
+   "prereq_in_subbullet"
+  ],
+  "notes": "Two bullets, both on Naruru, so one marker and a lookahead -- but the interesting part is the gap between them. The description sends you to the Windurst Culinarians' Guild for a new pot, and the walkthrough never does: its sub-bullet says the [KI] Super soup pot comes from another quest, Hoist the Jelly, Roger. That is a real dependency, and it is the reason there is no obtain rung here -- inventing a step at a guild the walkthrough never sends you to would be exactly the guessing this pass exists to avoid, and the sub-bullet is commentary rather than an instruction. It is also deliberately NOT added to gates.prev: the header's Previous is 'The Wonder Magic Set' and that is the gate the wiki asserts, so the soup pot dependency is recorded as a flag and a note instead of a second prerequisite I derived myself. Super soup pot is a key item (57), so the hand-in carries it as a ki requirement; the Mythril Ring and gil are the reward and are not evidence.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 4,
+    "raw": "Jeuno / 4"
+   },
+   "prev": [
+    {
+     "title": "The Wonder Magic Set",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Naruru",
+   "zone": "Lower Jeuno",
+   "grid": "H-10",
+   "raw": "Naruru, Lower Jeuno (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naruru"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she has lost her Super soup pot and wants a replacement from the Culinarians' Guild"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naruru"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Super soup pot",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the [KI] Super soup pot comes from the quest Hoist the Jelly, Roger -- the walkthrough never sends you to the guild itself"
+   }
+  ]
+ }
+]

@@ -1,0 +1,672 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040335_unlocking_a_myth_dancer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 120,
+   "dat_name": "Unlocking a Myth (Dancer)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "equipped_not_held",
+   "item_req_unresolvable",
+   "job_from_title",
+   "job_gate_unmodelled",
+   "progress_unobservable",
+   "raw_wikitext_table_leaked",
+   "shared_source_sha256",
+   "verified_in_game",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "One of five identical 'Unlocking a Myth' pages in this batch (Monk 103, Thief 107, Bard 111, Ninja 114, Dancer 120). All five carry the SAME source_sha256 and their bodies are byte-identical: nothing in the header or the walkthrough names the job at all, only the title does. This is the Dancer instance, jeuno 120.\n\nThree steps out of four bullets. Bullet 3 ('your new Weapon Skill will appear under your list of Weapon Skills') is an OUTCOME -- it happens TO you when the points are in -- so it is not a step; a keyword parser would have made one out of 'acquired'. Bullet 2 IS a step even though it is unmarkable and unobservable: it is the entire body of the quest, and dropping it would leave two consecutive Zalsuhm steps back to back and imply you can hand in the moment you accept. The page names no monster ('enemies that grant experience points'), gives no zone, and no packet reports Weapon Skill Points, so that step is a bare fight with no target, no zone, no mobs and no evidence.\n\nNothing in this quest is observable. The Vigil Weapon is required EQUIPPED before the quest even starts (Item Reqs), so it is held throughout and can never prove any step done; the reward is a weapon-skill unlock, which is not an item; and the last step hands the weapon straight back, so no step ends with you holding something new. Every evidence field is null, which is the honest answer rather than reaching for the Vigil Weapon.\n\n'Vigil Weapon' is a CATEGORY, not an item name -- the resolver returns no id for it, and the page never names the per-job weapon. It is still recorded on the two Zalsuhm steps so the requirement is on the record and lands in quarantine where a human can see it; the validator drops the entry and sets reqs_partial, and both markers survive because Zalsuhm and Lower Jeuno resolve. The equipped-vs-held distinction is unmodellable either way. That unmodellable gate is why the quest is medium rather than high; the ladder itself is not in doubt.\n\nThe job appears only in the quest title -- Fame, FLevel, Quest Reqs and Level are all empty and the walkthrough never mentions Dancer -- so jobs stays []. Gating on the strength of a title would hide the quest from players the page never excludes. The raw wikitext of the trial-point table leaked through the prepass into bullet 2's sub-bullets; it is a rate table, not a step. The five 'Notes' bullets after the walkthrough are a progress gauge you get by trading early, a warning that storing the weapon with Ghanraam at Aht Urhgan Whitegate (K-10) resets the points, and three paragraphs of version history; none is a step.\n\nJOB GATE ADDED BY HAND, and flagged: this page's Level and Quest Reqs fields are both EMPTY, so the reading pass was right not to invent one -- hard rule 1. But 15 of the 20 'Unlocking a Myth' pages DO state it, the title names the job unambiguously, and the user confirmed in game that the quest is job-restricted. Without it an RDM saw a yellow '!' on Zalsuhm for five jobs it cannot start, which is the one failure the job gate exists to prevent: a wrong yellow, not a missing grey.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Dancer)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The weapon must be EQUIPPED, not merely held, and 'Vigil Weapon' is a category with no resource id, so this requirement is recorded but cannot be checked.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: not repeated in items because it is already unresolvable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "DNC"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Main Gauche",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop. Talking gives a cutscene and opens the quest."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The same Vigil weapon stays equipped in the main hand 250 Weapon Skill Points, on anything Incredibly Easy Prey or better; the leaked table pays 5 per weapon skill with no skillchain and 7/9/11 at skillchain levels 1/2/3. Weapon skills used before the quest do not count. No monster is named, no zone is given, and nothing in the packets reports the total, so this step can neither be marked nor observed."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet 4: return and trade him the weapon. He unlocks the weapon skill for any weapon of that type and hands the Vigil Weapon straight back, so nothing new is held and there is no evidence here -- the unlock is the Reward. Trading before the points are in only gets you one of the four progress lines from the Notes section."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040322_unlocking_a_myth_thief"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 107,
+   "dat_name": "Unlocking a Myth (Thief)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "equipped_not_held",
+   "item_req_unresolvable",
+   "job_from_title",
+   "job_gate_unmodelled",
+   "progress_unobservable",
+   "raw_wikitext_table_leaked",
+   "shared_source_sha256",
+   "verified_in_game",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "One of five identical 'Unlocking a Myth' pages in this batch (Monk 103, Thief 107, Bard 111, Ninja 114, Dancer 120). All five carry the SAME source_sha256 and their bodies are byte-identical: nothing in the header or the walkthrough names the job at all, only the title does. This is the Thief instance, jeuno 107.\n\nThree steps out of four bullets. Bullet 3 ('your new Weapon Skill will appear under your list of Weapon Skills') is an OUTCOME -- it happens TO you when the points are in -- so it is not a step; a keyword parser would have made one out of 'acquired'. Bullet 2 IS a step even though it is unmarkable and unobservable: it is the entire body of the quest, and dropping it would leave two consecutive Zalsuhm steps back to back and imply you can hand in the moment you accept. The page names no monster ('enemies that grant experience points'), gives no zone, and no packet reports Weapon Skill Points, so that step is a bare fight with no target, no zone, no mobs and no evidence.\n\nNothing in this quest is observable. The Vigil Weapon is required EQUIPPED before the quest even starts (Item Reqs), so it is held throughout and can never prove any step done; the reward is a weapon-skill unlock, which is not an item; and the last step hands the weapon straight back, so no step ends with you holding something new. Every evidence field is null, which is the honest answer rather than reaching for the Vigil Weapon.\n\n'Vigil Weapon' is a CATEGORY, not an item name -- the resolver returns no id for it, and the page never names the per-job weapon. It is still recorded on the two Zalsuhm steps so the requirement is on the record and lands in quarantine where a human can see it; the validator drops the entry and sets reqs_partial, and both markers survive because Zalsuhm and Lower Jeuno resolve. The equipped-vs-held distinction is unmodellable either way. That unmodellable gate is why the quest is medium rather than high; the ladder itself is not in doubt.\n\nThe job appears only in the quest title -- Fame, FLevel, Quest Reqs and Level are all empty and the walkthrough never mentions Thief -- so jobs stays []. Gating on the strength of a title would hide the quest from players the page never excludes; note this is NOT the '50+ Thief' shape the pilot warned about, because no level or job line exists here at all. The raw wikitext of the trial-point table leaked through the prepass into bullet 2's sub-bullets; it is a rate table, not a step. The five 'Notes' bullets after the walkthrough are a progress gauge you get by trading early, a warning that storing the weapon with Ghanraam at Aht Urhgan Whitegate (K-10) resets the points, and three paragraphs of version history; none is a step.\n\nJOB GATE ADDED BY HAND, and flagged: this page's Level and Quest Reqs fields are both EMPTY, so the reading pass was right not to invent one -- hard rule 1. But 15 of the 20 'Unlocking a Myth' pages DO state it, the title names the job unambiguously, and the user confirmed in game that the quest is job-restricted. Without it an RDM saw a yellow '!' on Zalsuhm for five jobs it cannot start, which is the one failure the job gate exists to prevent: a wrong yellow, not a missing grey.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Thief)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The weapon must be EQUIPPED, not merely held, and 'Vigil Weapon' is a category with no resource id, so this requirement is recorded but cannot be checked.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: not repeated in items because it is already unresolvable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "THF"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Swordbreaker",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop. Talking gives a cutscene and opens the quest."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The same Vigil weapon stays equipped in the main hand 250 Weapon Skill Points, on anything Incredibly Easy Prey or better; the leaked table pays 5 per weapon skill with no skillchain and 7/9/11 at skillchain levels 1/2/3. Weapon skills used before the quest do not count. No monster is named, no zone is given, and nothing in the packets reports the total, so this step can neither be marked nor observed."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet 4: return and trade him the weapon. He unlocks the weapon skill for any weapon of that type and hands the Vigil Weapon straight back, so nothing new is held and there is no evidence here -- the unlock is the Reward. Trading before the points are in only gets you one of the four progress lines from the Notes section."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040329_unlocking_a_myth_ninja"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 114,
+   "dat_name": "Unlocking a Myth (Ninja)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "equipped_not_held",
+   "item_req_unresolvable",
+   "job_from_title",
+   "job_gate_unmodelled",
+   "progress_unobservable",
+   "raw_wikitext_table_leaked",
+   "shared_source_sha256",
+   "verified_in_game",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "One of five identical 'Unlocking a Myth' pages in this batch (Monk 103, Thief 107, Bard 111, Ninja 114, Dancer 120). All five carry the SAME source_sha256 and their bodies are byte-identical: nothing in the header or the walkthrough names the job at all, only the title does. This is the Ninja instance, jeuno 114.\n\nThree steps out of four bullets. Bullet 3 ('your new Weapon Skill will appear under your list of Weapon Skills') is an OUTCOME -- it happens TO you when the points are in -- so it is not a step; a keyword parser would have made one out of 'acquired'. Bullet 2 IS a step even though it is unmarkable and unobservable: it is the entire body of the quest, and dropping it would leave two consecutive Zalsuhm steps back to back and imply you can hand in the moment you accept. The page names no monster ('enemies that grant experience points'), gives no zone, and no packet reports Weapon Skill Points, so that step is a bare fight with no target, no zone, no mobs and no evidence.\n\nNothing in this quest is observable. The Vigil Weapon is required EQUIPPED before the quest even starts (Item Reqs), so it is held throughout and can never prove any step done; the reward is a weapon-skill unlock, which is not an item; and the last step hands the weapon straight back, so no step ends with you holding something new. Every evidence field is null, which is the honest answer rather than reaching for the Vigil Weapon.\n\n'Vigil Weapon' is a CATEGORY, not an item name -- the resolver returns no id for it, and the page never names the per-job weapon. It is still recorded on the two Zalsuhm steps so the requirement is on the record and lands in quarantine where a human can see it; the validator drops the entry and sets reqs_partial, and both markers survive because Zalsuhm and Lower Jeuno resolve. The equipped-vs-held distinction is unmodellable either way. That unmodellable gate is why the quest is medium rather than high; the ladder itself is not in doubt.\n\nThe job appears only in the quest title -- Fame, FLevel, Quest Reqs and Level are all empty and the walkthrough never mentions Ninja -- so jobs stays []. Gating on the strength of a title would hide the quest from players the page never excludes. The raw wikitext of the trial-point table leaked through the prepass into bullet 2's sub-bullets; it is a rate table, not a step. The five 'Notes' bullets after the walkthrough are a progress gauge you get by trading early, a warning that storing the weapon with Ghanraam at Aht Urhgan Whitegate (K-10) resets the points, and three paragraphs of version history; none is a step.\n\nJOB GATE ADDED BY HAND, and flagged: this page's Level and Quest Reqs fields are both EMPTY, so the reading pass was right not to invent one -- hard rule 1. But 15 of the 20 'Unlocking a Myth' pages DO state it, the title names the job unambiguously, and the user confirmed in game that the quest is job-restricted. Without it an RDM saw a yellow '!' on Zalsuhm for five jobs it cannot start, which is the one failure the job gate exists to prevent: a wrong yellow, not a missing grey.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Ninja)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The weapon must be EQUIPPED, not merely held, and 'Vigil Weapon' is a category with no resource id, so this requirement is recorded but cannot be checked.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: not repeated in items because it is already unresolvable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "NIN"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Sasuke Katana",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop. Talking gives a cutscene and opens the quest."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The same Vigil weapon stays equipped in the main hand 250 Weapon Skill Points, on anything Incredibly Easy Prey or better; the leaked table pays 5 per weapon skill with no skillchain and 7/9/11 at skillchain levels 1/2/3. Weapon skills used before the quest do not count. No monster is named, no zone is given, and nothing in the packets reports the total, so this step can neither be marked nor observed."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet 4: return and trade him the weapon. He unlocks the weapon skill for any weapon of that type and hands the Vigil Weapon straight back, so nothing new is held and there is no evidence here -- the unlock is the Reward. Trading before the points are in only gets you one of the four progress lines from the Notes section."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040318_unlocking_a_myth_monk"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 103,
+   "dat_name": "Unlocking a Myth (Monk)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "equipped_not_held",
+   "item_req_unresolvable",
+   "job_from_title",
+   "job_gate_unmodelled",
+   "progress_unobservable",
+   "raw_wikitext_table_leaked",
+   "shared_source_sha256",
+   "verified_in_game",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "One of five identical 'Unlocking a Myth' pages in this batch (Monk 103, Thief 107, Bard 111, Ninja 114, Dancer 120). All five carry the SAME source_sha256 and their bodies are byte-identical: nothing in the header or the walkthrough names the job at all, only the title does. This is the Monk instance, jeuno 103.\n\nThree steps out of four bullets. Bullet 3 ('your new Weapon Skill will appear under your list of Weapon Skills') is an OUTCOME -- it happens TO you when the points are in -- so it is not a step; a keyword parser would have made one out of 'acquired'. Bullet 2 IS a step even though it is unmarkable and unobservable: it is the entire body of the quest, and dropping it would leave two consecutive Zalsuhm steps back to back and imply you can hand in the moment you accept. The page names no monster ('enemies that grant experience points'), gives no zone, and no packet reports Weapon Skill Points, so that step is a bare fight with no target, no zone, no mobs and no evidence.\n\nNothing in this quest is observable. The Vigil Weapon is required EQUIPPED before the quest even starts (Item Reqs), so it is held throughout and can never prove any step done; the reward is a weapon-skill unlock, which is not an item; and the last step hands the weapon straight back, so no step ends with you holding something new. Every evidence field is null, which is the honest answer rather than reaching for the Vigil Weapon.\n\n'Vigil Weapon' is a CATEGORY, not an item name -- the resolver returns no id for it, and the page never names the per-job weapon. It is still recorded on the two Zalsuhm steps so the requirement is on the record and lands in quarantine where a human can see it; the validator drops the entry and sets reqs_partial, and both markers survive because Zalsuhm and Lower Jeuno resolve. The equipped-vs-held distinction is unmodellable either way. That unmodellable gate is why the quest is medium rather than high; the ladder itself is not in doubt.\n\nThe job appears only in the quest title -- Fame, FLevel, Quest Reqs and Level are all empty and the walkthrough never mentions Monk -- so jobs stays []. Gating on the strength of a title would hide the quest from players the page never excludes. The raw wikitext of the trial-point table leaked through the prepass into bullet 2's sub-bullets; it is a rate table, not a step. The five 'Notes' bullets after the walkthrough are a progress gauge you get by trading early, a warning that storing the weapon with Ghanraam at Aht Urhgan Whitegate (K-10) resets the points, and three paragraphs of version history; none is a step.\n\nJOB GATE ADDED BY HAND, and flagged: this page's Level and Quest Reqs fields are both EMPTY, so the reading pass was right not to invent one -- hard rule 1. But 15 of the 20 'Unlocking a Myth' pages DO state it, the title names the job unambiguously, and the user confirmed in game that the quest is job-restricted. Without it an RDM saw a yellow '!' on Zalsuhm for five jobs it cannot start, which is the one failure the job gate exists to prevent: a wrong yellow, not a missing grey.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Monk)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The weapon must be EQUIPPED, not merely held, and 'Vigil Weapon' is a category with no resource id, so this requirement is recorded but cannot be checked.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: not repeated in items because it is already unresolvable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "MNK"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Burning Fists",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop. Talking gives a cutscene and opens the quest."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The same Vigil weapon stays equipped in the main hand 250 Weapon Skill Points, on anything Incredibly Easy Prey or better; the leaked table pays 5 per weapon skill with no skillchain and 7/9/11 at skillchain levels 1/2/3. Weapon skills used before the quest do not count. No monster is named, no zone is given, and nothing in the packets reports the total, so this step can neither be marked nor observed."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet 4: return and trade him the weapon. He unlocks the weapon skill for any weapon of that type and hands the Vigil Weapon straight back, so nothing new is held and there is no evidence here -- the unlock is the Reward. Trading before the points are in only gets you one of the four progress lines from the Notes section."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040326_unlocking_a_myth_bard"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 111,
+   "dat_name": "Unlocking a Myth (Bard)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "equipped_not_held",
+   "item_req_unresolvable",
+   "job_from_title",
+   "job_gate_unmodelled",
+   "progress_unobservable",
+   "raw_wikitext_table_leaked",
+   "shared_source_sha256",
+   "verified_in_game",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "One of five identical 'Unlocking a Myth' pages in this batch (Monk 103, Thief 107, Bard 111, Ninja 114, Dancer 120). All five carry the SAME source_sha256 and their bodies are byte-identical: nothing in the header or the walkthrough names the job at all, only the title does. This is the Bard instance, jeuno 111.\n\nThree steps out of four bullets. Bullet 3 ('your new Weapon Skill will appear under your list of Weapon Skills') is an OUTCOME -- it happens TO you when the points are in -- so it is not a step; a keyword parser would have made one out of 'acquired'. Bullet 2 IS a step even though it is unmarkable and unobservable: it is the entire body of the quest, and dropping it would leave two consecutive Zalsuhm steps back to back and imply you can hand in the moment you accept. The page names no monster ('enemies that grant experience points'), gives no zone, and no packet reports Weapon Skill Points, so that step is a bare fight with no target, no zone, no mobs and no evidence.\n\nNothing in this quest is observable. The Vigil Weapon is required EQUIPPED before the quest even starts (Item Reqs), so it is held throughout and can never prove any step done; the reward is a weapon-skill unlock, which is not an item; and the last step hands the weapon straight back, so no step ends with you holding something new. Every evidence field is null, which is the honest answer rather than reaching for the Vigil Weapon.\n\n'Vigil Weapon' is a CATEGORY, not an item name -- the resolver returns no id for it, and the page never names the per-job weapon. It is still recorded on the two Zalsuhm steps so the requirement is on the record and lands in quarantine where a human can see it; the validator drops the entry and sets reqs_partial, and both markers survive because Zalsuhm and Lower Jeuno resolve. The equipped-vs-held distinction is unmodellable either way. That unmodellable gate is why the quest is medium rather than high; the ladder itself is not in doubt.\n\nThe job appears only in the quest title -- Fame, FLevel, Quest Reqs and Level are all empty and the walkthrough never mentions Bard -- so jobs stays []. Gating on the strength of a title would hide the quest from players the page never excludes. The raw wikitext of the trial-point table leaked through the prepass into bullet 2's sub-bullets; it is a rate table, not a step. The five 'Notes' bullets after the walkthrough are a progress gauge you get by trading early, a warning that storing the weapon with Ghanraam at Aht Urhgan Whitegate (K-10) resets the points, and three paragraphs of version history; none is a step.\n\nJOB GATE ADDED BY HAND, and flagged: this page's Level and Quest Reqs fields are both EMPTY, so the reading pass was right not to invent one -- hard rule 1. But 15 of the 20 'Unlocking a Myth' pages DO state it, the title names the job unambiguously, and the user confirmed in game that the quest is job-restricted. Without it an RDM saw a yellow '!' on Zalsuhm for five jobs it cannot start, which is the one failure the job gate exists to prevent: a wrong yellow, not a missing grey.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Bard)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The weapon must be EQUIPPED, not merely held, and 'Vigil Weapon' is a category with no resource id, so this requirement is recorded but cannot be checked.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: not repeated in items because it is already unresolvable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "BRD"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Dancing Dagger",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop. Talking gives a cutscene and opens the quest."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The same Vigil weapon stays equipped in the main hand 250 Weapon Skill Points, on anything Incredibly Easy Prey or better; the leaked table pays 5 per weapon skill with no skillchain and 7/9/11 at skillchain levels 1/2/3. Weapon skills used before the quest do not count. No monster is named, no zone is given, and nothing in the packets reports the total, so this step can neither be marked nor observed."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet 4: return and trade him the weapon. He unlocks the weapon skill for any weapon of that type and hands the Vigil Weapon straight back, so nothing new is held and there is no evidence here -- the unlock is the Reward. Trading before the points are in only gets you one of the four progress lines from the Notes section."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1527 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fish Favors the Bold",
+   "page_id": 117020,
+   "revision_id": 622856,
+   "source_sha256": "8bb45e056c840e08a36f4b11142be09df8d8445f92946d5c8db60fca800daef5",
+   "cache_file": "0117020_fish_favors_the_bold"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 202,
+   "dat_name": "Fish Favors the Bold",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "latent_unmodelled",
+   "item_req_unmodelled"
+  ],
+  "notes": "Five bullets, only two of which are things you do. Bullet 1 is not a step of THIS quest at all -- it tells you to run a different quest (Fisherman's Heart) so that Katsunaga in Mhaura will show you your unique-fish counter; a verb-scanner would have made a 'talk to Katsunaga' step out of it and put a marker in the wrong city. The unnumbered 'must have fished up 100 different fish' line and the expansion-list line are preconditions, and bullet 4 is an explanation of how the AH loophole works, not an instruction.\n\nThe five legendary fish are ONE obtain step, not five: they are caught in any order across the whole world, the page names no zone for any of them, and five rungs the player cannot be marked through would be noise. Holding all five is the honest observable, so it is that step's evidence -- and this also models bullet 4 for free, because the ladder cares that you HOLD the fish and not how you got them, so buying a pre-registered fish off the AH advances the mark exactly like fishing it up.\n\nThe page does not say whether the five are traded together or one at a time; I modelled one trade, because the ladder position is identical either way. Steps 3 and 4 are both trades to Irmilant and consecutive, which is one marker. The 100-unique-fish requirement and the Ebisu Fishing Rod item requirement have no schema slot and nothing observable behind them, so both are flagged rather than faked. Fame 'Outlands' is not one of the nine fame regions, so it gates nothing; raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Outlands / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Indomitable Spirit",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Irmilant",
+   "zone": "Rabao",
+   "grid": "G-7",
+   "raw": "Irmilant, Rabao - (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Irmilant"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you must already have fished up 100 different fish and be holding an Ebisu Fishing Rod; neither is visible to the addon"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Matsya",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Dragon's Tabernacle",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Quicksilver Blade",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Phantom Serpent",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Lord of Ulbuka",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "all five, in any order, from the four corners of Vana'diel -- the page names no zone for any of them, so this is one step and not five. A fish bought off the Auction House counts as long as Katsunaga has it registered to you, and holding it satisfies this the same way, so the AH route needs no separate branch."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Irmilant"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Matsya",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dragon's Tabernacle",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Quicksilver Blade",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Phantom Serpent",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lord of Ulbuka",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page does not say whether the five go in together or one at a time; modelled as one trade because the ladder position is the same either way"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Irmilant"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Ebisu Fishing Rod",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "only after all five are in. The rod comes back as an Ebisu F. Rod +1, which is the header's Reward and therefore not evidence for anything."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Boy and the Beast",
+   "page_id": 27292,
+   "revision_id": 674146,
+   "source_sha256": "cbe8dd7299fb4bee6d40e7ea77971e868a439cfa237a03e0fd2e823fa216a32e",
+   "cache_file": "0027292_boy_and_the_beast"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 24,
+   "dat_name": "Boy and the Beast",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "answer_depends_on_game_time"
+  ],
+  "notes": "Six bullets, five steps: bullet 4 is not an action but the RESULT of bullet 3, so it folds into that step and supplies its evidence (the Vunkerl herb memo key item). The three time-of-day/colour lines nested under bullet 4 are the memo's contents, not three more steps.\n\nThe quest visits the same ??? near the bridge at (H-6) twice -- once to get the memo and once to hand the herb over -- and that ??? is in OBJECT_DENY, so neither of those rungs can carry a marker. They are kept anyway because they hold the ladder together, and because the Leafy Patch between them DOES resolve and is markable.\n\nBullet 5's colour puzzle is answered from the current game clock (red before 08:00, blue until 16:00, green after), which the addon cannot see. It does not gate the step: the page says you receive the herb whichever colour you pick, and a wrong one only means Excenmille sends you back. So the herb is honest evidence for touching the patch, and the possible second lap is a note.\n\nThe quest ENDS on the ??? -- there is no hand-in NPC. Excenmille is named only inside bullet 5's warning and in the header description; he is never someone you go and speak to, so no step points at him. Fame 'Crystal War' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Claws of the Griffon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Raustigne",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-7",
+   "raw": "Raustigne, Southern San d'Oria (S) - (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raustigne"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene here is what unlocks Rholont's new dialogue; without it he says nothing useful"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vunkerl herb memo",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "near the bridge. Bullet 4 is this bullet's outcome, not a step -- the memo arrives when the cutscene ends. The zone's Survival Guide is the quick way in. ??? can never carry a marker."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Leafy Patch"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vunkerl herb",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "top left corner of (F-5). It asks for a colour: red 00:00-07:59, blue 08:00-15:59, green 16:00-23:59 game time -- the clock is not visible to the addon. You get the herb whichever you pick, so this is still sound evidence; a wrong colour just means coming back for another one."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Vunkerl herb",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same ??? by the bridge as step 3. The quest finishes here; there is no NPC to hand in to, so no turn-in marker can ever be claimed."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beneath the Mask",
+   "page_id": 50591,
+   "revision_id": 773860,
+   "source_sha256": "a9369e7328e22ba2b8cd23b0d70c17e6259686081ce82cbb1c49a1e99bd43d69",
+   "cache_file": "0050591_beneath_the_mask"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 49,
+   "dat_name": "Beneath the Mask",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "The cleanest page in this batch: eight numbered bullets, eight steps, one action each, and every name resolves. Every sub-bullet is Campaign Arbiter or Survival Guide routing advice and none is a step; the last one is inventory-management advice for re-collecting the reward, which is a reward note and not a rung.\n\nThe unnumbered 'Notice' above the walkthrough is a precondition -- one game day plus a re-zone after Honor Under Fire -- and neither the day counter nor the re-zone is observable, so it is flagged and noted rather than made into a wait step.\n\nOnly one observable in the whole quest, the Wax seal from Leadavox, and it sits on the trade that produces it. Steps 3, 6 and 7 are pure conversation and steps 1/3/7 are all Gentle Tiger; 3 and 7 are separated by real work, so they stay separate rungs. The header's Fame is 'Wings of the Goddess', which is an expansion and not one of the nine fame regions -- the (S) areas have their own fame that this addon does not model -- so it gates nothing and the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Honor Under Fire",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Gentle Tiger",
+   "zone": "Bastok Markets (S)",
+   "grid": "H-6",
+   "raw": "Gentle Tiger, Bastok Markets (S) (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "wait one game day and re-zone after Honor Under Fire first -- neither is visible to the addon"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux (S)"
+    },
+    "zone": "Beadeaux (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "zoning in is the whole step; the Pashhow Marshlands (S) Survival Guide is beside the entrance"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Red Axe"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Campaign Arbiter drop-off is very close to him"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Leadavox"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Beeswax",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Red Textile Dye",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Wax seal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "behind the Cyclopean Gates; the Campaign Arbiter lands due south, so ride north. Both items in one trade -- this is the quest's only genuine AND-list, and the header's Item Reqs agree."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Red Axe"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hoarfang"
+    },
+    "zone": "Beaucedine Glacier (S)",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the quest ends on this object, not on an NPC. The Super Reraiser is the header's Reward, so it is not evidence; if your inventory is full you can discard it and re-check the Hoarfang."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "To Catch a Falling Star",
+   "page_id": 305,
+   "revision_id": 770618,
+   "source_sha256": "a106c106e79b5242440ada01b60ebf15a97050d1974c295076d5feb990a0b0e1",
+   "cache_file": "0000305_to_catch_a_falling_star"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 53,
+   "dat_name": "To Catch a Falling Star",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "count_unobservable"
+  ],
+  "notes": "Six bullets, four steps. Bullet 3 is not a step -- it is the note that a Starfall Tear can simply be bought off the Auction House. That branch needs no separate modelling: the tear is the observable, so buying one advances the ladder past the tree exactly as fishing it out of the frost would, which is the right behaviour and not a gap.\n\nBullets 4 and 5 are one step. Bullet 4 only locates the Twinkle Tree (West Sarutabaruta (I-6), near the map's 'Starfall Hillock'; it glows blue at night) and bullet 5 is the trade itself. The tree only accepts the scales between 00:00 and 03:00 game time -- at any other hour it answers 'There is nothing out of the ordinary here' -- and game time is invisible to the addon, so that is flagged and noted. It does not affect the ladder, only how long the rung sits there.\n\nThe page never gives a number of Pugil Scales ('some Scales', 'the Pugil Scales') and neither does the header, so a count of 1 is recorded and flagged rather than guessed upward. Bullet 6 says 'the Tears', plural, but the header and the trade are both a single Starfall Tear; the singular is used. Steps 1 and 2 are two different NPCs standing on the same spot on top of the Orastery, so both keep their own rung.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Sigismund",
+   "zone": "Port Windurst",
+   "grid": "E-7",
+   "raw": "Sigismund, Port Windurst (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sigismund"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on top of the Orastery"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tohopka"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "standing right next to Sigismund; he explains that you need Pugil Scales, from pugils in East Sarutabaruta or the Bonecrafting category of the Auction House"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Twinkle Tree"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Pugil Scales",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Starfall Tear",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "in the vicinity of the map's 'Starfall Hillock'; a rounded tree with a blue firefly glow at night. Only between 00:00 and 03:00 game time, when it reads 'A frost deposit at the base of the tree twinkles in the starlight' -- the clock is not visible to the addon. The page gives no count for the scales, so 1 is recorded. A tear bought off the Auction House satisfies this the same way."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sigismund"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Starfall Tear",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page writes 'the Tears' but the header and the trade are one Starfall Tear. The Fish Scale Shield is the Reward and so is not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Divine Interference",
+   "page_id": 53923,
+   "revision_id": 758652,
+   "source_sha256": "30111eb907430b69889fbc7d9d4894b4c664269b55d4bf32d80d0ae2453f6c9e",
+   "cache_file": "0053923_divine_interference"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 75,
+   "dat_name": "Divine Interference",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "zone_subarea_folded",
+   "bullet_split"
+  ],
+  "notes": "The header names 'Nashmeira, Imperial Ward' as the giver, but the walkthrough never sends you to her: bullet 1 says the cutscene that begins the quest comes from approaching Naja Salaheem in Aht Urhgan Whitegate (I-10). Nashmeira is the throne-room cutscene, and 'Imperial Ward' is not a zone the client knows at all -- it resolves to nothing -- so a start built from the header would have neither a place nor an entity. Start is moved to Naja Salaheem, who resolves and who is also the reward NPC in bullet 7; the header string is kept verbatim in start.raw. That is a marker move, not a removal, and it is why this quest is medium rather than high.\n\nBullet 5 puts the Blank Target in the 'Nyzul Isle Staging Point', which is not a zone in res/zones.lua -- the Staging Point is a named sub-area of Alzadaal Undersea Ruins, and bullet 6 confirms it by putting the Runic Seal one grid square away at Alzadaal Undersea Ruins (I-8/9). The step is recorded in Alzadaal Undersea Ruins so it keeps a place; nothing is lost by it, because 'Blank Target' is in OBJECT_DENY and could never have carried a marker anyway. (Resolving 'Nyzul Isle' instead would have been wrong -- that id is the instanced Assault zone, not the staging area.)\n\nBullet 6 is split: examining the Runic Seal is a markable action, and the battlefield behind it is a fight, so they are two rungs from one bullet. The page names no zone for the battlefield itself, so that step has none. The three sub-bullets under bullet 6 are tactics -- the Alexander Images, the Trust ban, Divine Judgment -- and only Alexander himself is recorded as a mob, since the Images are adds he calls rather than something the step asks you to find.\n\nSteps 3 and 4 are both the Acid-eaten Door and consecutive, so they are one marker; they stay two rungs because the examine and the trade are separately gated. The lightning cell is the only observable in the quest. The reward list -- Imperial Gold Piece plus a choice of five -- is a reward and never evidence. Fame reads 'Treasures of Aht Urhgan', which the resolver folds to the Aht Urhgan fame region; FLevel is empty, so the gate is inert either way.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: Blank Target is in OBJECT_DENY, so this rung has no marker either way.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Waking the Colossus",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Nashmeira, Imperial Ward"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "approaching her is enough; there is nothing to click. On a repeat run the page says to skip this and go straight to the Imperial Whitegate, but it is still the first rung of a fresh run."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "this is where a repeat run starts"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Acid-eaten Door"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "short cutscene; the trade in the next step is on the same door"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Acid-eaten Door"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Slab of Plumbago",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "lightning cell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page writes '3 Slabs of Plumbago'; the item is Slab of Plumbago"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Blank Target"
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "J-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "The page calls this the Nyzul Isle Staging Point, which is a sub-area of Alzadaal Undersea Ruins and not a zone of its own see the quest note."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Runic Seal"
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "I-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "this opens the battlefield; the fight itself is the next rung"
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Alexander",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page does not name the battlefield zone, only the Runic Seal you enter it from, so none is recorded. Alexander can call up to three Alexander Images; no Trust magic; at low HP he uses Divine Judgment on everything in range."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "she offers the choice of reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (Misareaux)",
+   "page_id": 59019,
+   "revision_id": 639743,
+   "source_sha256": "82e274aeee2ed0a5dda4de3fe1bee02b37cd371778c31ba74722423aad88cd65",
+   "cache_file": "0059019_a_mightier_martello_misareaux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 155,
+   "dat_name": "A Mightier Martello (Misareaux)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name",
+   "unnamed_target"
+  ],
+  "notes": "Five bullets, three steps. Bullets 2, 3 and 4 are one action seen from three angles -- find a martello, open its menu and pick 'Prepare to upgrade martello', then stand where the menu (not the log) tells you -- so they merge into one rung on the Martello. Bullet 4's sub-bullet is the useful part: the Fuel reservoir key item silently becomes a Cracked fuel reservoir, which the log never mentions. That swap is the only mid-quest observable there is, and it is what makes this ladder work at all.\n\nThe unnumbered line above the walkthrough is a cooldown -- one Refuel and Replenish or A Mightier Martello per Vana'dielian day across ALL Abyssea areas -- not a step, and nothing in the packets reports it.\n\nNeither the martello nor the outfitter has a grid. 'Machine Outfitter (Misareaux)' folds to the bare key 'machine outfitter', which is shared with the outfitters in every other Abyssea zone, and 'Martello' is shared by the several martellos within this one; both therefore depend entirely on the step's zone to disambiguate, so Abyssea - Misareaux is set on all three rungs. The page says martellos cluster around the Confluxes but names no coordinates, so no grid is invented.\n\nThe 'you cannot zone at any point or you lose the key item' warning is real and unobservable as a rule, but its effect is not: losing the key item drops the ladder straight back to the outfitter, which is exactly where the page tells you to restart. Fame 'amis' is an Abyssea zone code and gates nothing; the FLevel 2 is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "amis / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Misareaux)",
+   "zone": "Abyssea - Misareaux",
+   "grid": null,
+   "raw": "Machine Outfitter (Misareaux), Abyssea - Misareaux"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Only one martello quest per Vana'dielian day across all of Abyssea. Do not zone after this or the key item is gone and you start again here."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "any martello in the zone, usually near a Conflux; one already at 100% still works. Pick 'Prepare to upgrade martello', confirm, then follow the direction the MENU gives -- the log's direction is wrong. The page gives no coordinates for any martello."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cruor payout varies with the direction the upgrade was finished from, which is a reward and not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (La Theine)",
+   "page_id": 56726,
+   "revision_id": 627901,
+   "source_sha256": "c2c0aea7353ba58a387e326d86bcae25ebc203513e764232275459b0c77f385e",
+   "cache_file": "0056726_a_mightier_martello_la_theine"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 151,
+   "dat_name": "A Mightier Martello (La Theine)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name",
+   "unnamed_target"
+  ],
+  "notes": "Word for word the Misareaux page with the zone swapped, and read the same way: bullets 2, 3 and 4 are one action on one Martello, and bullet 4's sub-bullet supplies the only mid-quest observable, the silent swap of the Fuel reservoir for a Cracked fuel reservoir. The unnumbered cooldown line above the walkthrough -- one martello quest per Vana'dielian day across ALL Abyssea areas, so doing this one blocks the Misareaux one the same day -- is not a step and is not observable.\n\n'Machine Outfitter (La Theine)' folds to exactly the same key as the Misareaux outfitter, 'machine outfitter', and 'Martello' is equally generic, so the zone is what keeps these two quests apart; Abyssea - La Theine is set on every rung. No grid is given for the outfitter or for any martello, so none is invented -- the page only says they cluster near the Confluxes. Fame 'alth' is an Abyssea zone code and gates nothing; FLevel 3 is kept, and it is the one field that actually differs from the Misareaux quest besides the zone.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "alth / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (La Theine)",
+   "zone": "Abyssea - La Theine",
+   "grid": null,
+   "raw": "Machine Outfitter (La Theine), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (La Theine)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Only one martello quest per Vana'dielian day across all of Abyssea. Do not zone after this or the key item is gone and you start again here."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "any martello in the zone, usually near a Conflux; one already at 100% still works. Pick 'Prepare to upgrade martello', confirm, then follow the direction the MENU gives -- the log's direction is wrong. The page gives no coordinates for any martello."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (La Theine)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cruor payout varies with the direction the upgrade was finished from, which is a reward and not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Ulcerous Uragnite",
+   "page_id": 67173,
+   "revision_id": 640293,
+   "source_sha256": "5dc07d370ba08ad496729ddb736a78eeb87e15e87944691392f735fec2b389bb",
+   "cache_file": "0067173_an_ulcerous_uragnite"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 178,
+   "dat_name": "An Ulcerous Uragnite",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "ki_name_not_unique",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "Three bullets, three steps, and then a paragraph and a nine-row table that are entirely about which abyssite you are handed -- rewards, and by the hard rule never evidence, so nothing in this quest carries any. That is the honest outcome: the only key items it produces are the reward, and their identity depends on how many Abyssea storyline quests you had finished first, which no packet reports.\n\nThe header's giver is Rurukaka, but what you actually touch is the Cavernous Maw at North Gustaberg (G-7) -- Rurukaka is who the cutscene is with. Both names resolve and both sit at the same corner of the same zone, so start is left on the header's Rurukaka (with the grid recovered from bullet 1, which the header omits) while step 1 targets the maw. Either way the marker lands in the same place.\n\nThe Traverser stone must be held to use the maw, so it is recorded as that step's requirement -- but be warned it will be dropped at validate time: 'Traverser stone' is not a unique name in res/key_items.lua and the resolver rejects non-unique key-item names rather than guessing an id. That costs the requirement, not the rung.\n\nBullet 2 is the whole fight in one line and its sub-bullet openly defers the spawn conditions to the Abyssea - Grauberg page, so this walkthrough is incomplete by its own admission; nothing about how Amphitrite is popped is on this page to read. The bullet names no zone either, but the header description and that sub-bullet both name Abyssea - Grauberg, and the maw in bullet 1 is the door into it, so that is where the fight is placed. Bullet 3 is a plain re-entry into North Gustaberg -- the quest finishes on a zone-in cutscene with no hand-in NPC at all. Fame 'agra' is an Abyssea zone code and gates nothing; FLevel 1 is kept.\n\nADVERSARY: demoted high -> medium. Nothing in the ladder is wrong -- the three rungs are the three bullets, in order, and the only zone that is not stated outright (the fight's) is already carried at medium on its own step. But the page defers the whole of how Amphitrite is spawned to the Abyssea - Grauberg page, which is the guide's 'the page is incomplete', and the quest produces no observable at all, so the mark can never advance off step 1 by evidence. High overclaims a page that admits it is not finished.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: You must be holding a Traverser stone, though that key-item name is not unique and will not resolve.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [
+    {
+     "title": "Dawn of Death",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Rurukaka",
+   "zone": "North Gustaberg",
+   "grid": "G-7",
+   "raw": "Rurukaka, North Gustaberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "North Gustaberg",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Traverser stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "North-east corner; the page writes the grid as 'G-7)' with a stray bracket. The cutscene is with Rurukaka, who is the header's giver."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Amphitrite",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the bullet names no zone; Abyssea - Grauberg comes from the header description and from the sub-bullet, which sends you to that zone's page for the spawn flowchart. Nothing about how Amphitrite is popped is on this page."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "North Gustaberg"
+    },
+    "zone": "North Gustaberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zoning in is the whole step and it ends the quest; there is no NPC to hand in to. The abyssite you receive depends on how many Abyssea storyline quests you had already finished -- see the page's table -- and being a reward it is not evidence for anything."
+   }
+  ]
+ }
+]

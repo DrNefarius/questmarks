@@ -1,0 +1,1319 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Way of the Cook",
+   "page_id": 332,
+   "revision_id": 120796,
+   "source_sha256": "39fb3fea849369741239e93f7a9e1b736283a2efe26306b6cdd69b7d45bcbdaa",
+   "cache_file": "0000332_way_of_the_cook"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 1,
+   "dat_name": "Way of the Cook",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Three bullets, one of which is not a step. Bullet 1 sits under a 'Note' heading and is a COOLDOWN on the quest being offered at all -- eight real-life hours after Rycharde the Chef -- so it gates step 1 rather than being a rung; nothing in the packets reports it. The sub-bullet under bullet 3 is a reward tier (1,000 instead of 1,500 gil if you take more than three game days), not an action. That leaves a two-rung ladder on one NPC, which is one marker. Fame reads 'Other', which is not one of the nine regions, so it gates nothing -- even though the page is filed under Category:Mhaura Quests and Rycharde stands in Mhaura, the header is not overridden. Nothing here is observable: both ingredients are ordinary crafting items you may already be carrying for other reasons, so holding them proves nothing was DONE, only that step 2 is ready.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Rycharde the Chef",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rycharde",
+   "zone": "Mhaura",
+   "grid": "H-8",
+   "raw": "Rycharde, Mhaura (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he does not offer the quest until eight real-life hours after Rycharde the Chef, which the addon cannot see"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Dhalmel Meat",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Beehive Chip",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "both in one trade; taking longer than three game days only cuts the gil, it does not fail the quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Delivering the Goods",
+   "page_id": 38783,
+   "revision_id": 384997,
+   "source_sha256": "670d578f1bd245889ee5795e7507e0c3d46be23d31214c433d30d7e2563cb25a",
+   "cache_file": "0038783_delivering_the_goods"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 61,
+   "dat_name": "Delivering the Goods",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Bullet 2 is an OR, not a sequence: 'Talk to Qutiba or Ulamaal'. It is modelled as a two-member group so both draw at once and the player takes whichever they reach -- prereq.lua treats grouped steps as current together, which is exactly the shape an OR wants, and it costs nothing here because both stand at (K-12) in the same room. Recording only Qutiba would have hidden the other for no gain. The Shararat Teahouse is inside Aht Urhgan Whitegate rather than a zone of its own, so all four rungs share one zone. Topok-Hippok is named in bullet 1 as the person you are helping; you never interact with him on this page, so he is not a target. Fame is written as the expansion name, 'Treasures of Aht Urhgan'; the resolver folds that to the real Aht Urhgan region, and FLevel is empty, so it gates nothing either way. Nothing in this quest is observable -- no key item, no drop, the reward is Imperial Bronze Pieces -- so every step's evidence is null and the ladder rests on the session latch.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Fochacha",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": null,
+   "raw": "Fochacha, Aht Urhgan Whitegate"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fochacha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header gives no grid; (I-9) comes from the walkthrough"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Qutiba"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "teahouse",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the Shararat Teahouse. EITHER this NPC or Ulamaal -- one cutscene, not two; the group is carrying an OR, see the quest note."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ulamaal"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "teahouse",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the other half of bullet 2's OR; talking to either one is enough"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fochacha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Brothers in Arms",
+   "page_id": 67143,
+   "revision_id": 651775,
+   "source_sha256": "1d019ae524599eb817530c4973188124655e7eb15447978704714918f3b8709e",
+   "cache_file": "0067143_brothers_in_arms"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 73,
+   "dat_name": "Brothers in Arms",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "spawn_trigger_unnamed"
+  ],
+  "notes": "Bullets 2 and 3 are one step, not two: bullet 2 states the objective ('You are tasked to defeat Blanga') and bullet 3 states its outcome (the whole party receives the Imperial pearl on the kill). A keyword parser would have made a rung out of the receipt; instead the key item becomes the fight's evidence, which is where it is actually granted. The header lists that same pearl under Item Reqs because you carry it back, so it is also step 3's held item -- required to hand in, and not evidence twice. The page never says what force-pops Blanga, only 'See his page for details', so no trigger item and no ??? can be recorded and the fight step is left with just the mob; flagged rather than invented. Fame 'aule' is the Abyssea - Uleguerand zone code, not one of the nine regions, so FLevel 5 is kept in raw and gates nothing. 'Zazarg (A)' is the wiki's Abyssea form and the normaliser folds it to the plain in-game name.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "aule / 5"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Zazarg (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Zazarg (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zazarg (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "beside Conflux #7"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Imperial pearl",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Blanga",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "force-popped near Conflux #8; the page does not say with what. Everyone in the party gets the pearl, but only if the quest is active on them."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zazarg (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Imperial pearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the pearl is step 2's evidence, so it is listed here only as what you must be holding"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Re-Drafted by the Duchy",
+   "page_id": 86434,
+   "revision_id": 416700,
+   "source_sha256": "787c0c0b02cbda5bb73fb1ea585ee0e8463c49953d5f6f1d8d85d4055fd5414e",
+   "cache_file": "0086434_re_drafted_by_the_duchy"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 86,
+   "dat_name": "Re-Drafted by the Duchy",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "unnamed_target"
+  ],
+  "notes": "The header has NO Start field at all -- this is a Voidwatch chapter that flags itself when the previous one ends -- so start.raw is null rather than a string, and the zone is recovered from the one bullet: the Audience Chamber in Ru'Lude Gardens. The page names no entity there. The Audience Chamber is a room inside zone 243, not an NPC and not a clickable object, and the cutscene fires on arrival, so the step is modelled the way 'Divine Might' models its approach: kind travel onto the zone itself. That keeps a rung and the best placement the page supports without inventing a doorway. The sub-bullet is an outcome, not a second step. White stratum abyssite IV and the Tricolor Voidwatcher's emblem both resolve, but both are also the header's Reward, so by the reward rule they prove the quest is over rather than that a step is done -- evidence stays null. One-bullet quests like this are exactly where a verb-scanner invents two rungs.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Truth Is Out There",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Ru'Lude Gardens",
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ru'Lude Gardens"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Audience Chamber in the palace; the page names no NPC and no object, and the cutscene starts on arrival. It completes this quest and auto-flags A New Menace."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Fumbling Friar",
+   "page_id": 27290,
+   "revision_id": 729709,
+   "source_sha256": "9bcf74ee8673a92e5e1bc2f42ef2ba9261d4d507da173b842ce57a4f94993aa3",
+   "cache_file": "0027290_the_fumbling_friar"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 22,
+   "dat_name": "The Fumbling Friar",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "A clean three-rung fetch. Bullet 2 is ONE step, not two: 'Travel to Grauberg (S), enter the river at (G-6) and follow it downstream' is the route to the only thing you touch, and the ??? on the rock is that thing, so the journey stays in the note. The two grids in that bullet are not a contradiction -- (G-6) is where you get into the river and (G/H-6) is where the ??? sits -- so the step carries (G/H-6), the one that locates the target. The Ornate package comes off that click and is therefore step 2's evidence and step 3's held key item, never evidence twice. FLevel is not a number: 'Brass Ribbon of Service' with two section marks is a Campaign rank requirement, which has no slot in the schema and nothing observable behind it, so the fame level is null and the raw string is kept intact. Crystal War fame is not one of the nine regions. The ??? keeps its rung but can never carry a marker, so this quest draws on Fondactiont at both ends and nowhere in the middle, which is honest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / Brass Ribbon of Service §§"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Fondactiont",
+   "zone": "Garlaige Citadel (S)",
+   "grid": "I-6",
+   "raw": "Fondactiont, Garlaige Citadel (S) (I-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fondactiont"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "G/H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ornate package",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "enter the river at (G-6) and follow it downstream; the ??? is on a rock at the (G/H-6) border"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fondactiont"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Ornate package",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Memories: The Faux Pas",
+   "page_id": 58942,
+   "revision_id": 725238,
+   "source_sha256": "6088c35b21992a5125853e5fc7628e9084606f2229f4888c0942f635849e829a",
+   "cache_file": "0058942_her_memories_the_faux_pas"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 66,
+   "dat_name": "Her Memories: The Faux Pas",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "duplicate_ki_name"
+  ],
+  "notes": "Two bullets, two talks, one zone -- there is nothing to interpret away here, which is worth saying plainly. The Tiny memory fragment that Bertenont hands over is the header's Reward, so by the reward rule it is not evidence; it could not have been used in any case, because 'Tiny memory fragment' is NOT a unique key-item name and the resolver refuses ambiguous names rather than guessing an id. So both rungs are unobservable and the ladder rests on the session latch, which for a two-step quest costs nothing. The Home Point numbers in both bullets are travel hints, not targets. The description places the man at 'Laborman's Way', but the walkthrough gives Bertenont a grid, (E-4), so that is what is recorded and the flavour name is not turned into a location.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Her Memories: Homecoming Queen",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Abioleget",
+   "zone": "Northern San d'Oria",
+   "grid": null,
+   "raw": "Abioleget, Northern San d'Oria"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Abioleget"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Cathedral; the header gives no grid, (M-7) comes from the walkthrough"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bertenont"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "E-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he gives the Tiny memory fragment, which is the quest's reward and an ambiguous key-item name, so it is not used as evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Officer and a Pirate",
+   "page_id": 59022,
+   "revision_id": 726387,
+   "source_sha256": "2c50521b2edeaa477b9ae6a6fb8e47eb8082e616a13735449dc9ca17f07b3151",
+   "cache_file": "0059022_an_officer_and_a_pirate"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 168,
+   "dat_name": "An Officer and a Pirate",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated",
+   "start_disagrees_with_header",
+   "next_quest_hook"
+  ],
+  "notes": "One numbered bullet plus an unnumbered trailing 'Note:'. The header's giver is Gilgamesh, but what the walkthrough tells you to touch is a ??? at La Theine Plateau (G-6) -- the same ??? that 'Waking the Beast' is started from -- and Gilgamesh is what comes OUT of that cutscene, not a standing entity you walk up to. Start keeps the name Gilgamesh with the header string in raw: if no live entity carries it the marker simply never appears, which is today's behaviour anyway, and the alternative is a start of nothing. Step 1 is the ???, which keeps the rung but can never carry a marker. The 18:00-5:00 window is game time and the addon cannot see it. VERIFY: the draft carried a second step on Joachim in Port Jeuno, taken from the unnumbered Note with an empty source_bullets list. Removed. The page's own words are that he is how you 'proceed to the next quest', so he is the giver of Heart of Madness and not a rung of this one; the draft conceded as much and kept him only because he was the sole markable entity on the page. That is expediency, not reading -- this quest ends on a ??? the way Operation Teatime does, and borrowing the next quest's NPC is inventing a hand-in. The quest is left with one unmarkable rung, which is the honest answer; medium confidence now stands for that unmarkability and for the start/header disagreement.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Abyssea / (empty)"
+   },
+   "prev": [
+    {
+     "title": "First Contact",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Gilgamesh",
+   "zone": "La Theine Plateau",
+   "grid": "G-6",
+   "raw": "Gilgamesh, La Theine Plateau"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "only between 18:00 and 5:00 game time. Gilgamesh appears from this ???; the grid in start is taken from here, the header gives none."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Star Struck",
+   "page_id": 266,
+   "revision_id": 702388,
+   "source_sha256": "b56336f41ba2673fed5766591f98ab28b3f806af18af216b3b76758872b37bcf",
+   "cache_file": "0000266_star_struck"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 10,
+   "dat_name": "Star Struck",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "The farming comes FIRST. Bullet 1 has you kill Savanna Rarabs for the Torn Epistle before you have spoken to anybody, so step 1 is a fight and the giver is step 2 -- prereq.lua already handles this correctly, putting the '!' on Koru-Moru until you are actually on the quest, because a quest is never offered by a monster. The two drops are the whole observable spine and each is evidence exactly once, on the step that grants it: the Torn Epistle on step 1 and merely held on step 2, the Meteorite on step 3 and traded away on step 4. Bullet 3 names its monsters only as 'crawlers', so the mob is recorded as the singular 'Crawler' -- the West Sarutabaruta mob of that exact name, the page's own word depluralised, not a guess at which variant. Both hunts are in West Sarutabaruta; bullet 3's 'Head to West Sarutabaruta' is a restatement, not a second journey. The sub-bullet under bullet 2 is the page telling you an optional 50-gil trade 'isn't necessary' -- and it would cost you the epistle -- so it is a note, not a rung.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Koru-Moru",
+   "zone": "Windurst Walls",
+   "grid": "E-7",
+   "raw": "Koru-Moru, Windurst Walls (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "West Sarutabaruta",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Torn Epistle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Savanna Rarab",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "before the quest is accepted the only honest marker is the giver, which the runtime already does"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Koru-Moru"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Torn Epistle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he only reacts while the Torn Epistle is in your inventory. Trading it instead pays 50 gil and the page says that is unnecessary."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "West Sarutabaruta",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Meteorite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Crawler",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says only 'crawlers'; recorded as the singular Crawler, same zone as step 1"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Koru-Moru"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Meteorite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Path of the Beastmaster",
+   "page_id": 26801,
+   "revision_id": 729187,
+   "source_sha256": "0127806f3cc0d1eb5687b76bed677e84f810253d763d255b6f3b2002973d6c22",
+   "cache_file": "0026801_path_of_the_beastmaster"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 19,
+   "dat_name": "Path of the Beastmaster",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "prev_from_walkthrough",
+   "not_in_quest_log"
+  ],
+  "notes": "Three bullets, one real step. Bullet 1 is a prerequisite list, not an action -- but it names Chocobo's Wounds, which the header's Previous does NOT, so both quests are recorded in gates.prev and the extra one is flagged. Bullet 2 is the entire quest: one cutscene from Brutus, possibly after several conversations, which is dialogue behaviour and stays a note. The unnumbered Note that this quest never appears in the quest log until it COMPLETES is worth flagging rather than dropping: there is no in-progress state for the runtime to observe here, so the ladder can only ever sit at step 1. Bullet 3 is the page's own '(Optional)' epilogue and is kept as an optional step, the way Under Oath keeps its epilogue talks -- but the page never says which zone the Merchant's House is in, so the step carries no zone rather than an invented one. Level 30 is the plain level gate: this quest UNLOCKS Beastmaster, it is not gated to it, so jobs stays empty -- getting that backwards would lock the quest to a job the player cannot yet be.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Save My Son",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Chocobo's Wounds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Brutus",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Brutus, Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you may have to talk to him several times before the cutscene fires; the quest does not enter the log until it is finished"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Merchant's House"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page's own '(Optional)': revisiting it afterwards gives a short appreciation scene, with nothing to click. The page never says which zone it is in, so none is recorded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Not Meant to Be",
+   "page_id": 38786,
+   "revision_id": 547787,
+   "source_sha256": "6102a4a6d7869ac22effd0e640e3a1c82dec55c1b46c4f05cdcb754083987609",
+   "cache_file": "0038786_not_meant_to_be"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 64,
+   "dat_name": "Not Meant to Be",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "mob_name_normalised",
+   "no_observable_progress"
+  ],
+  "notes": "Seven bullets become seven rungs, but four of them are the SAME ??? at Caedarva Mire (K-8) and this quest grants nothing observable anywhere -- no key item, no drop, the reward is Imperial Gold Pieces -- so every evidence is null and the whole ladder rests on the session latch. That is the honest answer and it is why the quest is medium: the rungs are right, but nothing can tell them apart at runtime, and a ??? cannot carry a marker either, so the only thing that ever draws is Fhe Maksojha. Bullets 4 and 5 are ONE action: you go back to the ??? and the click is what pops the NMs, so they merge. Bullet 6 is TWO: kill them, then check the ??? again. The page writes the NM as 'Lamia No 27'; the game's name for that family is punctuated 'Lamia No.27' and the two do not fold together, so the punctuated form is recorded to give the live-entity match a chance and the discrepancy is flagged rather than silently corrected. The description says Wadayra wants her son Ahgdeen found, but every bullet and the header both point at Fhe Maksojha, so Wadayra is never made a target.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Fhe Maksojha",
+   "zone": "Nashmau",
+   "grid": "H-6",
+   "raw": "Fhe Maksojha, Nashmau (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fhe Maksojha"
+    },
+    "zone": "Nashmau",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the first of four visits to this same ???"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fhe Maksojha"
+    },
+    "zone": "Nashmau",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lamia No.27",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Moshdahn",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "bullets 4 and 5 are one click: returning to the ??? and clicking it is what pops both NMs. The page spells the first 'Lamia No 27'."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Caedarva Mire",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lamia No.27",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Moshdahn",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "both of them; the page gives no strategy and no level"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the second half of bullet 6 -- the same ??? once more, after both NMs are down"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fhe Maksojha"
+    },
+    "zone": "Nashmau",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ }
+]

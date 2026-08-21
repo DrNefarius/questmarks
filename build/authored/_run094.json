@@ -1,0 +1,2055 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Sorcery of the North",
+   "page_id": 497,
+   "revision_id": 774253,
+   "source_sha256": "1ae774be8a7ee3defcc1ef9ab763fe8e074b6191026510df16edc8011a8138c7",
+   "cache_file": "0000497_sorcery_of_the_north"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 83,
+   "dat_name": "Sorcery of the North",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Six bullets, five of which are real and one of which is not: bullet 1 is the usual 'zone after the previous quest' precondition and becomes a note on step 1. The interesting judgement is bullet 5, 'using either the key or Thief's Tools'. That is a genuine OR over two things you HOLD, and both names resolve, so it is modelled properly as items vs items_alt on the chest step rather than being flattened to items_partial the way Under Oath had to. Because the Thief's Tools route means you never touch the key, the step that farms the key is marked optional: a player who picks the lock would otherwise strand the ladder on a fight step whose evidence they can never satisfy, and the chest step's item test already decides readiness for both routes. The Curio Vendor Moogle alternative on bullet 4's sub-bullet is gated on the 'Rhapsody in White' key item, which does NOT resolve against res/key_items.lua, so it is recorded in the note only and nothing depends on it. The page names no grid for the Treasure Chest and none is invented.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The sub-bullet's Curio Vendor Moogle route needs the 'Rhapsody in White' key item, which does not resolve, so it is noted and not modelled.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 4,
+    "raw": "San d'Oria / 4"
+   },
+   "prev": [
+    {
+     "title": "Healing the Land",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Eperdur",
+   "zone": "Northern San d'Oria",
+   "grid": "M-7",
+   "raw": "Eperdur, Northern San d'Oria (M-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eperdur"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "second level of the Cathedral. Bullet 1 -- zone after finishing Healing the Land -- is a precondition, not a step."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Fei'Yin"
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "everything from here until the hand-in happens inside Fei'Yin; bullet 3 is the journey and bullets 4 and 5 are what you do once there."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fei'Yin Chest Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Shadow",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Underworld Bat",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Ore Golem",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "Optional because step 4 can be done with Thief's Tools instead, in which case the key is never held."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fei'Yin Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fei'Yin magic tome",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page gives no grid for the chest, so none is recorded."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Eperdur"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Master Missing, Master Missed",
+   "page_id": 67135,
+   "revision_id": 640672,
+   "source_sha256": "105c00a10436b37ffe6716dd9456f317307d711b2872b561670bb300eb80dd13",
+   "cache_file": "0067135_master_missing_master_missed"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 65,
+   "dat_name": "Master Missing, Master Missed",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A clean three-rung quest and the whole thing reads without argument. The unnumbered line above bullet 1 says you do NOT need to zone after the previous quest -- unusual enough to keep as a note, but it is the absence of a precondition, not a step. The Faint Glister is a targetable point rather than an NPC, so it is an object; the page's phrase 'targetable location' is exactly what target.type=object exists for. The Elegant gemstone is granted at bullet 2 and is the only observable in the quest, so it is step 2's evidence and nothing else's. Fame 'agra' is an Abyssea zone code, not one of the nine regions, so region is null and only raw survives -- the FLevel 2 is kept because it is what the page says, but with a null region it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "agra / 2"
+   },
+   "prev": [
+    {
+     "title": "The Mysterious Head Patrol",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Eight of Clubs (A)",
+   "zone": "Abyssea - Grauberg",
+   "grid": "H-8",
+   "raw": "Eight of Clubs (A) (H-8), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eight of Clubs (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "southeast of Conflux #5. You do not need to zone after The Mysterious Head Patrol, which the page says outright."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Faint Glister"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Elegant gemstone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "northwest corner of (J-8), south of Conflux #8 and a short walk from the giver."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Eight of Clubs (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Shady Business",
+   "page_id": 25844,
+   "revision_id": 760998,
+   "source_sha256": "c109507562ab193cbb7b5a8615134e457f396b5c8ee649084ef35e8b9c3cd986",
+   "cache_file": "0025844_shady_business"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 8,
+   "dat_name": "Shady Business",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A fame-farm errand: talk, gather four ore, trade back. Bullet 2's five sub-bullets are five SOURCES for one item, not five steps and not alternative items -- you end up holding Zinc Ore whichever you pick -- so they collapse into one obtain step whose evidence is Zinc Ore x4 and whose note lists the sources. That step deliberately carries no zone: buying from Teerth is Bastok Markets, Celestina is Mhaura, and mining is anywhere, and a step has one zone or none. Teerth and Celestina are named and would resolve, but promoting a vendor to a marker would pick one of five routes for the player. The 'After the walkthrough: Notes' section is two bullets of fame arithmetic -- best Tenshodo farm, 20 completions since the Feb 2014 update -- and no zoning needed to repeat; none of it is a step, though the no-zoning fact is worth carrying on the trade.",
+  "gates": {
+   "fame": {
+    "region": "Norg",
+    "level": 1,
+    "raw": "Norg / 1"
+   },
+   "prev": [
+    {
+     "title": "Beauty and the Galka",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Talib",
+   "zone": "Port Bastok",
+   "grid": "F-6",
+   "raw": "Talib - Port Bastok (F-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Talib"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point #3 is the closest."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Zinc Ore",
+       "count": 4
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "200 gil each from Teerth in Bastok Markets (Home Point #4) or Celestina in Mhaura, or the Auction House, or mining, or a Mineral Vein. Five routes to one item, so the step spans no single zone."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Talib"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Zinc Ore",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all four in one trade; zoning is not required before repeating."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hammering Hearts",
+   "page_id": 27286,
+   "revision_id": 774033,
+   "source_sha256": "01e395660f9e39fe8ffeab1c7eea5d172384d7e9c7dd0f8206bdf59a10a21172",
+   "cache_file": "0027286_hammering_hearts"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 14,
+   "dat_name": "Hammering Hearts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "unnamed_target"
+  ],
+  "notes": "Three bullets, four rungs. Bullet 2 is split because it says two different things: go and get the armour, then trade it. The gathering half is worth its own rung -- it is the only part of the quest that happens away from Scarred Shark, and holding both plates is genuinely observable -- but it can carry neither a zone nor a mob, because the page says only 'heavily armored Quadavs in Shadowreign zones' and names no zone and no monster. Inventing 'Quadav' as a mob name or picking one Shadowreign zone would be exactly the guessing to avoid, so the step is target-none, zone-null and honest about it. Steps 1, 3 and 4 are all Scarred Shark and collapse to one marker; the zone change bullet 3 demands sits between the trade and the final conversation, which is the page's doing and not a wedge. Ghemp, whom the description says wants the armour, is never someone you speak to. Item Reqs writes the short names H. Qdv. Chestplate / Backplate; both short and long forms resolve to the same ids (2504, 2505) and the long ones are used.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Scarred Shark",
+   "zone": "Bastok Markets (S)",
+   "grid": "G-5",
+   "raw": "Scarred Shark - Bastok Markets (S) (G-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Scarred Shark"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Survival Guide warp is the quickest way in."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Heavy Quadav Chestplate",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Heavy Quadav Backplate",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both drop from 'heavily armored Quadavs in Shadowreign zones'; the page names no monster and no zone, so neither is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Scarred Shark"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-5",
+    "items": [
+     {
+      "name": "Heavy Quadav Chestplate",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Heavy Quadav Backplate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both plates in one trade."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Scarred Shark"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "you must change zones between the trade and this conversation."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Moogle's Picnic!",
+   "page_id": 287,
+   "revision_id": 701628,
+   "source_sha256": "ae69735d0f5e9778eb56abaab2a40d48e6b85cb0e7a0947762e4247527c7c2b4",
+   "cache_file": "0000287_the_moogle_s_picnic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 101,
+   "dat_name": "The Moogle's Picnic!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "furniture_requirement_unmodelled"
+  ],
+  "notes": "A Mog House quest, which means almost nothing about it is markable. 'Moogle' comes back from the resolver flagged ambiguous -- every Mog House has one and the name is shared with vendors elsewhere -- and the zone resolves to the moghouse sentinel rather than a zone id, so the marker is at best a your-own-room affair. Kept at medium for that, not for any doubt about the reading. Two real judgements. First, the Mahogany Bed: it is an Item Req but it has to be PLACED as furniture, and placed furniture leaves your inventory, so recording it in items would make the ladder read false the instant you actually did the thing it is asking for. It stays in the note. Second, bullets 2 and 3 are one step -- 'zone out then come back' and 'return and speak to the Moogle' are the same visit, and the corpus already treats 'you must have zoned since' as a note on the conversation it precedes. Bullet 5 is an outcome and a one-earth-minute wait: the Mog Safe grows to 70 items. Capacity increases are the pilot's canonical example of a bullet that is not a step, and the page never says to speak to him again, so nothing is invented for it. VERIFY: step 3 was left at high while steps 1 and 2 were medium, but all three act on the same ambiguous 'Moogle' in the same moghouse-sentinel zone -- the trade items being unambiguous does not make the marker any more placeable -- so it is brought down to medium to match. Nothing else on this quest is disputed: the Mahogany Bed is rightly kept out of items, bullet 5 is rightly not a step, and there is no observable anywhere to be evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "Other / 5"
+   },
+   "prev": [
+    {
+     "title": "Give a Moogle a Break",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Moogle",
+   "zone": "Mog House",
+   "grid": null,
+   "raw": "Moogle, Mog House"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Mog House",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "a Mahogany Bed must be placed as furniture in the Mog House first. Placed furniture is not inventory, so it cannot be recorded as a held item without the step reading false the moment the bed is set down."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Mog House",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "zone out of the Mog House and back before this, and you may have to speak twice. The cutscene needs fame level 5 in your home nation."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Mog House",
+    "grid": null,
+    "items": [
+     {
+      "name": "Shrimp Lure",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Selbina Butter",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "both in one trade. Bullet 5 is the reward -- a Mog Safe of 70 items after one earth minute -- and not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Two Horn the Savage",
+   "page_id": 38776,
+   "revision_id": 684764,
+   "source_sha256": "acbb9de92cc4d5e6a1616dc741b2c0e68ce77bba4cc50b4df20cc64a65ccf430",
+   "cache_file": "0038776_two_horn_the_savage"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 17,
+   "dat_name": "Two Horn the Savage",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_mob_name",
+   "bullet_split",
+   "no_evidence_anywhere"
+  ],
+  "notes": "Eight bullets, eight rungs, and every single one is a cutscene errand -- there is not one observable in the whole quest. No key item, no drop, no reward held mid-quest: evidence is null on all eight, which is the expected answer and not a gap. The ladder therefore leans entirely on the session latch, hence medium. Bullets 5 and 6 merge: they are two clicks on the SAME Viscous Liquid, the first for a cutscene and the second to pop the NM, and the corpus already treats 'examine twice' as one rung (Divine Might). Bullet 7 then splits the other way -- 'examine after the NM is defeated' is a kill and a click, which is the pilot's own example of one bullet being two steps. The NM is a problem: the page calls it only 'Mamool Ja (NM)', which is a beastman family, not a proper name. It is recorded verbatim because inventing the real NM's name is worse, but it may well never match a live mob, so both the spawn and the kill are flagged. Bullet 3's 1,000 gil is modelled as an item trade; gil resolves as item 65535.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Milazahn",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "G-8",
+   "raw": "Milazahn, Aht Urhgan Whitegate (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Milazahn"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cacaroon"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Cacaroon"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-11",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 1000,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "1,000 gil; same NPC as step 2, so one marker."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mamook"
+    },
+    "zone": "Mamook",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in through the Mamool Ja Staging Point exit."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Viscous Liquid"
+    },
+    "zone": "Mamook",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mamool Ja",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "northwest to (E-8). Check it twice: the first gives a cutscene, the second spawns the NM. The page names the NM only 'Mamool Ja (NM)', a family name rather than a proper one, so it may not match anything live."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mamook",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mamool Ja",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "bullet 7 is a kill and a click; this is the kill half."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Viscous Liquid"
+    },
+    "zone": "Mamook",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the same Viscous Liquid again once the NM is dead, for the cutscene."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Milazahn"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fist of the People",
+   "page_id": 27204,
+   "revision_id": 733631,
+   "source_sha256": "0d262f20ec6555ee6c9931f2bec5db77c1ec8f4bec2c9056e4a99797cd1f74f5",
+   "cache_file": "0027204_fist_of_the_people"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 46,
+   "dat_name": "Fist of the People",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "active_quest_gate_unmodelled",
+   "npc_presence_unobservable"
+  ],
+  "notes": "The gate is the interesting part and it is deliberately NOT modelled. 'Quest Reqs: Ode to the Serpents must be active' is not a completed-prerequisite: putting Ode to the Serpents in prev would suppress this quest for exactly the players who can do it, since anyone who has FINISHED Ode no longer qualifies. prev stays empty and the requirement lives in the flags and the note. The second unmodellable is the page's closing line, which is not a bullet at all: the cutscenes only happen while General Zazarg is standing in Al Zahbi, and his presence rotates with the Besieged cycle and appears in no packet this addon reads. Both together are why this is medium rather than high -- the ladder itself is straightforward. The one observable is the Rusty Medal off Wajaom Tigers, which is step 3's evidence and step 4's held item. The quest ENDS at the Leypoint, not back at an NPC, so no hand-in is invented; the Fari-Wari visit after it is a sub-bullet, happens after completion and only unlocks Trust: Zazarg, so it is optional.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Talhaal",
+   "zone": "Al Zahbi",
+   "grid": "H-6",
+   "raw": "Talhaal, Al Zahbi (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Talhaal"
+    },
+    "zone": "Al Zahbi",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Ode to the Serpents must be ACTIVE, not finished. The cutscenes are only available while General Zazarg is in Al Zahbi, which nothing observable reports."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fari-Wari"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Shararat Teahouse."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rusty Medal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Wajaom Tiger",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "kill until one drops; they spawn near (E-8), (F-7) and (K-9), so no single grid is recorded."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Leypoint"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Rusty Medal",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the cutscene here completes the quest; there is no NPC to hand in to."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fari-Wari"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "sub-bullet of bullet 4: back at the teahouse AFTER the quest is over, and only to learn Trust: Zazarg."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Meg-alomaniac",
+   "page_id": 98203,
+   "revision_id": 676024,
+   "source_sha256": "594089519c3ca5aa74865f6c1e6c5a291cbf78ff972749d763609d47d291d2e5",
+   "cache_file": "0098203_meg_alomaniac"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 89,
+   "dat_name": "Meg-alomaniac",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "The nine sub-bullets under bullet 2 are the quest, and they are a set, not a sequence -- the page says 'Examine each Waypoint in Western Adoulin' and never orders them -- so all nine share a group and draw at once. A strict ladder would mark Platea Triumphus and nothing else until you happened to walk there, which is the failure mode groups exist for. Each parenthetical -- Pioneers' Coalition, Auction house, Big Bridge -- is a LANDMARK naming where the waypoint stands, not the waypoint's own name; the only name the page ever gives these things is 'Waypoint', so that is the target on all nine and the landmark goes in the note. ('Meg' in the description is a nickname the quest gives one of them, not an entity.) prev carries three titles, not one: Previous names Fertile Ground, and Quest Reqs names Western Waypoints, Ho! and Eastern Waypoints, Ho! -- the latter rendered as 'Wes...Eastern Waypoints, Ho!', a mangled wiki link, but both titles appear whole in the text so neither is guessed. Flagged because two of the three come from Quest Reqs rather than Previous. The Waypoint scanner kit is a key item (2264) and not an inventory item, and it is granted at bullet 1, so it is step 1's evidence. Adoulin is not one of the nine fame regions, so region is null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Adoulin / 3"
+   },
+   "prev": [
+    {
+     "title": "Fertile Ground",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Western Waypoints, Ho!",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Eastern Waypoints, Ho!",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Sharuru",
+   "zone": "Eastern Adoulin",
+   "grid": "F-8",
+   "raw": "Sharuru, Eastern Adoulin - (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Waypoint scanner kit",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Platea Triumphus, by the Couriers' Coalition."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Pioneers' Coalition."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Mummers' Coalition."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Inventors' Coalition."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by the Auction House."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by the Rent-a-Room."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Big Bridge."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the airship docks."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Adoulin waterfront."
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Arts and Crafts",
+   "page_id": 38765,
+   "revision_id": 631597,
+   "source_sha256": "6bbad8fe806b503ea86ef6d57bbc23e217db95510f1177029320255f535559f6",
+   "cache_file": "0038765_arts_and_crafts"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 1,
+   "dat_name": "Arts and Crafts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "unnamed_item",
+   "reward_swap_step"
+  ],
+  "notes": "Seven NPCs scattered across one zone, in no stated order, so they are a group of seven and all seven draw at once -- the same shape as Hat in Hand. Every one of them is named with a grid, so this is a good group rather than a lossy one. What the group canNOT carry is evidence: the seven letters are collected as t, u, A, D, d, M and A, but the page never gives them item or key-item names, only the glyph each NPC hands over, and 'A' is not a name you can resolve. So items and evidence are empty across all seven and the letters live in the notes; inventing something like \"letter 'A'\" would be exactly the guessing this pass exists to avoid. The description's count (one each of M, U, T and two each of A, D) agrees with the seven sub-bullets, which is a useful cross-check that none is missing. The sub-sub-bullet warning is real and kept: all seven are quest givers in their own right, so you may have to talk past their own dialogue. Bullet 4 is a step but a post-completion one -- trading the Sutlac back swaps the reward for an Imperial Bronze Piece -- so it is optional and carries the reward item as items, never as evidence. The page misspells Hadahda as 'Hahahda' there; the correct spelling is used.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Hadahda",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "F-10",
+   "raw": "Hadahda, Aht Urhgan Whitegate (F-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hadahda"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "above the Mog House."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zabahf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the letter t. He starts a quest of his own, so you may have to speak more than once."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mathlouq"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the letter u."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ekhu Pesshyadha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the letter A."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balakaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the letter D."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Matifa"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the letter d."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mhasbaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the letter M."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Qutiba"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "letters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "gives the second A."
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hadahda"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "cutscene and the reward, a Sutlac."
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Hadahda"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Sutlac",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "only if you would rather have an Imperial Bronze Piece; the quest is already finished. The page spells him 'Hahahda' here."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fistful of Fury",
+   "page_id": 38425,
+   "revision_id": 720023,
+   "source_sha256": "f755aad9bc2ff2ba42289f7fc6af249a7217168587392356be3a38b888961492",
+   "cache_file": "0038425_fistful_of_fury"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 41,
+   "dat_name": "Fistful of Fury",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "walkthrough_in_prose",
+   "or_branch_unmodelled"
+  ],
+  "notes": "This page is numbered but not sequenced: [1], [2] and [3] are not actions, they are the three things Vola wants -- 'A Nue Fang', 'A Dodo Skin', 'A Morbolger Vine' -- and the two actual instructions (talk to Vola, trade him all three) are in unnumbered prose above and below the list. So two steps carry an empty source_bullets, which is the honest audit trail: there is no bullet to cite. Step 1 exists anyway because the runtime treats accepting the quest as completing step 1, and if a component sat in that slot it would be silently ticked off. The three hunts are a set, not a ladder -- nothing orders them -- so they share a group and each carries its own drop as evidence, one item apiece, which never collides with the duplicate-evidence rule. Each sub-bullet offers a second route (BCNM 50 Eye of the Tiger, KSNM 30 Moa Constrictors, KSNM 30 Contaminated Colosseum) that yields the SAME item from a different place; that is a route alternative, not an item alternative, so items_alt stays empty and the routes are noted -- flagged so a human can see it was a decision. Fame is literally '?' on the page, so region and level are both null and only raw is kept. The description misspells the vine 'molbolger'; the Item Reqs spelling Morbolger Vine is the one that resolves (1013). VERIFY: downgraded high -> medium. The ladder reading is not disputed, but this page has no walkthrough: [1][2][3] are components, not actions, so the first and last rungs cite no bullet at all; the fame gate is literally '?' and so is unknown rather than absent; and each component's second route (BCNM 50, KSNM 30) means the one zone each fight step names is only one of two places the player may be. By this batch's own calibration -- Fist of the People is medium for an unmodellable gate -- an unknown gate plus three unmodelled OR routes is medium. Nothing is added to fix it: the missing bullets stay missing.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: There is no bullet to cite, hence the empty source_bullets.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "? / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Silence of the Rams",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Vola",
+   "zone": "Lower Jeuno",
+   "grid": "J-8",
+   "raw": "Vola, Lower Jeuno - (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vola"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "From the unnumbered prose above the list ('Vola sees you wish to attain the rank of Brown Belt, but requires you perform a test')."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Nue Fang",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Nue",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "components",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "a NM Tiger. The BCNM 50 Eye of the Tiger yields the same fang, which is a second route rather than a second item."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sauromugue Champaign",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Dodo Skin",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Deadly Dodo",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "components",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "a NM Cockatrice. The KSNM 30 Moa Constrictors is the second route."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ordelle's Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Morbolger Vine",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Morbolger",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "components",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "a NM Morbol. The KSNM 30 Contaminated Colosseum is the second route."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Vola"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Nue Fang",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dodo Skin",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Morbolger Vine",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the closing unnumbered line, 'Trade all 3 items to Vola to receive your Brown Belt'."
+   }
+  ]
+ }
+]

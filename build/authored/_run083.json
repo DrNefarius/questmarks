@@ -1,0 +1,1727 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Classrooms Without Borders",
+   "page_id": 67147,
+   "revision_id": 757761,
+   "source_sha256": "d2f3151d13ff413ec6cec293ec75e76acf1bbca2db92224eff043a71051f0064",
+   "cache_file": "0067147_classrooms_without_borders"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 77,
+   "dat_name": "Classrooms Without Borders",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "duplicate_npc_name_across_zones"
+  ],
+  "notes": "A three-rung fetch quest and the page is unusually honest about it. The Manigordo Tusks are the only observable thing here, so they sit on step 2 and nowhere else; the reward is Cruor and a chance at an Empyrean seal, neither of which is an item you hold, so step 3 carries no evidence at all. The sub-bullet under bullet 3 ('50 quest completions will max fame') is a fame note, not a step, and the trailing 'Zoning is not required to repeat this quest' is a repeat rule -- neither is an action. The description calls them 'manigordo fangs' but the header and the walkthrough both say Manigordo Tusk, which is what resolves, so that is what is recorded. Conflux #7 is a warp destination with no grid on the page, so step 2 keeps its zone and loses its grid rather than borrowing one. Note that 'Moreno-Toeno (A)' folds to the same NPC key as the Windurst schoolteacher of the same name in Teacher's Pet, elsewhere in this same batch -- only the zone separates them, and both steps carry theirs.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: 'any other means' is an alternative to killing, not to holding, so this step has nothing to carry in items and items_partial stays false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Moreno-Toeno (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "K-5",
+   "raw": "Moreno-Toeno (A) (K-5), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moreno-Toeno (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "K-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near conflux #1"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Manigordo Tusk",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Manigordo",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "By Conflux #7, which the page gives no grid for. The tusks may also be bought on the Auction House."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Moreno-Toeno (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "K-5",
+    "items": [
+     {
+      "name": "Manigordo Tusk",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all three in one trade; repeatable without zoning"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 101: Detour to Zepwell",
+   "page_id": 83783,
+   "revision_id": 709725,
+   "source_sha256": "edae2d82da6d0b7b0861d67e8eb8419bafd05609ecdd39afeb08a1864292b605",
+   "cache_file": "0083783_vw_op_101_detour_to_zepwell"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 102,
+   "dat_name": "VW Op. #101: Detour to Zepwell",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "Bullet 2 is one bullet holding three separate journeys to three separate zones, so it becomes three steps -- and the page never puts them in an order ('Engage in and complete the 3 Tier I Voidwatch battles'), so they share a group and all three draw at once rather than the ladder marking Western Altepa Desert and nothing else. Each keeps its own zone, which is the whole point of the group. The Voidwatch rifts themselves are never named as clickable entities on this page, only located, so every battle step is target-none and takes its marker from the NM instead. The [KI] Ashen stratum abyssite is a real precondition carried from the previous quest, so it sits in step 1's items where it belongs rather than being invented as evidence -- it is granted by Voidwatch Ops: Border Crossing, not here. The header gives no grid for Gushing Spring; the walkthrough gives (G-8), so that is used and the header string is kept verbatim in start.raw. Gushing Spring is scenery you click, not a person, so it is typed as an object.",
+  "gates": {
+   "fame": {
+    "region": "Rabao",
+    "level": null,
+    "raw": "r / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Voidwatch Ops: Border Crossing",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Gushing Spring",
+   "zone": "Rabao",
+   "grid": "G-8",
+   "raw": "Gushing Spring, Rabao"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "object",
+     "name": "Gushing Spring"
+    },
+    "zone": "Rabao",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Ashen stratum abyssite",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must already have started Voidwatch Ops: Border Crossing and be holding the abyssite"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Western Altepa Desert",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sabotender Campeador",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "zepwell",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Tier I. Three rift locations, any of them: (G-10), (H-5), (L-6) -- so no single grid is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Quicksand Caves",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Malleator Maurok",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "zepwell",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Tier I. The rift is on map 3; in via Entrance 2, closest teleport is Unity 125 in Western Altepa Desert."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tangaroa",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "zepwell",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Tier I. Rifts on map 2 at (F-8) and (J-9), map 3 at (I-8); Unity Warp 125 lands on map 2. No single grid."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Gushing Spring"
+    },
+    "zone": "Rabao",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Proof of the Lion",
+   "page_id": 67155,
+   "revision_id": 625804,
+   "source_sha256": "3a058d40c47c4862db46eea069892f8ff3029e5d30d33b53b388b96c1800fdf7",
+   "cache_file": "0067155_proof_of_the_lion"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 85,
+   "dat_name": "Proof of the Lion",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "Two evidence points, one zone, and a clean loop of five bullets that are all genuine actions. Bullet 3 -- 'Use the blood to pop Waugyl at (F-9)' -- is the one place the page fails me: in Abyssea a pop item is traded to a ???, but this page never writes the ??? down, so the target is none rather than an invented object. The step keeps its rung and its (F-9), and loses only its marker; Waugyl is recorded as the spawn so the mob glyph still lands somewhere. Bullets 3 and 4 stay separate because they are separate actions in separate bullets -- pop, then kill -- and only the kill grants the key item. Waugyl's claw is granted to everyone with the quest active, which makes it exactly the kind of thing evidence is for, and it appears on step 4 only. The page writes 'Desert Puks' plural; the mob is recorded singular as Desert Puk, because the runtime folds this against live mob names and a plural would never match. Header gives no grid for Excenmille (A); the walkthrough's (G-11) is used. 'Zoning is required to repeat this quest' is a repeat rule, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Excenmille (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "G-11",
+   "raw": "Excenmille (A), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Excenmille (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "east of Conflux #5"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Puppet's Blood",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Desert Puk",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "just north of Excenmille; the page gives no grid for the puks"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Puppet's Blood",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Waugyl",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says only 'use the blood to pop Waugyl at (F-9)' and never names the ??? the blood is traded to, so no target is invented"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Waugyl's claw",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Waugyl",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "everyone with the quest active gets the claw, not just the popper"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Excenmille (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-11",
+    "items": [
+     {
+      "name": "Waugyl's claw",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "zone out before repeating"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Teacher's Pet",
+   "page_id": 276,
+   "revision_id": 727564,
+   "source_sha256": "7cf1cc034a5951948c63ee976142940aa2478e29b0ea9c7ea3987f36e0d2dc5e",
+   "cache_file": "0000276_teacher_s_pet"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 28,
+   "dat_name": "Teacher's Pet",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "duplicate_npc_name_across_zones"
+  ],
+  "notes": "Bullet 1 holds two actions -- the talk that opens the quest and the trade that closes it -- and its own sub-bullet says the 250 gil arrives 'once this is done', so the trade is bullet 1's, not a missing bullet. Bullet 2 looks like shopping advice but it is the only place the two items are actually acquired, so it becomes the obtain step and carries both as a single AND-list; holding both is what makes you ready to walk back to Moreno-Toeno. That step deliberately has NO zone: the page names East and West Sarutabaruta together, and a step has one zone, so rather than pick one arbitrarily the zone is dropped and both are named in the note -- an obtain step carries no marker anyway. The wiki's '2Leaf Mandra Bud' is the client's short name; the long 'Two-Leaf Mandragora Bud' is recorded, and both resolve to the same id. Windurst Waters (North) is not a zone -- it is the north half of Windurst Waters -- so L-6 is recorded against Windurst Waters and 'North Map' stays in the note. This Moreno-Toeno shares a folded NPC key with the Abyssea - Altepa one in Classrooms Without Borders, elsewhere in this batch; only the zone tells them apart.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: two zones, so this step records neither.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Moreno-Toeno",
+   "zone": "Windurst Waters",
+   "grid": "L-6",
+   "raw": "Moreno-Toeno - Windurst Waters (L-6, Northern map)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moreno-Toeno"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "east Aurastery, North Map; you may need to speak to him twice before he asks"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bird Feather",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Two-Leaf Mandragora Bud",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Carrion Crow",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Tiny Mandragora",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Mandragora",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The feather is available on the Auction House; the bud is exclusive and only drops from Mandragoras. Both families are right outside Windurst in East and West Sarutabaruta."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Moreno-Toeno"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [
+     {
+      "name": "Bird Feather",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Two-Leaf Mandragora Bud",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "both in one trade; 250 gil and the quest closes"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Fighting Fourth",
+   "page_id": 19714,
+   "revision_id": 761330,
+   "source_sha256": "40132a09e8d7c63746d82d52809fb390eccdac7df70dda18784d63b4a95889b5",
+   "cache_file": "0019714_the_fighting_fourth"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 7,
+   "dat_name": "The Fighting Fourth",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item"
+  ],
+  "notes": "A clean five-rung courier run with a key item handed over at each end. Step 1 both consumes the Blue recommendation letter carried in from the Campaign recruitment chain and grants the Battle rations, so the letter is items and the rations are evidence -- and the rations then reappear as step 2's items, which is legal and correct: an item required to perform a step is not the same claim as an item that proves one is finished. Both sub-bullets under bullet 1 are commentary -- one about Campaign allegiance having no switching penalty, one about being able to cancel -- and neither is an action. Bullets 3 and 4 give bare grids with no zone; the only zone in play since bullet 2 is North Gustaberg (S), and nothing in the page suggests leaving it, so both steps carry it. The 'Barricade' in bullet 4 is quoted by the page precisely because it is a clickable entity, and it resolves, so step 4 keeps a real marker instead of degrading to a bare grid. The Eduard Watchtower named in the Description never appears in the walkthrough as anything you interact with, so it is not used as a target.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Adelbrecht",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-9",
+   "raw": "Adelbrecht, Bastok Markets (S) - (E-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adelbrecht"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-9",
+    "items": [
+     {
+      "name": "Blue recommendation letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Battle rations",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the letter is turned in here and the rations given in exchange. This switches your Campaign allegiance at no cost; speaking to him again before the end cancels the quest."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gebhardt"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Battle rations",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "ascend Zegham Hill around (I-8) to reach him; cutscene"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roderich"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "E-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page gives only a grid here; the zone is carried from bullet 2 and nothing suggests leaving it"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Barricade"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "cutscene on touching it; zone carried from bullet 2 as with step 3"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Adelbrecht"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "joins the Republican Legion's Fourth Division; Sprinter's Shoes first time only, which is a reward and not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Mom, the Adventurer?",
+   "page_id": 25957,
+   "revision_id": 771236,
+   "source_sha256": "357ee098ca9805d14d668be91bfbe6253d1fee39adfd65cb5d77073db94deca7",
+   "cache_file": "0025957_mom_the_adventurer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 21,
+   "dat_name": "Mom, the Adventurer?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "evidence_rejected_common_item"
+  ],
+  "notes": "Eight bullets, five of them steps. The one real judgement here is the Fire Crystal: bullet 1's sub-bullet says Nbu Latteh hands you one, and it IS an item you hold, which is the schema's definition of observable -- but a Fire Crystal is a stack item that most players already carry, so using it as step 1's evidence would report step 1 complete for anyone who ever mined a crystal, before they had spoken to her at all. It is rejected on purpose; accepting the quest already tells the runtime step 1 is done. Bullet 2 is the page's own '(Optional)' and points at two entities -- Nbu Latteh again and the guard Parnika. Only Parnika is recorded: Nbu Latteh already carries markers at steps 1 and 5, so a third would draw nothing new, while Parnika is somewhere the ladder would otherwise never point. Bullets 4 and 5 are one action -- the trade to Roh Latteh and the key item that arrives when her dialogue finishes -- so they merge and the letter is step 4's evidence. Bullet 6 is a warning (reading the letter from the key item menu halves the reward), bullet 8 is a repeat rule; neither is a step. The page gives no grid for Parnika beyond 'to the south'.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nbu Latteh",
+   "zone": "Bastok Markets",
+   "grid": "J-9",
+   "raw": "Nbu Latteh - Bastok Markets (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nbu Latteh"
+    },
+    "zone": "Bastok Markets",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on Gold Street. She also gives a Fire Crystal for crafting the ring, which is NOT used as evidence -- see the quest note."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Parnika"
+    },
+    "zone": "Bastok Markets",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page marks this Optional -- hints at Nbu's occupation only. She is 'the guard to the south' with no grid given; the same bullet also offers Nbu Latteh a second time, which adds no marker."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Copper Ring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Auction House, merchants or Goldsmithing -- no zone, and none of the three is a place the ladder can point at"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Roh Latteh"
+    },
+    "zone": "Bastok Mines",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Copper Ring",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Roh Latteh",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "first floor house on Ore Street; the letter arrives when her dialogue finishes"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Nbu Latteh"
+    },
+    "zone": "Bastok Markets",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Letter from Roh Latteh",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "do NOT 'check' the letter from the key item menu first -- that halves the reward. Repeatable below Bastok fame 2, zoning out each time."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Longest Way Round...",
+   "page_id": 98204,
+   "revision_id": 607268,
+   "source_sha256": "b8af90513909b773528743f0b299f6fd43acff9f8c6b07e35781b89e97d9cd4a",
+   "cache_file": "0098204_the_longest_way_round"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 91,
+   "dat_name": "The Longest Way Round...",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "ordered_not_grouped"
+  ],
+  "notes": "This is the shape that usually becomes a group, and here it deliberately does not: bullet 2 says 'Speak to the following, in order', so the seven patrol NPCs are seven ordered rungs and NOT an unordered set. Getting that wrong would draw all seven at once and let the mark jump past six of them. Every one of the seven has its own grid on the page and all are in Eastern Adoulin. Step 1's Eastern Adoulin patrol route is a real key item granted by Vastran, so it is step 1's evidence -- the ladder then advances off the route rather than off nothing, which is the only observable thing this whole quest produces. The sub-bullet under Nhili Uvolep is a GEO-only interruption (she may open a weapon skill quest first) and is commentary, not a step. Fame is 'Adoulin', which is not one of the addon's nine regions, so the region is null and gates nothing; the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Vastran",
+   "zone": "Eastern Adoulin",
+   "grid": "F-8",
+   "raw": "Vastran, Eastern Adoulin - (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vastran"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Eastern Adoulin patrol route",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "west of the Peacekeepers' Coalition waypoint"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fostaig"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "first of seven, in order; at the Peacekeepers' Coalition"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lamaron"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the wharf to Yahse"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Irate Destrier"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near the Statue of the Goddess"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nhili Uvolep"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Minister of Education's house (Sverdhried Hillock). On GEO she may open the weapon skill quest first -- speak a second and third time until she talks about guarding a minister's mansion."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Castle Adoulin"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cunegonde"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Rent-a-Room"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ndah Tolohjin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "last of the seven; NE corner of the Scouts' Coalition"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vastran"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Shifty Shades of Prey",
+   "page_id": 106033,
+   "revision_id": 716959,
+   "source_sha256": "95c99806ac89ec4e1121ea5c14891707dd70cc589bcb23bc883c5fa7adb5cd51",
+   "cache_file": "0106033_shifty_shades_of_prey"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 177,
+   "dat_name": "Shifty Shades of Prey",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "roe_gate_unmodelled",
+   "count_unobservable",
+   "unnamed_mob_family"
+  ],
+  "notes": "Only three of the five bullets are steps. Bullet 2 restates the request Nantoto has just made, and bullet 4 is the outcome of bullet 3 -- sparks and experience arriving when the tenth shadow dies. The middle step is honest but blind in two ways at once, which is why the quest is medium rather than high. First, the page names no monster: 'Formor family monsters' is a family, not an entity, so mobs stays empty rather than inventing a Shadow. Second, the count of ten is not observable -- no packet reports kills -- so the step carries no evidence and the ladder simply sits on The Eldieme Necropolis until you walk back to Nantoto. The real trap is the sub-bullet: the Records of Eminence objective 'Culling The Darkness' must be activated BEFORE killing or none of it counts, and nothing the addon can see reports whether it is active. The header's 'Must have 100 unique RoE objectives completed' has no slot in the schema and no observable predicate either, so it is flagged and gates nothing. The page correctly writes 'The Eldieme Necropolis' with its article, which is the form that resolves.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the header grid comes from bullet 1; she will not open the quest until 100 unique Records of Eminence objectives are done",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Teleports by Twilight",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nantoto",
+   "zone": "Lower Jeuno",
+   "grid": "H-8",
+   "raw": "Nantoto, Lower Jeuno"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nantoto"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "ten Formor family monsters. The page names a family and no individual monster, so none is recorded. Activate the RoE objective 'Culling The Darkness' under Other > RoE Quests FIRST or the kills do not count -- neither that nor the count of ten is anything the addon can observe."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Nantoto"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "short cutscene; the vouchers only arrive on returning to her"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Weekly Adventurer",
+   "page_id": 19699,
+   "revision_id": 642481,
+   "source_sha256": "8560220e1bd4353093131a84c85f5561822cc272a73feca6aa4994d52885a622",
+   "cache_file": "0019699_the_weekly_adventurer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 2,
+   "dat_name": "The Weekly Adventurer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Five bullets, three steps. Bullets 3 and 4 are not journeys or actions at all -- they are what happens inside Rakula-Motakula's conversation: choose the Mandragora topic, then answer three counting questions (4, 4 and 5). Splitting those into rungs would put two unmarkable, unobservable steps between two halves of a single chat, so they merge into step 2 and the answers live in the note where a player can actually use them. Step 1's Scoop-Dedicated Linkpearl is the only observable thing in the quest and it is granted right there, so it is step 1's evidence. Crawlers' Nest (S) and Rolanberry Fields (S) are distinct Crystal War zones and both resolve, so both steps keep real places.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Naiko-Paneiko",
+   "zone": "Crawlers' Nest (S)",
+   "grid": "L-8",
+   "raw": "Naiko-Paneiko - Crawlers' Nest (S) (L-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naiko-Paneiko"
+    },
+    "zone": "Crawlers' Nest (S)",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Scoop-Dedicated Linkpearl",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "just inside the entrance, coming in from Rolanberry Fields (S)"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakula-Motakula"
+    },
+    "zone": "Rolanberry Fields (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "on a ballista up the hill, behind the long fence. Choose the Mandragoras when prompted; his three answers are 4 leafed, 4 black, 5 flowered."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naiko-Paneiko"
+    },
+    "zone": "Crawlers' Nest (S)",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Map of Fort Karugo-Narugo is a reward, not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Gobbiebag Part II",
+   "page_id": 20679,
+   "revision_id": 702104,
+   "source_sha256": "dc0b431efd1402b4a6a0bdebe16f42fafd64e5e8d4279668e957298ad3d95dc7",
+   "cache_file": "0020679_the_gobbiebag_part_ii"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 28,
+   "dat_name": "The Gobbiebag Part II",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Two bullets, two steps, and the whole quest turns on one OR. Bullet 2 offers either four crafted materials -- ram leather, mythril ingot, wool cloth, turquoise -- or a single Goblin Stew 880, and that is exactly what items plus items_alt are for: the four are the AND-list and the stew is the independent alternative, so holding either satisfies the trade and items_partial stays false because nothing was left inexpressible. All five names resolve. The four sub-bullets under bullet 2 are Auction House categories, and the '== Required Item Comparison ==' table below the walkthrough is a price comparison from August 2019 -- neither is an action, and the table is not a hidden walkthrough. The reward is 40 inventory slots, which is an outcome and not an item you hold, so the trade carries no evidence and the quest ends on the trade itself. Steps 1 and 2 are both Bluffnix and consecutive, which the runtime folds into one marker with readiness looking ahead across them.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "J / 1"
+   },
+   "prev": [
+    {
+     "title": "The Gobbiebag Part I",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Bluffnix",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Bluffnix, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside Muckvix's Junk Shop"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Ram Leather",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mythril Ingot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Wool Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Turquoise",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Goblin Stew 880",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all four together, OR one Goblin Stew 880 on its own. All four materials are Auction House goods (Leathercraft, Goldsmithing, Clothcraft, Goldsmithing)."
+   }
+  ]
+ }
+]

@@ -1,0 +1,131 @@
+{
+ "_comment": [
+  "Hand pins for DAT ids whose page the automatic binder cannot reach, and",
+  "only for those. Each was looked at individually; nothing is guessed.",
+  "",
+  "THREE SHAPES LIVE HERE, and they are different problems:",
+  "",
+  "  1. ONE PAGE, SEVERAL DAT IDS. 'Bastok Mission 2-3' has",
+  "     |Mission Name=The Emissary while the DAT carries 'The Emissary",
+  "     (San d'Oria)' and 'The Emissary (Windurst)' -- the same mission with",
+  "     two destinations, which the client tracks separately and the wiki",
+  "     documents once. mission_identity REFUSES this as ambiguous, which is",
+  "     right: a binder that picked one would silently drop the other. The",
+  "     split is a reading decision, so it is made here, by hand, with the",
+  "     branch named.",
+  "",
+  "  2. A REDIRECT STUB. The DAT name is a real page title that redirects to",
+  "     the article: 'The Chains That Bind Us' -> 'Bastok Mission 8-1'. The",
+  "     stub carries no walkthrough, so the binder sees nothing to bind.",
+  "",
+  "  3. A PAGE STAGE A REJECTED for its own reasons -- no recognised header",
+  "     template, or a title that binds to no DAT name.",
+  "",
+  "`page` is the title whose CONTENT should be read. `branch` is free text",
+  "shown to the author to say which half of a shared page this record is,",
+  "and is null where the page describes one mission.",
+  "",
+  "Every entry costs a marker if it is wrong, so each carries `why`."
+ ],
+ "pins": [
+  {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 8,
+   "page": "Bastok Mission 2-3",
+   "branch": "the San d'Oria destination",
+   "why": "one page, two DAT ids -- see shape 1"
+  },
+  {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 9,
+   "page": "Bastok Mission 2-3",
+   "branch": "the Windurst destination",
+   "why": "one page, two DAT ids -- see shape 1"
+  },
+  {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 8,
+   "page": "Windurst Mission 2-3",
+   "branch": "the San d'Oria destination",
+   "why": "one page, two DAT ids -- see shape 1"
+  },
+  {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 9,
+   "page": "Windurst Mission 2-3",
+   "branch": "the Bastok destination",
+   "why": "one page, two DAT ids -- see shape 1"
+  },
+  {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 20,
+   "page": "Bastok Mission 8-1",
+   "branch": null,
+   "why": "DAT name 'The Chains That Bind Us' is a redirect stub"
+  },
+  {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 128,
+   "page": "Seekers of Adoulin Mission 1-8",
+   "branch": null,
+   "why": "DAT name 'Arciela Appears Again' is a redirect stub"
+  },
+  {
+   "cat": "mission",
+   "area": "toau",
+   "id": 46,
+   "page": "Aht Urhgan Mission 47",
+   "branch": null,
+   "why": "DAT name 'The Empress Crowned' is a redirect stub"
+  },
+  {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 30,
+   "page": "Awakening",
+   "branch": null,
+   "why": "real page; stage A for quests rejects it as not_a_quest_page and the mission binder never reached it"
+  },
+  {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 175,
+   "page": "Scars of Abyssea",
+   "branch": null,
+   "why": "real page carrying no recognised header template"
+  },
+  {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 179,
+   "page": "Heroes of Abyssea",
+   "branch": null,
+   "why": "real page carrying no recognised header template"
+  },
+  {
+   "cat": "quest",
+   "area": "other",
+   "id": 34,
+   "page": "Monstrosity (Quest)",
+   "branch": null,
+   "why": "DAT name 'Monstrosity' is a DISAMBIGUATION page pointing at Monstrosity (Quest); fetched into the cache by manifest-gapfill3 when chronicle was removed, since chronicle was the only thing keeping this row alive"
+  }
+ ],
+ "_not_pinned": [
+  "mission/cop/568 'Flames for the Dead' -- redirects to a SECTION of",
+  "  Promathia_Mission_5-3/Ulmia's_Path, and that target 404s under every",
+  "  encoding tried. A broken redirect on the wiki, not a gap in the scrape.",
+  "quest/coalition/47 -- DAT name is the bare string 'Gather:'. There is no",
+  "  page because there is no assignment; it is an empty client slot.",
+  "mission/sandoria/8 and /9 'Journey to Bastok' / 'Journey to Windurst' --",
+  "  the San d'Oria 2-3 destination split. Both DAT names 404, and unlike the",
+  "  Bastok and Windurst pairs the wiki has no 'San d'Oria Mission 2-3' page",
+  "  under that title either, so there is nothing to pin to."
+ ]
+}

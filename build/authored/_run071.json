@@ -1,0 +1,2096 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Megadrile Menace",
+   "page_id": 56772,
+   "revision_id": 731236,
+   "source_sha256": "3ca424bc51d559b7593d5dd86da97fec2ae4dbf11d5dc5a33949e319abdae387",
+   "cache_file": "0056772_megadrile_menace"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 165,
+   "dat_name": "Megadrile Menace",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_absent_from_walkthrough",
+   "unresolvable_key_item",
+   "reward_table_not_steps"
+  ],
+  "notes": "Three real bullets and a nine-row reward table that is not a step of anything -- which reward you get depends on how many of the Abyssea storyline quests you have already done, an outcome the ladder has no business modelling.\n\nThe header's giver, Kocchi-Arocchi, never appears in the walkthrough at all; the page opens straight on the Cavernous Maw. He is kept in start because the header is the only thing that names a giver and he does stand at that maw, but nothing in the walkthrough corroborates him, so the quest is demoted to medium rather than pretending the ladder starts on a talk step that the page does not describe.\n\nThe traverser stone gate is real and deliberately NOT recorded in items: res/key_items.lua carries six key items all named 'traverser stone' (ids 1271-1276, one per stone you can hold), so the resolver refuses the name outright rather than guess. An unresolvable entry in items would leave step 1 permanently un-ready, which is worse than a note.\n\nGlavoid's zone comes from the quest Description ('has reemerged in Abyssea - Tahrongi'), not from the walkthrough, which gives no location and no pop condition -- so none is invented. Step 3 is unmarkable on purpose: the page says only 'exit', naming neither an exit entity nor a destination.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Vision of Abyssia / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Vision of Abyssia"
+  },
+  "start": {
+   "npc": "Kocchi-Arocchi",
+   "zone": "Tahrongi Canyon",
+   "grid": null,
+   "raw": "Kocchi-Arocchi, Tahrongi Canyon"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "Tahrongi Canyon",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the maw into Abyssea - Tahrongi. You must be holding a traverser stone; see the quest note for why that requirement is not in items."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Glavoid",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the walkthrough gives Glavoid no grid and no pop condition; the zone is taken from the quest Description"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "leaving the zone by any route fires the finishing cutscene; the page names no exit entity and no destination, so there is nothing to mark"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Scaredy-Cats",
+   "page_id": 98191,
+   "revision_id": 773758,
+   "source_sha256": "905fc2273298f76f8d3c23b668da98a7f58109b59111344263eebaa19b6cde9f",
+   "cache_file": "0098191_scaredy_cats"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 72,
+   "dat_name": "Scaredy-Cats",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "reward_not_used_as_evidence",
+   "unnamed_target"
+  ],
+  "notes": "Bullets 1 and 7 name the target only as 'the Pioneers' Coalition'. The header names the entity -- Eamonn, Western Adoulin (E-8) -- and he is the Pioneers' Coalition NPC you register with, so both ends of the quest are recorded on him rather than left unmarkable. Registering with the coalition and the zone-plus-game-day wait in bullet 1 are preconditions, not steps, and neither is observable.\n\nBullets 4 and 5 are ONE step: both are clicks on the same Foreboding Presence, the first for a cutscene and the second to pop the NM. Divine Might's 'examine twice' is the same shape. Bullet 6 is a third click on it, but with a fight in between, so it stays a separate rung.\n\nThe [KI] Reive unity is granted at bullet 6, before the final return -- which would make lovely evidence -- but it is also the header's Reward, and hard rule 7 says a reward proves the quest is over rather than that a step is done. It is left off. The cost is one rung of tracking across the walk back to Adoulin; the alternative is a mark that may fire only at completion. Sub-bullets under 5 are fight tactics.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: It hands over the [KI] Reive unity, which is also the header's Reward, so hard rule 7 keeps it out of evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Adoulin"
+  },
+  "start": {
+   "npc": "Eamonn",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Eamonn, Western Adoulin - (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eamonn"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page calls him only 'the Pioneers' Coalition'; the header names him. Register with the coalition first, then zone and wait for a game-day change -- neither is visible to the addon."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Earthen Mound"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "eastern half of the grid, just south of Bivouac #2"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sih Gates"
+    },
+    "zone": "Sih Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the entrance is southwest of the mound, at (E-10) in Ceizak Battlegrounds"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Foreboding Presence"
+    },
+    "zone": "Sih Gates",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fomor Pioneer",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "head west from the entrance; click it twice -- the first click is a cutscene, the second pops the NM"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sih Gates",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fomor Pioneer",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "highly evasive, roughly 10,000 HP, and it will Cure IV/V players and pets for about 600; Trusts make it trivial solo"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Foreboding Presence"
+    },
+    "zone": "Sih Gates",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "The third and last click, after the NM is dead."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Eamonn"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page says only 'the Pioneers' Coalition' again"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Timely Visit",
+   "page_id": 459,
+   "revision_id": 770716,
+   "source_sha256": "5a69d2696cbaca727c3d45c421431317ef376e1467470574a907e8cf6890c79a",
+   "cache_file": "0000459_a_timely_visit"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 105,
+   "dat_name": "A Timely Visit",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "verified_in_game",
+   "bullet_split"
+  ],
+  "notes": "A long, clean errand ladder: thirteen bullets, every one of them an action, and not a single observable in the whole quest. No key item is ever granted and the Medieval Collar is a completion reward, so every step's evidence is null and the runtime will have to lean on the session latch the whole way. That is the honest reading -- there is nothing here to latch onto.\n\nBullet 9 is two steps: clicking the ??? pops the pair of NMs, and killing them is a separate thing the bullet's own sub-bullet insists on ('Both NMs must be defeated to proceed'). Bullet 10 is a third rung on the same ???. The 18:00-4:00 window on the pop is real and completely invisible to the addon.\n\nBullet 6 gives Phillone a grid but no zone. A zone NPC dump of Southern San d'Oria (addons/qmprobe/qmprobe.log) lists Phillone, Deraquien and Kipopo together, so the zone is confirmed ground truth rather than inferred from context. Halver gets no grid anywhere on the page and none is invented.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 3,
+    "raw": "San d'Oria / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Deraquien",
+   "zone": "Southern San d'Oria",
+   "grid": "G-8",
+   "raw": "Deraquien, Southern San d'Oria (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Narvecaint"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the entrance to Ordelle's Caves; the Voidwatch warp lands right beside him"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page gives him no grid. If you have just cleared The Voracious Resurgence you get that cutscene first and must rezone and talk to him again."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Phillone"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the bullet gives only a grid; a zone NPC dump confirms Phillone stands in Southern San d'Oria"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Jugner Forest"
+    },
+    "zone": "Jugner Forest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "in through King Ranperre's Tomb, or the Proto-Waypoint if you have access to it"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Giollemitte B Feroun",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Skeleton Esquire",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "only between 18:00 and 4:00 game time, which nothing in the packets reports"
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Giollemitte B Feroun",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Skeleton Esquire",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "both of them; the bullet's sub-bullet makes that explicit"
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same ??? again, once they are dead"
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Phillone"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   },
+   {
+    "n": 13,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Narvecaint"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": null
+   },
+   {
+    "n": 14,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Phillone"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Tuning In",
+   "page_id": 312,
+   "revision_id": 772477,
+   "source_sha256": "a31d94017af2a134eec5b64e6c8048477dabc6d7b324fccdd1ea20747a495634",
+   "cache_file": "0000312_tuning_in"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 90,
+   "dat_name": "Tuning In",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "bullet_split",
+   "expansion_access_unmodelled"
+  ],
+  "notes": "Three bullets, but bullet 2 is not one step -- it is three independent hunts in three different Chains of Promathia zones, and its sub-bullets say exactly where each one is. Modelling it as a single zone-less 'go get three things' step (the Operation Teatime shape) would throw away three zones, seven named drop sources and any marker at all during the longest part of the quest. Instead it becomes three obtain steps sharing a group, since the page imposes no order on them, each carrying its own zone, its own drop mobs and its own item as evidence. Holding the file satisfies one member and leaves the other two drawn, which is precisely the behaviour you want.\n\nThe evidence is safe under hard rule 4: three different items on three different steps, and none of them is the reward (4000 gil).\n\nThe header's Item Reqs restates the same three items, so nothing there goes unused. 'Windurst Waters South' in the Start field is the south half of zone 238, not a zone -- recorded as Windurst Waters. Taurus count is left null: the page says three can be FOUND at (G-6), not that three must die. Bullet 3's tail ('speak to him again to start the Tuning Out quest') is the next quest, not a step of this one.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 4,
+    "raw": "Windurst / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Leepe-Hoppe",
+   "zone": "Windurst Waters",
+   "grid": "J-9",
+   "raw": "Leepe-Hoppe, Windurst Waters South (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Leepe-Hoppe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on top of the Rhinostery, in the south half of Windurst Waters"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lufaise Meadows",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Extra-Fine File",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Fomor Warrior",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Fomor Monk",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Fomor Dark Knight",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Fomor Paladin",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Fomor Samurai",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "materials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "only those five Fomor jobs drop it, per the page"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Spruce Lumber",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Taurus",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "materials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "three Taurus stand at (G-6) on map 1; in from Tavnazian Safehold, or the Survival Guide then northwest"
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Magicked Steel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Goblin Oilman",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "materials",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "various Goblins drop it; only Goblin Oilman is named, and only on anecdote. Proto-Waypoint, drop down the ledge, head west."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Leepe-Hoppe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Extra-Fine File",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Spruce Lumber",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Magicked Steel",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all three in one trade -- the page is emphatic about that"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Healing Herbs",
+   "page_id": 19671,
+   "revision_id": 757997,
+   "source_sha256": "537244203fc87acc6017676fac3941a2dae95ffdfd877b418daf6282617c0c30",
+   "cache_file": "0019671_healing_herbs"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 3,
+   "dat_name": "Healing Herbs",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item",
+   "duplicate_key_item",
+   "bullet_merge"
+  ],
+  "notes": "Eight bullets, six of which are 'check the Rhinostery door' -- four in the past and two in the present. The whole quest is one object clicked over and over across two eras, so almost all of the judgement here is about how many rungs that deserves.\n\nBullets 5, 6 and 7 are MERGED into one step. They are the same door in the same zone at the same grid, separated only by two game-day waits that no packet reports; three rungs the player cannot be tracked through would be noise and the marker never moves between them. Bullet 7 also hands back [KI] \"The Healing Herb\", which is already step 2's evidence, so hard rule 4 puts it on the earlier step only and the merged step gets none.\n\nThat key item's real name carries literal quote marks: res/key_items.lua 957 is \"The Healing Herb\", quotes included, which is exactly how the page writes it. Without them it does not resolve -- checked.\n\nThe target is recorded as 'Rhinostery' because that is the name the page and the Start field actually use; the page never writes a 'Door: ...' form, so inventing one would be guessing at an entity name. Bullet 1's sub-bullet -- two Rhinostery doors, the LEFT one flags the quest -- cannot be expressed in a name or a grid and is kept as a note. Dantie-Corantie and Maju-Naju are cutscene speakers, not entities you interact with, so neither is a target. Bullet 8 is an epilogue after the reward is already paid, marked optional; it takes the key item back off you.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Rhinostery",
+   "zone": "Windurst Waters (S)",
+   "grid": "J-8",
+   "raw": "Rhinostery - Windurst Waters (S) (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rhinostery"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second map. There are TWO Rhinostery doors here and only the left one flags the quest -- a distinction no name or grid can carry. The cutscene is between Dantie-Corantie and Maju-Naju."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Rhinostery"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"The Healing Herb\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the present-day Rhinostery. The page says approach, not check -- the cutscene starts on approach and there is nothing to click. No grid is given for the present door."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rhinostery"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "back to the past"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "H-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fireblossom",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "near the centre of the grid"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rhinostery"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7
+    ],
+    "note": "bullets 5, 6 and 7 merged: the same door on three successive game days. The two waits are unobservable and the marker never moves. The last check pays the Tincture and hands back \"The Healing Herb\" -- already step 2's evidence, so it is not repeated here."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rhinostery"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     8
+    ],
+    "note": "an extra cutscene in the present, after the reward has already been paid; it takes \"The Healing Herb\" back off you"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Say It with a Handbag",
+   "page_id": 40345,
+   "revision_id": 774008,
+   "source_sha256": "f6a3dcc03bb4c7b1c930eec9c55f6f6cea9c60399767ba0d3bea27e47a983c14",
+   "cache_file": "0040345_say_it_with_a_handbag"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 41,
+   "dat_name": "Say It with a Handbag",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "verified_in_game"
+  ],
+  "notes": "Seven bullets, seven steps, no merges needed -- an unusually well-behaved page. The good part is bullet 2: the page writes 'Door: Acolyte hostel' itself, which is the client's own entity form, so that step carries a real marker instead of pointing vaguely at a building. Nothing is invented there; the name is on the page verbatim.\n\nBoth key items are granted mid-quest and neither is the reward (Trainee's Needle), so both are clean evidence on distinct steps. Steps 4, 5 and 6 all sit on Kipopo -- one marker, three rungs -- and stay separate because the trade carries items the talks do not, and because bullet 6 needs a zone-out in between that would be lost in a merge. A zone NPC dump confirms Kipopo is in Southern San d'Oria, so the present-day hop across eras is ground truth rather than inference.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Hampu-Kampu",
+   "zone": "Windurst Waters (S)",
+   "grid": "G-8",
+   "raw": "Hampu-Kampu, Windurst Waters (S) (Southern Map) (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hampu-Kampu"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "south map, right outside the gate that blocks Gingerberry Grove and the southwest of the zone"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Acolyte hostel"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "north map; second floor, on the right side of the left building. The page writes the 'Door: ...' form itself."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hampu-Kampu"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Torn patches of leather",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kipopo"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "present-day San d'Oria, inside the room on the first floor"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kipopo"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-8",
+    "items": [
+     {
+      "name": "Laminated Ram Leather",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sheep Leather",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Silk Thread",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same three the header's Item Reqs lists"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kipopo"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "D-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Repaired handbag",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "you have to zone out and back before she will say it"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hampu-Kampu"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hide and Go Peak",
+   "page_id": 101771,
+   "revision_id": 643048,
+   "source_sha256": "e097f5e5093e566a52852e11bd8fa47800e79193e6d91260f4231961f0d22be9",
+   "cache_file": "0101771_hide_and_go_peak"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 57,
+   "dat_name": "Hide and Go Peak",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "survival_skill_gate_unmodelled",
+   "generic_npc_name"
+  ],
+  "notes": "Four bullets, four steps, all four in one zone -- Marjami Ravine start to finish. The Large strip of Velkk hide is granted at bullet 2 and consumed at bullet 3, and it is not the reward, so it is exactly the kind of clean mid-quest observable that makes a ladder worth having: holding it draws Toppled Tree, not holding it draws the cache.\n\nTwo things the schema cannot hold. The route to the Velkk Cache crosses three Colonization Reives that require the Demolishing survival skill, and neither a survival skill nor reive state is in any packet the addon reads -- it is a note. And 'Scalable Area' is a generic target name that exists all over Ulbuka once you have Climbing; this one is pinned only by zone and the K-7/8 border, which is the best the page offers.\n\nThe reward line -- gloves, the Climbing skill, 500 Bayld -- is an outcome of bullet 4, not a step. The Start field gives no grid; bullet 1 puts Toppled Tree at (M-7), so that is used for start.grid while start.raw stays verbatim.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Adoulin"
+  },
+  "start": {
+   "npc": "Toppled Tree",
+   "zone": "Marjami Ravine",
+   "grid": "M-7",
+   "raw": "Toppled Tree, Marjami Ravine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Toppled Tree"
+    },
+    "zone": "Marjami Ravine",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the site of the Frontier Station"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Velkk Cache"
+    },
+    "zone": "Marjami Ravine",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Large strip of Velkk hide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "lower floor of the grid, by a Velkk hut in the east. Getting there crosses three Colonization Reives needing the Demolishing skill -- (L-9), (K-8) and (K-11) -- and neither the skill nor reive state is observable. Keep right after the third."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Toppled Tree"
+    },
+    "zone": "Marjami Ravine",
+    "grid": "M-7",
+    "items": [
+     {
+      "name": "Large strip of Velkk hide",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "handed over in conversation, not traded"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Scalable Area"
+    },
+    "zone": "Marjami Ravine",
+    "grid": "K-7/8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "slightly west of Toppled Tree along a path, at the K-7/8 border. 'Scalable Area' is a name shared by vine targets all over Ulbuka, so only the zone and grid separate this one."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Synergistic Pursuits",
+   "page_id": 50602,
+   "revision_id": 763576,
+   "source_sha256": "74915268225f3aaebfbdf0c2d350b46105214e955a73461db0ab6a55f409c8fa",
+   "cache_file": "0050602_synergistic_pursuits"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 89,
+   "dat_name": "Synergistic Pursuits",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "deprecated_quest",
+   "header_reqs_obsolete",
+   "walkthrough_in_prose",
+   "generic_npc_name"
+  ],
+  "notes": "The page is categorised Deprecated and says outright that the original quest can no longer be flagged -- it was removed on 27 March 2012. There is no numbered walkthrough left, just two prose paragraphs describing what the NPC does NOW: speak to Hildolf, he asks for a vial of Slime Oil, you bring it, you pick a Fewell element and he crafts it. That is what the ladder records, because it is the only thing a player can actually do at this quest's giver today.\n\nThe header is stale in exactly the way the pilot warned about: Item Reqs still lists Earth Crystal, Flint Stone, Mythril Sand and Brass Tank, all four belonging to the removed version, and none of them is used anywhere in the text. They are deliberately NOT recorded as items -- gating a step on four things the game no longer wants would stall the ladder forever.\n\nBullet 1 is not a step. 'Speak to a Synergy Engineer to obtain a Synergy Crucible' is a workaround for players who missed the flag window, not part of this quest; Synergy Engineer is also a generic name shared by many NPCs across several zones, so it could not carry a marker anyway. The [KI] Synergy crucible is the header Reward, so hard rule 7 keeps it out of evidence, and there is no other observable in the quest. The sub-bullet about the log entry completing with Synergistic Support is an outcome. Medium, not high: the ladder describes live NPC behaviour that the page itself says may not correspond to a flaggable quest at all.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hildolf",
+   "zone": "Metalworks",
+   "grid": "F-8",
+   "raw": "Hildolf - Metalworks (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hildolf"
+    },
+    "zone": "Metalworks",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the original quest cannot be flagged any more; speaking to him still triggers a quest under the same title, and he asks for a vial of Slime Oil"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Hildolf"
+    },
+    "zone": "Metalworks",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Slime Oil",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he then offers a choice of Fewell element and crafts it once. After that he only has encouragement dialogue."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Love and Ice",
+   "page_id": 33786,
+   "revision_id": 753902,
+   "source_sha256": "767357308539a784bf4a5795b71e52ddb3ab302f291d99d2cedb4034fddbd0b2",
+   "cache_file": "0033786_love_and_ice"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 43,
+   "dat_name": "Love and Ice",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "weather_unobservable",
+   "name_conflict",
+   "prev_softer_than_header"
+  ],
+  "notes": "Bullet 1 is a genuine step and not a precondition: you must open your permanent key items and examine the [KI] Carrier pigeon letter before Carmelo will give you the quest. It has no location and nothing to click, so it is deliberately unmarkable -- but it keeps the rung and it is where the Carrier pigeon letter requirement belongs. Its evidence is null because the key item was granted by The Stars of Ifrit, not here; hard rule 3 is explicit about that.\n\nThe header's Previous lists both The Siren's Tear and The Stars of Ifrit, and both are recorded, but the page softens both: the sub-bullets say you need only the key item from The Stars of Ifrit and not its completion, and that an active Siren's Tear merely changes Carmelo's prompt. Neither nuance has a slot in gates.\n\nThe page contradicts itself on the target's name -- the Description says you throw the sheet into 'the Mirror Lake', the walkthrough says click 'Mirror Pond'. The walkthrough is the one giving the instruction, so Mirror Pond is what is recorded. Its weather gate (only on days without snow or clouds; 'Gloom' with sun is fine) is invisible to the addon. Carmelo's song sheet is the header's Item Reqs and is what you must be holding at the pond, so it is real items and clean evidence one step earlier -- the best-tracked part of the quest.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 5,
+    "raw": "Bastok / 5"
+   },
+   "prev": [
+    {
+     "title": "The Siren's Tear",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "The Stars of Ifrit",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Carmelo",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Carmelo, Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Carrier pigeon letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "examined from the permanent key items list -- there is nothing in the world to click and nowhere to mark. The letter comes from The Stars of Ifrit, which you need not finish: it arrives before that quest ends."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Carmelo"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Carmelo's song sheet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the Steaming Sheep. If The Siren's Tear is active you get that prompt instead, so you may have to talk twice."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mirror Pond"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Carmelo's song sheet",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the ice pond. It only appears on days without snow or clouds -- weather is in no packet the addon reads; single dark 'Gloom' with sun is fine. The Description calls it the Mirror Lake; the walkthrough's Mirror Pond is the thing you click. The Voidwatch warp lands close."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Carmelo"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the bullet says only 'return to Bastok'; the header pins Carmelo to Port Bastok (E-6)"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Jeweler's Lament",
+   "page_id": 44860,
+   "revision_id": 774013,
+   "source_sha256": "9a471a1efff5caf11c8ca1a43fabe6ca236a953cf7722c9712aada11e8998018",
+   "cache_file": "0044860_a_jeweler_s_lament"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 48,
+   "dat_name": "A Jeweler's Lament",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_merge",
+   "wiki_era_suffix"
+  ],
+  "notes": "Eight bullets into seven steps. Bullets 5 and 6 merge: the same ??? in North Gustaberg (S) at (J-4), clicked twice with nothing in between, the second click giving the [KI] unadorned ring. That key item is granted mid-quest and is not the reward (Trainee Burin), so it is the quest's one clean observable and it lands on the merged step.\n\nThe giver is written 'Wahid (S)' in the header and plain 'Wahid' in the walkthrough. The (S) form is kept, exactly as the guide says to keep Abyssea's (A) form: the normaliser folds it to both 'wahid [s]' and 'wahid', so it matches whichever the live entity is called, while the bare form would match only one. Checked against the resolver.\n\nBullet 4 is a step, not scenery: you have to zone out to North Gustaberg (S) to get the cutscene, and its sub-bullet is a way to tell the right cutscene from the wrong one -- a soldier called Bernhard talking about a scream near Palborough Mines -- which cannot be modelled and stays a note. Bullet 7's step keeps items empty: you are carrying the unadorned ring, but the page never calls it a trade and Under Oath's last step sets the precedent for a key item taken in conversation. Both 'leave the zone and come back' bullets are real waits with nothing observable in them.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Wahid (S)",
+   "zone": "Bastok Markets (S)",
+   "grid": "J-9",
+   "raw": "Wahid (S), Bastok Markets (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wahid (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid comes from the walkthrough; the Start field gives none"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Wahid (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Sunstone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Aquamarine",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Jadeite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the same three the header's Item Reqs lists"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wahid (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "leave the zone and come back first"
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "North Gustaberg (S)"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the cutscene fires as you leave Bastok Markets (S). The right one has a soldier called Bernhard talking about a scream near Palborough Mines -- nothing observable distinguishes it."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "J-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "unadorned ring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "click it twice -- the first is a cutscene, the second gives the key item. On the way up the hill to Palborough Mines: as you start climbing, head northeast to a small bush-like tree."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wahid (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "you are carrying the unadorned ring, but the page never calls this a trade, so items stays empty"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Wahid (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "leave the zone and come back once more for the Trainee Burin"
+   }
+  ]
+ }
+]

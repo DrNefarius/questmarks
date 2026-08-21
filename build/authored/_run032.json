@@ -1,0 +1,1662 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borghertz's Healing Hands",
+   "page_id": 13271,
+   "revision_id": 730804,
+   "source_sha256": "ea21971af0809fba504eb948afd68aea25de05edf2796dd79d3c76eda3228f4e",
+   "cache_file": "0013271_borghertz_s_healing_hands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 46,
+   "dat_name": "Borghertz's Healing Hands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "consumed_key_item"
+  ],
+  "notes": "A clean AF ladder with two evidence points. Bullets 2, 3 and 4 are ONE step: finding the coffer, opening it and receiving the Old gauntlets are a single interaction with the Treasure Coffer, and only the key item is observable. The header's 'Bdx. Coffer Key -OR- Thief's Tools' is a real or-branch and both sides resolve, so the key is items and the tools are items_alt -- with the caveat, which no field can hold, that the tools only work on a Thief.\n\nBullet 6 is the first-AF detour and the page says outright to skip it otherwise, so both of its NPCs are optional. They are NOT a group: the page orders them (Deadly Minnow first, then Jeuno's Tenshodo), so they stay two ordered rungs. Deadly Minnow has no grid of her own; she is 'inside of the Durable Shields shop', which bullet 1 puts at (H-8), so that grid is carried over rather than invented.\n\nBullet 11 is a fight and an examine -- Dark Spark has to die before the torch gives up the Shadow flames -- so it splits. The page writes 'one of the torches'; the entity is recorded as Torch and the plural is left in the note. The quest ends on the Port Jeuno ??? with no hand-in NPC at all, so no turn-in is claimed.\n\nThe 'Two Additional Coffers' section is real content, not Notes: two more coffers in two more zones, in either order, for the rest of the set. They are recorded as an optional group because the section says in its own words that they are not required and that the quest is already 'completed' by then. The page names only 'the corresponding coffer key' for each, so neither step carries an item. Its bullets restart at [1].\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 11: The page names only 'the corresponding coffer key', so no item is recorded and items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "Prelude of Black and White",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "WHM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Guslam",
+   "zone": "Upper Jeuno",
+   "grid": "H-8",
+   "raw": "Guslam, Upper Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Durable Shields shop, as White Mage. Everything after this may be done on another job, including the hand-in."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Beadeaux Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old gauntlets",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "the coffer wanders the zone and the page gives no grid. The key is 5,000 gil from the Curio Vendor Moogle; the Thief's Tools branch works only on a Thief, which no field can express."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "he tells you he cannot repair the gauntlets"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Minnow"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "only if this is your first artifact quest. Inside the Durable Shields shop; the grid is bullet 1's, since the page gives her none."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yin Pocanakhu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "first artifact quest only; inside the Tenshodo area, and you must accept handing over 1,000 gil"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "the crates near the Auction House and the Jeuno Duty-Free Shop"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "first map. The page says 'one of the torches', so any of them; the entity is recorded singular."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shadow flames",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the torch again, once Dark Spark is dead"
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "the same ??? by the crates. The quest ends here on a cutscene -- there is no hand-in NPC, so none is claimed."
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Healer's Cap",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "extra_coffers",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "From the 'Two Additional Coffers' section, whose bullets restart at [1]. Not required to complete the quest; White Mage must be your main job when the coffer is opened."
+   },
+   {
+    "n": 12,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Crawlers' Nest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Healer's Pantaloons",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "extra_coffers",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "same section, bullet [2]. Either coffer may be done first, hence the shared group. Same White Mage main-job condition and same unnamed coffer key."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Look Out Below",
+   "page_id": 67138,
+   "revision_id": 651774,
+   "source_sha256": "ed61379b89873e9fad3585c617776bcc002f0ef069aa7246c64198e1c7380480",
+   "cache_file": "0067138_look_out_below"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 68,
+   "dat_name": "Look Out Below",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "consumed_key_item"
+  ],
+  "notes": "Three bullets long once the puzzle table is set aside. Bullets 2, 3 and 4 are ONE step, not three: they describe a single kind of interaction repeated at three Fresh Snowfall spots that the page never gives grids for and never distinguishes from one another, and a single Fresh Snowfall row draws all three anyway. The whole of bullet 3 and bullet 4 is the matching table -- five firesand levels against three snow depths -- which is exactly the sort of thing nothing in the packets reports, so it lives in the note.\n\nThe [KI] Subniveal mines is used as step 1's evidence. The page never says in so many words that Baldric hands it over, only that you load 'the [KI] Subniveal mines' after he asks; the key item is the one observable thing in the quest and it is granted when the quest opens, so it belongs on step 1 or nowhere. 'Note that actual Firesand is not needed' is the page correcting itself about its own item requirement -- there is no Firesand item to hold, only a menu on the snowfall -- so no items are recorded anywhere.\n\nFame 'aule' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only raw is kept. The trailing 'Zoning is required to repeat this quest' is a cooldown, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Baldric (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": "J-5",
+   "raw": "Baldric (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baldric (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "J-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Subniveal mines",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Outpost 2, by Conflux #6. The header gives him no grid; (J-5) is the walkthrough's."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fresh Snowfall"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "all three spots lie north of Conflux #5 and the page gives no grid for any of them. Examine each, choose 'Load Firesand', and match the charge to the snow: thinnest layer -> filled to the brim (4), fair quantity -> filled halfway (3), large deposits -> only a pinch (1). Firesand itself is not an item you carry. How much a mine holds is not visible to the addon, so the three spots are one rung."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Baldric (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "J-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "after all three spots are filled. The Cruor reward scales with how well the charges matched, and you must zone before repeating."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Tuning Out",
+   "page_id": 313,
+   "revision_id": 772667,
+   "source_sha256": "f97d3d3de35f8d2492cd2c8a8a2fa4bb1f985699721b657ce92b9001d9f6c9ca",
+   "cache_file": "0000313_tuning_out"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 91,
+   "dat_name": "Tuning Out",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "reward_step_after_completion"
+  ],
+  "notes": "A long but honest ladder: eleven bullets, ten of them real. Bullet 4 is a journey, a cutscene and a spawn; bullet 5 is the second click; between them sit five Nasus that have to die, so bullet 4 splits into an examine and a fight and bullet 5 is the re-examine -- the same shape the pilot found at every ??? in the corpus. The sub-bullets under bullet 4 are route advice (the tunnel at I-7 rather than Ifrit's Cauldron) and the three-minute wait for the next player, neither of which is a step.\n\nBullet 7 is the only genuine obtain: the three foods are the header's Item Reqs and all three resolve, so holding them is the one evidence point outside the start. Bullets 8 and 9 are one trade -- going to Norg and handing Comitolus the food is a single interaction. Its sub-bullets are shopping advice.\n\nBullet 10 is where the log marks the quest complete, so it is the turn-in even though it is a conversation in a glacier. Bullet 11 is the Cache-nez pickup AFTER completion, which is a real thing a player does but cannot be a ladder requirement, so it is optional. 'Windurst Waters South' is half of zone 238 and is recorded as Windurst Waters. FLevel is empty, so Windurst fame gates nothing but the region is kept.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Tuning In",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Leepe-Hoppe",
+   "zone": "Windurst Waters",
+   "grid": "J-9",
+   "raw": "Leepe-Hoppe, Windurst Waters South (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Leepe-Hoppe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "one Earth minute must pass after Tuning In, which nothing in the packets can see"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Romaa Mihgo"
+    },
+    "zone": "Kazham",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Yuhtunga Jungle",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nasu",
+      "count": 5,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "overlooking Gemini Falls. This side of the falls is reached through the tunnel at (I-7); you do not need Ifrit's Cauldron. Only one player at a time can trigger it."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yuhtunga Jungle",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nasu",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all five; a level 75 job handles them easily. Other players wait three minutes after they die before they can spawn their own."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Yuhtunga Jungle",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, after the Nasus are dead"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Romaa Mihgo"
+    },
+    "zone": "Kazham",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Mutton Tortilla",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Habaneros",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Black Curry",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "all three, from the Auction House. Habaneros also come from regional vendors, herb seeds in the Mog Garden, or Mantraps in Misareaux Coast; Mutton Tortilla also from Taajiji at the Timbre Timbers Tavern when Windurst is 2nd or better in Conquest. No single zone, so none is recorded."
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Comitolus"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Mutton Tortilla",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Habaneros",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Black Curry",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "all three foods; the cutscene sends you to Beaucedine Glacier"
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Torino-Samarino"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "at the tower, with the Rhinostery researchers. The quest is marked complete on this cutscene. Survival Guide or the level 125 Unity Warp is the fast way in."
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Leepe-Hoppe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     11
+    ],
+    "note": "the Cache-nez is collected here AFTER the log already reads complete, so this cannot be a ladder requirement -- marked optional rather than dropped, because it is the only way to get the reward."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promotion: Second Lieutenant",
+   "page_id": 13575,
+   "revision_id": 773827,
+   "source_sha256": "667b33a167a8e8cfdebcfccadfecf81e7912c718cc0eb6d22e0b2bced9d8f1d3",
+   "cache_file": "0013575_promotion_second_lieutenant"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 97,
+   "dat_name": "Promotion: Second Lieutenant",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "malformed_grid"
+  ],
+  "notes": "Seventeen bullets, six steps. Almost all of the page is answer key: bullets 5, 6 and 7 are the beastman-equipment examples and the two exclusions, and bullets 9 to 16 are the eight trivia answers in order. Neither set is a thing you do; the three trials are three trades of the same initiation fee to the same NPC, and the trials themselves happen inside menus that report nothing.\n\nThe header's giver is 'Salaheem's Sentinels', which is the mercenary company, and the walkthrough's own trigger is 'Enter Naja's office' -- a room, not an entity, and not a zone change either. The page never writes the office NPC's full name, so inventing 'Naja Salaheem' was refused; step 1 is therefore deliberately unmarkable, and start is moved to Abquhbah, who stands in that same office and is the target of every other step on the page. That is a marker MOVE, not a removal. The header's '(1-10)' is not a grid ref -- almost certainly (I-10) -- so no grid is recorded anywhere rather than one being corrected into existence.\n\nBullet 5's eleven examples all resolve, so they are recorded as items_alt: any ONE of them satisfies the trade. items stays empty and items_partial is set because the page says 'Examples include' -- other southern beastman gear works, and +1 pieces and anything from Yagudo, Orcs or Goblins does not. 'Complete 25 points worth of Assaults as Chief Sergeant' has no slot in the schema and nothing observable behind it. 'Officer Academy manual' is a key item, not an item, and is the quest's only evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: there is nothing to click and the page never gives the office NPC's full name, so this rung carries no target.\n  step 5: The eleven listed are the page's own examples, not a closed set, so any one of them satisfies the step and items_partial marks the ones it could not name.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [
+    {
+     "title": "Promotion: Chief Sergeant",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Abquhbah",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": null,
+   "raw": "Salaheem's Sentinels - Aht Urhgan Whitegate (1-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Enter Naja's office' The office is the Salaheem's Sentinels room the header points at."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [
+     {
+      "name": "Imperial Gold Piece",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Officer Academy manual",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page writes the plural; the item is Imperial Gold Piece"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [
+     {
+      "name": "Imperial Mythril Piece",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the fee for Trial 1, Memory: three scenes, then questions about what kind of critters were in them, how many, and which way they faced. Nothing about the trial is observable, and a failure costs the same fee again."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [
+     {
+      "name": "Imperial Mythril Piece",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the fee for Trial 2, Proof of competence"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Macuahuitl -1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mamool Ja Collar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mamool Ja Helmet",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Jadagna -1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Januwiyah -1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tariqah -1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Troll Pauldron",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Troll Vambrace",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lamian Armlet",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lamian Kaman -1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Qutrub Gorget",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "note": "The trial itself: bring back a piece of Beastmen equipment and trade it. Upgraded pieces (Lamian Kaman +1) and anything from the west Yagudo, Orc, Goblin are refused."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [
+     {
+      "name": "Imperial Mythril Piece",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the fee for Trial 3, Trivia: eight questions, seven right to pass, answers in bullets 9-16. Bullet 17 is the promotion itself -- an outcome, not a step, and the page never says who hands it over."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fire in the Hole",
+   "page_id": 40340,
+   "revision_id": 763079,
+   "source_sha256": "00b34906ce94679421fd0b0fbc3eb384d639e1bf200e272b939321da7db8d0cf",
+   "cache_file": "0040340_fire_in_the_hole"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 36,
+   "dat_name": "Fire in the Hole",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_is_zone_entry",
+   "consumed_key_item",
+   "generic_npc_name"
+  ],
+  "notes": "The header says Klara, Bastok Markets (S) (H-6), and the walkthrough never mentions Klara once. Bullet 1 is explicit that the quest begins on ZONING into Bastok Markets (S) from North Gustaberg (S) -- the same shape as Blade of Evil starting on entry to Beadeaux. So start carries no NPC: a marker on Klara would send a player to stand next to someone who does nothing, when what is needed is to walk out of the city and back in. The header string is kept verbatim in raw. The quest still has markable steps (the Stonehoused Adit and Gentle Tiger), so this is not fatal. Note that (H-6) is also where Gentle Tiger takes the closing cutscenes, which is probably why Klara is written there.\n\nBullets 2 and 3 are one object examined twice -- cutscene, then battlefield -- the Blank Target shape, so they merge. The Silvermine key is step 1's evidence and step 3's requirement: it is consumed by the attempt, and bullet 3's own sub-bullets say a fresh one comes from Solitary Ant at North Gustaberg (S) (J-9) after you zone and wait a game day. That recovery path is not a step.\n\nBullet 4 and its sub-bullets, plus the WARNING paragraph, are one fight and a page of tactics. The page never names an individual Quadav -- only the family -- so no mob is recorded rather than a family name that could match half a zone. Adelheid is the escortee, not a target. Bullet 5 is that fight's ending condition. Bullets 7 and 8 are one NPC twice. The closing line about In the Name of the Father is mission advice.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Storm on the Horizon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Bastok Markets (S)",
+   "grid": null,
+   "raw": "Klara, Bastok Markets (S) (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Bastok Markets (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Silvermine key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in from North Gustaberg (S); the cutscene on arrival is what opens the quest and hands over the Silvermine key. The header's Klara plays no part in the walkthrough."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stonehoused Adit"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "E-9",
+    "items": [
+     {
+      "name": "Silvermine key",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "top-middle of (E-9). Examine once for a cutscene, then again to start the fight. Survival Guide, or an Allied Notes teleport from Scarlette, C.A., Narkissa, C.A. or Wenonah, C.A., is the fast way out. Losing the fight costs the key; Solitary Ant at (J-9) gives another after you zone and wait a game day."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ruhotz Silvermines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "an escort through a maze: waves of Quadavs come at Adelheid, and the battlefield ends when she reaches the turret. The page names no individual Quadav, so no mob is recorded. She can be cured with non-BLU spells and buffed. AoE sleep and fast AoE damage, or Valaineral's Trust, are the page's advice. The zone is the Ruhotz Silvermines the header's description names; the page itself only says 'a maze'."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Bastok Markets (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "again from North Gustaberg (S), for a cutscene"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "twice: a cutscene, then a second cutscene and the reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Duties, Tasks, and Deeds",
+   "page_id": 37855,
+   "revision_id": 621794,
+   "source_sha256": "e3a1936372e420e397c22f599d9f9198447e5c06bf09a114dc74341bfc96bc96",
+   "cache_file": "0037855_duties_tasks_and_deeds"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 71,
+   "dat_name": "Duties, Tasks, and Deeds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "or_branch_modelled",
+   "count_unobservable",
+   "item_name_unresolved",
+   "consumed_key_item"
+  ],
+  "notes": "Four bullets that hide a mythic-weapon grind. Bullet 2 is not one step but four independent errands -- Salvage, Nyzul Isle, Einherjar and Assault -- with no order between them, so they share a group and all four draw at once. Bullet 3 is a warning about resetting progress and is not a step.\n\nThe 30,000 Alexandrite is deliberately NOT evidence and not an items entry: you cannot hold thirty thousand of anything, it is a running total of what has been traded, and a requirement that can never read true is worse than none. The Cat's Eye branch IS holdable, so it goes in items_alt with items_partial set for the branch that could not be expressed at all. 'Copy of Wyrmseeker Areuhat' is the page's own wording and does not resolve against res/items.lua -- it is recorded anyway, so stage C reports it rather than the name being quietly softened into something that does resolve. The page gives no zone for Zasshal or Kilusha and none is invented; both are unique names, so a zone-less marker still matches.\n\nStep 1's evidence is the five assault logs, which are handed over together and named in bullet 2. They are also step 6's requirement, since they go back to Paparoon at the end -- items and evidence, not evidence twice. Once traded the ladder falls back on the session latch and re-anchors on Paparoon's sealed invitation. The assault logs record their completions in the item's help text, which no packet reports, so the Rune of Release step carries no evidence at all. Fame is written as the expansion name; the region behind it is Aht Urhgan and FLevel is empty, so it gates nothing either way.\n\nAdversary pass: step 6's evidence was removed. \"Paparoon's sealed invitation\" is exactly what the header's Reward field says, and a reward marks the quest complete rather than a step done, so it cannot be a rung's evidence. The ladder now ends unobserved, which is the honest state -- nothing else on the final bullet is holdable. Everything else survived re-reading: the five logs are handed over in bullet 1 and are evidence there only (items on steps 5 and 6, never evidence twice), the four errands under bullet 2 are given with no order between them so the shared group is right, and every name on the quest resolves except \"Copy of Wyrmseeker Areuhat\", kept as the page writes it so stage C reports it rather than it being softened into something that resolves.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: 'Copy of Wyrmseeker Areuhat' is the page's wording and does not resolve, so this evidence may be dropped in stage C.\n  step 6: everything goes to him, then talk to him once more. items_partial is set for the Alexandrite side, which is a trade total and not a holding. No evidence: \"Paparoon's sealed invitation\" is the header's Reward field verbatim, so holding it proves the quest is over rather than that this rung is done (hard rule 7).",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "An Imperial Heist",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Paparoon",
+   "zone": "Nashmau",
+   "grid": "G-7",
+   "raw": "Paparoon, Nashmau"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Paparoon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Ilrusi Travel Ledger",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Periqia Adventure Diary",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Lebros Exploration Chronicle",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Mamool Ja Battle Journal",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Leujaoam Observation Log",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "first floor, under the archway; select every option. Asking about Assault Memoires hands over all five logs at once, so you need five free Gobbiebag slots or the cutscene is cancelled. The five names are bullet 2's."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Cat's Eye",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": "requirements",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "30,000 Alexandrite from Salvage and the Nyzul Isle Uncharted Area Survey, traded in over many runs -- a cumulative total, never a holding, so it is neither items nor evidence. One Cat's Eye from Mog Bonanza finishes the requirement outright, but any Alexandrite already traded is lost, so the page advises saving the Cat's Eye for the next mythic."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Zasshal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Copy of Wyrmseeker Areuhat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "requirements",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "150,000 Nyzul Tokens. The page gives no zone for Zasshal, so none is recorded; the name is unique enough to match anywhere."
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Kilusha"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Balrahn's Eyepatch",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "requirements",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "100,000 Ampoules of Therion Ichor from Einherjar. The page gives no zone for Kilusha either."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Rune of Release"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Ilrusi Travel Ledger",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Periqia Adventure Diary",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lebros Exploration Chronicle",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mamool Ja Battle Journal",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Leujaoam Observation Log",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "requirements",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all 50 Assaults again: at the end of each one, trade the log matching that staging point to the Rune of Release, which is why the five are alternatives rather than an AND-list. The Rune stands in every Assault area, so no zone is recorded. Progress is written into each item's help text -- far right is PSC rank, far left FL rank -- and nothing in the packets can read it."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Paparoon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Copy of Wyrmseeker Areuhat",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Balrahn's Eyepatch",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ilrusi Travel Ledger",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Periqia Adventure Diary",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Lebros Exploration Chronicle",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mamool Ja Battle Journal",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Leujaoam Observation Log",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "The draft used it as evidence; it has been removed."
+   }
+  ]
+ }
+]

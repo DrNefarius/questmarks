@@ -1,0 +1,269 @@
+questmarks -- attribution and data provenance
+=============================================
+
+
+QUEST AND MISSION METADATA
+--------------------------
+Everything under data/ except npc_overrides.lua and fame_dialogue.lua is
+GENERATED, and it comes from THREE sources.
+
+  1. data/quest_steps.lua -- FIRST-HAND from BG Wiki.
+
+     A local page cache (bgwiki-rest-cache/pages/, 3414 pages) was fetched from
+     BG Wiki's own MediaWiki REST API by EIGHT runs sharing one cache, each with
+     its own manifest:
+
+       manifest.json           1025  the quest run, Category:Quests
+       manifest-missions.json  2147  the later mission run, Category:Missions
+       manifest-gapfill.json      5  titles the category walks never reached
+       manifest-gapfill2.json     0  a probe that 404'd
+       manifest-gapfill3.json     1  "Monstrosity (Quest)"
+       manifest-gateguard.json   29  Category:Gate Guard
+       manifest-gateguard2.json   1  "Argus (NPC)"
+       manifest-coalition.json    6  the six Coalition hub pages
+
+     The manifests total fewer pages than the cache holds: a page reachable from
+     two runs is stored once, and prepass.py treats the DIRECTORY as the
+     authority over any manifest for exactly that reason. Each run records its
+     own endpoint, category enumeration and a content hash per page. Each page's
+     walkthrough was then READ and compiled into a step ladder by
+     tools/pipeline/. This supplies:
+
+       the step ladder itself, and per step: kind, target NPC or monster,
+       zone id, map grid reference, the item and key-item ids the step
+       requires, and the ids it grants as evidence;
+       plus, per quest: the job gate, the level gate, a confidence tier, and
+       the start NPC where the page names one.
+
+     Facts gathered outside those category walks live in
+     bgwiki-rest-cache/supplemental/, written down as data rather than pasted
+     into a script so each fact is auditable and the build needs no network.
+     FOUR files, and two of them are live build inputs:
+
+       vigil_weapons.json   Category:Vigil_Weapons, the job -> weapon mapping
+                            the twenty "Unlocking a Myth" quest pages omit;
+       mission_numbers.json the wiki mission NUMBER -> mission name map for the
+                            Promathia, Zilart and Aht Urhgan lines, which is
+                            what lets a prerequisite written as "Zilart Mission
+                            17" resolve at all. emit_lua.py generates
+                            tools/lib/mission_numbers.lua from it;
+       gate_guards.json     the Gate Guard roster from the two gate-guard runs
+                            above, read by tools/pipeline/pinned_prepass.py;
+       missing_titles.txt   the titles the category walks never reached, which
+                            is what the gap-fill runs were aimed at.
+
+     This directory is COMMITTED even though the page cache beside it is not --
+     it is an input, not a cache. See .gitignore.
+
+  2. data/quest_index.lua -- FIRST-HAND, over an identity list the CLIENT owns.
+
+     tools/build_index.lua walks the DAT id list in data/dat_names.lua and
+     merges the ladders above onto it. Row identity therefore comes from the
+     client's own table, which is game content rather than wiki content (see
+     the dat_names paragraph below), and everything merged onto it comes from
+     the page cache. NOTHING COMES FROM CHRONICLE ANY MORE: the side of that
+     merge which used to hold its data is an empty table (`local wiki = {}` in
+     tools/build_index.lua), and every shipped row now carries an authored
+     ladder whose giver comes from that ladder or from nowhere.
+
+     ADOULIN COALITION ASSIGNMENTS ARE READ AND NOT SHIPPED, which is a
+     provenance fact as much as a scope one. SIX Coalition hub pages were
+     fetched (manifest-coalition.json); their assignment tables yielded 95
+     assignment records, rendered into build/rendered/ as 95 documents under six
+     `<Name> Assignment Table` source_templates, and read into 95 step ladders
+     that remain in data/quest_steps.lua -- so the CC BY-NC-SA obligations below
+     still cover them. What changed is that tools/build_index.lua's
+     EXCLUDED_AREAS keeps the rows out of the emitted index: a coalition
+     assignment is a rotating offer against a shared quest-log slot, taken by
+     spending Imprimaturs, and this addon's marker model describes a stable row
+     with one giver.
+
+  3. data/mission_index.lua -- on the same terms as (2).
+
+     A second scrape was run against Category:Missions, by the same transport
+     and into the same cache (tools/pipeline/fetch_wiki.py; provenance in
+     bgwiki-rest-cache/manifest-missions.json, which is separate from
+     manifest.json so the quest run's record stays intact). 500 pages carrying
+     a `{{Mission Header}}` are now cached; 497 of them bind to a
+     `mission/<area>/<id>`. Their walkthroughs were read into step ladders by
+     the same stage-B pass the quests went through, and 435 of those ladders
+     reach the index.
+
+     So the mission half splits exactly like the quest half: FIRST-HAND from
+     BG Wiki for the step ladder and, per step, kind, target NPC or monster,
+     zone id, map grid reference, the item and key-item ids the step requires
+     and the ids it grants as evidence, all over an identity list the client
+     owns.
+
+     The BINDING is not chronicle's and not a guess: a mission page states its
+     own name in the `Mission Name` header field, and that name is matched
+     against data/dat_names.lua, which comes from the client's own DAT files.
+     The wiki's mission NUMBER is never used for it -- the two numberings do not
+     agree and are not even offset by a constant.
+
+     This is also the only part of the index that `//qm rebuild` touches in
+     game.
+
+All three trace back to BG Wiki content, licensed CC BY-NC-SA 3.0:
+https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+That license carries three obligations that apply to this addon:
+
+  BY   -- attribution, which this file provides.
+  NC   -- non-commercial use only.
+  SA   -- derivative works must be shared under the same license.
+
+
+THREE SETS OF TERMS, AND WHICH COVERS WHAT
+------------------------------------------
+The operative statement is in LICENSE and LICENSE-DATA; this file is the long
+form and exists to make the split auditable rather than asserted. In summary:
+
+  CODE -- MIT.            core/, render/, tools/, questmarks.lua, the docs.
+                          Full text in LICENSE.
+
+  WIKI-DERIVED DATA --    data/quest_index.lua, data/quest_steps.lua,
+  CC BY-NC-SA 3.0.        data/mission_index.lua, data/npc_overrides.lua,
+                          tools/lib/mission_numbers.lua, build/authored/,
+                          build/authored-quarantine/, build/rendered/, and the
+                          page cache itself. Attributed field by field above.
+
+  GAME CONTENT --         data/dat_names.lua, the dialogue fragments in
+  SQUARE ENIX.            data/fame_dialogue.lua, and the `Description:` blocks
+                          in build/rendered/. Not ours to license under either
+                          of the above. See GAME CONTENT at the end.
+
+WHY THE CODE IS NOT ALSO CC. A Creative Commons licence is a poor instrument
+for software: it grants no patent rights and carries no software warranty
+disclaimer, and CC themselves recommend against using it for code. MIT does
+both jobs and is what a Windower addon's readers expect.
+
+WHY THAT DOES NOT MAKE THE ADDON COMMERCIAL-FRIENDLY. The NC obligation is
+inherited from BG Wiki. It was not chosen here and cannot be relicensed away
+here. questmarks does not function without its data, so the whole cannot be
+sold, put behind a paywall or a donation gate, bundled into a paid product, or
+shipped inside anything monetised -- the MIT licence on the code does not lift
+that. A commercial derivative would have to replace the wiki-derived data
+outright and drop this file's claim to it.
+
+WHAT IS KEPT, AND WHAT IS DISCARDED. The generated files hold only FACTS the
+markers need -- ids, names, zone ids, grid references, counts, gates -- and no
+prose. Concretely, tools/pipeline/emit_lua.py writes exactly:
+
+  per quest  conf, snpc, snpcs, sz, lvl, jobs, craft, rep, prev, fame,
+             fame_lvl, steps
+  per step   k, npc, z, g, grp, optional, reqs_partial, reqs, reqs_alt,
+             ev, ev_alt, mobs
+
+and nothing else. The reading pass records a `note` on most steps and a longer
+`notes` on most quests -- the human-readable justification for how the page was
+interpreted -- and the emitter DROPS BOTH. Walkthroughs, descriptions and any
+other expressive text are therefore discarded before anything reaches data/.
+Keep it that way: an emitter that started shipping wiki sentences would change
+what the ADDON redistributes.
+
+  THE REPOSITORY IS A WIDER THING THAN THE ADDON, and this distinction became
+  load-bearing at the first public release. build/ is not purely a working
+  directory: build/authored/ and build/rendered/ ARE committed (see .gitignore
+  for why -- one is the source of truth for every ladder, the other is runtime
+  data for the sibling questmarks-ui addon), and both hold full wiki prose.
+  So the repository does redistribute BG Wiki text, under CC BY-NC-SA 3.0, with
+  per-document page id, revision id and content hash in the front matter. What
+  the loaded ADDON puts on screen still carries none of it.
+
+  BUT `steps[].note` IS READ IN PLACE, AND A PLAYER SEES IT. Dropping it at the
+  emitter keeps it out of what THIS addon redistributes, and that is still the
+  rule. It does not make the field private: the sibling `questmarks-ui` addon
+  reads build/authored/ off disk at runtime and draws each step's note in its
+  detail pane, expanded by default. So the per-step note is player-facing text
+  even though nothing ships it. tools/pipeline/AUTHORING.md's "Two notes, two
+  audiences" states the split, and the build gates that hold it are described
+  there.
+
+  THE WHOLE RENDERED CORPUS is 1829 files: 1022 quest pages, 95 Coalition
+  assignment records, 497 bound from `{{Mission Header}}` pages, 207 from
+  `{{Campaign Header}}` ones and 8 mission documents carrying neither infobox.
+  Each carries the same front matter the quest half does -- page_id,
+  revision_id, source_sha256, cache_file, match_rule, match_conf and the page's
+  categories -- so every line traces to one cached revision of one page, plus
+  `source_template` recording which of the two infoboxes it was read from.
+
+  The `Description:` block in those files is the text of the player's own
+  in-game mission log, transcribed by the wiki: SQUARE ENIX game content under
+  the notice below, not CC BY-NC-SA authorship, and the same field the quest
+  half has always carried. It is copied verbatim after markup removal and is
+  never summarised, paraphrased or synthesised. Of the 704 Mission-Header and
+  Campaign-Header documents, 697 state one; the 7 that do not get no
+  `Description:` line at all rather than an invented one.
+
+  The rest of each document -- walkthrough bullets and the sections after them
+  -- IS CC BY-NC-SA wiki prose, exactly as the quest documents' walkthroughs
+  already were, and it stays in build/ for the same reason they do. Nothing in
+  emit_lua.py reads these files and the shipped index gains no field from them.
+  The list above is still the whole of what is emitted.
+
+data/dat_names.lua is GENERATED but is NOT wiki data. It is the id -> name table
+the game itself uses, extracted from the client's own DAT files (0xD99A-0xD9BE);
+chronicle is merely the tool that did the extracting. Those strings are FFXI
+game content, covered by the SQUARE ENIX notice below rather than by
+CC BY-NC-SA. They are used functionally -- to name a quest in a message and,
+more importantly, to give core/state.lua the complete id ladder it needs to
+work out which mission of a linear storyline you are on. The file is frozen:
+regenerate it with `luajit tools/pipeline/dump_res.lua --names` only if the game
+adds content.
+
+WITH THANKS TO chronicle
+------------------------
+questmarks started as a consumer of the `chronicle` addon by jintawk
+(https://github.com/jintawk/ffxi-chronicle). Its bundled BG Wiki tables are what
+made the first version possible at all: they answered which quests exist, who
+gives them, what they need and what they lead to, well enough to prove the idea
+was worth building. Every one of those questions is now answered from this
+project's own page cache and from the game client's own data, but the shape of
+the answer was learned there first.
+
+Two readings of chronicle's CODE also survive. They are acknowledgements rather
+than dependencies, and they are listed once, under CODE below. Thank you.
+
+CODE
+----
+core/state.lua adapts the packet 0x056 sub-type table and the bitflag decode
+from chronicle's data.lua, which in turn credits the **Mastery** addon for the
+original story_logs mapping. Mastery is the origin of that mapping and is
+credited here for it; chronicle is where this project read it.
+
+core/inventory.lua follows the batched multi-bag sweep pattern from
+chronicle's wiki.lua.
+
+Both are readings of its CODE, made once and cited at the point of use. Neither
+opens a chronicle file; see "WITH THANKS TO chronicle" above.
+
+core/fame.lua's text pipeline (incoming text mode 150 -> from_shift_jis ->
+strip prompt and colour bytes -> split on " : ") was derived by reading the
+Balloon addon (https://github.com/StarlitGhost/Balloon), which is the reference
+implementation for reading rendered NPC dialogue under Windower.
+
+Packet field definitions come from Windower's own addons/libs/packets/fields.lua.
+Three readings are taken straight from it, and each is cited at the point of use
+rather than remembered:
+
+  core/keyitems.lua   the two 0x40-byte bitfields and the category number in
+                      packet 0x055 (fields.lua:2784)
+  core/inventory.lua  the 'itemstat' enum, of which 0x05 = Equipped
+                      (fields.lua:282)
+  core/kills.lua      the Param 1 / Param 2 / Message layout of packet 0x02D
+                      (fields.lua:1992), plus the seven message ids in
+                      Windower's res/action_messages.lua that mean a target
+                      died. Combat packets are read through Windower's own
+                      windower.packets.parse_action.
+
+
+GAME CONTENT
+------------
+Final Fantasy XI is (c) SQUARE ENIX CO., LTD. This addon is an unofficial,
+non-commercial fan tool with no affiliation to or endorsement by Square Enix.
+
+The short dialogue fragments in data/fame_dialogue.lua are used functionally,
+as matching keys to identify which fame message the client displayed. They are
+deliberately kept to the shortest distinguishing substring rather than
+reproducing the dialogue.

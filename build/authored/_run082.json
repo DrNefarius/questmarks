@@ -1,0 +1,1974 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Crisis in the Making",
+   "page_id": 5,
+   "revision_id": 702385,
+   "source_sha256": "141ea1aa5906f03812686c0e06c7adb3f661805f4ac3217b3385e201e06339b6",
+   "cache_file": "0000005_a_crisis_in_the_making"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 2,
+   "dat_name": "A Crisis in the Making",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "prereq_unmodelled"
+  ],
+  "notes": "Six bullets, three steps. Bullets 2, 3 and 4 are one continuous route -- Windurst Waters to Giddeus via West Sarutabaruta, in at (F-8) or (I-8), then down to the storage room -- and none of them is a thing you do to an entity, so they fold into the examine at (G-6) rather than becoming a travel rung the player cannot be tracked through. The page names the target only as 'the altar'; 'Altar' folds to a live key so the step keeps its marker, but it is a generic name and is flagged as such. The [KI] Off offering resolves (39) and is the one observable thing in the quest, so it sits on the examine and carries the mark back to Ranpi-Monpi. The Notes section holds no steps: bullet 1 there is a mutual-exclusion gate against The Dawn of Delectability that the schema cannot express, and bullet 2 is a recommendation to buy a Map of Giddeus.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 2,
+    "raw": "Windurst / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ranpi-Monpi",
+   "zone": "Windurst Waters",
+   "grid": "D-9",
+   "raw": "Ranpi-Monpi, Windurst Waters North (D-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ranpi-Monpi"
+    },
+    "zone": "Windurst Waters",
+    "grid": "D-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Culinarian's Guild. The header writes the zone 'Windurst Waters North', which is one half of zone 238 and not a zone of its own."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Altar"
+    },
+    "zone": "Giddeus",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Off offering",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "note": "in via West Sarutabaruta, then the caves at (F-8) or (I-8) -- behind where the Windurst Mission 1-3 offering is dropped -- and down to the storage room on the lower level. The page names it only 'the altar'."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ranpi-Monpi"
+    },
+    "zone": "Windurst Waters",
+    "grid": "D-9",
+    "items": [
+     {
+      "name": "Off offering",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trial of the Chacharoon",
+   "page_id": 117018,
+   "revision_id": 743806,
+   "source_sha256": "c3d45254b1449c7c1c9f95252a93f998d12bb2a99621f79b03c0dcc16647c587",
+   "cache_file": "0117018_trial_of_the_chacharoon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 205,
+   "dat_name": "Trial of the Chacharoon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "prereq_unmodelled",
+   "walkthrough_incomplete"
+  ],
+  "notes": "The walkthrough never mentions Susuroon, who the header says gives the quest, so start is taken from the header verbatim and the ladder starts one beat later. That is why this is medium: the page is describing how to satisfy the quest's own requirement rather than the quest itself.\n\nThe key item is written in the page WITH its quotation marks and that is literally its name -- res/key_items.lua 2793 is '\"Sakura and the Fountain\"', quotes included. Written without them it does not resolve at all, so the quotes are kept inside the name string.\n\nBuying it is kept as step 1 even though Quest Reqs lists it as a requirement: it is the page's own bullet 1, it is the only observable thing here, and holding it is exactly what moves the mark on to Chacharoon. The purchase is from Zenicca OR a Skipper Moogle, which is an OR and not a group, so Zenicca is the marker and the Moogle is a note. 'Care for monsters an additional 5 times' is unobservable.\n\nBullet 2 is not a step of its own -- entering the expanded garden is how you reach Chacharoon, and its sub-bullets say outright that the Rearing Grounds and the two-monster slot are not rewards of this quest. So bullets 2 and 3 are one step. Quest Reqs also wants any ONE of Trust: Windurst, Trust: Bastok or Trust: San d'Oria; prev is an AND-list, so putting all three there would gate the quest on all of them and it is left out.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Chacharoon's Cheer",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Susuroon",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Susuroon, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Zenicca"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"Sakura and the Fountain\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "a purchase, unlocked by caring for monsters five more times, which nothing observable reports. A Skipper Moogle sells it too -- an OR, so only Zenicca carries the marker."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chacharoon"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "\"Sakura and the Fountain\"",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in the newly opened Rearing Grounds area, reached by the path near the boat. The reward is Trust Magic, which is not an item and cannot be evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promotion: Sergeant",
+   "page_id": 13572,
+   "revision_id": 635776,
+   "source_sha256": "d252408295833e35d3efedcdda4d04fdeafda22b702e13e570c818422462e5d4",
+   "cache_file": "0013572_promotion_sergeant"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 94,
+   "dat_name": "Promotion: Sergeant",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "grid_conflict",
+   "rank_gate_unmodelled",
+   "landmark_not_a_zone"
+  ],
+  "notes": "'Balrahn Way' is NOT a zone -- it does not resolve as one, and 'Three Men and a Closet' puts Tehf Kimasnahya at (F-8) 'on the Balrahn's Way' inside Aht Urhgan Whitegate. So step 2 is a cutscene inside Whitegate, not a journey, and it gets no target: there is nothing to click, you simply walk there. Recording it as a zone would have cost the step its place.\n\nThe header writes Naja's grid as '(1-10)', a digit one where the map has a letter; the steps use (I-10) and the raw string is kept verbatim. Quest Reqs is '25 points worth of Assaults as Corporal', which has no slot and no observable predicate.\n\nSutlac is the only observable thing in the whole quest and is the header's Item Req, so it sits on the obtain step. It is a plain food item, so a player who happens to be carrying one before starting would see the mark sitting at the Nashmau cutscene -- worth knowing, but the alternative is a quest with no evidence at all. The (H-9) cutscene and the ??? at Caedarva Mire (I-10) are both unmarkable but keep their rungs.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [
+    {
+     "title": "Promotion: Corporal",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem - Aht Urhgan Whitegate (1-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "choose 'Balrahn Way'. The header writes the grid '(1-10)'."
+   },
+   {
+    "n": 2,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Balrahn's Way is a district of Aht Urhgan Whitegate, not a zone of its own. Choose 'Where have you been'."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sutlac",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the header's Item Req; the page does not say where to get one, so no zone is recorded"
+   },
+   {
+    "n": 4,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Nashmau",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "choose 'No, let's keep trying!' -- a wrong answer costs a whole game day before the cutscene can be repeated"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Totoroon"
+    },
+    "zone": "Nashmau",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sutlac",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page gives him no grid; Nashmau is read from the preceding bullets"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "out of Nashmau to the east; the ??? is on the east side of the pond"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "One Good Turn...",
+   "page_id": 101758,
+   "revision_id": 679502,
+   "source_sha256": "531ac1adb12ed07e4034cc30d2903d607d4e7724ec771cd0cd7986049d4c9bb5",
+   "cache_file": "0101758_one_good_turn"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 28,
+   "dat_name": "One Good Turn...",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Nine bullets and only two steps. Bullets 3 to 8 are not places to go -- they are the six questions Chelidoine asks and the answer he wants for each, written as '<Coalition>, <question>' with the correct choice indented under it. No coalition NPC is named anywhere on the page, and bullet 2 says plainly that HE asks for your help, so all six belong to the conversation with Chelidoine and are recorded in step 1's note rather than becoming six markers on entities the page never identifies. That reading is the reason this is medium rather than high: if the six were meant to be visits to the coalition representatives, the ladder would be wrong -- but inventing six names to find out is exactly what this pass must not do.\n\nBullet 9 is a JP-midnight wait plus a return. The wait is not given its own rung: nothing in the packets reports Japanese midnight, and a rung the player cannot be tracked through is noise. Adoulin is not one of the nine fame regions, so it gates nothing; the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "Adoulin / 5"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Chelidoine",
+   "zone": "Eastern Adoulin",
+   "grid": "J-9",
+   "raw": "Chelidoine, Eastern Adoulin - (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chelidoine"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "note": "NE of the Coronal Esplanade waypoint. Six questions, one answer each: Pioneers'/Colonization Reives -> Assist other pioneers; Couriers'/supply shipping -> Using waypoints is acceptable; Inventors'/material procurement -> Buy from Auction House or other pioneers; Scouts'/ergon locus surveys -> Find a good angle of approach; Peacekeepers'/Lair Reives -> assist other pioneers; Mummers'/morale boosting -> Check what the target wants."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chelidoine"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "only after JP midnight, which nothing observable reports"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Save the Clock Tower",
+   "page_id": 38694,
+   "revision_id": 767991,
+   "source_sha256": "3678bef8f8c88d8bb6592da3bc863f60ca0c8cd638938425e21bbd2ca651a79f",
+   "cache_file": "0038694_save_the_clock_tower"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 3,
+   "dat_name": "Save the Clock Tower",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "count_unobservable"
+  ],
+  "notes": "Bullet 3 is a list of ten NPCs with no order imposed on it, so the ten trades share a group and all ten draw at once. A strict ladder would mark Pitantimand alone and nothing else until you happened to reach him, which for a petition you carry round four zones is exactly the wrong shape.\n\nThe Tower Petition is the header's Item Req and Derrick hands it over, so it is step 2's evidence -- one item, one step, which carries the mark off Derrick and onto the ten. Nothing distinguishes a signed petition from an unsigned one in any packet, so the ten group members carry no evidence and neither does the final hand-in: the mark will sit on the group until the quest completes. That is honest; there is no observable count of signatures.\n\nCollet appears twice and both are real: bullet 1's gossip, which the page itself marks Optional, and bullet 3's signature. She is at Upper Jeuno (G-7) both times -- bullet 1 says 'near the clock tower', which is the same place. The optional gossip is kept at the head of the ladder where the page puts it; the runtime treats accepting the quest as evidence step 1 is done, so it costs nothing.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 5,
+    "raw": "Jeuno / 5"
+   },
+   "prev": [
+    {
+     "title": "Deal with Tenshodo",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Derrick",
+   "zone": "Lower Jeuno",
+   "grid": "H-7",
+   "raw": "Derrick, Lower Jeuno (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Collet"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "gossip only; the page marks this Optional. 'Near the clock tower (G-7)' is the same Collet bullet 3 puts in Upper Jeuno (G-7)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Derrick"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tower Petition",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the Chamber of Commerce and Industry; ask to start a petition"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Pitantimand"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of ten, any order"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Teigero-Bangero"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Zauko"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Baudin"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Collet"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the same Collet as the optional gossip in step 1"
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Constance"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Infirmary"
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Infirmary"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Souren"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Infirmary"
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Zuber"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Marble Bridge Tavern"
+   },
+   {
+    "n": 12,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Radeivepart"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "signatures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "last of the ten as listed, but the set is unordered"
+   },
+   {
+    "n": 13,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Derrick"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Tower Petition",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "only once all ten have signed, which nothing observable reports -- the mark will still be sitting on the group"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Knight's Test",
+   "page_id": 453,
+   "revision_id": 736441,
+   "source_sha256": "8b8246a0fd6be5cb55907b0ba0032fe528dac770ae089e46f223e05f1ea51e7c",
+   "cache_file": "0000453_a_knight_s_test"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 29,
+   "dat_name": "A Knight's Test",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_inferred"
+  ],
+  "notes": "A clean five-rung ladder with four evidence points, which is unusually good: the three books and the Knight's soul are all key items and all resolve (143, 144, 145, 146). The three 'Book of ...' names look like items and are written without a [KI] marker, but only the key-item table has them -- as items they do not resolve at all, so all three are recorded as ki.\n\nThe page gives no zone for Cahaurme or Baunise, only grids and 'the Tower above the East/West Gate'. Southern San d'Oria is the only city zone the page names and is the zone with both of those gates, so it is used and flagged; those two steps are marked medium for it rather than the whole quest.\n\nThe sub-bullets under bullet 4 are route and danger notes -- follow the river west from (J-10), south at (D-8), watch for Orcish Farkillers on the ledge and sound-aggro Pugils. Those are hazards on the way, not monsters this quest asks you to fight, so mobs stays empty. Level 30 with no job named is the level gate alone: this is the Paladin unlock, so gating it to PLD would lock it away from everybody who needs it.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "San d'Oria / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Squire's Test II",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Balasiel",
+   "zone": "Southern San d'Oria",
+   "grid": "F-7",
+   "raw": "Balasiel, Southern San d'Oria (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Book of Tasks",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Book of Tasks holds the hints the rest of the quest works from"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cahaurme"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Book of the East",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the Tower above the East Gate, entered at (L-8). The page names no zone for him; Southern San d'Oria is read from the start."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baunise"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Book of the West",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the Tower above the West Gate, entered at (F-8). Same zone inference as step 2. The page lists him after Cahaurme but never says the two books must be collected in that order."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Disused Well"
+    },
+    "zone": "Davoi",
+    "grid": "E-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Knight's soul",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at the dead end; follow the river west from (J-10) and turn south at (D-8). Orcish Farkillers on the ledge aggro even at 99, and river Pugils aggro to sound around level 30."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Balasiel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Knight's soul",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Unmarked Tomb",
+   "page_id": 67154,
+   "revision_id": 644778,
+   "source_sha256": "2a3ddc15d27f60598fc50b7d60563cf5daf64276cb998f97bb23a8a9793059d7",
+   "cache_file": "0067154_the_unmarked_tomb"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 84,
+   "dat_name": "The Unmarked Tomb",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "reward_not_used_as_evidence"
+  ],
+  "notes": "Five bullets, five steps, and the ladder is exactly what the page says. The Wyvern egg (1762) and Wyvern egg shell (1763) are both key items granted at named points, so steps 2 and 3 each carry one -- the egg comes from Yachemidot, not from Oiheaurese who asks for it, which is the sort of thing a verb scan gets backwards.\n\nStep 4 deliberately carries NO evidence. The page says Yachemidot hands over the Emerald abyssite of lenity there, and it does resolve (1420), but that key item is also the header's Reward, and a reward proves the quest is over rather than that a step is done. The cost is real and worth recording: after step 4 the mark stays on Yachemidot instead of moving to Oiheaurese for the last conversation. Flagged so a human can weigh it.\n\nThe wiki writes both NPCs in the '(A)' Abyssea form; the normaliser folds them to 'oiheaurese' and 'yachemidot', so the wiki form is kept as written. The header's Item Reqs are the two key items the quest itself hands you, not things to bring. 'aalt' is an Abyssea zone code, not one of the nine fame regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 6,
+    "raw": "aalt / 6"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Oiheaurese (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "G-7",
+   "raw": "Oiheaurese (A) (G-7), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Oiheaurese (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Conflux 7 at the Oasis of Revelation Rock; he asks for a Wyvern egg but does not give one"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yachemidot (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Wyvern egg",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "an easy walk from Oiheaurese; he is the one who actually hands over the egg"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Meriphataud Mountains",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Wyvern egg shell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "along the eastern edge of the Spine; the Castle Oztroja Survival Guide is the quick way in. A ??? can never carry a marker, but the key item makes the rung worth keeping."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yachemidot (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he gives the Emerald abyssite of lenity here, but that key item is also the header's Reward, so it is not used as evidence"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Oiheaurese (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Postman Always K.O.'s Twice",
+   "page_id": 38690,
+   "revision_id": 702386,
+   "source_sha256": "1c5bba6aa4a84fceb58bb5ffd05dbf1245583ac3d7e9d820dff3755c31c6dca2",
+   "cache_file": "0038690_the_postman_always_k_o_s_twice"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 19,
+   "dat_name": "The Postman Always K.O.'s Twice",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "count_unobservable"
+  ],
+  "notes": "Three bullets and only two of them are things you do. Bullet 3 -- 'the more letters you turn in, the higher your reward' -- is the reward table restated and is not a step.\n\nThe four letters are an OR, not an AND: bullet 2 says 'one or all of the following'. So the farming step and the trade both put Muddy Bar Tab in the main slot and the other three in the alternates, which is exactly the 'items OR any one of items_alt' shape. Holding any one letter satisfies the farm and points the mark back at Ambrosius.\n\nThe farm has no single zone -- Savanna Rarab drops two of the letters across East and West Sarutabaruta and Canyon Rarab drops the other two in Tahrongi Canyon -- so its zone is left null and the two rarabs are carried as drop-role mobs, which is how they get drawn wherever you happen to be hunting. All four letters resolve (584-587). Nothing reports how many you are carrying beyond the item counts themselves, so the 'all four in one trade for 500 gil' optimum is a note.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ambrosius",
+   "zone": "Windurst Walls",
+   "grid": "J-12",
+   "raw": "Ambrosius, Windurst Walls (J-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ambrosius"
+    },
+    "zone": "Windurst Walls",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he runs the auction house"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Muddy Bar Tab",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Torn Epistle",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Odd Postcard",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Damp Envelope",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [
+     {
+      "name": "Savanna Rarab",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Canyon Rarab",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Muddy Bar Tab from Savanna Rarab in East Sarutabaruta, Torn Epistle from Savanna Rarab in West Sarutabaruta, Odd Postcard and Damp Envelope from Canyon Rarab in Tahrongi Canyon. Three zones, so no single zone is recorded. Any one letter is enough to go back."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ambrosius"
+    },
+    "zone": "Windurst Walls",
+    "grid": "J-12",
+    "items": [
+     {
+      "name": "Muddy Bar Tab",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Torn Epistle",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Odd Postcard",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Damp Envelope",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "one letter or all four; all four in a single trade pays 500 gil against 50 for one"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Tenshodo Membership",
+   "page_id": 38703,
+   "revision_id": 773744,
+   "source_sha256": "7375cea9e6e7e7fcb472bcf85fbe167e94b3321986ed3cdc293834af769c80e5",
+   "cache_file": "0038703_tenshodo_membership"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 17,
+   "dat_name": "Tenshodo Membership",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Seven bullets, but bullets 4-6 and bullet 7 are two ROUTES to the same finish, not a seven-rung sequence -- the page says so with its own two sub-headings. The branch is modelled properly: step 2 (Jabbar, for the [KI] Tenshodo application form) is marked optional because the auction-house route skips it entirely, and the final hand-in takes the application form in items with the Tenshodo Invite as an alternate, which is exactly 'items OR any one of items_alt'.\n\nBullets 1, 2 and 3 are one conversation: entering Neptune's Spire is walking through a door, and 'select the third, blank line' is how you talk to Ghebi Damomohe, not a separate action. Three consecutive rungs on one NPC would have been three drawings of the same marker.\n\nThe [KI] Tenshodo Member's Card is the header's Reward, so it is not evidence; the application form (121) is, and it is obtained at Jabbar, which is where it sits. The page's warning that buying an Invite does not bypass the Jeuno fame requirement is kept as a note -- fame is already a gate here.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 3,
+    "raw": "Jeuno Level 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ghebi Damomohe",
+   "zone": "Lower Jeuno",
+   "grid": "I-7",
+   "raw": "Ghebi Damomohe, Lower Jeuno (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ghebi Damomohe"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "at the counter inside Neptune's Spire; select the third, blank line of dialogue. He then names the two ways in: a Tenshodo Invite or the [KI] Tenshodo application form."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jabbar"
+    },
+    "zone": "Port Bastok",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tenshodo application form",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "upper level of Warehouse #2. Optional because it is one of two routes -- buying a Tenshodo Invite skips this step entirely."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ghebi Damomohe"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Tenshodo application form",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Tenshodo Invite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "the application form is handed over in conversation; a Tenshodo Invite bought from the Auction House (Others > Misc.) is traded instead. Buying one does NOT bypass the Jeuno fame requirement. The reward is the Tenshodo Member's Card and free run of the back room."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Wings of Gold",
+   "page_id": 15064,
+   "revision_id": 730633,
+   "source_sha256": "d244ecdbc9f5cfeb4957e9f504eb722432c91832e5b28aae5bc9029b7a0feaaa",
+   "cache_file": "0015064_wings_of_gold"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 60,
+   "dat_name": "Wings of Gold",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "unnamed_target",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Four steps out of five bullets. Bullet 5 sits under a '== Note: ==' heading and is not a step -- it is the drop list, so its thirteen monsters are folded onto step 2 as drop-role mobs, which is where they belong and where they will be drawn.\n\nThe chest is deliberately unnamed. The page says only 'open a chest in the zone', and guessing at a proper name would be the invention this pass exists to avoid, so the target is none and the step keeps its rung on the strength of the Guiding bell. That key item is the interesting find here: it reads like an item and is written like one, but only res/key_items.lua has it (232), so it is recorded as ki -- as an item it does not resolve and step 3 would have lost its evidence.\n\nThe Delkfutt Chest Key resolves under both its long and short names (1036); the long one is used. Buying it from the Curio Vendor Moogle instead of farming it is an OR the schema cannot express on an obtain step -- either way you end up holding the key, which is what the evidence tests -- so it is a note rather than an alternate. 'Level: 40+ Beastmaster' is BOTH gates; bullet 1's 'from this point on, any job' is a note on that gate and not a rung.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: the page names it only 'a chest', so no target name is recorded and the step carries no marker.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Path of the Beastmaster",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 40,
+   "jobs": [
+    "BST"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Brutus",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Brutus, Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a level 40 or higher Beastmaster; everything after this can be done on any job"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Upper Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Delkfutt Chest Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Gigas Wallwatcher",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Kettlemaster",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Evil Spirit",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Spirekeeper",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Torturer",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Bonecutter",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Stonemason",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Punisher",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Hallwatcher",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Gigas Sculptor",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Magic Urn",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Light Elemental",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Thunder Elemental",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     5
+    ],
+    "note": "7th to 10th floors. The Curio Vendor Moogle sells the key outright, which is the same outcome by another road. The thirteen droppers come from the page's own Note section, whose bullets restart the numbering."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Upper Delkfutt's Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Delkfutt Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Guiding bell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The key is consumed opening it."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Guiding bell",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ }
+]

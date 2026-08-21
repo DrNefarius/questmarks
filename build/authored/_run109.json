@@ -1,0 +1,1579 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ode to the Serpents",
+   "page_id": 27197,
+   "revision_id": 384578,
+   "source_sha256": "66113633e6a961881580bdeb21d6b79be5edcbfb7b40e28c56e0809d9216abd0",
+   "cache_file": "0027197_ode_to_the_serpents"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 44,
+   "dat_name": "Ode to the Serpents",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "prereq_quest_as_step"
+  ],
+  "notes": "Four bullets, and bullet 3 is the whole judgement call: 'Complete the quests When the Bow Breaks and Fist of the People' is the header's Quest Reqs field repeated verbatim, even though the walkthrough sequences it BETWEEN the two interviews and the return. A precondition is never a ladder position, so the rung is kept for auditability but flagged optional; it is also unmarkable and unobservable, since no packet reports another quest's completion. gates.prev holds only the header's Previous field (Saga of the Skyserpent) so the quest is not hidden behind quests the page sequences mid-walkthrough. Bullet 2 sends you to two adjutants in Al Zahbi with no order stated, so Gaweesh and Talhaal share a group and both draw at once rather than a strict ladder marking Gaweesh alone. Biyaada's letter is not named as a hand-over, but bullet 2 presupposes you already hold it and the opening cutscene is the only thing that has happened, so it is step 1's evidence; the interview steps only require holding it. Medium overall because of the bullet-3 call.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Saga of the Skyserpent",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Fari-Wari",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-12",
+   "raw": "Fari-Wari, Aht Urhgan Whitegate (K-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fari-Wari"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Biyaada's letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the opening cutscene is what hands over Biyaada's letter; bullet 2 confirms you hold it from here on"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gaweesh"
+    },
+    "zone": "Al Zahbi",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Biyaada's letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "adjutants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "one of the two adjutants; the page names them with an 'and' and gives no order, so both draw at once"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Talhaal"
+    },
+    "zone": "Al Zahbi",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Biyaada's letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "adjutants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the other adjutant, same group"
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "the bullet is 'Complete the quests When the Bow Breaks and Fist of the People' -- word for word the header's Quest Reqs field, so it is a precondition rather than a rung, and is marked optional. The page does not say who gives them, so no NPC is invented, and nothing observable reports another quest being finished, so this rung carries no place and no evidence."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fari-Wari"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Curses, Foiled Again!",
+   "page_id": 87,
+   "revision_id": 683554,
+   "source_sha256": "08fb2827dfd9b8ecf838c5babb3f2c0116f6885f12df8cad77debcb0a9e2fd11",
+   "cache_file": "0000087_curses_foiled_again"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 32,
+   "dat_name": "Curses, Foiled Again!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Three bullets, three steps, nothing hidden and nothing to argue with. The sub-bullet under bullet 1 is a warning about job selection -- the quest Blood and Glory can occupy the same conversation and block the flag, so you come back on a job that does not qualify for it -- and is a note, not a step. Bullet 2 is a genuine obtain rung: both are ordinary inventory items, so holding Bone Chip x2 and Bomb Ash x1 together is observable and is the ladder's only evidence. Bullet 3 trades exactly those, so they sit in items there and the evidence is not repeated -- the same item on two steps would jump the mark forward the instant you bought it.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Shantotto",
+   "zone": "Windurst Walls",
+   "grid": "K-7",
+   "raw": "Shantotto, Windurst Walls (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shantotto"
+    },
+    "zone": "Windurst Walls",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the quest Blood and Glory can prevent the flag; return on a job that does not meet its prerequisites"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bone Chip",
+       "count": 2
+      },
+      {
+       "kind": "item",
+       "name": "Bomb Ash",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both are sold by NPCs, so there is no place to mark"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Shantotto"
+    },
+    "zone": "Windurst Walls",
+    "grid": "K-7",
+    "items": [
+     {
+      "name": "Bone Chip",
+      "count": 2,
+      "kind": "item"
+     },
+     {
+      "name": "Bomb Ash",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all three in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In the Mood for Love",
+   "page_id": 38720,
+   "revision_id": 729653,
+   "source_sha256": "2690fd02fa94305bb5958e71a1bef001cca2fa7e998209f1753f35a7bd29bd97",
+   "cache_file": "0038720_in_the_mood_for_love"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 69,
+   "dat_name": "In the Mood for Love",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_mob_name",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Bullet 2's target is a family, not an entity: the page says only 'the Gigas there', so the mob is recorded at exactly that granularity and flagged, rather than guessed into a particular Lufaise Meadows spawn the page never names. If the runtime cannot match it the step simply loses its mob and keeps its zone, which is the honest failure. The wiki writes the drop as 'Chameleon Dia. Chameleon Diamond' -- that is the short-name/long-name pair, not two items -- and the long name is used; both fold to item 1666. Bullet 4 is the page's own 'additional cutscene', so Matoaka is optional and sits inside the same shop as Odasel. Previous is empty and Quest Reqs is Promathia Mission 3-2, so the mission is recorded in prev, which is the only slot a prerequisite has.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Promathia Mission 3-2",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Odasel",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Odasel, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Odasel"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he stands outside Gems by Kshama"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lufaise Meadows",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Chameleon Diamond",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Gigas",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page names only the Gigas family, never a spawn, so that is what is recorded and no individual name is invented"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Odasel"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Chameleon Diamond",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Matoaka"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "inside Gems by Kshama; an additional cutscene only, so the grid is the shop's own"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Got It All",
+   "page_id": 38767,
+   "revision_id": 678822,
+   "source_sha256": "3c81df9807d143f9c06482524b4ea282338db95363bde90aa9337032fd0af9be",
+   "cache_file": "0038767_got_it_all"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 3,
+   "dat_name": "Got It All",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Eight bullets, one zone, and one trap. Bullet 6 names Hajaom, but he is a landmark for the (J-10) lower level and not someone you speak to -- the cutscene fires on arrival -- so the target is none and Hajaom stays in the note; a verb-scanner would have made a talk step on him. The rest is a plain errand ladder that walks back and forth between Tehf Kimasnahya (F-8) and Ekhu Pesshyadha (H-6). Only bullet 4 hands over anything observable, the Vial of luminous water key item, so it is the ladder's single evidence point. Bullets 7 and 8 are both Tehf Kimasnahya and are kept as two rungs because the page really does require zoning out and back between them; consecutive steps on one NPC collapse to a single marker anyway, so nothing is lost by being faithful.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Tehf Kimasnahya",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "F-8",
+   "raw": "Tehf Kimasnahya, Aht Urhgan Whitegate (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tehf Kimasnahya"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ekhu Pesshyadha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zabahf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ekhu Pesshyadha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vial of luminous water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the grid is not repeated on the page but he has not moved from bullet 2"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tehf Kimasnahya"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the lower level; the cutscene triggers on arrival. Hajaom stands nearby and is named only as a landmark -- there is nothing to click and nobody to speak to."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tehf Kimasnahya"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Tehf Kimasnahya"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "zone out and back before this one, or he has nothing new to say"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Vengeful Wrath",
+   "page_id": 26186,
+   "revision_id": 684756,
+   "source_sha256": "c34c674ae2ae1019c5a91eb3d2ce4b3b740bbc33d8e9ac8e8144eef0e03e584b",
+   "cache_file": "0026186_vengeful_wrath"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 32,
+   "dat_name": "Vengeful Wrath",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "Bullet 4, 'Can be repeated without zoning', is a property of the repeat and not a step -- exactly the kind of bullet the pilot warned about. Bullet 2 has two routes to the Quadav Helm and only one of them has a place: the page says it drops only from the Old Quadav in Beadeaux (and pointedly not from Old Quadav elsewhere), or it can be bought on the Auction House. The obtain rung is therefore put in Beadeaux with the mob, and the Auction House stays in the note, because an Auction House cannot be marked and every city has one. items_partial is left false -- the alternative changes where the helm comes from, not what you must be holding, and the evidence is identical either way.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Goraow",
+   "zone": "Bastok Mines",
+   "grid": "I-6",
+   "raw": "Goraow, Bastok Mines (I-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Goraow"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "upper stairway of Ore Street, close to Bastok Mines Home Point #3"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Quadav Helm",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Old Quadav",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "only the Old Quadav in Beadeaux drop it; the page says Old Quadav in other areas do not drop the same items. It can also be bought on the Auction House under Others > Beast-made, which has no place to mark, so the zone is where the drop is."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Goraow"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Quadav Helm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "repeatable straight away, without zoning"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stop Your Whining",
+   "page_id": 36940,
+   "revision_id": 755806,
+   "source_sha256": "51002dab3efb6edb6acd8525817a08f57ef567ee4cfe4639eca0878b2b428d74",
+   "cache_file": "0036940_stop_your_whining"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 132,
+   "dat_name": "Stop Your Whining",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "key_item_filed_as_item"
+  ],
+  "notes": "Both barrels are KEY ITEMS -- key_items 260 'empty barrel' and 261 'barrel of Opo-Opo brew' -- even though the header files them under Item Reqs. As items neither name resolves at all, so taking the header at its word would have cost this quest both of its evidence points and left a three-rung ladder with nothing observable on it. Bullets 1 to 3 are one arrival, not three steps: travelling to Norg, going into the Buccaneer's Quarters and talking to Washu all end at the same NPC, and the empty barrel he gives you is that step's evidence. Bullets 4 and 5 are likewise one action -- examining the ??? IS the barrel turning over, the page just says it twice -- and since the ??? spawns at random around Yhoator Jungle it carries no grid.",
+  "gates": {
+   "fame": {
+    "region": "Norg",
+    "level": 4,
+    "raw": "Norg / 4"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Washu",
+   "zone": "Norg",
+   "grid": "J-8",
+   "raw": "Washu - Norg (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Washu"
+    },
+    "zone": "Norg",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Empty barrel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "inside the Buccaneer's Quarters; he hands over the empty barrel, which is a key item and not an inventory item"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Yhoator Jungle",
+    "grid": null,
+    "items": [
+     {
+      "name": "Empty barrel",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Barrel of Opo-Opo brew",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the brew ferments in a tree; the ??? spawns at random around the jungle, so no grid is recorded. Examining it turns the empty barrel straight into the full one -- one action, two bullets."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Washu"
+    },
+    "zone": "Norg",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Barrel of Opo-Opo brew",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hook, Line, and Sinker",
+   "page_id": 38719,
+   "revision_id": 718453,
+   "source_sha256": "b117dc4bcb6b7ce18c25a759014206ce4dc8fe4f2a7a1edc99565bbc9011767e",
+   "cache_file": "0038719_hook_line_and_sinker"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 71,
+   "dat_name": "Hook, Line, and Sinker",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Bullet 4 is Windower FPS troubleshooting -- set FrameRateDivisor 2 so the cutscene does not freeze -- and is not a step at all; it is the same shape as the Divine Might bullet the pilot called out. The rod is not fished up directly: bullet 2 says it drops off Krakens that are themselves fished up in Qufim Island, so the rung is a fight on Kraken with the Egret Fishing Rod as its evidence, and the sub-bullet that no fishing skill is needed to hook one stays a note. Previous is empty and Quest Reqs is Promathia Mission 3-2, so the mission goes in prev, the only slot a prerequisite has.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Promathia Mission 3-2",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Omer",
+   "zone": "Lower Jeuno",
+   "grid": "G-10",
+   "raw": "Omer, Lower Jeuno (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Omer"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qufim Island",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Egret Fishing Rod",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Kraken",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Krakens have to be fished up first, but no fishing skill is required to pull one up. The page gives no spot on the island, so no grid."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Omer"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Egret Fishing Rod",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 118: Buburimu Squall",
+   "page_id": 86433,
+   "revision_id": 729659,
+   "source_sha256": "13f3de3cd8a10bf63ccc724c2adf9333ec2b806bf31585908a2fbe34b8616df4",
+   "cache_file": "0086433_vw_op_118_buburimu_squall"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 169,
+   "dat_name": "VW Op. #118: Buburimu Squall",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "auto_flagged_quest",
+   "start_not_in_walkthrough",
+   "multiple_spawn_points"
+  ],
+  "notes": "Two bullets for a whole Voidwatch operation, which is why this is medium: the page is thin rather than wrong. There is no start step -- bullet 1 says the quest flags itself the moment A New Menace is finished -- so nothing at all is done at Mawl'gofaur, even though the header names him as the giver. He is still kept as start, because he is the Voidwatch NPC in Ru'Lude Gardens and the walkthrough contradicts nothing; it simply never mentions him. This is not the Carbuncle case, where the header's giver was a cutscene and the walkthrough pointed somewhere else. The real gate is the White stratum abyssite VI, which comes from a different quest (No Rest for the Weary) and IS observable as a key item, so it earns a rung of its own; that quest is left out of prev because it gates the spawn, not the flag. Botulus Rex has three listed spawn points in one zone, which is a choice and not a contradiction, so the grid is null and all three are in the note.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A New Menace",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Mawl'gofaur",
+   "zone": "Ru'Lude Gardens",
+   "grid": null,
+   "raw": "Mawl'gofaur, Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "White stratum abyssite VI",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the abyssite comes from the quest No Rest for the Weary, which the page names but does not locate, so this rung has no place. This quest itself needs no talking to: it flags automatically once A New Menace is complete."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": null,
+    "items": [
+     {
+      "name": "White stratum abyssite VI",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Botulus Rex",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the abyssite is what spawns him. Three rift locations -- (F-9), (H-9) or (J-9) -- so no single grid is recorded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "No Love Lost",
+   "page_id": 110276,
+   "revision_id": 702573,
+   "source_sha256": "de454274c32d62e793c874064788f831fa66cf712ec71d34eebedf43fdf7214e",
+   "cache_file": "0110276_no_love_lost"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 61,
+   "dat_name": "No Love Lost",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "Two bullets and one judgement: the sub-bullet under bullet 2 is where the hide comes from, so bullet 2 splits into a fight on Slobbering Ruszor at (J-7) and the trade back to Peppe-Aleppe, and both keep bullet 2 as their source. Everything happens in Kamihr Drifts. The page places Peppe-Aleppe only 'at the Frontier Station' and gives no grid, so his grid is null rather than borrowed from the ruszor's (J-7) -- the two are not the same place. Adoulin is not one of the addon's nine fame regions, so the region is null and only the raw string survives. The reward's two key items, Algor resilience and Peppe-Aleppe's superlative tonic, prove the quest is over rather than that a step is done, so neither is used as evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Peppe-Aleppe",
+   "zone": "Kamihr Drifts",
+   "grid": null,
+   "raw": "Peppe-Aleppe, Kamihr Drifts"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Peppe-Aleppe"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Frontier Station; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kamihr Drifts",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Ruszor Hide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Slobbering Ruszor",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "from the sub-bullet under bullet 2; only one hide is needed"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Peppe-Aleppe"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [
+     {
+      "name": "Ruszor Hide",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the trade is the completion; same bullet as the ruszor, split out"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Return of the Adventurer",
+   "page_id": 26170,
+   "revision_id": 689337,
+   "source_sha256": "7a4d35ca1e2628d4942867631dd2e509c70f500fbf06a3fbfd14dce3e504ad02",
+   "cache_file": "0026170_the_return_of_the_adventurer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 30,
+   "dat_name": "The Return of the Adventurer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "The page puts the shopping before the giver and that order is kept, because it is deliberate advice -- buy the Cinnamon first and the whole quest is one visit to Gwill. Holding Cinnamon is the only observable thing here, and it is evidence on the obtain rung only; the trade rung merely requires it, since the same item on two steps would jump the mark forward. The obtain has no place to mark: the page's first route is the Auction House, which is everywhere, and only its second is Ghemi Sinterilo at the Kazham port shop, so a Kazham marker would push players the wrong way and the vendor stays in the note along with the sub-bullet's point that the shop is reachable by Survival Guide or Home Point without the airship pass. Steps 2 and 3 are both Gwill with a cutscene between them and collapse to one marker anyway.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [
+    {
+     "title": "Father Figure",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Gwill",
+   "zone": "Bastok Markets",
+   "grid": "E-11",
+   "raw": "Gwill - Bastok Markets (E-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Cinnamon",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Auction House first; otherwise from Ghemi Sinterilo at the Kazham port shop, which the sub-bullet says can be reached by Survival Guide or Home Point without an airship pass. Neither route is a place worth marking, so the rung has none."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gwill"
+    },
+    "zone": "Bastok Markets",
+    "grid": "E-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "this is what actually flags the quest, even though the page lists the shopping first"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Gwill"
+    },
+    "zone": "Bastok Markets",
+    "grid": "E-11",
+    "items": [
+     {
+      "name": "Cinnamon",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "after the cutscene from the previous step ends"
+   }
+  ]
+ }
+]

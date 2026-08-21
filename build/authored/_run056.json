@@ -1,0 +1,1400 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Making the Grade",
+   "page_id": 176,
+   "revision_id": 773917,
+   "source_sha256": "c1d372cd6d3ff65522ea90708fe1eb5130cb0c371225b8e3b0f6919a2a9a1b5e",
+   "cache_file": "0000176_making_the_grade"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 4,
+   "dat_name": "Making the Grade",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group"
+  ],
+  "notes": "The header's Item Reqs is the whole middle of this quest, and the trap is that Fuepepe hands the answer sheets straight back: bullets 2 and 3 BOTH require you to be holding Test Answers, so the trade to Fuepepe consumes nothing. No obtain step is inserted for farming them, deliberately -- it would wedge an unmarkable step between two Fuepepe steps and break the same-target look-ahead, and the farming is sub-bullet commentary rather than a listed action. For the same reason the Wendigos are described in step 2's note instead of being recorded as mobs: they are in Inner Horutoto Ruins while the step happens in Windurst Waters, and a mob row hung on the wrong zone is a wrong marker. The page's warning that the chat log says 'Pile of answer sheets' is worth keeping -- it is the same item, and the resource table answers to both names. The four '(Optional)' sub-bullet conversations (Pechiru-Mashiru, Fuepepe again, Tauwawa, Chomoro-Kyotoro) are pure flavour hung off other steps and stay in notes; bullet 5 is different -- it has the page's own '== Optional dialogue ==' heading and its own top-level number, so it is modelled as two optional steps sharing a group, since the page gives no order. It is left where the page puts it, after the reward, because the page never says whether the reward consumes the Tattered test sheet -- if it does, bullet 5 has to be done first. Koru-Moru is the principal; the page shouts that Yoran-Oran is the wrong taru. Windurst Waters (North Map) is half of zone 238, not a zone of its own.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 3,
+    "raw": "Windurst / 3"
+   },
+   "prev": [
+    {
+     "title": "Teacher's Pet",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Fuepepe",
+   "zone": "Windurst Waters",
+   "grid": "L-6",
+   "raw": "Fuepepe, Windurst Waters (L-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fuepepe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "east Aurastery on the North Map. You cannot start this while Let Sleeping Dogs Lie or Teacher's Pet is active, and you must zone if you have just finished either. Pechiru-Mashiru nearby has an optional opinion on tests."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Fuepepe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [
+     {
+      "name": "Test Answers",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he reads them and gives them back, so you still need them for the next step. Test Answers drop off Wendigos in Inner Horutoto Ruins past the Three Mage Gate -- the chat log calls the drop 'Pile of answer sheets' -- or turn up on the Auction House. Optionally talk to him again for a hint at the principal, and to Tauwawa and Chomoro-Kyotoro for foreshadowing."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Koru-Moru"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Test Answers",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tattered test sheet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Koru-Moru is the principal. NOT Yoran-Oran, the Cornette fame taru -- the page says so in as many words."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fuepepe"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chomoro-Kyotoro"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tattered test sheet",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "optional_dialogue",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "on top of the Windurst Waters Aurastery; extra dialogue only, and it needs the key item still in hand. From the page's own '== Optional dialogue ==' section."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kirarara"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tattered test sheet",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "optional_dialogue",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "on top of the Windurst Waters Aurastery; extra dialogue only. The page gives no order between the two, hence the shared group."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Drachenfall",
+   "page_id": 11909,
+   "revision_id": 769186,
+   "source_sha256": "9e4aa95d8abd59f1adae2082d20e3aff681e3595b27dea8f74c04b579a201be9",
+   "cache_file": "0011909_drachenfall"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 31,
+   "dat_name": "Drachenfall",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "route_heavy"
+  ],
+  "notes": "Nine bullets, but six of them (2 through 7) are one journey: Dangruf Wadi, up the geyser at (I-8), up a second at (J-3), out into North Gustaberg, east over the bridge and along the river. They collapse into a single travel step so the route stays auditable without inventing six rungs the player cannot be tracked through. The real ladder is three interactions and both consumables are observable, which is unusually generous: the Brass Canteen proves you have started, the Drachenfall Water proves you have filled it. The Waterfall Base is a genuine targetable entity rather than scenery, so the middle step carries a marker. The ??? beside it is explicitly for unlocking the relic weapon Apocalypse and is NOT part of this quest -- precisely the bullet a keyword parser would have turned into an examine step. The 'After the walkthrough: Notes' section is a single cross-reference to An Explorer's Footsteps and is not a step. The header gives (J-7) for Black Mud; no grid is given anywhere for the Waterfall Base, so none is recorded.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 2,
+    "raw": "Bastok / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Black Mud",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Black Mud - Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Black Mud"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Brass Canteen",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "if you have the Proto-Waypoint warp to North Gustaberg it lands almost on top of the Waterfall Base, and the whole journey below can be skipped."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "North Gustaberg"
+    },
+    "zone": "North Gustaberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "note": "in via Dangruf Wadi -- Survival Guide, or zone in from South Gustaberg (D-9) -- then the geyser at (I-8), northeast to a second geyser at (J-3), and follow the path out. On the far side go east over the bridge and follow the river to the base of the waterfall. Invisible or Prism Powders for the aggressive level 90 Goblins; pick up the Geomagnetic Fount by the bridge while you are there."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Waterfall Base"
+    },
+    "zone": "North Gustaberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Brass Canteen",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Drachenfall Water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the ??? standing next to it unlocks the relic weapon Apocalypse and has nothing to do with this quest."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Black Mud"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [
+     {
+      "name": "Drachenfall Water",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trial-Size Trial by Lightning",
+   "page_id": 38728,
+   "revision_id": 687179,
+   "source_sha256": "49782f49d135aef21c044015633576bdef4f370d7b2f6eb4ee70660c5f636d5e",
+   "cache_file": "0038728_trial_size_trial_by_lightning"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 28,
+   "dat_name": "Trial-Size Trial by Lightning",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "job_gate",
+   "zone_not_named"
+  ],
+  "notes": "Four bullets and all four are real steps, which is rare. The one thing this page will not tell you is WHERE: it names the Lightning Protocrystal but never the zone it stands in. The Description says 'the protocrystal in the Boyahda Tree', which is the way in and not the room, and note 6 says only 'the Cloister'. Cloister of Storms is the obvious referent and resolves cleanly, but it appears nowhere in the page text, so steps 3 and 4 are left zone-less rather than filled in from outside knowledge; the protocrystal's name is distinctive enough that a nil zone costs nothing here. Trading the fork to Lacia does not consume it -- it is the ride to the arena, and note 6 is explicit that on repeats she will hand the fork back but never give the ride again, so the trade is a step and not a hand-in. Steps 1 and 2 are both on Lacia and coalesce into one marker with look-ahead, which is exactly the shape this ladder wants. 'Summoner Level 20 or higher' is BOTH gates, so level 20 and jobs SMN. The quest ends on the win; there is no NPC to return to, so none is invented. Notes 1 through 5 are battle tactics -- Carbuncle only (Siren apparently by accident), solo, buffs survive the level cap, 15 minute limit -- and none of them is a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "Other / 2"
+   },
+   "prev": [],
+   "level": 20,
+   "jobs": [
+    "SMN"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Lacia",
+   "zone": "Mhaura",
+   "grid": "I-9",
+   "raw": "Lacia, Mhaura (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lacia"
+    },
+    "zone": "Mhaura",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Mini Tuning Fork of Lightning",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a Summoner of level 20 or better"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Lacia"
+    },
+    "zone": "Mhaura",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Mini Tuning Fork of Lightning",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "this trade is the ride to the arena, not a hand-in -- you keep the fork for the next step. Prepare first; she sends you straight there. On any repeat she will give the fork back but will not teleport you again."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Lightning Protocrystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Mini Tuning Fork of Lightning",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page never names the zone: the Description says 'in the Boyahda Tree', which is the approach, and note 6 says only 'the Cloister'. Cloister of Storms is the obvious reading but is written nowhere on the page, so no zone is recorded."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ramuh Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "one-on-one and level capped, 15 minute limit. Only Carbuncle may be summoned, though Siren apparently works too; buffs cast outside survive the cap. Winning completes the quest -- there is no hand-in."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (Grauberg)",
+   "page_id": 67163,
+   "revision_id": 625410,
+   "source_sha256": "7eba8e0a85536208c787a55fa38309bb20096a38d3f9067b1c180532c44200ce",
+   "cache_file": "0067163_a_mightier_martello_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 159,
+   "dat_name": "A Mightier Martello (Grauberg)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item"
+  ],
+  "notes": "Five bullets, three steps. Bullets 2 through 4 are one interaction with a single Martello -- find it, choose 'Prepare to upgrade martello', confirm, then stand where the MENU tells you rather than where the log tells you -- so they merge; three rungs the player cannot be tracked through would be noise. The key-item swap is the only observable thing in the whole quest and the page points out it is not even announced in the log: the Fuel reservoir silently becomes a Cracked fuel reservoir, so those are step 2's evidence and step 3's requirement respectively. The unnumbered line above bullet 1 is a cooldown -- one Refuel and Replenish or A Mightier Martello per Vana'dielian day across ALL Abyssea areas -- which nothing in the packets reports. The zoning warning is a fail condition, not a step. 'Machine Outfitter (Grauberg)' folds to the bare key 'machine outfitter', which is also what the Attohwa outfitter folds to, so the Abyssea - Grauberg zone carried on every step is the only thing keeping the two quests' markers apart. Fame 'agra' is an Abyssea zone code and gates nothing, so the region is null and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "agra / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Grauberg)",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Machine Outfitter (Grauberg), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Grauberg)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Zoning at any point after this loses the key item and you start over."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "martellos stand around the various Confluxes; any one works, even one already at 100%. Choose 'Prepare to upgrade martello' and confirm, then stand in the direction the MENU gives -- the log gives a different and worse one. The reservoir is swapped without a log message."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Grauberg)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the cruor paid depends on which direction the upgrade was completed from. Only one Refuel and Replenish or A Mightier Martello can be completed per Vana'dielian day, in any Abyssea area."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fit for a Prince",
+   "page_id": 471,
+   "revision_id": 683277,
+   "source_sha256": "432543b3f6a0144876f9bb0312cdfcd40cfaf7c2c01d2b38f33435acb129b89e",
+   "cache_file": "0000471_fit_for_a_prince"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 106,
+   "dat_name": "Fit for a Prince",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "requires_other_player"
+  ],
+  "notes": "Three bullets and only two things you can be marked for, both of them Halver. Bullet 2's real content is a precondition -- find another player who matches the description the cutscene gave you and party with them -- which has no target, no zone, no items and nothing observable, so it is folded into step 2's note rather than made into a rung that is null in every field. Bullets 2 and 3 are therefore one step: return to Halver together and BOTH of you speak to him. The sub-bullets are the split rewards (Castor's Ring and the Royal Wedding Planner title to whoever started it, Pollux's Ring and Consort Candidate to the match) and the trailing sentence about synthesizing the rings with a Wind Crystal is item lore, not a step. The 'After the walkthrough: Notes' section is entirely about re-rolling the description -- abandon and re-accept, the reset lands at XX:XX:00 earth time rather than when you cancel, and having a female character in the party does not bias the roll -- none of which is a step and none of which the addon can see. Repeatable is left false: the header's field is empty, and re-accepting a quest you abandoned is not the same thing as a repeatable quest.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 3,
+    "raw": "San d'Oria / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": "I-9",
+   "raw": "Halver, Chateau d'Oraguille (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene describes the kind of female character Prince Trion is attracted to. The description is random; abandoning and re-accepting rolls a new one, and the roll resets on the earth minute rather than on the cancel."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "you must be in a party with a player who matches the description, and BOTH of you must speak to him for the cutscene. Nothing about the match or the party is visible to the addon, so this rung cannot be tracked -- only pointed at."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Ward to End All Wards",
+   "page_id": 58970,
+   "revision_id": 762178,
+   "source_sha256": "faa1f0e3b5bca2d69787d74c2e94b5c07b115127dd336b4b1c1e100a3d6eff53",
+   "cache_file": "0058970_a_ward_to_end_all_wards"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 30,
+   "dat_name": "A Ward to End All Wards",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "no_evidence"
+  ],
+  "notes": "Two bullets, two steps, and no evidence anywhere -- which is the right answer rather than a gap: the quest pays cruor and Resistance Credits and never hands over a key item, and the only thing you hold is something you brought yourself. Bullet 2 is a pure OR over a long list, so items stays empty and items_alt carries every item the page names; holding any ONE of them reaches the trade. items_partial is set because the page also says 'many other items work ... tier 1 NM pop items that drop from ordinary monsters within Abyssea', which cannot be enumerated. The page writes 'Sanguinets'; the resource is Sanguinet and the plural does not resolve, so the singular is recorded -- the page's own plural is not a different item. Both monsters are drops in this same zone, which is why they are recorded as mobs rather than left in the note. No obtain step is inserted between the two Belgidiveau steps: it would be unmarkable and would break the same-target look-ahead across them, and the page never gives obtaining its own bullet. 'Zoning is not required to repeat this quest', the High Strength fame ranking and the 50-completions-maxes-fame figure are all notes. Fame 'avun' is an Abyssea zone code and gates nothing.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Many unlisted tier 1 NM pop items also work, which is why items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Belgidiveau (A)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "F-4",
+   "raw": "Belgidiveau (A), (F-4), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Belgidiveau (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the base camp, by Veridical Conflux #01"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Belgidiveau (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-4",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Avian Remex",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Black Whisker",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Djinn Ashes",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fortune Wing",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gnarled Taurus Horn",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gory Pincer",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "High-Quality Limule Pincer",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "High-Quality Rabbit Hide",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mocking Beak",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Opaque Wing",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Transparent Insect Wing",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Amoeban Pseudopod",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sanguinet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Stream Amoeban",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Voragean",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Any ONE part of an Abyssean fiend. The eleven 'High Strength' items listed first pay the most fame and cruor; Amoeban Pseudopod and Sanguinet are the two stackable ones and drop off the Stream Amoebans nearby, and 50 completions with either maxes this zone's fame. No Magian Trial drops work."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Moment of Truth",
+   "page_id": 38780,
+   "revision_id": 729852,
+   "source_sha256": "ee69a57cef56eb86f7a938e5636337dda313e9fa89aac2b66efd65eaa091f97b",
+   "cache_file": "0038780_moment_of_truth"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 30,
+   "dat_name": "Moment of Truth",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "bullet_split",
+   "unnamed_target"
+  ],
+  "notes": "Ten bullets that are not ten steps. Bullets 7, 8 and 9 are the three Mamool Ja inside ONE battlefield rather than three separate fights, so they merge; a keyword parser would have made three steps out of three bare monster names. Bullet 4 spans two zones -- enter Mamook from (D-12) in Wajaom Woodlands, then click a ??? inside -- so it splits into the journey and the click, and the origin grid stays in the note rather than being hung on a step whose zone is Mamook. Bullets 5 and 6 are two clicks on the same Ornamental Door, cutscene then entry, so they are one step and one marker; the door is a real targetable entity, which is the only marker this back half of the quest gets, since the Mamook target is a ??? and can never carry one. The weak rung is the Teahouse: the page says only 'Go to the Teahouse (J-12) for another cutscene' and names nothing to click, and although the header's Description says you explain matters to Minfram, the walkthrough never tells you to speak to him, so the target is left as none and the grid carries the placement. There is no evidence anywhere in this quest -- no key item, no held item, nothing -- which is the honest answer for a chain of cutscenes and is why the ladder leans on markers rather than on tracking. The JP Midnight wait after Give Peace a Chance is real and invisible. Bullet 10's sub-bullets are the job-dependent reward table.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: A ??? can never carry a marker; the rung is kept for its position.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Give Peace a Chance",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Mishhar",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "H-8",
+   "raw": "Mishhar, Aht Urhgan Whitegate (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mishhar"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Home Point #1. You must wait for JP Midnight after Give Peace a Chance before he will talk about this."
+   },
+   {
+    "n": 2,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Teahouse. The page names no entity to click and the cutscene fires on arrival; the header's Description says you explain things to Minfram, but the walkthrough never says to speak to him, so nothing is targeted and only the grid is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mishhar"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mamook"
+    },
+    "zone": "Mamook",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in from (D-12) in Wajaom Woodlands; the Mamook Survival Guide drops you at the correct entrance. The grid belongs to Wajaom Woodlands, not to this step's zone, so it is kept here rather than in the grid field."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Mamook",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Just inside, right next to the Survival Guide."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornamental Door"
+    },
+    "zone": "Jade Sepulcher",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "the BCNM entrance. Click it once for the cutscene, then again to enter 'Moment of Truth'. Aht Urhgan Whitegate to the Bhaflau Thickets Home Point #1 is the quick way in."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jade Sepulcher",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Blacktattoo Vedool Ja",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shadowhand Kajeel Ja",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Whitetattoo Rahool Ja",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8,
+     9
+    ],
+    "note": "all three, in one battlefield: Vedool Ja is BLM, Kajeel Ja NIN, Rahool Ja WHM. They do not aggro if you one-shot them from a distance. Three allied NPCs fight alongside you, one paired with each Mamool Ja, and none of them may die."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mishhar"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the medicine he gives depends on your job"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (Attohwa)",
+   "page_id": 59018,
+   "revision_id": 627896,
+   "source_sha256": "35f9497a6cd103eb25afcf4fabea060868d569f96d74c0966d28b342ae973884",
+   "cache_file": "0059018_a_mightier_martello_attohwa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 154,
+   "dat_name": "A Mightier Martello (Attohwa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item"
+  ],
+  "notes": "Word for word the same page as A Mightier Martello (Grauberg) with the zone swapped, and it is read the same way. Bullets 2 through 4 are one interaction with a single Martello -- find it, choose 'Prepare to upgrade martello', confirm, then stand in the direction the MENU gives rather than the one the log gives -- so they merge into one step. The Fuel reservoir turning into a Cracked fuel reservoir is the only observable thing in the quest and the page notes it is not even announced in the log, so it is step 2's evidence and step 3's requirement. The unnumbered line above bullet 1 is a cooldown shared with Refuel and Replenish across every Abyssea area, one per Vana'dielian day, which nothing in the packets reports. The zoning warning is a fail condition, not a step. 'Machine Outfitter (Attohwa)' folds to the bare key 'machine outfitter', exactly as the Grauberg outfitter does, so the Abyssea - Attohwa zone on every step is the only thing keeping the two quests' markers apart -- get that wrong and both quests point at the same NPC in the wrong zone. Fame 'aatt' is an Abyssea zone code and gates nothing. The Description's 'Attohwa Chasm' is the Vana'diel original, not this zone.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "aatt / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Attohwa)",
+   "zone": "Abyssea - Attohwa",
+   "grid": null,
+   "raw": "Machine Outfitter (Attohwa), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Zoning at any point after this loses the key item and you start over."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "martellos stand around the various Confluxes; any one works, even one already at 100%. Choose 'Prepare to upgrade martello' and confirm, then stand in the direction the MENU gives -- the log gives a different and worse one. The reservoir is swapped without a log message."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the cruor paid depends on which direction the upgrade was completed from. Only one Refuel and Replenish or A Mightier Martello can be completed per Vana'dielian day, in any Abyssea area."
+   }
+  ]
+ }
+]

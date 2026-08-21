@@ -1,0 +1,1794 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Mixed Signals",
+   "page_id": 15080,
+   "revision_id": 702529,
+   "source_sha256": "723ad0ec7453bd1ea9838f721af198e80a54e774c1105a8fefbd65c368f370c1",
+   "cache_file": "0015080_mixed_signals"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 87,
+   "dat_name": "Mixed Signals",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "fellowship_gate_unmodelled"
+  ],
+  "notes": "A clean six-rung Luto-and-back ladder, and the whole trap of this page is at the bottom: bullets 7 to 17 are not steps at all. They are the eleven 'Homemade' foods you might randomly receive at the end, rendered as top-level bullets because the wiki wrote them as a list, and a verb-scanner would happily emit eleven 'obtain' steps for them. The sentence introducing them -- 'You will receive one of the following ... randomly at the end of the quest' -- is what makes them rewards, and a reward is not evidence.\n\nThe pearl on bullet 1 is a genuine either/or: Signal Pearl OR Tactics Pearl, neither primary, so both go in items_alt with an empty items list. The page's real condition, that it be in your inventory but NOT equipped, is unobservable -- an equipped pearl is still in your inventory as far as anything the addon can see -- so it stays a note.\n\nBullet 5 crosses a zone boundary: you enter at Beadeaux map 2 (M-8) but the ??? is inside Qulun Dome, which is its own zone, so the step is recorded in Qulun Dome and the Beadeaux entrance goes in the note. The ??? keeps its rung and loses its marker, as always.\n\nThe header's giver is Luto Mewrilah but the walkthrough's first instruction is Ratoto; the ladder follows the walkthrough while start stays on Luto, which costs nothing because the runtime treats accepting the quest as proof step 1 is done. The two Quest Reqs -- Familiarity 80+ and Adventuring Fellow level 56+ -- have no slot in the schema and nothing observable behind them.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: the walkthrough writes her as 'Luto'; the header gives the full name, which is what resolves",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Regaining Trust",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ratoto"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Signal Pearl",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tactics Pearl",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by the Upper Jeuno Guide Stone. Either pearl works, so neither is written as the primary. The page's 'in your inventory but NOT equipped' cannot be seen -- an equipped pearl is still in the bag as far as the addon is concerned."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raimbroy"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside Raimbroy's Grocery"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Qulun Dome",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in from Beadeaux map 2 at (M-8); Qulun Dome is its own zone, so the step is recorded there rather than in Beadeaux. Same ??? as Whence Blows the Wind and Genkai 3. A ??? never carries a marker."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "bullets 7 to 17 are the eleven random 'Homemade' rewards, not steps"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Gobbiebag Part VI",
+   "page_id": 20675,
+   "revision_id": 772152,
+   "source_sha256": "5aebf145840916bca4778d722cdd75e7b65c92af1fe70dc54bd1cd1305b540d6",
+   "cache_file": "0020675_the_gobbiebag_part_vi"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 75,
+   "dat_name": "The Gobbiebag Part VI",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Same two-rung shape as The Gobbiebag Part I, and modelled the same way on purpose: talk, then trade, both on Bluffnix, so the marker never moves and the gain is a working turn-in rather than a route. The four items are the primary path -- the quest description names them one by one -- so they are the AND-list, and the single Goblin Stew 880 that replaces all four is the alternative. Goblin Stew 880 resolves in its own right (it is a distinct item from plain Goblin Stew), so it is written out in full rather than truncated.\n\nEverything below bullet 2 is commentary: four Auction House category paths, a note that this time the items are enemy drops rather than crafted, and a wikitable comparing the two routes' cost as of August 2019. The table is a price comparison, not a walkthrough in a table -- there are no steps hiding in it.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 3,
+    "raw": "J / 3"
+   },
+   "prev": [
+    {
+     "title": "The Gobbiebag Part V",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Bluffnix",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Bluffnix, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside Muckvix's Junk Shop"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Balloon Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Shakudo Ingot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "H.Q. Eft Skin",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Iolite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Goblin Stew 880",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "one trade, all four; OR a single Goblin Stew 880 instead. All four are direct enemy drops this time, farmable only in Chains of Promathia areas, but all are on the Auction House."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Wanted: Medical Supplies",
+   "page_id": 58996,
+   "revision_id": 627838,
+   "source_sha256": "9a5ca85d76c141301c9ff35a096b6f79462558c987d58f60659634e3eafb62cb",
+   "cache_file": "0058996_wanted_medical_supplies"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 56,
+   "dat_name": "Wanted: Medical Supplies",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "drop_chance_unobservable"
+  ],
+  "notes": "Three rungs, and the middle one is the judgement call. The page says 'Find a Blue Sturdy Pyxis and open it', but blue is the casket's colour, not part of its name -- the client calls every Abyssean treasure casket a Sturdy Pyxis, which is also how this page's own description writes them ('sturdy pyxides'). Writing 'Blue Sturdy Pyxis' would fold to a key no live entity ever carries and the step would silently lose its marker; writing 'Sturdy Pyxis' marks every casket in the zone, which is over-broad but is at least pointing at the right kind of thing, and the step is zone-locked to Abyssea - Misareaux so nothing outside it can be hit. The quest is demoted to medium for that, not for the reading.\n\nThe Medical supply chest is a CHANCE from opening -- bullet 2's sub-bullets say the odds scale with pyxis level, that Forbidden Keys do not count, and that peering between the cracks will not show it -- so the ladder can sit on step 2 through many caskets. That is honest rather than broken. The Sapphire abyssite of merit in the reward block is a reward and never evidence. The trailing 'Zoning is required to repeat this quest' is a cooldown, not a bullet and not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "amis / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Yasuji (A)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "G-7",
+   "raw": "Yasuji (A), Abyssea - Misareaux"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yasuji (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Conflux #3. The header gives no grid; (G-7) comes from bullet 1."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sturdy Pyxis"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Medical supply chest",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says Blue Sturdy Pyxis; blue is the colour, not the name, so every pyxis in the zone will draw. Open it by hand -- a Forbidden Key gives no key item -- and the chest is only a chance, higher on higher-level pyxides. Peering between the cracks does not reveal it, so every blue casket has to be opened."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Yasuji (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Medical supply chest",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "you must zone before the quest can be taken again"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Flowers for Svenja",
+   "page_id": 101774,
+   "revision_id": 732188,
+   "source_sha256": "cb25fd6e4240501db966a52dc6cbe73e7816bc34e33a949411eef1febb014432",
+   "cache_file": "0101774_flowers_for_svenja"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 120,
+   "dat_name": "Flowers for Svenja",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "or_branch_modelled",
+   "start_is_object"
+  ],
+  "notes": "The giver is a DOOR and that is not a defect: 'Door: Svenja's Manor' normalises to the client's 'Door:Svenja's Manor' and is a real, targetable entity, so both the opening and the closing rung of this quest carry markers even though no NPC is ever named in the walkthrough. Svenja herself never appears; you check her manor door twice.\n\nBullet 3's target is the one thing I refused to write. The page says only 'harvest points in Foret de Hennetiel', lower-case and plural -- a description, not a name -- so the target is null rather than a guessed 'Harvesting Point'. The step keeps its zone and its evidence, which is the whole of its value here: holding the Hennebloom leaf is what moves the mark back to the manor door. The sickle is a genuine either/or (the page says normal and trailblazing both work) and neither is primary, so both sit in items_alt.\n\nThe 'After the walkthrough: Bugs' section holds no steps: it is a 2013 report that finishing this quest could break a DIFFERENT quest (Order Up) by silencing Grevan, with a 2019 sub-bullet saying it has since been fixed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Door: Svenja's Manor",
+   "zone": "Western Adoulin",
+   "grid": "I-8",
+   "raw": "Door: Svenja's Manor, Western Adoulin - (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Platea Triumphus Waypoint"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eppel-Treppel"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he is what you interact with, in Eastern Adoulin; the cutscene itself plays inside the Celennia Memorial Library, which is why the step's zone is his and not the library's"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Trailblazing Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hennebloom leaf",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page names the target only as 'harvest points', so no name is recorded. Either sickle works. Fill your inventory first, so ordinary harvest results cannot consume the point before the leaf appears."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Door: Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Hennebloom leaf",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same door as step 1"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Geomancerrific",
+   "page_id": 110868,
+   "revision_id": 773082,
+   "source_sha256": "cfe8b670f2b37b00e3f6858e49a372448e534e03f43e618a339a3f72b2e6e974",
+   "cache_file": "0110868_geomancerrific"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 134,
+   "dat_name": "Geomancerrific",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "job_gate"
+  ],
+  "notes": "'Level: 99 Geomancer' is BOTH gates, so level 99 and jobs [GEO], not one or the other.\n\nBullet 2 is a real thing the player does -- accumulate 300 Weapon Skill Points on the Trial Wand -- and it is kept as a rung even though nothing about it is observable and it can carry no marker. The points are not in any packet, so its evidence is null; its sub-bullets are the scoring table (5 for a weapon skill or opening a skillchain, 7/9/11 for closing a level 1/2/3) and the tell that you are finished, which is Exudation appearing in your weapon skill list. Wedging an unmarkable rung between two steps on the same NPC is normally wrong, but here the page really does: Nhili Uvolep has nothing to say until the wand is charged.\n\nThe 'unlocked weapon' bullet 3 asks you to trade is the same Trial Wand from the Item Reqs -- the page never gives the charged wand a different name, and inventing one would be exactly the guess this pipeline exists to avoid.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Elementary, My Dear Sylvie",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 99,
+   "jobs": [
+    "GEO"
+   ],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Nhili Uvolep",
+   "zone": "Eastern Adoulin",
+   "grid": "I-7",
+   "raw": "Nhili Uvolep (Order of Renaye, Eastern Adoulin)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nhili Uvolep"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a level 99 Geomancer; Sverhried Hillock Waypoint. The header gives no grid; (I-7) comes from bullet 1."
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Trial Wand",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "300 Weapon Skill Points on the Trial Wand, scored the same way as Trial and Mythic weapon skills. Nothing reports the count, so there is no evidence and no place -- you can do this anywhere. Exudation appearing in your weapon skill list is the only tell."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Nhili Uvolep"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Trial Wand",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the 'unlocked weapon' is the Trial Wand; the page gives the charged form no other name. Exudation is then usable with any weapon."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Tangling with Tongue-twisters",
+   "page_id": 58104,
+   "revision_id": 684247,
+   "source_sha256": "176b869f860e1307c524357277909db148764ebb6a4383433928ba08075699d3",
+   "cache_file": "0058104_tangling_with_tongue_twisters"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 29,
+   "dat_name": "Tangling with Tongue-twisters",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "repeat_variant_evidence"
+  ],
+  "notes": "Bullet 2 is not a step. It is the quest's own restatement of what Kupipi asks for -- 'She will ask for you to defeat one of the 5 mentioned monsters' -- and it merges into bullet 3, which is where the killing actually happens. Its sub-bullet names the five NMs, so all five are recorded as mobs; a mobs list is a set of marker targets rather than an AND-list, and the note says plainly that ONE of them is enough.\n\nThe proof depends on how many times you have finished the quest: Bloodied arrow on the first completion, Crimson bloodstone on every one after. That is exactly what evidence.alt is for, so the AND-list is empty and both key items sit as alternatives -- either one, on its own, proves the fight is done. Bullet 4's sub-bullet is players reporting which evolith augments they rolled, which is reward chatter.\n\nThe fame code 'atah' is an Abyssea zone tag and gates nothing, so the region is null and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "atah / 5"
+   },
+   "prev": [
+    {
+     "title": "Cleansing the Canyon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Kupipi (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "H-12",
+   "raw": "Kupipi (A) (H-12), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [],
+     "alt": [
+      {
+       "kind": "ki",
+       "name": "Bloodied arrow",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Crimson bloodstone",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [
+     {
+      "name": "Cuelebre",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Adze",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Minhocao",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Chukwa",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Mictlantecuhtli",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "any ONE of the five is enough -- all five are listed because any of them is a valid target, not because all must die. The quest must be active for the kill to count. First completion gives the Bloodied arrow, every later one the Crimson bloodstone."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the key item is not written into items here because which one you hold depends on your completion count; step 2's alternates already carry that"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Bloodline of Zacariah",
+   "page_id": 102304,
+   "revision_id": 767586,
+   "source_sha256": "99235658db991e0bb045d4ac600133f8d2fa182db69cf1b144e2c96bbd137545",
+   "cache_file": "0102304_the_bloodline_of_zacariah"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 37,
+   "dat_name": "The Bloodline of Zacariah",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "job_gates_start_only"
+  ],
+  "notes": "'Level: 90+ Geomancer' is BOTH gates -- level 90 and jobs [GEO] -- and bullet 1's sub-bullet narrows it further: Geomancer need only be your main job to FLAG the quest, after which any job can finish it. The runtime gets that right for free, because prereq only evaluates quests you have not started.\n\nBullet 2 is 'Obtain 3x Acuex Ore and trade them to Sylvie' -- obtain and trade in one sentence. It stays ONE step. Splitting the obtain out would wedge an unmarkable rung between two Sylvie steps and would move no marker: the trade step's own item list already says 'holding three ore means ready', which is all a separate obtain rung could have added. The two acuex named in its sub-bullet are recorded as drop sources.\n\nThe Overgrown Grave is properly named and markable; the Ergon Locus beside it is only the landmark the page uses to point at it, so it is not a target. The Colonization Reive that can block (M-8) is real but nothing reports it. The fame line reads 'Seekers of Adoulin', which is not one of the nine regions, so it gates nothing and only the raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Seekers of Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "For Whom the Bell Tolls",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [
+    "GEO"
+   ],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Sylvie",
+   "zone": "Western Adoulin",
+   "grid": "I-5",
+   "raw": "Sylvie, Western Adoulin (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Western Adoulin Waterfront, Waypoint #9. Geomancer must be your main job to flag it; everything after can be done on any job."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Acuex Ore",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Putrid Acuex",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Flatus Acuex",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all three in one trade. Auction House under materials > smithing, or farmed from the two acuex in Cirdas Caverns."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Overgrown Grave"
+    },
+    "zone": "Cirdas Caverns",
+    "grid": "M-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "on the ground, to the right of the Ergon Locus. Cirdas Caverns - Augural Conveyor is the fastest way in, otherwise the Yorcia Weald Frontier Station. A Colonization Reive at (M-8) can block the approach and must be cleared."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Nhili Uvolep"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Sverdhried Hillock, Waypoint #7 -- the quest does not end where it began"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Mihgo's Amigo",
+   "page_id": 189,
+   "revision_id": 769316,
+   "source_sha256": "3683cd80b36456d9464798ca56621e3b4e71f784d57f923cac1209914fc4202f",
+   "cache_file": "0000189_mihgo_s_amigo"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 25,
+   "dat_name": "Mihgo's Amigo",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "latent_unmodelled",
+   "optional_precondition"
+  ],
+  "notes": "Three real rungs and one optional aside. Bullet 1's first sub-bullet is a genuine latent gate that the schema cannot hold: a level 40+ Thief speaking to Nanaa Mihgo may trip the three Thief artifact quests instead, and those must be finished before this one will flag. There is no 'you must NOT be mid-AF' predicate, so it stays a note. Its second sub-bullet is the page's own '(Optional): Speak to Cha Lebagta', which is an action rather than commentary, so it is kept as an optional step -- but the page gives him no location, so his zone is null and he will match wherever he stands.\n\nBullet 2 is its own top-level bullet and its own rung: holding four Yagudo Necklaces is exactly the observable that says 'go back to Nanaa Mihgo now'. It gets no zone because the page offers three sources across two zones and the Auction House, and a step has one zone. The 'Yagudos' of its sub-bullet are a bare category with the wiki link stripped, not a mob name, so no mobs are recorded rather than a guessed one.\n\nThe 'After the walkthrough: Notes' section is Norg fame arithmetic (53 completions to reach level 4) and a Trust unlock -- outcomes of repetition, not steps.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nanaa Mihgo",
+   "zone": "Windurst Woods",
+   "grid": "J-3",
+   "raw": "Nanaa Mihgo, Windurst Woods (J-3)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "speak repeatedly until it flags. As a level 40+ Thief this can start The Tenshodo Showdown, As Thick as Thieves or Hitting the Marquisate instead, and those must be finished first."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cha Lebagta"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page's own '(Optional)', and it gives no zone or grid for him, so none is recorded"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Yagudo Necklace",
+       "count": 4
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Auction House under Others > Beast-made, or from Yagudo in Tahrongi Canyon or Giddeus. Three sources across two zones, so the step keeps none of them."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [
+     {
+      "name": "Yagudo Necklace",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all four in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Better Part of Valor",
+   "page_id": 19761,
+   "revision_id": 749704,
+   "source_sha256": "9252a4a2f2c402487968126017d5516e07c2db77da8ec0235efc50396bc226b5",
+   "cache_file": "0019761_better_part_of_valor"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 12,
+   "dat_name": "Better Part of Valor",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "walkthrough_incomplete",
+   "start_unconfirmed_by_walkthrough"
+  ],
+  "notes": "Two judgement calls, and the quest is demoted to medium for them.\n\nFirst, the previous quest is an OR of three: 'The Fighting Fourth, Snake on the Plains, or Steamed Rams' -- one Wings of the Goddess opener per nation. `prev` is an AND-list, and a false entry turns the marker grey, so recording all three would grey this quest out for essentially everyone who can actually do it, since almost nobody has done all three. It is recorded EMPTY and flagged instead: a yellow marker on a quest the player cannot yet start is a smaller lie than a grey one on a quest they can.\n\nSecond, the walkthrough never mentions Wolfram. It opens with 'you do not specifically need to be allied to Bastok to start this quest' -- which is not a step, but is the only trace of a starting act anywhere on the page -- and then goes straight to zoning out of Bastok Markets (S). The header's Wolfram is kept as both start and step 1, at medium confidence: the runtime treats accepting the quest as proof step 1 is done, so a wrong rung there costs nothing, whereas dropping him would leave the quest with no giver at all.\n\nBullet 5 ('You will be asked to retrieve an item from a Goblin NPC') is the outcome of the waterfall cutscene, not an action, and folds into bullet 4. Bullet 6 is Auction House advice for the claw and folds into bullet 7. The two key items -- Clump of animal hair on zoning out, Xhifhut from Leadavox -- are the only observables and sit one apiece on the steps that grant them.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: the waterfall near the survival guide; the ??? is on its right side and can carry no marker.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Wolfram",
+   "zone": "Bastok Markets (S)",
+   "grid": "H-4",
+   "raw": "Wolfram - Bastok Markets (S) - (H-4)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wolfram"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header's giver; the walkthrough never mentions him. You do not need to be allied to Bastok."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "North Gustaberg (S)"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Clump of animal hair",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "out of Bastok Markets (S) at (G-4); the (G-4) is on the Bastok side, so the step keeps the destination zone and no grid. The cutscene plays on zoning and hands over the key item."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [
+     {
+      "name": "Clump of animal hair",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Music Shop"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "The cutscene is what sends you after the Goblin in Vunkerl Inlet (S), which is all bullet 5 says."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Leadavox"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Gnole Claw",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Xhifhut",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Gnole",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Decrepit Gnole",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "buying the claw at the Auction House (Materials > Bonecraft) skips the farming, which is all bullet 6 is. Gnoles are at (E-7) in this zone; Decrepit Gnoles at (H-11) in Jugner Forest (S), which is why that mob is listed on a step in another zone."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the page says speak, not trade, so no item is required to hold; the Warning letter is a reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Young and the Threadless",
+   "page_id": 47162,
+   "revision_id": 774019,
+   "source_sha256": "2a49185e3e54c95be653083bf5fdcf31e727b2b0e32697bc6cb98af702c41999",
+   "cache_file": "0047162_the_young_and_the_threadless"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 56,
+   "dat_name": "The Young and the Threadless",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "unordered_group",
+   "multi_zone_group"
+  ],
+  "notes": "The middle of this quest IS the wikitable, so the table becomes three steps rather than being dropped. Each row is one body of water that eats one Delicate thread key item and returns the matching Enchanted one, and each names its own object, zone and grid.\n\nThey share a group. Bullet 4 asks only that you have all three before returning, and no order is stated anywhere, so a strict ladder would mark Knightwell and nothing else until the player happened to walk past it. They are in three different zones and each keeps its own -- one step, one zone, always. Each also carries its OWN evidence, which is legal because the three Enchanted key items are distinct resources; the duplicate gate only bites when one item could satisfy two rungs.\n\nThe three Delicate threads are all handed over by the bullet-2 conversation, so they are step 2's evidence and not step 3's -- evidence belongs to the step that grants it. Step 2 also needs you to have zoned since step 1, which nothing reports.\n\nOn the (S) suffixes, the table is right and it is worth saying why: 'Grauberg (S)' is a past zone and resolves as one, but there is no West Ronfaure (S) or East Sarutabaruta (S) in the client at all -- those two rows really do send you to the present-day zones, so they are recorded without a suffix. Bullet 5's Ponono is likewise the PRESENT-day one in Windurst Woods, not Ponono (S); it is extra dialogue after the reward, so it is optional.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: The key item is spelled 'Enchanted Cotton thread' with a small t, and that is the form that resolves.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Ponono (S)",
+   "zone": "Windurst Waters (S)",
+   "grid": "K-11",
+   "raw": "Ponono (S) - Windurst Waters (S) (K-11) (North Map)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ponono (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ponono's charm",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "North Map, Residential Area"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ponono (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Delicate Wool Thread",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Delicate Linen Thread",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Delicate Cotton Thread",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "you must zone before speaking to her again, which nothing reports. This conversation is what hands over the three Delicate threads named in bullet 3's table."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Knightwell"
+    },
+    "zone": "West Ronfaure",
+    "grid": "H-11",
+    "items": [
+     {
+      "name": "Delicate Wool Thread",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Enchanted Wool Thread",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "threads",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "present-day West Ronfaure -- there is no West Ronfaure (S)"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fay Spring"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Delicate Linen Thread",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Enchanted Linen Thread",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "threads",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the only one of the three that really is a past zone"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lake Tepokalipuka"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Delicate Cotton Thread",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Enchanted Cotton thread",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "threads",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Present-day East Sarutabaruta there is no East Sarutabaruta (S)."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ponono (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-11",
+    "items": [
+     {
+      "name": "Enchanted Wool Thread",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Enchanted Linen Thread",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Enchanted Cotton thread",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all three before she will talk"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ponono"
+    },
+    "zone": "Windurst Woods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "the present-day Ponono, in present-day Windurst Woods -- a different entity from Ponono (S). Extra cutscene only, after the reward; the page gives no grid."
+   }
+  ]
+ }
+]

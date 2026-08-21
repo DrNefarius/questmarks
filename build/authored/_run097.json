@@ -1,0 +1,1486 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The All-New C-2000",
+   "page_id": 278,
+   "revision_id": 729913,
+   "source_sha256": "6ccaa6696dcfd15b84a43ad248b533e8612c215f1f321627be7766347078d9d7",
+   "cache_file": "0000278_the_all_new_c_2000"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 24,
+   "dat_name": "The All-New C-2000",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two bullets, two real actions on the same NPC, so two steps and one marker. The three items are ONE trade -- the description says 'a rabbit hide, a two-leaf mandragora bud, and an insect wing', so it is one of each and not a count. The wiki renders the bud twice on one line ('2Leaf Mandra Bud Two-Leaf Mandragora Bud') because the short and long names are both templated in; both resolve to item 4368 and the long one is recorded. The sub-bullet is a source note, not a step: it says 'most mandragora type mobs' and only names Tiny Mandragoras as an example, so that one mob is carried as a drop role on the trade step with the caveat in the note rather than pretending the list is complete. Nothing here is a key item, so no step carries evidence -- holding the three items is what readiness is for.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kopuro-Popuro",
+   "zone": "Windurst Woods",
+   "grid": "H-10",
+   "raw": "Kopuro-Popuro, Windurst Woods (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kopuro-Popuro"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kopuro-Popuro"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Rabbit Hide",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Two-Leaf Mandragora Bud",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Insect Wing",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tiny Mandragora",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all three in one trade. The bud is EX and drops from most mandragora types -- Tiny Mandragora in East and West Sarutabaruta is the page's only named example, not the whole list."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Promise",
+   "page_id": 291,
+   "revision_id": 683568,
+   "source_sha256": "c9118cf4ce7acbc670ae87b276197c21b72cd7e757f1ae2711c11b15ff7c3b01",
+   "cache_file": "0000291_the_promise"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 78,
+   "dat_name": "The Promise",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "Bullet 3 reads as a statement but is the quest's only trade -- 'she will make you the sticker IF you first bring her Shoalweed' is the instruction to hand Shoalweed over, and the Invisible man sticker (key item 271) lands there, which makes it the ladder's one evidence point. The '== Final Cutscene ==' heading sits INSIDE the Walkthrough, so bullets 5 and 6 continue the same numbering and are not an after-section. Bullet 5 is a condition (Fenrir killed after Windurst Rank 10) and bullet 6 is the action, so they merge into one optional epilogue step; the rank/Fenrir condition has no slot in the schema and nothing observable behind it. The Dark Mana Orb is written on the wiki as a TEMPORARY key item, but it is a real row in res/key_items.lua (484), so it is recorded as a held requirement; if the client does not report temporary key items the step simply never shows ready, and it shares Kohlo-Lakolo's marker with step 4 anyway. Promise Badge is the header's Reward, so it is not evidence. Shoalweed's Recluse Spider source is carried as a drop role on the trade step.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: The wiki calls the Dark Mana Orb a Temporary Key Item; nothing in the schema distinguishes those.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 5,
+    "raw": "Windurst / 5"
+   },
+   "prev": [
+    {
+     "title": "Wild Card",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kohlo-Lakolo",
+   "zone": "Port Windurst",
+   "grid": "G-5",
+   "raw": "Kohlo-Lakolo, Port Windurst (G-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chamama"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Pichichi's mother"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chamama"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Shoalweed",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Invisible man sticker",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Recluse Spider",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Shoalweed drops off Recluse Spiders in Kuftal Tunnel; the page gives no count, so one is assumed"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [
+     {
+      "name": "Invisible man sticker",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "cutscene",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [
+     {
+      "name": "Dark Mana Orb",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Epilogue only. Needs Fenrir killed after Windurst Rank 10, and you must zone before talking."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Growing Flowers",
+   "page_id": 476,
+   "revision_id": 767319,
+   "source_sha256": "8c1b4fa77e27320d85d6936b52b9d24d334c5cb1597504d68b8db94058e508af",
+   "cache_file": "0000476_growing_flowers"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 58,
+   "dat_name": "Growing Flowers",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "optional_precondition"
+  ],
+  "notes": "The page marks bullet 1 '(optional)' in its own words, so that is what optional carries -- the trade alone completes the quest. Bullet 2 is not an action: it tells you what she wants and its sub-bullet says where to buy a Marguerite (Areebah, Upper Jeuno (H-6), 120 gil), which is vendor advice, not a rung. That leaves two steps on one NPC, which is one marker. The sub-bullet under bullet 3 -- trade the wrong flower and she keeps it -- is a warning about the two sibling flower quests that share this NPC; it is a real hazard for the player but nothing observable, so it stays in this note. The reward is a Mog House exit privilege, not an item, so there is nothing that could be mistaken for evidence anywhere in this quest.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kuu Mohzolhi",
+   "zone": "Northern San d'Oria",
+   "grid": "F-8",
+   "raw": "Kuu Mohzolhi - Northern San d'Oria (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kuu Mohzolhi"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the page writes this bullet as '(optional)'; she does not name the flower outright"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kuu Mohzolhi"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Marguerite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "a white flower; she keeps a wrong one, so do not guess between this and her two sibling flower quests"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Memories: Homecoming Queen",
+   "page_id": 58940,
+   "revision_id": 725236,
+   "source_sha256": "1a68e26d4e6add9dd147f95aa612c807e291e13abd03925f6849b7f622bdf517",
+   "cache_file": "0058940_her_memories_homecoming_queen"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 64,
+   "dat_name": "Her Memories: Homecoming Queen",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_disagrees_with_header",
+   "no_evidence"
+  ],
+  "notes": "This quest is a hub, not a ladder. Bullet 1 is a ZONE ENTRY -- Southern San d'Oria from East Ronfaure -- and there is no entity to click, so step 1 is a travel with a zone target and cannot carry a marker. The header names Cait Sith as the giver and gives no zone at all; the walkthrough never has you speak to anyone. Cait Sith is kept in start.npc because dropping it would leave the quest with no start NPC and no markable step, which validate treats as fatal and drops the quest entirely -- keeping it costs nothing (if no Cait Sith is standing there the marker simply never draws) and start.zone is set to the only zone the page names. Bullet 2 is the body of the quest: finish the three sibling quests the cutscene unlocks. They are separate quests with their own pages and markers, so there is nothing here to target -- one unmarkable rung that keeps the shape honest rather than three invented ones. NO evidence anywhere: 'Tiny memory fragment' and 'Large memory fragment' are both non-unique key-item names (several ids share each), so the resolver rejects them, and the Large fragment is the header's Reward besides, which rule 7 bars.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: in from East Ronfaure specifically; the cutscene fires on the zone line and opens Her Memories: Old Bean, The Faux Pas and Grave Resolve\n  step 2: Those are separate quests with their own markers, and neither fragment name resolves uniquely, so this rung has no target and no evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Her Memories",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Cait Sith",
+   "zone": "Southern San d'Oria",
+   "grid": null,
+   "raw": "Cait Sith"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Southern San d'Oria"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Complete all three sibling quests; each gives a Tiny memory fragment and the three are replaced by the Large memory fragment."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "To Catch a Predator",
+   "page_id": 98173,
+   "revision_id": 286624,
+   "source_sha256": "e8f294353098a8ca54f604d14710e97d26f8c98e002ec923e1023cfc5071b14b",
+   "cache_file": "0098173_to_catch_a_predator"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 1,
+   "dat_name": "To Catch a Predator",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "A textbook ladder and one of the tidiest in this batch: two key items, both unique, both obtained exactly where the page says. Bullet 3 is two steps -- using the bait at the Claw Mark is the spawn, killing the NM is the fight -- so it splits and both rungs cite it. The Claw Mark is a real targetable entity (it folds to an npc key), so the spawn step keeps a marker; it is recorded as an object because that is what it is. The whole quest happens inside Ceizak Battlegrounds within one grid square of the bivouac: H-9 for Lucretia and the chapuli south of her, H-8 for the Claw Mark north of her. 'Fernfelling Chapulis' is written plural on the page and recorded singular, which is the entity name and not an invention. Mantid bait is step 2's evidence and step 3's requirement; Flayed mantid corpse is step 4's evidence and step 5's requirement -- neither is evidence twice. Both are key items (the corpse does not exist in the item table, only as key item 2220), so both are recorded as ki. Fame 'Adoulin' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Lucretia",
+   "zone": "Ceizak Battlegrounds",
+   "grid": "H-9",
+   "raw": "Lucretia, Ceizak Battlegrounds - (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lucretia"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the guard at Bivouac #1"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mantid bait",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Fernfelling Chapuli",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "directly south of Lucretia; kill until the bait drops, so no count is meaningful"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Claw Mark"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Mantid bait",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Truculent Mantis",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "directly north of Lucretia. The page says 'use' the key item rather than trade it; either way you must be holding it and standing at the Claw Mark."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Flayed mantid corpse",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Truculent Mantis",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the NM; defeating it gives the corpse key item"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Lucretia"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Flayed mantid corpse",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Sand Charm",
+   "page_id": 296,
+   "revision_id": 718497,
+   "source_sha256": "0cc70e44e382e79c04d977a52603ffcc221057846b9ab616fab55bc060e83452",
+   "cache_file": "0000296_the_sand_charm"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 8,
+   "dat_name": "The Sand Charm",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "log_entry_late"
+  ],
+  "notes": "Demoted to medium for one reason, and it is not the ladder: the page says the quest only SHOWS IN YOUR LOG after bullet 4. The runtime treats accepting the quest as proof that step 1 is done, so for the first four bullets this quest is not started as far as the client is concerned and the ladder cannot run -- the player sees the Blandine start marker through a conversation, a second NPC, a return trip and a third NPC before stepping can begin. The reading itself is unambiguous, which is why nothing is flagged low. Bullet 3's 'exit the dock' is a positional instruction inside Mhaura, not a zone change -- the page names no second zone -- so it is a note on the second Blandine talk rather than a travel rung. The page gives grids for nobody but Blandine; Zexu's and Celestina's are left null rather than guessed, with Celestina placed by the page's own words in the Goldsmithing guild. The Sand Charm's source is a genuinely rare event -- Crossbones only appear on the Mhaura/Selbina ferry during a pirate attack -- so it rides the trade step as a drop role even though the ferry is a different zone from the step. Fame is blank with FLevel 4, which gates a level against no region.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "(empty) / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Blandine",
+   "zone": "Mhaura",
+   "grid": "I-9",
+   "raw": "Blandine, Mhaura (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Blandine"
+    },
+    "zone": "Mhaura",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zexu"
+    },
+    "zone": "Mhaura",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page names no zone or grid for Zexu; Mhaura is taken from the quest's own setting and bullet 3's 'exit the dock'"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Blandine"
+    },
+    "zone": "Mhaura",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "exit the dock first; that is a walk within Mhaura, not a zone change"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Celestina"
+    },
+    "zone": "Mhaura",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in the nearby Goldsmithing guild; the page gives no grid. The quest only appears in your log at this point."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Celestina"
+    },
+    "zone": "Mhaura",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sand Charm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Crossbones",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Crossbones only appear on the Mhaura/Selbina ferry when pirates attack, which is rare"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Missionary Man",
+   "page_id": 38734,
+   "revision_id": 774426,
+   "source_sha256": "b705273d17d1b1a1d7e84d385cc2456f20798757429f8a0c4bb99ffb365a2936",
+   "cache_file": "0038734_missionary_man"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 7,
+   "dat_name": "Missionary Man",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Bullets 3 and 4 are one step, not two: they are two conversations with Mulaujeant separated by a one Earth-minute wait, and only the second is observable (Sublime statue of the Goddess, key item 254). Two consecutive rungs on one NPC would be one marker anyway, so merging them loses nothing and puts the evidence where it is actually obtained. The wait is real-world minutes, not game time, and nothing reports it -- hence time_gated. The header's 'Quest Reqs' field is being used as an item manifest here (Elshimo Marble, Rauteinot's parcel, Sublime statue of the Goddess are the quest's own three objects), not as a gate, so it contributes nothing to gates. No obtain rung is invented for the marble: its Ivory Lizard source is a sub-bullet, and the trade step already carries it as a held requirement plus the mob as a drop role, so a Yuhtunga Jungle rung would add a position the player cannot be tracked through. Each key item is evidence exactly once and then a requirement on the next step, which is the shape the runtime reads best.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": 3,
+    "raw": "k / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Rauteinot",
+   "zone": "Kazham",
+   "grid": "G-9",
+   "raw": "Rauteinot, Kazham (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rauteinot"
+    },
+    "zone": "Kazham",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he asks for a slab of Elshimo Marble"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rauteinot"
+    },
+    "zone": "Kazham",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Elshimo Marble",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rauteinot's parcel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ivory Lizard",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the marble drops off Ivory Lizard in Yuhtunga Jungle, per bullet 1's sub-bullet"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mulaujeant"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "E-5",
+    "items": [
+     {
+      "name": "Rauteinot's parcel",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sublime statue of the Goddess",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "near the Blacksmithing guild on the second floor. TWO conversations: speak once, wait one Earth minute, speak again for the statue. Merged because only the second is observable and both share one marker."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rauteinot"
+    },
+    "zone": "Kazham",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Sublime statue of the Goddess",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Taste of Honey",
+   "page_id": 38772,
+   "revision_id": 687915,
+   "source_sha256": "b1c9f1f6a44ee3f13eae074f9b0975c0f6aa47ecc870766f5a3076719da39dfe",
+   "cache_file": "0038772_a_taste_of_honey"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 12,
+   "dat_name": "A Taste of Honey",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Four bullets, two steps. Bullet 1 is a precondition, not an action -- re-zone after Vanishing Act and wait an Earth minute, with the sub-bullet warning that a Mog House does not count as zoning; neither the zoning nor the wait is observable, so it becomes a note on step 1 and a time_gated flag. Bullet 3 is not a step either: it is the same conversation as bullet 2, saying you may need several attempts and must agree to hear a recipe before the cutscene fires, so the two merge. That leaves a talk and a trade on one NPC, which is one marker. The header's 'Quest Reqs: White Honey x3' is the item manifest, and the count comes from the description ('three pots of white honey') as well -- three in one trade. Nothing here is a key item, so no step carries evidence; the Irmik Helvasi is the reward and rule 7 bars it. The sub-bullet about trading extra honey for more recipes is a bonus, not a repeat of the quest.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Vanishing Act",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Qutiba",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-12",
+   "raw": "Qutiba, Aht Urhgan Whitegate (K-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Qutiba"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "re-zone after Vanishing Act and wait one Earth minute first -- a Mog House does not count. You may need to talk several times and agree to listen to a recipe before the cutscene plays."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Qutiba"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [
+     {
+      "name": "White Honey",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all three in one trade; extra honey afterwards can buy back the recipe or earn another"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Inspector's Gadget!",
+   "page_id": 155,
+   "revision_id": 746934,
+   "source_sha256": "142df4477bc48366114a9cfbf60f202ce5e73d1abf6aa92f3cbb49e4e1a0cd12",
+   "cache_file": "0000155_inspector_s_gadget"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 41,
+   "dat_name": "Inspector's Gadget!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "Four bullets carrying five actions, so two of them split. Bullet 2 is two NPCs -- Kohlo-Lakolo then Pichichi 'near him' -- and bullet 4 is two places, giving Chamama the cotton and then returning to Kohlo-Lakolo, which is a different zone, so it must split (one step, one zone). Bullet 1 is a precondition (zone after the previous quest) and folds into step 1's note. This page gives NO grid for Kohlo-Lakolo or Pichichi, only 'Port Windurst'; The Promise, elsewhere in this batch, puts Kohlo-Lakolo at (G-5), but that is another page's data and is not imported here -- the zone alone is enough to place the marker. Chamama's (F-10) is on this page and is used. The talk to Chamama and the trade to Chamama stay separate rungs the way the page writes them; they are consecutive on one NPC and therefore one marker. Saruta Cotton x4 is the header's Item Reqs and bullet 3's 'four balls', so the count is solid. No key item appears anywhere in the walkthrough, so no step carries evidence -- the Heko Obi is the reward.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Know One's Onions",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kohlo-Lakolo",
+   "zone": "Port Windurst",
+   "grid": null,
+   "raw": "Kohlo-Lakolo, Port Windurst"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you must have zoned since Know One's Onions; this is a cutscene"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pichichi"
+    },
+    "zone": "Port Windurst",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near Kohlo-Lakolo; she sends you to her mother"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chamama"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Home Point #4 is the near warp; she asks for four balls of Saruta Cotton"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chamama"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Saruta Cotton",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "she makes the fake moustache from them"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the closing cutscene"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Merchant's Bidding",
+   "page_id": 508,
+   "revision_id": 735921,
+   "source_sha256": "649f606a5177c5886d5d1c8a42b93dae00b912c0fb6d8a124da80b824e3c2637",
+   "cache_file": "0000508_the_merchant_s_bidding"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 69,
+   "dat_name": "The Merchant's Bidding",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeatable_no_stepping"
+  ],
+  "notes": "Bullet 3 -- 'repeat this quest as often as you like' -- is the Repeatable header restated, not a step; a verb scan would have made a rung out of it. That leaves a talk and a trade on one NPC, which is one marker. The ladder is authored but will not actually be used for stepping, because this quest is repeatable and repeatable quests do not step: Rabbit Hide is a common stackable item, and holding some from a previous run would advance a fresh one. Worth knowing before anyone wonders why the rungs are quiet. The first-run-only detail is real and recorded on step 1 -- you must answer 'I shall help.' the first time and never again -- which is exactly why step 1 is not marked optional: it is required once, and the schema has no way to say 'the first time only'. Cletae at (D-8) upstairs in the Leathercraft guild is a vendor tip, not a step.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Parvipon",
+   "zone": "Southern San d'Oria",
+   "grid": "E-8",
+   "raw": "Parvipon - Southern San d'Oria (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Parvipon"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the tanner, outside the Leathercraft Guild. First run only: answer 'I shall help.' On later trade-ins you go straight to the trade."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Parvipon"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Rabbit Hide",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "buy them from Cletae at (D-8) upstairs in the Leathercraft guild -- the one of the two always open and stocked"
+   }
+  ]
+ }
+]

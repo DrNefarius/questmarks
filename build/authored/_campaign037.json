@@ -1,0 +1,2353 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover II (W)",
+   "page_id": 36732,
+   "revision_id": 425558,
+   "source_sha256": "8731cf51350ebfc1b6366e5062621e611b2418f90d2c3a27e1055cd585beab01",
+   "cache_file": "0036732_deep_cover_ii_w_91f1b6bbe6"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 387,
+   "dat_name": "Deep Cover II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_limit_unknown",
+   "generic_npc_name",
+   "count_unobservable",
+   "no_return_to_giver_on_page"
+  ],
+  "notes": "The Campaign Header has no Start field, so start.raw is assembled from its NPC Name / Zone / pos lines rather than quoted from one field. CAMPAIGN RANK: the wikitext has 'Campaign Rank={{question}}' (the rendered page shows '(empty)'), so the rank gate is not merely unmodellable, it is unknown -- it is NOT put in gates.level, which is character level, and the header's 'Level: Any' is what makes gates.level null. Time is also {{question}}, hence time_limit_unknown. The giver is not the NPC you work with: Emhi Tchaoryo takes the op at (H-9), but bullets 2 and 7 both send you to Pelpopo at (G-9). This page names no zone for (G-9); BG Wiki's cached 'Windurst Waters (S)' zone page lists a Zone NPC Row 'Pelpopo ... (G-9)', and that is the only reason steps 1 and 3 carry a zone -- said here because it is a looked-up fact, not this page's. Non-steps: bullet 1 ('Solo mission') is a party constraint; bullets 4 and 6 are advice about the Fiendtrapper and about plates not stacking; bullets 9-12 are cross-references to Deep Cover I (W) and III (W) (including 'You must drop the Fiendtrapper to start Deep Cover III (W)'), which are not prerequisites of THIS op, so gates.prev stays []. Step 2 gets {\"type\":\"none\",\"name\":null}: the wikitext target is '[[:Category:Yagudo|Yagudos]]', a category link, not a monster name, so mobs is [] too. Step 2 also carries no evidence -- bullet 6 says each picture 'will create a Fiend Plate with the mob's name on it', so the in-game item may not be the bare 'Fiend Plate' the wiki links, and an evidence item that never reads true is worse than none. The op ENDS at Pelpopo: bullet 8 says the mission is complete once 3 plates are accepted, and the page never sends you back to Emhi Tchaoryo (the sibling Cut and Cauterize I (W) does have such a step, so its absence here is the page's own reading, not an oversight of mine). Three plates must be ACCEPTED and rejects do not count, which no packet reports: count_unobservable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S), H-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fiendtrapper",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "bullet 3 is the outcome of bullet 2, not a step: Pelpopo hands over a Fiendtrapper and 5 Blank F. Plates. Only the Fiendtrapper is evidence -- the blank plates are spent as you photograph, so holding 5 is true for a moment only. The zone is from BG Wiki's 'Windurst Waters (S)' zone page; this page gives the grid alone."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "photograph Yagudos with the Fiendtrapper, from the front only. No zone deliberately: the page restricts the subject (Yagudos, Campaign Battle mobs included) but not the place, so inheriting the giver's zone would be wrong. No target and no mob: '[[:Category:Yagudo|Yagudos]]' is a category link and names nothing. Bullet 4 (Sneak/Invisible break it, and range matters) is advice on this step, not its own rung."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "traded one plate at a time (bullet 7) until 3 are ACCEPTED (bullet 8), which is where the op completes -- there is no return to Emhi Tchaoryo on this page. count 3 is the requirement, but rejected plates do not count toward it, so more may be needed and nothing observable distinguishes them."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover III (W)",
+   "page_id": 36779,
+   "revision_id": 425560,
+   "source_sha256": "34bb62643a2ff6907e8c6fbf3f33828dd981f421c8e4747b67d9824d96056c82",
+   "cache_file": "0036779_deep_cover_iii_w_ee976b3056"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 388,
+   "dat_name": "Deep Cover III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_limit_unknown",
+   "generic_npc_name",
+   "count_unobservable",
+   "no_return_to_giver_on_page",
+   "duplicated_sibling_walkthrough"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos lines; the template has no Start field. CAMPAIGN RANK is '{{question}}' in the wikitext (rendered '(empty)') -- unknown as well as unmodellable, and deliberately NOT written to gates.level; 'Level: Any' is why gates.level is null. Time is {{question}} too. Pelpopo, not the op giver Emhi Tchaoryo, is who you work with: bullets 2 and 7 send you to (G-9), and the zone on steps 1 and 3 comes from BG Wiki's cached 'Windurst Waters (S)' zone page, which lists 'Pelpopo ... (G-9)' -- this page gives only a grid. WHY medium: I compared this walkthrough with its siblings Deep Cover I (W) and Deep Cover II (W) in the same cache, and all three are word-for-word identical (same Description, same Fiendtrapper + 5 Blank F. Plates, same 'After 3 Fiend Plates are accepted'); only the reward lines differ (150/600, 250/800, 350/1000). So the '3' on THIS page may simply be I's text carried forward rather than III's real requirement. I have recorded 3 because that is what the page says, and flagged it rather than guessing an escalation. Non-steps: bullet 1 is a party constraint, 4 and 6 are advice, 9 is a cross-reference to Deep Cover I (W)/II (W) -- not a prerequisite, so gates.prev is []. Step 2 target is {\"type\":\"none\"}: '[[:Category:Yagudo|Yagudos]]' is a category link. No evidence on step 2 for the same reason as on the II (W) record: bullet 6 says the created plate carries the mob's name, so the item name may not be the bare 'Fiend Plate'. The op ends at Pelpopo; nothing sends you back to Emhi Tchaoryo.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: see the record notes; rejects do not count and are not observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S), H-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fiendtrapper",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "bullet 3 is bullet 2's outcome: she provides the Fiendtrapper and 5 Blank F. Plates. Only the Fiendtrapper is evidence; the blank plates are consumed by photographing. Zone from BG Wiki's 'Windurst Waters (S)' zone page."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "photograph Yagudos from the front. Zone left null on purpose -- the page constrains the subject, not the place. Target and mobs empty because the page names a category, not a monster. Bullet 4 (Sneak/Invisible, range) is advice attached to this step."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "One plate at a time until 3 are accepted (bullet 8), which is where this page ends the op. The 3 is the number that is identical across Deep Cover I/II/III (W)."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Materiel Storm IV (B)",
+   "page_id": 38438,
+   "revision_id": 775230,
+   "source_sha256": "69123874f76c3f7af1d014769a0ea18c6a41f9a7861c828919abe463c7d1ff97",
+   "cache_file": "0038438_materiel_storm_iv_b_7a0d796f0c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 264,
+   "dat_name": "Materiel Storm IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "bullet_split",
+   "no_return_to_giver_on_page"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is the literal string '???' on this page -- a real gate, unknown, with no schema field; it is NOT gates.level. 'Level: Any' is why gates.level is null, and 'Time: None' is a stated absence of a time limit, so no time flag. Bullet 1 holds two locations in one zone -- Hieronymus at (E-8) and the Quartermaster at (H-9), both in Bastok Markets (S) -- so it is split into steps 1 and 2 and both cite bullet 1. The wikitext links '[[Quartermaster - Bastok Markets (S)|Quartermaster]]'; the entity's name is 'Quartermaster' and the rest of the link is the wiki's disambiguator, so only 'Quartermaster' goes in target.name, with the zone and grid keeping it unambiguous. WHY medium: the ten entries under 'After the walkthrough: Notes' (that section's bullets restart at [1], so step 3 cites bullet 2 of the walkthrough and the list is described here) are a POOL of possible requests, not an AND-list -- but this page never says so. The sibling Materiel Storm III (S), same op family, states 'If you are in a party, each member will be asked for different materials' and 'She will ask players to bring different items', and 33 Ginger Cookies plus 6 Windurst Tacos plus everything else for a 440 XP op is not a credible AND-list. Modelled as items = the first entry with the other nine as items_alt, and flagged. The op's hand-in on this page is the QUARTERMASTER ('trade them to her for your reward') -- there is no return to Hieronymus written anywhere on it, unlike the sibling Stock and Awe IV (S), which ends with a Rasdinice step. I have not added a step the page does not have; flagged instead.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: see the record notes.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'After speaking with Hieronymus' -- this page does write the giver step into the walkthrough, which several ops in this family omit."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second half of bullet 1, split off because it is a different grid; she tells you which items are wanted."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Melon Juice",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Mushroom Soup",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Windurst Taco",
+      "count": 6,
+      "kind": "item"
+     },
+     {
+      "name": "Tomato Juice",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Orange au Lait",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Yagudo Drink",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ginger Cookie",
+      "count": 33,
+      "kind": "item"
+     },
+     {
+      "name": "Roast Trout",
+      "count": 3,
+      "kind": "item"
+     },
+     {
+      "name": "Icecap Rolanberry",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Apple Pie",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The ten possible requests come from the 'After the walkthrough: Notes' section, whose bullets restart at [1]; only walkthrough bullet 2 is cited. Read as a pool (one request per player) rather than an AND-list The page excludes Timbre Timbers Taco from the Windurst Tacos option. This is the page's last instruction: the reward is handed over here, not by Hieronymus."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stock and Awe IV (B)",
+   "page_id": 38452,
+   "revision_id": 773303,
+   "source_sha256": "3b309e5e7eb8586d6482b45a6ee33be6f953d80e022da5e5cc92c659e0299e41",
+   "cache_file": "0038452_stock_and_awe_iv_b_5629698934"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 254,
+   "dat_name": "Stock and Awe IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "time_limit_unknown",
+   "giver_step_not_in_walkthrough",
+   "no_return_to_giver_on_page"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; there is no Start field in the template. CAMPAIGN RANK is 'Brass Wings of Service §' -- a real gate with no schema field, recorded here and flagged, and deliberately kept out of gates.level, which is character level. The header's Level field is EMPTY on this page (not 'Any' as on most siblings), so gates.level is null on the page's own evidence. Time is empty and the 'After the walkthrough: Notes' section says the Quartermaster claims 'time is of the essence' but that it is unknown whether a limit exists -- unknown, not contradicted, so time_limit_unknown rather than time_gated and the confidence is unaffected. Bullet 1 ('Solo mission') is a party constraint, not a step. The walkthrough never mentions Hieronymus: it opens at the Quartermaster, so I have NOT written a giver step the page does not have -- the header NPC is carried in start instead, and flagged. The OR-branch here is the page's own words, 'She will ask you to appropriate ONE of the following items from the enemy', so unlike the Materiel Storm pages this needs no sibling to justify: items is the first option and items_alt the other six, all x1 as the page writes them. The wikitext links '[[Quartermaster - Bastok Markets (S)|Quartermaster]]'; only the entity name 'Quartermaster' goes in target.name and the zone/grid disambiguate it. The hand-in is the Quartermaster ('Return the item to her for your reward'); nothing sends you back to Hieronymus.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: bullet 3's seven options are an explicit 'one of the following', so items OR items_alt.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the walkthrough's first real instruction; bullet 1 is only 'Solo mission'."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Wyvern Wing",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Goblin Mess Tin",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Peiste Stinger",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Peiste Skin",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Wivre Horn",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Heavy Quadav Chestplate",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Heavy Quadav Backplate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Bullet 3 also says the item is appropriated 'from the enemy', but names no monster and no zone, so that is not its own rung the hold-and-hand-in is the step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Prying Eyes I (B)",
+   "page_id": 38453,
+   "revision_id": 775870,
+   "source_sha256": "5e81603d17d2128bb81aaacbe5d6671d0536d64d520356cc736d4911049687f8",
+   "cache_file": "0038453_prying_eyes_i_b_8486a80dfe"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 214,
+   "dat_name": "Prying Eyes I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_limit_unknown",
+   "bullet_split"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Brass Wings of Service §' -- recorded here, flagged, and kept out of gates.level; the header's 'Level: Any' is why gates.level is null. Time is '{{question}}' in the wikitext, so time_limit_unknown. Bullet 1 does two things in two zones -- talk to Hieronymus in Bastok Markets (S) and travel to Beadeaux (S) -- so it is split into steps 1 and 2, both citing bullet 1. Two separate intel points, and the page distinguishes them clearly: the WEAPON STORE is the circular room at (H-8) on the second map (reached via (H-7) on the first), and the DEFENSIVE STRUCTURES are the island at (G-10) back on the first map (reached via (F-8) on the second). Both are a literal '''???''' in the wikitext, so both are object targets named '???' -- they keep their rung and lose only their marker, which is correct for a ???. The map numbers cannot be expressed in the schema, so they are in each step's note. The Virulent Peistes and the Quadavs in the sub-bullets are hazards to avoid, not kill targets, so mobs stays [] on both; the sub-bullets also warn that the weapon-store ??? may need checking twice and that it cannot be checked while under Sneak or Invisible. Bullet 4 is the return to Hieronymus and is a real step -- kept. The page's route implies weapon store first, then defensive structures, so the two examines are ordered rather than a group; the page does not say either order works.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux (S)"
+    },
+    "zone": "Beadeaux (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second half of bullet 1; split off because it is a different zone from the Hieronymus step."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Beadeaux (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the weapon store: circular room at (H-8) on the SECOND map, entered via (H-7) on the first. Two Virulent Peistes are in the room -- time dropping Invisible to avoid aggro. The page warns you may have to check this ??? twice, and that it cannot be checked while Sneak or Invisible is up."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Beadeaux (S)",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the defensive structures: the island at (G-10) on the FIRST map, reached by taking (F-8) of the second map back. Several Quadavs on the island -- take care when removing Sneak to examine."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Return to Hieronymus to finish the mission' -- the op ends back at the giver."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Materiel Storm III (S)",
+   "page_id": 39436,
+   "revision_id": 770369,
+   "source_sha256": "2f623cead3b61c087f54de49192e3617335d77f4507deecaf88c8ad5dc9bf065",
+   "cache_file": "0039436_materiel_storm_iii_s_3b2dc6db23"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 93,
+   "dat_name": "Materiel Storm III (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "giver_step_not_in_walkthrough",
+   "no_return_to_giver_on_page",
+   "walkthrough_incomplete"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Iron Emblem of Service §§' -- a real gate with no schema field, recorded here and flagged; it is NOT gates.level, and the header's 'Level: Any' is why gates.level is null. 'Time: None' states there is no limit, so no time flag. The Quartermaster shares Rasdinice's grid: the header puts Rasdinice at (I-9) in Southern San d'Oria (S) and bullet 2 puts the Quartermaster at (I-9) too, which the sibling Stock and Awe IV (S) explains as 'behind you across the way near the tents'. Bullet 1 ('Solo mission', with the sub-bullet that party members are asked for different materials) is a party constraint, not a step -- but that sub-bullet is what tells you the nine-entry list is a POOL: each player is asked for different items, so items is one entry and items_alt the other eight. WHY medium: the walkthrough is three bullets and stops at 'She will ask players to bring different items to her in order to complete this Operation.' It never spells out the trade, and it never mentions Rasdinice at all -- neither to take the op nor to report back, even though the sibling Stock and Awe IV (S), same giver and same Quartermaster, ends with an explicit 'speak with Rasdinice' step for the Allied Notes. I have modelled the hand-in to the Quartermaster because that is what this page describes, and have NOT imported the Rasdinice step from the sibling; both the missing giver step and the missing return are flagged rather than invented. The nine items come from the 'After the walkthrough: Notes' section, whose bullets restart at [1]; the step cites walkthrough bullet 3 only.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Same grid as the giver Rasdinice, so the zone and grid keep this ambiguous NPC name resolvable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S), I-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The walkthrough's first instruction; bullet 1 is 'Solo mission' plus its party sub-bullet."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Eye Drops",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Silent Oil",
+      "count": 5,
+      "kind": "item"
+     },
+     {
+      "name": "Deodorizer",
+      "count": 5,
+      "kind": "item"
+     },
+     {
+      "name": "Silencing Potion",
+      "count": 2,
+      "kind": "item"
+     },
+     {
+      "name": "Potion",
+      "count": 4,
+      "kind": "item"
+     },
+     {
+      "name": "Hi-Potion",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Holy Water",
+      "count": 3,
+      "kind": "item"
+     },
+     {
+      "name": "Echo Drops",
+      "count": 3,
+      "kind": "item"
+     },
+     {
+      "name": "Poison Potion",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the nine possibilities are listed in the 'After the walkthrough: Notes' section (its bullets restart at [1]); read as a pool because bullet 1's sub-bullet says each party member is asked for different materials. The trade itself is only implied -- bullet 3 says she asks players to bring items 'in order to complete this Operation' and the walkthrough then stops."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stock and Awe IV (S)",
+   "page_id": 39437,
+   "revision_id": 763993,
+   "source_sha256": "f149eb90f64c5fb2a9cadd7394c87ee2d549e02f3987b023d0596c3adf34dd57",
+   "cache_file": "0039437_stock_and_awe_iv_s_5538892d44"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 84,
+   "dat_name": "Stock and Awe IV (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "giver_step_not_in_walkthrough"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Brass Wings of Service §' -- recorded here and flagged, and kept out of gates.level; 'Level: Any' is why gates.level is null, and 'Time: None' states there is no limit. Bullet 1 ('Solo mission') is a party constraint. The walkthrough does not include a step for the giver Rasdinice at the START -- it opens at the Quartermaster -- so no such step was invented; the header NPC lives in start and the omission is flagged. It DOES include the return: bullet 4 says that after turning the item in to the Quartermaster and receiving the experience points you 'speak with Rasdinice and you will receive your Allied Notes and completion of the mission', so step 3 is a real rung and dropping it would leave the player unmarked for the hand-in that actually closes the op. Both NPCs are at (I-9) in Southern San d'Oria (S); the page even locates her relative to him -- 'if you're facing Rasdinice, she'll be behind you across the way near the tents' -- which is position, not a name, so it stays in the note. Bullet 3's eight supplies are an explicit menu of what she 'will provide different players with', so items is the first and items_alt the other seven; Ladybug Wings is the only one with a count above 1 (x2) and the page writes it that way.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S), I-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "behind Rasdinice across the way near the tents -- a position, so it stays here and out of target.name."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Smilodon Hide",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Smilodon Liver",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gnole Claw",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Djinn Ash",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ladybug Wing",
+      "count": 2,
+      "kind": "item"
+     },
+     {
+      "name": "Agaricus",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Orc Pauldron",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Orc Helmet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "one supply per player out of the eight bullet 3 lists; the experience points are paid here, per bullet 4."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the return to the giver, which this page states outright: the Allied Notes and the completion of the mission come from Rasdinice, not from the Quartermaster."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cut and Cauterize I (B)",
+   "page_id": 41154,
+   "revision_id": 764372,
+   "source_sha256": "d0a79e41c601a3edd4550bf8befe5d7e38a1b7aca9c40dce4df7f3e3dff069bb",
+   "cache_file": "0041154_cut_and_cauterize_i_b_c782350932"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 241,
+   "dat_name": "Cut and Cauterize I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated",
+   "party_gate_unmodelled",
+   "count_unobservable",
+   "generic_npc_name",
+   "walkthrough_incomplete",
+   "no_return_to_giver_on_page"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Brass Ribbon of Service §§' -- a real gate with no schema field, recorded here and flagged, and deliberately not written to gates.level; 'Level: Any' is why gates.level is null. 'Time: 30 min' is a real limit (time_gated) and nothing on the page contradicts it. ZONE NORMALISATION: the Description says 'North Gustaburg (K-8)', which is a typo and would not resolve; bullet 2 of the walkthrough writes it correctly as '[[North Gustaberg (S)]]', and the Wings-of-the-Goddess form with the (S) suffix is the one that resolves, so step 2 carries 'North Gustaberg (S)' -- taken from the walkthrough, not repaired by me from outside the page. 'Party of 3 or greater required' (sub-bullet of 2) is a real gate with no schema field: party_gate_unmodelled. Bullet 5 is the Woundpatcher command menu -- reference material, not a rung. The soldiers are never named ('5 wounded solders'), so the healing step targets the Cadet Woundpatcher, which IS who you interact with ('order the Woundpatcher to use cure spells'); four of the five must be cured, and a cure count is not something any packet reports: count_unobservable. WHY medium: this page's last bullet ends the op at the Dawn Aureola -- 'Return to the Dawn Aureola to receive your XP and finish the Campaign Op' -- and never sends you back to Hieronymus. Its sibling Cut and Cauterize I (W), same op in Windurst, has BOTH the Dawn Aureola sub-bullet and then a final '[7] Return to Emhi Tchaoryo to complete this Op'. So this walkthrough is probably missing a closing giver step. I have not added one, because that fact belongs to the other page; it is flagged so a human can settle it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: See the record notes",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Allied Ensign"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "follow the wall east from the exit. The party leader selects the enter option and the party is transported into Ruhotz Silvermines (bullet 3), so bullets 2 and 3 are one rung. Party of 3 or greater required. Zone taken from bullet 2's '[[North Gustaberg (S)]]', not from the Description, which misspells it 'North Gustaburg'."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cadet Woundpatcher"
+    },
+    "zone": "Ruhotz Silvermines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "two of them pop at the start; speaking to them makes them follow you to the room to the north holding 5 wounded soldiers. They are companions here, not monsters, so they are a target and not a mob entry."
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "npc",
+     "name": "Cadet Woundpatcher"
+    },
+    "zone": "Ruhotz Silvermines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "stand near an injured soldier and issue 'Commence healing, stat!' each time you want a cure; switch to 'Status ailment recovery' for the poisoned or paralysed lines and switch back afterwards; 'Offer moral support' when she wavers, and let her rest for MP. Four of the five soldiers cured completes the operation. Bullet 5 is the full command menu and is reference, not a step. The soldiers themselves are never named, so they cannot be a target."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dawn Aureola"
+    },
+    "zone": "Ruhotz Silvermines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "The battlefield exit and, on this page, the last step: 'Return to the Dawn Aureola to receive your XP and finish the Campaign Op.' You get no XP if you are too far from it when the leader examines it. the Windurst sibling adds a closing step at the giver that this page does not have."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cut and Cauterize I (W)",
+   "page_id": 42708,
+   "revision_id": 763892,
+   "source_sha256": "e82ecfbafe525afe1c8747af89b41245aa6554df9277ff937c2e46f67d553e69",
+   "cache_file": "0042708_cut_and_cauterize_i_w_5aac767850"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 411,
+   "dat_name": "Cut and Cauterize I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated",
+   "count_unobservable"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Brass Ribbon of Service §§' -- recorded here, flagged, and kept out of gates.level; 'Level: Any' is why gates.level is null. 'Time: 30 min' is a real limit and the walkthrough does not contradict it. Both the Description and bullet 2 give West Sarutabaruta (S) (I-9) for the Allied Ensign, so no normalisation was needed here (the Bastok sibling's Description misspells its zone; this one does not). This is the same op as Cut and Cauterize I (B) but the entities differ and are NOT copied across: the healers here are Student Salvemixers, not Cadet Woundpatchers, and the battlefield is Ghoyu's Reverie, not Ruhotz Silvermines. This page also has NO party-size requirement written down -- the Bastok sibling's 'Party of 3 or greater' is absent -- so nothing about party size is recorded; bullet 2 only mentions the party leader selecting 'enter'. Bullet 4 is the command menu, reference and not a rung. Four of the five soldiers must be cured, which nothing observable reports: count_unobservable. The op runs past the battlefield: the Dawn Aureola sub-bullet under bullet 6 pays the XP, and bullet 7 then sends you back to Emhi Tchaoryo to complete the Op -- that closing step is kept as step 6. The two trailing 'Category:' lines rendered at the end of bullet 7 are wiki category tags, not instructions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S), H-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Allied Ensign"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "hug the left wall from the exit. The party leader's 'enter' transports the party into Ghoyu's Reverie, which is why the next step changes zone."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Student Salvemixer"
+    },
+    "zone": "Ghoyu's Reverie",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "two pop at the start; speak to them so they follow, then head south to the room with 5 wounded soldiers."
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "npc",
+     "name": "Student Salvemixer"
+    },
+    "zone": "Ghoyu's Reverie",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "'Commence healing, stat!' casts a single Cure, so it is issued repeatedly; toggle to 'Status ailment recovery' for the poisoned or paralysed lines, order healing again, then toggle back. A soldier turns green below 100% health and the Salvemixer will not top him up further. Rest and recover restores her MP; 'Offer moral support' when she wavers, but not too often. Four of the five soldiers cured ends the operation. Bullet 4 is the menu tree and is reference."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dawn Aureola"
+    },
+    "zone": "Ghoyu's Reverie",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "from a sub-bullet of 6, not its own top-level bullet: the exit that pays the XP. Stay close to it when the leader examines it or you get nothing."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Return to Emhi Tchaoryo to complete this Op' -- the op is not over at the battlefield exit."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Smokescreen III (B)",
+   "page_id": 43441,
+   "revision_id": 730166,
+   "source_sha256": "ccdfa1f8882d716d78f55e519aff4b99b0f4b2d3fa8a2a2314209672bbea45ce",
+   "cache_file": "0043441_smokescreen_iii_b_1e211eb9a9"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 173,
+   "dat_name": "Smokescreen III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "count_unobservable",
+   "generic_npc_name"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Golden Star §§§§' -- a real gate with no schema field, recorded here and flagged, and NOT put in gates.level; 'Level: Any' is why gates.level is null, and 'Time: None' states there is no limit. Three bullets, three steps, and the middle one is deliberately targetless and zoneless: 'Join a Campaign Battle in a [[Quadav Shieldwarriors]] controlled area' names an ARMY, not a monster and not a zone, so target is {\"type\":\"none\",\"name\":null} and mobs is [] -- putting 'Quadav Shieldwarriors' in either field would mint a marker key with nothing behind it. Which areas those are changes with the war, so no zone can be recorded; leaving it null is right and leaving it to inherit Bastok Markets (S) would be actively wrong. The requirement is an even 3000 campaign experience, which may be split across several battles in different areas -- a running total no packet reports, hence count_unobservable, and it is why the step is one rung rather than one per battle. Bullet 3 is the return to the giver and is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "talk and sign up."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Campaign Battles in an area controlled by the Quadav Shieldwarriors, until you have earned an even 3000 campaign experience; the sub-bullet says this may be spread over several battles in different areas. No zone and no mob: the page names an army and a control condition, never a place or a monster."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'After the battle, return to Hieronymus to complete this operation.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye III (B)",
+   "page_id": 43443,
+   "revision_id": 730163,
+   "source_sha256": "d9d9ce87836831378ebe4027bffe93aafc907c2e9556a150268397cb9625654b",
+   "cache_file": "0043443_hawk_eye_iii_b_6d132c2c36"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 213,
+   "dat_name": "Hawk Eye III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "control_gate_unmodelled"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Golden Star §§§§' -- a real gate with no schema field, recorded here and flagged, and not written to gates.level; 'Level: Any' is why gates.level is null, and 'Time: None' states there is no limit. The 'After the walkthrough: Notes' section (its bullets restart at [1]) holds an availability condition -- the op appears only when at least one of your nation's areas is under Beastmen control -- which is a gate with no schema field either, hence control_gate_unmodelled; it is not a step, so no step cites it. Bullets 2 and 3 are ONE rung: 'Head to any Quadav controlled area and make your way to the Stronghold' names no zone (which area is Quadav-held changes with the war), so a separate travel step would be a rung with no target, no zone and no way to observe it. Merged into the examine, whose target is the page's literal '''???''' -- an object that keeps its place in the ladder and loses only its marker. The sub-bullets are the useful part: there are TWO ??? around the Stronghold and only one is this mission's, and after clicking you get periodic '---Gathering intel---' messages until 'Investigation complete!'. Bullet 4 is the report back to the giver and is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "talk and sign up."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "any Quadav-controlled area, at that area's Stronghold -- the page names no zone, so none is recorded rather than inheriting Bastok Markets (S). Two ??? sit around the Stronghold and only one is this op's; the right one answers with periodic '---Gathering intel---' messages and finally 'Investigation complete!'."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Report back to Hieronymus to complete the mission.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Splitting Heirs (S)",
+   "page_id": 43713,
+   "revision_id": 749388,
+   "source_sha256": "e22af57b220ffcd9347ba4570c9d7e717352f1156b4281a6ac04d91bd7bcfbac",
+   "cache_file": "0043713_splitting_heirs_s_7d723b7326"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 6,
+   "dat_name": "Splitting Heirs (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated",
+   "control_gate_unmodelled",
+   "generic_npc_name"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Iron Emblem of Service §§' -- a real gate with no schema field, recorded here and flagged. gates.level is 75 because the header's Level field says 75, which IS character level; the rank is kept well away from it. 'Time: 30 Minutes' is a real limit. The unnumbered Note above bullet 1 is an availability condition -- the op exists only while La Vaule (S) is under San d'Oria's control -- a gate with no schema field: control_gate_unmodelled. The 'Size: 450' line in the header is the header image's pixel width, not a game quantity. Step 2 is targetless on purpose: the Tigris stone drops from 'any of the Orcs in La Vaule (S) (excluding NMs)' and no individual Orc is named, so mobs is [] and the target is {\"type\":\"none\",\"name\":null}; the key item IS observable, so it is that step's evidence. Its sub-bullets add that every party member in the zone gets a stone on the drop but only members with the op flagged may enter. Bullets 4-6 are one fight rung: four NMs spawn but only Darkheir Grradhod has to die, so he is the sole mob entry with count 1 and role kill -- Gorepledge Rozzbrezz (PLD), Malicearm Razbhobb (MNK) and Slitherword Razghogg (BLM) are named here in the note instead, because listing them as kills would place three markers on monsters the page says you need not defeat. The battlefield has no zone name of its own on this page, so the fight keeps La Vaule (S), the zone the Reinforced Gateway is in. The Armoury Crate in bullet 6 is loot, not a rung. Bullet 7 is the return to Rasdinice and is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S), I-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "La Vaule (S)"
+    },
+    "zone": "La Vaule (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'after selecting the mission' is the only mention of taking the op; the giver is in start."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "La Vaule (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tigris stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "drops off any Orc in the zone except NMs; the page names no individual Orc, so there is no mob and no target. Every party member in the zone receives one when it drops, but only members with the op flagged can enter the battlefield."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Reinforced Gateway"
+    },
+    "zone": "La Vaule (S)",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Tigris stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the battlefield entrance. The stone from step 2 is what you must hold to use it."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "La Vaule (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Darkheir Grradhod",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "four NMs spawn -- Darkheir Grradhod (SAM) plus Gorepledge Rozzbrezz (PLD), Malicearm Razbhobb (MNK) and Slitherword Razghogg (BLM) -- but only Grradhod must be defeated, so only he is a mob entry. The helpers respawn, share his hate, and each buffs him while alive; he uses Meikyo Shisui and a unique WS, Tornado Edge, and counters heavily. The Armoury Crate on his death is loot."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Return to Rasdinice to complete the mission.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Plucking Wings (W)",
+   "page_id": 45963,
+   "revision_id": 622919,
+   "source_sha256": "8ebba18455368c7585000609edb83ee1e456474f38a16b4e046962e4f44e6f65",
+   "cache_file": "0045963_plucking_wings_w_017c059cfb"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 346,
+   "dat_name": "Plucking Wings (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated",
+   "control_gate_unmodelled",
+   "steps_from_after_section",
+   "grid_conflict",
+   "generic_npc_name"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. GRID: this header puts Emhi Tchaoryo at (H-10); the other two Windurst pages in this batch, Cut and Cauterize I (W) and Fiat Lux (W), put the same NPC at (H-9). I kept THIS page's value on this record rather than harmonising, and flagged grid_conflict so a human can settle which is right. CAMPAIGN RANK is 'Iron Emblem of Service §§' -- a real gate with no schema field, recorded here and flagged, and not confused with gates.level, which is 75 from the header's own Level field. 'Time: 30 Minutes' is a real limit. The unnumbered Note above bullet 1 is availability -- the op exists only while Castle Oztroja (S) is under Windurst's control -- a gate with no schema field. 'Size: 450' is the header image width, not a game value. NOT a contradiction: the after-section says 'there is no level cap for this battlefield', which is about the level restriction inside the fight, while the header's 75 is what you need to take the op; both are recorded as they stand. STEP SOURCES: steps 4 and 5 come from the 'After the walkthrough: Plucking Wings' section, whose bullets RESTART at [1] -- step 4 cites that section's bullets 2 and 3, step 5 its bullet 6, while steps 1-3 cite the walkthrough's own 1-3. Step 2 has no target because the rosary 'drops off any of the Yagudo's in Castle Oztroja (S) (excluding NM's)' and no individual Yagudo is named. One copy artifact worth knowing: that step's third sub-bullet says every party member 'will receive a stone', which is the wording from the San d'Oria op Splitting Heirs (S) whose key item IS a stone; here the key item is Xicu's Rosary, and I have recorded the rosary, not a stone. Only Soo Luma the Ascended must be defeated, so the other three NMs are named in the step note rather than made mob entries. The battlefield has no zone name of its own, so the fight keeps Castle Oztroja (S).\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: Grid is this page's own (H-10); see the record notes on the conflict with its Windurst siblings.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-10",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S), H-10"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Oztroja (S)"
+    },
+    "zone": "Castle Oztroja (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'after selecting the mission' is the page's only nod to taking the op from the giver."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Xicu's rosary",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "drops off any Yagudo in the zone except NMs; no individual Yagudo is named, so no mob and no target. It can drop while the op is NOT flagged, so check you are not already holding one before farming. The wikitext links [[Xicu's rosary|Xicu's Rosary]]; the page-title spelling is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Collapsing Floor"
+    },
+    "zone": "Castle Oztroja (S)",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Xicu's rosary",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "on the top floor; examining it enters the battlefield. The rosary from step 2 is what you hold to do it."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Soo Luma the Ascended",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "FROM THE 'After the walkthrough: Plucking Wings' SECTION, whose bullets restart at [1] -- these are that section's bullets 2 and 3, not the walkthrough's. Four Yagudo NMs are inside: Soo Luma the Ascended (SCH), Jii Xai the Rimebladed (SAM), Roo Beju the Eulogizer (BRD), Zjaa Bao the Wrathherald (NIN). Only Soo Luma must die, so only he is a mob. He is immune to Sleep and nothing else, uses Tabula Rasa, and keeps a permanent Accession/Manifestation that makes his spells AoE. The helpers respawn and share his hate. Trusts can be summoned and the battlefield has no level cap."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "'Return to Emhi Tchaoryo to complete the mission' bullet 6 of the 'After the walkthrough: Plucking Wings' section, not of the walkthrough."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cracking Shells (B)",
+   "page_id": 45973,
+   "revision_id": 670013,
+   "source_sha256": "1947f6b4ee915e30801642677827d9999170bc899c330964efaeedd214431701",
+   "cache_file": "0045973_cracking_shells_b_0fd51fceb0"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 176,
+   "dat_name": "Cracking Shells (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated",
+   "control_gate_unmodelled",
+   "steps_from_after_section",
+   "generic_npc_name"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field. CAMPAIGN RANK is 'Iron Emblem of Service §§' -- a real gate with no schema field, recorded here and flagged, and kept out of gates.level, which is 75 from the header's own Level field. 'Time: 30 Minutes' is a real limit. The unnumbered Note above bullet 1 is availability -- the op exists only while Beadeaux (S) is under Bastok's control -- another gate with no schema field. 'Size: 350' is the header image width. This op is the Bastok twin of Splitting Heirs (S) and Plucking Wings (W) but nothing was copied between them: the key item here is the Diamond Seal, the entrance is the Ironbound Gate at (L-8) on MAP 2 in the Qulun Dome area, and bullet 3 adds a requirement the other two do not have -- a Quadav Charm, needed to reach Qulun Dome at all, which is why it is on step 3's items alongside the seal. Step 2 has no target: the seal drops off 'any of the Quadav's in Beadeaux (S) (excluding NM's)' and no individual Quadav is named. Same copy artifact as the Windurst page: that step's sub-bullet says party members receive 'a stone', which is the San d'Oria wording; the key item on THIS page is the Diamond Seal and that is what is recorded. STEP SOURCES: steps 4 and 5 come from the 'After the walkthrough: Cracking Shells' section, whose bullets restart at [1] -- step 4 cites its bullets 2 and 3, step 5 its bullet 6. Only Za'Dha Adamantking must be defeated, so the three other NMs stay in the note rather than becoming mob entries with markers. The battlefield has no zone name of its own, so the fight keeps Beadeaux (S).\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: the map number cannot be expressed in the schema.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S), E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux (S)"
+    },
+    "zone": "Beadeaux (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'after selecting the mission' is the page's only reference to taking the op."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Diamond seal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "drops off any Quadav in the zone except NMs; no individual Quadav is named, so no mob and no target. It can drop while the op is not flagged, so check you do not already hold one. The wikitext links [[Diamond seal|Diamond Seal]]; the page-title spelling is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ironbound Gate"
+    },
+    "zone": "Beadeaux (S)",
+    "grid": "L-8",
+    "items": [
+     {
+      "name": "Diamond seal",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Quadav Charm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "The Qulun Dome area, (L-8) on MAP 2 Bullet 3 is a requirement rather than a rung of its own: the Quadav Charm is what gets you into Qulun Dome, so it sits in this step's items next to the seal."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Za'Dha Adamantking",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "FROM THE 'After the walkthrough: Cracking Shells' SECTION, whose bullets restart at [1] -- its bullets 2 and 3. Four Quadav NMs are inside: Za'Dha Adamantking (RNG), Di'Mho Platekeeper (WHM), Zi'Bhe Gauntletkeeper (BLM), Zo'Bha Helmkeeper (RDM). Only Za'Dha must die, so only he is a mob. He uses Eagle Eye Shot and is immune to Sleep and nothing else; the helpers respawn and share his hate. Trusts can be summoned and there is no level cap inside."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "'Return to Hieronymus to complete the mission' -- bullet 6 of the 'After the walkthrough: Cracking Shells' section, not of the walkthrough."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fiat Lux (W)",
+   "page_id": 111290,
+   "revision_id": 751836,
+   "source_sha256": "de51e0d116c7905547f29671f4ac02d061afc3a485d76f933fda7ef2d38e077d",
+   "cache_file": "0111290_fiat_lux_w_948765d518"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 349,
+   "dat_name": "Fiat Lux (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated",
+   "control_gate_unmodelled",
+   "bullet_split"
+  ],
+  "notes": "start.raw is assembled from the Campaign Header's NPC Name / Zone / pos; the template has no Start field, and its Zone value carries a stray newline in the wikitext ('|Zone=\\nWindurst Waters (S)') which the rendered page tidies -- the zone is Windurst Waters (S) either way. CAMPAIGN RANK is 'Medal of Altana §§§§', the highest in this batch -- a real gate with no schema field, recorded here and flagged, and NOT written to gates.level. gates.level is 75 from the header's 'Level: 75+', the '+' meaning 75 and above rather than a different number. 'Time: 30 Minutes' is a real limit. The unnumbered Note above bullet 1 is an availability condition with no schema field: Beaucedine Glacier (S), Xarcabard (S), Castle Zvahl Baileys (S) and Castle Zvahl Keep (S) must all be under Allied control, though the Throne Room (S) itself need not be. 'Size: 400' is the header image width. Bullet 1 spans two zones -- 'Head to the Throne Room (S) THROUGH Castle Zvahl Baileys (S)' -- so it is split into steps 1 and 2 in route order, both citing bullet 1, because a step has one zone. The wikitext links [[Shadow Lord (S)|Shadow Lord]]; the name the page shows and the one recorded is 'Shadow Lord'. The sub-bullets of bullet 2 say every party member must have the op active to enter, but that having it is NOT required to share in the loot -- so the fight is the rung and the loot is not. The armoury crate in bullet 3 is loot. Bullet 4 is the return to Emhi Tchaoryo and is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S), H-9"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Baileys (S)"
+    },
+    "zone": "Castle Zvahl Baileys (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "first half of bullet 1: the Throne Room is reached THROUGH the Baileys, so this is the route, not a detour."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Throne Room (S)"
+    },
+    "zone": "Throne Room (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second half of bullet 1, split off because a step has one zone. The Throne Room (S) itself need not be under Allied control."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Throne Room (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shadow Lord",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "every party member must have this op active to enter, though holding it is not required to receive loot. The armoury crate in bullet 3 is the drop, not a rung."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Speak with Emhi Tchaoryo to complete this mission.'"
+   }
+  ]
+ }
+]

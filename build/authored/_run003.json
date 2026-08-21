@@ -1,0 +1,614 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slacking Subordinates",
+   "page_id": 67151,
+   "revision_id": 625781,
+   "source_sha256": "150141eb82a285ac873ed7788927ee79fcb822bfcac85e5b4a49ed440d8fb722",
+   "cache_file": "0067151_slacking_subordinates"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 81,
+   "dat_name": "Slacking Subordinates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "no_evidence"
+  ],
+  "notes": "Five steps and no evidence anywhere, which is the honest answer rather than a failure: this quest hands out no item and no key item at any point, so nothing about its progress is observable and every step's evidence is null on purpose. Bullet 2 is an explicit 'you must talk to all 3 of the following NPCs', with no order stated and all three standing within a grid square of Chumimi, so the three assistants share a group and draw at once -- a strict ladder would mark Biggorf and nothing else until the player happened to wander past the other two. Bullet 3 is the report back to Chumimi and is a genuine step; bullets 4 and 5 are the two possible OUTCOMES of that report (the corroborates-perfectly line with 500/250 Cruor and a seal chance, versus the seems-reasonable-enough line with 200 Cruor and no seal) and are not steps. The whole '== Fiend Descriptions ==' block, bullets 6 through 9, is an answer key for the dialogue menu -- three columns of flavour text per shape, colour and habitat, so the player can spot which two of the three assistants agree. Not one rung of it is something you do, and a verb scan would have made twelve steps out of it. The trailing 'Zoning is required in order to repeat this quest' is a repeat condition the addon cannot see and does not need. Fame 'aalt' is an Abyssea zone code, not one of the nine fame regions, so it gates nothing and only the raw is kept. Tapoh Lihzeh straddles a boundary -- the page writes '(G-6)/(G-7)' and that is recorded rather than one half being picked. The '(A)' suffixes are wiki disambiguators; all four fold to plain in-game names, which the normaliser already handles.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [
+    {
+     "title": "The Titus Touch",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Chumimi (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "G-7",
+   "raw": "Chumimi (A) (G-7), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "east of Conflux 7 at the Revelation Rock oasis. The unnumbered line above bullet 1 is a precondition -- you must zone after The Titus Touch before he will offer this -- not a step."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Biggorf (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "assistants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "behind Chumimi on the left hand side. One of three, any order; he gives two facts about the fiend."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chemioue (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "assistants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "just south of Chumimi, take the first left. One of three, any order."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tapoh Lihzeh (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-6/7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "assistants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on the top side of the rock, on the (G-6)/(G-7) border -- the page gives no single square, so both are kept. One of three, any order."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "report the two facts the assistants agreed on -- one symptom and one of shape, colour or habitat. Two of the three always agree and the third is the wrong answer; bullets 7 to 9 are the table for telling them apart. Answering wrong still completes the quest, for less Cruor and no seal, so nothing here is observable."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Thirst for Eternity",
+   "page_id": 112054,
+   "revision_id": 759604,
+   "source_sha256": "90bc67077db3df60fbdd8a7613ecbea667bc3aa680c0dc83f29b6a7ed96d5318",
+   "cache_file": "0112054_a_thirst_for_eternity"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 116,
+   "dat_name": "A Thirst for Eternity",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "mission_gate_unmodelled",
+   "target_from_section_heading",
+   "optional_section_required_for_next",
+   "grid_from_walkthrough",
+   "time_gated"
+  ],
+  "notes": "The main ladder is clean and unusually well evidenced -- six distinct key items over the nine steps before the turn-in, plus a seventh in the optional tail, each obtained at the step that carries it, so no item is evidence twice. Bullet 1's sub-bullet (you must zone following A Thirst for the Eons) is a precondition and stays a note. Bullet 2 is the only step that must HOLD anything: the Elder wooden box is appraised INTO Imprint device S, so the box is step 1's evidence and step 2's requirement, which is exactly the shape that gap wants.\n\nThe four Mnemonic Pools are one unordered group. The page lists them under a bare 'Mnemonic Pool locations:' line with no ordering language and closes with 'Once you've collected all four key items, return to Roskin', which is a collect-all and not a sequence; bullet 6's 'you can return the way you came to get the next one below' is route advice about a convenient order, not a requirement. Because each pool yields a DIFFERENT key item, every group member carries its own evidence -- unlike An Explorer's Footsteps, where seventeen identical Clay Tablets forced the evidence onto the last member alone.\n\n'Mnemonic Pool' is the only name the page ever gives for what you interact with, and it gives it in a section heading rather than in any bullet. The page never says whether you click the pool or the cutscene fires on approach -- it only calls the result 'this cutscene'. Recorded as an examine on an object of that name: if no such entity exists in game those four steps simply keep their zone and grid and lose their markers, which is no worse than recording nothing. Those steps are the reason this quest is medium rather than high.\n\nThe turn-in is written as unnumbered prose after bullet 8, so its source_bullets is empty rather than falsely attributed to a bullet that does not say it.\n\nThe '== Optional ==' section is recorded as optional steps after the turn-in, the same shape Under Oath's epilogue takes. Bullet 9 warns the section is only optional if you never intend to start A Thirst Before Time, but the page is explicit that this quest completes when you return to Roskin with the four records, so relative to THIS ladder everything after it is post-completion. Bullet 12 is what Roskin asks for and folds into bullet 11's step. Bullet 14's pop-quiz answer key -- three screens of Adoulin trivia, Naakual names and the Twelve Orders -- is reference material for a dialogue menu and not a single step, and bullet 16's Speedy Score is an outcome. Bullet 15 does hand over a real key item, Heroes and Legends of Adoulin, so the quiz step carries it. Bullets 17 and 18 are both Roskin and are one step: 18 is a per-Conquest-Tally reward collection gated on a game day, which nothing in the packets reports.\n\nQuest Reqs is a Seekers of Adoulin mission-chapter gate ('chapter four ... up to and including Balamor, the Deathborne Xol') with no slot in the schema and no observable predicate, so it is flagged and gates nothing. Fame 'Adoulin' is not one of the nine fame regions, so region is null and only the raw is kept. The header's Start field carries no grid at all; (H-8) comes from bullet 1, and Palomel's square is never given anywhere on the page, so his steps carry a zone and no grid rather than an invented one.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 9: which is why source_bullets is empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Thirst for the Eons",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Roskin",
+   "zone": "Eastern Adoulin",
+   "grid": "H-8",
+   "raw": "Roskin (Near Cafe des Larmes, Eastern Adoulin)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Elder wooden box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Cafe des Larmes. You must have zoned since A Thirst for the Eons before he offers it."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Palomel"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [
+     {
+      "name": "Elder wooden box",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Imprint device S",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near the Scouts' Coalition; the page gives no grid reference for him. He appraises the box, which is consumed into the imprint device."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quwi Orihbhe"
+    },
+    "zone": "Rabao",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "near the Proto-Waypoint"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "bullet 4 is 'Talk to Roskin again.' and nothing more -- it gives no reason and does not mention the pools; the 'Mnemonic Pool locations:' list merely follows it on the page."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mnemonic Pool"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Record of a thousand lights",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "mnemonic_pools",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "eastern side of the square; fastest in via the homepoint or Bivouac #2. One of four, any order."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mnemonic Pool"
+    },
+    "zone": "Cirdas Caverns",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Record of a cavernous foray",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "mnemonic_pools",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "southern side of the square; fastest in by heading west from the Yorcia Weald Frontier Station Waypoint, which also puts the Yorcia pool on the way back. One of four, any order."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mnemonic Pool"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Record of the generals' foray",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "mnemonic_pools",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "northwest corner of the square; fastest in via the Frontier Station. One of four, any order."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mnemonic Pool"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Record of the knight in black",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "mnemonic_pools",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "eastern side of the chasm; fastest in via Bivouac #3. One of four, any order."
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Record of a thousand lights",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Record of a cavernous foray",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Record of the generals' foray",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Record of the knight in black",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "From the unnumbered line after bullet 8 'Once you've collected all four key items, return to Roskin in Eastern Adoulin to complete the quest' This is where the quest ends; everything after it is the Optional section."
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Palomel"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     10
+    ],
+    "note": "an additional cutscene only; the page marks this section Optional"
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     11,
+     12
+    ],
+    "note": "zone first. Bullet 12 is only what he asks for -- a book from the Celennia Memorial Library -- so it folds in here rather than becoming a rung of its own."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "History stacks"
+    },
+    "zone": "Celennia Memorial Library",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Heroes and Legends of Adoulin",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     13,
+     14,
+     15
+    ],
+    "note": "checking the stacks starts a twelve-question pop quiz on Adoulinian politics and zoology; timing out ends it and you must rezone to retry, with more time per question and more questions. Bullet 14's answer key -- general trivia, the six Naakuals, the Twelve Orders -- is reference for the dialogue menu and no part of it is a step. The page names the object only as 'the History stacks', which is what is recorded."
+   },
+   {
+    "n": 13,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     17,
+     18
+    ],
+    "note": "bullets 17 and 18 are the same NPC and are one marker: talk once, then again after a game day for 2 bayld and skill-up books, and once per Conquest Tally after that. Neither the game day nor the tally is visible to the addon. Bullet 16's Speedy Score is an outcome, not a step."
+   }
+  ]
+ }
+]

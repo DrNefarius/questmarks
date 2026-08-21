@@ -1,0 +1,328 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 050: Aht Urhgan Assault",
+   "page_id": 87832,
+   "revision_id": 725570,
+   "source_sha256": "7a390a3951b30cbe886eaf8ca45fd56d183a585f0a83687e9693a176b40d83ee",
+   "cache_file": "0087832_vw_op_050_aht_urhgan_assault"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 68,
+   "dat_name": "VW Op. #050: Aht Urhgan Assault",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "multiple_spawn_points",
+   "evidence_is_reward",
+   "prereq_ki_unmodelled"
+  ],
+  "notes": "Four bullets, and the shape is the ordinary Voidwatch op: enrol with the NPC, clear one notorious monster per zone, come back. Bullets 1 and 2 are ONE visit to Camille -- bullet 2 is the dialogue choice inside the conversation bullet 1 opens ('choose to participate in voidwatch operations'), not a second trip -- so they merge into a single talk rung, and the sub-bullet's route advice (out of Aht Urhgan Whitegate through the Ironbound Gate at (H-10)) stays in the note where it belongs. The Amber stratum abyssite is the header's Reward AND is explicitly handed over by bullet 2 of 4, which is the Kupipi case in AUTHORING rule 7: holding it proves that bullet is behind you, so it is step 1's evidence and nothing later's. Bullet 3's four sub-bullets are not commentary, they ARE the quest -- one Voidwatch NM per Aht Urhgan zone -- and the Description says to eradicate EACH of the threats, so all four are required; the page imposes no order on them, so they share one group and draw at once. One step, one zone: Arrapago Reef, Caedarva Mire, Mamook, Mount Zhayolm. Every NM is given three rift squares, which is a choice and not a contradiction, so each grid stays null and all three sit in that step's note; picking one of three would be a made-up fact. The page never says the abyssite spawns the NMs, only that it enrols you, so it is not carried as items on the fight steps. Bullet 4 is a real return-to-giver, not an outcome line, so it keeps its rung; Camille's (M-7) comes from bullet 1, the only place the page gives a square for her. Quest Reqs also names the Adventurer's Certificate, which resolves as a key item (id 35) but has no schema field of its own -- there is no item gate -- so it is recorded here and flagged rather than modelled, and it is NOT wedged into the walkthrough as an obtain rung the page never describes. 'Level 75 or higher' is the level gate restated for any job, so jobs stays empty. Fame reads 'Treasures of Aht Urhgan', the expansion string sitting in the Fame slot; the resolver folds it to the Aht Urhgan fame region, and FLevel is empty so nothing numeric gates. Repeatable is blank on the page, so it is null rather than guessed. Expansion is spelled 'Treasues of Aht Urhgan' on the page (the wiki's own typo) and is recorded in the corpus code toau. The raw wikitext carries a red note that the render drops -- this series can be started at any time and needs no other Voidwatch progression -- which is why prev is empty even though a Next link exists.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Camille",
+   "zone": "Wajaom Woodlands",
+   "grid": "M-7",
+   "raw": "Camille, Wajaom Woodlands"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Camille"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Amber stratum abyssite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "one visit: the cutscene of bullet 1 and the 'choose to participate' option of bullet 2 are the same conversation. The abyssite it hands over is also the header's Reward, but bullet 2 of 4 grants it outright, so it is this step's evidence. Quickest approach is out of Aht Urhgan Whitegate through the Ironbound Gate at (H-10)."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dimgruzub",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "aht_urhgan_rifts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift sites are map 1 (G-8), (G-10) or (I-10) -- three alternatives, so no single grid is recorded"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Brekekekex",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "aht_urhgan_rifts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift sites are map 1 (F-11), (I-9) or (I-11) -- three alternatives, so no single grid is recorded"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mamook",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yalungur",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "aht_urhgan_rifts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift sites are map 1 (I-7), (J-8) or (L-8) -- three alternatives, so no single grid is recorded"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mount Zhayolm",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Vanasarvik",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "aht_urhgan_rifts",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift sites are (M-6), (J-8) or (L-8) -- three alternatives, so no single grid is recorded. This is the only one of the four the page does not label with a map number."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Camille"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page states this return explicitly; completing it begins VW Op. 068: Subterranean Skirmish automatically. Her (M-7) square is carried down from bullet 1, the only place this page gives it."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 068: Subterranean Skirmish",
+   "page_id": 87836,
+   "revision_id": 749763,
+   "source_sha256": "ba5e3a0aeaef8c716a1634352a19d98d31a8d6f23c98ecb4c137c921f91c0527",
+   "cache_file": "0087836_vw_op_068_subterranean_skirmish"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 69,
+   "dat_name": "VW Op. #068: Subterranean Skirmish",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "auto_flagged_from_previous",
+   "multiple_spawn_points",
+   "no_evidence"
+  ],
+  "notes": "Three bullets and only two of them are things you do. Bullet 1 says the upgrade to Amber stratum abyssite II comes from 'speaking with Camille at the END of the previous quest' -- that conversation belongs to VW Op. 050, so by the time this quest is in the log the player is already holding it and there is nothing to walk back for. Making it a talk rung would put a marker on Camille at the exact moment the player should be heading underground, so it is recorded as the handoff it is and not as a step. It cannot be evidence either: AUTHORING rule 3 wants evidence obtained AT its step and this arrives before the first one, and it is additionally the header's Reward. So this record carries no evidence anywhere, and the ladder is the two actions the page actually asks for -- kill Morta, go back to Camille. Camille still stands as start.npc: the header names her and bullet 3 sends you back to her, so the header and the walkthrough agree and there is nothing to flag. Neither the header nor the walkthrough gives her square anywhere on THIS page, so start.grid and step 2's grid are null rather than borrowed from the previous quest's page, where a square for her does appear -- that would be a sibling import. Morta is given three rift sites across two maps, a choice rather than a contradiction, so the grid stays null and all three live in the note. Nothing on this page states a level, job or item requirement: the 'Level 75 or higher' on the previous quest's page is that page's fact, not this one's, so level is null. Repeatable is blank on the page, so it is null and not guessed. Fame is the expansion string 'Treasures of Aht Urhgan' in the Fame slot, which the resolver folds to the Aht Urhgan fame region; FLevel is empty so nothing numeric gates. Expansion is spelled 'Treasues of Aht Urhgan' on the page (the wiki's own typo) and is recorded in the corpus code toau.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "VW Op. 050: Aht Urhgan Assault",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Camille",
+   "zone": "Wajaom Woodlands",
+   "grid": null,
+   "raw": "Camille, Wajaom Woodlands"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Morta",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "rift sites are map 1 (G-8), (I-8) and map 2 (F-8) -- three alternatives, so no single grid is recorded. The page does not say the abyssite II opens the rift, only that the quest grants it, so it is not carried as items here."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Camille"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page states this return explicitly. Bullet 3 names no zone; Wajaom Woodlands comes from this page's own Start line, and no grid is given for her anywhere on this page."
+   }
+  ]
+ }
+]

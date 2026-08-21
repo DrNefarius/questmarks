@@ -1,0 +1,1224 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 34",
+   "page_id": 13857,
+   "revision_id": 774411,
+   "source_sha256": "e75b9724ef30359d4e5f50f31501a83fc129c1e39b1736c6b644a77f0ee348ea",
+   "cache_file": "0013857_aht_urhgan_mission_34"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 33,
+   "dat_name": "Testing the Waters",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc ('naja salaheem'), so the giver does not move. Bullet 1 is not an instruction by itself -- it states that the mission needs another [KI] Ephramadian gold coin -- but its sub-bullet says where one comes from, and checking Jazaraat's Headstone at Caedarva Mire (E-10) IS an action, so bullet 1 becomes step 1 and the coin is its evidence. That evidence is obtained AT the step, it is not this mission's Reward (the Reward is the Percipient eye, which is therefore NOT evidence anywhere), and it is not carried in from the previous mission: the page says 'another', so the earlier coin is spent. If a player somehow still holds one the ladder simply opens at the Cutter, which is where they would be going anyway. The coin then rides on step 2 as an item requirement -- the page never says where it is spent, only that the mission needs it, and the Cutter is the mission's only other action. Step 2 is kind 'talk' rather than 'cutscene' because it is the last step, where core/steps.lua's wants_items turns 'holding the coin' into a real readiness answer; the page's own word is 'approach', which is in the note. The three route sub-bullets under bullet 2 (Dvucca Isle Staging Point, the Caedarva Mire Survival Guide walk, the Arrapago Ring bought from Asrahd) are travel advice and are not steps, but two of their grids are load-bearing and kept: (G-9) is the Caedarva Mire side of the zone line and (H-8) in Arrapago Reef is where the Cutter stands -- which is exactly what the next mission's header independently says. Bullet 3 is an outcome, not a step. NAME CAVEAT: the shipped index knows 'jazaraat' in zone 79 but not 'jazaraat's headstone'; the page's name is used as written, and if no such entity exists the step loses its marker and keeps its rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Sentinels' Honor",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Jazaraat's Headstone"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "E-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Ephramadian gold coin",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "reachable from Caedarva Mire HP#1 or the western exit of Nashmau"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cutter"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Ephramadian gold coin",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "approach rather than converse -- proximity triggers the cutscene. In from Caedarva Mire at (G-9); the Cutter is north at (H-8). The cutscene ends with you in Talacca Cove, which is bullet 3 and an outcome, not a rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 35",
+   "page_id": 13858,
+   "revision_id": 761965,
+   "source_sha256": "97b2bb84a18e16cc133e0d36f9e13eb28c1456ea466c36324e86694bc69685d0",
+   "cache_file": "0013858_aht_urhgan_mission_35"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 34,
+   "dat_name": "Legacy of the Lost",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc ('cutter'), so the giver does not move. The header Start and the walkthrough are in two different zones and both are right: the mission is handed out by the Cutter in Arrapago Reef (H-8) at the close of the previous mission, and that cutscene drops you in Talacca Cove, where every step of this one happens. Bullet 1 is that drop plus teleport advice for anyone joining you -- an outcome, not a step. Bullet 2 is the only interaction and it is markable: the shipped index already knows 'rock slab' in zone 57, which is Talacca Cove, so the name is corroborated independently of this page. Bullet 3's whole sub-bullet tree is strategy -- the TP move list, the clone behaviour, the 15% give-up threshold -- and collapses into one fight step against Gessho; the battlefield is entered from Talacca Cove and keeps that zone. Bullet 4 is the winning cutscene and is not a step. NO EVIDENCE ANYWHERE, deliberately: the header Reward is empty and the page names no key item obtained at any step. That is the normal shape for a mission and not a gap to be filled.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Testing the Waters",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Cutter",
+   "zone": "Arrapago Reef",
+   "grid": "H-8",
+   "raw": "Cutter, Arrapago Reef - (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rock Slab"
+    },
+    "zone": "Talacca Cove",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "directly in front of where the previous mission's cutscene leaves you; it opens the battlefield. The page gives no grid. Closest teleport for people joining you is Caedarva Mire HP#1."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Talacca Cove",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gessho",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "30 minute battlefield. He warps around the arena, spawns 3-6 short-lived clones of about 2000 HP that are immune to sleep and can Mijin Gakure with him, and gives up at roughly 15% HP -- all of which is strategy, not rungs. Bullet 4 is the win cutscene."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 36",
+   "page_id": 13859,
+   "revision_id": 765453,
+   "source_sha256": "48a2062f71d3b1fdbc9dac8141e6eb55778789f306405418cb25e1c4699839b8",
+   "cache_file": "0013859_aht_urhgan_mission_36"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 35,
+   "dat_name": "Gaze of the Saboteur",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "chronicle_snpc is empty and the header Start names a ZONE with no NPC -- 'Talacca Cove', which is where the previous mission's cutscene leaves you -- so start.npc is null and the ladder starts where the walkthrough starts. Null is the safe answer as well as the honest one: build_index's giver_of falls through a nil ladder snpc to chronicle's own value, so nothing moves. Bullet 1 is a zone entry written destination-first with the grid of the OTHER side ('Caedarva Mire Map#1 D-9'), so the step is placed in Caedarva Mire at (D-9) and targets the zone Hazhalm Testing Grounds; both of its sub-bullets are warp advice. Bullet 2 is the payoff and it is markable: 'Entry Gate' is a proper name, and the shipped index already knows 'entry gate' in zone 78, which is Hazhalm Testing Grounds -- so this mission gains a marker it does not have today (its chronicle row is snpc='' with a single empty-NPC rung). The [KI] Luminian dagger is the header Reward and so is not evidence on any step; nothing else on the page is observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Legacy of the Lost",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Talacca Cove",
+   "grid": null,
+   "raw": "Talacca Cove"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Hazhalm Testing Grounds"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "D-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid is the Caedarva Mire side of the zone line (the page writes it as 'Caedarva Mire Map#1 D-9'); zoning in is what triggers the cutscene. Caedarva Mire HP#1 is the closest warp; Nashmau's western exit also reaches it."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Entry Gate"
+    },
+    "zone": "Hazhalm Testing Grounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page gives no grid for it"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 37",
+   "page_id": 13860,
+   "revision_id": 537566,
+   "source_sha256": "31ecadaec5174e1c638c28dbd069c468718fdbd816b19edc4fc06059a7fed291",
+   "cache_file": "0013860_aht_urhgan_mission_37"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 36,
+   "dat_name": "Path of Blood",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "target_name_uncorroborated"
+  ],
+  "notes": "chronicle_snpc is empty and the header Start is a zone plus a grid with no NPC, so start.npc is null and giver_of falls back to chronicle's own empty value -- nothing moves. I deliberately did NOT name Naja Salaheem as the giver: the Description says 'deliver her message to President Naja' and (I-10) in Aht Urhgan Whitegate is indeed the Salaheem's Sentinels office, but the walkthrough never names her, so writing her in would be an inference wearing a reading's clothes and it would silently move this mission's marker onto an NPC chronicle does not claim. The one bullet is 'Enter Salaheem's Sentinels for a cutscene', so the single step is a cutscene targeting the office itself at the grid the header gives. UNCORROBORATED NAME, and the reason for medium: 'Salaheem's Sentinels' does not resolve as a zone and no row in the shipped index knows an entity by that name (unlike 'rock slab' and 'entry gate', which do appear). If nothing in world carries it the step keeps its rung and loses its marker -- which is exactly the status quo for this mission -- and it cannot send anyone to the wrong place, because the only entity that could bear that name is the office door at the grid named here. Nothing on this page is observable: the header Reward is empty and no key item is mentioned.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Gaze of the Saboteur",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Salaheem's Sentinels"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid comes from this page's own Start field, which points at the same place the bullet does; the bullet itself gives none"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 38",
+   "page_id": 13861,
+   "revision_id": 728131,
+   "source_sha256": "8d8046ca447a2c829b1f867e0c2782829ab15e999344d059b3403482e28499de",
+   "cache_file": "0013861_aht_urhgan_mission_38"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 37,
+   "dat_name": "Stirrings of War",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "time_gated",
+   "target_name_uncorroborated"
+  ],
+  "notes": "chronicle_snpc is empty and the header Start is a zone plus a grid with no NPC, so start.npc is null and giver_of keeps chronicle's own empty value -- nothing moves. The single bullet holds two things: a wait ('until the end of the current game day and zone') and a destination (the Shararat Teahouse). The wait is NOT given its own rung -- game time and zoning are invisible to the addon, so a wait rung would be an unobservable step wedged in front of the only markable one, and AUTHORING's rule about rungs a player cannot be tracked through applies. It lives in the step note and in time_gated instead. The teahouse is in Aht Urhgan Whitegate; the page gives no grid for it, and the header's (I-10) belongs to where you start rather than where you are going, so the step's grid is null rather than borrowed. UNCORROBORATED NAME, hence medium: 'Shararat Teahouse' does not resolve as a zone and no row in the shipped index carries it as an entity, so the step may match nothing and simply keep its rung -- which is the status quo for this mission anyway. The [KI] Allied Council Summons is the header Reward and is therefore not evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Path of Blood",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Shararat Teahouse"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "wait until the end of the current Vana'diel day and zone once before going -- neither the day boundary nor the zoning is observable to the addon, so this rung can fire early and there is no way to tell"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 39",
+   "page_id": 13862,
+   "revision_id": 726688,
+   "source_sha256": "0e00ede5f7512ebef82b36d99ab833d2580a3a9951689200c8fdde1c04d0e2ad",
+   "cache_file": "0013862_aht_urhgan_mission_39"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 38,
+   "dat_name": "Allied Rumblings",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "unnamed_target"
+  ],
+  "notes": "chronicle_snpc is empty and the header Start is a zone plus a grid with no NPC -- Aht Urhgan Whitegate (K-12), the imperial airship dock you leave from -- so start.npc is null and chronicle's empty giver survives. The single bullet sends you to Ru'Lude Gardens to 'approach the palace doors'. That is a common-noun phrase with a definite article, not a name, so per AUTHORING's first hard rule the target is the ZONE and not an invented entity. I checked before deciding: the resolver accepts any NPC string (it only folds and tests for ambiguity), so it cannot adjudicate this, and the shipped index's 'palace door' / 'palace doors' keys both belong to zone 50 entities in Aht Urhgan Whitegate, while the only palace entity it knows in Ru'Lude Gardens (243) is the bare key 'palace' scraped from a CoP page's Start field. Borrowing either would be a name this page never wrote, aimed at a zone the index does not put it in. So the step keeps its rung, names the zone, and carries no marker -- which is what this mission has today (its chronicle row is snpc='' with one empty-NPC rung), so nothing is lost. Expect stage C to raise start_npc_unresolved and pin the record at low for exactly this reason; that is correct, not a misreading. The sub-bullet warning that several cutscenes play here and that the right one has you speaking with Trion is a disambiguation for the player and is kept in the note rather than made a rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Stirrings of War",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-12",
+   "raw": "Aht Urhgan Whitegate - (K-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ru'Lude Gardens"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "approach the palace doors -- the page names no entity for them, so there is nothing to put a marker on. Several cutscenes play in that spot; the one this mission wants has you speaking with Trion directly."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 40",
+   "page_id": 13863,
+   "revision_id": 728132,
+   "source_sha256": "834df609a78e7630064fa2d83be40512e2305504e544800efc41954590897f6f",
+   "cache_file": "0013863_aht_urhgan_mission_40"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 39,
+   "dat_name": "Unraveling Reason",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "time_gated"
+  ],
+  "notes": "chronicle_snpc is empty and the header Start is a zone plus a grid with no NPC (Ru'Lude Gardens H-6, the palace doors from the previous mission), so start.npc stays null and chronicle's empty giver survives untouched. The walkthrough, however, names a real NPC, so the ladder gains a marker this mission does not have today: Pherimociel, whom the shipped index already places in zone 243, Ru'Lude Gardens -- so the name is corroborated independently of this page. Bullets 1 and 2 are the SAME NPC back to back, the first marked '(Optional)' for a brief flavour cutscene and the second the one that actually advances the mission, so they are ONE rung: AUTHORING is explicit that consecutive steps on one NPC are one marker, and splitting them would have put an optional rung in front of the required one for no gain. The page's grid for Pherimociel is (G-6), which is not the (H-6) the header gives -- the header points at the palace doors, not at him, so this is not a contradiction and the NPC's own grid is used. The 'wait until next game day and zone' gate is unobservable (no packet reports game time or zoning), so it is a note and time_gated rather than a rung, and it is why this is medium rather than high. Bullet 3 is an outcome -- the cutscene ends at the Wajaom Woodlands Leypoint, which is the next mission's starting zone -- and is not a step. Nothing here is observable: the header Reward is empty and no key item is named.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Allied Rumblings",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-6",
+   "raw": "Ru'Lude Gardens - (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pherimociel"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is the page's own '(Optional)' brief cutscene with the same NPC and is folded in here rather than given its own rung. The conversation that advances the mission needs the next game day to have begun and one zone change since the previous mission -- neither is visible to the addon."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 41",
+   "page_id": 13864,
+   "revision_id": 761968,
+   "source_sha256": "7e9e96dc7b27f153acc7606550bdd701aeb0e258380707e89b354cc60447e149",
+   "cache_file": "0013864_aht_urhgan_mission_41"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 40,
+   "dat_name": "Light of Judgment",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "leadin_to_next_mission"
+  ],
+  "notes": "chronicle_snpc is empty and the header Start names a ZONE with no NPC -- Wajaom Woodlands, where the previous mission's airship crash drops you -- so start.npc is null and chronicle's empty giver survives. The ladder gains a marker this mission does not have today: Rodin-Comidin is a proper name with a zone and a grid, outside the Automaton Workshop in Aht Urhgan Whitegate (I-7). Bullet 2 is kept as a rung with a caveat: 'Prepare for a battle' is advice, but 'head to Nyzul Isle Staging Point' is a real destination and the page lists it at top level, so it is recorded as a travel step even though the battle itself is the NEXT mission (42, Path of Darkness). It is safe to carry: with no evidence anywhere in the ladder the position never advances past step 1, so a trailing unmarkable rung cannot steal the marker from Rodin-Comidin. ZONE CAVEAT: 'Nyzul Isle Staging Point' does not resolve -- res knows 'Nyzul Isle' (77) but not the staging point -- so stage C will drop that step's zone and log one zone_unresolved line. That is deliberate; writing 'Nyzul Isle' instead would name the assault floor rather than the staging point the page sends you to. The [KI] Nyzul Isle route is the header Reward and so is not evidence, even though it is the thing that makes step 2 possible.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: The page gives no route, and this zone name is not in res, so the step will lose its zone in stage C.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Unraveling Reason",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Wajaom Woodlands",
+   "grid": null,
+   "raw": "Wajaom Woodlands"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rodin-Comidin"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "outside the Automaton Workshop"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Nyzul Isle Staging Point"
+    },
+    "zone": "Nyzul Isle Staging Point",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The page says to prepare for a battle first; that battle is the next mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 43",
+   "page_id": 13866,
+   "revision_id": 624518,
+   "source_sha256": "6184ee35c8e47c1ca3c503eb24d40669b600d3f6de77b0b4cd4c65cca624070f",
+   "cache_file": "0013866_aht_urhgan_mission_43"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 42,
+   "dat_name": "Fangs of the Lion",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc ('naja salaheem'), so nothing moves. A one-bullet mission and the bullet really is the whole of it: approach Naja Salaheem for a cutscene. The grid comes from this page's own Start field. The [KI] Mythril mirror is the header Reward, so it proves the mission is over rather than that a step is done and it is NOT used as evidence -- which leaves this ladder with none, the normal state for a single-cutscene mission.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Path of Darkness",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "approach rather than converse; the bullet gives no grid, so it comes from the header"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 45",
+   "page_id": 13869,
+   "revision_id": 578595,
+   "source_sha256": "1f90aee4273164c30e556e16f8f155873c1257e1713365d49704f6afd0789faf",
+   "cache_file": "0013869_aht_urhgan_mission_45"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 44,
+   "dat_name": "Ragnarok",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_zone_withheld"
+  ],
+  "notes": "The header Start is a ZONE with no NPC ('Nyzul Isle Staging Point', where the previous mission's battle leaves you) but chronicle_snpc is 'naja salaheem' and the walkthrough names her outright, so this is not the zone-entry case: start.npc is Naja Salaheem and it AGREES with chronicle. The giver does not move. What I did withhold is the start ZONE. The page never says where Naja stands: its Description says 'Return to Al Zahbi', which resolves (zone 48) but is wrong -- Salaheem's Sentinels is in Aht Urhgan Whitegate and every chronicle row for this NPC, including this mission's own, puts her in zone 50 -- and its Start field names the staging point, which is where you leave from, not where she is. Pairing a giver with a zone she is not in is the exact hazard validate.py documents for Wings of the Goddess, so start.zone and the step's zone are both null rather than guessed; build_index keeps chronicle's zone 50 and the unique NPC name needs no zone hint to be found. 'Nyzul Isle Staging Point' would not have resolved anyway. Single bullet, single rung, no evidence: the header Reward is empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Nashmeira's Plea",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": null,
+   "grid": null,
+   "raw": "Nyzul Isle Staging Point"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "approach rather than converse. The page names no zone or grid for her -- its Description says 'Al Zahbi', which is the old capital and not where Salaheem's Sentinels is -- so both are left null instead of guessed; the name is unique so it needs no zone hint."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 46",
+   "page_id": 13870,
+   "revision_id": 676961,
+   "source_sha256": "e68913edec4aa853004d3a35f0c96d9d05a374377c4750305f37ab048da9ba55",
+   "cache_file": "0013870_aht_urhgan_mission_46"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 45,
+   "dat_name": "Imperial Coronation",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "equipped_not_merely_held"
+  ],
+  "notes": "Start agrees with chronicle_snpc ('naja salaheem'), so nothing moves. Four bullets, ONE action. Bullet 1 is Naja stating the dress code, not an errand -- there is no 'speak to her again' anywhere on the page -- and bullets 2 and 3 are that dress code spelled out, so all four collapse onto bullet 4's single interaction: check the Imperial Whitegate door at (L-8). That target is corroborated twice over: the shipped index knows 'imperial whitegate' in zone 50, and the NEXT mission's header uses it as its own Start. The armour list is a genuine OR and is recorded as items_alt, which core/inventory.lua's meets() reads as 'any one of these' -- the Cargo / Mandragora-Mad shape -- with items left empty because there is no AND-part. All 34 body pieces resolved, so none were dropped. TWO CAVEATS, and they are why this is medium. First, the requirement is to WEAR the piece, not to carry it; the addon's equipped-status path is pinned to the twenty Vigil Weapon quests by an asserted count in emit_lua.py, so it cannot be borrowed here and holding is the closest observable. Second, the page itself hedges -- 'known to allow you to continue' -- so the list is a sample rather than a closed set, and bullet 3's separate demand for gloves, leg armour and boots (any, unmatched) plus bullet 4's 'weapons and shield removed' cannot be expressed at all. items_partial is true for those. The Brigandine sub-bullet about RoE Conflict: Beadeaux is a way to obtain one, not a rung.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: None of that is expressible, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Ragnarok",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Adaman Cuirass",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Aketon",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Amir Korazin",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Arhat's Gi",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Barone Corazza",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Black Cloak",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Black Cotehardie",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blessed Bliaut",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blue Cotehardie",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Byrnie",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Brigandine",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Cardinal Vest",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Chasuble",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Dusk Jerkin",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Dragon Harness",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Errant Houppelande",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Hachiman Domaru",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Haubergeon",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Hauberk",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Holy Breastplate",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Homam Corazza",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Igqira Weskit",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Jaridah Peti",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Justaucorps",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Nashira Manteel",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Noble's Tunic",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Pahluwan Khazagand",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Plastron",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Rasetsu Samue",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Scorpion Harness",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Sipahi Jawshan",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Sha'ir Manteel",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Vermillion Cloak",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Yigit Gomlek",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "note": "The alternatives must be WORN, not merely carried, and the page calls the list 'known to allow you to continue' rather than complete. On top of any one of them you also need gloves, leg armour and boots they need not match and your weapons and shield must be off."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 48",
+   "page_id": 13872,
+   "revision_id": 692966,
+   "source_sha256": "189065e8dfa7e1c174e3f29df1705981007a65e84b3e8ec98b4508a8ea737c60",
+   "cache_file": "0013872_aht_urhgan_mission_48"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 47,
+   "dat_name": "Eternal Mercenary",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc ('naja salaheem'), so nothing moves. One bullet, one rung: approach Naja Salaheem for the final cutscene. The Glory Crown is the header Reward and the bullet's own phrasing ('to get your Glory Crown back') confirms it is the completion payout, so it is not evidence -- this ladder has none, correctly. I read the 'After the walkthrough: Trust: Nashmeira' section rather than assuming it was Notes, and it is NOT part of the mission: it says that AFTER completing this mission you may return to the Imperial Whitegate to obtain Nashmeira as a trust. A post-completion side errand is not a rung, and adding it would put a marker on the Imperial Whitegate for players who have already finished the line. The header's Next field points at the Imperial Ward Quests epilogue, which is a different line entirely.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Empress Crowned",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "approach rather than converse; the grid comes from the header, the bullet gives none"
+   }
+  ]
+ }
+]

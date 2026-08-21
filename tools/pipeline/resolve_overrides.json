@@ -1,0 +1,67 @@
+{
+ "_README": [
+  "Hand-curated name -> resource id pins, read by tools/pipeline/validate.py.",
+  "",
+  "THIS IS THE THIRD PLACE A CORRECTION CAN LIVE, and it exists because two",
+  "are not enough. build/authored/*.json holds a NAME and never an id -- that",
+  "is deliberate, it is what stops a reading pass inventing a number -- so a",
+  "name that resolves to the WRONG id cannot be corrected there at all. The",
+  "reading is already right. It is the resolver that is wrong.",
+  "",
+  "  reading wrong  -> correct build/authored/*.json  (tools/questgraph)",
+  "  wiki wrong     -> correct build/authored/*.json, basis 'game'",
+  "  resolver wrong -> HERE",
+  "",
+  "This file is applied INSIDE validate.py, which means it is upstream of all",
+  "five hard gates. A pin cannot smuggle a duplicate-evidence row or an",
+  "ambiguous zone-less NPC past them. An override layer applied after the",
+  "build could, which is why there is not one.",
+  "",
+  "RULES",
+  "  * Exact names only. No patterns, no substrings, no case folding beyond",
+  "    what normalize.lua already does. A pin that matched by pattern would be",
+  "    the bulk text-matching this whole dataset was built to avoid.",
+  "  * Every pin carries `why`, and `why` must say how the id was DERIVED --",
+  "    not that it looked right. A wrong pin is a silently wrong marker, which",
+  "    is worse than the unresolved name it replaces.",
+  "  * The count is printed at build time. If it moves without somebody",
+  "    editing this file, something is wrong.",
+  "",
+  "Empty by default, deliberately: with no pins the build is byte-identical to",
+  "one that never read this file.",
+  "",
+  "A WORKED EXAMPLE, ready to use but NOT enabled -- see `_candidates`.",
+  "PROGRESS.md session 26 records Lexeme Blade I/II/III as 'determinable but",
+  "unpinned': all three are literally named 'Lexeme Blade' in res, and they",
+  "are separated by damage 226/228/231 ascending with id 20750/20751/20752.",
+  "That mapping is derivable from res itself rather than guessed, which is the",
+  "standard a pin has to meet. It is left disabled because it has not been",
+  "confirmed in game, and this file's whole purpose is to be the place where",
+  "a confirmed fact goes."
+ ],
+
+ "item": {},
+ "ki": {},
+ "npc": {},
+ "zone": {},
+
+ "_candidates": {
+  "item": {
+   "Lexeme Blade I": {
+    "id": 20750,
+    "why": "res holds three items literally named 'Lexeme Blade' (20750/20751/20752), distinguished by damage 226/228/231 ascending. Derived from res, not guessed. UNCONFIRMED IN GAME.",
+    "source": "PROGRESS.md session 26, 'determinable but unpinned'"
+   },
+   "Lexeme Blade II": {
+    "id": 20751,
+    "why": "as above -- damage 228",
+    "source": "PROGRESS.md session 26"
+   },
+   "Lexeme Blade III": {
+    "id": 20752,
+    "why": "as above -- damage 231",
+    "source": "PROGRESS.md session 26"
+   }
+  }
+ }
+}

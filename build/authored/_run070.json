@@ -1,0 +1,1781 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Inheritance",
+   "page_id": 11836,
+   "revision_id": 770354,
+   "source_sha256": "2af8c53da6a602048987bb0623778087a8128e7984010a5c026bfd16181f1d17",
+   "cache_file": "0011836_inheritance"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 68,
+   "dat_name": "Inheritance",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "skill_gate_unmodelled",
+   "latent_unmodelled",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Bullet 1 is a precondition -- you cannot hold another Weapon Skill quest -- and not a step. Bullet 2 does two things at once: Gumbah hands over the Weapon training guide key item AND the Sword of Trials, and states that the sword's latent must be broken before the rest of the quest. The '- Breaking the Latent' sub-bullet is a transclusion that did not render, so the page never actually says what the latent condition is. That requirement is recorded in step 2's note rather than as its own rung: it is unmarkable, unobservable, and sits between two steps that are both on Gumbah, where wedging it in would cost the only marker Bastok Mines has in this quest. Weapon training guide is step 1's evidence rather than the Sword of Trials, because the sword is traded back at step 2 and would go false the moment it was used. The three Western Altepa rungs (examine, fight, re-examine) are all unmarkable -- a ??? never carries a marker -- which is exactly why bullet 4's journey is kept as its own travel step: the zone is the only thing that can be drawn between Gumbah and Gumbah. 'Quest Reqs: Great Sword skill 250+' has no slot in the schema and nothing observable behind it, so it gates nothing and is flagged.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "B / NA"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah - Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he also hands over the Sword of Trials, which is traded back at the next step and so is not used as evidence. Bullet 1: you cannot start this while another Weapon Skill quest is open."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [
+     {
+      "name": "Sword of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Sword of Trials' latent must be broken first; the page's 'Breaking the Latent' section is a transclusion that did not render, so it never says how. Nothing observable reports a broken latent, so it is not a rung of its own."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Western Altepa Desert"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "E-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the oasis in the southwest of the map. Unity Warp (125) is closest; Rabao and Quicksand Caves #1 home points, the Survival Guide and Voidwatch warps also work."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "E-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Maharaja",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "on the south side of the oasis"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "E-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Maharaja",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "a tiger; the fight is implied by bullet 6's 'after winning'"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "E-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same ??? again, after the kill"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the Annals of Truth is a key item and is carried rather than traded, so it is not listed in items"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Doctor Chacharoon",
+   "page_id": 117019,
+   "revision_id": 769826,
+   "source_sha256": "31fd9f7f6cb6162629e52d787dbff38a732f7a27186cbebaf01ea70cffe42bc3",
+   "cache_file": "0117019_doctor_chacharoon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 206,
+   "dat_name": "Doctor Chacharoon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "rank_gate_unmodelled",
+   "start_is_zone_entry"
+  ],
+  "notes": "Chacharoon never appears in the walkthrough. What actually opens the quest is bullet 2 -- entering your Mog Garden for a cutscene -- so the ladder's first two rungs are a purchase and a zone entry, not a conversation with the header's giver. Start is still recorded as Chacharoon because the description is written in his voice and the Mog Garden cutscene is presumably him; nothing on the page contradicts the header, it simply never uses it. Bullet 1's key item is sold by 'Zenicca or a Skipper Moogle'; only Zenicca is placed in the Mog Garden with any confidence, so the rung targets her and the Skipper Moogle alternative stays a note. That key item's real name carries literal double quotes -- res/key_items.lua 2844 is written with them -- and only the quoted form resolves, so that is what is recorded. Bullet 4 is labelled Note and is an outcome, not a step: the rank 5 promotion and the three-monster slot arrive on ACTIVATION, while the Work Gloves and the next quest need completion. The [TABLE] block is an Urashima Taro spoiler. The monster-rearing rank you must already hold to reach this quest is real and nothing in the packets reports it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Zenicca is the one that can be placed in the Mog Garden, so the Skipper Moogle branch is unmodelled.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The page offers 'Zenicca or a Skipper Moogle' Bullet 1 also says to continue monster rearing, which is the unmodellable rank gate.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Trial of the Chacharoon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chacharoon",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Chacharoon, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Zenicca"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"Sakura's Excellent Adventure\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bought, not given."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mog Garden"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene on entry is what flags the quest; this, not Chacharoon, is the real start"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "Crayfish",
+      "count": 12,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all twelve; this completes the quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Firebloom Tree",
+   "page_id": 38729,
+   "revision_id": 682821,
+   "source_sha256": "757bc6eb1d10ea563702d1e2a9d4571c7de966208e141adea95327355e5e5dcc",
+   "cache_file": "0038729_the_firebloom_tree"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 1,
+   "dat_name": "The Firebloom Tree",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item"
+  ],
+  "notes": "Bullet 1 is not scene-setting: it is the request, and speaking to Soun Abralah is what opens the quest, so it is rung 1. Bullets 2 and 3 are one place and one action -- four Firebloom Tree Roots stand around Yuhtunga Jungle (H-9) and all four vines are cut there -- so they are a single rung carrying all four key items as one AND-list, rather than four individually unobservable rungs on objects that share a name and a grid. The page writes the plural 'Firebloom Tree Roots' in bullet 2 and the singular 'Firebloom Tree Root' in bullet 5; the singular is the entity and is what is recorded. Ifrit's Cauldron burns away three of the four vines and leaves whichever one matches the correct root -- which one survives is not knowable in advance and 'exactly one of four' is not expressible, so the Flame Spout rung carries no evidence and the ladder crosses that gap on the session latch. The sub-bullets (no hatchet needed, the Western vine is in the tunnel, Survival Guide and the K -> L -> H route) are advice.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": 6,
+    "raw": "k / 6"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Soun Abralah",
+   "zone": "Kazham",
+   "grid": "H-9",
+   "raw": "Soun Abralah, Kazham (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Soun Abralah"
+    },
+    "zone": "Kazham",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he wants a piece of unburnable wood"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Firebloom Tree Root"
+    },
+    "zone": "Yuhtunga Jungle",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Northern vine",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Eastern vine",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Southern vine",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Western vine",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "four roots, one per compass point; the Western one is inside the tunnel. No hatchet is needed. Survival Guide or Outpost warp, then northeast."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Flame Spout"
+    },
+    "zone": "Ifrit's Cauldron",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "touch three Flame Spouts. Three of the four vines burn up; the survivor names the root you go back to. No evidence here -- which vine survives is random, and 'exactly one of four' cannot be written. Survival Guide warp, then K -> L -> H -> the Ash Dragon area."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Firebloom Tree Root"
+    },
+    "zone": "Yuhtunga Jungle",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Firebloom Tree wood",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "only the root matching your remaining vine will give wood; again no hatchet"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Soun Abralah"
+    },
+    "zone": "Kazham",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the wood is a key item, carried rather than traded"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Sterling Specimen",
+   "page_id": 56719,
+   "revision_id": 641187,
+   "source_sha256": "35a4205148d94d47b3bcbdf579a3adcf8ec95c3f0b8a18b3cc07f160d617385f",
+   "cache_file": "0056719_a_sterling_specimen"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 25,
+   "dat_name": "A Sterling Specimen",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Five bullets, five things you actually do, and the last two are both on Kenapa-Keppa (A), so they share a marker. Bullet 4 is a genuine step and not commentary: after the Lycopodium Rootprint pops Rubicund Adenium you have to walk it back to Kenapa-Keppa (A) yourself and keep it inside 20 feet or it despawns. There is nothing to say and nothing to trade, so it is recorded as 'other' against him rather than as a talk. The Bucket of compound compost is the only observable anywhere on the page. The trailing 'Zoning is required to repeat' and 'once per Vana'diel day' lines are cooldowns, not rungs, and the 'After the walkthrough: Augments' section is the possible augment rolls on the Dance Shoes -- a reward table, and nothing a player does. Fame 'atah' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "atah / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Ohbiru-Dohbiru (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "H-7",
+   "raw": "Ohbiru-Dohbiru (A) (H-7), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Conflux #07; tell him you have found a pink fiend in the area"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Bucket of compound compost",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "northeast corner of (I-7)"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lycopodium Rootprint"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Rubicund Adenium",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "west of the mountain at (H-7); a Mandragora pops"
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "lead Rubicund Adenium back to him -- do not let it fall more than 20' behind or it despawns. Nothing is said or traded, hence 'other'."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "wait for the full Warp II animation before speaking to him"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Not-So-Clean Bill",
+   "page_id": 114055,
+   "revision_id": 771686,
+   "source_sha256": "2674f913d47fef74fc5c6888296ff0e945ebc63003460abf1d1029192c404cab",
+   "cache_file": "0114055_not_so_clean_bill"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 139,
+   "dat_name": "Not-So-Clean Bill",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Bullet 1 is a game-day wait after Sick and Tired -- a precondition nothing observable reports, so a flag and not a rung. Both ends of this quest are doors: Door: Svenja's Manor opens it and Door: Hospital closes it, and both are real markable entities that the normaliser folds to the client's 'Door:Name' form, so the quest keeps a marker at both ends where a giver-only entry would have had one at neither. Bullets 5 and 6 are two checks of the same Foreboding Vineprints in the same place, so they merge into one rung; bullet 7 is two things -- kill the NM, then check the vineprints a third time -- so it splits. There is not one key item anywhere on the page, so every step's evidence is null. That is the honest reading and not an omission: this quest is tracked by the session latch or not at all. The sub-bullet under bullet 8 is about re-buying a dropped Glorious Earring for 10,000 Bayld and is not part of the quest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Sick and Tired",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Door: Svenja's Manor",
+   "zone": "Western Adoulin",
+   "grid": "I-8",
+   "raw": "Door: Svenja's Manor, Western Adoulin (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "only a game day after Sick and Tired finishes, per bullet 1"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Borghest"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Morimar Basalt Fields Frontier Station; the page gives no grid"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fritha"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at the Foret de Hennetiel Frontier Station; the page gives no grid"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Foreboding Vineprints"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Pungent Patricia",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "west of Bivouac #2. Check it twice: the first is a cutscene, the second pops the NM."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Pungent Patricia",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "a Morbol"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Foreboding Vineprints"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the third check, after the kill, for a cutscene"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Door: Hospital"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the quest ends on a door, not an NPC"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Achieving True Power",
+   "page_id": 14593,
+   "revision_id": 723081,
+   "source_sha256": "8dc0394863b859357c0a3d2515313bda4868cd5de0cad223423b3ae16ccdf0b9",
+   "cache_file": "0014593_achieving_true_power"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 85,
+   "dat_name": "Achieving True Power",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "job_gate",
+   "unnamed_target",
+   "trade_target_conflict"
+  ],
+  "notes": "Bullet 3 contradicts its own first sub-bullet. The top line says trading the testimony to Shamarhaan initiates the Navukgo Execution Chamber battlefield and warps you there; the sub-bullet says that on arrival you trade the Testimony to the Decorative Bronze Gate to begin the battle. One Puppetmaster's Testimony cannot be traded twice, so either one of the two is wrong or they are two independent ways in. Both are kept as rungs -- they are in different zones and each is somewhere a player would actually stand -- both are marked medium, and the quest is medium for it. Bullet 2 names no monster: 'Farm Trolls for the testimony. Specific Trolls drop it' says outright that only some do, so recording the family name would put a marker on every Troll in Vana'diel and mobs is left empty. The remaining sub-bullets are the battle's rules -- Valkeng at his side, ten minutes, Trusts allowed with Rhapsody in Umber, Shamarhaan down to 20% -- and belong in the fight's note. The 'After the walkthrough: Notes' line says the quest is skippable if New Worlds Await is already done; that is a fact about the level cap, not a step. Level 66+ and 'Quest Reqs: Puppetmaster' are both gates.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "B / NA"
+   },
+   "prev": [
+    {
+     "title": "Puppetmaster Blues",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 66,
+   "jobs": [
+    "PUP"
+   ],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Shamarhaan",
+   "zone": "Bastok Markets",
+   "grid": "F-9",
+   "raw": "Shamarhaan - Bastok Markets (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shamarhaan"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "standing near the Fountain; you must be on Puppetmaster to open it"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Puppetmaster's Testimony",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says only 'Farm Trolls' and then that specific Trolls drop it, without naming one or a zone, so no mob and no zone are recorded"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Shamarhaan"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Puppetmaster's Testimony",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "bullet 3 says this trade opens the battlefield and warps you to Navukgo Execution Chamber; its own sub-bullet then says to trade the testimony to the Decorative Bronze Gate once you arrive. The two cannot both consume the same testimony -- see the quest note."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Decorative Bronze Gate"
+    },
+    "zone": "Navukgo Execution Chamber",
+    "grid": null,
+    "items": [
+     {
+      "name": "Puppetmaster's Testimony",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "from the sub-bullet under bullet 3; kept because it may be the real entry and it is the only markable thing inside the zone"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Navukgo Execution Chamber",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shamarhaan",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Valkeng",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "a Maat-style fight: bring Shamarhaan to 20% HP and you win. His Automaton Valkeng fights alongside him and need not be defeated. Ten minute limit; Trusts are allowed if you hold Rhapsody in Umber."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rune Fencing the Night Away",
+   "page_id": 110869,
+   "revision_id": 773081,
+   "source_sha256": "5515463be7a24b0523c91105e193dfcf1da314075339915478a20e2ac33eec93",
+   "cache_file": "0110869_rune_fencing_the_night_away"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 135,
+   "dat_name": "Rune Fencing the Night Away",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "job_gate",
+   "count_unobservable"
+  ],
+  "notes": "VERIFY: step 1's evidence (Trial Blade) was removed. Rule 3 requires evidence to be obtained AT the step, and the walkthrough never says Gaddiux hands the blade over -- the draft inferred it from the header's 'Item Reqs: Trial Blade' and the description, and Item Reqs is the field for what you must already HOLD, so the blade may well be in inventory before bullet 1 is ever spoken. If so it would latch step 1 true before step 1 was done. Nulling costs nothing here: both rungs are Gaddiux at Western Adoulin (J-10), so the marker is identical either way, and the ladder crosses on the session latch instead. The rest of the reading survives. Four bullets collapse to two rungs, both on Gaddiux. Bullet 2 -- accumulate 300 Weapon Skill Points on the Trial Blade -- is unquestionably something you do, and it is the whole quest, but it has no target, no zone, and nothing observable behind it: no packet reports weapon skill points, and the sub-bullet's 5/7/9/11-point skillchain table cannot be counted either. Made into a rung of its own it would sit between two steps on the same NPC and cost Gaddiux his marker for the entire grind, which is the case the pilot warns about, so it is folded into the trade it gates and kept auditable through source_bullets. Bullet 3 is an outcome -- the new weapon skill appears in your list while the blade is equipped -- and not a step. The Start field gives only 'Inventors' Coalition', so the grid (J-10) comes from bullet 1. With no observable anywhere on the page this quest is tracked by the session latch or not at all.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Children of the Rune",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 99,
+   "jobs": [
+    "RUN"
+   ],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Gaddiux",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Gaddiux (Inventors' Coalition, Western Adoulin)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gaddiux"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by the Inventors' Coalition, as a level 99 Rune Fencer. The draft used the Trial Blade as evidence here; the walkthrough never says Gaddiux hands it over, and the header lists it under Item Reqs -- i.e. something you may already hold -- so it is not evidence that this step is done."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Gaddiux"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Trial Blade",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "bullet 2 folded in: 300 Weapon Skill Points must be accumulated on the Trial Blade first, scored like Trial and Mythic weapon skills. Nothing reports that count, so it is not a rung of its own. The unlocked skill only shows while the blade is equipped; trading the blade back frees it for any weapon."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Help Not Wanted",
+   "page_id": 67149,
+   "revision_id": 625759,
+   "source_sha256": "3c79d97f46011678651995a11d66a9da5807deaa995eb567028c3bb6e6122a1e",
+   "cache_file": "0067149_help_not_wanted"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 79,
+   "dat_name": "Help Not Wanted",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "generic_mob_target",
+   "time_gated"
+  ],
+  "notes": "Bullet 2 is one rung with two crates in it and the page names neither -- 'Examine each crate behind Ken (A)' is exactly the 'the baskets' case, so the target is none and the crates stay in the note. The rung still earns its place: it is where both observables come from. The wiki writes 'Blank Gauger Plates'; res/items.lua 18680 is 'B. Gauger Plate' with the long form 'blank gauger plate', and the wiki's plural resolves to nothing, so the singular is what is recorded. Bullet 3 names no monster and no zone at all -- 'any Notorious Monster in Abyssea' -- so it is a zone-less obtain with an empty mob list, carrying the Soulgauger and a blank plate as its held items and the Gauger Plate as its evidence; that is a whole expansion's worth of NMs and cannot be narrowed without inventing one. The trailing line is a once-per-Vana'diel-day cooldown that also says zoning is NOT needed to repeat. Fame 'aalt' is an Abyssea zone code, not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Ken (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "G-8",
+   "raw": "Ken (A) (G-8), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ken (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "north of Conflux #4; you may have to speak to him twice if you have not finished All by Myself"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Soulgauger SGR-1",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Blank Gauger Plate",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "two crates behind Ken (A): one gives the Soulgauger SGR-1, the other sells blank plates. The page does not name either crate, so there is no target."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Blank Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gauger Plate",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "capture the plate off any Notorious Monster anywhere in Abyssea -- the page names neither a monster nor a zone, so neither is recorded. Reward Cruor scales with picture quality."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ken (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "On Sabbatical",
+   "page_id": 27298,
+   "revision_id": 771787,
+   "source_sha256": "b1a91cf7415daab8cf0be58d75409642ef622fd3396d2b41e4a876cfb45133e3",
+   "cache_file": "0027298_on_sabbatical"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 32,
+   "dat_name": "On Sabbatical",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "af_job_gate"
+  ],
+  "notes": "The header puts 'Erlene & Ulbrecht' in Batallia Downs (S); the walkthrough puts Erlene in The Eldieme Necropolis (S) at (J-8) and sends you back to her there at the end. The walkthrough wins and the header's string is kept verbatim in start.raw -- Erlene moves across the Scholar artifact line, and this quest's own instructions are the ones a player follows. Ulbrecht is named only in the header and the description; his sealed letter is what you carry, but you never interact with him, so he is not a rung. The two sealed letters are one observable each and sit on the steps that grant them. Bullet 3's location is written 'on the grid line between (E-11) and (E-10)', recorded as E-10/11 rather than picking one. The Virulent Peistes in its sub-bullet aggro on sight but are not quest targets, so they stay in the note. Bullet 2's sub-bullet about repeating Gentle Tiger's conversation is the same shape as Shantotto in Class Reunion -- nothing observable tells the right line from the wrong one. The wiki's '(S)' zone names resolve as written, so they are left in the wiki's form.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: she gives the Klimaform schema",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Little Knowledge",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 40,
+   "jobs": [
+    "SCH"
+   ],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Erlene",
+   "zone": "The Eldieme Necropolis (S)",
+   "grid": "J-8",
+   "raw": "Erlene & Ulbrecht, Batallia Downs (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ulbrecht's sealed letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header says Batallia Downs (S); the walkthrough says here, and the walkthrough is followed"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "may need repeating if the Bastok (S) questline is unfinished -- if he says he has never heard of a bundle of half-inscribed scrolls, talk again"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Indescript Markings"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "E-10/11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Schultz's sealed letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "southwest corner, on the grid line between (E-11) and (E-10). Level ~80 Virulent Peistes aggro on sight here -- bring Invisible or a job that can handle them."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "No Rest for the Weary",
+   "page_id": 86436,
+   "revision_id": 770976,
+   "source_sha256": "23db46f4f6200afc3faa9db3d60a526a439fb37f062a336f742bf44b9a328a5b",
+   "cache_file": "0086436_no_rest_for_the_weary"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 88,
+   "dat_name": "No Rest for the Weary",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "start_recovered_from_walkthrough",
+   "time_gated"
+  ],
+  "notes": "The header has no Start field at all, so start is read out of bullet 1: 'any Voidwatch Officer in a Shadowreign area'. That is a name without a zone, and 'voidwatch officer' is in the resolver's AMBIGUOUS_NPCS set, where an unresolved zone means the entry is dropped rather than marking every officer in Vana'diel -- so step 1 will not draw, and choosing a Shadowreign zone to make it draw would be inventing one the page never gives. Step 2 does draw, and it is the one that matters: the Bulwark Gate at Sauromugue Champaign (S) (F-6) is a real targetable and is where the quest actually resolves. The two key items named in bullet 2's sub-bullet -- White stratum abyssite VI and Starlight Voidwatcher's emblem -- are also the header's Reward, so by the reward rule they prove the quest is over rather than that a step is done, and neither is used as evidence. The rest of bullet 1's sub-bullet is a chain of preconditions: an earlier Bulwark Gate cutscene worth 30,000 gil, then a game-day wait and a zone before any officer will hand over the alarum, and the officer must be a Shadowreign-era one. None of that is observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A New Menace",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Voidwatch Officer",
+   "zone": null,
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Voidwatch Officer"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Voidwatch alarum",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any Voidwatch Officer in a Shadowreign area; the page names no zone, and the name is an ambiguous one that needs a zone to draw, so this rung is unmarkable. He will not give the alarum until you have had the earlier Bulwark Gate cutscene, waited a game day and zoned."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene ends the quest and flags the next one. Its two key items are also the header's Reward, so they are not used as evidence. Voidwatch Warp to Sauromugue Champaign (S) is the quickest way in."
+   }
+  ]
+ }
+]

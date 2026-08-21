@@ -1,0 +1,1482 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 17",
+   "page_id": 13828,
+   "revision_id": 762644,
+   "source_sha256": "368ccb023e52dd8746b273d8492e188b07eda6175719ae7224db5d6e8e901419",
+   "cache_file": "0013828_aht_urhgan_mission_17"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 16,
+   "dat_name": "Guests of the Empire",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "dress_code_unmodelled"
+  ],
+  "notes": "Five top-level bullets, two steps. Bullets 1 to 4 are ONE conversation, not four visits: 2 and 3 are the dress-up scene and Naja's demand that you change clothes, and 4 is the warning that you must speak to her AGAIN once changed or the palace cutscene never fires. One NPC, one marker, and readiness looks ahead across it anyway. Bullet 5 is the door.\n\nThe dress code is the interesting failure and the reason for the flag. The page lists 36 acceptable body pieces, and on top of that ANY gloves, leg armour and boots, and bullet 5 additionally wants your weapons REMOVED. That is a 36-way OR joined to an AND over three more slots joined to a negative. items_alt can express the OR and nothing in the schema can express the rest, so no items are recorded at all and items_partial is set on both steps -- shipping only the body-piece third of that predicate would read 'ready' while the player is still barefoot and armed, which is a confidently wrong answer to a question the page answers plainly. The requirement is also about what is EQUIPPED rather than what is held, which the runtime does not distinguish. Demoted to medium for that alone: both markers are in the right place and the ladder is right, but a step whose real precondition is this large and this invisible will read ready while the player is still going to be turned away at the door.\n\nNo evidence anywhere on this mission. The Imperial Mythril Piece is handed over inside bullet 5's cutscene and is also the header's Reward, so by hard rule 7 it proves the mission is over rather than that a step is done. The door is the same Imperial Whitegate entity Missions 26 and 27 use; this page puts it at (L-8), which is what Mission 27's own header says too, while Mission 26 says (L-9).\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Multi-slot gear does not count as filling the slots it blocks. items_partial is set because that 36-way choice is not written out.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Ghosts of the Past",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "note": "The cutscene, the dress-up scene and the second conversation after changing are all this one NPC. You must speak to her again while wearing one of the 36 listed body pieces plus gloves, leg armour and boots any of them, they need not match or the palace cutscene will not fire."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "wearing the full outfit and with your weapons unequipped. Make inventory space BEFORE the cutscene or you watch the whole thing again to collect the Imperial Mythril Piece -- which is the header Reward and so is not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 18",
+   "page_id": 13830,
+   "revision_id": 706273,
+   "source_sha256": "436877bab2157507cae174c7de9aaf9bebc0a4ac52f5b0bbac0cf1ee198eee37",
+   "cache_file": "0013830_aht_urhgan_mission_18"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 17,
+   "dat_name": "Passing Glory",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "One bullet, one rung. The cutscene fires when you APPROACH Naja Salaheem rather than when you speak to her, so the kind is cutscene; the marker lands in the same place either way. Start agrees with chronicle_snpc, so nothing about the giver moves.\n\nThe 'After the walkthrough: Trust: Gessho' section was read and is deliberately NOT a step. It opens with 'After completing this mission' and describes examining a cushion at Aht Urhgan Whitegate (J-12) for Cipher: Gessho -- a Trust acquisition, which is an outcome of having finished, not part of finishing. It would also be a dead rung twice over: the page names no entity for the cushion, and 'Cipher: Gessho' does not resolve as an item, so it could be neither marked nor observed.\n\nThe header Reward (unlocking the Ashu Talif Assault) is an unlock, not an item, and nothing this addon reads reports it. Evidence is null, which is the correct answer here and not a gap.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Guests of the Empire",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says approach, not speak to"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 19",
+   "page_id": 13841,
+   "revision_id": 537415,
+   "source_sha256": "2e4d876d3d7f102b4a131051fbba60adfa6e16a87e0ef0cdff6f608ab7199b8d",
+   "cache_file": "0013841_aht_urhgan_mission_19"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 18,
+   "dat_name": "Sweets for the Soul",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "The header Start names a zone and a grid and no NPC at all -- 'Aht Urhgan Whitegate - (K-12)' -- and chronicle_snpc is empty, so start.npc stays null and the ladder starts where the walkthrough starts. Nothing about the giver moves, because there was never a giver.\n\nThe single bullet is entering the Shararat Teahouse, and that turns out to be a real clickable entity: 'Shararat Teahouse' resolves to an npc key, so a mission that looks like a bare zone entry keeps a marker after all, on the teahouse entrance inside Aht Urhgan Whitegate. The (K-12) from the Start field is carried onto the step, because that grid is where the header says the mission begins and the teahouse door is the thing standing there. Modelled as travel with an object target, matching how the corpus already models Salaheem's Sentinels -- an interior reached through a clickable entrance rather than a zone of its own.\n\nHeader Reward is empty, the mission is one cutscene, and no key item changes hands: evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Passing Glory",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-12",
+   "raw": "Aht Urhgan Whitegate - (K-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Shararat Teahouse"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid is the header Start's, since the page's one bullet gives none"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 20",
+   "page_id": 13842,
+   "revision_id": 773535,
+   "source_sha256": "4674dc08eaea9d01c93f33e2ac432bd4edb6e9e7db4004158b9dc590f7ba1d6c",
+   "cache_file": "0013842_aht_urhgan_mission_20"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 19,
+   "dat_name": "Teahouse Tumult",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "unnamed_target"
+  ],
+  "notes": "Start is 'Aht Urhgan Whitegate - (K-11)' -- a zone and a grid, no NPC, which is where Mission 19's teahouse cutscene leaves you -- and chronicle_snpc is empty, so start.npc stays null.\n\nThree bullets collapse to two steps. Bullets 1 and 2 are one journey: get to Aydeewa Subterrane, then across it to the western portion on Map 5. Their sub-bullets are three ways in and two ways across, which is route advice and stays in the note. Bullet 3 is the blank target that ends the mission.\n\nTHIS MISSION CANNOT CARRY A MARKER ANYWHERE, and that is the honest reading rather than a gap in it. start.npc is null because the header names only a zone; the first step's target is a zone; and the only named thing in the mission is a blank target, which is in OBJECT_DENY by design and keeps its rung while losing its marker. Stage C will therefore raise start_npc_unresolved and demote this record to low on its own. Confidence is written high because the READING is not in doubt, and nothing is lost by it: chronicle has no giver for this row either, so there is no marker to move or remove. Mission 27 sends the player back to this same (F-8/G-8) spot and the page says so.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: the page names it only as 'a blank target'; recorded under the blank-target placeholder name, which keeps the rung and loses only the marker",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Sweets for the Soul",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-11",
+   "raw": "Aht Urhgan Whitegate - (K-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Aydeewa Subterrane"
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "in by the Survival Guide, by the CL125 Wajaom Woodlands Unity Warp (Aydeewa is directly behind you when you land), or on foot from Wajaom Woodlands (G-7). The destination is the western portion, Map 5: from the Survival Guide go west on Map 2 and slide down drop point D; from (G-7) simply head south."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Blank Target"
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": "F-8/G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 21",
+   "page_id": 13843,
+   "revision_id": 537561,
+   "source_sha256": "00619b3128cb464dc1c207b5918b3dc8a400e57bb9606e3457cc7dab671be2d8",
+   "cache_file": "0013843_aht_urhgan_mission_21"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 20,
+   "dat_name": "Finders Keepers",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Start is the bare zone 'Aydeewa Subterrane' -- no NPC, no grid, and it is simply where Mission 20's cutscene left you -- and chronicle_snpc is empty, so start.npc stays null and the ladder starts at the walkthrough's one bullet.\n\nSalaheem's Sentinels is modelled as a clickable OBJECT inside Aht Urhgan Whitegate, not as a zone, which is what the corpus already does for it: res/zones.lua has no such zone, and v1's own index carries 'salaheem's sentinels' as a giver in zone 50. It resolves, so this mission keeps a marker despite having no giver.\n\nThe zone and the (I-10) grid on that step are NOT from this page, which names neither. They are taken from the sibling headers in this same mission series -- Missions 17, 18, 22, 24, 25, 26 and 33 all read 'Naja Salaheem, Aht Urhgan Whitegate - (I-10)', and she stands inside the office. Said here so the borrowing is visible.\n\nHeader Reward is empty; the mission is one cutscene; evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Teahouse Tumult",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aydeewa Subterrane",
+   "grid": null,
+   "raw": "Aydeewa Subterrane"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Salaheem's Sentinels"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the office, not Naja herself; the zone and grid come from the sibling mission headers, not from this page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 22",
+   "page_id": 13844,
+   "revision_id": 732377,
+   "source_sha256": "3d5f69929be9dc396e9a4c528740a5c4d32a9578dd0621674be43c3da961d1c5",
+   "cache_file": "0013844_aht_urhgan_mission_22"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 21,
+   "dat_name": "Shield of Diplomacy",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start is Naja Salaheem and chronicle_snpc agrees, so the giver is untouched -- but it is worth recording that the WALKTHROUGH never mentions her. Mission 21 ends inside Salaheem's Sentinels with a cutscene and this page's instructions begin at Navukgo Execution Chamber. No talk-to-Naja rung is invented for that reason; giver_of reads start.npc, not the first step, so keeping the header's giver and starting the ladder at the journey costs nothing.\n\nSeven bullets, three steps. Bullets 1 and 2 are one journey: the cutscene simply fires when you first zone in, so it is not a rung of its own, and the Mount Zhayolm Home Point / Unity Warp 135 routing is a note. Bullets 3 and 4 are the SAME Decorative Bronze Gate examined twice -- once for a cutscene, once to open the battlefield -- so they are one marker and one step. Bullet 5 is the fight. Bullets 6 and 7 are Khimaira 13's move list and Lady Karababa's behaviour as an ally; her warping out when left unhealed is a loss condition, not a step.\n\nNothing on this mission is observable: no key item, no drop, an empty header Reward. Evidence null throughout.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Finders Keepers",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Navukgo Execution Chamber"
+    },
+    "zone": "Navukgo Execution Chamber",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the Mount Zhayolm Home Point drops you right outside the zone; Unity Warp > 135 > Mount Zhayolm lands a short walk away -- turn around on arrival, head forward, take the east junction on the (C-7)/(C-8) line. The cutscene fires on first entry, so it is not a step of its own."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Decorative Bronze Gate"
+    },
+    "zone": "Navukgo Execution Chamber",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "examine twice: the first opens a cutscene, the second the battlefield"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Navukgo Execution Chamber",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Khimaira 13",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7
+    ],
+    "note": "Dreadstorm, Thunderstrike and Tourbillion all strip Utsusemi; Tenebrous Mist zeroes your TP. Lady Karababa fights alongside you with Ancient Magic II, and if her HP falls too low with nobody healing her she warps out and the battle is lost."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 23",
+   "page_id": 13845,
+   "revision_id": 537562,
+   "source_sha256": "bfa07b193e149ac71267fcb615575bcddc412a43ce522328d81389fc426497b7",
+   "cache_file": "0013845_aht_urhgan_mission_23"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 22,
+   "dat_name": "Social Graces",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Start is the bare zone 'Navukgo Execution Chamber' -- no NPC -- which is simply where Mission 22's battlefield left you, and chronicle_snpc is empty, so start.npc stays null and the ladder starts at the walkthrough's one bullet.\n\nIdentical shape to Mission 21 and modelled identically: Salaheem's Sentinels as a clickable object inside Aht Urhgan Whitegate rather than a zone (res/zones.lua has no such zone; v1's index already carries the name as a giver in zone 50), with the zone and the (I-10) grid taken from the sibling mission headers in this series rather than from this page, which names neither.\n\nOne cutscene, empty header Reward, no key item: evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Shield of Diplomacy",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Navukgo Execution Chamber",
+   "grid": null,
+   "raw": "Navukgo Execution Chamber"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Salaheem's Sentinels"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the office; the zone and grid come from the sibling mission headers, not from this page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 24",
+   "page_id": 13847,
+   "revision_id": 551364,
+   "source_sha256": "0cd0eac64141b2e0d424902534bca6439878505aa8a28709fa851772f17a2e34",
+   "cache_file": "0013847_aht_urhgan_mission_24"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 23,
+   "dat_name": "Foiled Ambition",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Start is Naja Salaheem and chronicle_snpc agrees, so the giver does not move. The single bullet asks you to enter Salaheem's Sentinels again -- the office, not Naja herself -- so the step targets the office object while the giver stays on her; she stands inside it, so the marker and the instruction point at the same doorway either way.\n\nThe gate is 'after zoning and one game day has passed'. Zoning and Vana'diel time are both invisible to this addon -- no packet it reads reports either to a ladder -- so the wait is flagged and not modelled, and the rung will read ready before it truly is. That is a known, bounded wrongness on a marker that is already in the right place, not an invented one.\n\nReward is Imperial Gold Piece x5. That is a reward, so hard rule 7 keeps it out of evidence, and it is an ordinary stackable the player may already be carrying from earlier missions in this series, which would have jumped the mark the moment they picked one up. Evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Social Graces",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Salaheem's Sentinels"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "only after you have zoned and one full game day has passed; neither is observable. The zone and grid come from the sibling mission headers."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 25",
+   "page_id": 13848,
+   "revision_id": 727448,
+   "source_sha256": "e1659fdcd60fcdc2eece374c3851a6540ebe48c710dad2cc748eba2c7e033823",
+   "cache_file": "0013848_aht_urhgan_mission_25"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 24,
+   "dat_name": "Playing the Part",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Two bullets, one step. Bullet 1 is the conversation with Naja Salaheem, gated on zoning and one game day; bullet 2 is a dialogue choice made INSIDE that cutscene -- pick Aphmau to continue -- and a menu choice is not a rung, so it folds into the note. A verb scan would have produced two steps and marked the second one nowhere.\n\nStart agrees with chronicle_snpc. The game-day and zoning gates are unobservable and flagged rather than modelled.\n\nHeader Reward is empty and no key item changes hands, so evidence is null -- the normal and correct answer for this whole run of talk-only palace missions, and not something to reach for.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Foiled Ambition",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "after zoning and one game day. Choose Aphmau in the cutscene or the mission does not continue."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 26",
+   "page_id": 13849,
+   "revision_id": 727449,
+   "source_sha256": "20cfdca0012593f94f95bf4d17da5317f06e1eaa45f40076ad85e94fdee981ec",
+   "cache_file": "0013849_aht_urhgan_mission_26"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 25,
+   "dat_name": "Seal of the Serpent",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "grid_conflict"
+  ],
+  "notes": "One bullet, one step: unequip your weapon and examine the Imperial Whitegate door. Start is Naja Salaheem and chronicle_snpc agrees, so the giver marker does not move even though the only action is at the door -- giver_of reads start.npc, never the first step's target, so the two can honestly disagree about where you go next.\n\nGRID CONFLICT ACROSS THE SERIES, not within this page. This page puts the Imperial Whitegate at (L-9); Mission 17's bullet 5 and Mission 27's own header both put the same door at (L-8). This page's own number is the one recorded, because it is the one giving this instruction, and the disagreement is flagged instead of quietly reconciled. It costs little either way: the entity resolves by name and the grid is only a hint to the reader.\n\nThe weapon must be UNEQUIPPED -- a negative requirement the schema cannot express and the runtime cannot observe, so it stays in the note rather than becoming a fake item row. No key item, empty header Reward, evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Playing the Part",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "unequip your weapon first. Mission 17 and Mission 27 place this same door at (L-8); this page says (L-9) and that is what is recorded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 27",
+   "page_id": 13850,
+   "revision_id": 774386,
+   "source_sha256": "0cad5a1e0885a1c939052cb034fd4cf87de5cc9149898442a4f832edb6db4eba",
+   "cache_file": "0013850_aht_urhgan_mission_27"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 26,
+   "dat_name": "Misplaced Nobility",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target"
+  ],
+  "notes": "Start is 'Imperial Whitegate, Aht Urhgan Whitegate - (L-8)' and chronicle_snpc is 'imperial whitegate' -- they agree, and the name resolves to a real clickable entity, so the giver marker is untouched. Note that the door the previous mission sent you through is the giver of this one: the header's Start is a place you are pushed out of, not somebody you talk to, and the walkthrough is elsewhere entirely.\n\nThe single bullet sends you to the blank target at (F-8/G-8) in Aydeewa Subterrane, which the page itself points out is the same spot Mission 20 ends at. That target is unmarkable by design -- the blank-target family is in OBJECT_DENY -- so the step keeps its rung and loses only its marker. This record still marks, because start.npc resolves; Mission 20, whose start is a bare zone, does not.\n\nRishfee is named in the Description as the Immortal you are looking for, but never appears in the walkthrough and is not something you interact with, so he is not a target. Empty header Reward, no key item, evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Seal of the Serpent",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Imperial Whitegate",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "L-8",
+   "raw": "Imperial Whitegate, Aht Urhgan Whitegate - (L-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Blank Target"
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": "F-8/G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page calls it only 'the blank target'; recorded under the placeholder name. Same location Mission 20 ends at."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 29",
+   "page_id": 13852,
+   "revision_id": 723044,
+   "source_sha256": "7a3a10d400414632afb61e38fcfef5f49e288d096825b2b47116d7caeb238ece",
+   "cache_file": "0013852_aht_urhgan_mission_29"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 28,
+   "dat_name": "Puppet in Peril",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Start is 'Aht Urhgan Whitegate - (J-7)' -- a zone and a grid, no NPC -- and chronicle_snpc is empty, so start.npc stays null and the ladder starts at the walkthrough. Nothing about the giver moves.\n\nFive bullets, three steps. Bullet 1 is the journey to Jade Sepulcher and its routing. Bullets 2 and 3 are the SAME Ornamental Door checked twice -- once for a cutscene, once choosing 'Puppet in Peril' to enter the battlefield -- so they are one marker and one step, exactly as Mission 22's Decorative Bronze Gate is. Bullet 4 is the fight, and its sub-bullets are Gaheel Ja's move list rather than steps. Bullet 5 is the winning cutscene, which is an outcome and folds into the fight's note.\n\nThe Ornamental Door resolving is what saves this record: a zone-entry start plus a zone-target first step would otherwise leave nothing markable anywhere and cost the mission its marker entirely, which is what happens to Mission 20. Empty header Reward, no key item, nothing observable: evidence null at every rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Bastion of Knowledge",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-7",
+   "raw": "Aht Urhgan Whitegate - (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Jade Sepulcher"
+    },
+    "zone": "Jade Sepulcher",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point 1 to Bhaflau Thickets is the short way in; failing that, the Mamool Ja Staging Point and north to the Jade Sepulcher zoneline at (I-9), which wants both Sneak and Invisible, or a mount."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornamental Door"
+    },
+    "zone": "Jade Sepulcher",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "check it once for the cutscene, then again and choose 'Puppet in Peril' to enter the battlefield"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jade Sepulcher",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lancelord Gaheel Ja",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "a Paladin: Flash, Holy and Cure through Cure IV, plus Clobber, Blazing Angon, and a Granite Skin that cannot be dispelled and blocks everything hitting him from the front -- attack from behind, it wears off quickly. Winning plays the closing cutscene and completes the mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 30",
+   "page_id": 13853,
+   "revision_id": 774396,
+   "source_sha256": "87d70c20b187a8ddeb432108c3303137e1ce8041cd18e10b9a47c2b323a7fa45",
+   "cache_file": "0013853_aht_urhgan_mission_30"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 29,
+   "dat_name": "Prevalence of Pirates",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Start is the bare zone 'Jade Sepulcher' with no NPC, and chronicle_snpc is empty, so start.npc stays null.\n\nThree bullets, two steps -- and the third bullet is the trap. Bullet 3 is 'DO NOT WARP OUT', advice about staying put because the NEXT mission starts a walk away; it is routing for Mission 31 and not a step here, and a verb scan would certainly have made one of it. Bullet 1's four route options and the Arrapago Ring tip are routing too.\n\nBullet 1's cutscene fires on ZONING into Arrapago Reef, so the step is the journey itself with a zone target and no clickable thing. Bullet 2 is approaching the Cutter, which is a real named entity and this mission's only marker; the page says approach, never click, so it is recorded as arrival, matching how the rest of the corpus models the Cutter. Its (H-8) grid is not on this page -- it comes from Mission 31's header, 'Cutter, Arrapago Reef - (H-8)', the very next page in this lane, and it is what the corpus already uses.\n\nThe header Reward is the Periqia Assault area entry permit key item. It is a REWARD, so hard rule 7 keeps it out of evidence here; it is recorded instead as an item you must HOLD on Mission 31, which is where it is spent.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Puppet in Peril",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Jade Sepulcher",
+   "grid": null,
+   "raw": "Jade Sepulcher"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Arrapago Reef"
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene fires on zoning in, by any route. Entering from Caedarva Mire map 2 at the off-map (G-9) line leaves you closest to the Cutter; the Arrapago Reef Survival Guide and the Ilrusi Atoll staging point both give the cutscene but leave you far from it. An Arrapago Ring is 100 Imperial standing accolades from Asrahd at Aht Urhgan Whitegate (I-8) and needs a level 99 job to use."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Cutter"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "approach it -- the page says approach, never click -- and the cutscene finishes the mission. From the (G-9) entrance just walk north to the boat; level 70 Shades stand near it. The (H-8) grid comes from Mission 31's header, not from this page."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 31",
+   "page_id": 13854,
+   "revision_id": 774398,
+   "source_sha256": "eac1b9f56545025c7302d9f762d94f0fc08681562abff3a833b8fa0b45cd4090",
+   "cache_file": "0013854_aht_urhgan_mission_31"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 30,
+   "dat_name": "Shades of Vengeance",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "item_name_from_sibling_page",
+   "count_unobservable"
+  ],
+  "notes": "Start is 'Cutter, Arrapago Reef - (H-8)' and chronicle_snpc is 'cutter'. They agree; nothing moves.\n\nFive bullets, three steps. Bullets 4 and 5 are not steps: 4 is the winning cutscene plus how to replace a permit after a loss, 5 is a note that helping others needs no permit at all. Bullet 3's six sub-bullets are tactics.\n\nTHE PERMIT is the only real item on this mission and this page never names it -- it says only 'another permit'. Its full name, Periqia Assault area entry permit, comes from Mission 30's header Reward line, the page immediately before this one in this same lane, and it resolves as a key item. It is recorded in items on the Runic Seal step and NEVER as evidence: it is obtained at the end of Mission 30, so by hard rule 3 it is that mission's evidence and not this one's, and it is spent entering Periqia. Flagged so the borrowing is auditable.\n\nDvucca Isle Staging Point is not a zone -- res/zones.lua has no such entry, only Periqia itself -- so it is modelled as an object, and this page's own words place it in Caedarva Mire. The Runic Seal is 'just West from where you arrive' at it, which is inside the staging point and a place this page names no zone for, so that step's zone is left null rather than guessed; a wrong zone would cost the rung its marker outright.\n\nThe fight is 'up to 10x K23H1-LAMIA ... after enough are defeated, a random amount, the battle ends', so 10 is an upper bound and the real number is neither fixed nor observable -- flagged count_unobservable. Nothing on this mission is observable as evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The page's own wording puts the staging point in Caedarva Mire, which is why that zone is recorded; it is not a zone of its own in res/zones.lua.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Prevalence of Pirates",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Cutter",
+   "zone": "Arrapago Reef",
+   "grid": "H-8",
+   "raw": "Cutter, Arrapago Reef - (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Dvucca Isle Staging Point"
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Go south from the Cutter and zone into Caedarva Mire and you arrive very close to it."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Runic Seal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Periqia Assault area entry permit",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "just west of where you arrive at the Dvucca Isle Staging Point; the page names no zone for it, so none is recorded. The permit is Mission 30's reward and is spent here -- this page calls it only 'a permit', so the name is taken from Mission 30's header. Lose the fight and Nahshib issues another after one game day."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Periqia",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "K23H1-LAMIA",
+      "count": 10,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "up to ten, all standing together at (H-9); the battle ends after a random number of them are down, so ten is an upper bound and the true count is not observable. True sight, they link, they can be slept for crowd control, every hit adds Poison and Venomous Tail poisons for at least 80 HP a tick. Trusts may be summoned. Winning plays the cutscene that finishes the mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 32",
+   "page_id": 13855,
+   "revision_id": 259398,
+   "source_sha256": "e42ac8f956526f2f006e50a95df3267c99bdb2f0ea077330f70ce272d87fdafe",
+   "cache_file": "0013855_aht_urhgan_mission_32"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 31,
+   "dat_name": "In the Blood",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header"
+  ],
+  "notes": "MY START DISAGREES WITH CHRONICLE, deliberately, and this is the note saying so out loud.\n\nThe header Start is 'Dvucca Isle Staging Point' -- which is simply where Mission 31's battlefield spits you out -- and chronicle_snpc is a scrape of that same string, 'dvucca isle staging point'. The walkthrough is one line and it says: speak to Naja Salaheem. The Description agrees with the walkthrough and not with the header: 'the Grand Vizier has ordered you to return to Al Zahbi and report the completion of your mission to President Naja'. Keeping chronicle's answer would put a start-here marker on a Runic Portal in Caedarva Mire and send the player to the far side of the map from the only thing this mission asks of them, which is rule 3 exactly; Naja Salaheem sends them where the page says to go. So start.npc is Naja Salaheem, the marker MOVES, and it moves on the walkthrough's authority rather than the header's.\n\nHer zone and grid are not on this page. Both are taken from the sibling headers of this same series, which read 'Naja Salaheem, Aht Urhgan Whitegate - (I-10)' on Missions 17, 18, 22, 24, 25, 26 and 33. Note the Description says Al Zahbi while every header in the series says Aht Urhgan Whitegate: Whitegate is recorded, because that is what the headers say and where Salaheem's Sentinels stands.\n\nReward is Imperial Gold Piece x1 -- a reward, so not evidence, and a stackable the player may already hold from Mission 24. Evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Shades of Vengeance",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Dvucca Isle Staging Point"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page names neither a zone nor a grid for her; both come from the sibling mission headers in this series"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 33",
+   "page_id": 13856,
+   "revision_id": 756588,
+   "source_sha256": "3c7b3049d8f509de0235c7a30b910db89b1afa6df4ea9366de0751e6c686f66a",
+   "cache_file": "0013856_aht_urhgan_mission_33"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 32,
+   "dat_name": "Sentinel's Honor",
+   "match_rule": "header_mission_name+relaxed",
+   "match_conf": "relaxed_name"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Identity was matched by the RELAXED rule and it is worth knowing why: the client calls this mission 'Sentinel's Honor' and the page's own Mission Name field reads 'Sentinels'' Honor' -- the apostrophe has moved. The front matter's match is copied verbatim and not second-guessed; it is bound against the client's DAT names and this reading cannot improve on it.\n\nStart is Naja Salaheem and chronicle_snpc agrees. One bullet, one step: zone, let a game day pass, then speak to her again. The wait and the zoning are both unobservable to this addon, so they are flagged and left in the note rather than modelled into a gate that would read false forever.\n\nThe sub-bullet is NOT a step of this mission and is the only real judgement call on the page. It says outright that the Ephramadian gold coin from Jazaratt's Headstone in Caedarva Mire (E-10) is needed for the NEXT mission; a rung for it here would plant a marker in Caedarva Mire on a mission whose only action is in Aht Urhgan Whitegate, and a wrong marker that sends you somewhere is worse than none. It is kept as a note because it is genuinely useful while the game day passes -- both the headstone and the key item resolve, so whichever mission does own it will be able to mark and observe it.\n\nEmpty header Reward, no key item obtained at this step: evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "In the Blood",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem, Aht Urhgan Whitegate - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zone and let one full game day pass first. While waiting you can collect the Ephramadian gold coin the NEXT mission needs, from Jazaratt's Headstone at (E-10) in Caedarva Mire -- west out of Nashmau, or the Home Point and southeast. That is the next mission's business, not a rung here."
+   }
+  ]
+ }
+]

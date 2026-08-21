@@ -1,0 +1,1919 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hypnotic Hospitality",
+   "page_id": 104676,
+   "revision_id": 773998,
+   "source_sha256": "a13d8291166da51e82f3de5b08e4c7e797ded7e61d1c74e9f2b9126071215e49",
+   "cache_file": "0104676_hypnotic_hospitality"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 1049,
+   "dat_name": "Hypnotic Hospitality",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "fame_gate_unmodelled"
+  ],
+  "notes": "A clean Mog Garden fetch quest. Bullets 2 and 3 are the SAME trade written twice -- bullet 2 says 'obtain and trade', bullet 3 says 'trade the three items' -- so they are one trade step, with the obtaining split out ahead of it because holding all three is the only observable thing this quest offers. The sub-bullets under bullet 2 are Mog Garden husbandry (Herb Seeds / Arborscent Seed in the furrow, Cactus Stems, the Pond Dredger, a Moblin Maze Mongers voucher) -- how to farm, not where to go, so none of them is a step and none of them names a target the addon could mark. Bullet 4 is a real step even though there is nothing to click: it is a one-game-day wait followed by a zone-in, and the cutscene fires on the zone line. Neither the day count nor the game clock is visible to the addon. Fame 'Other' is not one of the nine regions and gates nothing; the Hoe is the reward and so is not evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Trinket for the Tyrant",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page gives no grid ref anywhere in the Mog Garden"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Moat Carp Creel",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Date",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Gnatbane",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Gnatbane is a rare harvest from Herb Seeds or Arborscent Seed in the Garden Furrow and Date from Cactus Stems, neither needing fertilizer; the Moat Carp Creel comes from the Pond Dredger, helped by a Super Baitball. The Maze Voucher 08 route (pick Claraisse on a win) is outside the Mog Garden, which is why the zone here is only mostly right."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "Moat Carp Creel",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Date",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gnatbane",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "bullets 2 and 3 are the same trade said twice; he then tells you to come back in a day or so"
+   },
+   {
+    "n": 4,
+    "kind": "wait",
+    "target": {
+     "type": "zone",
+     "name": "Mog Garden"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "one game day, then zone back in -- the cutscene fires on the zone line, there is nothing to click. Neither the wait nor the game clock is observable."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Hoe is the reward, so it is not evidence for this step"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A New Dawn",
+   "page_id": 15066,
+   "revision_id": 750975,
+   "source_sha256": "7205b822a9ec433eec580663b54c686b16416fac2ce0bcd812cae5bb4fd53f82",
+   "cache_file": "0015066_a_new_dawn"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 62,
+   "dat_name": "A New Dawn",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "start_disagrees_with_header",
+   "bullet_split"
+  ],
+  "notes": "The header's giver Dietmund is never spoken to in the walkthrough; what you interact with is Door:Merchant's House at the same grid (G-11), so start is kept as Dietmund -- he resolves and the header binds him to that spot, exactly the shape of Under Oath's Prince Trion -- while step 1 is the door, which is a real markable entity and is where a player actually stands. Osker is the target of the trade at (G-7); Brutus and the chocobos are landmarks in the same sentence and Greyson is a landmark in bullet 1, and none of the three is a target. The wiki writes the zone as 'Eldieme Necropolis'; the game's name is 'The Eldieme Necropolis' and that is what is recorded. Bullets 4 and 5 are one examine (the north-east sarcophagus at (D-4), which the page names only in lower case) and bullets 5 and 6 then split into the fight and a second examine of the same object -- the classic 'kill it, then click it again' shape. Only Sturm must die; Taifun and Trombe are charmable tigers, so they are recorded as spawns rather than kills. The Beast Trousers are the reward and so are not evidence.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Scattered Into Shadow",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BST"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Dietmund",
+   "zone": "Lower Jeuno",
+   "grid": "G-11",
+   "raw": "Dietmund, Lower Jeuno (G-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door:Merchant's House"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "upper level, behind Greyson -- Greyson is a landmark, not the target. As Beastmaster; the unnumbered line after this bullet says any job from here on."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Osker"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Mahogany Lumber",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tamer's whistle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near the chocobos and Brutus; Brutus is a landmark, Osker is the target. The header writes the item as 'Mahogany Lbr.'"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Eldieme Necropolis"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in through the (F-5) entrance in Batallia Downs, reached from Beaucedine Glacier; the Lycopodium NPC warp, or a Voidwatch or Unity warp to Beaucedine Glacier, are the fast routes"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sarcophagus"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "D-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sturm",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Taifun",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Trombe",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the north-east sarcophagus; the page writes it in lower case. Clear the room first if you are low level."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "D-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sturm",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "only the hound Sturm has to be defeated; the two tigers can be charmed to fight for you"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sarcophagus"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "D-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same sarcophagus again, for the cutscene and the reward -- there is no NPC to hand in to"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Family Ties",
+   "page_id": 58974,
+   "revision_id": 767235,
+   "source_sha256": "3972e7f661c36c270099dd6c1937b5a0c4b5ed5a816223066f3fdd820787a75c",
+   "cache_file": "0058974_family_ties"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 34,
+   "dat_name": "Family Ties",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "fame_gate_unmodelled",
+   "optional_epilogue",
+   "consumed_key_item"
+  ],
+  "notes": "Three steps of quest and three of optional reward, and the two halves are worth keeping apart. The unnumbered paragraph before bullet 1 adds a requirement the header does not carry -- fame level 3 in Abyssea - Attohwa on top of the header's level 4 in Abyssea - Vunkerl -- and neither 'avun' nor Attohwa is one of the addon's nine fame regions, so both gate nothing and only the raw string survives. The '== Further, optional rewards ==' heading sits inside the walkthrough and its bullets keep counting from 4, so no renumbering was needed; the three steps under it happen after the quest is already complete and are marked optional. Bullets 4 and 5 are one step: 'head to Abyssea - Misareaux, you are looking for Panta-Putta (A)' is the same action as trading him the Toyset. Every hand-over in this quest is a key item, which cannot go through the trade window whatever the page's wording, so they are recorded as turn-ins rather than trades. The Taru Tot Toyset is a reward and so is never evidence, and the item Jester's Hat at the end is the optional reward -- only the key item Jester's hat, granted mid-chain, is.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "avun / 4"
+   },
+   "prev": [
+    {
+     "title": "For Want of a Pot",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Teigero-Bangero (A)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "E-7",
+   "raw": "Teigero-Bangero (A) (E-7), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Teigero-Bangero (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Smudged letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Conflux #8 is closest; head southwest past the Helter-Skelters and Speltercaps"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naruru (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Smudged letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yellow linkpearl",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the zone entrance; the page gives no grid. 'Deliver' is a key-item hand-over, not a trade-window trade."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Teigero-Bangero (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Yellow linkpearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "this completes the quest; the Taru Tot Toyset that arrives here is the reward, so it is not evidence"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Panta-Putta (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Taru Tot Toyset",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Jester's hat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "after the quest is already finished. He roams a wide circuit -- Conflux #00 to #04 to #07 and round again -- so Widescan is the page's advice; no grid is given. The Toyset is not consumed."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naruru (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Jester's hat",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page says 'trade', but it is the key item Jester's hat going back for the wearable Jester's Hat, which is the optional reward and so not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Soothing Waters",
+   "page_id": 27214,
+   "revision_id": 769305,
+   "source_sha256": "8281c2eab0e24965c0f0b992fa6ab856ff1425cb3b741ba5daebf3b545d43d73",
+   "cache_file": "0027214_soothing_waters"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 47,
+   "dat_name": "Soothing Waters",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "mission_gate_unmodelled",
+   "npc_presence_unobservable",
+   "bullet_split"
+  ],
+  "notes": "A straight courier run through Aht Urhgan with one item at the end. The Quest Reqs field carries two things the schema has no slot for: Aht Urhgan Mission 11, and 'Mihli Aliapoh must be present in Al Zahbi'. The mission is left out of prev because prev is fed from the Previous field; the presence condition is genuinely unobservable -- the trailing line repeats it -- so both are flags and notes and gate nothing. Bullet 5 is three actions in one and splits accordingly: get into Aydeewa Subterrane by the Bhaflau Thickets (I-7) entrance rather than the Survival Guide one, farm Aydeewa Diremites around (I-9) for the Colorful Hair, then trade it to the ??? at (H-8) at the bottom of the ramp. The Colorful Hair is both an Item Req and the one observable thing in the quest, so it is the sole evidence, sitting on the obtain step where it is acquired rather than on the trade that consumes it. Walahra Temple in bullet 3 is a building inside Aht Urhgan Whitegate, not a zone, so Nadeey keeps the Whitegate zone and the (K-7) grid.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 7: A ??? can never carry a marker, but it keeps the rung.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Ode to the Serpents",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Fari-Wari",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-12",
+   "raw": "Fari-Wari, Aht Urhgan Whitegate (K-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fari-Wari"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the opening cutscene only plays while Mihli Aliapoh is in Al Zahbi"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eunheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "still in Whitegate; the bullet gives only the grid"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nadeey"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Walahra Temple, which is a building in Whitegate and not a zone. A cutscene on entry belongs to a different quest, The Rider Cometh."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mihli Aliapoh"
+    },
+    "zone": "Al Zahbi",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "she asks for a Colorful Hair; she is only here at all during certain periods, which nothing in the packets reports"
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Aydeewa Subterrane"
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in from Bhaflau Thickets (I-7) -- explicitly NOT the Survival Guide entrance, which comes out somewhere else. A Voidwatch warp is the shortcut."
+   },
+   {
+    "n": 6,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Colorful Hair",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Aydeewa Diremite",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "up top near the ramp; circle back up to farm and slide down again to reach the ???"
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Colorful Hair",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "At the bottom of the ramp; the trade gives a cutscene."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fari-Wari"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "At Journey's End",
+   "page_id": 56926,
+   "revision_id": 735283,
+   "source_sha256": "eededdc97bb06d65bffce88c4d1cea9bb63852f69c50cbb4838af20941743eaa",
+   "cache_file": "0056926_at_journey_s_end"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 63,
+   "dat_name": "At Journey's End",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "battlefield_zone_unnamed",
+   "no_turnin_npc",
+   "fame_gate_unmodelled"
+  ],
+  "notes": "The header's giver is Lehko Habhoka in Castle Oztroja (S), but the walkthrough never speaks to him -- he turns up as a battle ally in bullet 4 who has to be kept alive -- and its first action is in a different zone entirely, examining the Mithran Bivouac in Meriphataud Mountains (S) at (I-8). That is a real disagreement rather than a door in front of the giver, so start is moved to the Bivouac and the header string kept in raw. Bullets 2 and 3 are two examines of the same Collapsing Floor with nothing between them, so they merge into one step the way Divine Might's Blank Target does: once for the cutscene, again to enter the battlefield. The Poet god's key is carried into that step as a requirement even though the page never says where it is used -- fetching it is the entire content of bullet 1 and nothing else in the quest touches it; if that is wrong it costs nothing, because you obtain it one step earlier. 'Another' Poet god's key implies the previous quest's copy is gone, which is what lets it be step 1's evidence at all, and that is why step 1 is only medium. The page never names the battlefield zone, so the fight keeps Castle Oztroja (S), its entrance. Fenrir's shifts into Karaha-Baruha and Robel-Akbel are forms of the same monster, not extra kills. Bullet 8 ends the quest by zoning into Windurst Waters (S) with no NPC named, so there is deliberately no hand-in; its sub-bullet about Romaa Mihgo is a Trust Magic unlock gated on an unrelated key item and is NOT a step -- making it one would have made the last talk of the quest look like the hand-over. The trailing line about Adieu, Lilisette is a mission pointer.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Manifest Destiny",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Mithran Bivouac",
+   "zone": "Meriphataud Mountains (S)",
+   "grid": "I-8",
+   "raw": "Lehko Habhoka, Castle Oztroja (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mithran Bivouac"
+    },
+    "zone": "Meriphataud Mountains (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Poet god's key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says 'another' Poet god's key, so the one from Manifest Destiny is spent by now and holding it again is what this step proves. If a player still has the old one the mark simply starts one rung further on."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Collapsing Floor"
+    },
+    "zone": "Castle Oztroja (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Poet god's key",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "at the top of the castle; examine once for the cutscene and again to enter the battlefield, with your buffs intact. The page never states that the key is needed here -- it is inferred from bullet 1 being the only reason to fetch it."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fenrir",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page does not name the battlefield zone, so its entrance zone is recorded instead. Fenrir shifts into Karaha-Baruha and Robel-Akbel and back through the fight -- one monster, not three. Lehko Habhoka fights alongside you and must survive."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mithran Bivouac"
+    },
+    "zone": "Meriphataud Mountains (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same Bivouac as step 1, this time for a cutscene"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sealed Entrance"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Windurst Waters (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the quest completes on returning to the zone; the page names no NPC and no object, so nothing here can be marked and no hand-in is invented"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Playing Paparazzi",
+   "page_id": 56713,
+   "revision_id": 641139,
+   "source_sha256": "00935f8d0b5f58b4c203372b06b82882c2efaee26f32b1a4c65339b2ce5517f9",
+   "cache_file": "0056713_playing_paparazzi"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 19,
+   "dat_name": "Playing Paparazzi",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "time_gated",
+   "mob_role_approximated",
+   "fame_gate_unmodelled",
+   "consumed_key_item"
+  ],
+  "notes": "Three bullets, three steps, and the interesting part is what the middle one is. You do not kill these NMs, you photograph them at close range while facing them with the Soulgauger SGR-1, and you need not even have claim -- so the six named NMs are recorded with role 'drop' because that is the nearest of the three roles the schema allows, and the note says plainly that it is a camera and not a sword. Any ONE of the six satisfies the step and the page says more may qualify, so the mob list is an OR-list the schema cannot express and is flagged rather than pretended away. The Gauger Plate is the only observable thing here and it sits on that step. Naji's linkpearl is a requirement of step 1 and is handed over there, so it can never be evidence for anything. The Azure abyssite of merit is the first-completion reward, the Black Mantle the repeat reward; neither is evidence. 'Once per Vana'diel day' is a cooldown on a repeatable quest, and the clock is not visible to the addon. Fame region 'akon' is an Abyssea zone code and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 6,
+    "raw": "akon / 6"
+   },
+   "prev": [
+    {
+     "title": "Secret Agent Man",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Naji (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "J-5",
+   "raw": "Naji (A) (J-5), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "J-5",
+    "items": [
+     {
+      "name": "Naji's linkpearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "southeast of Verdicial Conflux #08. The linkpearl carried over from Secret Agent Man is handed over here, so it is a requirement and never evidence."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gauger Plate",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Kukulkan",
+      "count": 1,
+      "role": "drop"
+     },
+     {
+      "name": "Turul",
+      "count": 1,
+      "role": "drop"
+     },
+     {
+      "name": "Fistule",
+      "count": 1,
+      "role": "drop"
+     },
+     {
+      "name": "Bloodeye Vileberry",
+      "count": 1,
+      "role": "drop"
+     },
+     {
+      "name": "Eccentric Eve",
+      "count": 1,
+      "role": "drop"
+     },
+     {
+      "name": "Depths Digester",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "photograph, do not kill: the shot must be at close range and facing the NM, and claim is not needed. ANY ONE of these six is enough and the page says more may qualify, so the list is neither an AND nor exhaustive. Take several in case one does not turn out."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Naji (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "J-5",
+    "items": [
+     {
+      "name": "Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one acceptable plate completes it; repeatable once per Vana'diel day, which nothing observable reports"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Soil and Green",
+   "page_id": 58994,
+   "revision_id": 710517,
+   "source_sha256": "25a10e85703bafbeafce1757400f735a2cb3e25a6da1a2b677a0ff5919193d1f",
+   "cache_file": "0058994_soil_and_green"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 54,
+   "dat_name": "Soil and Green",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "fame_gate_unmodelled",
+   "unnamed_grid"
+  ],
+  "notes": "Three bullets that hide a branch. Bullet 3 is not one step but three: you go back to Sieglinde (A), and then either the gauge read red or yellow, in which case she hands you the Tube of alchemical fertilizer and you go back out to a logging point, or it read blue and she finishes the quest on the spot. The colour is a dialogue line and nothing observable, but the fertilizer key item is not -- it is exactly the thing that separates the branches, so it is step 3's evidence and the second logging-point visit is marked optional. That gets the marker right both ways round: hold the fertilizer and the mark moves out to the Logging Point, do not and it stays on Sieglinde, which is where a blue-gauge player is going anyway. Logging Point is a real interactable name and resolves; the page locates the five of them only relative to Confluxes #5, #6 and #7 and gives no grid refs at all, so grid stays null. Fame region 'amis' is an Abyssea zone code and gates nothing, and the zoning needed before a repeat is not observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "amis / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Sieglinde (A)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "K-7",
+   "raw": "Sieglinde (A), Abyssea - Misareaux"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sieglinde (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mineral gauge for dummies",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the (K-7) grid comes from this bullet; the header gives none"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Logging Point"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Mineral gauge for dummies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five known ones, given only by Conflux: north and southeast of #5, north of #7, west and south of #6. The gauge answers with a colour, which is dialogue and not observable."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sieglinde (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tube of alchemical fertilizer",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "red or yellow and she gives you the fertilizer, which is the branch marker; blue and she ends the quest here instead and step 4 never happens"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Logging Point"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tube of alchemical fertilizer",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "red or yellow branch only; it may be the same logging point as step 2"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sieglinde (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "both branches end here. Zoning is required before the quest can be repeated, which the addon cannot see."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beyond the Stars",
+   "page_id": 67112,
+   "revision_id": 756386,
+   "source_sha256": "02c6d880009749137a6276eb87ec8aceb5e8d0aba2c0904e1b885899466386c2",
+   "cache_file": "0067112_beyond_the_stars"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 135,
+   "dat_name": "Beyond the Stars",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "merit_gate_unobservable",
+   "generic_npc_name"
+  ],
+  "notes": "A limit-break quest that never leaves one NPC. All three steps are the Nomad Moogle in Ru'Lude Gardens at (H-5), which is one marker with readiness looking ahead across them, and that is genuinely what the page describes. Bullets 4 and 5 are not steps: bullet 4 explains that each loss lowers the number of rounds you must win, and bullet 5 is the outcome, so both fold into step 3's note. The five merit points are a hard requirement of step 2 and nothing in the packets reports merits, so they are a note and a flag rather than an item. The crest count is expressible and is: ten Kindred's Crest, singular -- the plural the page writes does not resolve. 'Nomad Moogle' is a known ambiguous name shared across many zones; the Ru'Lude Gardens zone on every step is what separates this one. The sub-bullets about Login Campaign points and Shemo's 3:1 seal exchange are shopping advice, not steps.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Expanding Horizons",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 81,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nomad Moogle",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Nomad Moogle, Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the (H-5) grid comes from this bullet; the header gives none. The name is ambiguous across zones, so the zone is what pins it."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Kindred's Crest",
+      "count": 10,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you must also hold five merit points, which nothing observable reports. Crests can come from mobs, from Login Campaign points at five points each, or from Shemo at a 3:1 seal exchange."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "a rock-paper-scissors mini-game -- Raging Beast beats Silent Wind beats Soaring Dragon beats Raging Beast -- and you need five wins. Every loss drops the number of wins you need by one, so it always ends. Bullets 4 and 5 are that mechanic and the outcome, not actions."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Pieuje's Decision",
+   "page_id": 491,
+   "revision_id": 730803,
+   "source_sha256": "abece66da0d47130b33114dd1ae94a725a821accbb6462d8ba1f47dc795fda5b",
+   "cache_file": "0000491_pieuje_s_decision"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 89,
+   "dat_name": "Pieuje's Decision",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "repeatable_af_means_false",
+   "bullet_split"
+  ],
+  "notes": "The same shape as Under Oath: the header's giver Pieuje is behind Door: Prince Regent's Rm at the same grid (H-8), the door is what you open, and the door is a real targetable entity that the normaliser folds to the client's 'Door:Name' form -- so start stays on Pieuje and step 1 carries the door. 'Repeatable: af' is the artifact-armour category leaking into the field and means false. The wiki's 'Eldieme Necropolis' is 'The Eldieme Necropolis' in game and only the article makes it resolve. Bullet 4 is three things and splits into two steps plus a spawn: trade the Tavnazia Bell to the ??? at (G-8) on map 1 of Fei'Yin to pop Altedour I Tavnazia, then beat him for the Tavnazian Mask. Both bell and mask are Item Reqs and both are obtained inside the quest, so each is evidence exactly once and on the step that grants it -- bell on the Dark Stalker hunt, mask on the NM. The Healer's Bliaut is the reward and so is not evidence. The 'You find nothing.' warning is another player having just popped him, not a failure.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [
+    {
+     "title": "Prelude of Black and White",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "WHM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Pieuje",
+   "zone": "Chateau d'Oraguille",
+   "grid": "H-8",
+   "raw": "Pieuje, Chateau d'Oraguille (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Prince Regent's Rm"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a White Mage; the unnumbered line after this bullet says any job from here on. Pieuje is the room's occupant, which is why the header names him."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tavnazia Bell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Dark Stalker",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "two spots, so no single grid: four spawns near the Hume Bones off the (G-8) drop in the centre of map 2, and four more at the C and B drops of map 1. Kill until the bell drops."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Fei'Yin"
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zoning in is what fires the cutscene; a Home Point warp counts"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Fei'Yin",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Tavnazia Bell",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Altedour I Tavnazia",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "map 1. 'You find nothing.' for a few minutes means somebody else has just popped him, not that you are in the wrong place."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tavnazian Mask",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Altedour I Tavnazia",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page calls him one of the strongest AF NMs there is"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Narcheral"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [
+     {
+      "name": "Tavnazian Mask",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "upstairs in the Cathedral; the Healer's Bliaut is the reward and so is not evidence"
+   }
+  ]
+ }
+]

@@ -1,0 +1,1380 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In a Haze of Glory",
+   "page_id": 40342,
+   "revision_id": 725203,
+   "source_sha256": "d03f31533b44a2c59e8f10decef19cf7cb267f847e474b29c7f4a6e125a99b01",
+   "cache_file": "0040342_in_a_haze_of_glory"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 38,
+   "dat_name": "In a Haze of Glory",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item"
+  ],
+  "notes": "A short, clean ladder with one genuine evidence rung. Bullets 3 and 4 are one action -- 'go to (H-9) and examine the Wooden Crates' and 'have the party leader examine the crates' are the same click, the second only saying who in the alliance performs it -- so they merge. The four sub-bullets under bullet 5 are battlefield tactics (Effluvial Flasks, Noxious Spray, stray Orcs and Goblins), not steps; the only instruction in bullet 5 is find and kill the Orcish Turret. Bullet 6 is the outcome of that kill, so it merges into the fight rather than becoming a rung of its own; its sub-bullet is a failure-recovery note (a game-day wait and a return trip to Diordinne) and is recorded as text because nothing in a packet reports a lost battlefield.\n\nThe Number eight shelter key is the whole reason this quest ladders well: Diordinne grants it at step 1, so it is step 1's evidence, and it is consumed entering the battlefield, so it is step 2's held requirement. Holding it draws the crates, which is exactly right.\n\nThe hand-in to Rholont only works between 18:00 and 00:00 game time, which the addon cannot see -- flagged, not modelled. The whole 'Notes' section after the walkthrough is difficulty commentary (trivial at 99, Healing Waltz, a SMN/PLD duo) and the closing line about In the Name of the Father is a mission cross-reference; none of it is a step. Fame reads 'Wings of the Goddess', which is an expansion name rather than one of the nine fame regions, so it gates nothing and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Perils of the Griffon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Diordinne",
+   "zone": "Garlaige Citadel (S)",
+   "grid": "I-6",
+   "raw": "Diordinne, Garlaige Citadel (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Diordinne"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Number eight shelter key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "first map of Garlaige Citadel (S); a long cutscene, then the key item. If you lose the battlefield you come back here and wait a game day for the key again."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Wooden Crates"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Number eight shelter key",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "east into the second map. The party leader is the one who examines them, and buffs wear on entry. Modelled as a trade because holding the shelter key is what makes you ready here, even though the click itself is an examine."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ghoyu's Reverie",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Orcish Turret",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "30 minute limit. You spawn on Map 15; the Turret is far south along the western wall, around (H-10). Effluvial Flasks and the other Orcs and Goblins need not be killed. Winning ejects you into a cutscene."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "nighttime only, 18:00 to 00:00 game time, which the addon cannot observe"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borghertz's Harmonious Hands",
+   "page_id": 35949,
+   "revision_id": 735689,
+   "source_sha256": "6881a993e52087c1be8cf4071bab6272b2ee2c52999d7c35fed5ab2f52eaf48d",
+   "cache_file": "0035949_borghertz_s_harmonious_hands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 53,
+   "dat_name": "Borghertz's Harmonious Hands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "conditional_branch",
+   "unnamed_target",
+   "human_corrected"
+  ],
+  "notes": "The Bard half of the Borghertz's Hands pattern; the Black Mage twin is in this same batch and differs only in which coffer and which key. Two evidence rungs, both key items granted exactly where the ladder puts them: Old gauntlets at the coffer, Shadow flames at the torch after Dark Spark dies. Nothing else in this quest is observable, which is why the two Jeuno round trips carry no evidence at all.\n\nThe page names the coffer only as 'the coffer' -- the Sorcerous page writes 'Treasure Coffer' in full for the same object -- so I have used Treasure Coffer here and am recording that it is an expansion of the page's own word, not a name lifted from elsewhere. The Item Reqs OR is fully expressible: the Zvahl Coffer Key is the normal path and Thief's Tools the lockpick path, so items_alt carries it rather than items_partial. The Curio Vendor Moogle sale needs Rhapsody in Umber, which does not resolve as a key item, so it stays prose.\n\nBullet 6 is explicitly conditional -- 'if this is your first AF' -- so Deadly Minnow and Yin Pocanakhu are two optional steps, in that order, and neither is a ladder position. Yin Pocanakhu wants 1,000 gil, which is not an inventory item and so cannot go in items. Bullet 11 is a fight and then an examine of the same torch, so it splits. The job gate bites twice: Bard to start at Guslam and Bard again at the torch, but explicitly not to open the coffer.\n\nThe 'Two Additional Coffers' section is NOT steps. It offers the Choral Roundlet in Crawlers' Nest and the Choral Cannions in Castle Oztroja and then says in as many words that those coffers are not required and the quest is already complete once you have the hands.\n\nADVERSARY (stage D): the coffer target is nulled to {\"type\":\"none\",\"name\":null}. 'Treasure Coffer' appears nowhere in this page's text -- the draft says so itself and borrowed it from the Black Mage twin -- and hard rule 1 makes a target the page does not name a null target. The rung, the Zvahl Coffer Key OR Thief's Tools items and the Old gauntlets evidence all stand; only the marker on the coffer is given up, and Castle Zvahl coffers wander anyway. Everything else on this quest survived the attack: both evidence key items are granted at the rung that carries them, neither is the header's reward (Choral Cuffs), the order is the page's order, the two first-AF steps are correctly optional, and the ladder never crosses a zone inside a step.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Requiem",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BRD"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Guslam",
+   "zone": "Upper Jeuno",
+   "grid": "H-8",
+   "raw": "Guslam, Upper Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Durable Shields shop; as Bard. Quest Reqs also asks that The Requiem be started, which is weaker than the completed-prerequisite that prev models."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": null,
+    "items": [
+     {
+      "name": "Zvahl Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old gauntlets",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "the page never names this object -- it writes only 'the coffer', so the target is unnamed. 'Treasure Coffer' was lifted from the Borghertz's Sorcerous Hands page and does not appear in this one. The key is sold by the Curio Vendor Moogle to holders of the Rhapsody in Umber key item, or farmed; a Thief can pick the lock with Thief's Tools instead. You do NOT need to be Bard to open it."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "he cannot repair the gauntlets"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Minnow"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "first AF only; also inside the Durable Shields shop, so the grid is Guslam's"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yin Pocanakhu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "first AF only; inside the Tenshodo. Speak first, then trade 1,000 gil -- gil is not an inventory item, so items stays empty."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "the crates by the Auction House and the Jeuno Duty-Free Shop. A ??? can never carry a marker, but the rung is real."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "first map. You must be Bard for this. The page says 'one of the torches', so the singular Torch is what is recorded; remember which one you used."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shadow flames",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the same torch you spawned him from"
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "the same ??? as step 6; the cutscene here ends the quest, so there is no NPC hand-in"
+   }
+  ],
+  "human": {
+   "edited_at": "2026-08-09T18:47:07Z",
+   "by": "qa-verification",
+   "basis": "reading",
+   "reason": "gates.repeatable true -> false. BG Wiki tags 5 of the 15 structurally identical Borghertz's Hands quests |Repeatable=Yes and the other 10 |Repeatable=af (= 'Yes, after Memory reset', i.e. an artifact-armour reset, not a repeatable quest). All 15 are one-shot AF1 gauntlet quests on the same giver (guslam) with a one-time armour reward and no repeat prose. quest/jeuno/52's reader already made this same call and flagged it header_repeatable_disagrees. Correcting the remaining four so the family is consistent; without this, 5 of 15 identical quests draw a blue '!' on Guslam after completion and 10 draw nothing. See AF-QUESTS-FINDING.md.",
+   "fields": [
+    "gates.repeatable",
+    "review_flags[5]"
+   ],
+   "source_at_edit": {
+    "revision_id": 735689,
+    "source_sha256": "6881a993e52087c1be8cf4071bab6272b2ee2c52999d7c35fed5ab2f52eaf48d"
+   },
+   "history": []
+  }
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Elementary, My Dear Sylvie",
+   "page_id": 101761,
+   "revision_id": 743277,
+   "source_sha256": "808a0a024b345a98b9dd493cc46b140b25c6008c11a2db9e2d0289028eab8855",
+   "cache_file": "0101761_elementary_my_dear_sylvie"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 35,
+   "dat_name": "Elementary, My Dear Sylvie",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "job_gate"
+  ],
+  "notes": "The walkthrough does not start with a step: bullet 1 is a difficulty remark ('at 119 this fight is trivial') and bullet 2 is the job gate restated, so the ladder begins at bullet 3. Bullet 6 is route information about an unmapped area reached at (J-6) and is a note on the Primordial Convergence step rather than a rung -- there is nothing to click at (J-6).\n\nBullets 4 and 5 are one visit: you go to Bivouac #1 and speak to Dabnorrin there, and the Vessel of summoning he hands over is that step's evidence. It then becomes the held requirement at the Convergence, which is the shape this schema wants -- holding the vessel draws the Convergence. The header lists the vessel under Item Reqs, but it is granted inside the quest, not carried in.\n\nBullet 7 is a spawn click and then a fight, so it splits; the seven sub-bullets under it are all fight advice (solo-only, Trusts dismissed unless you hold Rhapsody in Umber, no support job, ten minutes, under 3800 HP, no melee) and none is a step. Bullet 8's sub-bullet is a rematch offer, not a step -- the quest is already over by then.\n\nThe grid is split deliberately: Dabnorrin at (J-8), the Convergence out at (K-6) past the (J-6) entrance, exactly as the page gives them. Fame reads 'Adoulin', which is not one of the nine fame regions, so the region gates nothing and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [
+    {
+     "title": "Dances with Luopans",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 66,
+   "jobs": [
+    "GEO"
+   ],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Sylvie",
+   "zone": "Western Adoulin",
+   "grid": "I-5",
+   "raw": "Sylvie, Western Adoulin (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Waterfront, by Waypoint #9. Geomancer must be your MAIN job or the opening cutscene will not play."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dabnorrin"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vessel of summoning",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the first frontier bivouac. He can sell you a replacement vessel afterwards for 5,000 Bayld, 10 Beastmen's Seals or 50,000 gil if you want the rematch."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Primordial Convergence"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-6",
+    "items": [
+     {
+      "name": "Vessel of summoning",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Burgeoning Flames",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "click it from the South or West. The entrance is at (J-6) and leads into an area the map does not show. Geomancer main job again, for the spawn."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Burgeoning Flames",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "a solo fight -- nobody else in the party can act on it. Ten minutes, no support job, buffs wiped on spawn, under 3800 HP, casts fast for close to 350. Trusts are dismissed at the spawn but may be recalled if you hold Rhapsody in Umber."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Primordial Convergence"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same Convergence again; the cutscene and the 3000 Bayld follow, so there is no NPC hand-in"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Knot Quite There",
+   "page_id": 27295,
+   "revision_id": 767716,
+   "source_sha256": "346b97878ca192efc31d9d5373b1fbdde961202a1277d7b8450bb667fbdf6774",
+   "cache_file": "0027295_knot_quite_there"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 27,
+   "dat_name": "Knot Quite There",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "mission_gate_unmodelled",
+   "generic_npc_name",
+   "or_branch_unmodelled"
+  ],
+  "notes": "The header giver, Romaa Mihgo (S) at Windurst Waters (S) (G-11), never appears anywhere in the walkthrough. Bullet 3 says outright 'Start the quest by clicking on the (left side) Door: Acolyte Hostel in (K-5)', and Door: Acolyte Hostel normalises to a real markable door entity, so start is moved there and the header string kept in raw. That is a marker move of six grid squares, not a removal.\n\nBullet 1 is deliberately NOT a separate rung even though it is the page's first instruction. It is advice about ordering -- get the 108-Knot Quipu before you start, to save a trip -- and if it were step 1 with the quipu as its evidence, the runtime's rule that accepting a quest satisfies step 1 would tick it off for players who have no quipu, and holding a quipu would jump the ladder past the two Bulwark Gate cutscenes. So the quipu rides as the held item on the trade step where it is actually spent, and bullet 1's farming locations live in that step's note. Yagudo is a family, not a mob name, so the marker it produces (if any) will be broad; it is recorded because the page names nothing narrower, and the second source, Banishing Gate 2 in Garlaige Citadel (S), is a different zone and cannot share the step.\n\nBullet 2 reads as an eligibility check rather than an action -- 'she should say something about the Boss having her eyes on you' -- but it is an instruction in a numbered list and precedes the door, so it is kept as step 1 with that caveat noted. Bullets 4, 5 and 6 are three separate interactions with the same Bulwark Gate and stay three rungs; one marker serves all three. Bullet 7 is a zone-line cutscene, not a click, and the page warns it will not fire if you ride in mounted. The Atmacite Refiner and Voidwatch sub-sub-bullets are transport advice.\n\nDemoted to medium for the notice at the top of the page: this needs 'Wings of the Goddess: Cait Sith (Mission)' flagged as your Current mission, which has no slot in the schema and no observable predicate. Nothing else in the quest is observable either -- no key item, no evidence anywhere -- so the whole ladder rests on the session latch.\n\nADVERSARY (stage D): two downgrades. (1) Dhea Prandoleh is marked optional -- a pre-acceptance eligibility check is a precondition, and the accept-latch would otherwise carry the mark straight to a door the player has already opened. (2) The Yagudo drop mob is removed from the quipu trade for being a family name and for belonging to bullet 1, which is not a step. The door, the three Bulwark Gate rungs, the on-foot zone-in and the final Door: House all held up, as did the start being moved off Romaa Mihgo (S) -- bullet 3 says in as many words that the door starts the quest. Medium stands: the Cait Sith mission gate is unmodellable and nothing in the quest is observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Tigress Strikes",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Door: Acolyte Hostel",
+   "zone": "Windurst Waters (S)",
+   "grid": "K-5",
+   "raw": "Romaa Mihgo (S) , Windurst Waters (S) (G-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "she should mention the Boss having her eyes on you; this reads as an eligibility check rather than a quest action, and it happens before the quest is flagged. Marked optional for exactly that reason -- it is a precondition, not a rung. Left on the ladder it would be ticked the instant the quest is accepted (the runtime latches step 1 on acceptance), which would advance the mark to the Acolyte Hostel door the player has just clicked to start the quest."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Acolyte Hostel"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the LEFT-side door, on the ground floor and not the second. This is what actually flags the quest; the cutscene is the young Ajido-Marujido."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "where the zone line to Jeuno would normally be"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "108-Knot Quipu",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     5
+    ],
+    "note": "cutscene with Rachemace. The quipu drops from Yagudo in this zone -- a good spot is the fortification at (K-9) just north of a Survival Guide, and there are more to its north -- or from Yagudo near Banishing Gate 2 in Garlaige Citadel (S), which is a second zone this step cannot hold. The page recommends farming it before you start. The Yagudo mob entry is dropped: Yagudo is a beastman family, not an entity name, and the farming it describes is bullet 1, which this draft rightly refused to make a step -- a drop-role marker here would paint a whole zone's worth of mobs on a step whose action is trading at the gate. The locations survive in this note."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "another Rachemace cutscene. Keep clicking until it says 'the door is firmly sealed' three times running."
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Southern San d'Oria (S)"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "in from East Ronfaure (S), ON FOOT -- entering mounted skips the Pattna-Ottna cutscene and you must zone back out and walk in. Over level 75 the Atmacite Refiner can Voidwatch-warp you to the zone line, but only if you have done Voidwatch at all."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: House"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "M-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "through the Portcullis, then the FIRST such door on the right. Final cutscene with Joseaneaut and the reward; there is no NPC to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borghertz's Sorcerous Hands",
+   "page_id": 15053,
+   "revision_id": 678702,
+   "source_sha256": "e907b0b67b648bf6b60c6ab755a6db59a192c4a271399906c6de366e930f8d7a",
+   "cache_file": "0015053_borghertz_s_sorcerous_hands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 47,
+   "dat_name": "Borghertz's Sorcerous Hands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "conditional_branch",
+   "unnamed_target",
+   "walkthrough_incomplete"
+  ],
+  "notes": "The Black Mage twin of Borghertz's Harmonious Hands, also in this batch; same shape, different coffer (Garlaige Citadel instead of Castle Zvahl Baileys) and different key. Two evidence rungs again, Old gauntlets at the coffer and Shadow flames at the torch, both granted exactly where the ladder places them.\n\nThe first instruction is an unnumbered lead paragraph rather than bullet [1], so step 1 carries an empty source_bullets and says so -- the numbering starts at the coffer. Item Reqs renders the key twice, short name then long ('Grl. Coffer Key Garlaige Coffer Key'); both resolve to the same id and the long form is used. The OR against Thief's Tools is expressible, so it is items_alt rather than items_partial.\n\nBullet 5 is conditional on this being your first AF, so Deadly Minnow and Yin Pocanakhu are optional and not ladder positions; the 1,000 gil is not an inventory item and cannot go in items. Bullet 10 is a fight and then an examine, so it splits. Note the wording differs from the Bard page here: this one says 'examine ONE OF the torches' for the Shadow flames, where the Bard page says the same torch you used -- I have kept the same torch object either way, since it is the same encounter.\n\nHeader oddities recorded rather than obeyed: Repeatable reads 'af', which is the artifact-armour category leaking into the field and means false. Quest Reqs asks that Recollections be started while Previous names The Three Magi; prev keeps the Previous field, because 'must have started' is weaker than the completion prev models, and Recollections is noted here instead. The page also never says which job must be Black Mage at the torch, where the Bard page does -- another small incompleteness, but the AF pattern makes it the same requirement.\n\nThe 'Two Additional Coffers' section (Wizard's Coat in Monastic Cavern, Wizard's Tonban in The Eldieme Necropolis) is not steps: the page says in as many words that those coffers are not required and the quest is complete once you have the hands.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: from the unnumbered lead paragraph above bullet [1], which is why source_bullets is empty.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "The Three Magi",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BLM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Guslam",
+   "zone": "Upper Jeuno",
+   "grid": "H-8",
+   "raw": "Guslam, Upper Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "In the Durable Shields shop, as a Black Mage."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": null,
+    "items": [
+     {
+      "name": "Garlaige Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old gauntlets",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "the key is 5,000 gil from the Curio Vendor Moogle, or farm it; a Thief can pick the lock with Thief's Tools instead. You do NOT need to be Black Mage to open it."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he cannot repair the gauntlets"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Minnow"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "first AF only; also inside the Durable Shields shop, so the grid is Guslam's"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yin Pocanakhu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "first AF only; inside the Tenshodo. Speak first, then trade 1,000 gil -- gil is not an inventory item, so items stays empty."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "the crates by the Auction House and the Jeuno Duty-Free Shop. A ??? can never carry a marker, but the rung is real."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "first map. The page says 'one of the torches', so the singular Torch is what is recorded."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shadow flames",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "this page says 'one of the torches'; the Bard version of the quest says the same torch you spawned him from"
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the same ??? as step 6; the cutscene here ends the quest, so there is no NPC hand-in"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Truth Beckons",
+   "page_id": 56730,
+   "revision_id": 668226,
+   "source_sha256": "5e0056ea6bc2e24e0b23f6ada1fc6f2883e5e4e79957b1683a91e0b57c4cb967",
+   "cache_file": "0056730_the_truth_beckons"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 161,
+   "dat_name": "The Truth Beckons",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "ki_name_not_unique",
+   "time_gated"
+  ],
+  "notes": "Two rungs and nothing observable between them. Only bullets 1 and 4 are steps. Bullet 2 is the outcome of bullet 1 ('a short cutscene will play showing that the player transported inside') and bullet 3 is the opposite -- an explicit statement that NOTHING happens inside, wrapped around a long aside about visitant status. A verb scan would have made two more steps out of them.\n\nNine maws are listed and you need exactly ONE, so this is an OR and not a group -- a group would mean visit all nine. The page picks for me: it calls the Buburimu Peninsula maw the convenient one, near the Survival Guide, and the list puts it at (F-7), so that is the marker and the other eight are in the note. A player who uses a different maw gets a marker in the wrong place but a correct step.\n\nThe Traverser stone is a genuine held requirement to enter -- the description says so and bullet 3 repeats it -- but 'Traverser stone' is NOT a unique key-item name and the resolver rejects it rather than guessing an id, so it cannot go in items and is recorded here instead. Everything else the page gates on is real-life time: a one-hour lockout if you leave with under five minutes left, and twenty hours to earn another stone if you spend one on visitant status. None of that is visible to the addon, and the page's own advice is to leave WITHOUT taking visitant status so you only wait the hour. Fame reads 'a', an Abyssea code rather than one of the nine regions, so it gates nothing.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: items_partial is set because that name is not unique and cannot be expressed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "a / 1"
+   },
+   "prev": [
+    {
+     "title": "A Journey Begins",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Joachim",
+   "zone": "Port Jeuno",
+   "grid": null,
+   "raw": "Joachim, Port Jeuno"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "The page writes it 'Abyssean Cavernous Maw'; the entity is the Cavernous Maw. This one is near the Survival Guide and the page calls it the convenient choice, but ANY of the nine will do: La Theine Plateau (D-4), Konschtat Highlands (I-12), Tahrongi Canyon (H-12), Jugner Forest (J-8), Valkurm Dunes (I-9), Buburimu Peninsula (F-7), Xarcabard (H-8), North Gustaberg (G-7), South Gustaberg (J-10). You must be holding a Traverser stone key item to enter You do not need visitant status, and it is faster not to take it."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Joachim"
+    },
+    "zone": "Port Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "after this you start accruing Traverser stones, one every twenty real-life hours at first"
+   }
+  ]
+ }
+]

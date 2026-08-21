@@ -1,0 +1,1952 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Shoot First, Ask Questions Later",
+   "page_id": 11947,
+   "revision_id": 730452,
+   "source_sha256": "4d67df3a964f185baa54a05f5c42ab325859094e5d755b793ec24472cca73475",
+   "cache_file": "0011947_shoot_first_ask_questions_later"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 67,
+   "dat_name": "Shoot First, Ask Questions Later",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "latent_unmodelled",
+   "skill_gate_unmodelled"
+  ],
+  "notes": "A weaponskill-NM quest with a hole in the middle. Bullet 2 says you must break the latent on the Gun of Trials before the rest of the quest, and the page then opens a '== Breaking the Latent ==' section that renders to a bare horizontal rule -- the front matter flags this page as a transclusion, and that is what was transcluded. So the requirement is real and stated but the method is simply absent from the page. It is kept as step 2 rather than demoted to a note because it genuinely sits between two Cid steps and the page really does put it there; it carries no target, no zone and no evidence, because none is knowable from what is here. That gap is why the quest is medium rather than high.\n\nStep 1 grants BOTH the Weapon training guide key item and the Gun of Trials. Only the key item is used as evidence: the gun is traded away at step 3, so an AND-list over both would read false for the rest of the quest. Bullet 4's four sub-bullets are two alternative routes into The Boyahda Tree and are route advice, not steps -- the instruction in that bullet is the single examine at (J-8). 'Map 3' is a wiki map page, not a zone. Bullet 6 is a second examine of the SAME ??? after the kill, which is why steps 4, 5 and 6 are three rungs on one object. 'Quest Reqs: Marksmanship Skill 250+' has no slot in the schema and nothing in the packets reports skill, so it is flagged and gates nothing; the level 71 half of it is the header Level field and is kept.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "B / NA"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": "H-8",
+   "raw": "Cid - Metalworks (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "also hands over the Gun of Trials, which is traded back at step 3 and so is not used as evidence"
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "break the latent on the Gun of Trials. The page's '== Breaking the Latent ==' section is an empty transclusion, so there is nothing here to say how -- no target and no zone can be recorded."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Gun of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Beet Leafhopper",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "on the wiki's Map 3, which is a map page and not a zone. Short route: Home Point or Unity Warp into the Tree, then (G-10) south into the tunnel. Long route: The Sanctuary of Zi'Tah (J-12), then (I-8) > (G-7) ledge > (C-4) tunnel > (A-6) > (G-10). ??? can never carry a marker."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Beet Leafhopper",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a Fly, weak to Ice"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same ??? again, after the kill"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the reward is the Detonator weaponskill"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Out of the Depths",
+   "page_id": 34189,
+   "revision_id": 760902,
+   "source_sha256": "50a28ac458d6aaa0a03fbd5fc656a63c3c9ee9b6d2851038281d6641c0207d5e",
+   "cache_file": "0034189_out_of_the_depths"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 75,
+   "dat_name": "Out of the Depths",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "grid_conflict"
+  ],
+  "notes": "A clean nine-bullet ladder that maps almost one-to-one onto steps, with one merge worth explaining. Bullet 5 is FOUR trades to the same goblin in the same spot -- one ash for the Dusty tome, two for the Pointed jug, three for the Cracked club, four for the Peeling hairpin -- so it is one step whose items are the ten ash those four trades cost between them, and whose evidence is all four key items held at once. Splitting it into four rungs on one NPC would be four markers on the same dot. Bullet 6 is likewise four conversations with Ravorara and stays one step.\n\nThe eleventh ash is a separate step because it is a different action with a different answer ('No Thanks') and a different key item, and because the page deliberately separates it. Hoary Bomb Ash x11 is evidence on step 4 only; steps 5 and 7 spend it, and the same item may not anchor two steps.\n\nGrid conflict: bullet 3 puts Brakobrik at (K-10) and bullets 5 and 7 put him at (K-11). Each is recorded where the page wrote it rather than reconciled, since the walk from one to the other is a few paces and nothing in the page says which is right. The page contradicting itself about one entity's position is what holds this quest at medium rather than high; the ladder itself is not in doubt.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Ayame",
+   "zone": "Metalworks",
+   "grid": "K-7",
+   "raw": "Ayame - Metalworks K-7"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame"
+    },
+    "zone": "Metalworks",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "agree twice to open the quest"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ravorara"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "outside the Steaming Sheep Restaurant"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brakobrik"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says (K-10) here and (K-11) at bullets 5 and 7. Closest warp is the Proto-Waypoint to the Geomagnetic Fount at (K-11)."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Hoary Bomb Ash",
+       "count": 11
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ancient Bomb",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at least one ash per bomb, up to three with Treasure Hunter; eleven in total, which is the header's Item Reqs"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Brakobrik"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "K-11",
+    "items": [
+     {
+      "name": "Hoary Bomb Ash",
+      "count": 10,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Dusty tome",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Pointed jug",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Cracked club",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Peeling hairpin",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "four separate trades of 1, 2, 3 and 4 ash, ten in all. Only one of each key item is possible -- trading the same amount twice just burns the ash."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ravorara"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "four times, once per key item; 100, 200, 300 and 400 gil"
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Brakobrik"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "K-11",
+    "items": [
+     {
+      "name": "Hoary Bomb Ash",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old nametag",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the eleventh ash; answer 'No Thanks' when he offers something in return"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ravorara"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pavvke"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "in his residence on the lower level"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Naming Game",
+   "page_id": 34232,
+   "revision_id": 751283,
+   "source_sha256": "86110d4ce676d5dcd13c4f9982ab61cfe293b596b386fc1c954902062ede8486",
+   "cache_file": "0034232_the_naming_game"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 81,
+   "dat_name": "The Naming Game",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "Two bullets, two steps, and the only judgement here is what to do with bullet 1's fork. The Ordrynite comes either from Cryptonberry Plaguers and Stalkers inside Pso'Xja or from Chocobo Digging in Beaucedine Glacier -- two different zones for one step, and a step has one zone. Rather than pick a side and put a marker in the wrong half of the world, the step carries no zone at all and both routes live in the note; the two mobs are still recorded with role 'drop' so the digging branch costs nothing. The sub-sub-bullets under bullet 1 are travel shortcuts (Outpost Warp, Survival Guide, HP1 plus Escape) and Chocobo Digging rank advice, not steps.\n\nThe 'Name Options' section after the walkthrough is the reward itself -- a four-column table of airship name segments you pick from -- and contains no action. Its footnote (ten completions unlock the fourth segment) is a repeat count, not a step; the header already says Repeatable: Y.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 5,
+    "raw": "Bastok / 5"
+   },
+   "prev": [
+    {
+     "title": "Hyper Active",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Raibaht",
+   "zone": "Metalworks",
+   "grid": "G-8",
+   "raw": "Raibaht, Metalworks (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Ordrynite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Cryptonberry Plaguer",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Cryptonberry Stalker",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "two sources in two zones, so no single zone is recorded: kill Cryptonberry Plaguers or Stalkers in Pso'Xja, entered from Beaucedine Glacier (G-9), or Chocobo Dig in Beaucedine Glacier itself. Ordrynite is Rare, so a digging run must be turned in one at a time."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Ordrynite",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "completes the quest; the reward is the airship name and, the first time only, 3,600 gil"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Lure of the Wildcat (San d'Oria)",
+   "page_id": 484,
+   "revision_id": 698708,
+   "source_sha256": "090c1bae9c6c8bd2dd7e0e76022d704efeb78032d42c4e2e4fed354c5d3d80ce",
+   "cache_file": "0000484_lure_of_the_wildcat_san_d_oria"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 113,
+   "dat_name": "Lure of the Wildcat (San d'Oria)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "walkthrough_in_table",
+   "access_gate_unmodelled"
+  ],
+  "notes": "The canonical unordered-group quest. Bullet 2 is a bare twenty-row table of area, position and name with no ordering language at all, and the game imposes none -- so all twenty share one group and draw at once. A strict ladder would mark Daggao and then nothing until you happened to walk past him. The twenty span four zones, and each step keeps the zone and grid the table gave it: one step, one zone, even inside a group.\n\nNo evidence anywhere in the group. The badge is granted whole at step 1 and taken back whole at step 22; nothing in the packets counts how many of the twenty you have spoken to, so the middle of this quest is genuinely untrackable and the runtime falls back on the session latch across it. The Red invitation card is NOT used as evidence on the last step -- the header lists it under Reward, so holding it proves the quest is over rather than that a step is done.\n\n'Quest Reqs: Access to Chateau d'Oraguille' is real (five of the twenty are inside it) but has no schema slot and no observable predicate, so it is flagged and gates nothing. Both bullets of the 'Notes' section are things you do AFTER joining Salaheem's Sentinels -- claiming Imperial currency from Naja Salaheem and paying Alib-Mufalib 300 gil for a teleport -- and neither belongs to this quest's ladder.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "San d'Oria / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Amutiyaal",
+   "zone": "Southern San d'Oria",
+   "grid": "L-6",
+   "raw": "Amutiyaal - Southern San d'Oria (L-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amutiyaal"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Red Sentinel badge",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Daggao"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Authere"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rouva"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Femitte"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deraquien"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Giaunne"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maloquedil"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anilla"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Phairupegiont"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bertenont"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "E-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 13,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Curilla"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 14,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 15,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perfaumand"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 16,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chalvatot"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 17,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perdiouvilet"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 18,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pomilla"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 19,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cherlodeau"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 20,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Parcarin"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 21,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rugiette"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "recruits",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 22,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Amutiyaal"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he takes the Red Sentinel badge and gives the Red invitation card, which is the header's Reward and so is not used as evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dances with Luopans",
+   "page_id": 98212,
+   "revision_id": 726497,
+   "source_sha256": "ab4e4c76804fe4d337b0a1da379174783dcac743f5f2cf0da42b5aaca049008f",
+   "cache_file": "0098212_dances_with_luopans"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 118,
+   "dat_name": "Dances with Luopans",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "progress_unobservable"
+  ],
+  "notes": "The Geomancer unlock, and it has two forks that are OR, not AND. Bullet 2's three crags are one per home nation and you can only use yours; bullet 4's three Ergon Loci are three places any of which will do. Both are modelled as groups, because a group draws all its members at once and that is exactly the right picture for a fork whose branch the addon cannot know -- nothing in the packets reports your home nation.\n\nFollowing the pattern the monuments quest established, the crag group's soil key item sits on the LAST member only. Duplicate evidence across steps is a hard gate, and putting it last means obtaining the soil lands the mark on Sylvie rather than back inside the group. The charging group carries no evidence at all: bullet 6's 'You feel a mystical warmth welling up inside you!' is a chat line, the Luopan key item is already in hand from step 5 and does not change when it warms, so up to eight minutes of resting is genuinely invisible.\n\nBullet 2 names the object 'the Ergon Locus ???', so it is recorded as the object Ergon Locus -- the page's own words -- while bullet 4's three are individually named and keep those names. Step 5 requires holding BOTH the Petrified Log item and the soil key item, which is why the key item appears in items as well. The trailing WARNING bullet is about not tossing the Matre Bell before a much later Empyrean quest; it is a caution about the reward, not a step.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 8: Any one of the three will do; none of them is observable, so the group carries no evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Sylvie",
+   "zone": "Western Adoulin",
+   "grid": "I-5",
+   "raw": "Sylvie, Western Adoulin (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Waterfront, Waypoint #9"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "homeland_crag",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the San d'Oria crag; beneath the stairs up to the Telepoint. Only the crag matching your home nation works, so this group is an OR -- see the quest note."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Konschtat Highlands",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "homeland_crag",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Bastok crag; the page gives no grid for this one"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Tahrongi Canyon",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fistful of homeland soil",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "homeland_crag",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Windurst crag. Last member of the group, which is why it carries the soil for all three."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Petrified Log",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fistful of homeland soil",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Luopan",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "you must be holding the soil as well as the log"
+   },
+   {
+    "n": 6,
+    "kind": "wait",
+    "target": {
+     "type": "object",
+     "name": "Flourishing Island"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charging",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Frontier Station. Arriving triggers 'You are assaulted by an uncanny sensation'; then /heal for up to eight minutes."
+   },
+   {
+    "n": 7,
+    "kind": "wait",
+    "target": {
+     "type": "object",
+     "name": "Bud of the Swarm"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charging",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Bivouac #2"
+   },
+   {
+    "n": 8,
+    "kind": "wait",
+    "target": {
+     "type": "object",
+     "name": "Immutable Boulder"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charging",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "Bivouac #2."
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Secret to Success",
+   "page_id": 109707,
+   "revision_id": 745379,
+   "source_sha256": "624e7721c2683908f45aefc82fb80c52f09043daec98d459ad5dffe63d85deb8",
+   "cache_file": "0109707_the_secret_to_success"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 127,
+   "dat_name": "The Secret to Success",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "zone_unnamed"
+  ],
+  "notes": "Straightforward except for one thing the page never says. Bullet 2 sends you to 'the Scouts' Coalition' to talk to Wegellion at (F-9) and names no zone anywhere on the page -- and (F-9) falls inside both Adoulin halves, so it cannot be inferred from the grid either. Rather than guess, that step's zone is null. A zone-less row matches everywhere, so Wegellion still gets a marker; it is only less precise, which is the correct trade against naming the wrong zone.\n\nBullets 4 and 5 are one search: bullet 4 is Emjook-Renook telling you the three grids and bullet 5 is you checking them, so they merge into a group of three Suspicious Places. Only one of the three holds the badge and which one is random, so a strict ladder would be wrong two times in three; the group draws all three and the badge sits on the last member so that obtaining it moves the mark on to Emjook-Renook. The long sub-bullets under each are walking directions and bush-obstruction times, not steps.\n\nStep 1's grid is the header's (J-8); bullet 1 writes it '(J-7/J-8)' and the two are the same NPC. The 'hand over the hat' sub-bullet under bullet 2 is a dialogue branch on that same conversation, not a separate rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Adoulin / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Behsa Alehgo",
+   "zone": "Eastern Adoulin",
+   "grid": "J-8",
+   "raw": "Behsa Alehgo, Eastern Adoulin - (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Behsa Alehgo"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the priory near the castle; bullet 1 writes the grid (J-7/J-8) and the header (J-8)"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wegellion"
+    },
+    "zone": null,
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Scouts' Coalition. The page never names the zone, so none is recorded. If he offers to take the hat, do that and talk again for the cutscene."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emjook-Renook"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "suspicious_places",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "southwest corner of (J-8), behind a tree; south-east from the Frontier Station, right at the fork by the Saptrap, then right again past the Twitherym. A bush used to obstruct it from 00:00 to 6:00."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "suspicious_places",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "southwest corner of (H-9), northwest from Bivouac #2; a Colonization Reive sits in the way"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Unblemished pioneer's badge",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "suspicious_places",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "in the field of Numbing Blossoms on the south side of (I-8); a bush may obstruct it except from 21:00 to 3:00. Last member of the group, so it carries the badge for all three -- only one of the three actually has it and which one is random."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emjook-Renook"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Behsa Alehgo"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "1000 Bayld"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Claws of the Griffon",
+   "page_id": 19773,
+   "revision_id": 692133,
+   "source_sha256": "93ae219282c581cc502f8151b636f5b48a7701b58ebe51f4fa8502757536bcce",
+   "cache_file": "0019773_claws_of_the_griffon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 16,
+   "dat_name": "Claws of the Griffon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "unmarkable_finish"
+  ],
+  "notes": "Five bullets, four of which are steps. Bullet 1 is a cooldown -- one game day must pass after Gifts of the Griffon before this will start -- and game time is not something the addon can see, so it is a gate that gates nothing and is recorded here rather than as a rung. Bullet 2 is two conversations with Rholont separated by a zone-out; both are the same marker on the same NPC, so they are one step with the round trip in the note.\n\nThe start is Rholont and agrees with the header; the zone entry is step 2, mid-quest, not the start. Bullet 3 is a real step even though there is nothing to click: the cutscene fires on entering Jugner Forest (S) and ONLY when you come in from East Ronfaure (S), so the route is load-bearing and any other way in silently fails. Bullets 4 and 5 are three actions on one ??? at (I-6) -- touch for a cutscene, touch again to pop the NM, kill it, touch a third time to finish -- which is three rungs, because the fight between them is a different kind of thing and the guide's own example splits exactly this shape.\n\nThe quest ends on the ??? with no hand-in NPC, so the last step is unmarkable by construction and no turn-in is invented. The Angelstone is the header's Reward and so is not evidence on it. The 'Notes' section is about activating a later Wings of the Goddess mission at the Cavernous Maws and the 'Lore' table is a spoiler box; neither is a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Gifts of the Griffon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 15,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Rholont",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "E-7",
+   "raw": "Rholont, Southern San d'Oria (S) - (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "cutscene, then leave the area, come back and talk again for more dialogue. Bullet 1's one-game-day wait after Gifts of the Griffon applies before this and is invisible to the addon."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Jugner Forest (S)"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the cutscene fires on entry and ONLY when entering from East Ronfaure (S); any other route skips it. Survival Guide to East Ronfaure (S) is the direct way."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fingerfilcher Dradzad",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "on a tree stump. The first touch is a cutscene; touching it again spawns the NM. ??? can never carry a marker."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fingerfilcher Dradzad",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "an Orc Warrior NM, immune to sleep"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? a third time. The cutscene and the Angelstone follow immediately -- there is no NPC to hand in to, so this step is deliberately unmarkable and the reward is not used as evidence."
+   }
+  ]
+ }
+]

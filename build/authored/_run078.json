@@ -1,0 +1,1898 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Voices from Beyond",
+   "page_id": 67127,
+   "revision_id": 759281,
+   "source_sha256": "f10e9fd5bc98d8aa791af1754e42da8a7a38749e82a8cae4281b089066d1884d",
+   "cache_file": "0067127_voices_from_beyond"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 57,
+   "dat_name": "Voices from Beyond",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "zone_inferred",
+   "unnamed_target"
+  ],
+  "notes": "Six bullets, six real actions -- an unusually clean page. Two of them are ??? examines at the same grid, and the second one (bullet 5) is the interesting judgement: it produces nothing but a line of text, so a keyword reader would drop it as flavour, but the page says outright that Rukususu will not accept the Ominous Skull until you have read it. It is a step. Neither ??? can carry a marker (??? is in OBJECT_DENY) but both keep their rung.\n\nThe two fights have no stated location. Sensenmann and Xibalba are named, the zone is not; 'Abyssea - Grauberg' is carried down from the quest's own zone rather than invented, and both steps are demoted to medium for it. Bullet 4 also never says HOW the molar spawns Xibalba -- no ??? , no NPC -- so the target stays none rather than guessing at a pop point.\n\n'Skyrend' in bullet 2 is an area inside Abyssea - Grauberg, not a zone; it does not resolve and is kept as a note. Fame 'agra' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw is kept. The Decaying Molar can be bought on the Auction House instead of farmed, which the evidence covers either way since holding it is what is observed.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Skyrend is an area inside Abyssea - Grauberg and does not resolve as a zone of its own.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "agra / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Rukususu (A)",
+   "zone": "Abyssea - Grauberg",
+   "grid": "F-10",
+   "raw": "Rukususu (A), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rukususu (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "south of Veridical Conflux #7, near the encampment by the waterfall; do not drop down the river. The header gives no grid, so (F-10) comes from the walkthrough."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "C-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "In Skyrend, further past Azdaja's ???, at the very end of the canyon."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Decaying Molar",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Sensenmann",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "repeat until it drops. The page gives no zone or grid for Sensenmann; Abyssea - Grauberg is carried down from the quest itself, hence medium. The molar can be bought on the Auction House instead -- holding it is what the evidence observes, so either route satisfies the step."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Decaying Molar",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Ominous Skull",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Xibalba",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Xibalba",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page never says what the molar is traded to, so no pop target is recorded. He can Doom even iLevel 119 characters. Zone carried down as for step 3."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "C-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the WESTERNMOST ??? at (C-8). It only prints a spectral message, but the page states Rukususu will not accept the Ominous Skull until you have read it, so it is a real step and not flavour."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rukususu (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Ominous Skull",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Do Not Go Into the Light",
+   "page_id": 104680,
+   "revision_id": 769835,
+   "source_sha256": "7203a39a25f1098ebd9b2f149884125d5b8f723ca5eef2b340c8e3472bef3f76",
+   "cache_file": "0104680_do_not_go_into_the_light"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 122,
+   "dat_name": "Do Not Go Into the Light",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "time_gated",
+   "zone_inferred"
+  ],
+  "notes": "The header's giver is 'Alianne', who is never mentioned once in the walkthrough. What bullet 2 tells you to do at the header's own grid square (I-8) is check the door to Svenja's Manor -- and the PREVIOUS quest in the chain, Flowers for Svenja, gives its start verbatim as 'Door: Svenja's Manor, Western Adoulin - (I-8)'. That is the entity, so start moves to the door and the header string is kept in raw. It is a marker move inside one grid square, not a removal.\n\nThe same corroboration fixes the second door: this page says only 'the door ... to the Hospital at (I-9)', and elsewhere in the corpus that entity is written 'Door: Hospital in Western Adoulin'. Both door names are confirmed rather than constructed.\n\nBullet 1 is a game-day wait after Flowers for Svenja -- a precondition the addon cannot see, not a step. The three materials sit under 'Quest Reqs' rather than 'Item Reqs', which is a header quirk; they are ordinary quest items and bullet 5 is a genuine obtain. This page never places the Inventors' Coalition; the sibling page Vegetable Vegetable Crisis puts it in Western Adoulin, which is where Chanteillie is recorded. Bullet 7 says only 'head back to the Hospital', so the hand-in is the same door as step 2 -- there is no named NPC to point at.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Flowers for Svenja",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Door: Svenja's Manor",
+   "zone": "Western Adoulin",
+   "grid": "I-8",
+   "raw": "Alianne, Western Adoulin - (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "closest to the Courier's Coalition Waypoint. Bullet 1 is the game-day wait after Flowers for Svenja and is not a step."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Hospital"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'to the left' as if you were exiting the manor"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Borghest"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at the Frontier Station; the page gives no grid"
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Urunday Lumber",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Damascus Ingot",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Fire Crystal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page says nothing about where any of the three come from, so no zone. A Fire Crystal alone is a common holding, but the AND-list also needs Urunday Lumber and a Damascus Ingot, which are not."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chanteillie"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [
+     {
+      "name": "Urunday Lumber",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Damascus Ingot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fire Crystal",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Inventors' Coalition pickaxe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "at the Inventors' Coalition, which this page does not place; the zone comes from the sibling page Vegetable Vegetable Crisis. She will refuse the items while she is waiting on that quest's delivery instead."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Door: Hospital"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page says only 'head back to the Hospital'; the door from step 2 is what you check. No NPC is ever named inside."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Tango with a Tracker",
+   "page_id": 274,
+   "revision_id": 735895,
+   "source_sha256": "39966d80e3d839a869ec959eaf2d2c77fdd311b86627cde6ff33bfbc6afdcb40",
+   "cache_file": "0000274_tango_with_a_tracker"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 82,
+   "dat_name": "Tango with a Tracker",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "prev_is_mission",
+   "walkthrough_is_mostly_tactics"
+  ],
+  "notes": "Seven bullets, three steps. Bullets 3 through 7 are the battlefield's rules and the fight's tactics -- time limit, party size, no Trusts, job pairings, sleep resistance, skillchains, and finally 'you will receive your reward', which is an outcome. Only bullets 1 and 2 are things you do, plus the fight itself, which I have kept as one step because the page treats the three enemies as a single encounter ('once all three are defeated').\n\nThe wiki's menu option in bullet 2 came through the prepass as an empty string -- 'select \"\" at the Dark Miasma' -- so the exact selection cannot be recorded; the Dark Miasma itself is the entity and is named.\n\n'Quest Reqs' holds two different things: Promathia Mission 7-5, which is a real prerequisite and goes in prev even though the Previous field is blank, and 'Letter from Shikaree X', which is not a prerequisite at all -- it is the key item bullet 1 hands you, and so it is step 1's evidence. The page does not say the letter must be held to enter the battlefield, so it is not listed among step 2's items.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Promathia Mission 7-5",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Despachiaire",
+   "zone": "Tavnazian Safehold",
+   "grid": "K-10",
+   "raw": "Despachiaire, Tavnazian Safehold (K-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Despachiaire"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Shikaree X",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dark Miasma"
+    },
+    "zone": "Boneyard Gully",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the menu option the page names came through empty, so the exact selection is not recorded"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Boneyard Gully",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shikaree X",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shikaree X's Rabbit",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Shikaree Y",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "note": "all three. 30 minutes, up to 6 party members, no Trusts. Shikaree X is BST/NIN and re-summons the Rabbit if it dies first, so kill her before it; the Rabbit resists sleep but not bind or gravity. Shikaree Y is DRK/MNK. Both sisters shrug off sleep, build TP fast and skillchain with each other. Bullets 3 to 7 are rules, tactics and the reward -- none is a separate action. VERIFY: the Rabbit no longer carries a count of 1. The page itself says a replacement is summoned whenever it dies before Shikaree X, so \"exactly one rabbit\" is a claim the page contradicts; Requiem of Sin, the same fight on the same wording, leaves the count open too."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beyond the Sun",
+   "page_id": 11433,
+   "revision_id": 744349,
+   "source_sha256": "d5e0ff0e2df08e8b2d09ecc1302280a5e6634367cbc22a740cb5ff15af397469",
+   "cache_file": "0011433_beyond_the_sun"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 76,
+   "dat_name": "Beyond the Sun",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeating_loop",
+   "count_unobservable",
+   "latent_unmodelled"
+  ],
+  "notes": "This is a LOOP fifteen times over, not a fifteen-rung ladder: talk to Maat on a job, fight him at the BC area he names, come back, change job, repeat. Three steps is the honest shape. Fifteen fight steps would be wrong twice over -- the ladder would claim an order the game does not impose, and nothing in the packets reports which jobs are already done, so it could never advance past the first.\n\nThe fifteen job names in bullet 2's sub-bullets are NOT a job gate. 'jobs' means 'only these jobs may take this quest'; here every job may, and the requirement is that you eventually beat him on all of them. Putting them in jobs would lock the quest to fifteen jobs at once and gate it wrongly forever, so jobs stays empty and the list lives in the step note.\n\nBullet 3's 'the level required to fight Maat is at least level 66' contradicts the header's 'Level: None'. The header is kept -- the 66 belongs to the Shattering Stars fights this quest is built on, and level is a prereq predicate, not advice. Bullet 4 is a diagnostic aid, not a step: talking to Teyrnon in Feretory only tells you which jobs you have already cleared, by which Instinct prices are halved. Nobody has to do it.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "J / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Shattering Stars",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Maat",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Maat - Ru'Lude Gardens (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "once per job. He asks for that job's Testimony and names the BC area to meet him at. The Testimonies are per-job and the page names none of them, so none is recorded."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Maat",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "fifteen separate fights, one on each pre-ToAU job: Bard, Beastmaster, Black Mage, Dark Knight, Dragoon, Monk, Ninja, Paladin, Ranger, Red Mage, Samurai, Summoner, Thief, Warrior, White Mage. The BC area differs per job, so no zone is recorded. Like Shattering Stars but with no level cap."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "only after the fifteenth win; the cutscene and Maat's Cap follow. Maat's Cap is the header's Reward, so it is not used as evidence anywhere."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Release the Fleece",
+   "page_id": 111270,
+   "revision_id": 699588,
+   "source_sha256": "0bcc23961f739c260761772937c492250a0addb702225a3c87e6f26ab1093716",
+   "cache_file": "0111270_release_the_fleece"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 201,
+   "dat_name": "Release the Fleece",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "latent_unmodelled"
+  ],
+  "notes": "A short Mog Garden chain, entirely in one zone, with no items and no key items anywhere in the walkthrough -- so no step carries evidence and the ladder relies on the session latch throughout. That is the correct answer here, not a reach.\n\nThe baby sheep is the one thing that cannot be marked. The page calls it 'your baby sheep' and 'a baby sheep'; the description calls it 'the bodyguard's lamb'; the next quest, Feeding Frenzy, does no better ('your baby sheep', 'the sheep'). None of those is an entity name, so the target is none/null rather than a guess at Lamb or Sheep. The step keeps its rung.\n\nSteps 2 and 4 are both Chacharoon but they are genuinely separated by the sheep, so they are not collapsed. The five key items under Item Reqs -- 'Fields And Fertilizing' and the rest -- are the Mog Garden rank-up books that make up the 'Level 4 Mog Garden' requirement, i.e. gates, not things this quest has you fetch; neither they nor 'Recruit Susuroon at least once' has a slot in the schema, so both are recorded here only.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The page never names it and neither does the following quest, so there is no entity name to record.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene introduces Chacharoon"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chacharoon"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "twice -- the sub-bullet 'speak with Chacharoon again' is a second conversation with the same NPC, not a separate errand"
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Interact with the baby sheep it likes to be pet."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chacharoon"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he sends you back to the Green Thumb Moogle"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the cutscene ends this quest and opens Feeding Frenzy"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Doorman",
+   "page_id": 15052,
+   "revision_id": 702689,
+   "source_sha256": "ca88adfcd1706f05a2c8b82275fe098d212686f79709eaa64167b015ebc05a35",
+   "cache_file": "0015052_the_doorman"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 54,
+   "dat_name": "The Doorman",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "time_gated"
+  ],
+  "notes": "Bullet 3 is two steps, not one: 'kill them then check the Hide Flap' is a fight and then an examine of the object you already examined once, which is the pattern the pilot flagged. Both carry bullet 3 so the split stays auditable, and only the second one carries the Sword grip material -- the first check just pops the NMs.\n\nThe second Hide Flap check gets no grid on purpose. The page says the flap relocates to a random spot in the area every time it is checked, so (K-9/10) is where you find it the first time and not a place to send anyone back to.\n\nSteps 5 and 6 are both Phara and consecutive, which the runtime treats as one marker anyway; they are kept apart because a game day has to pass between them and only the second hands over Yasin's sword. That wait is invisible to the addon. 'Repeatable: af' is the artifact-armour category leaking into the field and means false. Level '40+ Warrior' is both gates: level 40 AND jobs WAR.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": 40,
+   "jobs": [
+    "WAR"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Phara",
+   "zone": "Bastok Mines",
+   "grid": "J-9",
+   "raw": "Phara, Bastok Mines (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Phara"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "right beside the Gobbie Mystery Box at Home Point #2"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hide Flap"
+    },
+    "zone": "Davoi",
+    "grid": "K-9/10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Barakbok",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Gavotvut",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "clicking it pops both NMs"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Davoi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Barakbok",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Gavotvut",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "both"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hide Flap"
+    },
+    "zone": "Davoi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sword grip material",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the same Hide Flap again, once both NMs are dead. It moves to a random spot in the area every time it is checked -- possibly the same one -- so no grid is recorded here. Five minute wait to re-pop if someone else is on the quest."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Phara"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Sword grip material",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "then a game day has to pass -- the clock must roll past 00:00 -- before she will go on. Nothing in the packets reports game time."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Phara"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yasin's sword",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "outside the President's Office; you may have to speak to him twice. The Razor Axe is the header's Reward, so it is not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Know One's Onions",
+   "page_id": 163,
+   "revision_id": 772524,
+   "source_sha256": "9ae2f84c6afac751661fe6e6a436f56b63a6234fe723ba90ccbb2274a73cd4ac",
+   "cache_file": "0000163_know_one_s_onions"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 40,
+   "dat_name": "Know One's Onions",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "Bullet 1 is a precondition -- zone once if you have just finished the previous quest -- and not a step; the runtime already knows accepting the quest means step 1 is done.\n\nThe real judgement here is bullet 3's sub-bullet: for some players the quest ENDS at the onion trade, cutscene and reward included, and steps 3 and 4 never happen. The page admits it does not know the trigger and only guesses at Windurst mission progress or the Old ring key item. Neither is observable, so the branch cannot be modelled; the longer path is recorded because it is the one the page instructs, and the shorter one simply completes early, which costs nothing.\n\nThe House of the Hero is a real markable object -- the same entity two Summoner AF quests are actually started at -- so bullet 4 keeps a marker even though there is no NPC. 'Level: 5+' is a plain level gate with no job attached, so jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [
+    {
+     "title": "Truth, Justice, and the Onion Way!",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 5,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kohlo-Lakolo",
+   "zone": "Port Windurst",
+   "grid": "G-5",
+   "raw": "Kohlo-Lakolo (G-5) Port Windurst"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "behind the warehouse"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [
+     {
+      "name": "Wild Onion",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all four. For some players this ends the quest outright and steps 3 and 4 never happen; the page does not know what decides it."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "House of the Hero"
+    },
+    "zone": "Windurst Walls",
+    "grid": "G-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "try to enter it; the cutscene is what you are after"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rosel the Armorer",
+   "page_id": 493,
+   "revision_id": 773230,
+   "source_sha256": "b4eb2c0c805441552e6b0b858c306de2568dbc084835676fc4d65d7b7c8a0622",
+   "cache_file": "0000493_rosel_the_armorer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 2,
+   "dat_name": "Rosel the Armorer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "route_only_bullet"
+  ],
+  "notes": "The trap on this page is that it names three people you never go to. Bullet 1 says to deliver the receipt to Prince Pieuje or Prince Trion in Chateau d'Oraguille, and both are real, resolvable NPCs -- but you never reach either of them. Guilerme takes the receipt at the bridge, asks which prince, and walks it in himself. A verb-scanner would put a step in Chateau d'Oraguille; there is none, and the quest never leaves the two San d'Oria city zones. The prince is a dialogue choice, and getting it wrong costs 100 gil, not the quest.\n\nBullet 2 is nothing but walking directions -- out of the shop, west into Victory Square, north through Victory Arch, north again -- so it is folded into step 2's note rather than made a travel step. The page never gives Guilerme a grid, only 'near the bridge into the Chateau', so grid stays null; the zone is Northern San d'Oria because that is where bullet 2 leaves you.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rosel",
+   "zone": "Southern San d'Oria",
+   "grid": "K-8",
+   "raw": "Rosel - Southern San d'Oria (K-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rosel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Receipt for the prince",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in Rosel's Armour Shop. He picks Prince Pieuje or Prince Trion at random; come back to him if you forget which."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guilerme"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": null,
+    "items": [
+     {
+      "name": "Receipt for the prince",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "a guard standing near the bridge into Chateau d'Oraguille. Bullet 2 is walking directions only. He takes the receipt, cannot read the recipient, and delivers it himself after you name the prince -- you never enter the Chateau and never meet either prince."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rosel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "200 gil for the right prince, 100 for the wrong one"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "To Cure a Cough",
+   "page_id": 519,
+   "revision_id": 772508,
+   "source_sha256": "e0aab5046cc640358dd97a0d273f29d5316bb08914a2e5b94ea2b9507edf5123",
+   "cache_file": "0000519_to_cure_a_cough"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 20,
+   "dat_name": "To Cure a Cough",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "ki_untagged_on_page",
+   "bullet_split"
+  ],
+  "notes": "The best ladder in this batch: seven steps, three of them carrying evidence, across three zones. The page writes 'Thyme moss', 'Cough medicine' and 'Scroll of treasure' in plain prose with no [KI] tag, which invites recording them as inventory items -- none of the three is an item. All three are key items (153, 154, 155) and none exists in res/items.lua at all, so getting the kind wrong would have silently cost this quest every evidence point it has.\n\nBullet 3's sub-bullet is where you actually get the moss, in Davoi, and it is a step of its own -- the parent bullet is only Amaura asking for it. Bullets 6 and 7 are the reverse: 6 says where the scroll points and 7 is the click, so they merge into one step.\n\nThe quest ends on an object, not a person. The 3,000 gil comes out of the signpost in East Ronfaure, so there is no hand-in and none is invented. Bullet 1's note that the quest does not enter your log until the item hunt begins is real but unobservable, and the optional extra questions to Nenne are not a step.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 3,
+    "raw": "S / 3"
+   },
+   "prev": [
+    {
+     "title": "The Medicine Woman",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nenne",
+   "zone": "Southern San d'Oria",
+   "grid": "F-6",
+   "raw": "Nenne - Southern San d'Oria (F-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nenne"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the quest does not appear in your log until the item hunt starts at step 4. The extra questions the page offers are optional flavour, not a step."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "first house on Watchdog Alley, upstairs in the bedroom, on the table. You must page all the way through the diary or the quest does not move on."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "she asks for thyme moss"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Davoi",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Thyme moss",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "from the sub-bullet under bullet 3 -- the only part of that bullet that is an action of its own, and in a different zone from its parent. Thyme moss is a key item despite the page's untagged prose."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Thyme moss",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cough medicine",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "cough medicine is likewise a key item, not an inventory item"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nenne"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Cough medicine",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Scroll of treasure",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page says speak, not trade, so the kind is talk even though a key item changes hands"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Signpost"
+    },
+    "zone": "East Ronfaure",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "bullet 6 only says where the scroll points; bullet 7 is the click. The 3,000 gil comes out of the signpost, so the quest ends on an object and there is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "His Box, His Beloved",
+   "page_id": 56714,
+   "revision_id": 641157,
+   "source_sha256": "2baf10124a8061642eeebf27f076b29f187ec9a3525f00654379ebc6dbe8b08b",
+   "cache_file": "0056714_his_box_his_beloved"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 20,
+   "dat_name": "His Box, His Beloved",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "duplicate_ki_name",
+   "evidence_unresolvable"
+  ],
+  "notes": "Four bullets, five steps, all in one zone. The extra step is Kupipi (A), who is a sub-bullet precondition -- 'you'll need to speak to her beforehand if you've never done so' -- so she is marked optional rather than made a ladder position. She stands in the same grid square as Apururu (A), so nothing is lost either way.\n\nThe Bottomless Box is the target of step 4, not Kopuro-Popuro (A): he only tells you to go and charm it. That is the sentence-fragment trap -- he is the NPC the bullet names, the box is the thing you interact with. Emoting at an object is not an examine, so the kind is other.\n\nThe one real loss here is the evidence. 'Ripe starfruit' appears TWICE in res/key_items.lua, and the resolver rejects non-unique key-item names outright rather than guessing an id, so this evidence will be dropped at validation and step 4 will keep its place and its marker but not its observability. It is recorded anyway because the name is the page's and correct; the fault is in the resource table, and a human should see it rather than have it quietly turn into null. Fame 'atah' is an Abyssea zone code, not one of the nine regions, so it gates nothing.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: The evidence will not resolve: 'ripe starfruit' is a duplicated name in res/key_items.lua.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "atah / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Apururu (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "H-12",
+   "raw": "Apururu (A) (H-12), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "only if you have never spoken to her before; the page states it as a precondition under bullet 1. Same grid square as Apururu (A)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Apururu (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kopuro-Popuro (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Western Encampment, near Veridical Conflux #03"
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "object",
+     "name": "Bottomless Box"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ripe starfruit",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The box stands next to Kopuro-Popuro (A). Gain its affection with the emotes he suggests /cheer, /clap, /praise, /smile, /joy repeated several times; the page says the starfruit can also come without any emote at all."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Apururu (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [
+     {
+      "name": "Ripe starfruit",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ }
+]

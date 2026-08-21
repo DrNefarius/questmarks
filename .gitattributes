@@ -1,0 +1,31 @@
+# Line endings. Everything in this repository is LF, including the generated
+# Lua, and that is load-bearing rather than tidiness: the build is checked by
+# rebuilding twice and comparing bytes, so a checkout that rewrote newlines
+# would fail its own test on a fresh clone. tools/build_index.lua and
+# emit_lua.py both write LF explicitly for the same reason.
+#
+# Do not "fix" this to core.autocrlf. A Windows contributor gets LF working
+# copies here and that is correct.
+* text=auto eol=lf
+
+# Binary, never touched.
+*.png binary
+*.gif binary
+
+# Generated. Marked so a pull request that regenerates them is obvious in
+# review, and so GitHub does not count a megabyte of emitted Lua as authored
+# work in the language stats.
+data/quest_index.lua    linguist-generated=true
+data/mission_index.lua  linguist-generated=true
+data/quest_steps.lua    linguist-generated=true
+data/dat_names.lua      linguist-generated=true
+tools/lib/mission_numbers.lua linguist-generated=true
+build/res.json          linguist-generated=true
+
+# Rendered wiki pages and the authored corpus are DATA, not source. They are
+# committed on purpose (see .gitignore), but they should not drown the diff
+# view or the language breakdown.
+build/rendered/**       linguist-generated=true
+build/authored/**       linguist-vendored=true
+build/authored-quarantine/** linguist-vendored=true
+bgwiki-rest-cache/**    linguist-vendored=true

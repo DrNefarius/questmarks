@@ -1,0 +1,1685 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Guardian of the Void",
+   "page_id": 67787,
+   "revision_id": 747726,
+   "source_sha256": "d2993e7f8c6681e1644476fb1ddac4acfecdb44fe3d31c26401c0ef2e59e68d5",
+   "cache_file": "0067787_guardian_of_the_void"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 80,
+   "dat_name": "Guardian of the Void",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "prereq_chain_unmodelled",
+   "or_branch_unmodelled",
+   "generic_npc_name",
+   "unnumbered_prose_bullets"
+  ],
+  "notes": "This page is written as prose with the numbered bullets landing on the ASIDES rather than on the instructions -- every real instruction here is an unnumbered sentence and every [n] is the note or the route hanging off it. Read as a player: bullets 1-3 are three national quest CHAINS of four quests each, of which you complete exactly one ('no mix and matching allowed'); bullet 4 is a note about which maws count; bullet 5 is a route; bullet 7 is travel advice. So source_bullets point at the nearest numbered sibling and each note says which prose line the step actually is.\n\nThe three chains are a prerequisite, not steps, and they are an OR over twelve titles. gates.prev is an AND-list, so putting them there would gate this quest on all twelve forever -- it stays empty and the chains are recorded here instead: San d'Oria (S) Knights of The Iron Ram > Steamed Rams > Gifts of the Griffon > Claws of the Griffon; Bastok (S) Republican Legion's Fourth Divison > The Fighting Fourth > Better Part of Valor > Fires of Discontent; Windurst (S) The Cobras > Snake on the Plains > The Tigress Stirs > The Tigress Strikes. The header's own Previous field is empty, so nothing is lost that the header claimed.\n\nStart is moved off the header. 'Clients: Cait Sith, Kupofried' are the cutscene pair, not standing entities -- what you click in Pashhow Marshlands (S) is the Veridical Conflux at (J-9), which resolves and can carry a marker. The header's zone is kept and its string is in start.raw.\n\nThe last step deliberately carries no marker: 'Voidwatch Officer' is one of the names the resolver refuses without a zone (it would otherwise mark every Voidwatch Officer in the game), and the page names no zone -- only 'one of the three starting-Nations (past or present)'. Better an honest empty rung than a marker in the wrong city. Its [KI] Voidwatch alarum is also the header's Reward, so it is not used as evidence either; the only evidence in the quest is Kupofried's medallion at Xarcabard (S).",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Veridical Conflux",
+   "zone": "Pashhow Marshlands (S)",
+   "grid": "J-9",
+   "raw": "Clients: Cait Sith, Kupofried, Pashhow Marshlands (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the unnumbered line above bullet 4: after one national chain is done, touch any of the three Cavernous Maws outside Jeuno in the past for the Cait Sith cutscene, which is what flags the two Veridical Conflux below. Bullet 4 adds that the present-day maws around Jeuno also work once unlocked, and that without them your only present-day option is the random zone you first landed in during the previous mission. The page names no zone for any maw, so this row is left zone-less on purpose -- it then matches whichever maw you are standing at. The title 'Cait Sith's Assistant' is the only sign it worked and a title is not observable."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Veridical Conflux"
+    },
+    "zone": "Xarcabard (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Kupofried's medallion",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "near the Home Point. Bullet 5 is only the way in -- Batallia Downs (S) > Beaucedine Glacier (S) > Xarcabard (S), or a campaign warp to any map you have already entered -- so it is folded in here rather than made a travel rung of its own. The page warns that skipping this means coming back for it later."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Veridical Conflux"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the unnumbered line above bullet 7; bullet 7 itself is just travel advice (Recall-Pashh, or the nearby Survival Guide). The conflux is by the Pashhow Gate Crystal. Cutscene only -- nothing is handed over here."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the unnumbered line after bullet 7: speak to a Voidwatch Officer in one of the three starting nations, past or present, for the [KI] Voidwatch alarum. The page shouts that this cannot be done at Jeuno or at any other outer-city Voidwatch Officer. Target is left as none because 'Voidwatch Officer' is a name shared world-wide and the page gives no zone to narrow it -- naming it here would either mark every officer in Vana'diel or demote the whole quest. The alarum is the header's Reward, so it is not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trial by Water",
+   "page_id": 38750,
+   "revision_id": 770515,
+   "source_sha256": "42831769b79d43c17fe4db38e73936f35cdb87b5dcfab2e28728407116470b1c",
+   "cache_file": "0038750_trial_by_water"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 133,
+   "dat_name": "Trial by Water",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "Four bullets, of which bullet 2 is a whole journey and splits into three rungs: the Picture frame that opens the Den of Rancor, the trip down to the Cloister of Tides, and nothing else -- the rest of that bullet is routing (in at Yhoator Jungle (J-12), out at (F-5) on Map A, back in along the left wall, (I-7) on Map B, drop the hole at (J-7) on Map C, in at (I-7) on Map D) and lives in notes.\n\nThe protocrystal step is NOT in the walkthrough at all; the header Description is what says 'Ring the tuning fork of water upon the protocrystal in the Den of Rancor', and Notes bullet 2 confirms every party member needs their own fork. So the fork requirement is put on a trade to the Protocrystal, which is the entity you actually ring it on, rather than being left hanging on the fight. That name comes from the page's own Description, not from me.\n\nitems_partial on the Picture frame is real: the Unity warp to Den of Rancor (content level 128 or under) skips both the frame and the [KI] Paintbrush of souls entirely. The paintbrush itself is picked up somewhere inside the Temple of Uggalepih, and the page never says where, so there is no rung for getting it.\n\nThe empty [TABLE] at the top is prepass residue. The whole 'After the walkthrough: Notes' section is party size, the 30-minute limit, one reward at a time, a once-per-Earth-day repeat, the Mini Fork of Wtr. shortcut from Trial-Size Trial by Water, and a hint to keep the whisper for The Moonlit Path -- none of it is a step, and none of it is observable.\n\nADVERSARY (stage D): downgraded to medium and the walkthrough_in_table flag dropped. The flag was false -- the page's only table is the empty two-pipe residue at the head of the walkthrough, and not one rung of this quest lives in a table. Medium because the page is incomplete in two places by its own admission: it never says where inside the Temple of Uggalepih the [KI] Paintbrush of souls comes from ('be sure to get it'), and it never states the ring-the-fork-on-the-protocrystal action at all -- step 4 is recovered from the header Description and from 'enter the Protocrystal normally' in After-notes bullet 6, not from the walkthrough. The ladder itself was attacked rung by rung and stands: both key items are granted at the rung that carries them, the Tuning fork of water is evidence on step 1 and only a held item on step 4, the Whisper of tides is evidence on step 5 and only a held item on step 6, no item is evidence twice, and neither appears in the header's Reward list. The two (I-7) grids in bullet 2 are correctly separated -- Temple of Uggalepih Map B keeps its grid, the Den of Rancor Map D one is not carried onto the Cloister rung. Nothing added.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: and follow the left wall round to the second entrance. items_partial is set because the Unity warp to Den of Rancor skips this step and the paintbrush completely.\n  step 4: Confidence is medium only because the walkthrough itself never spells this rung out.",
+  "gates": {
+   "fame": {
+    "region": "Norg",
+    "level": 4,
+    "raw": "Norg / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Edal-Tahdal",
+   "zone": "Norg",
+   "grid": "H-9",
+   "raw": "Edal-Tahdal, Norg (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Edal-Tahdal"
+    },
+    "zone": "Norg",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tuning fork of water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "if you are sure the Norg fame is there and he still will not offer it, keep talking until his text changes. The fork is what proves you actually have the quest."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Picture frame"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Paintbrush of souls",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Map B. Use the paintbrush on the empty frame to open the door to the Den of Rancor. In from Yhoator Jungle (J-12); leave by (F-5) on Map A the Survival Guide is there."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Cloister of Tides"
+    },
+    "zone": "Cloister of Tides",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on Map C of the Den of Rancor drop down the hole at (J-7) to Map D, and the Cloister entrance is at (I-7). Home Point Den of Rancor #2 lands you close; from #1 take Point A (I-5) on Map 2 up to Map 1 and drop at (J-7). Those grids are all Den of Rancor, not the Cloister, so none of them is recorded as this step's grid."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Tides",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tuning fork of water",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "From the header Description 'Ring the tuning fork of water upon the protocrystal' since the walkthrough jumps straight from entering the Cloister to the fight. Notes bullet 2 of the After section says every party member needs their own fork."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cloister of Tides",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Whisper of tides",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Leviathan Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "up to 6 in the arena, 30 minute limit, and the page's own warning at the top: Trust magic CANNOT be used in this BCNM."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Edal-Tahdal"
+    },
+    "zone": "Norg",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Whisper of tides",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "one reward at a time, including the pact with Leviathan. You may instead keep the whisper for The Moonlit Path, and the quest repeats once per Earth day -- neither is visible to the addon."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Destiny's Device",
+   "page_id": 102309,
+   "revision_id": 766403,
+   "source_sha256": "2ab4d4ff8a332ebd3997223a0dce090e88046b753c9568db6b5e2fda65953950",
+   "cache_file": "0102309_destiny_s_device"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 25,
+   "dat_name": "Destiny's Device",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "unnamed_target"
+  ],
+  "notes": "The cleanest page in this batch and the longest evidence chain: four key items across four zones, all of them granted at the step that grants them and none repeated.\n\nThe job gate is real but narrow -- bullet 1 says 'while on Rune Fencer' and bullet 8 says the cutscene and fight can be done as any job -- so jobs is ['RUN'] and the note on step 1 carries the rest. The header's Level field is empty, so no level is invented even though this is relic-tier artifact armour.\n\nBullets 7 and 8 are one step: the same Bloodstained Glove, examined twice, exactly like the Blank Target in Divine Might -- once for the cutscene, once more (after every party member has seen it) to pop Insidio. Bullet 9's third examine is the page's own '(Optional)' and stays a separate optional rung because it comes after the kill. The long solo strategy sub-bullet under 8, and the Bayld consolation for helpers, are advice.\n\nThe Marjami Ravine target is a bare ???, which can never carry a marker; it keeps its rung, its zone and its (I-8) anyway. Note that 'Use Ignis three times' is a Rune Fencer rune, not an item and not a trade -- nothing there to model. The Yahse wildflower petal and Insidio's extinguished lantern are both KEY items despite the page not tagging them [KI]; the resolver confirms it, and neither appears in the header's Reward (Runeist Coat), so both are honest evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Seekers of Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Legacies Lost and Found",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [
+    "RUN"
+   ],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Octavien",
+   "zone": "Eastern Adoulin",
+   "grid": "I-8",
+   "raw": "Octavien, Eastern Adoulin (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Runic kinegraver",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on Rune Fencer; this is the only rung the job gate applies to."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gaddiux"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Inventors' Coalition. Choose the option that mentions Adoulinian Kelp, then keep picking the top two ('Ask if the rune stone is still there' and 'The trial objectives') until he brings up the Yahse wildflower petal."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Yahse Wildflower"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yahse wildflower petal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Marjami Ravine",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vial of vivid rainbow extract",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at the base of the waterfall east of Bivouac #2. Use the rune Ignis three times, then interact with it. If nothing happens, go back to Gaddiux and repeat until he sends you for the petal first and Marjami second. A bare ??? cannot carry a marker; the rung and the zone are kept regardless."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gaddiux"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Adoulinian Kelp option again, for another cutscene."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bloodstained Glove"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Insidio",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "the secret beach south of Bivouac #2; the glove is on the shoreline. Examine it once for the cutscene, then -- only after every party member has watched it -- examine it again to spawn Insidio. Any job from here on, and Trusts are allowed."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Insidio's extinguished lantern",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Insidio",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "an Orobon NM. Mayhem Lantern is an AoE Charm and every use cuts the physical damage it takes, until almost none lands. Only party members actually on the quest get the lantern; helpers get up to 10,000 Bayld once."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bloodstained Glove"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     9
+    ],
+    "note": "the page marks this one '(Optional)' -- a third look at the same glove, after Insidio is down."
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zurko-Bazurko"
+    },
+    "zone": "Mhaura",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     11
+    ],
+    "note": "the page marks this '(Optional)'; he is at the proto-waypoint and asks for the Runic kinegraver in exchange for an extra cutscene. It happens after the reward, so it is not part of the ladder proper. No grid is given."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Silent Forest",
+   "page_id": 142668,
+   "revision_id": 774570,
+   "source_sha256": "70f3b8da370f4236e9afe76b296d65cf28b7700804bdeeaa5225e24f414bdb62",
+   "cache_file": "0142668_the_silent_forest"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 144,
+   "dat_name": "The Silent Forest",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "prereq_missions_unmodelled",
+   "unnamed_target",
+   "home_nation_variable_zone"
+  ],
+  "notes": "Bullet 5 is the trap on this page: it names Arciela, Ygnas and Darrcuiln, and none of them is the target. They are who you meet; what you interact with is the Alpine Trail at (H-5), and that is what takes you into Mount Kamihr. A verb-scanner would have written talk/Arciela here.\n\nBullet 6 has no fixed place. You go to the Crag closest to your HOME nation -- not your current allegiance -- and the page names only one of the three (Crag of Holla, and only inside an example about the Treasures of the Earth crystals). The Crags are not zones in their own right either, so there is nothing to record: the Ergon Locus row is left zone-less on purpose, which makes it match the Ergon Locus wherever the player actually is. Its two sub-bullets are real conditions and both are invisible to the addon: mid-way through Dances with Luopans without a [KI] Luopan you must convert this soil and come back for a second, and you cannot get it at all while holding the matching Treasures of the Earth crystal.\n\nBullets 8 and 9 are the same Drifting Feather twice -- once for the cutscene, once to enter the battlefield -- so they are one rung. Bullet 10 is the reward cutscene on the win, not a hand-in; there is no NPC to return to and none is invented. Bullet 11 is a 'See also' link.\n\nQuest Reqs are two whole mission lines (all of Seekers of Adoulin including Arciela's Trust, and the final chapter of Rhapsodies of Vana'diel). The header's Previous names the two capstone quests and those go in prev; the mission completion itself has no slot in the schema and nothing observable to test, so it is flagged rather than faked.\n\nADVERSARY (stage D): downgraded to medium. The ladder survived every attack -- bullet 5's Alpine Trail really is the thing you interact with and Arciela, Ygnas and Darrcuiln really are bystanders the sentence merely names; the two Drifting Feather examines really are one rung; bullet 10 really is the outcome of the win and not a hand-in, so no NPC was invented for it; bullet 11 really is a 'See also'; both key items are granted at the rung that carries them, neither is evidence twice, and neither is in the header's Reward list. But the quest cannot stand at 'high' while two entire mission lines (the Seekers of Adoulin missions including Arciela's Trust, and the final chapter of Rhapsodies of Vana'diel) are gates with no slot in the schema, and while step 6 carries no zone at all because the Crag varies with the player's home nation. That is the guide's own definition of medium -- 'the ladder is right but a gate is unmodellable' -- and it is what the corpus already does for every other quest flagged with an unmodelled mission gate. Nothing added or removed.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: A bare ??? keeps its rung but can never carry a marker.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Light Within",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "A Rhapsody for the Ages",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Levil, Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Pioneers' Coalition."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the quest only appears in the log after this cutscene, so bullet 1 fires before there is anything to see."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Escha - Ru'Aun",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Inert geomancy bell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The blue ??? at the top of the stairs to the left of the entrance."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Alpine Trail"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the northern-middle point of the map; from Bivouac #3 take the northern tunnel and follow the left wall, always north. Arciela, Ygnas and Darrcuiln are met here but the Alpine Trail is the thing you click, and it drops you into a zone called Mount Kamihr. Picking 'Lifestream' then 'Communion' keeps the conversation moving."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fistful of familiar soil",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the ??? beneath the stairs up to the Telepoint, at whichever Crag is closest to your HOME nation rather than your current allegiance -- so the zone genuinely varies per player and the page names only the Crag of Holla, in passing. Left zone-less so the row matches the Ergon Locus wherever you stand. Two invisible conditions: if you are mid-way through Dances with Luopans without a [KI] Luopan, turn this soil into one and come back for a second; and it cannot be obtained while you hold the matching Treasures of the Earth crystal."
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Leafallia"
+    },
+    "zone": "Leafallia",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the cutscene fires on entering; there is nothing to click."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Drifting Feather"
+    },
+    "zone": "Leafallia",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "the page calls it a glowing spot. Once for the cutscene, again to enter the battlefield."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Leafallia",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Siren Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "Content Level 119, Trusts allowed. She absorbs Light skillchains and has a Charm move. The reward -- pact with Siren, or one of the Ligeia pieces, or 10,000 Bayld -- is chosen in the cutscene on the win, so there is no hand-in rung and no evidence here."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Succor to the Sidhe",
+   "page_id": 47161,
+   "revision_id": 719768,
+   "source_sha256": "81b48096be3f82c182e75f12379aa3961fa228bc0ccf8772c8f17b48c9faec62",
+   "cache_file": "0047161_succor_to_the_sidhe"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 55,
+   "dat_name": "Succor to the Sidhe",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "walkthrough_in_table",
+   "count_unobservable"
+  ],
+  "notes": "Both of this quest's tables are OR-lists, not AND-lists, and they are modelled two different ways because the schema only has one honest tool for each.\n\nThe twenty base weapons are one per job, so exactly one of them applies to you. That is items_alt with an empty items -- the runtime reads alt as 'any single one of these', which is precisely right, and the same shape already exists in the index for Melyon and Exoroche. All twenty resolve. Holding any of them is also the ONLY observable thing in this quest, so it is step 1's evidence (evidence.alt, empty evidence.all -- legal, and the shape already used for the Mandragora quest). The weapon comes back augmented at the end, but it is deliberately not put on the last step as well: duplicate evidence would jump the mark straight to the end.\n\nThe nine Watchful Pixie locations are a different problem -- you need ONE of them, but a group is the only way to draw more than one place at a time, so they share group 'pixie' and every note says only one is needed. This is a compromise and it is flagged: unordered_group here means 'any of these', not 'all of these'. The alternative was one zone-less Watchful Pixie row, which would have thrown away nine good zones and grids.\n\nEach location's own NM set is carried on its own step. Vunkerl Inlet (S) has an empty grid in the source table, so it gets none. The Meriphataud Mountains (S) row is malformed in the wiki table -- 'Yii Haqi the Threnodist Nuu Gazo the Dirgerimer Slate Scorpion x2 Ochre Scorpion x2' with no separators -- and is split the only way it reads.\n\nThe header's grid is missing; (F-6) comes from bullet 2 and is used for both start and the trade. Bullet 5 and everything under it is a discussion of what augments are possible, admittedly under-documented -- the page carries Category:Information Needed -- and is not a step. The five re-rolls at the Jubilant Pixie are a count nothing reports.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: to Callisto. items is empty and items_alt holds all twenty because any single one satisfies the trade.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Callisto",
+   "zone": "Grauberg (S)",
+   "grid": "F-6",
+   "raw": "Callisto, Grauberg (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Fay Crozier",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Erlking's Blade",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Fay Staff",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Erlking's Sword",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Fay Lance",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Erlking's Tabar",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Fay Gendawa",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Erlking's Kheten",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Fane Baselard",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Oberon's Knuckles",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Fane Hexagun",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Rindomaru",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Dweomer Knife",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Oberon's Sainti",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Dweomer Scythe",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tsukumo",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Oberon's Rapier",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Dweomer Maul",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Ogre Jambiya",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Ogre Sickle",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "one base weapon per job, from the first table: Summoner Fay Crozier, Blue Mage Erlking's Blade, Scholar Fay Staff, Paladin Erlking's Sword, Dragoon Fay Lance, Beastmaster Erlking's Tabar, Ranger Fay Gendawa, Warrior Erlking's Kheten, Thief Fane Baselard, Monk Oberon's Knuckles, Corsair Fane Hexagun, Samurai Rindomaru, Bard Dweomer Knife, Puppetmaster Oberon's Sainti, Dark Knight Dweomer Scythe, Ninja Tsukumo, Red Mage Oberon's Rapier, White Mage Dweomer Maul, Dancer Ogre Jambiya, Black Mage Ogre Sickle. The page never says where any of them comes from, so there is no target and no zone."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Callisto"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Fay Crozier",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Erlking's Blade",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fay Staff",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Erlking's Sword",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fay Lance",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Erlking's Tabar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fay Gendawa",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Erlking's Kheten",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fane Baselard",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Oberon's Knuckles",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Fane Hexagun",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rindomaru",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dweomer Knife",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Oberon's Sainti",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dweomer Scythe",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tsukumo",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Oberon's Rapier",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dweomer Maul",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ogre Jambiya",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ogre Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade ONE weapon yours The header gives no grid; (F-6) is bullet 2's."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Poroggo Gourmand",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Poroggo Toady",
+      "count": 6,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ONE of the nine pixies is enough -- the group exists to draw them all, not to ask for them all. Speak to the Watchful Pixie and choose to begin the battle."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Faytrapper Vashgash",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Faygorger Ram",
+      "count": 2,
+      "role": "kill"
+     },
+     {
+      "name": "Faygorger Sheep",
+      "count": 4,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; see step 3."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Stabnix Skewerfinger",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Pixie Impaler",
+      "count": 10,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; see step 3."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ru'Bha Stonewall",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Sentinel Wivre",
+      "count": 4,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; the closest one to Callisto, who is at (F-6) of this same zone."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Madthrasher Zradbodd",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Almops",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Edonus",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Glacial Wisp",
+      "count": 4,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; the source table leaves this row's grid empty, so none is recorded rather than guessed."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gnashfang Rahskhas",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Rahskhas's Pet",
+      "count": 4,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; see step 3."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "Meriphataud Mountains (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yii Haqi the Threnodist",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Nuu Gazo the Dirgerimer",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Slate Scorpion",
+      "count": 2,
+      "role": "kill"
+     },
+     {
+      "name": "Ochre Scorpion",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine. This row of the wiki table has lost its separators -- it reads 'Yii Haqi the Threnodist Nuu Gazo the Dirgerimer Slate Scorpion x2 Ochre Scorpion x2' -- and is split here the only way it parses."
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "Beaucedine Glacier (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shesha",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Kaliya",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Vasuki",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Astika",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; see step 3."
+   },
+   {
+    "n": 11,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Watchful Pixie"
+    },
+    "zone": "Xarcabard (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Megalotaur",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Torvotaur",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "pixie",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of nine; see step 3."
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jubilant Pixie"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "spawns where the NMs died, so this row is left zone-less and follows you to whichever of the nine you chose. He offers your weapon back with random augments; you may refuse and re-roll up to five times, which nothing in the packets counts. The augmented weapon is NOT recorded as evidence here -- it is the same item as step 1's, and duplicate evidence would jump the mark straight to the end."
+   }
+  ]
+ }
+]

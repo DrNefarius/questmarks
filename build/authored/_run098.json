@@ -1,0 +1,1404 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Flotsam Finding",
+   "page_id": 101768,
+   "revision_id": 566679,
+   "source_sha256": "0d120310700efd1a8e6fcd47d92d7aa94a1699a55972fa5ecc133861747304aa",
+   "cache_file": "0101768_flotsam_finding"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 1045,
+   "dat_name": "Flotsam Finding",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "Three-bullet Mog Garden tutorial quest read as three rungs. Bullet 2 is genuinely two actions -- examine the Flotsam, then report back -- so it splits, and both halves carry bullet 2. Nothing here is observable: the page's own sub-bullet says the first Flotsam yields a Water Cluster, and Water Cluster is the first entry in the header's Reward list, so by the reward rule it proves the quest is over rather than that the beach step is done. The rest of that sub-bullet (Flint Stone through Savory Shank) describes REPEAT visits after the quest, not this run. The five-free-slots warning and the 'talk to the Moogle twice in a row' workaround are troubleshooting, so they live in the turn-in note. The Mog Garden has no grid references at all, hence null grids throughout.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Seed Sowing",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he points you at the sparkling Flotsam on the coastline"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Flotsam"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "on the beach. The first one gives a Water Cluster, which the header already lists as a reward, so it is deliberately NOT used as evidence."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you need five free inventory spots or it will not complete; talking to him twice in a row re-triggers the beach cutscene"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Great Katana Moogle Magic",
+   "page_id": 106245,
+   "revision_id": 428887,
+   "source_sha256": "c87ab5a33b50b4678ac7a29b47544da1332dd88009cdd200f2f122246f9e1b6c",
+   "cache_file": "0106245_kupofried_s_great_katana_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 44,
+   "dat_name": "Kupofried's Great Katana Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "start_is_unmarkable_object",
+   "equip_not_hold",
+   "item_level_unobservable"
+  ],
+  "notes": "Demoted to medium not because the page is unclear -- it is the clearest page in the batch -- but because both of its gates are unmodellable: the weapon must be EQUIPPED rather than held, and the Masamune branch requires it be level 90~99, which is a property of the item that nothing observable reports. All three bullets are one interaction with one ???, so they collapse to a single step. Bullet 1 clicks it, bullet 2 is a dialogue menu (its sub-bullet only says that picking a type other than what you have equipped needs that weapon instead), bullet 3 hands the weapon over. None of the three is observable and a ??? can never carry a marker, so three rungs would be pure noise where one is honest.\n\nThis quest therefore has NO markable step. start is kept as Kupofried because the header names him and 'kupofried' folds to a usable NPC key; the alternative -- writing start as '???' -- resolves to an object with no key, which is fatal and would drop the quest entirely. If Kupofried is only the cutscene moogle and not a standing entity, the marker simply never appears, which is no worse than today.\n\nThe requirement is an EQUIPPED weapon, and equipment is not what the items check sees; recorded as items anyway with the caveat noted, since holding is the closest observable. Torigashira OR a level 90~99 Masamune is a real either/or, so the Masamune is items_alt. 'Level: 90~99' is a floor of 90 with a ceiling that is just the weapons' own level band and gates nothing extra. 'Quest Reqs: Guardian of the Void' names a quest while 'Previous' is empty, so it is recorded as the prerequisite it plainly is.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Torigashira",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Masamune",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "one ???, three bullets: click it with the weapon equipped, choose Great Katana from the menu, then trade the weapon for the Tachi: Fudo unlock. The Masamune must be level 90~99. The page gives no grid for the ???."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Requiem for the Departed",
+   "page_id": 27291,
+   "revision_id": 729708,
+   "source_sha256": "f793c4389ac70df98c79ee9c629b185514259542a9cce18967fe6a444736434a",
+   "cache_file": "0027291_requiem_for_the_departed"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 23,
+   "dat_name": "Requiem for the Departed",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_merged"
+  ],
+  "notes": "A clean three-rung fetch. Bullet 2 -- 'head to the Phosphorous Ward at (I-9) on map one, this leads to map two' -- is the ROUTE to Pecca-Pocca, not an action: you are not told to click anything, only which way through Fort Karugo-Narugo (S) reaches map two. It merges into the Pecca-Pocca step and the ward stays in the note, the same way batch 7 kept 'in via The Sanctuary of Zi'Tah' as a note rather than a rung. A separate unmarkable ward step wedged between two markable NPCs would only cost the ladder.\n\nThe zone must keep its article and its era suffix: 'Eldieme Necropolis (S)' does not resolve, 'The Eldieme Necropolis (S)' is zone 175. Fame 'Crystal War' is not one of the nine regions so it gates nothing, and FLevel is a Crystal War rank name ('Brass Ribbon of Service') rather than a number -- both kept verbatim in raw.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / Brass Ribbon of Service §§"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Heptachiond",
+   "zone": "The Eldieme Necropolis (S)",
+   "grid": "H-8",
+   "raw": "Heptachiond, The Eldieme Necropolis (S) (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Heptachiond"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pecca-Pocca"
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": "G-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sheaf of handmade incense",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "on map two; in via the Phosphorous Ward at (I-9) on map one, which is bullet 2's route rather than a step"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Heptachiond"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Sheaf of handmade incense",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Scroll of Recall-Meriph is the reward, so it is not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Marksmanship Moogle Magic",
+   "page_id": 106249,
+   "revision_id": 428891,
+   "source_sha256": "ec6b4414caf651a070ce463917956c0f90f67442be18b3c0a7ea3e099cc93b81",
+   "cache_file": "0106249_kupofried_s_marksmanship_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 48,
+   "dat_name": "Kupofried's Marksmanship Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "start_is_unmarkable_object",
+   "equip_not_hold",
+   "item_level_unobservable"
+  ],
+  "notes": "Demoted to medium for the same reason as #44: the weapon must be EQUIPPED rather than held, and the Armageddon branch requires level 90~99, neither of which is observable. Identical in shape to Kupofried's Great Katana Moogle Magic (quest/other #44) and read the same way: bullets 1, 2 and 3 are one interaction with one ???, so one step. Clicking it, picking Marksmanship from the menu and trading the weapon are not three trackable rungs -- none is observable and a ??? carries no marker.\n\nstart stays Kupofried for the same reason as #44: '???' as a start resolves to an object with no NPC key, which is fatal to the whole quest, while 'kupofried' at least folds to a key. The weapon must be EQUIPPED rather than merely held, which the items check cannot distinguish; Mollfrith OR a level 90~99 Armageddon is a real either/or, so Armageddon is items_alt. Level 90~99 is a floor of 90. 'Quest Reqs: Guardian of the Void' is the prerequisite quest even though 'Previous' is blank. Reward is Wildfire on any gun or crossbow.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Mollfrith",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Armageddon",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "one ???, three bullets: click it with the weapon equipped, choose Marksmanship from the menu, then trade the weapon for the Wildfire unlock. The Armageddon must be level 90~99. The page gives no grid for the ???."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Welcome to Bastok",
+   "page_id": 25836,
+   "revision_id": 774163,
+   "source_sha256": "76e4c614ed5a9053fde15e2c598115fd0b2aeacd29fddc745bc1f270d16158e6",
+   "cache_file": "0025836_welcome_to_bastok"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 2,
+   "dat_name": "Welcome to Bastok",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "multi_job_gate",
+   "equip_not_hold"
+  ],
+  "notes": "Six bullets, four steps. Bullet 2 ('you will notice that only levels 7+ of the following jobs can equip the shield') is the header's 'Quest Reqs: Lv. 7 WAR / RDM / PLD / BST / SAM' restated in prose -- it is the gate, not an action, and a verb-scanner would have made a step of 'notice'. That gate is BOTH kinds at once, so level 7 AND five jobs; unlike 'a job at level 30+' this really does name specific jobs, and getting it wrong either way is expensive.\n\nBullet 4 ('equip the shield') is a precondition on the Bartolomeo meeting, not a rung of its own, so it merges there -- the whole point is that Bartolomeo recognises you by the shield. Equipment is not distinguishable from inventory by the items check, so the shield is recorded as items with the caveat noted.\n\nBullet 1 is a real step: you cannot start without the shield. It spans four zones (Auction House, or Young Quadavs in North Gustaberg, South Gustaberg, Palborough Mines, Konschtat Highlands), so it keeps no zone -- one step, one zone -- and the Young Quadav is carried as a drop so the glyph is right wherever you farm.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: four zones, so this step carries none",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": 7,
+   "jobs": [
+    "WAR",
+    "RDM",
+    "PLD",
+    "BST",
+    "SAM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Powhatan",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Powhatan - Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Shell Shield",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Young Quadav",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Auction House, or farmed from Young Quadavs in North Gustaberg, South Gustaberg, Palborough Mines or Konschtat Highlands."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Powhatan"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Steaming Sheep. Bullet 2 is the job and level gate restated and is not a step."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bartolomeo"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Shell Shield",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "downstairs in the Air Travel Agency, entered through Arrival's Exit. Bullet 4 says the shield must be EQUIPPED, not just carried -- he identifies you by it."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Powhatan"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "after the cutscene with Bartolomeo"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unforgiven",
+   "page_id": 319,
+   "revision_id": 770254,
+   "source_sha256": "c159521f0391644eae7bdf30bfd2f2a5fd2c7735db2dbbd97bb53742d3a7f2d7",
+   "cache_file": "0000319_unforgiven"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 72,
+   "dat_name": "Unforgiven",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "Straightforward, and the whole quest sits inside one zone. Bullet 5 is the page's own 'for an additional cutscene' and is explicitly ORDERED -- return to Elysia 'once more and THEN speak to Pradiulot' -- so it becomes two optional steps rather than a group; a group would claim they can be done in any order, which the page denies.\n\nThe 'Item Reqs: [KI] Alabaster hairpin' in the header is the quest's own key item, obtained at step 2, not something to bring. The ??? at (K-9) is unmarkable but the hairpin makes step 2 fully observable, which is the rung that matters. The Walnut Door and the pillar are landmarks for finding it, not the target. Map of Tavnazia is in the Reward block, so it is not evidence for anything.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Elysia",
+   "zone": "Tavnazian Safehold",
+   "grid": "G-10",
+   "raw": "Elysia, Tavnazian Safehold (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Elysia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "first floor"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Alabaster hairpin",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "third floor, behind the pillar near the Walnut Door; you may need to examine it twice"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Elysia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Alabaster hairpin",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pradiulot"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Elysia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page's own 'additional cutscene that continues the storyline'; Elysia first"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pradiulot"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "the second half of the optional epilogue, after Elysia -- the page gives the order, so these are not an unordered group"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Water Way to Go!",
+   "page_id": 38689,
+   "revision_id": 727565,
+   "source_sha256": "261a277ee9f402a725d10def87a90ff9094a82ede369b8fe63a0b9ea97e5a413",
+   "cache_file": "0038689_water_way_to_go"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 16,
+   "dat_name": "Water Way to Go!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "grid_alternative"
+  ],
+  "notes": "A textbook three-rung courier quest, and both key items are observable, so the ladder tracks it exactly. The unnumbered line above bullet 1 ('if you just completed Overnight Delivery, zone before continuing') is a precondition, not a step.\n\nTwo naming traps here, both checked against the resolver. Windurst Waters (South) is half of zone 238 and not a zone of its own, so the start zone is plain 'Windurst Waters'. And bullet 3 calls the filled canteen a 'Giddeus Water Canteen', which resolves to nothing -- the actual item is the 'Canteen of Giddeus water' the header's Item Reqs names, so that is what is recorded. The empty canteen resolves under both its long and abbreviated forms; the long one is used.\n\nBullet 2 offers the spring at (K-12) or (E-12). Both are the same named object in the same zone, so one step is enough and the second grid stays in the note -- a second rung would double-count one action, and a group would draw two markers for a choice the player only has to make once.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 3,
+    "raw": "Windurst / 3"
+   },
+   "prev": [
+    {
+     "title": "Overnight Delivery",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ohbiru-Dohbiru",
+   "zone": "Windurst Waters",
+   "grid": "J-9",
+   "raw": "Ohbiru-Dohbiru, Windurst Waters (South) (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rhinostery Canteen",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zone first if you have just finished Overnight Delivery"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Giddeus Spring"
+    },
+    "zone": "Giddeus",
+    "grid": "K-12",
+    "items": [
+     {
+      "name": "Rhinostery Canteen",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Canteen of Giddeus water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the back of Giddeus; there is a second spring of the same name at (E-12) and either one works"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Canteen of Giddeus water",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page calls it the 'Giddeus Water Canteen' here, which is not an item name"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Full Fields",
+   "page_id": 101762,
+   "revision_id": 699252,
+   "source_sha256": "5b02bb8662561f475217a3bfad89e217abacbcfe911d71988d9e8f4c8874615a",
+   "cache_file": "0101762_full_fields"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 1039,
+   "dat_name": "Full Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "start_is_zone_entry"
+  ],
+  "notes": "The first quest of the Mog Garden line, so it opens with getting there at all. Bullet 1 sends you to 'either NPC outside of the Mog House entrance in Western Adoulin or Eastern Adoulin' and names neither, so the step targets the Mog Garden as a ZONE rather than inventing a name for them -- both Adoulin zones resolve, but there is nothing to point at in either.\n\nBullet 2 is not an action: the GPS crystal is handed over automatically on zoning in. That makes it evidence that the arrival step is done, not a rung of its own, which is exactly rule 3 -- evidence belongs to the step that grants it. Harvesting the Garden Furrow is the real second action, and it yields the header's 'Miscellaneous Crystals and Gardening Materials', which is the Reward field, so nothing there is evidence.\n\nThe line 'you will automatically start the next quest' is an outcome. The 'After the walkthrough: Notes' section is a single inventory-space warning (40+ free spots for the quest line) and contributes no steps -- read, and deliberately not used. Fame 'Other' and Expansion 'Other' gate nothing; Previous is literally the word 'None'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mog Garden"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "GPS crystal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "in from the NPC outside either Mog House entrance, Western or Eastern Adoulin -- the page names neither. The Green Thumb Moogle hands over the GPS crystal automatically as you zone in, which is why it is this step's evidence."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Garden Furrow"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "harvest it; what drops is the header's reward list, so none of it is evidence"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Green Groves starts by itself afterwards -- an outcome, not a step"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Transporting",
+   "page_id": 98199,
+   "revision_id": 773607,
+   "source_sha256": "0e649614941d1636d7216fa7ae0ef636fb86a32330ba4298598425dd05251853",
+   "cache_file": "0098199_transporting"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 82,
+   "dat_name": "Transporting",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "bullet_merged",
+   "zone_inferred"
+  ],
+  "notes": "Medium because the walkthrough stops naming zones after bullet 1 and I had to carry Western Adoulin down to bullets 2 and 3 from the page's category and its own geography, rather than read it. If Kongramm's warehouse is not in Western Adoulin, step 2 has the wrong zone. Five bullets, four steps. Bullet 3 ('use the Rala Waterways entrance at F-5') is the route into bullet 4's ???, not an action of its own -- the entrance is in Western Adoulin and the ??? is in Rala Waterways, so a travel rung here would either take the wrong zone or point a zone marker at the far side of the door you are trying to find. It merges into the ??? step and both the entrance grid and the Big Bridge waypoint hint stay in the note.\n\nThe Misdelivered parcel is a key item, not an item -- it resolves as ki and not at all as item -- and it is granted at bullet 1, so it is step 1's evidence. Notably the page NEVER says where the parcel is handed over: not to Kongramm, not at the ???, not to Vaulois. Rather than guess, no later step requires holding it; if the ??? consumes it the ladder simply falls back on its own progress instead of stalling on a requirement the page never states.\n\nThe walkthrough drops the zone after bullet 1, but every location it names -- the Waterfront warehouse at (I-5), the Rala Waterways entrance at (F-5) -- is in Western Adoulin, and the page's only zone category is Western Adoulin, so that is carried down. Fame 'Adoulin' is not one of the nine regions and gates nothing; FLevel 2 is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "Adoulin / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Vaulois",
+   "zone": "Western Adoulin",
+   "grid": "H-6",
+   "raw": "Vaulois, Western Adoulin - (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vaulois"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Misdelivered parcel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "half way between the Airship docks and Platea Triumphs (COU Co.) waypoints"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kongramm"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Waterfront warehouse; the bullet gives the grid but not the zone, which is still Western Adoulin"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Rala Waterways",
+    "grid": "C-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "near the Sluice Gate entrance. In through the Rala Waterways entrance at (F-5) in Western Adoulin, closest to the Big Bridge waypoint -- bullet 3 is that route, not a step."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vaulois"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page never says when the parcel leaves your inventory, so nothing is required here"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Mithran Delicacies",
+   "page_id": 192,
+   "revision_id": 765494,
+   "source_sha256": "c6fb3b140fd74a0259ae05ed7181f43dc88922d8129adf9d7be824531d1144bd",
+   "cache_file": "0000192_mithran_delicacies"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 97,
+   "dat_name": "Mithran Delicacies",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "prereq_is_mission",
+   "gil_cost_unmodelled"
+  ],
+  "notes": "The ladder is right but both gates are unmodellable -- being ON a CoP mission is not a predicate the schema has, and the 100 gil the Tonberry asks for cannot be expressed as an item -- so this sits at medium. Four bullets, three steps. Bullets 3 and 4 are two trades in a row to the SAME Tonberry -- the siredon, then the 100 gil he asks for -- with nothing observable between them, so they are one rung rather than two on one marker. Gil has no expressible form in the items schema, so the second half stays in the note; a gil count is the one requirement here the addon cannot check.\n\nThe walkthrough never says where Lourdaude stands, but the header's description does: 'the Tonberry that stands beside Anguenet', who is at (J-10). That is the page's own text, so the grid is carried rather than invented, and it is written down as a derivation in the note.\n\nBullet 2's sub-bullet says outright that you can buy the Muddy Siredon at the Auction House instead of fishing it, so Phanauet Channel is where the page points rather than a requirement -- the step is targetless anyway. The Blackened Siredon is the header's Reward and so is not evidence for the final trade.\n\n'Quest Reqs: On the Chains of Promathia Mission Head Wind' is a MISSION state, not a completed quest, and the schema has only prev for it. Recorded there by title, as batch 4 did for Zilart Mission 13, and flagged: being 'on' a mission is not the same predicate as having finished a quest, and nothing observable distinguishes it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: two trades in a row: the siredon, then the 100 gil he asks for, which the schema cannot express.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Head Wind",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Anguenet",
+   "zone": "Carpenters' Landing",
+   "grid": "J-10",
+   "raw": "Anguenet, Carpenters' Landing (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anguenet"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "choose the 4th option (Newtpool); he stands right next to the Survival Guide"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Phanauet Channel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Muddy Siredon",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "fished up in the Newt Pool area; the page says the Auction House does just as well, so the zone is a pointer rather than a requirement"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Lourdaude"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Muddy Siredon",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "The grid comes from the header's description the Tonberry beside Anguenet since the walkthrough never gives one. The Blackened Siredon is the reward."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1940 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "True Strength",
+   "page_id": 13881,
+   "revision_id": 754330,
+   "source_sha256": "48b03cddeef3d902321dbfe021bf1b48c8f3da759457cdd95d9848b02ade8199",
+   "cache_file": "0013881_true_strength"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 53,
+   "dat_name": "True Strength",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "bullet_split"
+  ],
+  "notes": "Monk AF. 'Repeatable: af' is the artifact-armour category leaking into the field, so repeatable is false. 'Level: 50+ Monk' is both gates. The unnumbered 'Note:' line between bullets 1 and 2 is not a step -- it says the quest appears in the log and you may switch job, which the runtime already knows. Bullet 1's sub-bullet about buying a Yagudo Drink at the Auction House or from a Curio Vendor Moogle is a shopping note, not a rung; the drink is carried as items on the trade step where it is actually spent, which is what makes the ladder read 'ready' correctly. Bullets 3 and 4 are one action -- 3 is pure routing for the ??? that 4 tells you to trade at -- so they merge, and bullet 3's warning NOT to pass the timed gate is kept in the note because a player who follows it literally ends up in the wrong room. The page calls the target 'a torch with a ??? on it'; the ??? is the entity, the torch is scenery. Xalmo Feather is a drop, not the Reward (that is the Temple Hose), so it is legitimate evidence.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "B / 1"
+   },
+   "prev": [
+    {
+     "title": "The First Meeting",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "MNK"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ayame",
+   "zone": "Metalworks",
+   "grid": "K-7",
+   "raw": "Ayame - Metalworks (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame"
+    },
+    "zone": "Metalworks",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as Monk. If you have finished the Treasures of Aht Urhgan missions you may need to speak to her twice. Any job from here on."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Oztroja"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "you do not need the three passwords -- the Altar Room is not involved. Head for the top floor but do NOT pass the timed gate; the ??? is in the H-shaped room before it."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Yagudo Drink",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Huu Xalmo the Savage",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the ??? sits on a torch; three minutes between pops if you need more than one feather"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Xalmo Feather",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Huu Xalmo the Savage",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ayame"
+    },
+    "zone": "Metalworks",
+    "grid": "K-7",
+    "items": [
+     {
+      "name": "Xalmo Feather",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "traded, not talked"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Trial in Tandem",
+   "page_id": 67781,
+   "revision_id": 729818,
+   "source_sha256": "384240c8159c00e1cc27d5bf8659da6c722279db2f363219ad9793d718625983",
+   "cache_file": "0067781_a_trial_in_tandem"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 160,
+   "dat_name": "A Trial in Tandem",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "fellow_level_gate_unmodelled",
+   "evidence_name_not_unique",
+   "generic_npc_name"
+  ],
+  "notes": "Clean six-rung ladder. 'Quest Reqs: Job level 75+' is the level gate restated for any job, so level is 75 and jobs stays empty; 'Adventuring Fellow level 66+' has no slot and no observable predicate, so it is flagged and gates nothing. The header's Item Reqs '[KI] Magian trial log' never appears in the walkthrough but is what lets you register a Magian trial at all, so it rides on step 3 as a held item rather than becoming a rung of its own. Step 1's [KI] Magian Mooglehood missive is recorded as evidence even though the resolver rejects the name as non-unique across res/key_items -- writing it keeps the reading auditable and stage C will drop just that entry. The Tandem Necklace is handed back after each trade, so it is evidence on step 2 ONLY; making it evidence again at step 5 would jump the mark. Step 4 is thirty kills of no named monster with a Fellow out -- a real rung, but nothing in the packets counts it, hence no mobs and no evidence. The page names the same moogle two ways: plain 'Magian Moogle' for the giver at (H-5) and 'Magian Moogle (Blue)' for the trial registrar at the same grid; both are written as the page writes them and both fold to the same key.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the key item name is duplicated in res/key_items, so the resolver will not give it an id; the reading is still correct",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Clash of the Comrades",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 75,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magian Mooglehood missive",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tandem Necklace",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the one with the orange ball on its head, on the left by the crates"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle (Blue)"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Tandem Necklace",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Magian trial log",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "starts Magian Trial 4444. The trial log is from the header's Item Reqs, not the walkthrough."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Tandem Necklace",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "thirty monsters of any type that give your Adventuring Fellow experience, with the necklace equipped and the Fellow out. No zone, no named monster, and no packet counts the thirty."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle (Blue)"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Tandem Necklace",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Copper Meed",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Copper Meed",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Setting Sun",
+   "page_id": 513,
+   "revision_id": 769816,
+   "source_sha256": "fe80350d5ad6895b6e6704688785c0dd9096ef05bd3f3ec37994d2d1acb3d0c4",
+   "cache_file": "0000513_the_setting_sun"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 72,
+   "dat_name": "The Setting Sun",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Bullet 2 is one sentence that spans two zones -- you enter The Eldieme Necropolis from Batallia Downs (I-10) and come out on an island that is back in Batallia Downs (J-11) -- so it is split into two travel rungs, one per zone, both citing bullet 2. That split is what lets the Necropolis leg carry the [KI] Magicked astrolabe, which is the difference between soloing the gates and needing a second player; the second-player alternative cannot be expressed at all, so items_partial is set. The sub-bullet naming a Stone Monument on the island is signposting for An Explorer's Footsteps and is explicitly not part of this quest, so it is not a rung. Engraved Key is a drop from Ahtu and also the header's Item Reqs -- it is not the Reward (10,000 gil), so it is honest evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Without the astrolabe you need a second player to work the gates, which is the alternative items_partial stands for.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 5,
+    "raw": "San d'Oria / 5"
+   },
+   "prev": [
+    {
+     "title": "Blackmail",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Vamorcote",
+   "zone": "Northern San d'Oria",
+   "grid": "F-5",
+   "raw": "Vamorcote, Northern San d'Oria (F-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vamorcote"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Eldieme Necropolis"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Magicked astrolabe",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "In from Batallia Downs (I-10); the Survival Guide drops you in the right half. Hug the south side to the large room at (G-9) and fall through the grave in its centre. Monsters past the drop aggro at level 99 bring Sneak."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Batallia Downs"
+    },
+    "zone": "Batallia Downs",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "follow the path south from the drop until you zone out onto the island; there is no other way in"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Batallia Downs",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Engraved Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ahtu",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Ahtu is an NM and the only thing on the island that matters here"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vamorcote"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-5",
+    "items": [
+     {
+      "name": "Engraved Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Storm on the Horizon",
+   "page_id": 40339,
+   "revision_id": 735943,
+   "source_sha256": "b51c34f662c6156d7daf4c7719fbcfed210aeeb9bbe7e635a17325eb9cf5aacf",
+   "cache_file": "0040339_storm_on_the_horizon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 35,
+   "dat_name": "Storm on the Horizon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_disagrees_with_header",
+   "time_gated",
+   "generic_npc_name"
+  ],
+  "notes": "The header names Klara at Bastok Markets (S) (H-6) as the giver, but the walkthrough is explicit that ZONING IN from North Gustaberg (S) is what starts the quest, and Klara is never mentioned again anywhere on the page. Klara is kept in start so the pre-start marker still lands somewhere plausible in the right zone, and step 1 is the zone entry -- deliberately unmarkable, exactly as Blade of Evil was read. The unnumbered 'Notice:' above bullet 1 is a precondition (one game day plus a re-zone after Burden of Suspicion) and not a rung; nothing in the packets sees game days. Bullet 3's long sub-bullet is a climbing route up Zegham Hill and stays a note -- 'Zegham Hill' is scenery, the entity is the Monument. 'Monument' is a generic name that will fold to a very common key, which is why the step keeps its zone and grid: North Gustaberg (S) (J-7) is what disambiguates it. Bullet 4 ends the quest at a ??? -- there is no hand-in NPC, so none is invented. Fame 'Wings of the Goddess' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Burden of Suspicion",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Klara",
+   "zone": "Bastok Markets (S)",
+   "grid": "H-6",
+   "raw": "Klara, Bastok Markets (S) (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Bastok Markets (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in from North Gustaberg (S); the cutscene on zoning is what opens the quest. Wait one game day and re-zone after Burden of Suspicion first."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "same grid the header gives for Klara"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Monument"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "on Zegham Hill. Enter the hill near (I-8), counterclockwise on the second level to the ramp at (J-8), then clockwise to the last ramp at the top of (J-7)."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "inside the cave; its entrance is at the southeast corner of (H-5). The Survival Guide teleport is much faster than walking. Same ??? that Fires of Discontent uses. The cutscene and the reward come immediately -- there is nobody to report back to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Goldstruck Gigas",
+   "page_id": 56732,
+   "revision_id": 731235,
+   "source_sha256": "daf723d2ff0357b0d960be045813d393d3d99de3546afa141921c3d596ae01de",
+   "cache_file": "0056732_a_goldstruck_gigas"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 163,
+   "dat_name": "A Goldstruck Gigas",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "start_recovered_from_walkthrough",
+   "items_unresolvable",
+   "reward_table_not_steps"
+  ],
+  "notes": "Three-bullet walkthrough that never mentions its own giver: the header says Ragemont in La Theine Plateau and the bullets start at the Cavernous Maw. Ragemont is a name the page does supply, so step 1 is recovered from the header rather than invented, and it is marked medium on its own because the page gives him no grid and never confirms that talking to him is what opens the quest. Everything after that is unambiguous. The Traverser stone in bullet 1 is written as a held requirement even though the resolver rejects the key-item name as non-unique -- stage C will drop the entry, but the reading stays on record. Bullet 3 is a rung: leaving Abyssea - La Theine is what fires the closing cutscene, so the step is placed IN Abyssea with La Theine Plateau as the destination, not the other way round. The nine-row reward table below the walkthrough is a progress chart for the whole Abyssea storyline -- which abyssite you get depends on how many of these quests you have done -- and is not a step, an item requirement or evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: you must be holding a Traverser stone; the key-item name is duplicated in res/key_items so the resolver gives it no id",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Vision of Abyssia / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Ragemont",
+   "zone": "La Theine Plateau",
+   "grid": null,
+   "raw": "Ragemont, La Theine Plateau"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ragemont"
+    },
+    "zone": "La Theine Plateau",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [],
+    "note": "not in the walkthrough at all -- taken from the header's Start field, which is the only place the page names a giver. No grid is given."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cavernous Maw"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "E-4",
+    "items": [
+     {
+      "name": "Traverser stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Briareus",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page gives Briareus no placement inside the zone"
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "La Theine Plateau"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the closing cutscene fires on leaving Abyssea - La Theine, so the step is placed in the zone you have to leave and points back at La Theine Plateau"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Keep Your Bloomers On, Erisa",
+   "page_id": 98190,
+   "revision_id": 773592,
+   "source_sha256": "ed246c53ae1b883a8d276b210648d99fa66f978c40b0199fb83ef1a482ad283e",
+   "cache_file": "0098190_keep_your_bloomers_on_erisa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 71,
+   "dat_name": "Keep Your Bloomers On, Erisa",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_object",
+   "header_field_misfiled"
+  ],
+  "notes": "The giver is a DOOR, not a person: the quest is named for Erisa and the description is all about her, but every interaction on this page is with 'Door: Research Chamber' at Eastern Adoulin (J-8), and the resolver folds that straight to the client's door key. Erisa is never a targetable entity here, so she is nowhere in the ladder. The header has 'Yahse Humus' filed under Quest Reqs rather than Item Reqs -- it is an item you trade, and it is carried as items on step 2 where the trade happens, not as a gate. Bullet 2's sub-bullet gives two sources for it, so Pinetorum is recorded as a drop; the mob lives in Yahse Hunting Grounds while the step is in Eastern Adoulin, which is fine because mobs are matched live rather than by zone. Bullet 3's real content is WHICH Alluring Plant: the northern one at (F-10), identified by its examine text, so the note carries the text a player checks against. Steps 1, 2 and 4 are three separate interactions with the same door, which the runtime collapses to one marker.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Door: Research Chamber",
+   "zone": "Eastern Adoulin",
+   "grid": "J-8",
+   "raw": "Door: Research Chamber, Eastern Adoulin - (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Research Chamber"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on the ramp near the Sverdhried Hillock waypoint"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Door: Research Chamber"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Yahse Humus",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Pinetorum",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the humus is on the Auction House under Others > Misc, or drops from the five or six Pinetorum just south of the Frontier Station waypoint at (J-9) in Yahse Hunting Grounds"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Alluring Plant"
+    },
+    "zone": "Rala Waterways",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tiny seed",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the NORTHERN plant of the pair -- the right one reads 'The leaves of this plant are bulky and its fruit is covered with a hard shell.'. Closest way in is (I-12) in Western Adoulin, from the Your Rent-a-Room waypoint."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Door: Research Chamber"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Tiny seed is a key item and is not traded -- you just click the door again"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Spice Gals",
+   "page_id": 499,
+   "revision_id": 770703,
+   "source_sha256": "344576e067d6accaddd68a3b8ec336f3417f2803ef573109e40d43ccf673a26e",
+   "cache_file": "0000499_spice_gals"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 110,
+   "dat_name": "Spice Gals",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "unnumbered_bullet",
+   "prev_from_quest_reqs",
+   "repeating_loop"
+  ],
+  "notes": "The opening 'Talk to Rouva...' line carries no bullet number -- the page's numbering starts at the Rivernewort hunt -- so step 1 has an empty source_bullets and says so. The real judgement call is bullet 1: the Rivernewort ??? exists in BOTH Riverne - Site #B01 (E-7) and Riverne - Site #A01 (E-8) and you visit exactly one. A group would draw both and imply you owe both, and two ordered rungs would be simply wrong, so only B01 is laddered -- it is the cheaper of the two (one Giant Scale rather than two, and a Home Point warp reaches it) -- and A01 is recorded in the note with or_branch_unmodelled. Giant Scale is a held requirement for that step, with items_partial set because the Home Point warp is an alternative that is not an item at all. 'Repeatable: Yes' is real but the wiki's own '== Additional Information ==' bullet 3 is a Conquest tally cooldown, not a rung. 'Quest Reqs: Promathia Mission 2-5' is a genuine prerequisite even though the Previous field says None, so it is recorded in prev.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Either site's Home Point warp replaces the scales entirely, which is the alternative items_partial stands for.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "San d'Oria / 1"
+   },
+   "prev": [
+    {
+     "title": "Promathia Mission 2-5",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Rouva",
+   "zone": "Southern San d'Oria",
+   "grid": "I-8",
+   "raw": "Rouva, Southern San d'Oria, (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rouva"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered line above bullet 1; west side of Victory Square. She asks for a sprig of Rivernewort."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Riverne - Site #B01",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Giant Scale",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rivernewort",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "On the island just before the last Stable Displacement towards Monarch Linn. The OTHER option, not laddered: Riverne - Site #A01 (E-8), the island holding the zone to Monarch Linn, which needs two Giant Scales and whose Home Point warp lands at (I-9)."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rouva"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Rivernewort",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "repeatable once per Conquest tally, which nothing in the packets reports"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Teleports by Twilight",
+   "page_id": 106032,
+   "revision_id": 700681,
+   "source_sha256": "b35d0003d4d848f83d97c2e257a11b795339ad4ddcd6266c82e1bbffb32e79dc",
+   "cache_file": "0106032_teleports_by_twilight"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 176,
+   "dat_name": "Teleports by Twilight",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "zone_unnamed_on_page",
+   "evidence_rejected_stale_key_item",
+   "roe_gate_unmodelled"
+  ],
+  "notes": "Six telepoints in any order, so they share a group and all six draw at once. The important negative decision is evidence. Each crystal grants a key item of exactly the same name -- Dem/Holla/Mea/Yhoator/Altepa/Vahzl gate crystal, all six of which resolve cleanly -- and it is very tempting to hang them on the six steps. That would be WRONG, and the page says so itself: 'If you have previously gotten all of the gate key crystals, you must do all six again.' The key items are permanent and most players already hold them, so evidence would mark all six done the moment the quest opened. Every crystal step therefore carries evidence null. The other loss is zones: the page names the six crystals and no zone for any of them, and rule one forbids supplying Konschtat, La Theine and the rest from memory, so all six rows are zone-less. Their names are distinctive enough that a nil-zone row should still match only the right entity. Bullet 2 is Nantoto restating the request and merges into step 1; bullet 4 is an outcome (sparks and experience) and is not a rung. The RoE objective 'Telepoint Pilgrimage' must be switched on under Other -> RoE Quests BEFORE any crystal is touched -- a menu action with no marker, kept as a note on step 1. 'Must have 50 unique RoE objectives completed' has no slot in the schema and nothing observable behind it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: needs 50 unique Records of Eminence objectives done first.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nantoto",
+   "zone": "Lower Jeuno",
+   "grid": "H-8",
+   "raw": "Nantoto, Lower Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nantoto"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Bullet 2 is her restating the request. Before touching any crystal, switch on the RoE objective Telepoint Pilgrimage under Other -> RoE Quests."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dem gate crystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "telepoints",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page names no zone for any of the six; holding the matching key item proves nothing, because the page says you must redo all six even if you already have them all"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Holla gate crystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "telepoints",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "no zone given on the page"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mea gate crystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "telepoints",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "no zone given on the page"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Yhoator gate crystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "telepoints",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "no zone given on the page"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Altepa gate crystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "telepoints",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "no zone given on the page"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Vahzl gate crystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "telepoints",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "no zone given on the page. The sixth crystal you touch, whichever it is, closes the RoE objective and pays the sparks and experience -- bullet 4 is that outcome, not a rung."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Nantoto"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "short cutscene and the three Copper A.M.A.N. Vouchers"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In the Land of the Blind",
+   "page_id": 119106,
+   "revision_id": 751888,
+   "source_sha256": "7c172aa89ee7b7e3a00e21b78455e6bc8e55ecbfb55f948dfca1f5d8ffa7791c",
+   "cache_file": "0119106_in_the_land_of_the_blind"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 140,
+   "dat_name": "In the Land of the Blind",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "grid_conflict",
+   "repeating_loop"
+  ],
+  "notes": "Straightforward ladder with one conflict and one shape worth being deliberate about. The header puts Behsa Alehgo at Eastern Adoulin (J-8) and bullet 1 puts him at (J-7); both are kept where each was written -- the header string in start, the walkthrough's grid on the step -- rather than reconciled. The shape is three visits to the SAME Suspicious Place at Yorcia Weald (I-8) with a fight in the middle, and bullet 5 packs the fight's aftermath and the third click into one sentence, so it splits. All four of those rungs sit on one entity and the runtime collapses them to a single marker, which is exactly right: the player stands in one grove the whole time. Erfimia is named only in the description and is never a targetable entity, so she is nowhere in the ladder -- bullet 2 is entering Celennia Memorial Library, and that zone is the target. Nothing in this quest is observable: the Homiliary, the experience and the Bayld are all Reward, and rule seven keeps rewards out of evidence. Bullet 4's sub-bullets are a mob profile (70,000 HP, Cruel Joke around 25 percent, Kaustra, Dread Spikes, Frazzle III, Endark) and stay a note. 'Pool of Clarity Ergon Locus' is the place; 'Pellucid Afflusion' is the thing you click, so that is the target.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Adoulin / 3"
+   },
+   "prev": [
+    {
+     "title": "Eye of the Beholder",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Behsa Alehgo",
+   "zone": "Eastern Adoulin",
+   "grid": "J-8",
+   "raw": "Behsa Alehgo, Eastern Adoulin - (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Behsa Alehgo"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header says (J-8) and the walkthrough says (J-7); the walkthrough's grid is used here because it is the one giving the instruction"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Celennia Memorial Library"
+    },
+    "zone": "Celennia Memorial Library",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene fires on entering; there is nobody to click"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the large grove of Numbing Blossoms on the south side of (I-8). Either northwest from Bivouac #2 then zigzag north, or zigzag south from Bivouac #1."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Jovial Ahriman",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "second click, which pops the mob"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Jovial Ahriman",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "about 70,000 HP, standard Ahriman moves plus Cruel Joke (20 tick) around 25 percent; casts Kaustra, Dread Spikes, Frazzle III and Endark. The Numbing Blossoms around the grove will paralyse you."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "third click, for a cutscene"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Pellucid Afflusion"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "at the Pool of Clarity Ergon Locus, northwest of Bivouac #1; final cutscene and reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Perils of the Griffon",
+   "page_id": 40341,
+   "revision_id": 767489,
+   "source_sha256": "2917fb90742614eb03098b923be3f97337fa726cd055da40eed90ceb07adee19",
+   "cache_file": "0040341_perils_of_the_griffon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 37,
+   "dat_name": "Perils of the Griffon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Bullet 1 is not a step: it is the precondition that you zone and wait a game day after Wrath of the Griffon, and nothing in the packets sees game days. Bullets 2 to 5 are four conversations, three of them with Rholont at Southern San d'Oria (S) (E-7), which the runtime draws as one marker that simply stays put; bullet 3's 'zone out' and bullet 5's 'you do not need to zone' are both kept as notes because they are the difference between the cutscene firing and not. Daigraffeaux is in the same zone at (I-11), and the page's aside that this is where the present-day chocobo stables are is the only landmark it gives, so it is preserved. The one piece of evidence is the [KI] Orcish warmachine body from the tree-stump ??? in Jugner Forest (S) (I-6); it resolves cleanly and is not the Reward (an Elixir). Quest Reqs names two prerequisites where Previous names one, so prev carries both -- 'Purple, The New Black' is a quest title that happens to contain a comma.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Wrath of the Griffon",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Purple, The New Black",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Rholont",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "E-7",
+   "raw": "Rholont - Southern San d'Oria (S) (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you must have zoned and waited one game day since Wrath of the Griffon (bullet 1, a precondition rather than a rung)"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zone out and back first, then speak to him again"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Daigraffeaux"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he stands where the chocobo stables are in present-day San d'Oria"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "no zoning needed this time"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Orcish warmachine body",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "a tree stump on the east side of the river; shortest approach is the East Ronfaure (S) Survival Guide"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Orcish warmachine body",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "spoken to, not traded -- the warmachine body is a key item"
+   }
+  ]
+ }
+]

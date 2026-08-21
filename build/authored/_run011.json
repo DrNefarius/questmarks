@@ -1,0 +1,1525 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Barrel of Laughs",
+   "page_id": 118860,
+   "revision_id": 717484,
+   "source_sha256": "ff1254e98526ff99338a7dc9886294eac84fd97adfb5e58cf7287cd91a1ea42c",
+   "cache_file": "0118860_a_barrel_of_laughs"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 105,
+   "dat_name": "A Barrel of Laughs",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 5
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "unnamed_target",
+   "failure_branch_optional"
+  ],
+  "notes": "Bullet 1 is a precondition rather than a step: the game day must change after To Laugh Is to Love, and nothing in the packets reports game time, so it rides as a note on step 1 and the quest is flagged time_gated. The page writes two of its doors in the wiki's own 'Door: X' form (Depository, Svenja's Manor) and the third as only 'the door to the Hospital at (I-9)'. Building 'Door: Hospital' out of that is inventing a name, and the fact that the same page names its other two doors properly is positive evidence that this door is not known by that form; step 9 therefore has no target and stays medium. The rung is kept because the click is real -- only the marker is lost, and it can be restored the day someone confirms the in-game name. The Rala Waterways door is not named at all: it is 'the door behind Yeggha Dolashi', and Yeggha Dolashi is a landmark you stand next to, not the thing you click, so that target is none. Bullet 5's sub-bullets are a genuine failure loop and not commentary -- losing the battlefield sends you to the Sauce Barrels, which demand a food item before you may retry -- so they are two optional steps; they sit ahead of the quest's only evidence, so the ladder can never park the marker on them. The page does not name the demanded food (it varies per player and vendor), hence empty items with items_partial set. Only Pupadi Dollmohr is recorded as a mob: Celestin and Fabioso are in the battlefield but the page says the mannequin alone has to fall, and Tuffle-Buffle and Musto-Rusto are your allies, not targets. Bullet 9 is where the quest completes; bullet 10 is reward selection afterwards, so it is optional. Fame 'Adoulin' is not one of the addon's nine regions and gates nothing -- raw kept.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: so items is empty and items_partial is set.\n  step 9: the page gives the other two doors in the wiki's own 'Door: X' form but calls this one only 'the door to the Hospital at (I-9)', so it is not named here and the step carries no target; the same page naming its other doors properly is the evidence that this one has no such name.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "To Laugh Is to Love",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Tuffle-Buffle",
+   "zone": "Western Adoulin",
+   "grid": null,
+   "raw": "Tuffle-Buffle, Western Adoulin"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1: the game day must change after To Laugh Is to Love before this cutscene will play"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Depository"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "to the left of the Mischief Marker; the page gives it no grid of its own"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rala Waterways",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page names this one only as 'the door behind Yeggha Dolashi', so it has no target; in from Eastern Adoulin (F-7) by the Peacekeepers warp"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rala Waterways",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Pupadi Dollmohr",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "examine the same door again to enter. The Dashing Dreamers Celestin (BLU) and Fabioso (RDM) are in there, but only the mannequin Pupadi Dollmohr (about 55,000 HP) has to fall. Fabioso can Charm. Tuffle-Buffle and Musto-Rusto fight with you and losing either one ends the fight instantly."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sauce Barrels"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "only after losing the battlefield: at the Waterfront, on the end of the pier next to Jorin. The cutscene demands one food item from a town vendor."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Sauce Barrels"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "The page never names the demanded food it varies Feeding them is what re-opens the arena for a retry."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "COU warp. If Flowers for Svenja is already open you may be sent to the Celennia Memorial Library first; click the door again afterwards and make sure the cutscene has Musto-Rusto, Svenja and Othellius in it."
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Harvesting Point"
+    },
+    "zone": "Sih Gates",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Guffawshroom",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "any Harvesting Point. You must target it and /laugh at least once BEFORE trading the sickle or the key item will not drop; more laughs are said to improve the odds. Bring spare sickles -- Tevigogo sells them near the Western Adoulin exit."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "The rung is real, it just cannot be marked. If you are mid-way through Flowers for Svenja the doctor is away and the door answers 'The door is firmly shut'; you must push that quest along first."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the quest is complete here; the reward can be taken later"
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Peladi Shalmohr"
+    },
+    "zone": "Western Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     10
+    ],
+    "note": "at the Mummers' Coalition; reward selection after the quest is already finished. Swapping earrings later costs 10,000 Bayld and is limited to once per Conquest Tally."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Miraculous Dale",
+   "page_id": 37808,
+   "revision_id": 766108,
+   "source_sha256": "0be69bf616654a2883c408f704f4dd8422c7baf66f4f45e8178bb045fbdaf03c",
+   "cache_file": "0037808_the_miraculous_dale"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 100,
+   "dat_name": "The Miraculous Dale",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "walkthrough_in_table",
+   "count_unobservable"
+  ],
+  "notes": "Three bullets and a wikitable, and the table IS the quest: bullet 1 says 'listed below', so the sixteen notorious monsters are read out of it into sixteen fight steps sharing one group -- nothing orders them, so they all draw at once -- each keeping the zone the table gives it and its family and haunt as the note. Nothing observable counts them. The Data Analyzer and Logger EX prints a line per kill but the addon sees no per-monster progress, so no member of the group carries evidence and the ladder rests on the session latch across the whole hunt; that is the honest shape, and a group of sixteen at least shows every one of them at once. The key item is step 1's evidence: the page never says outright that Rakuru-Rakoru hands it over, but it is tagged [KI], demanded 'in your possession', and given no other source, so accepting the quest is where it comes from. It is also listed in items on every kill, which is literally what the page requires -- you must be holding it for the data to record. Bullet 2 is a progress check you may do at any time, not a rung, and it is on the same NPC as steps 1 and 18 anyway. The After-the-walkthrough Notes section is trivia about the gil reward reading as 'gokurousama' in Japanese. Nyzul Isle versions of these NMs do not count.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rakuru-Rakoru",
+   "zone": "Lower Jeuno",
+   "grid": "I-6",
+   "raw": "Rakuru-Rakoru, Lower Jeuno"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakuru-Rakoru"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Data Analyzer and Logger EX",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "next to the fountain. He is also the progress check of bullet 2, which is not a step of its own."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "La Theine Plateau",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tumbling Truffle",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "funguar; the valley floors near the Crag of Holla, northeast of the plateau"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Batallia Downs",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tottering Toby",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "sapling; around Coveffe Barrows"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Davoi",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Blubbery Bulge",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "slime; around the Disused Well in the southwest of the zone"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rolanberry Fields",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Black Triple Stars",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bat; Brutus's Field"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rolanberry Fields",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Drooling Daisy",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "morbol; near the Fountain of Partings"
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Pashhow Marshlands",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Jolly Green",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "goobbue; the Luremarsh"
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Sarutabaruta",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sharp-Eared Ropipi",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "rabbit; the southeast of the zone"
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Buburimboo",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "pugil; the Mighoya Dunes"
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Meriphataud Mountains",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Daggerclaw Dracos",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "raptor; the southeast of the zone"
+   },
+   {
+    "n": 11,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qufim Island",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Trickster Kinetix",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "evil weapon; the open ground by Delkfutt's Tower"
+   },
+   {
+    "n": 12,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Upper Delkfutt's Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ixtab",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "ghost; one of the rooms inside the tower"
+   },
+   {
+    "n": 13,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gargantua",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "golem; the coast in the east of the zone"
+   },
+   {
+    "n": 14,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shadow Eye",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Ahriman; western Xarcabard"
+   },
+   {
+    "n": 15,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Boreal Coeurl",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "coeurl; a cave in the northeast"
+   },
+   {
+    "n": 16,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Boreal Hound",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "hound; a cave in the southwest"
+   },
+   {
+    "n": 17,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": null,
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Boreal Tiger",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "nm_data",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "tiger; a cave in the north. Last of the sixteen as the table lists them, but the group is unordered."
+   },
+   {
+    "n": 18,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rakuru-Rakoru"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Data Analyzer and Logger EX",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "only once all sixteen are recorded"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Rider Cometh",
+   "page_id": 53924,
+   "revision_id": 757490,
+   "source_sha256": "e0c49ceefdfbf913c9738064d42c58497a5458e326dfeeb0ac1720c845665599",
+   "cache_file": "0053924_the_rider_cometh"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 76,
+   "dat_name": "The Rider Cometh",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_disagrees_with_header",
+   "or_branch_modelled",
+   "or_branch_unmodelled",
+   "mission_gate_unmodelled",
+   "job_exclusion_unmodelled"
+  ],
+  "notes": "The header's giver, 'Nashmeira, Imperial Ward', does not survive contact with the resolver or with the walkthrough: the Imperial Ward is an area inside Aht Urhgan Whitegate and not a zone of its own, and you never speak to Nashmeira anywhere on this page -- the quest opens on a cutscene when you walk into the Walahra Temple at (J/K-8). Her name is kept as the start with the zone corrected to Aht Urhgan Whitegate and the header string preserved in raw, so the fallback marker still has somewhere to sit. Steps 1 and 7 are both that temple entry: there is nothing to click, so they carry no target and no marker. The page's own fallback for step 7, inspecting the Imperial Whitegate, is in the note, and that gate -- a real entity at (L-8/9) -- is the markable target of the final step. The Timeworn Talisman is an OR across two zones, which one step cannot hold, so it is two steps sharing a group: Caedarva Mire and Arrapago Reef draw at once, and the talisman is evidence on the LAST of them only, so obtaining it once advances the ladder past both instead of duplicating evidence across them. The page writes the mob as the plural 'Ephramadian Shades'; the singular is recorded, since mobs are matched live by name. Step 5 is talisman AND (Sutlac OR Irmik Helvasi), which an AND-list cannot say: the Sutlac goes in items, items_partial is set, and the substitution is in the note. That appraisal can fail and eats everything traded, so nothing is claimed as evidence there; the Talisman of the rebel gods only arrives at step 6, and only after you zone. 'Quest Reqs: Eternal Mercenary (Complete all ToAU Missions)' is a mission gate with no slot in this schema and nothing observable behind it, so it gates nothing and is flagged; the header's Previous is genuinely empty. Bullet 9 is the reward cutscene, an outcome and not a rung. Odin Image is struck from step 9's mob list: the sub-bullet saying Odin Prime can spawn up to three of them is battle strategy, not a monster the player spawns or has to kill -- only Odin Prime has to fall -- and monsters are marker targets, so listing the adds would have drawn markers on hazards. The warning stays in the step note where it belongs. The 'not as a Blue Mage' condition on Yoyoroon is a note -- jobs gates you INTO a quest and cannot express a job you must not be. Medium overall, for the start the page cannot place and the two branches only half-expressible.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: an AND-list cannot say 'talisman and one of these two', hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Nashmeira",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": null,
+   "raw": "Nashmeira, Imperial Ward"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J/K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "walking into the Walahra Temple is what starts this; the temple is an interior of Whitegate, not a zone, and there is nothing to click, so no marker"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoyoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Message from Yoyoroon",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "upper level stalls -- NOT Yuyuroon, who stands almost directly below him. He will not talk to a Blue Mage; change job and speak again."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ephramadian Shade",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "talisman",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "either zone will do -- see the quest note on this group. West of the Dvucca Isle staging point around (G-10), and near the Caedarva Mire Survival Guide. A talisman obtained before the quest was taken still counts."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Timeworn Talisman",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ephramadian Shade",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "talisman",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the same hunt in the other zone; this is the group's last member, which is why it carries the talisman for both. An Arrapago Ring (100 Imperial standing accolades from Asrahd at Whitegate (I-8)) drops you next to Shades by the Cutter."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yoyoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Timeworn Talisman",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sutlac",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "An Irmik Helvasi does the job just as well as the Sutlac, and trading both with the talisman gives the best odds No +1 versions. The appraisal can fail, which costs you the talisman and the food both."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoyoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Talisman of the rebel gods",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "only after a successful appraisal, and only after you have zoned"
+   },
+   {
+    "n": 7,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J/K-8",
+    "items": [
+     {
+      "name": "Talisman of the rebel gods",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Talisman key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the Walahra Temple again. If no cutscene plays, inspect the Imperial Whitegate instead; on any later attempt you must bring a fresh Talisman of the rebel gods straight to the Imperial Whitegate door at (L-8/9)."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Entry Gate"
+    },
+    "zone": "Hazhalm Testing Grounds",
+    "grid": null,
+    "items": [
+     {
+      "name": "Talisman key",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the Einherjar area; the Caedarva Mire home point is the quickest way in. The page gives the Talisman key no other use, so it is recorded as what this step needs in hand."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Hazhalm Testing Grounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Odin Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "examine the Entry Gate a second time to enter. No Trust magic. Paralyze, Dispelga and elemental magic, up to three Odin Images, and Zantetsuken if he is left alive too long at low HP. Bullet 9 is the reward cutscene that follows the win, not a step."
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "if the Trust: Nashmeira cutscene plays instead, watch it out and examine the gate again"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlisted Qualities",
+   "page_id": 14941,
+   "revision_id": 675111,
+   "source_sha256": "7aed6555b7aeb4e2dcc1b8dec53abac9d4ad8a5ff77e917091fdaf4ae9cbf41f",
+   "cache_file": "0014941_unlisted_qualities"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 77,
+   "dat_name": "Unlisted Qualities",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "no_observable_evidence"
+  ],
+  "notes": "A five-stop errand that builds an adventuring fellow, with nothing observable anywhere in it. The two wikitables are reference material for choices you make in conversation -- the eight names for each race and sex, the face-and-hair grid, the personalities and the Homemade Food each one yields -- and none of it is a step; the food table in particular is what a verb scanner would have turned into trades. Bullets 1 and 2 are one conversation with Luto Mewrilah, the second being her reacting to the name you just picked, so they merge into step 1. The three specification NPCs keep the page's order: nothing says they may be visited in any order, so they are a ladder and not a group. The Silver Ingot is the header's reward and so cannot be evidence, which leaves this quest with none at all -- it runs on the accept latch and then the session latch, which for a six-stop talk chain across four Jeuno zones is honest and costs nothing but precision.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "pick one of the eight race-and-sex lists and then one of its eight names; bullet 2 is the same conversation continuing"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Akta"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "height: short, medium or tall"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kuah Dakonsa"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "face and hair; you get a preview before confirming"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Red Ghost"
+    },
+    "zone": "Port Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "personality, which fixes your fellow's dialogue and which Homemade Food they make"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bheem"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ }
+]

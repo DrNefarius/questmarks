@@ -1,0 +1,1689 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Food for Thought",
+   "page_id": 122,
+   "revision_id": 738994,
+   "source_sha256": "e5cbeae7d34eb7165c74f342d5d07636df8b971ba06a9d131b243eb951c1db0c",
+   "cache_file": "0000122_food_for_thought"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 14,
+   "dat_name": "Food for Thought",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "grid_conflict"
+  ],
+  "notes": "A three-order delivery run, all of it inside Windurst Waters. The unnumbered preamble is a genuine precondition and not a step: if Kerutoto keeps talking about challenging Diabolos you must first accept Waking Dreams, and nothing in the packets can see that state.\n\nThe page says 'talk to the following NPCs in this exact order', but read as a player would, that sentence covers 'to RECEIVE this quest' -- bullets 1 and 2, which really are ordered, since Ohbiru-Dohbiru has to complain before Kerutoto will hand the quest over. Beyond that the page contradicts a strict ladder itself: bullet 3 asks two NPCs with an '&' and no order, and the closing line says each item traded nets its own portion of the 1,000 gil, so the three trades settle independently. Bullets 3 and 4-6 are therefore two unordered groups; a strict ladder would mark Ohbiru-Dohbiru and then sit there until you happened to visit him first.\n\nBullet 7 is NOT a step -- its own (!UPDATE!) retracts it: 'No need to speak with Kerutoto. The quest will be automatically completed once you trade the final orders.' So this quest has no hand-in and none is invented.\n\nNo evidence anywhere. Every item involved is an ordinary tradable food; holding a Grilled Hare proves you shopped, not that you delivered, and none of the three NPCs grants a key item.\n\nKerutoto's position is the one real conflict: the header puts him in Windurst Waters South at (J-8), bullet 2 sends you to the NORTHERN Rhinostery building. The header's grid is kept because it is the identity-bound field, and the walkthrough's wording is recorded in the note. The page never gives Kenapa-Keppa a location at all, so his steps carry the quest's zone and no grid.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Say It with Flowers",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kerutoto",
+   "zone": "Windurst Waters",
+   "grid": "J-8",
+   "raw": "Kerutoto, Windurst Waters South (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "southern Rhinostery building; he mentions he is hungry. This is the precondition -- the quest is not in your log until step 2."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kerutoto"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the quest is added to your log here. The walkthrough sends you to the NORTHERN Rhinostery building while the header gives Windurst Waters South (J-8); the header's grid is kept."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "orders_asked",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ask him for his order; the bullet joins the two NPCs with '&' and gives no order between them"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "orders_asked",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page never gives Kenapa-Keppa a grid or a zone; the quest's own zone is used and the grid is left empty rather than guessed"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kerutoto"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Grilled Hare",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "orders_filled",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "each of the three deliveries pays its own share of the 1,000 gil, so they are an unordered set"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [
+     {
+      "name": "Hard-boiled Egg",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "orders_filled",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Pamtam Kelp",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tortilla",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Windurstian Tea",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "orders_filled",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "he alone wants three items. Whichever of the three deliveries you finish last completes the quest outright -- bullet 7's own (!UPDATE!) says there is no need to go back to Kerutoto."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "I'm on a Boat",
+   "page_id": 98185,
+   "revision_id": 733995,
+   "source_sha256": "d66e82c0774ef873be4b3dedc0fca831333f1a1fac8408b7939795641a08e1d7",
+   "cache_file": "0098185_i_m_on_a_boat"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 55,
+   "dat_name": "I'm on a Boat",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "evidence_is_reward",
+   "consumed_key_item"
+  ],
+  "notes": "The resolver settled what the page could not. The wiki's Reward block lists both 'Watercraft' and '\"Watercrafting\"' and the walkthrough talks about receiving 'the Watercraft' mid-quest; res/items.lua has no Watercraft at all, while res/key_items.lua has 2167 'watercraft' (the portable boat) and 2205 '\"Watercrafting\"' -- name INCLUDING the literal quote marks, which is why the unquoted spelling resolves to nothing. So the boat you are handed at bullet 2 is a KEY ITEM and it is recorded as one.\n\nThat makes this the rare quest where a Reward-listed thing really is mid-quest evidence: bullet 2's own sub-bullet shouts 'You are not done with the quest yet! You still need the \"Watercrafting\" Key Item.' Hard rule 7 exists because a reward proves the quest is over; here the page states outright that it does not. It is used as step 2's evidence and flagged evidence_is_reward so the demotion is applied by the validator rather than hidden. '\"Watercrafting\"' itself IS the completion reward and is deliberately not evidence anywhere.\n\nBullets 3 and 4 are two separate crossings, not one: you cast the boat at the south side of (I-7), land on the southern island at (J-9), walk to the WEST side of (J-9) and cast again to reach the north bank. Each is its own step in its own place, and each carries the Watercraft as a held requirement. The 'dive right in' sub-bullet earns the unique Toxin Tussler title and the page says it may be done after the quest is over, so it is a note and not an optional step -- there is nothing to target.\n\nFame 'Adoulin' is not one of the addon's nine regions, so the region gates nothing; the FLevel 1 and the raw string are kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Choubollet",
+   "zone": "Foret de Hennetiel",
+   "grid": "J-6",
+   "raw": "Choubollet, Foret de Hennetiel - (J-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Choubollet"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Frontier Station; he asks for the three materials"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Choubollet"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Dhalmel Leather",
+      "count": 3,
+      "kind": "item"
+     },
+     {
+      "name": "Umbril Ooze",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Twitherym Scale",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Watercraft",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Watercraft is a key item, not an inventory item. The page's sub-bullet is explicit that the quest continues from here."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Watercraft",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "cast the boat from the south side of (I-7); you land on the southern island at the east end of (J-9). Have Sneak up -- sound-aggro Pugils are on that shore. Choosing to 'dive right in' instead gives a short cutscene and the unique title Toxin Tussler, which the page says can also be taken after the quest is finished."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Watercraft",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "cast the boat a second time, from the WEST side of (J-9); it puts you on the north bank of the river, still (J-9)"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Choubollet"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "head north from the second landing point. The '\"Watercrafting\"' key item and 500 Bayld come here, as the Reward, so neither is evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Over the Hills and Far Away",
+   "page_id": 488,
+   "revision_id": 701084,
+   "source_sha256": "890144b5db64fafb2a9d53a56353267c595992ed35a87328cf8a7308dd9c8b01",
+   "cache_file": "0000488_over_the_hills_and_far_away"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 112,
+   "dat_name": "Over the Hills and Far Away",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 4
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "generic_npc_name",
+   "unnamed_target"
+  ],
+  "notes": "A map quest that ends on a ??? with no hand-in, so none is invented.\n\nBullet 1 comes BEFORE the giver: you read a diary on the second floor of a house at (G-7) in Southern San d'Oria -- note the zone, the header's (G-7) is Port San d'Oria and the two only look alike. The page names the object only 'the diary', which is a common noun and not a name -- exactly the 'the baskets' case hard rule 1 describes -- so the target is left unnamed and untyped rather than promoted to 'Diary'. The step keeps its rung and simply carries no marker. If the live object does turn out to have a name, it is missing here and must come from a reading of the game, not from this page.\n\nBullet 3 is a real OR across two zones -- Moblin Ashman/Moblin Gurneyman in Oldton Movalpolos, or Moblin Groundman in Newton Movalpolos -- and a step has one zone. Oldton is recorded because the page leads with it; Newton is in the note and the branch is flagged. The Moblin Hotrok is the one observable thing in the quest and sits on that step.\n\nBullets 4, 5 and 6 do not agree with each other. [4] says climb to the TOP where Jormungand spawns, [5] puts a slope at (F-9) leading all the way DOWN to the zone entrance, [6] says fall down the Southern Slope you see as soon as you zone. Read as a player would, they are one descent from the zone line to a ledge, so they are one travel step and the disagreement is recorded rather than reconciled -- it is why this quest is medium.\n\nBullets 7 and 8 are kept apart because they need different things of you: examine the ??? with empty hands, then trade the Hotrok to it. Neither can carry a marker. The Map of the Uleguerand Range is the Reward and is not evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: so no target name is recorded and the step keeps its rung without a marker.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 8,
+    "raw": "San d'Oria / 8"
+   },
+   "prev": [
+    {
+     "title": "A Squire's Test II",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "The Medicine Woman",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Antreneau",
+   "zone": "Port San d'Oria",
+   "grid": "G-7",
+   "raw": "Antreneau, Port San d'Oria (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Second floor of the house at (G-7) in SOUTHERN San d'Oria not the giver's (G-7) in Port San d'Oria. Read it until you have read Page 4. The page calls it only 'the diary' a common noun, not a name."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Antreneau"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "this is what flags the quest, after the diary has been read"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Moblin Hotrok",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Moblin Ashman",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Moblin Gurneyman",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "or, entirely instead, Moblin Groundman in Newton Movalpolos -- a second zone one step cannot hold, so only the Oldton pair is recorded"
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Uleguerand Range"
+    },
+    "zone": "Uleguerand Range",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "three bullets, one descent, and they contradict each other: [4] climb to the top where Jormungand spawns, [5] a slope at (F-9) running down to the zone entrance, [6] fall down the Southern Slope visible as soon as you zone and aim for the ledge on your left. Miss the ledge and you climb back up and try again."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Uleguerand Range",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "inside the hole in the ledge; the page gives it no grid, and a ??? can never carry a marker"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Uleguerand Range",
+    "grid": null,
+    "items": [
+     {
+      "name": "Moblin Hotrok",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same ???; this completes the quest, and there is no NPC to return to"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Burden of Suspicion",
+   "page_id": 27288,
+   "revision_id": 754217,
+   "source_sha256": "1fb8933c51b365978d0a238314391b3d24700c58af7f8fc46038abf1af2dd7ad",
+   "cache_file": "0027288_burden_of_suspicion"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 20,
+   "dat_name": "Burden of Suspicion",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "A clean six-rung investigation with nothing observable in it: no key item is ever handed over and the Elixir is the Reward, so every evidence field is null and the ladder runs on the session latch alone. That is the honest answer here -- reaching for the Elixir would put the mark on the last step the moment one dropped from anywhere else.\n\nThe header writes the giver 'Gentle Tiger' and the walkthrough writes 'Gentle Tiger (S)'. The (S) form is the one recorded, because the resolver folds it to BOTH 'gentle tiger [s]' and 'gentle tiger' -- a superset of what the bare name gives -- so it can only help. The header string is preserved verbatim in start.raw.\n\nThe unnumbered Notice above bullet 1 is a real gate and not a step: one game day plus a re-zone after Light in the Darkness, neither of which any packet reports. Bullet 3's sub-bullets are transport options and bullet 4's is a warning about four Orcs; both stay as notes.\n\nBullet 6 gives Blatherix only a grid, (F-8), and no zone. The walkthrough has not left Bastok Markets (S) since bullet 5, so that is the zone recorded, and the inference is stated here rather than buried. The closing line about returning to Cait Sith (Mission) belongs to the mission line, not to this quest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Light in the Darkness",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Gentle Tiger (S)",
+   "zone": "Bastok Markets (S)",
+   "grid": "H-6",
+   "raw": "Gentle Tiger, Bastok Markets (S) (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "cutscene that begins the quest. Wait one game day and re-zone after Light in the Darkness first -- neither condition is visible to the addon."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Eldieme Necropolis (S)"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in from Batallia Downs (S) by the (J-10) entrance; the Survival Guide straight to the Necropolis (S), or the Jeuno I Voidwatch teleport, are quicker. The wiki drops the article -- the zone is The Eldieme Necropolis (S)."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sarcophagus"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "southern room at (G-9), fall down the centre hole, left at the fork, up the stairs, north into the room at (I-7); the Sarcophagus is on the east side. Four Orcs share the room -- clear them or wait for them to turn before you drop invisible."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger (S)"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Blatherix"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page gives only (F-8); the zone is carried over from bullet 5, which never leaves Bastok Markets (S). Keep the Elixir for the later mission The Truth Lies Hid."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Memories: Operation Cupid",
+   "page_id": 58947,
+   "revision_id": 740237,
+   "source_sha256": "e0421bd889d90943bb384da4f71469a515c755dcc74044f2ee06340f46e1de11",
+   "cache_file": "0058947_her_memories_operation_cupid"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 68,
+   "dat_name": "Her Memories: Operation Cupid",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "The header's Start field is EMPTY, which is not a defect -- this quest genuinely has no giver. Bullet 1 begins it by zoning into Batallia Downs (S) from Jugner Forest (S), so start.npc stays null, start.zone is recovered from the walkthrough, and start.raw keeps the empty header. The quest survives that because bullets 2 and 3 both name markable entities: validate.py only fails a quest with no start NPC when no step is markable either.\n\nThe Bulwark Gate at Sauromugue Champaign (S) (E-6) is examined TWICE, before and after the errand, and both examinations are kept -- they are the same object but not the same moment, and the second one is what the pot is for. The page never says outright that you must be holding the Pot of martial relish for the second examination; that it is the whole point of bullet 3 is plain enough to record as a held requirement, and it is what lets the ladder tell the two visits apart.\n\nThe Pot of martial relish is the quest's only usable evidence, on step 3 where it is granted. The [KI] Large memory fragment at bullet 5 is deliberately NOT evidence twice over: it is the header's Reward, and its name is not unique in res/key_items.lua, so the resolver rejects it rather than guess an id.\n\nAll the sub-bullets are transport advice except the one naming Amalasanda in the Tenshodo at Lower Jeuno (J-8) as the source of the three ingredients -- a shop, not a step.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: The [KI] Large memory fragment arrives here as the Reward and is not used as evidence; its name is also not unique in res/key_items.lua.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Her Memories",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Batallia Downs (S)",
+   "grid": null,
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Batallia Downs (S)"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "enter from Jugner Forest (S) for the opening cutscene -- this is the quest's whole start; there is no giver. The Batallia Downs (S) Survival Guide sits right by the zone line."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Voidwatch warp from the Atmacite Refiner is the closest way in; the Campaign Arbiter warp beats the Survival Guide"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Leadavox"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Rice Vinegar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ground Wasabi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Holy Basil",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Pot of martial relish",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all three ingredients in one trade; Amalasanda in the Tenshodo at Lower Jeuno (J-8) sells every one of them"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Pot of martial relish",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same gate a second time. The page does not spell out that the pot must be in hand, but bullet 3 exists for no other reason, and it is what separates this visit from step 2's."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Batallia Downs (S)"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Zone in from Rolanberry Fields (S) Campaign Arbiter warp, or the Rolanberry Fields Survival Guide and the maw, which lands near the zone line."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Prelude to Puissance",
+   "page_id": 86428,
+   "revision_id": 756388,
+   "source_sha256": "562f2e724a67b1bffae660b7e3c9285e8b7ade27faace14a064a4c5fb22282cc",
+   "cache_file": "0086428_prelude_to_puissance"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 170,
+   "dat_name": "Prelude to Puissance",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Four bullets, two steps. Bullet 3 is an OUTCOME -- 'You will receive Soul gem clasp and access to the level 95 cap fight' -- and bullet 4 says outright 'This quest is now technically completed', so neither is a step; a verb scan would have made two out of them. Bullet 3's sub-bullet about saying 'Yes' when Atori-Tutori asks if you are ready is part of the cutscene the trade fires, not a separate NPC to visit, and the page itself says it does not start the BCNM. The other sub-bullet is a re-buy price after a loss.\n\nBullet 2 folds the fetch into the trade rather than getting its own obtain rung: the Seasoning Stone drops from 'nearly all level 90+ regular monsters outside of Abyssea', which names no mob and gives no place, so an obtain step would be an unmarkable rung whose only content -- hold a Seasoning Stone -- the trade step already carries as a requirement.\n\nSteps 1 and 2 are consecutive on the same NPC, which is one marker with readiness looking ahead across both, exactly as intended. 'Nomad Moogle' is on the resolver's ambiguous list, so the Ru'Lude Gardens zone MUST stay on both steps or the whole quest is demoted; it does. The Soul gem clasp is a key item but it is also the header's Reward, so it is not evidence -- this quest carries none.\n\nThe After the walkthrough 'Lore' section is a spoiler table about Atori-Tutori and Beat Around the Bushin. No steps in it.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "Dormant Powers Dislodged",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 91,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nomad Moogle",
+   "zone": "Ru'Lude Gardens",
+   "grid": null,
+   "raw": "Nomad Moogle, Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Nomad Moogle standing next to Maat. Neither the header nor the walkthrough gives a grid, so none is recorded."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [
+     {
+      "name": "Seasoning Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the stone drops off nearly all level 90+ regular monsters outside Abyssea, or costs 5 Login Campaign points -- no mob is named, so none is recorded. Answer 'Yes' when Atori-Tutori asks whether you are ready; that only advances the quest line and does not start the Beyond Infinity fight."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clash of the Comrades",
+   "page_id": 37847,
+   "revision_id": 770784,
+   "source_sha256": "51f0af61a3e16159c5278e6d08d1fdbd56471dfe6fe3471de38bb856f55eacba",
+   "cache_file": "0037847_clash_of_the_comrades"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 101,
+   "dat_name": "Clash of the Comrades",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "fellow_gate_unmodelled",
+   "or_branch_unmodelled"
+  ],
+  "notes": "A Fellowship quest that ends inside a battlefield with no hand-in, so none is invented -- bullet 3's 'Your Adventuring Fellow's level cap will be raised to 70' is the completion, not a step to return anywhere.\n\nThe opponent is your own Adventuring Fellow. The page never gives it a monster name -- the table lists the job it will take depending on yours, not what it is called -- so the fight step records no mob rather than inventing one. That table is reference material and produces no steps at all.\n\nQuest Reqs are Familiarity level 100+ and Adventuring Fellow level 61+. Neither has a slot in the schema and neither is observable from packets, so they gate nothing and are flagged. Bullet 1's sub-bullet -- if Luto gives no cutscene, try Ajahkeem -- is a genuine alternative giver that the schema has no way to express on a step, so only Luto is recorded and the fallback lives in the note.\n\nThe remaining sub-bullets (fellow job table, no XP loss, damage capped near 200 per hit) are all commentary.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: an alternative giver the schema cannot hold on one step.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Mixed Signals",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Cutscene that begins the quest. If she gives you nothing, the page says to speak to Ajahkeem instead."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Qu'Bia Arena"
+    },
+    "zone": "Qu'Bia Arena",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the entrance is in Fei'Yin, by Home Point #1. Your Fellow's job follows the job you enter on."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qu'Bia Arena",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "single combat against your own Adventuring Fellow, who the page never names as a monster, so no mob is recorded. He or she gives up at 10-20% HP; no XP is lost and your damage appears capped near 200 per hit. The cap rise to 70 lands here -- there is nobody to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Let There Be Light",
+   "page_id": 67137,
+   "revision_id": 640664,
+   "source_sha256": "c445cda17dda9caf4a447406a74998145cb42e08e3eaed3bbde3a7ffd423f7ac",
+   "cache_file": "0067137_let_there_be_light"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 67,
+   "dat_name": "Let There Be Light",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "consumed_key_item"
+  ],
+  "notes": "A short repeatable delivery, entirely inside Abyssea - Uleguerand. The whole quest turns on one key item: the Torch coal, granted by the Coal Casket behind Zauko, which is step 2's evidence and the held requirement on both deliveries.\n\nThe two outlying caskets are an unordered group, and the page is what says so: the sub-bullet under bullet 5 explains that if the coal is destroyed you 'acquire it again then return to the missed one' and that you 'do not have to do both with the same coal' -- which only makes sense if either casket can be the one you still owe. A strict ladder would mark Conflux #6 and refuse to acknowledge #7 until you had gone back.\n\nThe coal is destroyed by USING a conflux, which is why the page insists you walk between encampments; that is a real constraint the addon cannot see and is recorded as a note rather than pretended away.\n\nThe page gives a grid only for Zauko, (K-9). The two outlying caskets are described only as 'near Conflux #6' and 'near Conflux #7', so their steps carry the zone and no grid -- which does mean their marker will match any Coal Casket in the zone, including the one behind Zauko. That is a real limit of a page that never numbers its own map.\n\nFame 'aule' is an Abyssea zone code, not one of the nine regions, so it gates nothing; the raw string and FLevel 1 are kept. Repeatable is Yes, and the closing line -- zoning is required to repeat -- is a cooldown, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Zauko (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": "K-9",
+   "raw": "Zauko (A) (K-9), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zauko (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the first encampment, near Conflux #5"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Coal Casket"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Torch coal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the casket directly behind Zauko"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Coal Casket"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [
+     {
+      "name": "Torch coal",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "caskets",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "second encampment, near Conflux #6, at the casket next to the flames; the page gives no grid. WALK -- taking a conflux destroys the coal."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Coal Casket"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [
+     {
+      "name": "Torch coal",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "caskets",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "third encampment, near Conflux #7, again with no grid given. Order between this and the Conflux #6 casket is free -- lose the coal and you fetch another and return to whichever you missed."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zauko (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Conflux #7 warps you back to #5 for the reward -- the coal is already spent by now, so the conflux is safe. Zoning is required before the quest can be repeated."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Wayward Automaton",
+   "page_id": 11593,
+   "revision_id": 695152,
+   "source_sha256": "e6719318f21f6fbeeb570c955c66cf9b263da2108e9d9fcf21d804814adad0df",
+   "cache_file": "0011593_the_wayward_automaton"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 27,
+   "dat_name": "The Wayward Automaton",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate"
+  ],
+  "notes": "The Puppetmaster AF quest immediately before Operation Teatime, and it shares that quest's giver and grid -- Iruki-Waraki, Aht Urhgan Whitegate (K-9).\n\nBullet 2 is not a step. It is the cutscene from bullet 1 retold in the second person ('You can tell the Automaton belongs to Iruki-Waraki because...'), and it ends by restating the instruction bullet 3 carries out. It merges into step 1.\n\nBullet 4 is three steps, all of them buried in its sub-bullets: click the ??? to spawn Caedarva Toad, kill it, then check the same ??? again for the cutscene. The (I-10) grid is the bullet's own and applies to all three. The page also warns there are TWO ???s at (I-10) and that the wanted one is in the CENTRE of the marsh -- worth keeping, because a ??? can never carry a marker anyway and the grid is all a player gets.\n\nNothing in this quest is observable. No key item is granted at any point, and the Turbo Animator is the header's Reward, so every evidence field is null.\n\n'Repeatable: af' is the artifact-armour category leaking into the field and means false. 'Level: 40+ Puppetmaster' is BOTH gates: level 40 and jobs [PUP].",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "AU / (empty)"
+   },
+   "prev": [
+    {
+     "title": "No Strings Attached",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 40,
+   "jobs": [
+    "PUP"
+   ],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Iruki-Waraki",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-9",
+   "raw": "Iruki-Waraki - Aht Urhgan Whitegate (K-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iruki-Waraki"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "as Puppetmaster. Bullet 2 is the same cutscene narrated back at you, not a second visit; he sends you to Nashmau."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dnegan"
+    },
+    "zone": "Nashmau",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "second floor. He mentions a Puppetmaster who lost his gil pouch in Caedarva Mire."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Caedarva Toad",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "out of Nashmau's east gate; the spawn point is on an island in the lake, crossed from the east side on the lily pads. There are TWO ???s at (I-10) -- the one you want is in the centre of the marsh, not on the outside. Stay near the lake, Chigoes are further out."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Caedarva Toad",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the NM the ??? popped"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same ??? again once the toad is dead, for the cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Iruki-Waraki"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Turbo Animator is the Reward, so it is not evidence anywhere"
+   }
+  ]
+ }
+]

@@ -1,0 +1,1577 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borghertz's Stalwart Hands",
+   "page_id": 14894,
+   "revision_id": 729572,
+   "source_sha256": "1a3f781e59fb86950480b4e4f11df46e58eb24d51d1e08a89362a2337e4d25d4",
+   "cache_file": "0014894_borghertz_s_stalwart_hands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 50,
+   "dat_name": "Borghertz's Stalwart Hands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "unnamed_target",
+   "human_corrected"
+  ],
+  "notes": "The step-1 instruction is the UNNUMBERED lead-in line above bullet 1, not bullet 1 itself, so step 1 carries no source bullet -- bullet 1 is the journey to the necropolis. The coffer is the one real loss here: the page calls it only 'the coffer' and never writes the entity's name, so by the never-invent-a-name rule its target is null even though the live entity is the standard 'Treasure Coffer' (which does resolve, and which v1 already uses for Under Oath's Zvahl coffer). A reviewer who wants that marker back only has to name it. The Eldieme Coffer Key -or- Thief's Tools split from Item Reqs is a genuine either/or and is modelled as items + items_alt. The Magicked astrolabe sub-bullet is a 10,000 gil convenience purchase from Churano-Shurano, not a step of this quest, so it stays a note. Bullet 5's two lines are a first-artifact-only detour and are marked optional and ordered (speak, then pay), not grouped. The torch is examined twice with the fight between, which is what the page says; 'torch' is the page's own word and resolves. The quest ends on a ??? in Port Jeuno, not on an NPC, so no hand-in is invented. The 'Two Additional Coffers' section after the walkthrough is deliberately NOT steps: it says outright that those coffers are not required and that the quest is complete once you have the hands.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "J / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Boy's Dream",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "PLD"
+   ],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Guslam",
+   "zone": "Upper Jeuno",
+   "grid": "H-8",
+   "raw": "Guslam - Upper Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered lead-in line above bullet 1: inside the Durable Shields shop, as a Paladin"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Eldieme Necropolis"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the wiki writes 'Eldieme Necropolis'; the zone is 'The Eldieme Necropolis'. Churano-Shurano in Windurst Waters (F-8) sells the Magicked astrolabe key item for 10,000 gil, which opens the doors here solo -- a convenience, not a step."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [
+     {
+      "name": "Eldieme Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old gauntlets",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the page names the entity only as 'the coffer', so the target is null -- in game it is a Treasure Coffer. Key from the zone's mobs, or pick the lock as a Thief with Thief's Tools. You need not be on Paladin to open it."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Old gauntlets",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he cannot repair them; that refusal is what sends you on"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Minnow"
+    },
+    "zone": "Upper Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "only if this is your first artifact quest; inside the Durable Shields shop"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yin Pocanakhu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Gil",
+      "count": 1000,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "first artifact quest only, and after Deadly Minnow; inside the Tenshodo area, trade 1,000 gil"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "the crates near the Auction House and the Jeuno Duty-Free Shop"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "first map; one of several torches, and you must remember which one you used"
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shadow flames",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same torch you used to spawn it, after Dark Spark is dead"
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Shadow flames",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "the same ??? as step 7; the cutscene here ends the quest, there is no NPC to hand in to"
+   }
+  ],
+  "human": {
+   "edited_at": "2026-08-09T18:47:05Z",
+   "by": "qa-verification",
+   "basis": "reading",
+   "reason": "gates.repeatable true -> false. BG Wiki tags 5 of the 15 structurally identical Borghertz's Hands quests |Repeatable=Yes and the other 10 |Repeatable=af (= 'Yes, after Memory reset', i.e. an artifact-armour reset, not a repeatable quest). All 15 are one-shot AF1 gauntlet quests on the same giver (guslam) with a one-time armour reward and no repeat prose. quest/jeuno/52's reader already made this same call and flagged it header_repeatable_disagrees. Correcting the remaining four so the family is consistent; without this, 5 of 15 identical quests draw a blue '!' on Guslam after completion and 10 draw nothing. See AF-QUESTS-FINDING.md.",
+   "fields": [
+    "gates.repeatable",
+    "review_flags[4]"
+   ],
+   "source_at_edit": {
+    "revision_id": 729572,
+    "source_sha256": "1a3f781e59fb86950480b4e4f11df46e58eb24d51d1e08a89362a2337e4d25d4"
+   },
+   "history": []
+  }
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Dawn Also Rises",
+   "page_id": 109705,
+   "revision_id": 760691,
+   "source_sha256": "115e0389d095528be900b81dcf2ae3140b7052f39b87789aa2852561f664af84",
+   "cache_file": "0109705_the_dawn_also_rises"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 74,
+   "dat_name": "The Dawn Also Rises",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_recovered_from_walkthrough",
+   "or_branch_modelled",
+   "unordered_group",
+   "unnamed_target",
+   "ki_name_not_unique",
+   "time_gated"
+  ],
+  "notes": "The header's Start is a ZONE, 'Walk of Echoes (S)', not a giver, so the start is recovered from bullet 2: the Ornate Door is the entity you select and it resolves. Note the (S) suffix is a wiki habit here -- there is no 'Walk of Echoes (S)' zone, only 'Walk of Echoes' (182), while the Shadowreign field zones really are separate ids and keep their (S). The three latent-energy points are an OR, not a set: you need ONE Breath of dawn. They are modelled as a group so all three draw at once, which is the behaviour a player wants, with the evidence on the LAST member so satisfying it lands the mark past the whole group rather than inside it. None of the three is named by the page -- Beaucedine's is called 'an unlabeled (blank) point of interest' -- so all three targets are null and only the zone and grid survive. 'Breath of dawn' will not resolve: the key-item table has more than one key item by that name and the resolver refuses to guess, so that evidence entry will be dropped and this ladder advances on the session latch alone. Bullets 7 to 10 are tactics, the reward list and the once-per-Earth-day cooldown, none of them steps; the '== Champion of the Dawn ==' heading is the previous quest's name used as a section title and the numbering runs straight through it. ADVERSARY (stage D): demoted high -> medium. Two things the reading pass got right in reasoning but that the ladder cannot actually deliver. First, 'Breath of dawn' was confirmed against resolve.lua and comes back 'key item name is not unique', so stage C will drop the only evidence entry in the quest and this ladder advances on the session latch alone -- a ladder nothing can observe is not a 'high'. Second, the Breath of dawn is granted identically at all three latent-energy points and is recorded on the LAST group member; hard rule 4 says to put a twice-granted item on the earlier step only. The reading pass's reason for the last member (land the mark past the whole group) is sound and moving it is outside this pass's powers, so it stands and the doubt is recorded here instead. Everything else re-checked and left alone: step order matches the page, each group member carries its own (S) zone, the '== Champion of the Dawn ==' heading really does not restart the numbering, 'Walk of Echoes (S)' confirmed not to resolve while 'Walk of Echoes' does, and bullets 7-10 are correctly not steps.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: see the quest note, and note that name does not resolve uniquely.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Champion of the Dawn",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Ornate Door",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Walk of Echoes (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Walk of Echoes"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in by the Veridical Conflux at Grauberg (S) (F-5) or Pashhow Marshlands (S) (J-9), or the Survival Guide to Batallia Downs and the ??? beside the maw with a Lightsworm"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Door"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "up the stairs; the cutscene with Cait Sith is what opens the quest"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beaucedine Glacier (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "latent_energy",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "an unlabeled (blank) point of interest down the hill on the G-9/H-9 border; the page gives it no name. ONE of these three points is all you need."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "latent_energy",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "northwest corner of H-7, by a tree alongside the river; unnamed on the page"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Breath of dawn",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "latent_energy",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Southeast corner of Lake Mechieume, just east of the river at the lake mouth; unnamed on the page. Last member of the group, so it carries the Breath of dawn for all three Survival Guide to East Ronfaure (S) then east is the fast way."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Door"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Breath of dawn",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "back in by any of the three routes; check the door once for a cutscene and again to start the fight"
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cait Sith",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "trivial at 99 and Trusts are allowed; he uses -ja spells and Mewing Lullaby. Bullets 7-10 are tactics, the reward choice and the once-per-Earth-day repeat, not steps."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "When One Man Is Not Enough",
+   "page_id": 40343,
+   "revision_id": 693083,
+   "source_sha256": "b7d0f994b70487a54d013afb6d2e6cc7bb63acf8b94488fc2cec1aca5bea8c71",
+   "cache_file": "0040343_when_one_man_is_not_enough"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 39,
+   "dat_name": "When One Man Is Not Enough",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group"
+  ],
+  "notes": "Bullet 1 is labelled 'Note:' and is shopping advice -- buy a fish before you go -- so it is not a step; the fish only becomes a requirement at bullet 5, where it is modelled as items_alt with an empty items list, the four-fish OR the header's Item Reqs also states. Bullet 6's 'options ... in any order' happens INSIDE the cutscene that follows the trade, so it is folded into the trade rather than made a group; bullet 7 is the reward and bullet 8 starts the next quest. The three suggestion NPCs under bullet 4 are the page's own '(Optional)' flavour text and get a group of their own, but the page never says where they stand, so their zone is left null rather than assumed to be Windurst Waters (S). Nothing in this quest is observable: the fish is consumed on trade and no key item is ever granted, so every evidence field is null and the ladder rides the session latch. The Goblin Footprint replay line in the Notes section is not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Manifest Problem",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "Wings of the Goddess"
+  },
+  "start": {
+   "npc": "Dhea Prandoleh",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-10",
+   "raw": "Dhea Prandoleh, Windurst Waters (S) - (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sealed Entrance"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "F-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the magic tower; examining it a second time is an optional extra cutscene where Lehko Habhoka complains of hunger"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "she tells you to trade one of the fish from the previous cutscene"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chioh Remhrll"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "suggestions",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page's own '(Optional)' flavour text and it does not say where she stands, so no zone is claimed"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kleh Engyumoh"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "suggestions",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "optional flavour text; the page gives no location"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tohs Jhannih"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "suggestions",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "optional flavour text; the page gives no location"
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Sealed Entrance"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "F-11",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Blackened Siredon",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Forest Carp",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Greedie",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Pipira",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "any ONE of the four fish. A Blackened Siredon, or three of the others, gives a longer cutscene and nothing else; with the others, answering 'No' after the first 'Yes' is enough to progress. The choices in bullet 6 are inside the cutscene that follows."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "For Whom the Bell Tolls",
+   "page_id": 102303,
+   "revision_id": 762378,
+   "source_sha256": "e614a5ea03094c89d868fe0f62e021dfbe6e2029879038da791b2b4a04d64c92",
+   "cache_file": "0102303_for_whom_the_bell_tolls"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 36,
+   "dat_name": "For Whom the Bell Tolls",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "consumed_key_item"
+  ],
+  "notes": "A clean ladder: five NPC or object stops and one NM. The Ergon Locus is examined three times with the fight between the second and third, which is exactly what bullets 4-6 say, and 'Ergon Locus' is the page's own name for it (written 'Ergon Locus ???') and resolves, so those three rungs all carry a marker. The Silver luopan is evidence on the FIRST examine, where it is granted, and appears only as a held requirement afterwards -- it is taken back at the third examine, so it must not be evidence twice. The header's Item Reqs is that same key item, not something you bring from outside. Bullet 5's five sub-bullets are NM tactics and bullet 8's game-day wait gates the NEXT quest, so neither is a step. 90+ Geomancer is both gates; the page adds that only the activation needs Geomancer, which the runtime gets for free since prereqs are only evaluated before a quest is started.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Seekers of Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Elementary, My Dear Sylvie",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [
+    "GEO"
+   ],
+   "repeatable": false,
+   "expansion": "Adoulin"
+  },
+  "start": {
+   "npc": "Sylvie",
+   "zone": "Western Adoulin",
+   "grid": "I-5",
+   "raw": "Sylvie, Western Adoulin (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Waterfront, Waypoint #9; Geomancer must be your main job to activate it, any job after that"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nhili Uvolep"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Sverdhried Hillock, Waypoint #7. If you hold the Trial Wand or she hands you the WS trial wand, talk again until the Sylvie cutscene comes -- no zoning needed."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vestavius"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Silver luopan",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "northwest corner of J-6, east from Bivouac #2; south of the giant rock and NOT the sparkling one. Players without the key item get a one-time Bayld reward for the NM kill."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Silver luopan",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Deranged Ameretat",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the second examine is the pop"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Deranged Ameretat",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "about 75k HP; Sweet Breath and Bad Breath, and Extremely Bad Breath under 50% unless an enfeebling Indi- or Geo- effect is up. Very high magic evasion, immune to nearly every enfeeble including Stun; ranged Trusts recommended."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Silver luopan",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "third examine, after the NM is dead; this is where the Silver luopan is taken back"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sylvie"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "final cutscene and rewards; bullet 8's game-day wait belongs to the next quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fire and Brimstone",
+   "page_id": 117,
+   "revision_id": 732387,
+   "source_sha256": "2769856856235f6ce5fe7cda1220134672b96ab7f5035bb7ef2690b030e1cc2a",
+   "cache_file": "0000117_fire_and_brimstone"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 73,
+   "dat_name": "Fire and Brimstone",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "unnamed_target"
+  ],
+  "notes": "'Repeatable: af' is the artifact-armour category leaking into the field and means false. Bullet 3 talks about 'the stone monuments' in the abstract but bullet 4 names the thing you actually examine, the Gravestone at (G-9), which resolves -- so the necropolis leg keeps a marker. Bullet 6 is the cutscene that bullet 5's conversation produces, not a second visit, so the two merge onto one Perih Vashai rung. Bullet 7 is a long route through Castle Oztroja ending at a pool of leeches the page never names, so that step's target is null and only the zone and (H-9) survive; the Old Earring it yields is the quest's only observable and is evidence there, which leaves the final trade to Perih Vashai holding it as a requirement. Scavenge is a Ranger job ability, so the earring leg needs Ranger main or sub even though bullet 3 says the middle of the quest does not.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [
+    {
+     "title": "Sin Hunting",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "RNG"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Perih Vashai",
+   "zone": "Windurst Woods",
+   "grid": "K-7",
+   "raw": "Perih Vashai, Windurst Woods (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perih Vashai"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Koh Lenbalalako"
+    },
+    "zone": "Mhaura",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the Blacksmiths' Guild; speak to her twice for the cutscene"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Eldieme Necropolis"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in from Batallia Downs (I-10) -- the Survival Guide puts you at the right entrance but does not fire the cutscene, so you must zone out and back in. Any job from here on."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gravestone"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Magicked astrolabe key item gets you here solo"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Perih Vashai"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "bullet 6 is the cutscene this conversation produces -- she sends you to Castle Oztroja for the Old Earring -- not a second visit"
+   },
+   {
+    "n": 6,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Old Earring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "use Scavenge on the pool of leeches on the third map; the page never names the pool. Route: (I-8) on map 1, hit the right handle for the brass door; on map 2 read the day's four-switch password at (I-10) and enter it at the brass door at (G-8). Ranger main or sub for Scavenge, and it may take several tries."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Perih Vashai"
+    },
+    "zone": "Windurst Woods",
+    "grid": "K-7",
+    "items": [
+     {
+      "name": "Old Earring",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "cutscene and the Hunter's Beret"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Finding Faults",
+   "page_id": 38769,
+   "revision_id": 773843,
+   "source_sha256": "4a8761c6f281791117597e9cb80bc89b92b350fcb9d7796a2f24611de5133f86",
+   "cache_file": "0038769_finding_faults"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 8,
+   "dat_name": "Finding Faults",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "unnamed_target"
+  ],
+  "notes": "Bullet 2 is a three-way CHOICE -- one beastman type, not all three -- so the three investigation stops share a group and all draw at once; a strict ladder would mark the Lamia and nothing else. Each branch is one step, not two: the page's own instruction at each site is to select the Peculiar Plants / Seed / Bud, and that named object is what the step targets, because the ??? beside it (bullet 3) is a ??? and can never carry a marker, so targeting the ??? would push the mark all the way back to Hishahma in Whitegate and tell the player nothing. The ??? and the second unique test are recorded in each note. The three NMs are never named anywhere on the page, so the fight step carries no mob name and no zone -- which one you fight depends on the branch -- and inventing the names would be exactly the guessing this pipeline exists to avoid. Nothing here is observable: no key item, no item, and the '??? Box' is a reward for getting both factors right, so every evidence field is null. Bullets 4 and 5 are two separate visits to Hishahma with a zone and a one-minute wait between them, which is why they stay two rungs. Fame reads 'Treasures of Aht Urhgan', which is the expansion's name for the Aht Urhgan region and resolves to it; the Expansion field's 'Treasues' typo is copied as written.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "Treasues of Aht Urhgan"
+  },
+  "start": {
+   "npc": "Hishahma",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-8",
+   "raw": "Hishahma, Aht Urhgan Whitegate (K-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hishahma"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he asks you to find what intimidates the beastmen"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Peculiar Plants"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "investigation",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Lamia branch -- pick ONE of the three. The ??? here spawns the NM; the plants make a sound, and meleeing it is the branch's other unique test. In by the Ilrusi Atoll staging point or the Arrapago Reef Survival Guide, then Escape."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Peculiar Seed"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "investigation",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Troll branch. The seed makes a smell; the other unique test is running away to see whether it is slow. Halvung Survival Guide, then Escape."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Peculiar Bud"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": "E-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "investigation",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Mamool Ja branch. The bud makes a smell, but it has more than one message -- you want 'A liquid drips from the plant when you touch it, making your eyes blink rapidly.' The other unique test is leading it off the nearby ledge. Mamook Survival Guide then the (L-10) exit back into Wajaom Woodlands, otherwise through Mamook."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the ??? at whichever site you chose spawns an NM the page never names, so no mob is recorded and the zone depends on the branch. Two of five factors intimidate it -- the branch's two unique ones, plus a certain weaponskill, a weaponskill from a certain angle, or a certain element -- and they change regularly."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hishahma"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report your theory once the NM is dead; testing the branch's two unique options guarantees at least one correct answer"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hishahma"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "zone and wait a minute first. One factor right is 200 Imperial Standing; both right is a ??? Box."
+   }
+  ]
+ }
+]

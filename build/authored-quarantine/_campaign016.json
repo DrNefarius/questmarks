@@ -1,0 +1,2174 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover I (B)",
+   "page_id": 28099,
+   "revision_id": 775177,
+   "source_sha256": "d792b6421fa06be1e814dccff4591c73134859b4b82023c6327d25b5d7fadb64",
+   "cache_file": "0028099_deep_cover_i_b_c747cfb177"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 216,
+   "dat_name": "Deep Cover I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_from_npc_page"
+  ],
+  "notes": "A fixed-giver intel op, not one of the rotating front-line ones: every action happens at Mariette, and the only thing the page leaves open is where the Quadavs are photographed. Bullet [1] is advice, [4] is a warning about the Fiendtrapper's range and Sneak/Invisible, [6] is inventory commentary, and [9]-[11] are carry-over notes about Deep Cover II (B) -- [9] is struck through in the wikitext, i.e. the wiki retracted it. Hieronymus never appears in the walkthrough; he is the header's campaign-op registration NPC and is recorded in start only, with no step invented for him. The page gives Mariette's grid (G-9) but never her zone; her own NPC page on bg-wiki (\"Mariette\") gives Bastok Markets (S) (G-9), which matches the grid this page states, so the zone is recorded from that lookup and flagged. Campaign Rank renders as empty because the wikitext holds {{question}} -- unknown, not absent. Header Level \"Any\" is not a level gate. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiendtrapper",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "she also hands over 5 Blank F. Plates (bullet [3]); only the Fiendtrapper is used as evidence because unused blanks can carry over from an earlier run and so do not prove this talk happened. Zone taken from Mariette's NPC page, not from this page."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blank F. Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiend Plate",
+       "kind": "item",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "photograph three different Quadavs from the front. The page names no individual monster (it links the Quadav category) and no zone -- campaign battle mobs count too -- so mobs is empty and zone is null. Three blank plates is the floor the page implies: five are given, three plates must be accepted, and a rejected plate wastes one."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "traded one at a time (bullet [7]); three must be accepted (bullet [8])."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover II (B)",
+   "page_id": 28100,
+   "revision_id": 84392,
+   "source_sha256": "0f2597a0f4c2f8677b395ad75d59c2d77606694bd5abb3d6faebd08ef49bb33e",
+   "cache_file": "0028100_deep_cover_ii_b_34d4c5a40c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 217,
+   "dat_name": "Deep Cover II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_from_npc_page",
+   "precondition_step"
+  ],
+  "notes": "Same shape as Deep Cover I (B) but NOT the same ladder, and the difference is read off this page rather than carried over: bullet [2] is a hard precondition -- you must drop the Fiendtrapper left over from Deep Cover I (B) or the op cannot be started -- and this page drops I (B)'s Sneak/Invisible warning entirely. The drop is something the player does, so it keeps a rung, but it is conditional and unmarkable, hence optional. Bullet [1] is advice and [6] is inventory commentary. Hieronymus is the header's registration NPC and never appears in the walkthrough; recorded in start only. Mariette's zone comes from her bg-wiki NPC page (Bastok Markets (S) (G-9)), which matches the grid this page gives. Campaign Rank is {{question}} in the wikitext -- unknown. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "drop the Fiendtrapper from Deep Cover I (B) if you still hold it; the page says the op cannot otherwise be started. Conditional and carries no marker."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiendtrapper",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "she also hands over 5 Blank F. Plates (bullet [4]); the Fiendtrapper alone is the evidence, and step 1 having just removed the old one makes holding it unambiguous here. Zone from Mariette's NPC page."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blank F. Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiend Plate",
+       "kind": "item",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "photograph three different Quadavs from the front; no monster and no zone are named, so mobs is empty and zone is null."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mariette"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "bullet [7] says \"one plate at a time\" and [8] \"after she accepts 3 pictures\" -- the same three-plate hand-in as Deep Cover I (B), worded loosely."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aegis Scream II (B)",
+   "page_id": 30816,
+   "revision_id": 106834,
+   "source_sha256": "ad1a71df786c6b54b7f311588dafad3e7c24dea0c1a926e405643b75615c5b92",
+   "cache_file": "0030816_aegis_scream_ii_b_5e725eb4a7"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 192,
+   "dat_name": "Aegis Scream II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "target_set_rotates"
+  ],
+  "notes": "A defensive-operations op: the whole body of it is one campaign battle, and the page deliberately names no zone -- \"a Bastokan stonghold\" [sic] is whatever is under siege at the time, so zone stays null rather than being guessed. No monster is named either, so mobs is empty. Bullet [3] is a FAIL condition (reporting to Hieronymus before the \"Objective Completed\" message ends the op in failure), not a step, but it confirms that reporting back is the completion action, which is why step 2 exists. The walkthrough never mentions signing up; Hieronymus at (E-8) is the header's registration NPC and is recorded in start. Campaign Rank \"Allied Ribbon of Glory (4 stars)\" is a CAMPAIGN rank, not a character level -- it has no schema field and is deliberately kept out of gates.level. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "join a campaign battle defending a Bastokan stronghold; the page names neither the zone nor any monster, and the eligible battles rotate with front-line control."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "report back only after the \"Objective Completed\" message; bullet [3] makes reporting early a failure."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve I (W)",
+   "page_id": 32574,
+   "revision_id": 89456,
+   "source_sha256": "24fbebc3b81a0293c144d101f1a71c6b2eb5b3b5034111e3eb6f563055622998",
+   "cache_file": "0032574_steel_resolve_i_w_f5c0a9b418"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 491,
+   "dat_name": "Steel Resolve I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "target_set_rotates"
+  ],
+  "notes": "A crafting quiz, not a fight and not a supply run: after the arbiter's briefing the op is a timed menu game in which you pick the crystal element matching each NPC's appearance. Bullets [10] and [11] are scoring advice (wrong answers hurt more than letting an NPC leave empty-handed) and [12] is the XP outcome -- none of the three is a step. No zone is recorded for the middle of the ladder: \"a Windurst controlled Campaign area\" is whatever Windurst holds at the time, and pinning one would put the marker somewhere the player may not be able to use. Unit Requirement \"1 member\" gates nothing and has no schema field. Campaign Rank \"Brass Ribbon of Service (2 stars)\" is a campaign rank, not a character level; it has no schema field, so it is kept out of gates.level and flagged. The wikitext tags that rank with {{verification}}, so the wiki is not sure of it either. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "confirm the op. The rest of bullet [1] -- \"proceed to a Windurst controlled Campaign area\" -- names no zone, so it is folded into step 2 rather than given a travel rung to nowhere."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "at the Fortification tower in whichever Windurst-held campaign zone you pick; the eligible set rotates with front-line control and the page names none, so zone is null. \"Campaign arbiter\" is the page's own label for the NPC. Bullet [3] is the briefing this talk produces."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "note": "the op itself: hand each NPC standing still at the Fortification the crystal whose element matches their appearance, chosen from three menus. Bullet [7]'s sub-bullets are the appearance-to-element key (commentary, not steps); [8] says to wait until the NPC has stopped moving; [9] describes the success animation. Nothing here is observable from inventory -- the crystals come from a menu, not your bags -- so items and evidence are empty."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve II (W)",
+   "page_id": 32575,
+   "revision_id": 84177,
+   "source_sha256": "8101a52915ed336b821185bb9a7376d647b835a896a2d93e2eef0df3aa50752e",
+   "cache_file": "0032575_steel_resolve_ii_w_fd6b73bc82"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 492,
+   "dat_name": "Steel Resolve II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "target_set_rotates",
+   "duplicate_page_source"
+  ],
+  "notes": "A crafting quiz, not a fight and not a supply run: after the arbiter's briefing the op is a timed menu game in which you pick the crystal element matching each NPC's appearance. Bullets [10] and [11] are scoring advice (wrong answers hurt more than letting an NPC leave empty-handed) and [12] is the XP outcome -- none of the three is a step. No zone is recorded for the middle of the ladder: \"a Windurst controlled Campaign area\" is whatever Windurst holds at the time, and pinning one would put the marker somewhere the player may not be able to use. Unit Requirement \"1 member\" gates nothing and has no schema field. This page's source_sha256 is byte-for-byte identical to Steel Resolve III (W) (page 32576) -- the two wiki pages hold the same text, and both give \"???\" for the XP and Allied Notes rewards and leave Campaign Rank empty. So there is nothing on this page that distinguishes II from III, and the identical ladder here is the page's doing, not a ladder copied from a sibling. No rank is stated, so nothing is flagged for one. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "confirm the op. The rest of bullet [1] -- \"proceed to a Windurst controlled Campaign area\" -- names no zone, so it is folded into step 2 rather than given a travel rung to nowhere."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "at the Fortification tower in whichever Windurst-held campaign zone you pick; the eligible set rotates with front-line control and the page names none, so zone is null. \"Campaign arbiter\" is the page's own label for the NPC. Bullet [3] is the briefing this talk produces."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "note": "the op itself: hand each NPC standing still at the Fortification the crystal whose element matches their appearance, chosen from three menus. Bullet [7]'s sub-bullets are the appearance-to-element key (commentary, not steps); [8] says to wait until the NPC has stopped moving; [9] describes the success animation. Nothing here is observable from inventory -- the crystals come from a menu, not your bags -- so items and evidence are empty."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve III (W)",
+   "page_id": 32576,
+   "revision_id": 84176,
+   "source_sha256": "8101a52915ed336b821185bb9a7376d647b835a896a2d93e2eef0df3aa50752e",
+   "cache_file": "0032576_steel_resolve_iii_w_e9343a5d25"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 493,
+   "dat_name": "Steel Resolve III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "target_set_rotates",
+   "duplicate_page_source"
+  ],
+  "notes": "A crafting quiz, not a fight and not a supply run: after the arbiter's briefing the op is a timed menu game in which you pick the crystal element matching each NPC's appearance. Bullets [10] and [11] are scoring advice (wrong answers hurt more than letting an NPC leave empty-handed) and [12] is the XP outcome -- none of the three is a step. No zone is recorded for the middle of the ladder: \"a Windurst controlled Campaign area\" is whatever Windurst holds at the time, and pinning one would put the marker somewhere the player may not be able to use. Unit Requirement \"1 member\" gates nothing and has no schema field. This page's source_sha256 is byte-for-byte identical to Steel Resolve II (W) (page 32575): same walkthrough, same \"???\" rewards, same empty Campaign Rank. The ladder therefore matches II (W) because the text does, not because it was copied. A III-specific rank almost certainly exists in game and is simply not on this page. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "confirm the op. The rest of bullet [1] -- \"proceed to a Windurst controlled Campaign area\" -- names no zone, so it is folded into step 2 rather than given a travel rung to nowhere."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "at the Fortification tower in whichever Windurst-held campaign zone you pick; the eligible set rotates with front-line control and the page names none, so zone is null. \"Campaign arbiter\" is the page's own label for the NPC. Bullet [3] is the briefing this talk produces."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "note": "the op itself: hand each NPC standing still at the Fortification the crystal whose element matches their appearance, chosen from three menus. Bullet [7]'s sub-bullets are the appearance-to-element key (commentary, not steps); [8] says to wait until the NPC has stopped moving; [9] describes the success animation. Nothing here is observable from inventory -- the crystals come from a menu, not your bags -- so items and evidence are empty."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slaughterhouse II (W)",
+   "page_id": 32620,
+   "revision_id": 84389,
+   "source_sha256": "bdf8ab6bdffa2b00e2dea7d0151fa2b0a9879f95299eb4404363da261519bcb2",
+   "cache_file": "0032620_slaughterhouse_ii_w_b64457c83c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 392,
+   "dat_name": "Slaughterhouse II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "target_set_rotates",
+   "list_read_from_wikitext"
+  ],
+  "notes": "A demolition run with several possible drop points, not a fight: nothing is killed and the whole op is two clicks on one ???. Bullet [1] (\"Easily soloable mission\") is advice. Bullet [4] renders as an empty \"List of ???'s:\" because the list under it is plain wikitext rather than sub-bullets; it IS in this page's own source, and that is where the candidate sites below were read from -- not from a sibling page. Because several zones are candidates and only whichever is Beastmen-held at the time is usable, both ??? steps carry zone null; pinning one would put the marker in a zone the player cannot use. This page lists TWO sites -- Fort Karugo-Narugo (S) (H-8) and Meriphataud Mountains (S) (E-5) -- where Slaughterhouse III (W) lists five; that difference is the only thing separating the two pages' walkthroughs. Campaign Rank \"Sterling Star (2 stars)\" is a campaign rank with no schema field, kept out of gates.level and flagged; the wikitext tags it {{Verification}}. Unit Requirement \"1\" gates nothing. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "confirm the op; the rest of bullet [2] -- \"go to a Beastmen controlled area near Windurst\" -- names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "click the ??? near the fortification to plant the bomb; the message \"The stronghold has sustained considerable damage.\" follows after a delay. Bullet [4] lists two candidate sites: Fort Karugo-Narugo (S) (H-8) and Meriphataud Mountains (S) (E-5). Only one will be Beastmen-held at a time, so no single zone is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "check the same ??? a second time to collect the XP; bullet [5] makes skipping this a failure of the whole op. Same unresolvable zone as step 2."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slaughterhouse III (W)",
+   "page_id": 32621,
+   "revision_id": 674016,
+   "source_sha256": "1c0e2e31a1f9e70d1d76e873a79d9fd74aca483e3dac6145fc85afe806bdfb2b",
+   "cache_file": "0032621_slaughterhouse_iii_w_f4899cef55"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 393,
+   "dat_name": "Slaughterhouse III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "target_set_rotates",
+   "list_read_from_wikitext"
+  ],
+  "notes": "A demolition run with several possible drop points, not a fight: nothing is killed and the whole op is two clicks on one ???. Bullet [1] (\"Easily soloable mission\") is advice. Bullet [4] renders as an empty \"List of ???'s:\" because the list under it is plain wikitext rather than sub-bullets; it IS in this page's own source, and that is where the candidate sites below were read from -- not from a sibling page. Because several zones are candidates and only whichever is Beastmen-held at the time is usable, both ??? steps carry zone null; pinning one would put the marker in a zone the player cannot use. This page lists FIVE entries where Slaughterhouse II (W) lists two, and one of the five is a negative: Pashhow Marshlands (S) is called out as an invalid choice because both of its ???s answer \"Nothing out of the ordinary here.\" The four usable sites are West Sarutabaruta (S) (H-6, east side), Fort Karugo-Narugo (S) (H-8), Meriphataud Mountains (S) (E-5) and Sauromugue Champaign (S) (H-7). Campaign Rank \"Iron Emblem of Service (2 stars)\" is a campaign rank with no schema field, kept out of gates.level and flagged; the wikitext tags it {{Verification}}. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "confirm the op; the rest of bullet [2] -- \"go to a Beastmen controlled area near Windurst\" -- names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "click the ??? near the fortification to plant the bomb; the message \"The stronghold has sustained considerable damage.\" follows after a delay. Bullet [4] lists four usable sites -- West Sarutabaruta (S) (H-6, east side), Fort Karugo-Narugo (S) (H-8), Meriphataud Mountains (S) (E-5), Sauromugue Champaign (S) (H-7) -- and names Pashhow Marshlands (S) as an INVALID choice. Only one will be Beastmen-held at a time, so no single zone is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "check the same ??? a second time to collect the XP; bullet [5] makes skipping this a failure of the whole op. Same unresolvable zone as step 2."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye II (W)",
+   "page_id": 32622,
+   "revision_id": 758376,
+   "source_sha256": "9fc884997e4fee546e0586d1cc55ae85e1609809ebc819a8ec1b6818976bf7d3",
+   "cache_file": "0032622_hawk_eye_ii_w_b5657d1c5e"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 382,
+   "dat_name": "Hawk Eye II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "target_set_rotates"
+  ],
+  "notes": "An intel op that is one click plus a wait the player does not act during. Bullets [5] (XP received) and [6] (/blockaid removed) are outcomes, not steps. The eligible zone rotates with front-line control and the page names none, so the ??? step carries zone null. Unit Requirement \"1 member.\" gates nothing and has no schema field. Nothing here is observable from inventory, so every evidence field is null. Campaign Rank \"Allied Ribbon of Glory (4 stars)\" is a CAMPAIGN rank, not a character level; there is no schema field for it, so it is recorded here and flagged rather than forced into gates.level. Header Level is empty. This page and Hawk Eye III (W) share a walkthrough word for word; the only differences are the rank and the XP figure (190 here, 290 there). gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "confirm the op; the rest of bullet [1] -- \"proceed to a Yagudo controlled Campaign area\" -- names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "click the ??? at the base of the fortification tower. Its sub-bullet says there are TWO ??? there and that \"You find nothing out of the ordinary.\" means try the other one. Bullets [3] (/blockaid is applied automatically) and [4] (roughly 90 seconds in the healing position, \"no action is required on your part\") are consequences of this one click, not steps -- which is why no wait rung is recorded. The zone is whichever area the Yagudo hold at the time, so it is null."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye III (W)",
+   "page_id": 32623,
+   "revision_id": 758377,
+   "source_sha256": "0361568f13058edcea8ed17168eab3cab79478350f571203370ff22e369970cb",
+   "cache_file": "0032623_hawk_eye_iii_w_69d4f2d5ab"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 383,
+   "dat_name": "Hawk Eye III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "target_set_rotates"
+  ],
+  "notes": "An intel op that is one click plus a wait the player does not act during. Bullets [5] (XP received) and [6] (/blockaid removed) are outcomes, not steps. The eligible zone rotates with front-line control and the page names none, so the ??? step carries zone null. Unit Requirement \"1 member.\" gates nothing and has no schema field. Nothing here is observable from inventory, so every evidence field is null. Campaign Rank \"Golden Star (4 stars)\" is a campaign rank, kept out of gates.level and flagged. The walkthrough is word for word Hawk Eye II (W)'s, differing only in the rank and the XP figure (290 here, 190 there), so the identical ladder is the page's doing rather than a copy. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "confirm the op; the rest of bullet [1] -- \"proceed to a Yagudo controlled Campaign area\" -- names no zone."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "click the ??? at the base of the fortification tower. Its sub-bullet says there are TWO ??? there and that \"You find nothing out of the ordinary.\" means try the other one. Bullets [3] (/blockaid is applied automatically) and [4] (roughly 90 seconds in the healing position, \"no action is required on your part\") are consequences of this one click, not steps -- which is why no wait rung is recorded. The zone is whichever area the Yagudo hold at the time, so it is null."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover I (W)",
+   "page_id": 36731,
+   "revision_id": 425557,
+   "source_sha256": "20df36823ceb0ad8d38b1f6066073ab70e4deb0beabc8747d71079580dac6850",
+   "cache_file": "0036731_deep_cover_i_w_6b5d3c0114"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 386,
+   "dat_name": "Deep Cover I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_from_npc_page"
+  ],
+  "notes": "A fixed-giver intel op: everything happens at Pelpopo except the photography itself. Bullet [1] is advice, [4] is a warning about the Fiendtrapper's range and Sneak/Invisible, and [6] is inventory commentary. Emhi Tchaoryo never appears in the walkthrough -- he is the header's campaign-op registration NPC and is recorded in start, with no step invented for him. The page gives Pelpopo's grid (G-9) but not the zone; Pelpopo's own bg-wiki NPC page gives Windurst Waters (S) (G-9), matching the grid this page states, so the zone comes from that lookup and is flagged. Campaign Rank is empty and header Level \"Any\" is not a level gate. Bullets [9]-[11] are carry-over notes about Deep Cover II (W) -- spare plates, spare blanks, and the requirement to drop the Fiendtrapper before starting the NEXT op. That last one is a precondition of II (W), not a step of this op, so it is not recorded here. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiendtrapper",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Pelpopo also hands over 5 Blank F. Plates (bullet [3]); only the Fiendtrapper is used as evidence, because unused blanks carry over between the Deep Cover ops and so prove nothing about this talk. Zone from Pelpopo's bg-wiki NPC page, not from this page."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blank F. Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiend Plate",
+       "kind": "item",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "photograph three different Yagudos from the front. The page links the Yagudo category rather than naming a monster, and names no zone (campaign battle mobs count), so mobs is empty and zone is null. Three blank plates is the floor the page implies: five are given, three plates must be accepted, and a rejected plate wastes one."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "traded one at a time (bullet [7]); three must be accepted (bullet [8])."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover II (W)",
+   "page_id": 36732,
+   "revision_id": 425558,
+   "source_sha256": "8731cf51350ebfc1b6366e5062621e611b2418f90d2c3a27e1055cd585beab01",
+   "cache_file": "0036732_deep_cover_ii_w_91f1b6bbe6"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 387,
+   "dat_name": "Deep Cover II (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_from_npc_page"
+  ],
+  "notes": "A fixed-giver intel op: everything happens at Pelpopo except the photography itself. Bullet [1] is advice, [4] is a warning about the Fiendtrapper's range and Sneak/Invisible, and [6] is inventory commentary. Emhi Tchaoryo never appears in the walkthrough -- he is the header's campaign-op registration NPC and is recorded in start, with no step invented for him. The page gives Pelpopo's grid (G-9) but not the zone; Pelpopo's own bg-wiki NPC page gives Windurst Waters (S) (G-9), matching the grid this page states, so the zone comes from that lookup and is flagged. Campaign Rank is empty and header Level \"Any\" is not a level gate. Read against Deep Cover II (B) deliberately: that page opens with a hard \"drop the Fiendtrapper first or you cannot start\" bullet, and THIS page does not have it -- its bullet [2] goes straight to Pelpopo. So no precondition rung is recorded here, even though the Bastok sibling has one. Bullets [9]-[12] are carry-over notes about Deep Cover III (W) and about re-using rejected plates on Deep Cover I (W); none is a step of this op. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiendtrapper",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Pelpopo also hands over 5 Blank F. Plates (bullet [3]); only the Fiendtrapper is used as evidence, because unused blanks carry over between the Deep Cover ops and so prove nothing about this talk. Zone from Pelpopo's bg-wiki NPC page, not from this page."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blank F. Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiend Plate",
+       "kind": "item",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "photograph three different Yagudos from the front. The page links the Yagudo category rather than naming a monster, and names no zone (campaign battle mobs count), so mobs is empty and zone is null. Three blank plates is the floor the page implies: five are given, three plates must be accepted, and a rejected plate wastes one."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "traded one at a time (bullet [7]); three must be accepted (bullet [8])."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deep Cover III (W)",
+   "page_id": 36779,
+   "revision_id": 425560,
+   "source_sha256": "34bb62643a2ff6907e8c6fbf3f33828dd981f421c8e4747b67d9824d96056c82",
+   "cache_file": "0036779_deep_cover_iii_w_ee976b3056"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 388,
+   "dat_name": "Deep Cover III (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_from_npc_page"
+  ],
+  "notes": "A fixed-giver intel op: everything happens at Pelpopo except the photography itself. Bullet [1] is advice, [4] is a warning about the Fiendtrapper's range and Sneak/Invisible, and [6] is inventory commentary. Emhi Tchaoryo never appears in the walkthrough -- he is the header's campaign-op registration NPC and is recorded in start, with no step invented for him. The page gives Pelpopo's grid (G-9) but not the zone; Pelpopo's own bg-wiki NPC page gives Windurst Waters (S) (G-9), matching the grid this page states, so the zone comes from that lookup and is flagged. Campaign Rank is empty and header Level \"Any\" is not a level gate. The shortest of the three: bullet [9] is the only trailing note, and it points backwards (rejected plates may still satisfy Deep Cover I (W) or II (W)) rather than forwards, so there is no drop-the-Fiendtrapper carry-over bullet here at all. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiendtrapper",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Pelpopo also hands over 5 Blank F. Plates (bullet [3]); only the Fiendtrapper is used as evidence, because unused blanks carry over between the Deep Cover ops and so prove nothing about this talk. Zone from Pelpopo's bg-wiki NPC page, not from this page."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Fiendtrapper",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blank F. Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fiend Plate",
+       "kind": "item",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "photograph three different Yagudos from the front. The page links the Yagudo category rather than naming a monster, and names no zone (campaign battle mobs count), so mobs is empty and zone is null. Three blank plates is the floor the page implies: five are given, three plates must be accepted, and a rejected plate wastes one."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pelpopo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Fiend Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "traded one at a time (bullet [7]); three must be accepted (bullet [8])."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Materiel Storm IV (B)",
+   "page_id": 38438,
+   "revision_id": 775230,
+   "source_sha256": "69123874f76c3f7af1d014769a0ea18c6a41f9a7861c828919abe463c7d1ff97",
+   "cache_file": "0038438_materiel_storm_iv_b_7a0d796f0c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 264,
+   "dat_name": "Materiel Storm IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "list_from_after_section"
+  ],
+  "notes": "A supply run, and the one real judgement call is the item list. Walkthrough bullet [1] holds two journeys -- Hieronymus at (E-8), then the Quartermaster at Bastok Markets (S) (H-9) -- so it is split across steps 1 and 2, with both bullet numbers kept on each. The ten items come from the \"After the walkthrough: Notes\" section, whose bullets restart at [1] and whose heading in the wikitext is \"Items requested by the Quartermaster\"; the page never says whether all ten are wanted in one run or one is picked per run. The counts (33 Ginger Cookies, 6 Windurst Tacos, 4 Apple Pies, 3 Roast Trout) read as separate single requests rather than one bundle, and the sibling Stock and Awe IV (B) states \"one of the following\" outright for its list, so the ten are recorded as ALTERNATIVES with items_partial set. If that is wrong the ladder advances a little early; the AND reading, if wrong, would leave it permanently unsatisfiable. Campaign Rank is literally \"???\" on the page -- unknown, so nothing is asserted and no rank flag is raised. Header Level \"Any\" is not a level gate. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "sign up for the op."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "learn what items are needed. Bullet [1] states this zone and grid itself; the bullet's wikilink is [[Quartermaster - Bastok Markets (S)]], which agrees."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Melon Juice",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Mushroom Soup",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Windurst Taco",
+      "kind": "item",
+      "count": 6
+     },
+     {
+      "name": "Tomato Juice",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Orange au Lait",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Yagudo Drink",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Ginger Cookie",
+      "kind": "item",
+      "count": 33
+     },
+     {
+      "name": "Roast Trout",
+      "kind": "item",
+      "count": 3
+     },
+     {
+      "name": "Icecap Rolanberry",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Apple Pie",
+      "kind": "item",
+      "count": 4
+     }
+    ],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "acquiring the goods is folded in here: they are simply what you must hold to make the trade, and the page gives no place to acquire them. The alternatives are the ten entries of the Notes section (its bullets [1]-[10], numbering restarted). items_partial is set because the all-ten reading cannot be ruled out and cannot be expressed alongside the one-of reading. No evidence: which item proves the step is exactly what is unknown."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stock and Awe IV (B)",
+   "page_id": 38452,
+   "revision_id": 773303,
+   "source_sha256": "3b309e5e7eb8586d6482b45a6ee33be6f953d80e022da5e5cc92c659e0299e41",
+   "cache_file": "0038452_stock_and_awe_iv_b_5629698934"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 254,
+   "dat_name": "Stock and Awe IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled"
+  ],
+  "notes": "A supply run with an explicit OR: bullet [3] says the Quartermaster asks you to appropriate \"one of the following items from the enemy\" and lists seven, each x1, so they are recorded as items_alt rather than an AND-list, and items_partial is false because the branch is fully expressible. Holding any one of them is what proves the fetch is done, so it is the obtain step's evidence and NOT repeated on the turn-in, which would make the mark jump. Bullet [1] is advice. The walkthrough gives only \"(H-9)\" for the Quartermaster, but the bullet's wikilink is [[Quartermaster - Bastok Markets (S)|Quartermaster]] -- the zone is read off that link on this page, not looked up elsewhere. Hieronymus never appears in the walkthrough; he is the header's registration NPC, recorded in start only. No zone is recorded for the fetch: \"from the enemy\" names no area. The Notes section (\"time is of the essence\", limit unknown) is not a step and is not modellable. Campaign Rank \"Brass Wings of Service (1 star)\" is a campaign rank with no schema field -- kept out of gates.level and flagged. gates.expansion and gates.repeatable are both null: the Campaign Header template carries neither field and no bullet states either, so nothing on this page supports asserting them.",
+  "gates": {
+   "fame": null,
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus - Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "she names the item she wants (bullet [3]). Zone from the bullet's own wikilink target, [[Quartermaster - Bastok Markets (S)]]."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Wyvern Wing",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Goblin Mess Tin",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Peiste Stinger",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Peiste Skin",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Wivre Horn",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Heavy Quadav Chestplate",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Heavy Quadav Backplate",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [],
+     "alt": [
+      {
+       "name": "Wyvern Wing",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Goblin Mess Tin",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Peiste Stinger",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Peiste Skin",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Wivre Horn",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Heavy Quadav Chestplate",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Heavy Quadav Backplate",
+       "kind": "item",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "take one of the seven from the enemy; the page names no zone and no monster, so both are left empty. Holding any one of the seven is the observable proof."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Wyvern Wing",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Goblin Mess Tin",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Peiste Stinger",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Peiste Skin",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Wivre Horn",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Heavy Quadav Chestplate",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Heavy Quadav Backplate",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "\"Return the item to her for your reward.\" Evidence is deliberately left null here: the same item is already step 2's evidence and may not be evidence twice."
+   }
+  ]
+ }
+]

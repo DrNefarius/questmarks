@@ -1,0 +1,3214 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 1-1",
+   "page_id": 11392,
+   "revision_id": 764230,
+   "source_sha256": "db8dc4bd8dbbe238b8fa8a4214438dea1f9fd69ba7eec304b4eafd8c6f875bae",
+   "cache_file": "0011392_promathia_mission_1_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 110,
+   "dat_name": "The Rites of Life",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "The header Start is a ZONE, 'Lower Delkfutt's Tower', and names no NPC; chronicle_snpc is empty for this row, so start.npc is null and nothing moves. The ladder starts where the walkthrough starts, which is that same zone line.\n\nBullet 4 is the outcome of bullet 3's cutscene, not an action, and the [KI] Mysterious amulet it grants is the header's own Reward -- hard rule 7 keeps a reward out of evidence, so this mission carries none. That is the expected answer here and not a gap.\n\nThe 'Postponing' section is an ALTERNATIVE entry for a player who put the opening scenario on hold: the mission shows in the log as 'To Start CoP...' and the Tales' Beginning book at (H-10) starts it instead. It is not an extra rung on the normal path -- the book is only visible to a player who postponed -- so it lives in step 1's note rather than becoming a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Lower Delkfutt's Tower",
+   "grid": null,
+   "raw": "Lower Delkfutt's Tower"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Lower Delkfutt's Tower"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in from Qufim Island; the cutscene fires on arrival and opens Chapter 1. A player who postponed the opening scenario instead uses the Tales' Beginning book at (H-10) in this same zone -- see the Postponing section, whose bullets restart at [1]."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Upper Jeuno"
+    },
+    "zone": "Upper Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "zone in for the second cutscene"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "at the Infirmary near Home Point #3. Bullet 4 is the cutscene's outcome -- the Mysterious amulet is the header's Reward, so it is not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 1-2",
+   "page_id": 11413,
+   "revision_id": 695651,
+   "source_sha256": "46226018af6637223ba3a33ae7d7f6f36436c9fd25bdc059291a098a70e3d621",
+   "cache_file": "0011413_promathia_mission_1_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 118,
+   "dat_name": "Below the Arks",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "unordered_group"
+  ],
+  "notes": "Start agrees with chronicle_snpc (pherimociel) and with the header, so nothing moves.\n\nThe body of this mission is unmodellable and that is the reason for medium. Bullet 2 -- clear all three Promyvions, in any order -- is the whole mission, and the page deliberately does NOT name them: it says the walkthrough for each lives in the next mission, The Mothercrystals. Hard rule 1 forbids supplying Promyvion-Holla/Dem/Mea from memory, so the rung exists with a null target and no zone. It is there so the ladder does not read as finished the moment you have spoken to Pherimociel; it draws nothing, which is the correct outcome for a step nobody can observe or point at.\n\nBullets 3 and 4 are the page's own top-level '(Optional)' lines, so they are optional steps rather than notes; optional steps are never ladder positions, so they cost nothing. The Notes section adds only the warning about the Large Apparatus, which is carried on Harith's step.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: The page names none of them and defers the walkthroughs to the next mission, so there is no target and no zone to record; nothing about a Promyvion clear is observable either.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Rites of Life",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Pherimociel",
+   "zone": "Ru'Lude Gardens",
+   "grid": "G-6",
+   "raw": "Pherimociel, Ru'Lude Gardens - (G-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pherimociel"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the palace; the cutscene begins the mission"
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Clear all three Promyvions, in any order."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rainhard"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "top of the palace stairs; dialogue about Harith. The page marks it (Optional)."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Harith"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "in the Duke's house. The page marks it (Optional); the Notes section adds: do not erase your memory at the Large Apparatus before returning to him."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 2-1",
+   "page_id": 11525,
+   "revision_id": 725000,
+   "source_sha256": "cdbaa4100530cc6d675b84976a5bb447554a08e6997cee069aad064940e6d995",
+   "cache_file": "0011525_promathia_mission_2_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 138,
+   "dat_name": "An Invitation West",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "The header Start is a zone and a grid ref, 'Lufaise Meadows - (K-9)', with no NPC, and chronicle_snpc is empty, so start.npc stays null and nothing moves.\n\nBullet 1 is not an action: clearing the three Promyvions dumps you at (K-9) and the cutscene plays by itself. It is folded into step 1 as the place you start from. Bullets 2 and 3 are one journey across two zones, so they are split -- the walk west inside Lufaise Meadows to the entrance at (F-10), then the zone line itself. The mount and monster-level advice is a sub-bullet and stays a note.\n\nThe header's Reward, the [KI] Mysterious Amulet, is a reward and not evidence; in fiction it is the amulet being STOLEN that starts this mission, so nothing here is observable at all.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Mothercrystals",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Lufaise Meadows",
+   "grid": "K-9",
+   "raw": "Lufaise Meadows - (K-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you appear at (K-9) and the cutscene plays on its own; the first thing you do is walk west to the Tavnazian Safehold entrance at (F-10). Orcs, Gigas and Bugards aggro below about level 45, and mounts avoid them entirely."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Tavnazian Safehold"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zone in for the cutscene that ends the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 2-2",
+   "page_id": 11533,
+   "revision_id": 774651,
+   "source_sha256": "d843decd7173214d90a244456080fcb617b073fd7aa9cb87fd84d738768fbb37",
+   "cache_file": "0011533_promathia_mission_2_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 218,
+   "dat_name": "The Lost City",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Header Start is the bare zone 'Tavnazian Safehold' and chronicle_snpc is empty, so start.npc is null and nothing moves. The ladder begins at the Walnut Door, which is where the walkthrough begins.\n\nTwo Walnut Doors exist on the top floor and the page is emphatic about which: (K-9) on the south side is this mission's, (K-7) will not work. (K-7) is mission 2-4's door -- the two records disagree on purpose, and both are right for their own mission.\n\nThe Justinius line is a sub-bullet, is marked (Optional) and only warns you off the Sewer Entrance you are about to check anyway, so it stays a note. Neither the 'Optional' nor the 'Plot Details' section holds steps: the first is a list of newly available quests and a Quest Guide NPC, the second is lore and dead PlayOnline links.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "An Invitation West",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Tavnazian Safehold",
+   "grid": null,
+   "raw": "Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Walnut Door"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "top floor, SOUTH side. The other Walnut Door at (K-7) does not work for this mission."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Despachiaire"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the room behind the door. The optional sub-bullet is Justinius at (J-6) warning you off the Sewer Entrance."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sewer Entrance"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "lowest level of the safehold; this opens the Phomiuna Aqueducts"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 2-3",
+   "page_id": 11549,
+   "revision_id": 762052,
+   "source_sha256": "169c1f1a69079854f0e1db12069db7dc205fecebc360b369a1aeae2c0ab15f14",
+   "cache_file": "0011549_promathia_mission_2_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 228,
+   "dat_name": "Distant Beliefs",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "steps_from_after_section",
+   "time_gated",
+   "walkthrough_incomplete"
+  ],
+  "notes": "Header Start is the bare zone 'Phomiuna Aqueducts', chronicle_snpc is empty, start.npc is null; nothing moves.\n\nThe Walkthrough section holds NO steps. Bullets 1-4 are the recommended-items list (Reraise, Holy Water, Silent Oil, Prism Powder, a Skeleton Key or a Bronze Key) rendered as bullets; bullet 5 is the single real instruction and bullet 6 only announces two objectives. Everything else came from the 'Objective 1', 'Objective 2' and 'Ending the Mission' sections, whose bullets each restart at [1] -- the source_bullets are those local numbers and each note says which section.\n\nThe objectives are NOT a free-order pair despite the page's phrasing: Objective 2's route is written as starting from the Minotaur, and the page itself says a missing Nag'molada cutscene means you never got Minotaur credit. So they are ordered, not a group.\n\nBullet 4's key becomes the Iron Gate's items: a Bronze Key from Fomors, or a Skeleton Key as the independent alternative. Medium, not high, for two reasons the addon cannot fix: the oil-lamp puzzle is keyed to the current Vana'diel day, which no packet reports, and the page's day/lamp chart did not survive rendering, so bullets 6 and 7 of Objective 2 point at a table that is not there. Nothing in this mission is observable, so evidence is null throughout -- that is the expected answer, not a gap.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Lost City",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Phomiuna Aqueducts",
+   "grid": null,
+   "raw": "Phomiuna Aqueducts"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sewer Entrance"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "checking it enters the Phomiuna Aqueducts. This page gives no grid for it; mission 2-2 puts it at (I-7) on the lowest level."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": "J-2",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Minotaur",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "from the 'Objective 1' section, bullets restart at [1]. Second map; enter map 2 from point A on map 1, not B. Sneak and Invisible; Taurus mobs have True Sight. Mortal Ray dooms whoever faces it. No cutscene follows -- move away before it respawns."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Bronze Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Skeleton Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Objective 2' [1]. Second map; reached from the Minotaur by the wooden ladder at (K-5) and the drop at (G-6). The key comes from Walkthrough bullet 4: a Bronze Key off Fomors, or a Skeleton Key instead. Beware the one-way drop into the water in the same room."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Wooden Ladder"
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Objective 2' [2]: cutscene with Nag'molada, then climb. If the cutscene does not play you never got credit for the Minotaur."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "'Objective 2' [3]-[4]: left through the north door, down the hallway, first room -- Fomor link here. Take the ??? on the BOOKSHELF in the southwest corner, circling right around the shelves. The ??? straight ahead on the east wall is a trap that opens a one-way drop and wastes your key. The correct one opens a one-way door in the south wall."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Oil Lamp"
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7,
+     8
+    ],
+    "note": "'Objective 2' [5]-[8]: the wall torches are hard to see, so tab-target them, and do not touch the farthest one. Press the two lamps matching the current Vana'diel day and the day it is strong against, within a short window, to open the west door. The addon cannot see the day, and the page's day/lamp chart did not survive rendering."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Gate"
+    },
+    "zone": "Phomiuna Aqueducts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "'Objective 2' [9]: the SECOND Ornate Gate, for a cutscene"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Justinius"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Ending the Mission' section, bullets restart at [1]: after BOTH objectives, leave the aqueducts and speak to him on the top floor by Home Point #3. The FastCS/FrameRateDivisor advice under it is client troubleshooting, not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 2-4",
+   "page_id": 11562,
+   "revision_id": 734990,
+   "source_sha256": "8ed78171af47e965b2d07fa1641086baae85c4cd631d975083531bd7501a9b1e",
+   "cache_file": "0011562_promathia_mission_2_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 238,
+   "dat_name": "An Eternal Melody",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "reward_ki_is_midquest_evidence"
+  ],
+  "notes": "Start agrees with chronicle_snpc (walnut door) and with the header, so nothing moves. The giver here is an object, not a person, which is normal for CoP.\n\nThe door is the NORTH one at (K-7), with Parelbriaux standing outside it on widescan; the south Walnut Door at (K-9) belongs to mission 2-2 and does not work here. Recorded because getting the two records the same way round is exactly how a marker ends up on the wrong door.\n\nStep 1's cutscene returns the [KI] Mysterious amulet, and it is tempting evidence -- but it is listed in the header's Reward, and hard rule 7 says a reward proves the mission is over, not that a step is done. Left out deliberately, so this mission carries no evidence.\n\nCORRECTION under the rewritten hard rule 7: that paragraph is superseded -- walkthrough bullet [1] of 3 explicitly gives you the [KI] Mysterious amulet before the last bullet, so appearing in the Reward field no longer disqualifies it and it is now recorded as step 1's evidence.\n\nStep 3 has no entity at all: the page says only 'approach the bridge', names nothing, and gives the span (H/I-8). Recorded as H-8 with a null target, which keeps the rung and marks the zone without inventing a bridge object.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: hands it to you outright ('You will receive the [KI] Mysterious amulet'), so holding it proves this bullet is behind you rather than that the mission is over; under the rewritten hard rule 7 that makes it this step's evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Distant Beliefs",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Walnut Door",
+   "zone": "Tavnazian Safehold",
+   "grid": "K-7",
+   "raw": "Walnut Door, Tavnazian Safehold - Top Floor (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Walnut Door"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Mysterious amulet",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The NORTH door on the top floor, with Parelbriaux outside it; the south door at (K-9) will not work. The cutscene returns the [KI] Mysterious amulet. That amulet IS also listed in the header's Reward, but this bullet [1] of 3 Spelling taken from the walkthrough ('amulet'); the Reward line writes 'Amulet' and both fold to the same key item. Justinius at (J-6) has optional dialogue about where Ulmia is."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the gate to Snowmint Point. Home Point #3 by Justinius to Home Point #1, then the southern exit (H-6), is the fast way."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "approach the bridge on the main floor for the closing cutscene. The page writes the span (H/I-8) and names no entity, so the target is null."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 2-5",
+   "page_id": 11579,
+   "revision_id": 774964,
+   "source_sha256": "f9de14adf7bb1fb2230dd19e74e3e66c9be6cc6e5ada9070c064ac40669ae583",
+   "cache_file": "0011579_promathia_mission_2_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 248,
+   "dat_name": "Ancient Vows",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_kept_from_header",
+   "name_spelling_conflict"
+  ],
+  "notes": "START: kept as the header's 'Spacial Displacement', which folds to exactly chronicle_snpc's 'spacial displacement', so the giver marker does NOT move. It is worth saying why, because the walkthrough disagrees with the header about what you touch first: bullet 6 sends you to the Dilapidated Gate at (F-7) and only bullet 7 checks the displacement. Both are in Misareaux Coast and the gate comes first, so the gate is ladder step 1 and the displacement step 2 -- the giver row and the ladder both stay truthful without either overwriting the other.\n\nSPELLING: the page writes the giver 'Spacial Displacement' in the header and 'Spatial Displacement' in every walkthrough bullet. These fold to two DIFFERENT npc keys, and the resolver only normalises names, it does not check that an entity exists, so one of the two is a dead key that will simply never draw. I cannot tell from the page which the game uses. The header spelling is kept for start.npc because that is what ships today and changing it is the one thing that could move a marker; the walkthrough spelling is used on the steps because that is what those bullets say. Whichever is right, one of them draws and neither points anywhere wrong. Worth a human with the game open.\n\nBullets 1-5 are the recommended-items list (Echo Drops, Reraise, MP/HP drinks, Prism Powder, Yellow Liquid), not steps. The Giant Scale farm is a sub-bullet of bullet 7 but is a real requirement -- two scales, one per Unstable Displacement -- so it is its own step. It is deliberately NOT evidence: the scales are traded away one at a time, so a count would read true and then false again and drag the mark backwards. They are `items` on the two trades instead, which is what items are for.\n\nThe Boss Fight section is TP-move tables and tactics; the Optional section is ENMs and side quests. Neither holds steps. The battlefield's bosses are called only 'the Mammets' on this page, which is not a name I can put in `mobs`, so that list is empty and the note carries it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: See the record note on the Spacial/Spatial spelling split.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "An Eternal Melody",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Spacial Displacement",
+   "zone": "Misareaux Coast",
+   "grid": "D-6",
+   "raw": "Spacial Displacement, Misareaux Coast - (D-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "click the gate for a cutscene. This is the walkthrough's first action, not the header's start entity. The Unity warp for the level 122 NM lands on it."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Spatial Displacement"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "D-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Checking it transports you to Riverne - Site #A01. Grid taken from this page's own header, which places it at (D-6); the bullet says only 'ahead'."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Firedrake",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "two Giant Scales, one for each Unstable Displacement; two is enough for a whole party but everyone must move fast when one is used. Invisible for the sight-aggro wyverns and bombs, Prism Powder near the bombs because they aggro magic, and Hippogryphs are True Sight."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "west to a Spatial Displacement, then northwest to another. The bullet gives no grids, so there is nothing to point at beyond the zone."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Unstable Displacement"
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Giant Scale",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "it opens only briefly, so have the party close before trading. The Home Point at (I-9) is on the way; carry on northeast and round counter-clockwise."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Unstable Displacement"
+    },
+    "zone": "Riverne - Site #A01",
+    "grid": "E-10",
+    "items": [
+     {
+      "name": "Giant Scale",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the second scale, same way as the first"
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monarch Linn"
+    },
+    "zone": "Monarch Linn",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "straight north and through the northeastern displacement. The island on the way is full of Hippogryphs."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Spatial Displacement"
+    },
+    "zone": "Monarch Linn",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "check the displacement and enter the battlefield 'Ancient Vows'. This area is uncapped, so rest and prepare first; buffs wear on entry, so re-buff inside. The bosses are called only 'the Mammets' on this page, so mobs is left empty rather than invent a name."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 3-1",
+   "page_id": 11585,
+   "revision_id": 735893,
+   "source_sha256": "7abffd6870d6801d5d67b6d43c4fdc3a077844329b86528f7607c6f11cc8bbb7",
+   "cache_file": "0011585_promathia_mission_3_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 258,
+   "dat_name": "The Call of the Wyrmking",
+   "match_rule": "header_mission_name+relaxed",
+   "match_conf": "relaxed_name"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc (airship dock) and with the header, so nothing moves. The page's Mission Name is 'Call of the Wyrmking' and the client's is 'The Call of the Wyrmking'; that is the relaxed match already recorded in identity and is not mine to second-guess.\n\nBullet 1 is not an action -- the Mammet fight drops you in South Gustaberg by itself -- so it is folded into step 1's note. Step 1's target is the Departures Entrance, which is the entity the bullet actually names; the header's broader 'Airship Dock' is kept as the giver. The page is emphatic that the spot is OUTSIDE the building and needs no pass, which is exactly the kind of thing a marker helps with, so it is in the note.\n\nKlaus and Carey are both marked [Optional] and are extra dialogue and a hint respectively -- no state changes -- so they stay notes rather than becoming optional steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Ancient Vows",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Airship Dock",
+   "zone": "Port Bastok",
+   "grid": "F-7",
+   "raw": "Airship Dock, Port Bastok - (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Departures Entrance"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you arrive in South Gustaberg near the Lighthouse after the Mammet fight (bullet 1) and make your way here. The spot is OUTSIDE the airship building and needs no pass; it is easy to run straight past. Home Point #3 is closest. Klaus inside and Carey have optional extra dialogue."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "second floor of the Metalworks"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 3-2",
+   "page_id": 11586,
+   "revision_id": 736414,
+   "source_sha256": "75c790e5369299fcc3085e7ba4afc8996c107bcc2afdb6f0c0560c69a46d4a4f",
+   "cache_file": "0011586_promathia_mission_3_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 318,
+   "dat_name": "A Vessel Without a Captain",
+   "match_rule": "header_mission_name+relaxed",
+   "match_conf": "relaxed_name"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "grid_conflict",
+   "unnamed_target"
+  ],
+  "notes": "Start agrees with chronicle_snpc (neptune's spire) and with the header, so nothing moves.\n\nThe page contradicts itself about where Neptune's Spire is: the header says Lower Jeuno (J-7), walkthrough bullet 1 says Lower Jeuno (F-7). Both are recorded -- the header's on start.grid, the walkthrough's on the step, since the walkthrough is the one giving the instruction -- and the record is demoted to medium for it.\n\nThe target of step 1 is Neptune's Spire itself. The bullet says to click 'the door to the Tenshodo headquarters', which the page never names as an entity, so pointing at the Spire is the closest thing to a markable target the page supports and it is also what the shipped index already uses.\n\nStep 2 has no entity at all: the cutscene fires when you reach the stairs on the way to the Audience Chamber. Zone and grid only, null target. The 'Optional (Jeuno)' section is a list of newly available quests, not steps, and the Rhapsodies sub-bullet is cross-storyline advice.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Call of the Wyrmking",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Neptune's Spire",
+   "zone": "Lower Jeuno",
+   "grid": "J-7",
+   "raw": "Neptune's Spire, Lower Jeuno - (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Neptune's Spire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "enter and click the door to the Tenshodo headquarters for a cutscene. The page gives (F-7) here and (J-7) in the header; the door itself is never named."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "head toward the Audience Chamber; the cutscene fires when you reach the stairs. Nothing is named, so the target is null."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 3-3",
+   "page_id": 11599,
+   "revision_id": 771983,
+   "source_sha256": "8587172b8b9cda25ddb846924fd3dec84dab9cf4b669a7d8c278742e6eb82cfc",
+   "cache_file": "0011599_promathia_mission_3_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 325,
+   "dat_name": "The Road Forks",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "steps_from_after_section",
+   "unordered_group",
+   "walkthrough_incomplete"
+  ],
+  "notes": "START: null, deliberately. The header says 'Varies. See Below' and names no NPC, and chronicle_snpc for this row is the string 'varies. promathia mission 3-3#walkthrough' -- a scraped pointer, not an entity. Leaving start.npc null means giver_of falls back to that same chronicle value and nothing moves; the alternative, picking one of the two nations' first NPCs, would invent a giver for a mission whose whole point is that it has two entrances. The effective start is a zone line either way: Northern San d'Oria or Windurst Waters.\n\nThe page has NO Walkthrough section; all 24 steps come from the eight sibling sections, whose bullets each restart at [1]. Every note names the section it came from.\n\nSTRUCTURE: this is an AND of two paths, not an OR. San d'Oria (Vicissitudes -> Descendants of a Line Lost -> Louverance) and Windurst (Comedy of Errors I and II -> Parradamo Tor -> Exit Stage Left) must both be finished before Cid in the Metalworks closes the mission. Each path is strictly ordered inside itself, but the two are unordered relative to each other, and `group` cannot say that -- a group draws all its members at once, which would light up fifteen NPCs. So they are laid out as one spine in the page's own order, San d'Oria first, and this note is the record that the other order is equally valid. A player who does Windurst first is carried forward by the key items anyway.\n\nEVIDENCE: the Windurst path is the one place in this lane with real observables, and none of them are in the Reward field (which is empty). Cracked Mimeo Mirror on Honoi-Gomoi, Mimeo Jewel on the Loose Sand, and the three feathers together on the Cradle of Rebirth -- four distinct key items, no item used twice. The Jewel shatters if you zone before reaching the peak; if that happens the mark correctly falls back to the Loose Sand, which is where you have to go.\n\nLOST CONTENT: Act II bullet [6] says to read four points before clicking the Loose Sand a second time, and those four points are not in the rendered page. Recorded on the step; it is the reason for medium along with the missing walkthrough.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Vessel Without a Captain",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": null,
+   "grid": null,
+   "raw": "Varies. See Below"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Northern San d'Oria"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Vicissitudes' [1]: zone in for a cutscene. This is one of the mission's two entrances -- the other is step 8."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Arnau"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Vicissitudes' [2]: at the Cathedral altar. Speaking again gives optional lore about the former papsque."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chasalvige"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Vicissitudes' [3]: the Cathedral's Manuscript room"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guilloud"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Overgrown Ivy",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "'Descendants of a Line Lost' [1]-[2]: in via the (E-6) entrance in Jugner Forest. Talking to him spawns the NM."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Overgrown Ivy",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Descendants of a Line Lost' [2]: a Morbol-type that can use Hundred Fists; it may need higher-level help"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guilloud"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Descendants of a Line Lost' [3]: speak to him again once the Ivy is dead"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hinaree"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "B-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Louverance' [1]: upstairs in the Count's Manor. This completes the San d'Oria path."
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Windurst Waters"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Comedy Of Errors, (Act I)' [1]: zone in for a cutscene. The Windurst path may be done before the San d'Oria one."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Comedy Of Errors, (Act I)' [2]: inside the Rhinostery, south map, by Home Point #3"
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Comedy Of Errors, (Act I)' [3]: Home Point #1. He offers unrelated quests, so it can take several conversations to reach the right cutscene."
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kyume-Romeh"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Comedy Of Errors, (Act I)' [4]: in the Tavern, near Home Point #4"
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Honoi-Gomoi"
+    },
+    "zone": "Windurst Waters",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Cracked Mimeo Mirror",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Comedy of Errors, (Act II)' [1]: upstairs behind the house, south map by Home Point #3. Grants the Cracked Mimeo Mirror, which is not in the Reward field and so is usable evidence."
+   },
+   {
+    "n": 13,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Comedy of Errors, (Act II)' [2]: back to him with the mirror"
+   },
+   {
+    "n": 14,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Loose Sand"
+    },
+    "zone": "Attohwa Chasm",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lioumere",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "'Comedy of Errors, (Act II)' [3]-[5]: walk the perimeter of Parradamo Tor -- north, north-east, then south to (L-8), then briefly west to (K-8), a dead end under the trees. Clicking the sand pops a level-55-ish Antlion and hits the spawner with Pit Ambush. Unity Warp level 125 is the fast way into the Chasm."
+   },
+   {
+    "n": 15,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Attohwa Chasm",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lioumere",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "'Comedy of Errors, (Act II)' [5]: pull it away from the Loose Sand -- after a TP move it returns there and heals to full. Sleep, Bind, Stun and Gravity all land."
+   },
+   {
+    "n": 16,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Loose Sand"
+    },
+    "zone": "Attohwa Chasm",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Mimeo Jewel",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "'Comedy of Errors, (Act II)' [6] into 'Parradamo Tor' [1]: stand directly on the sand for the Mimeo Jewel. Act II [6] tells you to read four points first and those four points are NOT in the rendered page. The Jewel shatters if you zone, so this rung can legitimately come back."
+   },
+   {
+    "n": 17,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Attohwa Chasm",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "'Parradamo Tor' [2]-[3]: climb the Tor with the Jewel intact. From the Loose Sand turn around, go south-east, then hug the right wall north-west to the base at (K-9); the ramp is south-west, behind the rock."
+   },
+   {
+    "n": 18,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cradle of Rebirth"
+    },
+    "zone": "Attohwa Chasm",
+    "grid": null,
+    "items": [
+     {
+      "name": "Mimeo Jewel",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Mimeo Feather",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Second Mimeo Feather",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Third Mimeo Feather",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "'Parradamo Tor' [4]-[5]: at the peak, grants all three feathers at once. Bullet [5] is optional: the Geomagnetic Fount northwest of the Cradle only works if you have started Middle Lands Investigation, and it saves the climb next time."
+   },
+   {
+    "n": 19,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kyume-Romeh"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Exit Stage Left' [1]: the page marks this one Optional"
+   },
+   {
+    "n": 20,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Exit Stage Left' [2]: the third visit"
+   },
+   {
+    "n": 21,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yujuju"
+    },
+    "zone": "Port Windurst",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "'Exit Stage Left' [3]: Home Point #3, near the Air Travel Agency"
+   },
+   {
+    "n": 22,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Exit Stage Left' [4]: eastern half of the Optistery, north map, Home Point #1"
+   },
+   {
+    "n": 23,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "'Exit Stage Left' [5]-[6]: the fourth and final visit, completing the Windurst path. Bullet [6] is optional lore about Karaha-Baruha."
+   },
+   {
+    "n": 24,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'After completing both paths' [1]: Home Point #1. Only reachable once BOTH the San d'Oria and Windurst paths are done, whichever order you did them in."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 3-4",
+   "page_id": 11603,
+   "revision_id": 698490,
+   "source_sha256": "d50e286635ba7a3cf57f35a1df40cbbcd0c1ba10819c253328111b4081128dab",
+   "cache_file": "0011603_promathia_mission_3_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 350,
+   "dat_name": "Tending Aged Wounds",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Header Start is the bare zone 'Lower Jeuno' and chronicle_snpc is empty, so start.npc stays null and nothing moves.\n\nTwo bullets, two steps, and both are real: the zone line into Lower Jeuno fires its own cutscene, and the Tenshodo door fires a second. Step 2's target is Neptune's Spire for the same reason as in mission 3-2 -- the door to the Tenshodo headquarters is described but never named, and the Spire is the entity the page and the shipped index both use.\n\nThe Optional section lists two quests that unlock afterwards; neither is a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Road Forks",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Lower Jeuno",
+   "grid": null,
+   "raw": "Lower Jeuno"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Lower Jeuno"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zone in for a cutscene"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Neptune's Spire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "enter and click the door to the Tenshodo headquarters; the door is not named on this page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 3-5",
+   "page_id": 11618,
+   "revision_id": 770664,
+   "source_sha256": "0393c54d49dd448a775e4f1ea3e14c99fec6af5970c032007a88d1b52a027bd7",
+   "cache_file": "0011618_promathia_mission_3_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 358,
+   "dat_name": "Darkness Named",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "reward_ki_is_midquest_evidence"
+  ],
+  "notes": "Start agrees with chronicle_snpc (monberaux) and with the header, so nothing moves.\n\nBullets 1 and 2 are the recommended-items list (Silent Oil, Prism Powder), not steps. Migliorozz and A Reputation in Ruins are a sub-bullet side quest and stay a note, though the warning that its cutscenes change permanently after this mission is worth keeping.\n\nThe chip is an OR of three: Gray, Cyan or Carmine, any one, one per person. Expressed as items on the trade with the other two in items_alt, and NOT as evidence -- the chip is handed straight back to Ghebi Damomohe, so evidence on it would read true and then false again.\n\nThe [KI] Pso'Xja pass is likewise not evidence: it is in the header's Reward, and hard rule 7 is explicit. It IS recorded as `items` on the step that needs it, which is what it actually is -- you cannot get into Pso'Xja without it.\n\nCORRECTION under the rewritten hard rule 7: that paragraph is superseded -- walkthrough bullet [6] of 12 hands you the [KI] Pso'Xja pass at Ghebi Damomohe's trade, well before the last bullet, so appearing in the Reward field no longer disqualifies it and it is now step 4's evidence while remaining `items` on step 5.\n\nMedium because bullet 9's ordered list of which coloured walls to pass through, at (H-7) and (I-7), rendered as two empty '/' lines. The order is genuinely missing from the page as cached, so it is not in the note either. Everything else is clear. The Boss Fight section is tactics; its bullet [10] repeats the walkthrough's last step and is folded into it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: is where you receive it ('trade her the chip to receive 500 gil and the [KI] Pso'Xja pass'), so holding it proves this trade is behind you rather than that the mission is over; under the rewritten hard rule 7 that makes it this step's evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Tending Aged Wounds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Monberaux",
+   "zone": "Upper Jeuno",
+   "grid": "G-10",
+   "raw": "Monberaux, Upper Jeuno - (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Infirmary near Home Point #3. Migliorozz next door at the Temple of the Goddess (H-9) starts the optional A Reputation in Ruins; its cutscenes change permanently once this mission is complete."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ghebi Damomohe"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "inside Neptune's Spire"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Pso'Xja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Diremite",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in through any of the uncapped Beaucedine Glacier entrances -- (H-8), (I-7), (F-7), (G-9); Pso'Xja is no longer level capped. Everyone needs one chip and the colour does not matter. Diremites in the first room from (H-8) drop the Gray Chip; the Mimics at (G-9) have a high Cyan Chip rate. The Beaucedine Survival Guide is closest to (H-8)."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ghebi Damomohe"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [
+     {
+      "name": "Gray Chip",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Cyan Chip",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Carmine Chip",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Pso'Xja pass",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Any one chip; she gives 500 gil and the [KI] Pso'Xja pass. The pass IS also listed in the header's Reward, but this bullet [6] of 12 It stays `items` on step 5, which is the step that needs to be holding it that is a different field and not a second evidence claim."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Pso'Xja"
+    },
+    "zone": "Pso'Xja",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Pso'Xja pass",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8,
+     9
+    ],
+    "note": "in from the Beaucedine Glacier entrance at (H-8) -- a Survival Guide is the fast route. Single path to the central room at (H-8), then run through the coloured walls at (H-7) and (I-7) IN A FIXED ORDER. That order rendered as two empty lines on this page, so it is not recorded. Buffs wear at every wall, so do not bother with them; use Sneak and Invisible where needed and watch for bombs."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Gate"
+    },
+    "zone": "Pso'Xja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "elevator at (H-8) to the bottom, then the northwestern path. From the elevator ignore the teleporter pad, take the opposite T-intersection and go left. The gate leads to The Shrouded Maw and a cutscene, with a Home Point just inside."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Memento Circle"
+    },
+    "zone": "The Shrouded Maw",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Diabolos",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "check the circle to enter the battlefield 'Darkness Named'; buffs wear on entry. Stunning Nightmare is the whole fight."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "back to the Infirmary to finish. The Boss Fight section repeats this as its own bullet [10]."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 4-1",
+   "page_id": 11624,
+   "revision_id": 729951,
+   "source_sha256": "78854031d2e935e717ba5c1ed971857397f08eb9bddb9440c2c5df32312d5568",
+   "cache_file": "0011624_promathia_mission_4_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 368,
+   "dat_name": "Sheltering Doubt",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry"
+  ],
+  "notes": "Header Start is the bare zone 'Tavnazian Safehold' and chronicle_snpc is empty, so start.npc stays null and nothing moves.\n\nThree bullets, three steps, all real: the zone line opens Chapter 4, Despachiaire behind the Walnut Door begins the mission proper, and the Dilapidated Gate ends it. Note that this is the (I-11) gate, the same one as in mission 2-4 -- mission 4-2 uses the DIFFERENT gate at (F-7), which is why the grid is worth carrying.\n\nJustinius is a sub-bullet marked (Optional) with no stated effect, so he stays a note. The Optional section is unlocked vendors, warps and quests; none of it is a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Darkness Named",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Tavnazian Safehold",
+   "grid": null,
+   "raw": "Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Tavnazian Safehold"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zone in at Home Point #3 for the cutscene that opens Chapter 4"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Despachiaire"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "south, top floor, behind the Walnut Door. This is what actually begins the mission. Justinius at (J-6) is the page's optional aside."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the south-west corner of (I-11) -- NOT the (F-7) gate that mission 4-2 uses. Out via the southern Misareaux exit from the Safehold at (G-6, Map 2), near Home Point #1; the Misareaux Home Point and Survival Guide are much farther away."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 4-2",
+   "page_id": 11639,
+   "revision_id": 766294,
+   "source_sha256": "819dfff6dbbbb9b51065def51e4ab5ea3f23ed9cb7027a1932698ad73a965ffa",
+   "cache_file": "0011639_promathia_mission_4_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 418,
+   "dat_name": "The Savage",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "steps_from_after_section",
+   "walkthrough_incomplete",
+   "name_spelling_conflict"
+  ],
+  "notes": "START: kept as the header's 'Spacial Displacement', which folds to exactly chronicle_snpc's 'spacial displacement', so the giver marker does NOT move -- same situation as mission 2-5, including the same header-vs-body spelling split ('Spacial' in the header, 'Spatial' in every bullet). The two fold to different npc keys and the resolver does not check that either exists, so one of them is dead; I cannot tell which from the page. Header spelling on start.npc because that is what ships, body spelling on the steps because that is what the bullets say. Neither points anywhere wrong.\n\nAnd as in 2-5 the header start is not the first thing you touch: the walkthrough opens at the Dilapidated Gate at Misareaux Coast (F-7) -- a DIFFERENT gate from mission 4-1's (I-11) one -- so that is ladder step 1.\n\nThe page has no Walkthrough section; every step comes from the 'Preparation' section, whose bullets 1-7 are the recommended-items list (Mistmelt, Silent Oil, Prism Powder, ethers, Reraise, drinks) and whose bullets 8-14 are the mission. Mistmelt is genuinely optional -- the page's own warning is that without it Ouryu spends the fight airborne and melee cannot reach her -- so it is a note, not an items requirement.\n\nMedium because bullet [9], 'Take the following path to reach Monarch Linn:', is followed by nothing but a caveat: the path itself did not survive rendering. Bullets 10-12 give enough to walk it anyway, which is why this is medium rather than low.\n\nNo evidence anywhere. The Giant Scale is traded to the displacement, so it is `items` on that step and not evidence; nothing else here is observable.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Sheltering Doubt",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Spacial Displacement",
+   "zone": "Misareaux Coast",
+   "grid": "D-6",
+   "raw": "Spacial Displacement, Misareaux Coast - (D-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "'Preparation' [8]: the (F-7) gate, not mission 4-1's (I-11) one. The cutscene transports you to Riverne - Site #B01. Unity level 122/128 NM warps land on it."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Riverne - Site #B01",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Pyrodrake",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Ignidrake",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "'Preparation' [10]: one Giant Scale, off the wyverns here, unless you brought one. Pyrodrake are 50-53, Ignidrake and Morbol 57. Sneak past the Morbols, Invisible for bombs and wyverns, and stay out of front of the True Sight Hippogryphs."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Spatial Displacement"
+    },
+    "zone": "Riverne - Site #B01",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "'Preparation' [9]-[10]: southwest to the displacement. Bullet [9] promised the full path to Monarch Linn and rendered empty. This is a different part of Monarch Linn from mission 2-5, so the Site #A01 Home Point is no use."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Unstable Displacement"
+    },
+    "zone": "Riverne - Site #B01",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Giant Scale",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "'Preparation' [11]: west-northwest to it; trade the scale with the party ready and pass through"
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monarch Linn"
+    },
+    "zone": "Monarch Linn",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "'Preparation' [12]: northwest to the next Spatial Displacement, then south to the one after, which lands you in the uncapped part of Monarch Linn. Rest and plan here."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Spatial Displacement"
+    },
+    "zone": "Monarch Linn",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ouryu",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "'Preparation' [13]: check the displacement and choose the battlefield 'The Savage'. Buffs and trusts wear on entry. Bring Mistmelts or she flies out of melee reach for most of the fight; the fight ends at about 30% of her HP."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Justinius"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     14
+    ],
+    "note": "'Preparation' [14]: Map 1, Home Point #3, to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 4-3",
+   "page_id": 11657,
+   "revision_id": 756338,
+   "source_sha256": "ea9ea5f520a2df768981e280490f617629c2022eadb73db1b4261931e7b1c988",
+   "cache_file": "0011657_promathia_mission_4_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 428,
+   "dat_name": "The Secrets of Worship",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "steps_from_after_section",
+   "time_gated",
+   "unnamed_target",
+   "or_branch_modelled"
+  ],
+  "notes": "Start agrees with chronicle_snpc (justinius) and with the header, so nothing moves.\n\nWalkthrough bullets 1 and 2 are the recommended-items list. Bullet 3 is the page's own '(Optional)' Justinius conversation and becomes an optional step -- optional steps are never ladder positions, so it costs nothing and it records the Monarch Linn Patrol Permit trap (that key item belongs to the quest Uninvited Guests; speak again if you get it). Everything from step 5 on comes from the 'Opening the Doors', 'The Old Professor' and 'Wrapping Up' sections, whose bullets each restart at [1].\n\nTHE DOOR IS AN OR AND IT IS MODELLED. The large door with two keyholes at (H-7) opens either with the pair of crest keys -- Coral to the small hole, Sealion to the large one, within a couple of seconds, the Coral one breaking -- or outright with the [KI] Temple Knight key from the quest A Hard Day's Knight. That is exactly items vs items_alt, so both routes are on the record. The page never gives the door a name, only a description, so it carries no target and no marker; that is the honest reading, not a gap I could close by inventing one.\n\nThe door is passed TWICE, out and back, which is why the page keeps warning about a second Coral Crest Key. Both crossings are steps because the page really does make you do it twice.\n\nEVIDENCE: exactly one, the [KI] Reliquiarium key from the ??? after Old Professor Mariselle. The Reward field is empty on this page, so hard rule 7 does not touch it, and the key is not consumed within this mission.\n\nMedium because the Sacrarium maze re-arranges with the Vana'diel day and the addon cannot see the day -- the page just points at a map per day.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Savage",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Justinius",
+   "zone": "Tavnazian Safehold",
+   "grid": "J-6",
+   "raw": "Justinius, Tavnazian Safehold - (J-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Justinius"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "top floor; the page marks this Optional. If he hands over the [KI] Monarch Linn Patrol Permit that belongs to the quest Uninvited Guests, speak to him again."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Walnut Door"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "just up the ramp from Justinius; the cutscene here is what opens the Sacrarium"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "G-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "cutscene, then you are inside the Sacrarium. Misareaux Coast Home Point #1 is very close."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sacrarium",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the maze in the southeast of Map 1; get to connection point B, which puts you on the southwest of Map 2. The layout changes with the Vana'diel day and the addon cannot see the day."
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sacrarium",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fomor",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Keremet",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "'Opening the Doors' [3]-[5]: the Coral Crest Key is a rare drop off Fomors on Map 2 and may take many; the Sealion Crest Key comes from the NM Keremet, who is at the end of two hallways lined with six Azren Kuba each -- they all aggro when you engage him but die fast. Farm TWO Coral Crest Keys if you mean to come back out through the door. Skippable entirely if someone already holds the Temple Knight key."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sacrarium",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Coral Crest Key",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Sealion Crest Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Temple Knight key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     6
+    ],
+    "note": "'Opening the Doors' [1]-[2] and [6]: the page calls it only 'the large door with 2 keyholes' and never names it, so there is nothing to mark. Coral to the small keyhole, then Sealion to the large one the moment you hear the click; the Coral key breaks on use and the window is short. The [KI] Temple Knight key opens it outright -- it comes from the quest A Hard Day's Knight, whose keys are traded to Quelveuiat on the middle floor of Tavnazian Safehold (I-10), and which may first want Splinterspine Grukjuk dead at the ??? at (H-10) in Lufaise Meadows."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Wooden Gate"
+    },
+    "zone": "Sacrarium",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Opening the Doors' [7]: right at the fork past the door, for a cutscene"
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sacrarium",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Old Professor Mariselle",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Mariselle's Pupil",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'The Old Professor' [1]: he pops at random from the desk ??? in one of six classrooms, three north and three south, and only for players actually on this mission. He arrives with two Pupils. Clear the Fomor first -- popping him drops your Sneak, and Fomor Hate plus no Sneak in a room full of Fomor is instant aggro. He warps around during the fight."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sacrarium",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Reliquiarium key",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'The Old Professor' [2]: everyone on the mission checks the ??? after the kill. The Reward field is empty on this page, so the Reliquiarium key is a legitimate observation rather than a reward."
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sacrarium",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Coral Crest Key",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Sealion Crest Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Temple Knight key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Wrapping Up' [1]: the same unnamed two-keyhole door, from the other side. This is the second crossing the page keeps warning about -- a second Coral Crest Key unless someone holds the Temple Knight key, or you leave a party member behind to work the switch."
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Wooden Gate"
+    },
+    "zone": "Sacrarium",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Wrapping Up' [2]: the same Wooden Gate again; this cutscene ends the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 4-4",
+   "page_id": 11663,
+   "revision_id": 679021,
+   "source_sha256": "b742c1b002ace42a23f3538802d8e66ff30eac4df531fcd2297932d8c829201d",
+   "cache_file": "0011663_promathia_mission_4_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 438,
+   "dat_name": "Slanderous Utterings",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc (despachiaire) and with the header, so nothing moves.\n\nThree bullets, three steps, no ambiguity and nothing observable. Bullet 1 names both Despachiaire and the Walnut Door at (K-10); the person is the target and the door is how you reach him, which is the same shape as mission 2-2 and 4-1. Bullet 2 is a zone line and bullet 3 the closing cutscene on the Iron Gate.\n\nThe zone-line step is recorded in its DESTINATION, Sealion's Den, following the corpus convention for 'zone into X' steps. The page gives no grid for the Iron Gate there.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Secrets of Worship",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Despachiaire",
+   "zone": "Tavnazian Safehold",
+   "grid": "K-10",
+   "raw": "Despachiaire, Tavnazian Safehold - (K-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Despachiaire"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "approach him through the Walnut Door on the top floor, Home Point #3"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sealion's Den"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "from the bottom floor of the safehold, Home Point #2"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the closing cutscene; the page gives no grid for it"
+   }
+  ]
+ }
+]

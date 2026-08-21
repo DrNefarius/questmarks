@@ -1,0 +1,1305 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 115: Valkurm Duster",
+   "page_id": 86432,
+   "revision_id": 729658,
+   "source_sha256": "c15eefc2a475a5beba50e9d36f666eef97853792ee6f2771335a05590f0f7aa9",
+   "cache_file": "0086432_vw_op_115_valkurm_duster"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 168,
+   "dat_name": "VW Op. #115: Valkurm Duster",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "auto_flagged",
+   "prev_from_walkthrough",
+   "multi_spawn_point"
+  ],
+  "notes": "Two bullets and only one of them is an action. Bullet 1 is a pair of preconditions, not a step: the quest flags ITSELF when A New Menace ends, so there is no talk-to-the-giver rung and Mawl'gofaur is never actually visited -- he stays as start.raw because the header names him and he resolves, so the quest still has somewhere to point before the fight is reachable. The other half of bullet 1 is the real gate: White stratum abyssite VI comes from No Rest for the Weary and is what spawns Ig-Alima, so it is carried as items on the fight step (you must HOLD it to do the step) rather than as its own obtain rung, which would be an unmarkable rung the player cannot be tracked through. No Rest for the Weary is added to prev even though the header's Previous lists only A New Menace, because the walkthrough states it as a hard requirement -- flagged so a human can see the addition. The page gives three spawn points, (F-8), (K-7) and (K-8); the step takes the first and the note keeps the other two. No key item or item is granted anywhere, so there is no evidence and the ladder is a single rung whose marker is the mob.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A New Menace",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "No Rest for the Weary",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Mawl'gofaur",
+   "zone": "Ru'Lude Gardens",
+   "grid": null,
+   "raw": "Mawl'gofaur, Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "White stratum abyssite VI",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ig-Alima",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the abyssite is what spawns him; the page also gives (K-7) and (K-8) as alternative rift sites"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The All-New C-3000",
+   "page_id": 279,
+   "revision_id": 694215,
+   "source_sha256": "0ce35da5936fcf3377ea41f3ab3ae69cd73aa838588152477a3961bee47a497b",
+   "cache_file": "0000279_the_all_new_c_3000"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 18,
+   "dat_name": "The All-New C-3000",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Three bullets, two steps. Bullet 1 is the standard zone-after-the-previous-quest precondition and is folded into step 1's note rather than given a rung of its own -- zoning is not observable and there is nothing to mark. Bullets 2 and 3 are kept as two steps rather than merged because bullet 2 is the accepting conversation and bullet 3 is the hand-over; they are consecutive on the same NPC, which the runtime already treats as one marker with readiness looking ahead, so nothing is lost. Both shell and eye go in a single trade, so they are one AND-list and not two steps. No key item is granted at any point and 600 gil is the reward, not evidence, so the quest has no evidence anywhere.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 4,
+    "raw": "Windurst / 4"
+   },
+   "prev": [
+    {
+     "title": "Legendary Plan B",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kopuro-Popuro",
+   "zone": "Windurst Woods",
+   "grid": "H-10",
+   "raw": "Kopuro-Popuro, Windurst Woods (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kopuro-Popuro"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you must have zoned since Legendary Plan B ended"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kopuro-Popuro"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Beetle Shell",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Hecteyes Eye",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "both in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Flash in the Pan",
+   "page_id": 14591,
+   "revision_id": 686818,
+   "source_sha256": "83456b9b25b58178c51c037bd05cada16cb625bbfb3c1fd596d9b5c0793f2ce5",
+   "cache_file": "0014591_a_flash_in_the_pan"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 14,
+   "dat_name": "A Flash in the Pan",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeat_cooldown"
+  ],
+  "notes": "Bullet 3 is labelled 'Tip' and is fame-farming advice -- go do the other repeatables instead -- so it is emphatically not a step; a verb scan would have made one out of 'skip'. The unindented sentence hanging off bullet 2 is a cooldown, and an unusual one worth keeping in the note: the 15 earth-minute lockout is SERVER-WIDE, not per character, so the quest can be unavailable through no act of yours. Nothing about that is observable to the addon. Both bullets are on the same NPC and back to back, so they are one marker in practice. 'Repeatable: yes, limited' is still repeatable true; the limit is the cooldown. No key item, no evidence -- 100 gil is the reward.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Aquillina",
+   "zone": "Bastok Markets",
+   "grid": "K-9",
+   "raw": "Aquillina, Bastok Markets (K-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aquillina"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she asks for the flint stones"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Aquillina"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Flint Stone",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all four in one trade; repeating waits 15 earth minutes, and that timer is shared by everyone on the server"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Scooped!",
+   "page_id": 244,
+   "revision_id": 644650,
+   "source_sha256": "19011373b636342751d1fd21f15a7a1d9450e23c3b230d1d5c728594c5dce016",
+   "cache_file": "0000244_scooped"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 38,
+   "dat_name": "Scooped!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "zone_unresolvable"
+  ],
+  "notes": "The middle of this quest happens on a boat, and that is the whole difficulty. Bullets 3 and 4 are one step -- you fish an Ocean Crab up, you kill it, it drops the Bronze Box -- but the page names the place only as 'Ferry - Mhaura/Selbina', which is not a zone at all: the client has two of them, the ship bound for Selbina and the ship bound for Mhaura, and which one you are standing in depends on the direction you boarded. Neither name appears on this page, so inventing one would be exactly the guessing this pass exists to avoid; the step keeps its rung and its mob and goes without a zone. That costs the quest a little and is why it is medium rather than high. Bullet 1 is the usual zone-after-the-previous-quest precondition and folds into step 1. Windurst Waters South is half of zone 238 and not a zone of its own, so the start and step 1 both read Windurst Waters and keep (C-11). The Bronze Box is a real inventory item, so it is genuine evidence for the crab step -- the one observable point in the quest.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Making Headlines",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Naiko-Paneiko",
+   "zone": "Windurst Waters",
+   "grid": "C-11",
+   "raw": "Naiko-Paneiko, Windurst Waters South (C-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naiko-Paneiko"
+    },
+    "zone": "Windurst Waters",
+    "grid": "C-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you must have zoned since Making Headlines ended"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bronze Box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ocean Crab",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "fish them up aboard the Mhaura/Selbina ferry and kill them. The page names the place only 'Ferry - Mhaura/Selbina', which is two client zones depending on which way you sailed, so the step is left without one rather than guessing."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Naiko-Paneiko"
+    },
+    "zone": "Windurst Waters",
+    "grid": "C-11",
+    "items": [
+     {
+      "name": "Bronze Box",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Glimmer of Hope",
+   "page_id": 87833,
+   "revision_id": 219605,
+   "source_sha256": "8821171d39f559c1d757e5ae45eeea0736d54c02bf16aff883c657e00ec3b2a3",
+   "cache_file": "0087833_glimmer_of_hope"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 93,
+   "dat_name": "Glimmer of Hope",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "ki_name_not_unique"
+  ],
+  "notes": "The header has no Start at all and no Fame line either -- both are recorded as nothing rather than reconstructed, except that the start is recovered from bullet 1, which does name a concrete entity in a concrete zone: the Veridical Conflux in Pashhow Marshlands (S). It resolves, and without it this quest would have no start and only an unmarkable ??? to fall back on. The Kupofried the description tells you to seek out is never spoken to anywhere in the walkthrough, so he is not a step; the cutscene at the ??? is what he amounts to. 'Voidstone' cannot be resolved and is recorded anyway rather than hidden: it is carried by more than one key-item id and the resolver refuses an ambiguous name rather than guessing one, so the gate on step 1 will be dropped downstream -- visible in the quarantine and repairable there, and part of why this is medium. VERIFY: step 2's evidence has been removed. \"Kupofried's corundum\" is the header's Reward field verbatim, and hard rule 7 says a reward proves the quest is over, not that a step is done; step 2 being the last rung, holding it would have marked the ladder complete for a quest already finished. The quest now carries no evidence anywhere. The wiki writes the zone 'Pashhow Marshlands (S)' and that form resolves directly, so it is kept as written. Bullet 2's parenthetical about the next quest starting automatically is an outcome, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Third Tour of Duchy",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Veridical Conflux",
+   "zone": "Pashhow Marshlands (S)",
+   "grid": null,
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Veridical Conflux"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Voidstone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you need at least one voidstone in hand before it will take you; the conflux warps you to Walk of Echoes. The page gives no grid for it."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the ??? glimmer sits where you enter the zone; the cutscene swaps your voidstone for the corundum and opens Brace for the Unknown by itself"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Recycling Rods",
+   "page_id": 231,
+   "revision_id": 641477,
+   "source_sha256": "f7e7d35c365825254382314c11aef73f1563679726eb7b330fceaec1d08ec7f6",
+   "cache_file": "0000231_recycling_rods"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 30,
+   "dat_name": "Recycling Rods",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_approximated"
+  ],
+  "notes": "The '(Optional) speak to Keshab-Menjab again' sub-bullet is additional dialogue on the NPC you are already standing at -- a rung that would sit between two steps on the same NPC and mark nothing new -- so it stays as a note on step 1 rather than becoming an optional step. Bullets 2 and 3 are one step: fishing the Lancet Jagil up is how you get it to fight, and killing it is what drops the rod. The zone is the honest weak point. The page says 'Bibiki Bay - Purgonorgo Isle', and res/zones.lua has no Purgonorgo Isle of any kind; the only resolvable half of the phrase is Bibiki Bay, which is also the way in, so that is used and the isle is kept in the note. The page calls the drop by two names -- 'Clean Snap Rod' in the header, 'Cleanly Snapped Rod' in bullet 3 -- and both fold to the same id; the long form is preferred, per the guide.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Purgonorgo Isle is not a zone the resolver knows, so the page's own Bibiki Bay is used instead.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Other / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Keshab-Menjab",
+   "zone": "Mhaura",
+   "grid": "H-9",
+   "raw": "Keshab-Menjab, Mhaura (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Keshab-Menjab"
+    },
+    "zone": "Mhaura",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on the lower level at (H-9); talking to him again is extra dialogue only, not a second step"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Bibiki Bay",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Cleanly Snapped Rod",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Lancet Jagil",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Fish them up at Purgonorgo Isle Minnow is the suggested bait then kill them."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Keshab-Menjab"
+    },
+    "zone": "Mhaura",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Cleanly Snapped Rod",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Trader in the Forest",
+   "page_id": 515,
+   "revision_id": 529597,
+   "source_sha256": "13792ceed846e6a97cd0c59ae178014c3fb464209efe43010053c87dbeb12c31",
+   "cache_file": "0000515_the_trader_in_the_forest"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 7,
+   "dat_name": "The Trader in the Forest",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "A clean three-rung errand with an evidence point on each of the first two, which is as good as this shape gets: the Supplies Order proves the giver has been spoken to, the batagreens prove Phairet has been reached. Neither is a key item -- both are ordinary inventory items, and 'Supplies Order' resolves as an item and NOT as a key item, which is worth recording because the wiki's phrasing ('he will give you a Supplies Order') reads like a key item. The sub-bullet under bullet 2 is a genuine second way to satisfy that step and not commentary: 50 gil buys the batagreens outright once the quest is flagged. Gil resolves, so this is modelled as items_alt rather than thrown away as an inexpressible alternative -- items OR 50 gil, which is exactly what the page says. The trade-off is that the step then reads as ready for almost anyone, which is true but a weaker signal. Item Reqs is empty and no quantity is given for the batagreens, so the count stays at one rather than being guessed.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Abeaule",
+   "zone": "Northern San d'Oria",
+   "grid": "F-8",
+   "raw": "Abeaule - Northern San d'Oria (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Abeaule"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Supplies Order",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "accept the order he is trying to fill"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Phairet"
+    },
+    "zone": "West Ronfaure",
+    "grid": "I-11",
+    "items": [
+     {
+      "name": "Supplies Order",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Gil",
+      "count": 50,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Batagreens",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the tower at (I-11), on the southern fringes of the zone. Trading him 50 gil instead also gets the batagreens, as long as the quest is already flagged."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abeaule"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Batagreens",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "It's Not Your Vault",
+   "page_id": 38747,
+   "revision_id": 745853,
+   "source_sha256": "dfa054700e75ac696f71d75f3e1ff62c28b23fe24bc201b2e5fafe4d8d3e9184",
+   "cache_file": "0038747_it_s_not_your_vault"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 137,
+   "dat_name": "It's Not Your Vault",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Seven bullets and three steps, because five of the bullets are one walk. Bullets 2 to 5 are turn-by-turn directions through Sea Serpent Grotto to the room at (C-5), and bullet 6 is the click at the end of them; they collapse into one examine step carrying the whole route in its note. A separate travel rung for 'exit Norg into Sea Serpent Grotto' would point at the same zone the examine already names, so it would be a duplicate the player cannot be tracked through. The ??? is an object and can never carry a marker, but it keeps the rung and it is where the only observable thing in the quest happens: bullet 6 says outright that it grants the Key Item Sealed iron box, which resolves cleanly and is step 2's evidence. Step 3 carries the box in items rather than as evidence again -- the same thing may not be evidence twice -- so the runtime can still tell you are ready to hand in. Level 5 is a plain level gate with no job attached, so jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Outlands / 3"
+   },
+   "prev": [],
+   "level": 5,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Keal",
+   "zone": "Norg",
+   "grid": "H-8",
+   "raw": "Keal (H-8), Norg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Keal"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he walks around by the survival guide, so (H-8) is approximate"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "C-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sealed iron box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "out of Norg, then south to (H-7), west, south at (F-7), west again, north at (B-7), and the ??? is in the room at (C-5). Bullets 2 to 5 are that route and not steps of their own."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Keal"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Sealed iron box",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aqua Pura",
+   "page_id": 58975,
+   "revision_id": 639727,
+   "source_sha256": "4d72f0f47bf53b9d4132b0ebd533fe49afc2e9fc666316fecf68d1361e9e2283",
+   "cache_file": "0058975_aqua_pura"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 35,
+   "dat_name": "Aqua Pura",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group"
+  ],
+  "notes": "Bullet 2 is three steps, not one: three separately located Watergrass to examine, and the page says outright that they can be done in any order, so they share a group and all three draw at once. A strict ladder would mark (E-5) and then nothing until you happened to walk to it. Watergrass resolves as a targetable entity, so unlike most 'examine the scenery' steps these three actually carry markers -- which is the whole value of this quest to the addon, since nothing here is observable: no key item and no item is granted anywhere, the reward is 400 Cruor, and the ladder has no evidence at all. High Bear is written 'High Bear (A)' by the wiki and folds to the plain in-game name, so the wiki form is kept as the guide says. The three conflux numbers are landmarks for the player and are kept in the notes; the fourth sub-bullet is the ordering statement, not a fourth location.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "High Bear (A)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "I-9",
+   "raw": "High Bear (A) (I-9), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "High Bear (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Conflux #00"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Watergrass"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "watergrass",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Conflux #01; any order"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Watergrass"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "watergrass",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Conflux #05; any order"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Watergrass"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "watergrass",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "north-east corner of (F-13), by Conflux #06; any order"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "High Bear (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Northward",
+   "page_id": 38708,
+   "revision_id": 543172,
+   "source_sha256": "256d63d85c64fad70ae9e6435ae573db40ec36b383228f8f7a3de092deb041d1",
+   "cache_file": "0038708_northward"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 24,
+   "dat_name": "Northward",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A fetch quest whose middle bullet is a shopping list rather than a place. Bullet 2's four sub-bullets -- auction house, Sparks of Eminence, crafting, a rare drop from Napalm -- are ways to come by the Flame Degen, not four steps and not an OR-branch over items: they all end in the same single item, so they are one obtain rung whose evidence is that item. Napalm is kept as a drop-role mob because it is the only one of the four the addon could ever draw, but the page gives no zone for it, so the step has none. The rewards -- the Map of Castle Zvahl, 2,000 experience and 2,000 gil -- prove the quest is over, not that a step is done, so none of them is evidence. Bullet 1 is read as the giver conversation that flags the quest, which the header agrees with.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 4,
+    "raw": "Jeuno / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Radeivepart",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-9",
+   "raw": "Radeivepart, Ru'Lude Gardens (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Radeivepart"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he asks for a Flame Degen"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Flame Degen",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Napalm",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "auction house, Sparks of Eminence, crafted, or a rare drop from Napalm; the page gives no zone for Napalm"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Radeivepart"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Flame Degen",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ }
+]

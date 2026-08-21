@@ -1,0 +1,1659 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Yet Another Trial in Tandem",
+   "page_id": 67783,
+   "revision_id": 729999,
+   "source_sha256": "14db8a97efdc12dc3ed3c226817681dd223d63f1b9530d3e61c7d393d6df3836",
+   "cache_file": "0067783_yet_another_trial_in_tandem"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 162,
+   "dat_name": "Yet Another Trial in Tandem",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "fellow_gate_unmodelled",
+   "evidence_name_not_unique"
+  ],
+  "notes": "A clean six-bullet ladder with one real loss. Bullet 1 grants the [KI] Magian Mooglehood missive, which would be the natural evidence for step 1, but the resolver answers 'key item name is not unique' for it -- the Tandem line reuses that name across its quests -- so step 1 carries no evidence rather than a name that cannot be pinned. The ladder still re-anchors one rung later on the Tandem Necklace +2, which is a real item id.\n\nThe page distinguishes 'the Magian Moogle' (bullet 2) from 'the Magian Moogle (Blue)' (bullets 3 and 5), but both fold to the single client name 'Magian Moogle' at (H-5) in Ru'Lude Gardens, so all three steps mark the same entity; they are kept as separate rungs because the actions differ and readiness looks ahead across them anyway. The necklace is traded to start Magian Trial 4446 and comes back with the trial on it, so holding it stays true from step 2 until it is handed over at step 5 -- which is why the Mythril Meed, not the necklace, is what moves the mark onto the last rung.\n\nBullet 4 is 20 landed Weapon Skills BY THE FELLOW, which no packet counts and which happens wherever you like, so that step has no zone, no target and no evidence. Its sub-bullets (Fierce Attacker, no club, so Moonlight and Starlight cannot spoil the count) and the whole 'After the walkthrough: Notes' section (Ro'Maeve Weapons, bring a Red Mage) are advice, not steps. 'Adventuring Fellow level 76+' has no slot in the schema and nothing observable behind it; the job level 75+ half of Quest Reqs is a plain level gate on any job.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Trial in Tandem, Redux",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 75,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene grants the [KI] Magian Mooglehood missive, which cannot be used as evidence -- that key item name is not unique in the resource table"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tandem Necklace +2",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene hands over the necklace"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Tandem Necklace +2",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Magian trial log",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page calls this one the Magian Moogle (Blue); every Magian Moogle carries the one client name. This starts Magian Trial 4446, and the trial log is the header's Item Req. The necklace comes back with the trial attached."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Tandem Necklace +2",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "your Adventuring Fellow must land 20 Weapon Skills on anything that gives it XP while you WEAR the necklace. Any monster anywhere, so no zone; the count is invisible to the addon. Set the Fellow to Fierce Attacker and keep clubs off it -- Moonlight and Starlight do not count."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Magian Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Tandem Necklace +2",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Mythril Meed",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the necklace goes for good here"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Mythril Meed",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Blessed Radiance",
+   "page_id": 15070,
+   "revision_id": 702227,
+   "source_sha256": "80f3419f9d9bd3a50a1fb195dbada3415d51a0ab43c88f5d2ef2e0ca47e0d501",
+   "cache_file": "0015070_blessed_radiance"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 82,
+   "dat_name": "Blessed Radiance",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "unordered_group",
+   "unnamed_target",
+   "fellow_gate_unmodelled"
+  ],
+  "notes": "The middle of this quest is a raw wikitable that survived the prepass: three rows, each a key item, a zone and a HELM tool. Read as a player would, that is three independent gathering trips, in any order, so they share a group and all three draw at once -- and each one has its own distinct key item, so unlike the monuments in An Explorer's Footsteps every member can carry its own evidence without tripping the duplicate gate. The tool is what you trade to the point, so it is items, not evidence; Excavation Point, Harvesting Point and Logging Point all resolve, and the zone is what separates one from the thousands of others.\n\nThe door in Neptune's Spire is the one loss. The page names only 'the first door on the left', so the door itself cannot be targeted -- but 'Neptune's Spire' is a name the page DOES use and it resolves as a real entity in Lower Jeuno, so steps 2 and 8 mark the building and the note carries the rest. That is a marker on the right street corner instead of no marker at all.\n\nThe long NOTE paragraph after the table is routing advice: warping dismisses the Fellow and costs you the Signal Pearl's six hour cooldown, Survival Guides and mounts do not, so Shakhrami -> Jugner -> West Sarutabaruta and run to Giddeus spends one summon charge. Advice, not a step. 'Familiarity Level of 70' is a Fellow gate with no schema slot and nothing observable behind it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 7: there are several, and the name resolves to all of them.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Blighted Gloom",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page writes only 'Luto'; the header gives the full name"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Neptune's Spire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "what you actually examine is the first door on the left INSIDE Neptune's Spire, which the page never names -- the marker is put on the Spire, the one name the page does give"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Excavation Point"
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Glimmering mica",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "helm",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "from the wikitable under bullet 3. Your Adventuring Fellow must be called before you dig."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Harvesting Point"
+    },
+    "zone": "Giddeus",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mistroot",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "helm",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "from the wikitable under bullet 3; the Fellow must be out. Reached on foot from West Sarutabaruta."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Logging Point"
+    },
+    "zone": "Jugner Forest",
+    "grid": null,
+    "items": [
+     {
+      "name": "Hatchet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Lunascent log",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "helm",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "from the wikitable under bullet 3; the Fellow must be out"
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beaucedine Glacier"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": null,
+    "items": [
+     {
+      "name": "Glimmering mica",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Mistroot",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Lunascent log",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all three key items first; zoning in is what fires the cutscene"
+   },
+   {
+    "n": 7,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Mirror Pond"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "The NORTHERNMOST Mirror Pond The page says only 'head to' it, so it may fire on approach rather than on a click."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Neptune's Spire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same unnamed door as step 2"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "bullet 5 holds both the door and the hand-in, so it is split"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Researchers from the West",
+   "page_id": 92008,
+   "revision_id": 770652,
+   "source_sha256": "9e6ee3ab28359041f7d4e95dab8255656673a94c55327658a02f6ef6669006ce",
+   "cache_file": "0092008_researchers_from_the_west"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 171,
+   "dat_name": "Researchers from the West",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group"
+  ],
+  "notes": "Bullet 2 is not an action -- it is the quest's premise, and the hints it mentions come from asking Anastase about his prognostications, i.e. more of the same conversation. The work is all in bullet 3, whose sub-bullets are the four riddles and their four answers. Nothing sequences them, so the four NPCs share a group and draw at once; a strict ladder would mark Jillia in Selbina and leave the other three invisible until you happened on them.\n\nThe hint list is malformed on the wiki: the <Dwelling> bucket holds Mhaura AND the oasis riddle whose own label (Rabao's) has been lost, so the four bullets read as three. Counting the answers rather than the labels gives four NPCs, which is what bullet 4 asks for. The Proto-Waypoint beside each NPC is what you must find first, but it is the NPC you talk to, so the NPC is the target. The Prototype attuner from step 1 is what makes the founts findable; it is not re-listed as a requirement on each leg because the page does not say to hold it, only that it is what you were given.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Anastase",
+   "zone": "Ru'Lude Gardens",
+   "grid": "G-9",
+   "raw": "Anastase, Ru'Lude Gardens (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Prototype attuner",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "choose to take part. Ask him about his prognostications for the four riddles; bullet 2 is premise, not a second visit."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jillia"
+    },
+    "zone": "Selbina",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the <Port> riddle: white beaches, clay, disembowelment. Find the geomagnetic fount, then talk to her to activate it."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zurko-Bazurko"
+    },
+    "zone": "Mhaura",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the <Dwelling> riddle: the long-necked beast and 'The Old Lady'"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quwi Orihbhe"
+    },
+    "zone": "Rabao",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the oasis riddle -- windmill, large lake, sand stretching to the sky. Its label is missing on the wiki and it has been folded into the <Dwelling> bullet."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wistful Bison"
+    },
+    "zone": "Norg",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the <Fort> riddle: samurai and ninja, pirates, contraband"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "after all four; the reward is the Proto-Waypoint teleport network itself"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crimson Carpet II (Attohwa)",
+   "page_id": 59012,
+   "revision_id": 745421,
+   "source_sha256": "9fc5dcb29fd61677bd622a64fa1e944a0a4f056fcf6649c1de45933517db8596",
+   "cache_file": "0059012_crimson_carpet_ii_attohwa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 139,
+   "dat_name": "Crimson Carpet II (Attohwa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Three rungs, both of them markable, and both key items resolve -- an unusually clean Abyssea repeatable. The Abyssea NPC is written 'Resistance Sapper (Attohwa)' on the wiki and folds to the plain client name, exactly as the guide says, so the suffix is kept as written.\n\nBullets 3 and 4 are two checks of the SAME Fore Trap: the first tells you which distance band to stand in, the second infuses. They are one step, because a rung the player cannot be tracked through and cannot navigate to separately is noise. Bullet 2's journey folds in with them -- it never leaves Abyssea - Attohwa. There are two traps, (E-6) reached north from Veridical Conflux #04 through the Chasm Gnats and (F-10) further from any conflux; only one is needed, and the page recommends (E-6), so that is the grid recorded and the other is in the note.\n\nThe un-numbered line above bullet 1 is a cooldown -- one Ward Warden / Desert Rain / Crimson Carpet quest per Vana'dielian day across ALL Abyssea areas -- and not a step; game time is invisible to the addon. Fame 'aatt' is an Abyssea area code, not one of the nine regions, so it gates nothing and only the raw string is kept. The quest's own warning that the fluid bottle arrives with no message is exactly why it is worth having as evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aatt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Attohwa)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "F-9",
+   "raw": "Resistance Sapper (Attohwa) (F-9), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weakening trap fluid",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "beside Veridical Conflux #00"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fore Trap"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Weakening trap fluid",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weakening trap fluid bottle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "check it once to be told the distance, step to it, check it again to infuse. 1 yalm is just inside the fringe, 2 just outside it, 5 is the maximum; how close you get sets the Cruor and Credits. This trap is north from Veridical Conflux #04 through the Chasm Gnats; the other one is at (F-10). The bottle arrives silently."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Weakening trap fluid bottle",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Requiem of Sin",
+   "page_id": 233,
+   "revision_id": 735898,
+   "source_sha256": "5adece37378d7cee5e2d1e9f9a8aebde5042e09c0f173e44b9550fa8aa671bd1",
+   "cache_file": "0000233_requiem_of_sin"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 83,
+   "dat_name": "Requiem of Sin",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "time_gated",
+   "mission_gate_unmodelled"
+  ],
+  "notes": "Nine bullets, three of them steps. Bullets 4 to 7 are the fight and its tactics, and bullets 8 and 9 sit under a 'Note:' heading and are gating, not doing.\n\nThe header's Item Reqs are the key to this one: [KI] Letter from Shikaree Y on a first run, [KI] Letter from the Mithran Trackers on a repeat. That is a genuine OR, and both names resolve, so step 1's evidence carries the Trackers letter as its alternate and step 2 carries it in items_alt -- either letter opens the Dark Miasma. Modelling only the first would leave every repeat run unmarked from the second rung on, and this quest is explicitly repeatable.\n\nThere is no hand-in. Bullet 7's treasure chest is the reward, and a reward is not evidence, so the ladder ends on the fight in Boneyard Gully -- the honest answer rather than pointing back at Despachiaire. Shikaree X's Rabbit resummons whenever it dies before X, so its count is left open. 'Promathia Mission 8-4' in Quest Reqs and the Conquest Tally in bullet 8 are both real gates with nothing observable behind them; the mission is not put in prev, which mirrors the header's own Previous field.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Tango with a Tracker",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Despachiaire",
+   "zone": "Tavnazian Safehold",
+   "grid": "K-10",
+   "raw": "Despachiaire, Tavnazian Safehold (K-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Despachiaire"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Shikaree Y",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "ki",
+       "name": "Letter from the Mithran Trackers",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     8,
+     9
+    ],
+    "note": "a Conquest Tally must have passed since Tango with a Tracker before he will offer it, and again between repeats -- neither is visible to the addon. Repeats hand over the Letter from the Mithran Trackers instead of Shikaree Y's, which is why the evidence has an alternate."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dark Miasma"
+    },
+    "zone": "Boneyard Gully",
+    "grid": null,
+    "items": [
+     {
+      "name": "Letter from Shikaree Y",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Letter from the Mithran Trackers",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the wiki has lost the quoted menu entry -- it prints an empty pair of quotes -- so pick the quest's own line to enter the battlefield"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Boneyard Gully",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shikaree X",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shikaree Y",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shikaree Z",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shikaree X's Rabbit",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Shikaree Z's Wyvern",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "note": "all three sisters -- BST/NIN, DRK/MNK and DRG/WHM. 30 minutes, six party members. The Rabbit is resummoned if it dies before X, so no count; it resists sleep but not bind or gravity. They resist sleep, build TP fast and skillchain with each other. The chest that spawns on the win is the reward, and the quest ends there."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Winds of Eternity",
+   "page_id": 142669,
+   "revision_id": 771261,
+   "source_sha256": "9e6dc4c95b09f34386aa0d6027abc1a5abadb2b21a9897b6b7029080e658d844",
+   "cache_file": "0142669_winds_of_eternity"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 145,
+   "dat_name": "Winds of Eternity",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "time_gated",
+   "or_branch_unmodelled"
+  ],
+  "notes": "The header's giver is 'Siren, Leafallia (H-7)' but Siren is the avatar you fight, not a standing entity; bullet 1 says what you actually do is examine the Drifting Feather at exactly that grid. Same shape as the Summoner AF quests and the House of the Hero -- the marker MOVES to the Drifting Feather, which resolves, rather than sitting on a name that can never match a live entity. The header string is kept in start.raw.\n\nStep 2 is the one that cannot be pinned. The Ergon Locus ??? is at 'the crag closest to your home nation', which is three different zones for three different players and the page names none of them -- only 'Crag of Holla', and only inside an example of the crystal conflict. Naming La Theine, Konschtat or Tahrongi here would be inventing, so the step keeps its target and its rung and loses only its zone. The conflict itself is real and worth the note: the matching Treasures of the Earth crystal blocks the soil from that same crag.\n\nThe un-numbered Note above bullet 1 (zone and wait for JP midnight after The Silent Forest) and the once-per-Earth-day repeat under bullet 4 are both invisible to the addon. The 'After the walkthrough: Note' section only says this is a repeat of The Silent Forest's fight and points at the talk page -- no steps there. The reward cutscene is the tail of the win, not a rung of its own.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Silent Forest",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Drifting Feather",
+   "zone": "Leafallia",
+   "grid": "H-7",
+   "raw": "Siren, Leafallia (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Drifting Feather"
+    },
+    "zone": "Leafallia",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must have zoned and passed JP midnight since The Silent Forest before it will respond"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fistful of familiar soil",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the crag closest to YOUR home nation, beneath the stairs up to the Telepoint -- three possible zones, none of which the page names, so no zone is recorded. Blocked if you hold the Treasures of the Earth crystal for that same crag (Holla crystal of gales, Dem crystal of dunes, Mea crystal of flames)."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Drifting Feather"
+    },
+    "zone": "Leafallia",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Fistful of familiar soil",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the same feather again; this one opens the battlefield"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Leafallia",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Siren Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Content Level 119, Trusts allowed. The page names no battlefield zone, so it is left on Leafallia where the entrance is. The win runs a cutscene in which you pick one of the four rewards; repeatable once per Earth day, resetting at JP midnight."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fully Mental Alchemist",
+   "page_id": 50601,
+   "revision_id": 774021,
+   "source_sha256": "c094ff1a40b926dc42d70c785e6eb9ffde249d100e47b817f05084da669e9d82",
+   "cache_file": "0050601_fully_mental_alchemist"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 88,
+   "dat_name": "Fully Mental Alchemist",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "repeating_loop"
+  ],
+  "notes": "Seven bullets, three steps. Bullets 3 to 6 are one long minigame at one object: pick a portion, wash it, keep washing until 'Wash carefully to extract gold.' appears, take 3 to 11 grains, and go round again until twenty grains fill the ampoule. Five rungs the player cannot navigate between and that no packet counts would be noise, so they are one examine on the Riverbed with the procedure in the note. Bullet 2's journey folds in with it, because the Riverbed is what carries the grid.\n\nStep 1 grants TWO key items and only the Prospector's pan is used as evidence: the Corked ampoule is what BECOMES the Ampoule of gold dust, so an AND-list over both would read false the moment the quest succeeded. Both are carried as items on step 2, because you need the pan to wash and the ampoule to hold what you wash out.\n\nThe warning that leaving Grauberg (S) loses every grain is the reason this cannot be laddered any finer -- progress lives entirely in an invisible counter until the ampoule fills, and that fill is the only observable moment. The wiki writes the zone 'Grauberg (S)'; it resolves.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Titus",
+   "zone": "Bastok Mines",
+   "grid": "L-7",
+   "raw": "Titus - Bastok Mines (L-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Titus"
+    },
+    "zone": "Bastok Mines",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Prospector's pan",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second floor of the Alchemy Guild. The cutscene also hands over the [KI] Corked ampoule, which turns into the Ampoule of gold dust later, so only the pan is used as evidence."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Riverbed"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "F-13",
+    "items": [
+     {
+      "name": "Prospector's pan",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Corked ampoule",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ampoule of gold dust",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "pick a portion, then a wash: 'A sizable portion', 'Wash vigorously', 'Wash thoroughly', then 'Wash gently' over and over until 'Wash carefully to extract gold.' is offered. That yields 3 to 11 grains; repeat from the Riverbed until twenty grains fill the ampoule. Leaving Grauberg (S) loses everything panned so far, and the grain count is invisible to the addon. The North Gustaberg (S) Survival Guide is the fast way in."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Titus"
+    },
+    "zone": "Bastok Mines",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Ampoule of gold dust",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fires of Discontent",
+   "page_id": 19762,
+   "revision_id": 773822,
+   "source_sha256": "5b139bb780cf1603f9904fb716e25752d604f8d18ca3c9d408dbce5be1134b22",
+   "cache_file": "0019762_fires_of_discontent"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 13,
+   "dat_name": "Fires of Discontent",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "zone_name_normalised"
+  ],
+  "notes": "A plain eight-rung errand and every rung but one is markable, but there is no evidence anywhere in it: nothing is ever handed to you. It is a chain of conversations, so the ladder rests entirely on the session latch and the start NPC. Four of the eight steps are Engelhart himself in Bastok Markets (S) at (K-10), which is fine -- they are never consecutive, so no marker is wasted.\n\nThe zone in bullet 3 needed care. The page says 'Return to the present day Bastok Metalworks', and 'Bastok Metalworks' does not resolve; the client's zone is 'Metalworks', which does, and the page's own words contain it. That is a normalisation, not a guess -- the same shape as 'Eldieme Necropolis' needing its article. It is also the only step outside the Crystal War past, which is what 'return to the present day' means.\n\nThe un-numbered Notice above bullet 1 (wait one game day and re-zone after Better Part of Valor) is a precondition and invisible to the addon. Both bullets of the 'After the walkthrough: Notes' section are for AFTER this quest -- visiting a Cavernous Maw to trigger the next mission, and a tip that warping from a home point counts as zoning -- so neither is a step. Gentle Tiger has no grid on the page and only a landmark that exists in the present day, so the step keeps the zone and drops the grid.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: A ??? can never carry a marker, but it keeps the rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Better Part of Valor",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Engelhart",
+   "zone": "Bastok Markets (S)",
+   "grid": "K-10",
+   "raw": "Engelhart - Bastok Markets (S) - (K-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "wait one game day and re-zone after Better Part of Valor first, per the Notice above bullet 1"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pagdako"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on the way from Engelhart towards the home point"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the PRESENT day: the page writes 'Bastok Metalworks', which the client calls simply Metalworks. Inside the President's Office; you may need several conversations."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "back through a Cavernous Maw to the past"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Grauberg (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Inside the cave; its entrance is at (I-5), right on the H/I-5/6 border. The Grauberg (S) Survival Guide lands reasonably close."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "at the gate where the Metalworks entrance stands in the present day; the page gives no grid for him"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Engelhart"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   }
+  ]
+ }
+]

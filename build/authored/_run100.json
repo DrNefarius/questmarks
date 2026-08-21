@@ -1,0 +1,1239 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Lady's Heart",
+   "page_id": 14615,
+   "revision_id": 767373,
+   "source_sha256": "6a8c877679e0c8241998c890926610093e540d6370ecdfd6310dc729f3e853c9",
+   "cache_file": "0014615_a_lady_s_heart"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 50,
+   "dat_name": "A Lady's Heart",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "optional_precondition"
+  ],
+  "notes": "Three bullets, one action. Bullet 1 is marked '(optional)' by the page itself, so the opening talk is recorded as optional rather than as rung one -- the quest is really satisfied by the trade. Bullet 2 is not a step at all: it is the request being revealed ('she won't come out and say it at first'), and its only job is to name the Amaryllis. Its sub-bullet (auction house, or Areebah in Upper Jeuno at H-6 for 120 gil) is where to buy the flower, not a place to send a marker, so it stays a note -- the same shape as 'A Feather in One's Cap', which also declines to invent an obtain step for a vendor item. No evidence anywhere: the Amaryllis is the thing you hand over, never the thing you are given, and the reward (a Mog House exit to any Bastok zone) is a permanent ability, not an item. Fame reads 'B', the same one-letter abbreviation 'Under Oath' writes as 'S', so it is Bastok. Both steps are the same NPC, so the ladder costs nothing to keep at two.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "B / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Valah Molkot",
+   "zone": "Port Bastok",
+   "grid": "J-12",
+   "raw": "Valah Molkot - Port Bastok (J-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Valah Molkot"
+    },
+    "zone": "Port Bastok",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the page prefixes this bullet '(optional)'; she does not name the Amaryllis on the first conversation"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Valah Molkot"
+    },
+    "zone": "Port Bastok",
+    "grid": "J-12",
+    "items": [
+     {
+      "name": "Amaryllis",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "she keeps whatever flower you trade, so a wrong flower meant for her other two quests is simply lost and must be re-bought"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's H2H Moogle Magic",
+   "page_id": 111269,
+   "revision_id": 428889,
+   "source_sha256": "dd321fc3473287118b232d52f46466b6cdd4db8eb3e5b3887ae13797c19faa8f",
+   "cache_file": "0111269_kupofried_s_h2h_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 35,
+   "dat_name": "Kupofried's H2H Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "bullets_merged",
+   "weapon_level_gate",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "All three bullets are one interaction with one object, so they are ONE step. Bullets 1 and 3 both act on the SAME ??? in the Walk of Echoes, and bullet 2 ('select the weapon type you wish to unlock') is a dialogue menu inside that interaction, not somewhere you go. Three rungs on an unmarkable, unobservable ??? would be pure noise -- the same reasoning the guide applies to seven ??? examined in order. The requirement is a genuine OR, so it is modelled: Dumuzis in items, Verethragna in items_alt. What cannot be expressed is the '90~99' band -- the resolver has one Verethragna id and no notion of a trial upgrade stage -- so the item is recorded plainly and the band lives in the note. Header Level '90~99' is the WEAPON's level, not the player's, but it is still a true player gate because a level 90 weapon cannot be equipped below 90, so level 90 is used. Start is kept as the header's Kupofried, which resolves, so the quest keeps a start marker even though its only step targets a ???; the walkthrough only ever says 'the ???', so that is what the step targets. 'Guardian of the Void' comes from Quest Reqs rather than the empty Previous field, but it is unambiguously a quest title. No evidence: the reward is the ability to use Victory Smite, which is not an item and nothing in a packet reports it.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Dumuzis",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Verethragna",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "click the ??? with the weapon EQUIPPED, choose the weapon type from the menu, then trade the weapon. The Verethragna must be level 90~99, which the item id cannot express. Choosing a type other than the equipped one needs that other weapon instead."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Something Fishy",
+   "page_id": 263,
+   "revision_id": 761040,
+   "source_sha256": "0a07f58f81befa4d2f667c7467e44e15af02c64d0cfceb2c4b918cf26733502f",
+   "cache_file": "0000263_something_fishy"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 52,
+   "dat_name": "Something Fishy",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two bullets, two steps, one NPC. The 'After the walkthrough: Notes' section was read and contributes NOTHING: its bullet 1 is the repeat condition (you must zone before it is offered again) and its bullet 2 is a fame-farming tip about trading twenty stacks. Neither is something you do to advance this quest, so no step comes from that section and its restarted [1]/[2] numbering never enters source_bullets. The Home Point remark in bullet 1 is travel convenience, not a step. No evidence: the Bastore Sardine is handed over, not received, and the reward is 70 gil.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Tokaka",
+   "zone": "Port Windurst",
+   "grid": "C-8",
+   "raw": "Tokaka, Port Windurst (C-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tokaka"
+    },
+    "zone": "Port Windurst",
+    "grid": "C-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point #1 in Port Windurst is right beside her"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tokaka"
+    },
+    "zone": "Port Windurst",
+    "grid": "C-8",
+    "items": [
+     {
+      "name": "Bastore Sardine",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "one sardine per completion; you must zone before she will offer it again"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Dagger Moogle Magic",
+   "page_id": 106237,
+   "revision_id": 428885,
+   "source_sha256": "9a8657fbb037afd8473739eb220fb0eb28adda9cc183ae4e7de1d15f3b2469f7",
+   "cache_file": "0106237_kupofried_s_dagger_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 36,
+   "dat_name": "Kupofried's Dagger Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "bullets_merged",
+   "weapon_level_gate",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "Read identically to the H2H and Sword pages, which are the same page with the weapon swapped. One ??? in the Walk of Echoes, clicked with the weapon equipped, a menu choice, then the trade -- one interaction with one object, so one step, not three unmarkable rungs. Khandroma OR a level 90~99 Twashtar: the OR is modelled with items/items_alt, the 90~99 band is not expressible against a single item id and lives in the note. Header Level '90~99' describes the weapon, but 90 is still a real player gate since the weapon cannot be equipped lower, so it is recorded. Start keeps the header's Kupofried (it resolves, so the quest keeps a marker) while the step targets the ??? the walkthrough actually names. 'Guardian of the Void' is taken from Quest Reqs, the Previous field being empty. The reward is the Rudra's Storm unlock, which is not an item, so there is no evidence anywhere in this quest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Khandroma",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Twashtar",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "click the ??? with the weapon EQUIPPED, choose the weapon type from the menu, then trade the weapon. The Twashtar must be level 90~99, which the item id cannot express. Choosing a type other than the equipped one needs that other weapon instead."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Usual",
+   "page_id": 26166,
+   "revision_id": 770692,
+   "source_sha256": "8e6bdc299e1af03df74d05321edbe13a28ae12c57ae90d0a44f9a8f9fab34310",
+   "cache_file": "0026166_the_usual"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 27,
+   "dat_name": "The Usual",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A clean four-rung ladder with one real evidence point. The Steaming Sheep invitation is a key item handed over at the trade in bullet 2, so it is that step's evidence and nowhere else; it is not in the Reward field (that is the Speed Bow), so rule 7 is safe. Steps 3 and 4 are then genuinely separated by the invitation: holding it means go to Raibaht, and nothing observable distinguishes the trip back to Hilda, which is the honest limit here. Bullet 3's sub-bullet is the warning that Raibaht runs several quests and you want the short dialogue rather than a cutscene -- advice, kept as a note, since nothing in a packet can tell the conversations apart. 'The Steaming Sheep restaurant' in bullet 4 is Hilda's own location in Port Bastok, not a second place. Metalworks is its own zone, so step 3 keeps (G-8) there rather than in Port Bastok. VERIFY: the draft carried a Funguar drop-role mob on step 2, whose zone is Port Bastok while the Funguar are in Crawlers' Nest. build_index stamps a mob row with its STEP's zone and wanted_names() only looks for names whose row zone equals the zone you are in, so that row could never be looked for in Crawlers' Nest and could never draw -- dead data asserting a monster is a marker target in a city. It is removed; the acquisition routes stay in the step note, where they were already recorded in full. No obtain rung is added in its place and none is missing: bullet 2's sub-bullet gives three sources (Auction House, Voidwatch, Funguar) of which two have nowhere to draw, and it hedges the third to 'some Funguar', so the page cannot support a marked acquisition step. Confidence stays high.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 5,
+    "raw": "Bastok / 5"
+   },
+   "prev": [
+    {
+     "title": "Cid's Secret",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hilda",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Hilda - Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hilda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Steaming Sheep restaurant"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Hilda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "King Truffle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Steaming Sheep invitation",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the truffle comes from the auction house, Voidwatch, or 'some Funguar enemies' in Crawlers' Nest -- the page does not say which ones"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Steaming Sheep invitation",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Cid's Lab. Make sure you get the short dialogue for THIS quest and not one of Raibaht's cutscenes for his other quests."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hilda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "back at the Steaming Sheep"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In a Pickle",
+   "page_id": 149,
+   "revision_id": 702377,
+   "source_sha256": "b132227f83ee3d44a342021c673d8cb899244593d483c9285fc1455f35f7086f",
+   "cache_file": "0000149_in_a_pickle"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 5,
+   "dat_name": "In a Pickle",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "repeating_loop"
+  ],
+  "notes": "Bullet 3 is NOT a third step. It says Chamama may simply refuse the stone you brought and that you then need another one -- a retry of bullet 2, possibly several times, not a new place to go. It is merged into the trade step and recorded in the note, which is why the trade carries source_bullets [2,3]. The stone is the thing you hand over, so there is no evidence in this quest at all; the reward (200 gil, plus a Bone Hairpin the first time) is a reward and rule 7 keeps it out. VERIFY: the draft put the Crawlers on the trade step, whose zone is Windurst Waters, and justified it by saying Divine Might does the same. It does not -- Divine Might's trade step is in Ro'Maeve, which is exactly where its Cursed Puppet and Magic Flagon live, so the zones coincide there and do not here. build_index stamps a mob row with its STEP's zone and wanted_names() admits only rows matching the zone you are standing in, so a Crawler row filed under Windurst Waters can never be looked for in Sarutabaruta and can never draw. The mob is removed as dead data; the drop zones stay in the step note. What is genuinely MISSING is the rung itself: this page names ONE source for the Smooth Stone, so an obtain step in East and West Sarutabaruta carrying the Crawlers is modellable -- the shape 'I Can Hear a Rainbow' and 'Mandragora-Mad' use, and the only shape in which these monsters could ever be marked. A verifier may not add a step, so the quest is demoted to medium instead and the gap recorded here.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chamama",
+   "zone": "Windurst Waters",
+   "grid": "F-10",
+   "raw": "Chamama, Windurst Waters (F-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chamama"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Rarab Tail Hostelry"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chamama"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Smooth Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "she rejects stones at random and may reject several in a row, so this repeats until one is accepted. Smooth Stones drop from Crawlers in East and West Sarutabaruta."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Redeeming Rocks",
+   "page_id": 19663,
+   "revision_id": 758378,
+   "source_sha256": "9075cc1d24cd9ef82825bf42d11b0b9263a661d629d42e436e716fe8ee1b1e9c",
+   "cache_file": "0019663_redeeming_rocks"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 4,
+   "dat_name": "Redeeming Rocks",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "time_gated"
+  ],
+  "notes": "Six bullets, six steps, and every one of them is really something you do. The 'Blue Gem' Kocco asks for in bullet 3 and the 'blue stone' returned in bullet 5 are the same object as the [KI] Piece of kionite of bullet 4 -- flavour names for one key item -- so no Blue Gem item is invented. The kionite is granted at the ??? in bullet 4, so that is where its evidence sits, and it is consumed at bullet 5, which is why steps 5 and 6 carry no evidence of their own. The header's 'Quest Reqs: [KI] Piece of kionite' is NOT a prerequisite: it is the key item you obtain halfway through this very quest, so it is deliberately not written into prev. Bullet 6's wait for the next Vana'diel day is real and completely invisible to the addon, hence time_gated; steps 5 and 6 are kept separate because they are two visits on two different days, and they cost nothing to keep since both are the same NPC and therefore one marker. Note the two-map layout the page is careful about: Kocco is on the lower map at (H-8), her mother on the upper at (G-9), both inside the single zone Windurst Waters (S).",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Kocco Ehllek",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-8",
+   "raw": "Kocco Ehllek - Windurst Waters (S) (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kocco Ehllek"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "lower map"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rohn Ehlbalna"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "her mother; upper map"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kocco Ehllek"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "she asks for a blue gem 'like the water from the land of the Mithra' and points at Vunkerl Inlet (S)"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Piece of kionite",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "near the bridge"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kocco Ehllek"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Piece of kionite",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the 'blue stone' of bullet 5 is the kionite key item, which she takes here"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kocco Ehllek"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "only on the NEXT Vana'diel day; this conversation ends the quest and pays out. The addon cannot see game date, so nothing distinguishes this step from the one before it."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dirt Cheap",
+   "page_id": 102312,
+   "revision_id": 679166,
+   "source_sha256": "6708de3a68b9c752b519de82e6c96f74bd04a273327750a2b8f5a1575e068232",
+   "cache_file": "0102312_dirt_cheap"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 33,
+   "dat_name": "Dirt Cheap",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "time_gated"
+  ],
+  "notes": "Three bullets, three steps, all in one zone. The Fistful of numbing soil is granted at the ??? in bullet 2, so that step carries it as evidence and step 3 carries it only as something you must be holding -- the same item never appears as evidence twice. As on 'Redeeming Rocks', the header's 'Quest Reqs' names that key item, which is obtained during the quest rather than before it, so prev stays empty. Both sub-bullets under bullet 2 are travel advice: Bivouac #2 then north is the fast route, and the impassable bush clears at 21:00 game time. That bush is a genuine gate and completely unobservable to the addon, so it is flagged time_gated and kept in the note rather than made a wait step -- a rung you cannot be tracked through is noise. Fame reads 'Seekers of Adoulin', which is not one of the nine fame regions, so it gates nothing and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Seekers of Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Mano-Amano",
+   "zone": "Yorcia Weald",
+   "grid": null,
+   "raw": "Mano-Amano, Yorcia Weald"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mano-Amano"
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Frontier Station; the page gives him no grid reference"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fistful of numbing soil",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "among the numbing blossoms, directly west of the Cirdas Caverns entrance; fastest from Bivouac #2 heading north. An impassable bush may block the path until 21:00 game time."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mano-Amano"
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fistful of numbing soil",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stardust",
+   "page_id": 25960,
+   "revision_id": 769318,
+   "source_sha256": "5dea0e4e8a4f15c8506ccd64a70b5370c800e333859c5b474cb555c25bcb0a90",
+   "cache_file": "0025960_stardust"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 24,
+   "dat_name": "Stardust",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "weather_unobservable"
+  ],
+  "notes": "Bullet 2 is one step with two ways to satisfy it, and only one of them has a place: buy the Valkurm Sunsand at the auction house, or click the ??? on the overturned boat at Siren Sands. The step is recorded at the ??? so it keeps a zone and a grid, with items_partial set to say the auction-house route exists and cannot be drawn -- the same use 'Operation Teatime' makes of items_partial for its lockpicking alternative. Holding the Sunsand is the evidence, which is true either way you got it, so nothing is lost by choosing the ??? for the location. The dusty-weather requirement for the ??? to appear at all is real and the addon sees no weather, hence weather_unobservable; it is a note, not a wait step. The Sunsand is evidence only on bullet 2 and merely a held requirement on bullet 3, so it never marks twice. Metalworks is its own zone and Baldric's (G-9) belongs to it, not to Port Bastok.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: The ??? only exists during dusty weather, which the addon cannot see. items_partial is set because the auction house is an equally valid way to get the Sunsand and has no place to draw.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 2,
+    "raw": "Bastok / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Baldric",
+   "zone": "Metalworks",
+   "grid": "G-9",
+   "raw": "Baldric - Metalworks (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baldric"
+    },
+    "zone": "Metalworks",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Darksteel Forge, first floor"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Valkurm Sunsand",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "On an overturned boat on Siren Sands, the easternmost beach."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Baldric"
+    },
+    "zone": "Metalworks",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Valkurm Sunsand",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupofried's Sword Moogle Magic",
+   "page_id": 106238,
+   "revision_id": 428895,
+   "source_sha256": "8df9c672d08464620b89bb53a91b35fdc23f48304a4f721a0f9300b6aac953ff",
+   "cache_file": "0106238_kupofried_s_sword_moogle_magic"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 37,
+   "dat_name": "Kupofried's Sword Moogle Magic",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "bullets_merged",
+   "weapon_level_gate",
+   "prev_from_quest_reqs"
+  ],
+  "notes": "The third of the identical Kupofried weapon-skill pages in this batch, read the same way as the H2H and Dagger ones. One ??? in the Walk of Echoes does the whole quest: click it with the weapon equipped, pick the weapon type from the menu, trade the weapon. Three bullets, one interaction, one step -- splitting an unmarkable and unobservable object into three rungs would only add noise. Brunello OR a level 90~99 Almace is modelled as items plus items_alt; the 90~99 band cannot be attached to a single item id and stays in the note. Header Level '90~99' is the weapon's level but doubles as a true player gate, so 90 is recorded. Start stays on the header's Kupofried, which resolves and so preserves a marker, while the step targets the ??? the walkthrough actually names. 'Guardian of the Void' comes from Quest Reqs. The reward is the Chant du Cygne unlock -- an ability, not an item -- so there is no evidence to record.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Guardian of the Void",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kupofried",
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Kupofried, (???) Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [
+     {
+      "name": "Brunello",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Almace",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "click the ??? with the weapon EQUIPPED, choose the weapon type from the menu, then trade the weapon. The Almace must be level 90~99, which the item id cannot express. Choosing a type other than the equipped one needs that other weapon instead."
+   }
+  ]
+ }
+]

@@ -1,0 +1,956 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Legacies Lost and Found",
+   "page_id": 102308,
+   "revision_id": 743961,
+   "source_sha256": "62ade88f480f3b60b202b63c7eca24f96fccba57ce2384adffc99df5b672845e",
+   "cache_file": "0102308_legacies_lost_and_found"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 24,
+   "dat_name": "Legacies Lost and Found",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "unordered_group",
+   "count_unobservable",
+   "time_gated",
+   "consumed_key_item"
+  ],
+  "notes": "Bullet 3's eight Strange Apparatuses are an unordered set -- 'at least three of the following eight' -- so they share a group and all eight draw at once; a strict ladder would mark Dangruf Wadi and nothing else until the player happened to go there. Each carries its own Stone key item as evidence, which is honest (every stone is obtained AT that apparatus, and the eight ids 2358-2365 are distinct so nothing trips the duplicate gate) but it cannot express 'three of eight'. The consequence is recorded rather than hidden: the mark only leaves a group when the LAST member's evidence reads true, so a player who takes the Maze of Shakhrami one first advances past the group holding a single stone. The miss is bounded -- it lands on another apparatus, not on Ohruru -- and the ladder re-anchors properly at step 14, where the Secrets key item is real evidence.\n\nBullet 4's three extra apparatuses are the page's own 'Optional:' and its own NOTE says they do not count toward the three, so they are a separate group, marked optional, and carry NO evidence: 'stone of unknown runic origins' is three different key item ids (2366, 2367, 2368) sharing one name, and the resolver rejects a non-unique name rather than guessing one.\n\nEach site names two entities. The Strange Apparatus is what bullet 3 sends you to and what is standing there when you arrive; the Hazy Rune is what you examine after using the rune three times. Both fold to a key, so the apparatus is the target and the rune is in each step's note. Bullet 6 is not a step -- it is the outcome of bullet 5's cutscene -- so the key item is step 14's evidence, and its real name carries literal double quotes (id 2369): written without them it does not resolve at all. Bullet 8's two examinations of the barrel are the same marker a game day apart, so they are one step. The bare 'Note:' under bullet 3 about invisible walls is a warning, not a step. Fame 'Seekers of Adoulin' is not one of the addon's nine regions and gates nothing, so only the raw string is kept.\n\nADVERSARY (stage D): confidence lowered high -> medium, and nothing else altered. The page asks for 'at least three of the following eight' and the schema has no way to say three-of-eight; the draft's own note concedes that a player who takes the Maze of Shakhrami apparatus first satisfies the group's LAST member and the mark leaves the set holding one stone out of three. A ladder that can point past a set the player has not finished is not one the page is reflected by, so this is medium. The evidence itself survives every attack: each stone really is obtained AT its own apparatus, the eight key item ids 2358-2365 are all distinct so no item is evidence twice, none of them is in the header's Reward (Runeist Trousers and Bayld), and the resolver confirms both that the quoted \"Secrets of Runic Enhancement\" resolves only with its literal quotes and that 'Stone of unknown runic origins' is non-unique, so nulling evidence on the three optional apparatuses was right. Zones, grids, rune-to-stone pairings and the order of the eight all match the page bullet for bullet.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Seekers of Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Forging New Bonds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [
+    "RUN"
+   ],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Octavien",
+   "zone": "Eastern Adoulin",
+   "grid": "I-8",
+   "raw": "Octavien, Eastern Adoulin (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Octavien",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "main job Rune Fencer; you must have zoned since Forging New Bonds or the quest will not trigger"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohruru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the Orastery, at the back. Use Ignis, then speak to her twice more for the cutscene."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Dangruf Wadi",
+    "grid": "E-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Unda",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "use Unda three times, then examine the Hazy Rune that appears"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Gusgen Mines",
+    "grid": "J-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Flabra",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 2; use Flabra three times, then examine the Hazy Rune"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Crawlers' Nest",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Sulpor",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 3; use Sulpor three times, then examine the Hazy Rune"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "E-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Gelus",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "use Gelus three times, then examine the Hazy Rune"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "K-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Ignis",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 2, reached by falling down the WESTERNMOST square hole in room D at (G-9) on map 1 -- not the centre one. Use Ignis three times, then examine the Hazy Rune."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Outer Horutoto Ruins",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Tellus",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 5; enter from the northern tower in West Sarutabaruta -- the Voidwatch warp lands at the right one. Use Tellus three times, then examine the Hazy Rune."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Tenebrae",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 3, behind Banishing Gate #2; use Tenebrae three times, then examine the Hazy Rune"
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": "L-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stone of Lux",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "apparatuses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 2; enter from Buburimu Peninsula, NOT Tahrongi Canyon -- the Unity warp drops you at the right entrance. Use Lux three times, then examine the Hazy Rune. This is the group's LAST member, so holding this stone is what moves the mark past the set -- see the quest note."
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Fei'Yin",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra apparatuses",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "map 1, reached by going down through the basement on map 2 and back up in the northwest corner near the Shadow NMs. Use Ignis, Tellus and Tenebrae in that order, then examine the Hazy Rune. Bayld only -- this stone does not count toward the three, and its key item name is not unique so it cannot be evidence."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "E-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra apparatuses",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "use Flabra, Ignis and Lux in that order, then examine the Hazy Rune. Bayld only; does not count toward the three."
+   },
+   {
+    "n": 13,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strange Apparatus"
+    },
+    "zone": "King Ranperre's Tomb",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra apparatuses",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "map 2; use Gelus, Sulpor and Unda in that order, then examine the Hazy Rune. Bayld only; does not count toward the three."
+   },
+   {
+    "n": 14,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohruru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"Secrets of Runic Enhancement\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "she quizzes you on Rune Fencer abilities; the five tables under bullet 5 are the answer key and she can repeat a question. Bullet 6 is the outcome of this cutscene, not a step, so the key item lands here. Its name carries literal double quotes."
+   },
+   {
+    "n": 15,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 16,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Inconspicuous Barrel"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-4",
+    "items": [
+     {
+      "name": "\"Secrets of Runic Enhancement\"",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "near the Adoulin Waterfront waypoint. Examine it to hand the key item over, then wait for the next game day and examine it once more to finish -- two examinations of one object, which is one marker, so one step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Empty Vessel",
+   "page_id": 25477,
+   "revision_id": 774588,
+   "source_sha256": "bad0f2f72d7de1767f4733bd1c9e8fc66a3ae1881a35bfa883f39eae3c2b53df",
+   "cache_file": "0025477_an_empty_vessel"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 5,
+   "dat_name": "An Empty Vessel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "time_gated",
+   "unnamed_target"
+  ],
+  "notes": "Bullets 1, 2, 3 and 5 are one marker. The divination and then -- a game day later and after zoning -- agreeing to help are both conversations with Waoud on the same floor, nothing observable separates them, and bullet 3's 'he may mention only one serpent, try again the next game day' is a retry of the same conversation rather than a new place to stand. Bullet 4's table is the answer key, not a step.\n\nBullet 6 is the one real branch: Waoud asks for exactly ONE of three items and which one is fixed per player, so the obtain step carries Sunsand in `all` and the Siren's Tear and Dangruf Stone in `alt` -- inventory.meets reads alt as any-one-of, which is exactly this OR -- and the same three ride the trade and the Aydeewa step as reqs/reqs_alt. That step has no zone and no target on purpose: its three sources are in three different zones and one step has one zone, so the locations are in the note. The Siren's Tear is picked up from an unnamed ??? and needs your weapons off.\n\nThe page contradicts itself softly at bullet 7 -- trade him the item, then keep the item -- and bullet 9 settles it: the item is still in your inventory afterwards and you get no cutscene at the pond without it. Both readings are kept, so the trade is a step AND the item is still required at Aydeewa. Bullet 8 spans two zones, the entrance at (G-7) in Bhaflau Thickets and the platform at (H-9) inside, so the entrance is a note on a step that happens in Aydeewa Subterrane; nothing at the platform is named, so the target is none. The Mark of Zahak is in the header's Reward -- it proves the quest is over, not that a step is done -- so it is not evidence, and this quest ends with nothing observable after the item. Bullet 10 happens after the quest completes and exists for Beginnings, so it is optional. The After-the-walkthrough Notes section is one line about the Auction House and holds no steps. Level '30+' names no job, so it is the level gate restated and jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Waoud",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-10",
+   "raw": "Waoud, Aht Urhgan Whitegate (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Waoud"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     5
+    ],
+    "note": "top floor. He divines you with ten questions; on success he mentions all five serpent symbols, and if he mentions only one you retry the next game day. He then does nothing further until at least one game day later and after you have zoned, when you agree to help."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sunsand",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Siren's Tear",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Dangruf Stone",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "he asks for ONE of three, by riddle: Sunsand from Valkurm Dunes (H-9), which only spawns during a dust storm and is the only one buyable at the Auction House (Other/MISC); the Siren's Tear from an unnamed ??? in North Gustaberg near (J-9) along the river, found with tab and only pickable with your weapons unequipped, closest from the Port Bastok home point; the Dangruf Stone from Dangruf Wadi (I/J-5). Three zones, so this step has none."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Waoud"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Sunsand",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Siren's Tear",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dangruf Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "whichever one he asked for. He sends you to Aydeewa Subterrane and you keep the item."
+   },
+   {
+    "n": 4,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aydeewa Subterrane",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Sunsand",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Siren's Tear",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dangruf Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "in at (G-7) in Bhaflau Thickets, then the platform at (H-9); the Voidwatch warp is the fastest way. You must still be carrying the item. TAKE HIS HAND -- refusing him every time resets the whole quest to the beginning. The cutscene returns you to Aht Urhgan Whitegate as a Blue Mage and the item stays with you."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Waoud"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     10
+    ],
+    "note": "after the quest is over: ask him to 'gaze away' at your fate for a cutscene. Not needed for this quest, but Beginnings needs it."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promotion: First Lieutenant",
+   "page_id": 13594,
+   "revision_id": 774094,
+   "source_sha256": "4563f1720a154a439a3ec0833a033daee3dd3859a467845d25e406298e796108",
+   "cache_file": "0013594_promotion_first_lieutenant"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 98,
+   "dat_name": "Promotion: First Lieutenant",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_recovered_from_walkthrough",
+   "rank_gate_unmodelled",
+   "time_gated"
+  ],
+  "notes": "Twenty-four bullets and six steps: most of this page is the CONTENT of three minigames rather than anything you do somewhere. Bullets 5-8 are the rules of the logic puzzle, 11-14 the cipher and its answer key, 17-22 the rock-paper-scissors game and its four opponents. Arcuhbah, Fubruhn, Ugrihd, the Drill Sergeant and Koja Salaheem are opponents inside that game, not monsters standing in a zone, so no mobs are recorded and no fight step exists.\n\nBullets 3, 9, 15 and 23 are all the same thing -- 'wait for the game day to change and zone' -- which is a precondition of the conversation that follows, not a place to stand. Each is folded into the next step's note rather than wedged as an unmarkable step between two steps on the same NPC.\n\nThe header's giver is a building. 'Salaheem's Sentinels' is not a zone in res/zones.lua and the office is a building inside Aht Urhgan Whitegate, so step 1 is the entry with nothing to target, and start is moved to Abquhbah -- the entity the walkthrough actually interacts with from bullet 2 onward, and who stands inside the office, so a marker on him points through the door. The header's grid '(1-10)' is not a valid grid reference; it is read as (I-10) and the original is kept verbatim in start.raw.\n\nNothing in this quest is observable: no key item is granted before the reward, so no step carries evidence and the mark rests where accepting the quest leaves it. One consequence worth a human's eye: steps 2 through 6 are all Abquhbah in one zone, so the readiness look-ahead reaches the turn-in from step 2 and the '?' will read ready as soon as you hold the five Imperial Gold Pieces, well before the three trials are done. 'Complete 25 points worth of Assaults as Second Lieutenant' has no slot in the schema and no observable predicate, and the 15:00-17:00 completion window is game time no packet reports.\n\nADVERSARY (stage D): confidence lowered high -> medium, and nothing else altered. The reading is sound where it matters -- the three minigames are correctly not steps, and Arcuhbah, Fubruhn, Ugrihd, the Drill Sergeant and Koja Salaheem are correctly not mobs -- but three things stop this being high. Two gates cannot be modelled at all: the 25-point Second Lieutenant Assault requirement has no slot in the schema, and the 15:00-17:00 game-time completion window is unobservable. The start NPC is recovered from the walkthrough rather than given by the header, which names a building. And the grid carried by every one of the six steps descends from the malformed header field '(1-10)' read as (I-10) -- a grid reference that appears nowhere in the page text. With no evidence anywhere in the quest the ladder cannot correct itself either, and the draft's own note records that readiness reads true from step 2 the moment the five Imperial Gold Pieces are held. Nothing was removed: the order, the targets, the single zone and the absence of evidence are all as the page has them.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [
+    {
+     "title": "Promotion: Second Lieutenant",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Abquhbah",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Salaheem's Sentinels - Aht Urhgan Whitegate (1-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "walking into the Salaheem's Sentinels office is what starts the quest. The office is a building inside Aht Urhgan Whitegate, not a zone of its own, and the page names no door or entity, so there is nothing to target here."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Imperial Gold Piece",
+      "count": 5,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all five in one trade; the header lists them as the item requirement"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "note": "wait for the game day to change and zone first. Trial 1 is a logic puzzle: twelve humes, some of them Qiqirn spies, found with a limited number of set-of-four and pair queries; three rounds (3 spies / 5 sets / 5 pairs, then 4 / 5 / 4, then 5 / 6 / 5). A failure can be retried the following Earth minute for no extra fee."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "note": "wait a game day and zone first. Trial 2 is four questions answered in the cipher; the page's table is the vocabulary and the four answers are 'Haes, Waami lakiino kiichi.', 'Waami lakiino tachiito!', 'Waami lakiino Yasmeel.' and 'Waami lakiino kolcha.'. Free retry the following Earth minute."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22
+    ],
+    "note": "wait a game day and zone first. Trial 3 is BCG, rock-paper-scissors with Beetle, Crab and Ghost: four opponents in order -- Arcuhbah, then Fubruhn and Ugrihd together, then the Drill Sergeant, then Koja Salaheem, who is beaten in a single round with Beetle. All of it happens in the conversation, so none of them is a mob."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Abquhbah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     23,
+     24
+    ],
+    "note": "wait for the game day to change and zone, then speak to him between 15:00 and 17:00 game time -- a window nothing in the packets reports"
+   }
+  ]
+ }
+]

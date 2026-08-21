@@ -1,0 +1,2036 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Die Is Cast",
+   "page_id": 38775,
+   "revision_id": 774586,
+   "source_sha256": "d7f0168b139eba7548faef9dece1d189518d79ef5156e08b0dddf3958eaf7585",
+   "cache_file": "0038775_the_die_is_cast"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 16,
+   "dat_name": "The Die Is Cast",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "consumed_key_item",
+   "bullet_split"
+  ],
+  "notes": "A clean eleven-bullet ladder with two soft spots, which is why this is medium rather than high.\n\nFirst: bullet 5 has you obtain a Lamian Fang Key and NO later bullet ever says where it is spent. Arrapago Reef is gated by an Iron Gate that this key opens -- 'Operation Teatime' documents exactly that -- but this page does not, so nothing is recorded as needing to hold it and the walkthrough is flagged incomplete. The practical consequence is that the key is step 5's evidence and will be consumed somewhere inside the reef, after which the ladder falls back on the session latch until the Bag of gold pieces re-anchors it. That is the honest reading; inventing an Iron Gate step this page never mentions is not.\n\nSecond: bullet 2 gives Ekhu Pesshyadha a grid (H-6) but no zone. Bullet 1 is in Aht Urhgan Whitegate and bullet 3 is the first to say 'in Nashmau', so Whitegate is the reading, and that step is marked medium for it.\n\nBullets 7, 8 and 9 are one ??? clicked twice -- first a cutscene, then the pop -- so they merge into one step the way Divine Might's Blank Target does. Bullet 10 is genuinely two things, a kill and a third click, and only the third click hands over the key item. The Merrow fallback in bullet 5 is a different zone and cannot be a second source on a one-zone step, so it is items_partial plus a note. The 'Maps' section after the walkthrough is an image table, not steps.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "au / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Ratihb",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-12",
+   "raw": "Ratihb, Aht Urhgan Whitegate (J-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ratihb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ekhu Pesshyadha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any dialogue option works. The page gives only the grid, never the zone -- Whitegate is read from bullet 1, since bullet 3 is the first to move to Nashmau."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jijiroon"
+    },
+    "zone": "Nashmau",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "any dialogue option works"
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Caedarva Mire"
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "up the stairs at (H-8) in Nashmau, beside Jijiroon"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Lamian Fang Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "The ??? is not always there; the page's fallback is to farm the key from Merrows inside Arrapago Reef, which is a different zone and so cannot be a second source on this step No later bullet says where the key is spent."
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Arrapago Reef"
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "in by the (I-6) entrance from Caedarva Mire"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bukki",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8,
+     9
+    ],
+    "note": "cross to Map 2 at (F-10) on Map 1, then follow the right-hand wall straight north. Click the ??? twice: the first click is a cutscene, the second pops the Imp NM. The page gives no grid for the ??? itself."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bukki",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Bag of gold pieces",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same ??? a third time, once Bukki is dead"
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ratihb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [
+     {
+      "name": "Bag of gold pieces",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Comeback Queen",
+   "page_id": 27305,
+   "revision_id": 680411,
+   "source_sha256": "bd0ea1a248829ea3244fb7b79608c1a4895fae90a9d32f1aa0974f70a6a395a2",
+   "cache_file": "0027305_comeback_queen"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 98,
+   "dat_name": "Comeback Queen",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "time_gated"
+  ],
+  "notes": "Dancer AF, so 'Level: 50+ Dancer' is BOTH gates: level 50 and jobs ['DNC']. 'Repeatable: af' is the artifact-armour category leaking into the field and means false.\n\nBullet 4 is the one judgement call. Rhea Myuliah does not advance anything -- her own sub-bullet says she lets you 'practice', and bullet 5 then sends you back to Laila for the real thing. She is a rehearsal room, so she is a step but an optional one; a strict ladder would park the mark on her forever.\n\nBullets 5, 6 and 7 are one step, not three. Bullet 6 is a description of the audience (3 children, 2 young, 2 older) and bullet 7 is 'perform well' -- neither is an entity you go to. All three collapse onto the one thing you actually do, which is talk to Laila, and the dance-type advice lives in the note. The game-day wait before the performance and the game-day wait after a failure are both unobservable to the addon.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "The Road to Divadom",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "DNC"
+   ],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Laila",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Laila, Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Laila"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Wyatt's proposal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Harmodios"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the music shop; closest to Home Point #4"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Laila"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rhea Myuliah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "practice only -- she lets you rehearse holding an audience's attention. Young people prefer a Waltz, older people a Samba, children a Jig; when someone drifts away, use their dance to win them back."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Laila"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7
+    ],
+    "note": "a game day must pass before she will let you perform. The audience is 3 children, 2 young people and 2 older people, so lean on Jigs and Waltzes and keep at least 5 of the 7 watching. A failed performance means zoning and waiting for the next game day."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Eye of the Beholder",
+   "page_id": 112824,
+   "revision_id": 745380,
+   "source_sha256": "2dd412b94e80e1f171a54d8460824e56d8eb8a3a0fc6c62cb491e15c792d1b0f",
+   "cache_file": "0112824_eye_of_the_beholder"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 137,
+   "dat_name": "Eye of the Beholder",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Four bullets, four steps, no waste -- one of the tidiest pages in the batch. All three Yorcia Weald targets are the same entity NAME, 'Suspicious Place', at three different grids, which is exactly why each step carries its own grid and none of them may be merged.\n\nThere is no evidence anywhere in this quest and that is the right answer, not a gap: the twelve Holy Waters are a shopping requirement rather than something a step hands you, nothing here grants a key item, and the reward is EXP and Bayld. So the ladder is four positions carried by the session latch alone.\n\nLike Operation Teatime, this quest ENDS without an NPC -- bullet 4's Suspicious Place gives the final cutscene and the reward, and there is nobody to hand in to. No turn-in on Behsa Alehgo is invented.\n\n'Fame: Seekers of Adoulin' is not one of the addon's nine regions, so it gates nothing and only the raw string is kept. The bushes that hide two of the three targets are on a game clock the addon cannot see.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Seekers of Adoulin / 3"
+   },
+   "prev": [
+    {
+     "title": "The Secret to Success",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Behsa Alehgo",
+   "zone": "Eastern Adoulin",
+   "grid": "J-8",
+   "raw": "Behsa Alehgo, Eastern Adoulin - (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Behsa Alehgo"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the priory near the castle"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the very south-west corner of (J-8), behind a tree. South from the Frontier Station into (J-9), then back up into the corner. A bush can hide it from 00:00 to 6:00."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Holy Water",
+      "count": 12,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the large grove of Numbing Blossoms on the south side of (I-8) -- north-west from bivouac #2 towards the Cirdas Caverns entrance. A reive may be in the way, and a bush can hide it outside 21:00 to 3:00."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Place"
+    },
+    "zone": "Yorcia Weald",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "south-west corner of (H-9), near a Lost article spawn. This is where the quest ends -- the final cutscene and the reward come from the object, and there is no NPC to return to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Wayward Waypoints",
+   "page_id": 101757,
+   "revision_id": 770696,
+   "source_sha256": "cd73506301ad31365493aa9f2fda3aede9c99689172edc0fe47bb96395e4da56",
+   "cache_file": "0101757_wayward_waypoints"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 27,
+   "dat_name": "Wayward Waypoints",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "waypoint_gate_unmodelled",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "Bullet 2 is seven steps, not one. It names seven Frontier Stations in seven separate zones and implies no order, so they share a group and all seven draw at once -- the Lure of the Wildcat shape. A single zone-less 'Waypoint' row would match every waypoint in Vana'diel, including the Lower Jeuno one this quest later sends you to twice, so each member keeps its own zone. The page gives no grid for any Frontier Station waypoint.\n\nThe entity is written as 'the waypoint' / 'Lower Jeuno waypoint' throughout, so 'Waypoint' is the name recorded; it folds cleanly and it is furniture, so target.type is object.\n\nBullet 3 is a real step even though it fails on purpose: attempting the Lower Jeuno waypoint is what makes Sharuru send you to Shipilolo. The header's Quest Reqs -- all seven Frontier Station waypoints already unlocked -- has no slot in the schema and no observable predicate, so it gates nothing and is flagged.\n\nThe header's Start has no grid; (F-8) comes from bullet 1. 'Adoulin' is not one of the nine fame regions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "Adoulin / 4"
+   },
+   "prev": [
+    {
+     "title": "Meg-alomaniac",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Sharuru",
+   "zone": "Eastern Adoulin",
+   "grid": "F-8",
+   "raw": "Sharuru, Eastern Adoulin"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Waypoint scanner kit",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid is from the walkthrough; the header names no grid"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station; the seven may be done in any order"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "frontier_waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Frontier Station; last of the seven"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "it will refuse to adjust -- that refusal is the point of the step"
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Lower Jeuno waypoint will take you straight to her"
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shipilolo"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Waypoint recalibration kit",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "outside the Inventors' Coalition"
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "calibrate it this time"
+   },
+   {
+    "n": 13,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Guest of Hauteur",
+   "page_id": 25839,
+   "revision_id": 755542,
+   "source_sha256": "ef18036048d47a63c86c6da41cca93d06199e65296ec9ad8f6b08a18b5ad0205",
+   "cache_file": "0025839_guest_of_hauteur"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 3,
+   "dat_name": "Guest of Hauteur",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 4
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "dead_end_step"
+  ],
+  "notes": "The cleanest OR-branch in the batch and the reason items_alt exists. 'Must be able to equip either Maul (WHM/GEO only) or Replica Maul (all jobs)' is one requirement with two independent satisfactions, so the obtain step carries the Maul in evidence.all and the Replica Maul in evidence.alt, and the Steel Bones step -- the one where you actually have to be wearing it -- carries Maul in items with Replica Maul in items_alt.\n\nCrucially this is NOT a job gate. The Maul's WHM/GEO restriction is an equip restriction on one of the two options, and the other option is open to every job, so jobs stays []. Reading it the other way would lock a level-31 general-purpose quest to two jobs forever. 'Level: 31+' is the only real gate.\n\nBullet 3 is a dead end the page documents honestly -- 'Nothing will happen' at Bartolomeo. The draft kept it as a mandatory rung on the theory that it unlocks Powhatan's second dialogue option ('Where am I supposed to meet your guest?'), but the page never says that; it says the opposite. A rung the source declares inert is a precondition at best, so it is now optional -- the rung and the flag stay, the mark does not park on him. The quest drops to medium for that uncertainty. All four of bullet 2's purchase routes and both of the Metalworks vendors are advice, not steps.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [
+    {
+     "title": "Welcome to Bastok",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 31,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Powhatan",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Powhatan, Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Powhatan"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must have zoned after finishing Welcome to Bastok"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Maul",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Replica Maul",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [
+     {
+      "name": "Garnet Quadav",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "either weapon; the Maul is WHM/GEO only, the Replica Maul is all jobs. Sources are the Auction House, Garnet Quadavs in Rolanberry Fields and Beadeaux, 228 Sparks from an A.M.A.N. representative, or Amulya and Vicious Eye in Metalworks (E-9); the Replica also comes out of a Gusgen Mines treasure chest. No zone is recorded because none of those is the step's place."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bartolomeo"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside the Air Travel Agency. The page says outright 'Nothing will happen.' A bullet the source itself says does nothing cannot be a ladder position, so it is kept as a rung but marked optional; the draft's claim that it unlocks Powhatan's second dialogue option is inference, not something the page states."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Powhatan"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "pick the second option, 'Where am I supposed to meet your guest?'"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Steel Bones"
+    },
+    "zone": "Port Bastok",
+    "grid": "D-8",
+    "items": [
+     {
+      "name": "Maul",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Replica Maul",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Domien",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the maul has to be equipped, not merely carried -- that is how he recognises you"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Powhatan"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "You Call That a Knife?",
+   "page_id": 38733,
+   "revision_id": 745763,
+   "source_sha256": "5ca0f1ea9b8e5a8c37d4cab650ab7174871dd2f68a061c73c0a2de3f6fd6837c",
+   "cache_file": "0038733_you_call_that_a_knife"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 6,
+   "dat_name": "You Call That a Knife?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 4
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "unnamed_target",
+   "route_heavy"
+  ],
+  "notes": "Bullet 1 is two steps: trade the Sandfish, then check the shed. They are a pace apart in Kazham so they still resolve to one marker, but the trade and the examine are genuinely different actions on different entities and the cutscene comes from the second.\n\nThe shed has no name. The page calls it only 'the shed behind her' -- lower case, a common noun, no grid of its own. That is the guide's 'the baskets' case exactly, so the target is {none, null} with her (I-10) kept as the grid and the step at medium. The rung survives without the name; inventing 'Shed' would only have handed the runtime a key that matches nothing.\n\nBullets 4, 5 and 6 are one journey, not three steps: a Unity warp to the Temple of Uggalepih, or the long way round through Yhoator Jungle and back out and in again. The Granite Door in bullet 6 is something you walk past on the way to the Tonberry Kitchen, not something you open, so it stays in the note.\n\nBullets 7 and 8 are one step -- you speak to Chef Nonberry and trade him the board in the same visit, and bullet 8 is simply what he gives you back, which is the step's evidence. The Tonberry Board obtain step spans three zones (Temple of Uggalepih, Yhoator Jungle, Den of Rancor) so it records none of them and keeps the three mobs instead.\n\n'Fame: k' is Kazham.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: so there is no name to record and the target is null; the grid is hers.\n  step 4: three zones, so the step records none and carries the mobs instead",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": 6,
+    "raw": "k / 6"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Mhebi Juhbily",
+   "zone": "Kazham",
+   "grid": "I-10",
+   "raw": "Mhebi Juhbily, Kazham (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Mhebi Juhbily"
+    },
+    "zone": "Kazham",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Sandfish",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "when she asks, tell her you are giving it to her"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kazham",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The page names it only 'the shed behind her' lower case, a common noun, no name of its own This is where the cutscene is."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vah Keshura"
+    },
+    "zone": "Kazham",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tonberry Board",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Tonberry Pursuer",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Tonberry Shadower",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Tonberry Trailer",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Pursuers are in the Temple of Uggalepih, Shadowers in Yhoator Jungle, Trailers in the Den of Rancor."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Temple of Uggalepih"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "a Unity Concord warp (lv125) drops you there. The long way in is Yhoator Jungle (J-12), then south at (J-7), north at (H-9), north again at (G-7) -- which puts you back outside -- then left and in again at (H-11), minding the ledge. From there west and south to (H-10), then west past the Granite Door to the Tonberry Kitchen."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chef Nonberry"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tonberry Board",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Nonberry's knife",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "in the Tonberry Kitchen; speak to him first, then trade. The page gives him no grid."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Mhebi Juhbily"
+    },
+    "zone": "Kazham",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Nonberry's knife",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Healing the Land",
+   "page_id": 477,
+   "revision_id": 774251,
+   "source_sha256": "1402ce911da3be61b884793eae4970cb21779db67bb9e33256c70d96b25112b1",
+   "cache_file": "0000477_healing_the_land"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 82,
+   "dat_name": "Healing the Land",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item",
+   "route_heavy"
+  ],
+  "notes": "Four bullets, four steps, and the whole of bullet 3 is one action wrapped in six lines of directions. Every one of those directions -- the levers, the middle door at (H-6), the left door, the T intersection, the hole at (H) -- is how you reach the target, not a thing to do to it, so they collapse into the note on the single examine.\n\nThe page's own warning matters and is kept verbatim in spirit: there are TWO ??? close together at (G-8) and only one of them answers 'You have found the location of the seal.' A ??? can never carry a marker, but the rung and the grid are still worth having.\n\nThe Seal of banishing is step 1's evidence because that is where it is granted, and step 3 spends it -- so the ladder loses its anchor between step 3 and the return to Eperdur and falls back on the session latch. That is correct and unavoidable: it is one key item, granted once, consumed once.\n\nBullet 2 is a real journey (Gusgen Mines is only reachable from Konschtat Highlands) and stays its own step. The empty table at the foot of the page is a map link.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 4,
+    "raw": "San d'Oria / 4"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Eperdur",
+   "zone": "Northern San d'Oria",
+   "grid": "M-7",
+   "raw": "Eperdur, Northern San d'Oria (M-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eperdur"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Seal of banishing",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Cathedral -- take the right staircase, he is at the top"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Gusgen Mines"
+    },
+    "zone": "Gusgen Mines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in from Konschtat Highlands; fastest is the Survival Guide to Zulkheim"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gusgen Mines",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Seal of banishing",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "south-west corner, behind the shack. North, down the stairs, lever for the middle door at (H-6); north again, down, lever for the LEFT door; left at the T and north; west to a split, west again; fall down hole (H) at the end. There are two ??? close together -- the right one says 'You have found the location of the seal.' then 'You place a Seal of banishing on it.' The key item is consumed here."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Eperdur"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Smoke on the Mountain",
+   "page_id": 25926,
+   "revision_id": 772566,
+   "source_sha256": "1521a090abbd1d7658d16c721937ebca42c2e97bedaf2ec8d806c5db5c5b3684",
+   "cache_file": "0025926_smoke_on_the_mountain"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 15,
+   "dat_name": "Smoke on the Mountain",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item",
+   "time_gated"
+  ],
+  "notes": "Bullet 5 -- 'wait a minute Earth time, DO NOT ZONE OUT' -- is the interesting one. It is a real instruction but not a step: bullets 4 and 6 are both the same campfire, and wedging an unmarkable wait between two steps on one target would split a single marker into three rungs for no gain. The wait lives in the note on the examine that follows it, where the player will actually read it.\n\nThe campfire is written 'a Goblin campfire (???)', which is the wiki's way of saying the thing you target is a ???. A ??? never carries a marker, but the two rungs and the (K-9) grid are worth keeping, and the ramp up the hill from the top of (K-10) is the part players actually miss.\n\nThe item is recorded as 'Giant Sheep Meat' rather than the page's 'G. Sheep Meat' -- both resolve to the same id, and the guide prefers the long form. Its obtain step keeps South Gustaberg because that is the only place the page names and it is where the next step is anyway; the Auction House route cannot be expressed, hence items_partial.\n\nOffa is the page's own '(Optional)' -- he explains how the sausage is made and gives nothing. Repeatable, and the header lists both the meat and the sausage as Item Reqs, which is why a player who simply buys a Galkan Sausage will land straight on the last rung; that is right, not a bug.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Sheep Meat'; the long name resolves to the same item. the shop route cannot be expressed, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hungry Wolf",
+   "zone": "Metalworks",
+   "grid": "G-9",
+   "raw": "Hungry Wolf - Metalworks (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hungry Wolf"
+    },
+    "zone": "Metalworks",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Craftmen's Eatery; Home Point #1 is closest"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Offa"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page marks this Optional -- second floor, door on the left; he explains how the sausage is made and nothing more"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "South Gustaberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Giant Sheep Meat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ornery Sheep",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The page writes it 'G. Off Ornery Sheep in South Gustaberg, or elsewhere, or straight from the Auction House."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "South Gustaberg",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Giant Sheep Meat",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the page calls it a Goblin campfire and shows it as a ???. Find the small hill at (K-9), go to the area directly south of it at the top of (K-10), and look for the ramp up -- it blends into the ground. Trading starts it cooking."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "South Gustaberg",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Galkan Sausage",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "wait a minute of Earth time first and DO NOT zone out, or the cooking is lost and you start over. The sausage goes straight into inventory, so keep a slot free."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hungry Wolf"
+    },
+    "zone": "Metalworks",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Galkan Sausage",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Full-of-Himself Alchemist",
+   "page_id": 56707,
+   "revision_id": 763257,
+   "source_sha256": "673b31db62095dab23916e0b0f46fc33ef9ede96cd4ce2eecd95c5e271ac89d0",
+   "cache_file": "0056707_full_of_himself_alchemist"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 13,
+   "dat_name": "Full-of-Himself Alchemist",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A three-bullet fetch quest and it really is only three steps. Bullet 2's headline ('He will ask for 3 Purple Polypores') is what Julio says, not something you do, so it merges into bullet 1; its sub-bullets name where the polypores drop, which is the middle step.\n\nThe obtain step is not a wedge between two visits to the same NPC even though it looks like one -- it has a zone, a grid and a named mob, so it draws its own marker and the page really does send you off to farm.\n\nEverything under bullet 3 is about a DIFFERENT quest: The Walking Wounded needs 5 Soothing Potions, you cannot start it until fame level 4, and 30 runs of this plus 12 of that maxes zone fame. Advice about stockpiling rewards for a later quest is not a step of this one. Nor is the closing line that zoning is not required to repeat.\n\n'Fame: akon' is an Abyssea zone code, not one of the nine regions, so it gates nothing. 'Julio (A)' is kept in the wiki's Abyssea form -- the normaliser folds the suffix away.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "akon / 1"
+   },
+   "prev": [
+    {
+     "title": "Rose on the Heath",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Julio (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "F-10",
+   "raw": "Julio (A) (F-10), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Julio (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "north-west of Conflux #02; he asks for three Purple Polypores"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Purple Polypore",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Shadow Funguar",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "north-east, around (G-8) to (H-8) beside Conflux #04. The drop rate is low, so Treasure Hunter helps."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Julio (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Purple Polypore",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "all three in one trade"
+   }
+  ]
+ }
+]

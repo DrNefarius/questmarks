@@ -1,0 +1,90 @@
+questmarks -- licensing of the bundled DATA
+===========================================
+
+The source code is MIT (see LICENSE). The data is not, and this file says which
+terms cover which files. `NOTICE` is the long form: it traces provenance field
+by field. This file is the short, operative statement.
+
+Three sets of terms are in play.
+
+
+1. CODE -- MIT
+--------------
+Everything under `core/`, `render/`, `tools/`, plus `questmarks.lua`, and the
+project's own documentation.
+
+Full text in `LICENSE`.
+
+
+2. QUEST AND MISSION DATA -- CC BY-NC-SA 3.0
+--------------------------------------------
+    data/quest_index.lua
+    data/quest_steps.lua
+    data/mission_index.lua
+    data/fame_dialogue.lua
+    data/npc_overrides.lua
+    build/authored/            (the authored step-ladder corpus)
+    build/authored-quarantine/ (records read but not shipped)
+    build/rendered/            (rendered wiki pages, read at runtime by
+                                the sibling addon questmarks-ui)
+    tools/lib/mission_numbers.lua
+    bgwiki-rest-cache/         (the page cache, if you regenerate it --
+                                not committed, see .gitignore)
+
+These derive from BG Wiki (https://www.bg-wiki.com), whose content is licensed
+
+    Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported
+    https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+That licence carries three obligations, and all three bind anything you build
+on this data:
+
+  BY   ATTRIBUTION. Credit BG Wiki. `NOTICE` provides that attribution for
+       this project, page by page: `build/rendered/`'s front matter carries a
+       page id, a revision id and a SHA-256 of the source for every document,
+       so each fact traces to one revision of one page.
+
+  NC   NON-COMMERCIAL ONLY. This is not decorative and it is not a preference
+       this project chose -- it is inherited from BG Wiki and cannot be
+       relicensed away by anyone here. You may not sell this addon, charge for
+       access to it, bundle it into a paid product or service, put it behind a
+       subscription or a donation wall that gates access, or ship it inside
+       anything monetised, including an ad-supported distribution. The MIT
+       licence on the code does not lift this, because the addon does not
+       function without the data. If you want a commercial derivative you must
+       replace the wiki-derived data entirely and remove `NOTICE`'s claim to it.
+
+  SA   SHARE-ALIKE. Distribute a modified version of the data under
+       CC BY-NC-SA 3.0 as well.
+
+
+3. GAME CONTENT -- SQUARE ENIX
+-------------------------------
+    data/dat_names.lua
+
+This one is carved out of both of the above and it matters. `dat_names.lua` is
+NOT wiki data. It is the id -> name table the game itself uses, extracted from
+the client's own DAT files (0xD99A-0xD9BE). Those strings are FINAL FANTASY XI
+game content, (c) SQUARE ENIX CO., LTD.
+
+They are not this project's to license and are not offered under MIT or under
+CC BY-NC-SA. They are used functionally -- to name a quest in a chat message,
+and to give `core/state.lua` the complete id ladder it needs to work out which
+mission of a linear storyline you are on.
+
+The same carve-out covers the short dialogue fragments in
+`data/fame_dialogue.lua`, which are kept to the shortest distinguishing
+substring precisely so they work as matching keys rather than as reproduced
+dialogue, and the `Description:` blocks in `build/rendered/`, which are the
+text of the player's own in-game quest and mission log as transcribed by the
+wiki.
+
+questmarks is an unofficial, non-commercial fan tool with no affiliation to or
+endorsement by Square Enix.
+
+
+IN ONE SENTENCE
+---------------
+Take the code and do what you like with it; take the data and you inherit
+BG Wiki's non-commercial share-alike terms; the game's own strings were never
+ours to give.

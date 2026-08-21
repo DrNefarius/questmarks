@@ -1,0 +1,1705 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Discerning Eye (San d'Oria)",
+   "page_id": 451,
+   "revision_id": 698686,
+   "source_sha256": "76ded3132445b4e345779d0dd790692b45654de0d9049a7cea1cb62502719396",
+   "cache_file": "0000451_a_discerning_eye_san_d_oria"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 104,
+   "dat_name": "A Discerning Eye (San d'Oria)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "unnamed_zone"
+  ],
+  "notes": "Six bullets but only two actions. Bullet 2 (memorise the picture) is part of Eddy's conversation, bullet 4 describes what the ship looks like when you get there, and bullet 6 with its two sub-bullets is a warning plus the two outcomes -- none of them is a step.\n\nBullets 3 to 6 collapse into ONE step deliberately. Boarding the airship and handing the item over are both unmarkable and both unobservable: the page never names the airship zone and never names a single one of the lookalike passengers, so a separate travel rung would be a blank the player can never be tracked through. Rule 1 forbids supplying either name, so the hand-in is target none in a null zone -- it keeps its rung and loses its marker, which is the honest outcome.\n\nThe Dropped item is a real KEY item (ki 348, not an inventory item -- the item table has nothing by that name), granted when you accept, so it is step 1's evidence and step 2's requirement. Note the sister quest A Discerning Eye (Windurst) is the same page with Pygmalion in Port Windurst; they are separate quest ids and both are in this batch.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "San d'Oria / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Eddy",
+   "zone": "Port San d'Oria",
+   "grid": "H-6",
+   "raw": "Eddy, Port San d'Oria (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eddy"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Dropped item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he shows you a picture of the passenger and hands over the Dropped item; memorising the picture is part of this conversation, not a rung"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Dropped item",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "board the next airship out of Port San d'Oria; several near-identical passengers spawn on board and speaking to one offers the option to return the item. The page names neither the airship zone nor any passenger, so there is nothing to point at. ONE chance: the wrong passenger fails the quest, the right one pays 500 gil."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Hard Day's Knight",
+   "page_id": 12,
+   "revision_id": 673841,
+   "source_sha256": "3f6b45dfe81e8f09ef02059caae5b4315a4f2d3da363bc9aaf9cfa1079145e73",
+   "cache_file": "0000012_a_hard_day_s_knight"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 64,
+   "dat_name": "A Hard Day's Knight",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "steps_from_after_section"
+  ],
+  "notes": "A clean five-rung CoP quest. Bullet 4 is genuinely two things -- click the ??? to SPAWN Splinterspine Grukjuk, then its sub-bullet says defeat him -- so it splits into an examine and a fight, both on bullet 4. The ??? is an object and can never carry a marker, but it keeps the rung; the fight rung carries the NM, which does.\n\nThe '## After the walkthrough: Optional' section is real content, not Notes: its single bullet (numbered [1] because after-sections restart their numbering) is a trade to the same Quelveuiat for the Temple Knight key. It happens only AFTER the quest is complete and it is explicitly optional, so it is recorded as step 6, optional, in the same shape Under Oath's epilogue uses. Its evidence -- the Temple Knight key -- is obtained at that step and appears nowhere in the header's Reward, so it is legal evidence rather than a completion marker. Nothing in this quest is observable before then: no key item, no drop, no counted item, so steps 1 to 5 all carry evidence null and the runtime falls back on the session latch.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Quelveuiat",
+   "zone": "Tavnazian Safehold",
+   "grid": "I-10",
+   "raw": "Quelveuiat, Tavnazian Safehold (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quelveuiat"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "middle floor"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Lufaise Meadows"
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "out of the Safehold by the south exit at (I-6), then south to the lookout platform at (H-10). Clear the Orcs near it first -- they link."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Splinterspine Grukjuk",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at the TOP of the platform, not its base"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lufaise Meadows",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Splinterspine Grukjuk",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "a Ranger Orc NM; from bullet 4's sub-bullet"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quelveuiat"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Quelveuiat"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Sealion Crest Key",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Coral Crest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Temple Knight key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Optional' after-section, whose bullets restart at [1] -- this is that section's bullet 1, not the walkthrough's. Only available once the quest is already complete; the Temple Knight key opens the large door into the inner Sacrarium at (H-7) solo."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cook-a-roon?",
+   "page_id": 38774,
+   "revision_id": 729122,
+   "source_sha256": "7b72a546bba74f8b72d04d5c08cae91c6559ac2b9a5191aa90e994881b9eb403",
+   "cache_file": "0038774_cook_a_roon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 15,
+   "dat_name": "Cook-a-roon?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable"
+  ],
+  "notes": "Five bullets, exactly one step. Bullet 2 is an outcome (the stew can fail to cook and the quest still completes), bullet 3 is a one-real-minute cooldown, and bullets 4 and 5 are advice about sequencing this against Rat Race -- none is an action. The five fish are named only in the header's Item Reqs, never in the walkthrough, which just says 'all of the fish he desires'; all five resolve, so they go on the trade as an AND-list. The page gives no quantities, so each is recorded as 1.\n\nNashmau Stew is the header's Reward, so by rule 7 it is not evidence -- and on a quest repeatable every minute a held stew would mark the single step done forever. This quest therefore carries no evidence at all, which is correct: holding the five fish is what the runtime needs, and that is already the trade's item list.\n\nFame is written as the expansion name 'Treasures of Aht Urhgan'; the region it means is Aht Urhgan, which is one of the nine, so the region is kept and the raw preserves the page's wording.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Ququroon",
+   "zone": "Nashmau",
+   "grid": "H-6",
+   "raw": "Ququroon, Nashmau (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ququroon"
+    },
+    "zone": "Nashmau",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Istakoz",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Mercanbaligi",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ahtapot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Istiridye",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Istavrit",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "all five in one trade; the page gives no counts so each is taken as one. A failed cook still completes the quest. Repeatable once per real-life minute, and the stew is needed for Rat Race -- finish it too early and you must run this again."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Lost Memories",
+   "page_id": 56703,
+   "revision_id": 750519,
+   "source_sha256": "f65e333ed6f82d8c2ae4e808bef35a2323dfad6fa28cc301c6f55df53b88c12e",
+   "cache_file": "0056703_lost_memories"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 9,
+   "dat_name": "Lost Memories",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "drop_zone_inferred",
+   "reward_ki_not_used_as_evidence"
+  ],
+  "notes": "Three rungs out of five bullets. Bullet 2 is Halver restating the request inside the same conversation as bullet 1, so they merge. Bullet 5 is fame advice -- run this eight more times to open Glenne (A)'s rank 6 quest -- not a step, and neither is the trailing 'Zoning is not required to repeat this quest.'\n\nBullet 3 IS a step: it is where the two Lambent Scales come from, it names the monster, and holding two scales is the only observable this quest offers. The page never says where Farfadets live, but every other rung is in Abyssea - La Theine and Abyssea drops only fall inside Abyssea, so the hunt is placed in the quest's own zone -- flagged, because that grid-free zone is an inference and not something the page states. Mobs are matched live anyway, so a wrong zone would cost only scoping.\n\nThe Vial of lambent potion is deliberately NOT evidence on the trade. It is the completion key item, it is explicitly kept for the next quest (An Eye for Revenge), and this quest is repeatable -- so on the second run you would already be holding it at step 1 and the mark would jump straight to the end. Nothing else in the quest is observable after the trade, which is fine: the trade is the last rung.\n\nFame 'alth' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw survives; FLevel 5 is kept because the schema has a slot for it even though the region is null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "alth / 5"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Halver (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "L-11",
+   "raw": "Halver (A) (L-11), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "near Veridical Conflux #06; he asks for two Lambent Scales"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Lambent Scale",
+       "count": 2
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Farfadet",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the drop rate is poor -- the page recommends a Thief with high Treasure Hunter. The zone is inferred from the rest of the quest; the page itself never says where Farfadets are."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Halver (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-11",
+    "items": [
+     {
+      "name": "Lambent Scale",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "completes the quest and grants the Vial of lambent potion key item, which is kept for An Eye for Revenge and so is not used as evidence here"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stamp Hunt",
+   "page_id": 25928,
+   "revision_id": 698914,
+   "source_sha256": "b60c5326107bc346949ec92f111181a2cdbcb7e0a8cc3e4e9928f04b0f1ddb54",
+   "cache_file": "0025928_stamp_hunt"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 16,
+   "dat_name": "Stamp Hunt",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "count_unobservable"
+  ],
+  "notes": "Exactly the Lure of the Wildcat shape at one third the size. Bullet 2's seven sub-bullets are not commentary for once -- each names a guard, a zone and a grid ref, so each becomes its own rung, and all seven share the group 'stamps' because the page states no order and there is none. A strict ladder would mark Pavel and then nothing until you happened to walk past the next one; the group draws all seven at once, across four zones, each rung keeping its own zone as the guide requires.\n\nEvery guard name resolves, including the two that read like monsters -- 'Deadly Spider' and 'Tall Mountain' are Galka guards in Bastok Mines, not mobs, and a verb-scanner would have made them fights.\n\nThe only observable in the whole quest is the Stamp sheet key item handed over at bullet 1, so it is step 1's evidence. The seven stamps are recorded ONTO that one sheet -- there is no per-guard key item and no count in any packet -- so nothing distinguishes one stamp from seven and no group member can carry evidence. That is the count_unobservable flag: the group is drawn in full until the final turn-in fires.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Arawn",
+   "zone": "Bastok Markets",
+   "grid": "J-10",
+   "raw": "Arawn - Bastok Markets (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Arawn"
+    },
+    "zone": "Bastok Markets",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Stamp sheet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pavel"
+    },
+    "zone": "Bastok Markets",
+    "grid": "D-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the gate to South Gustaberg"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Spider"
+    },
+    "zone": "Bastok Mines",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "a guard, not a monster: 2nd floor of the Depot, centre-ish of the map"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tall Mountain"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "down the ramp towards the Alchemist Guild, then right at the no-entrance-allowed area"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Romualdo"
+    },
+    "zone": "Metalworks",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "southeastern Cannonry"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Elayne"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the entrance to the Temple of the Goddess"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ehrhard"
+    },
+    "zone": "Port Bastok",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "northeast corner, outside Warehouse #1"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Latifah"
+    },
+    "zone": "Port Bastok",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "stamps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "north of the drawbridge"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Arawn"
+    },
+    "zone": "Bastok Markets",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "only once all seven stamps are on the sheet"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Tigress Stirs",
+   "page_id": 19717,
+   "revision_id": 770798,
+   "source_sha256": "8f4005d7a6ebd249cdf8eb073003a570c2d4c206ff750722dfad1a83ad19ba4b",
+   "cache_file": "0019717_the_tigress_stirs"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 17,
+   "dat_name": "The Tigress Stirs",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "or_branch_unmodelled",
+   "repeatable_unknown"
+  ],
+  "notes": "Bullet 1 is a clarification about allegiance ('you do not specifically need to be allied to Windurst'), not an action -- the first thing you actually DO is bullet 2, zoning into Windurst Waters (S), which fires a cutscene on your very first visit and grants the Inky black Yagudo feather. That makes step 1 a zone entry rather than a conversation even though the header's giver, Dhea Prandoleh, is real and resolves; the giver is right, it is just not first.\n\nThe last rung is a DOOR, and doors are real markable entities: the page writes 'the door to Acolyte Hostel' and the client entity is 'Door: Acolyte Hostel', which resolves. So this quest ends on a marker rather than on an unmarkable blank, and there is no hand-in NPC at all -- checking the door completes it. Do not invent a return trip to Dhea Prandoleh.\n\nTwo gates could not be modelled. 'Previous: The Fighting Fourth, Snake on the Plains, or Steamed Rams' is an OR of three and prev is an AND-list, so all three are listed and flagged rather than one being picked arbitrarily. 'Repeatable: ?' is the page admitting it does not know; recorded false, which is the safe reading for a Wings of the Goddess story quest with a named Next.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Fighting Fourth",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Snake on the Plains",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Steamed Rams",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Dhea Prandoleh",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-10",
+   "raw": "Dhea Prandoleh - Windurst Waters (S) (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Windurst Waters (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Inky black Yagudo feather",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene fires on your very first visit to the zone and hands over the feather; if you have already been there this rung is behind you"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Small starfruit",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at the top of Starfall Hillock"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Acolyte Hostel"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-5",
+    "items": [
+     {
+      "name": "Small starfruit",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page says 'the door to Acolyte Hostel'; the client entity is 'Door: Acolyte Hostel'. Checking it completes the quest -- there is no NPC to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "F.A.I.L.ure Is Not an Option",
+   "page_id": 101759,
+   "revision_id": 596588,
+   "source_sha256": "7ec3e33ecbc67e324dd72994efe7630366e7c5a9808399388e6c5da6d40d7e1f",
+   "cache_file": "0101759_f_a_i_l_ure_is_not_an_option"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 29,
+   "dat_name": "F.A.I.L.ure Is Not an Option",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "latent_unmodelled"
+  ],
+  "notes": "Three rungs, and the middle one is a Mog Garden facility rather than an NPC. 'Harvest the Mineral Vein' is a click on a real, resolvable object in a real, resolvable zone (Mog Garden, 280), so it is an examine on that object and not a target-less obtain.\n\nThe Hunk of bedrock is a KEY item (ki 2384) despite the header writing it as a plain item -- the item table has nothing by that name -- so both the evidence entry and the turn-in requirement are kind 'ki'. Getting that wrong would have dropped the only observable in the quest.\n\nBullet 4, below the page's horizontal rule, is a first-time-in-the-Mog-Garden note about the Green Thumb Moogle and Full Fields; its own sub-bullet says you get the bedrock regardless, so it is not a step and not a prerequisite. The Mineral Vein's cooldown -- if you have already mined this Garden cycle you must wait -- is a real gate the addon cannot see, hence latent_unmodelled. Fame 'Adoulin' is not one of the nine regions and gates nothing; only the raw and the FLevel survive.\n\nThe header gives no grid for Clautaire; the walkthrough puts him at (I-12) in Western Adoulin, and that is used for both his rungs.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "Adoulin / 4"
+   },
+   "prev": [
+    {
+     "title": "A Pioneer's Best (Imaginary) Friend",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Clautaire",
+   "zone": "Western Adoulin",
+   "grid": "I-12",
+   "raw": "Clautaire, Western Adoulin"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Clautaire"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid comes from the walkthrough; the header's Start field gives none"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mineral Vein"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hunk of bedrock",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "your own Mog Garden. If the vein is already exhausted for this cycle you must wait until you can mine again -- nothing in the packets reports that."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Clautaire"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-12",
+    "items": [
+     {
+      "name": "Hunk of bedrock",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Talk About Wrinkly Skin",
+   "page_id": 104677,
+   "revision_id": 702572,
+   "source_sha256": "a891e9d509d524b2c381e3d7f4441542d04f25781119d5601aa58f120c9675e0",
+   "cache_file": "0104677_talk_about_wrinkly_skin"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 60,
+   "dat_name": "Talk About Wrinkly Skin",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Five bullets, four rungs, all of them real actions -- an unusually well-behaved page. Steps 1 and 2 are both on Orsa-Porsa and are therefore one marker; the split is kept because bullet 1 is the conversation that opens the quest and bullet 2 is the trade that pays for it, and only the trade has an item list.\n\nThe Hot Springs are a resolvable object in the same zone, so the cutscene rung at (H-7) carries a marker rather than being a bare place. Bullets 3 and 4 merge into it: 'head to the Hot Springs' and 'check Hot Springs' are the same arrival. The equipment rule -- everything off except rings and earrings -- is the kind of thing that silently wastes a trip, so it is on the note.\n\nCalor resilience is in the header's Reward, so by rule 7 it is not evidence on the final turn-in; the Hot springs care package IS granted by the trade at step 2 and is that step's evidence. Fame 'Adoulin' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Orsa-Porsa",
+   "zone": "Morimar Basalt Fields",
+   "grid": "K-10",
+   "raw": "Orsa-Porsa, Morimar Basalt Fields (K-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Orsa-Porsa"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Morimar Basalt Fields Frontier Station"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Orsa-Porsa"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [
+     {
+      "name": "Apkallu Egg",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Felicifruit",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Uleguerand Milk",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hot springs care package",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all three in one trade"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hot Springs"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Hot springs care package",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Biv #2 is the closest waypoint. Remove ALL equipment except rings and earrings before checking, or the cutscene will not play."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Orsa-Porsa"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "pays 500 bayld and the Calor resilience key item, which is the reward and so is not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Home, Home on the Range",
+   "page_id": 67139,
+   "revision_id": 651784,
+   "source_sha256": "65db697292a5620c6011de3bea42cc6bdf6d41601122dcbf857b1511522e02e6",
+   "cache_file": "0067139_home_home_on_the_range"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 69,
+   "dat_name": "Home, Home on the Range",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "consumed_key_item"
+  ],
+  "notes": "Six bullets, seven rungs: bullet 5 is two things -- hand in the cloth, then go and kill Dhorme Khimaira for the mane -- so it splits, and both halves cite bullet 5.\n\nThe shape is fetch, return, fetch, return, fetch, return, and every fetch has its own key item, so this quest is unusually well observed: three separate evidence points, none of them duplicated, each obtained at exactly the step that carries it. The three key items are consumed as they are handed over, which is why the returns carry them as requirements and never as evidence.\n\n'Moogle (A)' resolves only to the generic key 'moogle', which is ambiguous across every Moogle in Vana'diel -- so every rung that targets it carries the zone Abyssea - Uleguerand, which is what keeps it legal and pointed at the right one. The two chests are real objects and resolve on their own.\n\nThe page places the Moogle at (F-7) Conflux #7 in the walkthrough where the header gives no grid, and locates the chests only by Conflux number, so those two rungs have a zone and no grid. Dhorme Khimaira's zone is not stated either; it is the zone NM and every other rung is in Abyssea - Uleguerand, so the fight is placed there. Mobs are matched live, so that costs only scoping if it is wrong.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aule / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Moogle (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": "F-7",
+   "raw": "Moogle (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moogle (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Conflux #7; the grid comes from the walkthrough, the header gives none"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lumber Chest"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Piece of sodden oak lumber",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at Conflux #1, near the maw; the page gives no grid ref"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Moogle (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Piece of sodden oak lumber",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he takes the log and asks for cloth next"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fabric Chest"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sodden linen cloth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at Conflux #6; the page gives no grid ref"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Moogle (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Sodden linen cloth",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "he takes the cloth and asks for the mane last"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Dhorme khimaira's mane",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Dhorme Khimaira",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from bullet 5's sub-bullet. The mane drops for everyone who has this quest active, so you need not claim the NM yourself. The page does not name the zone; it is the Abyssea - Uleguerand NM."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Moogle (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Dhorme khimaira's mane",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "1,500 Cruor"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Discerning Eye (Windurst)",
+   "page_id": 7,
+   "revision_id": 682597,
+   "source_sha256": "3e67bb5f4f17efd3d19cd5a3bfbb6852e043762986abbcc1c38d3118aa039ac8",
+   "cache_file": "0000007_a_discerning_eye_windurst"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 89,
+   "dat_name": "A Discerning Eye (Windurst)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "unnamed_zone"
+  ],
+  "notes": "The Windurst twin of quest sandoria/104, word for word the same page with Pygmalion in Port Windurst standing in for Eddy in Port San d'Oria; they are separate quest ids and both are in this batch, so the two ladders are deliberately identical.\n\nBullet 2 (memorise the picture) is part of Pygmalion's conversation, bullet 4 describes the ship on arrival, and bullet 6 with its sub-bullets is a warning and the two outcomes -- none is a step. Bullets 3 to 6 collapse into ONE rung because the page names neither the airship zone nor any of the lookalike passengers, so boarding and handing over are both blanks the player cannot be tracked through and splitting them would buy nothing.\n\nThe Dropped item is a real KEY item (ki 348 -- the item table has nothing by that name, so kind 'item' would have silently dropped it), granted on accepting, so it is step 1's evidence and step 2's requirement. This page writes it without the [KI] tag its San d'Oria twin uses; the resolver settles it.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Pygmalion",
+   "zone": "Port Windurst",
+   "grid": "M-7",
+   "raw": "Pygmalion, Port Windurst (M-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pygmalion"
+    },
+    "zone": "Port Windurst",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Dropped item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he shows you a picture of the passenger and hands over the Dropped item; memorising the picture is part of this conversation, not a rung"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Dropped item",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "board the next airship out of Port Windurst; several near-identical passengers spawn on board and speaking to one offers the option to return the item. The page names neither the airship zone nor any passenger, so there is nothing to point at. ONE chance: the wrong passenger fails the quest, the right one pays 500 gil."
+   }
+  ]
+ }
+]

@@ -1,0 +1,678 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 2-3",
+   "page_id": 13289,
+   "revision_id": 767470,
+   "source_sha256": "1d911596c1aa8299349e0fe3487a7cd62df30b70364ed5b642ba7541c7325ec7",
+   "cache_file": "0013289_windurst_mission_2_3_65529eec69"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 8,
+   "dat_name": "The Three Kingdoms (San d'Oria)",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/pinned-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "one_page_two_dat_ids",
+   "generic_npc_name",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "bullet_split",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "ONE PAGE, TWO DAT IDS -- THIS RECORD IS THE SAN D'ORIA HALF. The wiki documents 'The Three Kingdoms' once; the client carries 'The Three Kingdoms (San d'Oria)' (#8) and 'The Three Kingdoms (Bastok)' (#9), one per destination nation. The mission needs BOTH legs, not one -- the page's own preamble (not rendered into the pin, but in the cached wikitext above the Walkthrough) says every nation must travel to the other two -- so the split is by DESTINATION, not by outcome. Everything that happens in Bastok belongs to windurst/9 and is deliberately absent here: Option 1's 'Windurst to Bastok' bullets 1-6 (Patt-Pott, Pius, Grohm, the Mythril Seams in Palborough Mines, the refiner, the Mythril Sand hand-back) and Option 2's 'San d'Oria to Bastok' bullets 6-11 (Patt-Pott, Pius/Grohm, Palborough Mines, Waughroon Shrine, the Dark Dragon BC, Patt-Pott again). The main Walkthrough's bullet 2 (Kupipi) is shared and appears in BOTH records, because it happens once, before either leg starts, and each id has to be able to draw it.\n\nTHE PAGE DESCRIBES THIS LEG TWICE, AND THE TWO ARE NOT THE SAME. Which nation you visit first changes what the San d'Oria leg contains. 'Option 2: San d'Oria Path' bullets 1-5 are this leg done FIRST: Heruze-Moruze and Kasaroro at the consulate, Halver, then the NM Warchief Vatgit in Ghelsba Outpost, then Kasaroro again -- no BC. 'Option 1: Bastok Path' bullets 7-11 are the SAME leg done SECOND: Kasaroro, Halver, then the Horlais Peak BCNM 'The Rank 2 Final Mission' against Seeker and Dread Dragon, then Kasaroro, then Kupipi. Both routes share the spine Kasaroro -> Halver -> a fight -> Kasaroro, so the ladder is that spine with BOTH fights recorded as alternative rungs (steps 6 and 7, each optional) rather than picking one route and being wrong for half of all players. The step order given here is consistent with both routes read straight down: San d'Oria-first plays 1,2,3,4,5,6,8; San d'Oria-second plays 1,2,4,5,7,8,9.\n\nStep 3 and step 9 are optional for the same branch reason, not because they are skippable. Heruze-Moruze is named only on the San d'Oria-first route; Option 1's version of this leg goes straight to Kasaroro and never mentions him. The return to Kupipi closes the WHOLE mission and therefore only belongs to whichever leg you do last -- so it is a rung of this record only when San d'Oria came second (Option 1 bullet 11). If San d'Oria came first, this leg ends at step 8 and the Bastok record carries the hand-in (its Option 2 bullet 12). The page says to go back, so the return is recorded; it is not invented, and it is not dropped.\n\nBOTH 'After the walkthrough' SECTIONS RESTART THEIR BULLET NUMBERING AT 1, so a bare source_bullets number is ambiguous on this page. Every step's note states which section each number belongs to.\n\nTHE GIVER IS A ROLE. Start reads 'Any Windurst Gate Guard' -- there is no NPC of that name and it can never draw. The pin's Giver block resolves it to the four Windurstian guards from Category:Gate Guard, and all four are recorded as a multi-option giver so each gets its own marker key. start.zone is null on purpose: they stand in four different zones, and each key resolves its own. Their zones and squares are kept in step 1's note.\n\nRANK, NOT LEVEL. The unnumbered line above bullet 1 requires trading three Crystals (more if you skipped 2-2) to the Conquest NPC to raise the Rank bar before the mission can be accepted. That is a rank gate, the schema has no field for it, and it is NOT gates.level -- gates.level carries the header's character level, 25. Flagged rank_gate_unmodelled. It is also not a rung: the page names neither a specific crystal nor a specific NPC, and it happens before the mission exists.\n\nSub-bullets that are not steps: the Cipher: Semih and Cipher: Halver notes (Trust rewards), the party-composition and sleep-the-dragon strategy, and the whole route description for reaching Horlais Peak via Yughott Grotto and Fort Ghelsba.\n\ngates.expansion carries the header's own word 'windurst'. The page has no Fame field, so gates.fame is null throughout. Repeatable is the header's explicit 'No'. Previous is the header's 'Windurst Mission 2-2|A Testing Time', recorded under its display title.\n\nNothing was looked up off-page for this record and nothing was taken from a sibling; every zone, square, NPC and monster written here is on this page. | CORRECTED: start.npc is the page's own phrase again. An earlier draft expanded it to the four guards by hand; data/npc_overrides.lua already maps \"any windurst gate guard\" to exactly those names with zone=false (any zone), so expanding it in the record bypassed a tested mechanism and produced ONE marker key out of the whole sentence -- which matches no entity, so all four guards lost their marker.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Any one of them starts the mission, so all four are recorded and the step's zone stays null because they are in four different zones; each key resolves its own.\n  step 2: Bullet 2 of the MAIN Walkthrough, so it is shared with the Bastok record (windurst/9) and appears in both.\n  step 9: but it belongs to this record only when San d'Oria is your SECOND leg. On the San d'Oria-first route this leg ends at step 8 and the Bastok record (windurst/9) carries the hand-in as its Option 2 bullet 12.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Testing Time",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 25,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Any Windurst Gate Guard",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Any Windurst Gate Guard"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "From the header's Start field and the pin's Giver block, not from a numbered bullet hence 0. 'Any Windurst Gate Guard' is a role: Janshura-Rashura (Port Windurst B-5), Mokyokyo (Windurst Waters F-5), Rakoh Buuma (Windurst Woods K-10), Zokima-Rokima (Windurst Walls H-7). The unnumbered line above bullet 1 also requires raising the Rank bar first by trading three Crystals to the Conquest NPC a precondition, not a rung, and the page names neither the crystal nor the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the consuls",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "She is in the Clerical Chamber inside Heavens Tower; Heavens Tower is not a zone, and the only place the page names its zone is Option 2 bullet 12 ('Heavens Tower in Windurst Walls'), which is where this zone comes from. No square is given anywhere on the page. The [KI] Letter to the consuls is handed over here and is not in the Reward field, so it is honest evidence for this rung. Bullet 1 of the main Walkthrough is advice about the mission's length and route choice, not a step."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Heruze-Moruze"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Option 2 (San d'Oria Path) bullets 1 and 2, whose numbering restarts at 1. Optional because only the San d'Oria-FIRST route names him -- Option 1's version of this leg (its bullet 7) goes straight to Kasaroro. Bullet 1 is the trip to the Windurstian Consulate in Northern San d'Oria and folds in here rather than becoming a rung of its own; the consulate is a building, not a targetable entity. (H-9) is bullet 2's own 'both at (H-9)'."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kasaroro"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     7
+    ],
+    "note": "The same visit written twice: Option 2 bullet 2 ('Heruze-Moruze and then Kasaroro, both at (H-9)') and Option 1 bullet 7 ('Kasaroro in the Windurstian Consulate in Northern San d'Oria (H-9)'). Both section numberings restart at 1, so 2 is Option 2's and 7 is Option 1's. Both give the same square, so there is no conflict."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     8
+    ],
+    "note": "Option 2 bullet 3 and Option 1 bullet 8 -- the same visit on both routes. No square is given. The page warns he is involved in several other quests and missions and may need to be spoken to repeatedly until he sends you on; the Cipher: Halver sub-bullet is a Trust reward, not a step."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ghelsba Outpost",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Warchief Vatgit",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "Option 2 bullet 4 (numbering restarts at 1). THIS RUNG OR STEP 7, never both: this is the fight when San d'Oria is your FIRST leg. 'Inside' in that bullet is Ghelsba Outpost, which bullet 3's sub-bullets place in the far northwestern corner of West Ronfaure; (H-7) is bullet 4's own square. The NM exists only for this mission and is usually up and wandering, so no spawn condition is recorded. The Survival Guide sub-bullet is travel advice."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Horlais Peak",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Seeker",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Dread Dragon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     9
+    ],
+    "note": "Option 1 bullet 9 (numbering restarts at 1). THIS RUNG OR STEP 6, never both: this is the fight when San d'Oria is your SECOND leg. The BCNM is named 'The Rank 2 Final Mission' and holds two NMs, the Ahriman Seeker and the Dragon Dread Dragon; the page says 'two NMs', which is where the counts come from. The battlefield is entered from Horlais Peak, so that is the zone; the (J-6) in the sub-bullets is the entrance square in Yughott Grotto, a different zone, and is not this step's grid. Everything else under this bullet is route and strategy advice."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kasaroro"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     10
+    ],
+    "note": "Option 2 bullet 5 ('Speak to Kasaroro again. You are now finished with the San d'Oria half') and Option 1 bullet 10 ('Return to Kasaroro at Northern San d'Oria after clearing the BCNM') -- the same closing visit on both routes. Neither bullet repeats the square; (H-9) is the one this page gives Kasaroro at Option 2 bullet 2 and Option 1 bullet 7."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     11
+    ],
+    "note": "Option 1 bullet 11, 'Return to Kupipi in Heavens Tower to complete the Mission'. The page really does say to go back, so it is recorded rather than dropped Hence optional. Zone again from Option 2 bullet 12; no square anywhere. Note the hand-in NPC is not the giver: the mission is taken from a Gate Guard and closed by Kupipi."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Windurst Mission 2-3",
+   "page_id": 13289,
+   "revision_id": 767470,
+   "source_sha256": "1d911596c1aa8299349e0fe3487a7cd62df30b70364ed5b642ba7541c7325ec7",
+   "cache_file": "0013289_windurst_mission_2_3_65529eec69"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "windurst",
+   "id": 9,
+   "dat_name": "The Three Kingdoms (Bastok)",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/pinned-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "one_page_two_dat_ids",
+   "generic_npc_name",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "bullet_split",
+   "rank_gate_unmodelled",
+   "unnamed_target",
+   "count_unobservable"
+  ],
+  "notes": "ONE PAGE, TWO DAT IDS -- THIS RECORD IS THE BASTOK HALF. The wiki documents 'The Three Kingdoms' once; the client carries 'The Three Kingdoms (San d'Oria)' (#8) and 'The Three Kingdoms (Bastok)' (#9), one per destination nation. The mission needs BOTH legs -- the page's preamble (in the cached wikitext above the Walkthrough) says every nation must travel to the other two -- so the split is by DESTINATION. Everything that happens in San d'Oria belongs to windurst/8 and is deliberately absent here: Option 2's 'Windurst to San d'Oria' bullets 1-5 (Heruze-Moruze, Kasaroro, Halver, the NM Warchief Vatgit in Ghelsba Outpost, Kasaroro again) and Option 1's 'Bastok to San d'Oria' bullets 7-11 (Kasaroro, Halver, the Horlais Peak BCNM against Seeker and Dread Dragon, Kasaroro, Kupipi). The main Walkthrough's bullet 2 (Kupipi) is shared and appears in BOTH records: it happens once, before either leg starts, and each id has to be able to draw it.\n\nTHE PAGE DESCRIBES THIS LEG TWICE, AND THE TWO ARE NOT THE SAME. Which nation you visit first changes what the Bastok leg contains. 'Option 1: Bastok Path' bullets 1-6 are this leg done FIRST: Patt-Pott, Pius, Grohm (3 Pickaxes), mine Mine Gravel from the Mythril Seams in Palborough Mines, refine it into Mythril Sand, trade the sand back to Patt-Pott -- no BC. 'Option 2: San d'Oria to Bastok' bullets 6-12 are the SAME leg done SECOND: Patt-Pott, Pius (who sends you to Grohm), Palborough Mines, in at (H-10) to Waughroon Shrine, the BC against Seeker and Dark Dragon, back to Patt-Pott, then Kupipi. Both routes share Patt-Pott -> Pius -> Grohm, so the ladder is that spine followed by the two alternative tails, each rung marked optional (steps 6-8 are the mining tail, steps 9-12 the battlefield tail). Read straight down, Bastok-first plays 1,2,3,4,5,6,7,8 and Bastok-second plays 1,2,3,4,5,9,10,11,12 -- both in page order.\n\nStep 12 (return to Kupipi) closes the WHOLE mission and so belongs to whichever leg you do last. It is a rung of this record only when Bastok came second (Option 2 bullet 12); if you did Bastok first, this leg ends at step 8 and the San d'Oria record carries the hand-in (its Option 1 bullet 11). The page says to go back, so it is recorded, not invented and not dropped. Note the hand-in NPC is not the giver: the mission is taken from a Gate Guard and closed by Kupipi.\n\nBOTH 'After the walkthrough' SECTIONS RESTART THEIR BULLET NUMBERING AT 1, so a bare source_bullets number is ambiguous on this page. Every step's note states which section each number belongs to.\n\nGROHM IS ON BOTH ROUTES, THE PICKAXES ARE NOT. Option 1 bullet 3 has him hand over 3 Pickaxes; Option 2 bullet 7 only says Pius sends you to the Craftsmen's Eatery to speak to him and never mentions pickaxes, which fits -- on that route you never mine. The visit itself is on both routes, so step 5 is not optional, and the pickaxes are described in its note rather than being made a requirement of a rung that sometimes does not need them. The Pickaxes are also not evidence: they are a shop item the page itself tells you to buy more of, so holding one proves nothing.\n\nZONES CHECKED, NOT IMPORTED. The page gives Pius (J-8) and Grohm (H-9) squares but never states their zone; the surrounding bullets put you in the Metalworks, and Metalworks is named on this page (Option 1 bullet 1, Option 2 bullets 6 and 11). To be sure the inference was right rather than convenient I read the BG Wiki pages for Pius and Grohm through the REST API -- both give Zone Metalworks with exactly those squares. Nothing was taken from those pages: the zone and both squares are on this page, and the lookup only confirmed which of this page's zones they belong to.\n\nTHE REFINER HAS NO NAME. Option 1 bullet 5 writes 'the refiner' and 'the lever' in lower case and names no entity, so step 7's target is {none, null} rather than an invented object; the two levers and the drop to the level below are in the note, because two unmarkable, unobservable rungs are noise. The Mythril Seams ARE named (bold, plural) and the bullet says to trade the Pickaxe to the 'Seam', so step 6 targets the singular Mythril Seam.\n\nRANK, NOT LEVEL. The unnumbered line above bullet 1 requires trading three Crystals to the Conquest NPC to raise the Rank bar before the mission can be accepted. That is a rank gate with no schema field; it is here and flagged, and NOT in gates.level, which carries the header's character level 25.\n\nTHE GIVER IS A ROLE. Start reads 'Any Windurst Gate Guard'. The pin's Giver block resolves it to the four Windurstian guards from Category:Gate Guard and all four are recorded as a multi-option giver so each gets its own marker key; start.zone is null because they stand in four different zones and each key resolves its own.\n\nSub-bullets that are not steps: the Auction House alternative for Mine Gravel, the 'Mythril Marathon' RoE objective, the Home Point shortcut, the Cipher notes, and all the party-composition and sleep-the-dragon strategy.\n\ngates.expansion carries the header's own word 'windurst'. No Fame field on the page. Repeatable is the header's explicit 'No'. Previous is the header's 'Windurst Mission 2-2|A Testing Time' under its display title. | CORRECTED: start.npc is the page's own phrase again. An earlier draft expanded it to the four guards by hand; data/npc_overrides.lua already maps \"any windurst gate guard\" to exactly those names with zone=false (any zone), so expanding it in the record bypassed a tested mechanism and produced ONE marker key out of the whole sentence -- which matches no entity, so all four guards lost their marker.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Any one of them starts the mission, so all four are recorded and the step's zone stays null because they are in four different zones; each key resolves its own.\n  step 2: Bullet 2 of the MAIN Walkthrough, so it is shared with the San d'Oria record (windurst/8) and appears in both.\n  step 5: Confidence is medium only because Option 2 leaves the visit implicit in Pius' line rather than giving it a bullet.\n  step 6: Trade repeatedly until gravel drops and expect to lose pickaxes, so the requirement is one in hand, not three. items_partial is true because the page's alternative\n  step 7: How much gravel one sand costs is never stated (the RoE sub-bullet's '10 Mine Gravel' is about a different objective), so the requirement is recorded as one and flagged count_unobservable.\n  step 10: This is the Bastok-second counterpart of the San d'Oria record's Horlais Peak fight, and the dragon differs by battlefield (Dark Dragon here, Dread Dragon there), which is why the header's Title line offers both.\n  step 12: but it belongs to this record only when Bastok is your SECOND leg. On the Bastok-first route this leg ends at step 8 and the San d'Oria record (windurst/8) carries the hand-in as its Option 1 bullet 11.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Testing Time",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 25,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "windurst"
+  },
+  "start": {
+   "npc": "Any Windurst Gate Guard",
+   "zone": null,
+   "grid": null,
+   "raw": "Any Windurst Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Any Windurst Gate Guard"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "From the header's Start field and the pin's Giver block, not from a numbered bullet hence 0. 'Any Windurst Gate Guard' is a role: Janshura-Rashura (Port Windurst B-5), Mokyokyo (Windurst Waters F-5), Rakoh Buuma (Windurst Woods K-10), Zokima-Rokima (Windurst Walls H-7). The unnumbered line above bullet 1 also requires raising the Rank bar first by trading three Crystals to the Conquest NPC a precondition, not a rung, and the page names neither the crystal nor the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the consuls",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "She is in the Clerical Chamber inside Heavens Tower; Heavens Tower is not a zone, and the only place the page names its zone is Option 2 bullet 12 ('Heavens Tower in Windurst Walls'). No square is given anywhere on the page. The [KI] Letter to the consuls is handed over here and is not in the Reward field, so it is honest evidence for this rung. Bullet 1 of the main Walkthrough is advice about length and route choice, not a step."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Patt-Pott"
+    },
+    "zone": "Metalworks",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     6
+    ],
+    "note": "The same visit written twice: Option 1 bullet 1 ('Patt-Pott in Bastok Metalworks HP#1 ... Windurstian Consulate top floor (I-7)') and Option 2 bullet 6 ('Enter the Metalworks from Bastok Markets ... speak with Patt-Pott inside the Windurstian Consulate, around (I-7)'). Both section numberings restart at 1, so 1 is Option 1's and 6 is Option 2's. Both give the same square. The consulate is a building on the top floor, not a targetable entity."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pius"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     7
+    ],
+    "note": "Option 1 bullet 2 and Option 2 bullet 7 -- the same visit on both routes. He is in the President's Office (Department of Industry); only Option 1 gives the square (J-8). The page never states his zone, so it is read from the surrounding Metalworks bullets and was confirmed against his own BG Wiki page, which gives Zone Metalworks and Position J-8."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Grohm"
+    },
+    "zone": "Metalworks",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     7
+    ],
+    "note": "Option 1 bullet 3 ('Grohm at (H-9) in the Craftsmen's Eatery. He will give you 3 Pickaxes') and Option 2 bullet 7, which sends you to the Craftsmen's Eatery to speak to him without repeating the pickaxes consistent, since on that route you never mine. The visit is on both routes, so this rung is not optional. The Pickaxes are not evidence: the page itself says to buy more because they break, so holding one proves nothing. As with Pius, the page gives the square but not the zone; Metalworks is read from the surrounding bullets and was confirmed on his own BG Wiki page (Zone Metalworks, Position H-9)."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Mythril Seam"
+    },
+    "zone": "Palborough Mines",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "name": "Mine Gravel",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "Option 1 bullet 4 (numbering restarts at 1). Optional because the mining tail (steps 6-8) happens only when Bastok is your FIRST leg; on the Bastok-second route you go to Palborough Mines for the battlefield instead (steps 9-12). Palborough Mines is at the very north of North Gustaberg. The grid is null on purpose rather than wrong: the page names TWO seams, one on the first floor at (I-8) and one on the top floor at (I-9), and a step has one square. The page writes 'Mythril Seams' in the plural and then 'trade the Pickaxe to the Seam', so the target is the singular. buying Mine Gravel from the Auction House skips the step entirely and cannot be written as an item list. Holding Mine Gravel is therefore not proof you mined it, but it is proof this rung's output is in hand, which is what the next rung needs."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Palborough Mines",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Mine Gravel",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Mythril Sand",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "Option 1 bullet 5 (numbering restarts at 1), and optional for the same branch reason as step 6. Second floor, (I-7): trade the gravel to the refiner, pull the lever, drop off the ledge to the level below, pull another lever, and you receive Mythril Sand. That is one rung, not three the refiner and both levers are written in lower case, the page names no entity for any of them, so the target is {none, null} and two extra unmarkable, unobservable rungs would be noise."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Patt-Pott"
+    },
+    "zone": "Metalworks",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Mythril Sand",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "Option 1 bullet 6 (numbering restarts at 1), the close of the mining tail and optional with it: 'Trade the Mythril Sand to Patt-Pott. Talk to him once more. This is the end of the Bastok leg.' The trade and the follow-up conversation are one marker on one NPC. The square is the one this page gives Patt-Pott at Option 1 bullet 1 and Option 2 bullet 6. No evidence: the sand is spent here, and it is already step 7's evidence, which one item may not be twice."
+   },
+   {
+    "n": 9,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Waughroon Shrine"
+    },
+    "zone": "Palborough Mines",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "Option 2 bullets 8 and 9 (numbering restarts at 1). Optional because the battlefield tail (steps 9-12) happens only when Bastok is your SECOND leg. Bullet 8 is the trip to Palborough Mines in the very far north of North Gustaberg and folds in here; bullet 9 is the route inside -- (I-8), upstairs, then (H-10) to zone in. The step's zone is Palborough Mines because that is where you stand and where the entrance square is; Waughroon Shrine is what you are entering."
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Waughroon Shrine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Seeker",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Dark Dragon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     10
+    ],
+    "note": "Option 2 bullet 10 (numbering restarts at 1), optional with the rest of the battlefield tail. Two NMs at the top: the Ahriman Seeker and the Dragon Dark Dragon the page says 'two NMs', which is where the counts come from. Buff-wearing on zone and the sleep-the-Seeker-first strategy are advice, not rungs."
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Patt-Pott"
+    },
+    "zone": "Metalworks",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     11
+    ],
+    "note": "Option 2 bullet 11 ('Once cleared, return to Patt-Pott in Metalworks'), optional with the rest of the battlefield tail. Kept separate from step 8 rather than merged: that one is a trade of Mythril Sand on the mining route, this one is a conversation after the battlefield, and only one of the two ever happens. Square from Option 2 bullet 6."
+   },
+   {
+    "n": 12,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     12
+    ],
+    "note": "Option 2 bullet 12, 'head back to Heavens Tower in Windurst Walls and speak to Kupipi to complete the Mission and receive your rewards'. The page really does say to go back, so it is recorded rather than dropped Hence optional. This bullet is also the only place on the page that names Heavens Tower's zone. No square anywhere."
+   }
+  ]
+ }
+]

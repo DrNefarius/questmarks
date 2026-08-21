@@ -1,0 +1,1854 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Geothermal Expedition",
+   "page_id": 98181,
+   "revision_id": 744526,
+   "source_sha256": "eb360066048bfc8616a63012fdfc9d162f39ce1e3cf7b09b42253ba510de563c",
+   "cache_file": "0098181_a_geothermal_expedition"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 18,
+   "dat_name": "A Geothermal Expedition",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "time_gated",
+   "steps_from_after_section",
+   "evidence_unavailable",
+   "page_unverified"
+  ],
+  "notes": "Three bullets, one of which is the whole quest. Bullet 2 -- 'visit and test the three Hot Springs, under different conditions, to obtain 5 reports' -- is not one step but three places, so it becomes three grouped rungs at (H-7), (H-8) and (G-8), all drawn at once because the springs may be visited in any order and the sub-bullet's 'start at Bivouac #2 and go south' is a suggestion, not an order.\n\nThe 'After the walkthrough: Hot Spring Reports' section (its own [1]..[8] numbering) is where the quest actually lives: it pins report 3 to the H-7 spring, report 4 to H-8 and report 5 to G-8, and says reports 1 and 2 come from any spring. Those pinnings are folded into each step's note. Its numbering is also broken -- [3]/[4], [5]/[6] and [7]/[8] are each one report split across two bullets by the renderer -- which is why the source_bullets here cite the walkthrough's [2] rather than that section's.\n\nNo evidence anywhere, and that is a real loss rather than laziness: 'Hot spring report 1'..'5' are named on the page but resolve against neither res/items.lua nor res/key_items.lua, so nothing about this quest is observable. They are therefore not recorded as items on the turn-in either -- the page never marks them [KI], so even the kind would be a guess. The whole thing is gated on game-clock windows the addon cannot see (the page is explicit that there is NO weather requirement and that it is purely time), and the page carries the wiki's own 'unverified' / 'Information Needed' markers with several windows left open-ended. Hence medium.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Pinned to report 4 (10:00-11:00, 18:00-19:00, and unverified windows at 20:00 and 22:00).\n  step 4: Pinned to report 5 (05:00-06:00, 10:00-11:00, 17:00-18:00).\n  step 5: you must be carrying all five reports; they are named on the page as 'Hot spring report 1'..'5' but resolve against no resource table, so they cannot be recorded as items and readiness cannot be shown here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Fallion",
+   "zone": "Morimar Basalt Fields",
+   "grid": "I-10",
+   "raw": "Fallion, Morimar Basalt Fields - (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fallion"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he stands at Bivouac #3"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hot Spring"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "springs",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near Bivouac #2. The Hot Spring Reports section pins report 3 to this spring (01:00-03:00, and windows opening at 11:00, 20:00 and 22:00 that the page leaves unverified). Reports 1 and 2 come from any spring."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hot Spring"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "springs",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "South past a Colonization Reive. The page also singles this spring out as the one that cannot produce report 1 in the 21:00-23:00 window."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hot Spring"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "springs",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Around the corner from the H-8 spring."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fallion"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "In Search of the Truth",
+   "page_id": 153,
+   "revision_id": 770694,
+   "source_sha256": "a9ee19bb5da39e120e41b796c88635639d8429ff1d4c90c5fc33f7c1b7094a34",
+   "cache_file": "0000153_in_search_of_the_truth"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 80,
+   "dat_name": "In Search of the Truth",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "walkthrough_incomplete",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "A whodunnit that never leaves one zone: every rung is inside Tavnazian Safehold, which is unusual and makes the grid refs the only thing that distinguishes them. The header gives no grid for Tressia; bullet 1 puts her at (J-6, Third Floor: Patrol HQ), so that is where start points.\n\nBullet 4's four witnesses are explicitly 'in any order', so they share a group and all four draw at once. Bullets 2 and 3 are the page's own 'Optional -', kept as a second group so they draw together and neither blocks the ladder.\n\nBullet 8 is five ??? in a fixed order. Only the FIRST is worth its own rung, because it is the only observable thing in the quest -- it hands over the Shaded Cruse (key item 718). The remaining four are unmarkable (??? is in OBJECT_DENY) and unobservable, so they collapse into one rung with the route in the note, exactly as the guide prescribes.\n\nBullets 5, 6 and 7 are three separate conversations and stay three rungs even though two of them are Tressia at the same spot: bullet 6 sends you to Mengrenaux and Chemioue in between, so the page really does interleave them. The puzzle answers are carried in the notes because nothing about them is observable -- and note that the page is INCOMPLETE here: bullet 7 leaves Report 1's answer blank where it fills in the other three.\n\n'Completed Darkness Named' is in Quest Reqs rather than Previous, but it is a genuine prerequisite and is recorded as one. The Notes section's single line about Miledo-Shiraddo names an NPC that appears nowhere in this walkthrough; it is trivia about another quest, not a step.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 9: he holds reports 1 and 2\n  step 10: he holds reports 3 and 4",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Darkness Named",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Tressia",
+   "zone": "Tavnazian Safehold",
+   "grid": "J-6",
+   "raw": "Tressia, Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tressia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Third Floor, Patrol HQ"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mengrenaux"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "briefing",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page marks this Optional; Patrol HQ"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chemioue"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "briefing",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page marks this Optional; Patrol HQ"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fouagine"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "witnesses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Third Floor, under the archway; any order"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Noam"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "witnesses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Second Floor, lower section; any order"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zadant"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "witnesses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Second Floor, on the ramp down to the First Floor; any order"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raminey"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "witnesses",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Third Floor, at Home Point #3; any order"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tressia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "she asks for the accounts in chronological order. Two orderings are known -- (Fouagine, Zadant, Raminey, Noam) and (Fouagine, Zadant, Noam, Raminey) -- and which one is accepted is rerolled on every attempt, so keep trying either."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mengrenaux"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "reports",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chemioue"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "reports",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tressia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "give the position each report was gathered at: report 2 is <H-8>, report 3 is <G-9>, report 4 is <J-7>. The page leaves report 1's answer BLANK -- that is a hole in the wiki, not an omission here."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shaded Cruse",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "next to Noam on the Second Floor; the first of the trail's five ???, and the only observable thing in the whole quest"
+   },
+   {
+    "n": 13,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the remaining four, in this fixed order: north and up the ramp to (G-7); next left, near the open doors, (G-8); on through the hallway to (H-8); then left at the end of the hallway and the one in the bottom-right corner of (H-8). None is markable and none is observable, so they are one rung rather than four."
+   },
+   {
+    "n": 14,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tressia"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "Third Floor, Patrol HQ"
+   },
+   {
+    "n": 15,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ondieulix"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "Second Floor, near Home Point #1. The reward comes from him, not from Tressia."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Chasing Quotas",
+   "page_id": 463,
+   "revision_id": 767568,
+   "source_sha256": "08d94910c7d1b19d360138c4bd8571670af8d14c528e2095a4358c60a732dfaf",
+   "cache_file": "0000463_chasing_quotas"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 95,
+   "dat_name": "Chasing Quotas",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_unmodelled"
+  ],
+  "notes": "A clean errand chain with two evidence points, and the Dragoon AF line's usual shape: 'Level: 50+ Dragoon' is BOTH gates, so level 50 and jobs ['DRG']. 'Repeatable: af' is the artifact-armour category leaking into the field and means false.\n\nBullets 1, 2 and 3 are three separate interactions with Ceraulian and stay three rungs -- the page is explicit that a minute passes and you may have to zone between the trade and the third conversation, which is the sort of thing a player needs told. They collapse to one marker anyway.\n\nThe header's Quest Reqs list -- Gold Hairpin, [KI] Shiny earring, [KI] Ranchuriome's legacy -- is not a shopping list you bring; it is the quest's own chain. Only the Gold Hairpin is player-supplied, and the other two are what the ladder is observed by: the Shiny earring at Miaux and Ranchuriome's legacy from the ??? after Sturmtiger dies.\n\nBullet 7 is routing, not a place you click, so it is one travel rung with the whole Eldieme Necropolis route in the note. It carries items_partial because the room at (G-9) needs either a second player to work the gates or a [KI] Magicked astrolabe -- an OR the schema has no way to say, since 'bring a friend' is not an item.\n\nBullet 9 is two things in one sentence, so it splits into the kill and the second examine, with both bullets cited on each.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 7: items_partial, because 'bring a friend' is not something items can say.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "San d'Oria / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Craftsman's Work",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "DRG"
+   ],
+   "repeatable": false,
+   "expansion": "zilart"
+  },
+  "start": {
+   "npc": "Ceraulian",
+   "zone": "Port San d'Oria",
+   "grid": "I-10",
+   "raw": "Ceraulian, Port San d'Oria (I-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ceraulian"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside Cargo Room A; agree to help obtain a Gold Hairpin. Dragoon is only needed to open the quest -- any job from here on."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ceraulian"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Gold Hairpin",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "a Gold Hairpin +1 will NOT work"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ceraulian"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "wait a minute first, and you may have to zone. Talking to Miaux before this gives bonus dialogue."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Miaux"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shiny earring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ardea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in front of the Goldsmithing Guild, next to Home Point #4. If you have STARTED Rock Racketeer you must finish it before she will continue this one."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Esca"
+    },
+    "zone": "West Ronfaure",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Batallia Downs"
+    },
+    "zone": "Batallia Downs",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "The island is only reachable back through The Eldieme Necropolis: in at (I-10) in Batallia Downs or by Survival Guide, hug the south side to the big room at (G-9), fall through the grave at its centre (point D) to map 2, on to point E for map 3, then south and out to Batallia Downs again. Everything in that section sounds aggro even at 99. The (G-9) room needs either a second player to work the gates or a [KI] Magicked astrolabe."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Batallia Downs",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sturmtiger",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "WEST side of the island at the cliff's edge, not the east"
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Batallia Downs",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sturmtiger",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Batallia Downs",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ranchuriome's legacy",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the same ??? again, once Sturmtiger is dead"
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ceraulian"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Ranchuriome's legacy",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "back in Cargo Room A"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gifts of the Griffon",
+   "page_id": 19755,
+   "revision_id": 721764,
+   "source_sha256": "8d24c595c6eead2ddb6cc6722672b5130cb24339e031cb5e6dd53f7cce300257",
+   "cache_file": "0019755_gifts_of_the_griffon"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 15,
+   "dat_name": "Gifts of the Griffon",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "or_branch_unmodelled",
+   "walkthrough_in_table"
+  ],
+  "notes": "A delivery round, and the whole thing happens in one zone: 'Southern San d'Oria (S)' is the wiki form and resolves to zone 80, so it is written as the page writes it.\n\nBullet 1 is not a step -- it is a reassurance that you need not be allied to San d'Oria. Bullet 3 is a step, but a strange one: you must LEAVE and come back, so it is a second conversation with Louxiard rather than a travel rung, with the Retrace tip in the note.\n\nBullet 4 is one bullet holding eight things: a conversation with Rholont and seven deliveries. The seven share a group and all draw at once. The page does not say 'in any order' outright, but it is a list of recipients read out in a cutscene, and the alternative -- a strict ladder that marks Machionage and then nothing until you happen to walk past him -- is the failure mode groups exist to prevent. Louxiard appears twice on purpose: he is both the giver and one of the seven recipients.\n\nHolding a Plume d'Or is what proves Rholont has handed them out, so it is step 3's evidence at count 1 rather than 7 -- the page never states how many you receive, only how many people want one, and one is enough to know the cutscene has played.\n\nThe Previous field reads 'The Fighting Fourth, Snake on the Plains, or Steamed Rams'. That is an OR, and prev is an AND everywhere downstream, so recording all three would block the quest for a player who did exactly what the page asks. prev is left empty and the three are named here instead: under-gating shows the quest a little early, over-gating hides it from people who can actually do it. The Lore wikitable is spoilers, not steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Louxiard",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "G-7",
+   "raw": "Louxiard - Southern San d'Oria (S) (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Louxiard"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is only a note that you need not be allied to San d'Oria"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Louxiard"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "leave the area and return before speaking to him again; Retrace counts as zoning"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Plume d'Or",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "this is where the quest proper begins; the cutscene reads out the seven recipients"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Machionage"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "C-6",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Louxiard"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the giver is also one of the seven recipients"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Illeuse"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rongelouts N Distaud"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page writes his name without a full stop after the N, so that is what is recorded"
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sabiliont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-11",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "by the chocobo stable"
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Elnonde"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Loillie"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Plume d'Or",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "charms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "she is on a ledge at (K-9); the stairs up are at (L-8)"
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trial by Wind",
+   "page_id": 38764,
+   "revision_id": 770516,
+   "source_sha256": "42a960f6a454cc0291e74534c810a75d391d59d78ead2f6b99769af1347382c6",
+   "cache_file": "0038764_trial_by_wind"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 194,
+   "dat_name": "Trial by Wind",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "object_name_from_description",
+   "time_gated"
+  ],
+  "notes": "Four bullets, four rungs, and both evidence points are real key items -- the cleanest page in this batch.\n\nThe one judgement call is the protocrystal. The walkthrough never mentions clicking anything: bullet 2 only says 'travel to Cape Teriggan (F-5) to enter the Cloister of Gales'. But the header's Description says outright 'Ring the tuning fork of wind upon the protocrystal', and note 6 calls it 'the Protocrystal', so the trade IS on the page and is recorded as a rung. It is named 'Protocrystal' -- exactly what the page calls it -- and NOT 'Wind Protocrystal', which is what the live entity in that zone is called elsewhere in this corpus (Carbuncle Debacle's page spelled it out, so that quest could use it; this one does not). This is the Class Reunion situation repeating, and the page wins over the guess. If a human wants the marker back, 'Wind Protocrystal' is the string to try -- it folds to a key the runtime already carries at zone 201.\n\nCape Teriggan is not given a rung of its own: the Cloister of Gales is entered from (F-5) and the trade happens inside it, so the route is a note on the trade, matching how Carbuncle Debacle handled the same journey.\n\nFame 'r / 6' is Rabao, which the resolver folds into the shared rabao_selbina region. The whole Notes section is cooldowns, party rules and a Summoner-only shortcut through another quest -- none of it is a step, and the Mini Fork of Wind route in note 6 is deliberately not modelled because it belongs to Trial-Size Trial by Wind, not here.\n\nADVERSARY (stage D): quest confidence lowered high -> medium, nothing else touched. The walkthrough never states the quest's central action -- bullet 2 only sends you to Cape Teriggan -- so the trade rung exists only because the header's Description states it; that is an incomplete page, which is the medium criterion. The rung's own object name is also the one thing here that will not draw: the page says 'the protocrystal' and the live entity in Cloister of Gales is 'Wind Protocrystal', so step 2 keeps its position but loses its marker. Renaming it is not this stage's to do. Everything else re-checked and left alone: both key items are granted at the rung that carries them (fork at 1, whisper at 3), neither is in the Reward list, the fork is items on 2 and evidence only on 1, and the Cloister of Gales zone on steps 2 and 3 is right -- the cloister is the zone entered from Cape Teriggan (F-5) and the protocrystal stands inside it.",
+  "gates": {
+   "fame": {
+    "region": "Rabao",
+    "level": 6,
+    "raw": "r / 6"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Agado-Pugado",
+   "zone": "Rabao",
+   "grid": "G-9",
+   "raw": "Agado-Pugado, Rabao (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Agado-Pugado"
+    },
+    "zone": "Rabao",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tuning fork of wind",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "if you are sure of the fame but she will not offer it, keep talking until her text changes. Every party member needs their own fork."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Gales",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tuning fork of wind",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in from Cape Teriggan (F-5); Home Point Cape Teriggan #1 is the fast way. The trade comes from the header's Description, not from the walkthrough, and the page names the object only 'the protocrystal' -- see the quest note."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cloister of Gales",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Whisper of gales",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Garuda Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Trust Magic CANNOT be used here -- the page shouts it above bullet 1. Up to six party members, 30 minute limit."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Agado-Pugado"
+    },
+    "zone": "Rabao",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Whisper of gales",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "one reward at a time, including the pact with Garuda. You may instead keep the whisper for The Moonlit Path. Repeatable once per Earth day, which nothing in the packets reports."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Art of War",
+   "page_id": 38771,
+   "revision_id": 766316,
+   "source_sha256": "53eba76bb5ba5953097d84f5302d0ec6b5fd229bd0df97da4e56ecc4ba85614c",
+   "cache_file": "0038771_the_art_of_war"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 10,
+   "dat_name": "The Art of War",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group",
+   "steps_from_after_section"
+  ],
+  "notes": "This page is written as a reference sheet, not a walkthrough, and reading it as a sequence would be wrong. Bullets 3, 4 and 5 are not three errands: they are three ALTERNATIVES, one per monster type, and a single run of this repeatable quest involves exactly one of them. The page gives it away twice -- bullet 2 says 'you travel to a beastman stronghold and spawn a NM', singular, and the loose line after bullet 5 says 'if solo, the Wamouracampa is recommended', which is only advice if you are choosing.\n\nAn OR of three has no representation in the schema, so they are put in one group. That is not literally what a group means, but it produces the behaviour a player wants -- all three draw at once, and you go to whichever one you picked -- whereas a strict ladder would mark Arrapago Reef and refuse to acknowledge the other two. Flagged as or_branch_modelled so this is findable.\n\nThe spawn ??? are folded into the fight rungs rather than given their own: the page mentions a ??? only for the Orobon, and only in passing to say you may need a key to reach it. That key is recorded as items with items_partial set, because the Ilrusi Atoll Staging Point route needs none.\n\nBullets 6 and 7 are two separate conversations with Hishahma -- you must zone in between to hear whether you were right -- so they stay two rungs and one marker. The After the walkthrough note is a real prerequisite beyond the header's 'Previous: Finding Faults': Finding Faults must be done with ALL THREE monster types before this is even offered, which prev cannot express since it is the same quest three times over. Nothing in this quest is observable, so there is no evidence anywhere. Medium for the OR and for how loosely the page is written.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: no key is needed if you come in via the Ilrusi Atoll Staging Point, which is why items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Finding Faults",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Hishahma",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-8",
+   "raw": "Hishahma, Aht Urhgan Whitegate (K-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hishahma"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he will not offer this until Finding Faults has been completed with all three monster types (from the After the walkthrough note)"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": "E-11",
+    "items": [
+     {
+      "name": "Lamian Fang Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ornery Orobon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "quarry",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The Orobon option. Map 2; spawned from a ??? that may need one Lamian Fang Key to reach One of three alternatives, not a step in a sequence."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Halvung",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Wheel Wamoura",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "quarry",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Wamouracampa option, and the one the page recommends if you are solo. In by the Halvung Survival Guide warp. It takes zero damage until you make it unfold: shine a Light Point (a nearby NPC that spawns) on it, cast enfeebling magic, or just hit it."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Mamook",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Carpophagous Puk",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "quarry",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Puk option, upstairs. In from the Mamool Ja Staging Point, or Aht Urhgan Whitegate to Bhaflau Thickets Home Point #1. It flees at about 90% HP, takes roughly 90% less damage while running and despawns if it reaches the end of its path (zone to bring it back). Stop it by disguising as Mamool Ja, clicking an NPC fruit that spawns (it must be red), or chaining weaponskills."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hishahma"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "tell him what worked, or guess"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hishahma"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "zone first, then come back for the verdict and the reward or the berating"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Glittering Gals",
+   "page_id": 123331,
+   "revision_id": 733850,
+   "source_sha256": "e5af51739214d2215eeb16a9f84271f8957ee1fdb8669a65aa7154376d424ad6",
+   "cache_file": "0123331_glittering_gals"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 208,
+   "dat_name": "Glittering Gals",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "weather_unobservable",
+   "or_branch_modelled",
+   "time_gated"
+  ],
+  "notes": "Short, and almost entirely made of things that are not steps. Bullet 2 is the Moogle's REQUEST, not a second errand, and its sub-bullet is idle dialogue if you talk to him again -- so bullets 1 and 2 are one rung, and the Fruit Seeds he hands over in that cutscene are its evidence.\n\nBullet 3 is the real work and is three different things stacked into one bullet with its sub-bullets: get a Sunsand, grow a Tropical Cactus, trade it. The Sunsand ??? in Valkurm Dunes (H-9) gets its own rung because it is the only real PLACE in the quest -- but it is optional and it always will be, since the page says outright that buying the cactus off the Auction House skips the whole gardening branch. It is also gated on dusty weather, which the addon cannot see.\n\nThe cactus rung is an obtain with no place: you may plant any seed (the Fruit Seeds will do, and a Revival Tree Root matures in an hour), fertilise with a Sunsand and harvest, or simply buy one. items_partial says there is a route items cannot express. No combination guarantees a cactus, so several Sunsands may be needed -- a loop no count can hold.\n\nBullet 4 is the reward, not a step, and the [KI] Sheep companion it names is a reward besides, so it is not evidence anywhere. It does not resolve against res/key_items.lua either, which costs nothing here. The three prerequisite quests are in both Quest Reqs and Previous and are recorded; their sub-conditions (mount access, level 7 in all Geological Locations, level 7 Monster Rearing) are Mog Garden state that nothing observable reports.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Full Speed Ahead!",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Titillating Tomes",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Rowing Together",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fruit Seeds",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "no need to zone after finishing the three prerequisite quests. The cutscene hands over the Fruit Seeds and asks you to plant them with a Sunsand as fertiliser -- that request is bullet 2, and it is not a separate errand."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sunsand",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "only during dusty weather, which nothing in the packets reports. Optional twice over: Sunsand is also on the Auction House under Others > Misc, and buying the Tropical Cactus outright skips this branch entirely."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tropical Cactus",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "plant any seed -- the Fruit Seeds will do, and a Revival Tree Root matures in one hour -- fertilise it with a Sunsand and harvest. No combination is guaranteed, so several Sunsands may be needed. It can also be bought outright on the Auction House under Others > Misc, which is the route items cannot express. No zone, because the Auction House route has none."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "Tropical Cactus",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "final cutscene. Bullet 4 is the reward, not a step: you receive the [KI] Sheep companion directly rather than the item Sheep Mount."
+   }
+  ]
+ }
+]

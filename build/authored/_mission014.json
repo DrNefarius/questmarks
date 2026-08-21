@@ -1,0 +1,257 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-5-2",
+   "page_id": 111624,
+   "revision_id": 679159,
+   "source_sha256": "465d73e00468a2158dda59af61c98e275a44ddddd9c12b1e1f0ca9b6e45b03db",
+   "cache_file": "0111624_seekers_of_adoulin_mission_4_5_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 312,
+   "dat_name": "Just the Thing",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "ki_name_quoted"
+  ],
+  "notes": "A one-bullet cutscene mission, and the page is complete rather than truncated: I checked the cached wikitext and the article is the Mission Header, one Walkthrough bullet, its sub-bullet and the category line. Nothing was cut in rendering and there is no After-the-walkthrough section.\n\nSTART. The header's Start is empty, so the giver comes from the walkthrough: Andreine. That AGREES with chronicle_snpc 'andreine' -- resolve.lua folds the wiki spelling to exactly the key 'andreine' and returns no ambiguous flag -- so giver_of preferring my ladder start moves nothing. start.zone is Celennia Memorial Library (zone 284), which is where the walkthrough puts her; that is a real zone of its own, not a district of Eastern Adoulin, so it cannot contradict chronicle on era. No grid: the page gives none for her and I will not invent one.\n\nLADDER. One rung. 'Enter Celennia Memorial Library in Eastern Adoulin and speak to Andreine' is a single action -- the library is the step's zone and the entrance is in Eastern Adoulin, which is route information and lives in the note. A separate travel rung to the zone the talk rung already names would be an extra position the client can never report the player through, which is noise on a line that sends only a current-mission pointer.\n\nEVIDENCE, and the trap in it. The key item's real name INCLUDES its own double quotes -- the wikitext links [[\"Suffering Sacchariferous\"]] -- and this is the AUTHORING.md \"Watercrafting\" case exactly. Probed both ways through resolve.lua: Suffering Sacchariferous bare returns no id at all, \"Suffering Sacchariferous\" with the quotes returns ki 2598. It is written here with the quotes, so the two literal quote characters in the name are deliberate and must not be tidied away.\n\nThe KI qualifies as evidence on its own step and not as a reward: the header's Reward field is empty, and the sub-bullet grants the item AT this conversation. It is spent by the NEXT mission (Next=Sugarcoated Salvation), which by the corpus rule must record it in `items` and never in `evidence` -- the same shape as ToAU 1 granting the supplies package that ToAU 2 spends. It sits on the only rung, so holding it reads as 'this mission is done', which is the honest reading and is worth having: adoulin is a linear line with no completed bitfield, so this key item is the only thing the client will ever say about this mission.\n\nRepeatable is left null, not false. The header's Repeatable field is empty -- the page did not say -- and false would be a claim the page does not make. Downstream the two behave identically (nil and false both draw nothing on a completed mission), so null costs nothing and keeps the tri-state honest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Anagnorisis",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Andreine",
+   "zone": "Celennia Memorial Library",
+   "grid": null,
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Andreine"
+    },
+    "zone": "Celennia Memorial Library",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "\"Suffering Sacchariferous\"",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the library is entered from Eastern Adoulin; the entrance is route information, not a rung of its own. The evidence name's double quotes are part of the key item's name."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 5-1",
+   "page_id": 112610,
+   "revision_id": 679328,
+   "source_sha256": "0fa142fd2371a978dc71b873a840b580f2307805a7958d518fd108a218551aa5",
+   "cache_file": "0112610_seekers_of_adoulin_mission_5_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 326,
+   "dat_name": "Arboreal Rumors",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "START. The header's Start is empty, so the giver is recovered from the walkthrough: Ploh Trishbahk at the Castle Adoulin gates, Eastern Adoulin (K-9). That AGREES with chronicle_snpc 'ploh trishbahk' -- the wiki spelling folds to that exact key -- so nothing moves. 'Castle Adoulin gates' is bold emphasis on the page, not a wikilink and not a zone; the zone is Eastern Adoulin (257) and the grid is the page's own (K-9).\n\nLADDER. One rung from two bullets. Bullet 2 -- select 'I just want to see Arciela.' -- is a dialogue menu inside the conversation bullet 1 already sends you to, not a second place to stand and not a second entity to target. Splitting it would wedge an unmarkable rung between two on the same NPC, which the contract says not to do, and consecutive rungs on one NPC are one marker in any case. Both bullet numbers are recorded on the rung and the choice text is in the note so the split stays auditable.\n\nEVIDENCE. Hastily scribbled note resolves to ki 2621 and is granted AT this conversation, by the sub-bullet under bullet 2. The header's Reward field is empty, so it is not a reward proving the mission is over by another route -- it is the one observable thing this mission produces. The next mission (Next=Arciela's Missive) is what spends it, and must therefore carry it in `items`, never in `evidence`.\n\nI checked the cached wikitext: the page is the header, two walkthrough bullets, one sub-bullet and the category line. There is no After-the-walkthrough section and nothing was lost in rendering.\n\nRepeatable is null rather than false -- the header's field is empty, so the page did not say, and false would be inventing a negative. Fame, level and jobs have no fields at all on a Mission Header, hence the explicit nulls and the empty list.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Royal Blessings",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": "K-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Hastily scribbled note",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he stands at the Castle Adoulin gates; during the conversation select \"I just want to see Arciela.\" to continue (bullet 2, a dialogue menu rather than a second rung)"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 5-3-1",
+   "page_id": 112625,
+   "revision_id": 687930,
+   "source_sha256": "d8ebfe1d1ad6312ae8eb1999070a72f9a67d6617572dec2cb493deb247764c44",
+   "cache_file": "0112625_seekers_of_adoulin_mission_5_3_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 344,
+   "dat_name": "The Seventh Guardian",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "walkthrough_incomplete"
+  ],
+  "notes": "START. Header Start is empty; the walkthrough names Yeggah Dolashi in Rala Waterways (M-6). That AGREES with chronicle_snpc 'yeggah dolashi' -- the page's spelling folds to exactly that key -- so the builder preferring my start changes nothing.\n\nA CROSS-ROW OBSERVATION, not a change I made: chronicle's row for adoulin mission 148 (Seekers of Adoulin Mission 2-4-1, The Watergarden Coliseum) carries 'yeggha dolashi', with the h and the a transposed relative to this row's 'yeggah dolashi' and relative to the wiki's spelling on both pages. resolve.lua folds any string to a key without checking it exists, so BOTH spellings come back looking resolved and only one of them can ever match the live NPC. That row is not in my lane and I have touched nothing outside this file, but it is worth a human's eye.\n\nLADDER. One rung: talk to Yeggah Dolashi for a cutscene. The sub-bullet -- Eastern Adoulin (F-7) is the most convenient entrance, near Waypoint #1, #4 or Home Point #1 -- is advice about travelling somewhere faster, which the contract lists explicitly as not a step; it is kept in the rung's note because it is genuinely useful and costs nothing there.\n\nWHY MEDIUM. The header's Description sends the player to the Watergarden Coliseum to sever a blood sigil, and the walkthrough never goes there and never severs anything -- a header field that goes unused for the whole walkthrough is the contract's own stated smell for a truncated page. The benign reading is that Yeggah Dolashi IS the coliseum's entrance NPC in Rala Waterways (the same NPC chronicle records as the giver of 2-4-1, The Watergarden Coliseum), so the cutscene and the coliseum are the same errand; the other reading is that a battlefield rung is missing. I cannot tell from this page which it is, so the confidence says so. Either way the marker is unaffected: Yeggah Dolashi at Rala Waterways (M-6) is where the player must go first under both readings, and a missing later rung costs stepping, never a wrong destination.\n\nEVIDENCE: none, and that is correct rather than a gap. The page grants no key item and no item; the Reward field is empty; a cutscene, a zone visited and a conversation are all unobservable. A real rung with null evidence is the expected shape here and I did not reach for something to fill it.\n\nRepeatable is null rather than false: the header field is empty, so the page did not say.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Teodor's Summons",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Yeggah Dolashi",
+   "zone": "Rala Waterways",
+   "grid": "M-6",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yeggah Dolashi"
+    },
+    "zone": "Rala Waterways",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Eastern Adoulin (F-7) entrance is the most convenient access, near Waypoint #1, #4 or Home Point #1 -- route advice from the page's sub-bullet, not a rung"
+   }
+  ]
+ }
+]

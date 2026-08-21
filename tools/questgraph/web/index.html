@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>questgraph</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+  <a class="brand" href="#">questgraph</a>
+  <nav class="crumbs" id="crumbs"></nav>
+  <span class="grow"></span>
+  <button class="link" data-go="play">from play</button>
+  <button class="link" data-go="edits">corrections</button>
+  <input id="search" type="text" placeholder="quest, NPC, or quest/area/id  ( / )" autocomplete="off">
+</header>
+
+<main>
+  <div class="wrap"><div id="results" class="results" style="display:none"></div></div>
+
+  <section id="v-areas" class="view on"><div class="wrap" id="areas-body"></div></section>
+
+  <section id="v-area" class="view"><div class="wide" id="area-body"></div></section>
+
+  <!-- post-commit lives OUTSIDE #quest-body on purpose: quest.js's draw()
+       clears that host on every re-render, which is what silently destroyed
+       the "rebuild so the game sees it" prompt. -->
+  <section id="v-quest" class="view">
+    <div class="wrap" id="post-commit"></div>
+    <div id="quest-body"></div>
+  </section>
+
+  <section id="v-play" class="view"><div class="wrap">
+    <p class="lede">The problem is found in game, not here. Paste a
+      <code>//qm why</code> block, or read <code>questmarks.log</code> &mdash;
+      which appends across sessions and is stamped with the addon version at
+      each boot.</p>
+    <textarea id="play-text" rows="6"
+      placeholder="[quest/jeuno #111] Unlocking a Myth (Bard)&#10;  state: available   marker: grey ! blocked&#10;  ladder: step 1 of 3 (not_started)"></textarea>
+    <div class="chips" style="margin-top:8px">
+      <button class="act primary" id="play-parse">read this</button>
+      <button class="act" id="play-log">read questmarks.log</button>
+    </div>
+    <div id="play-body" style="margin-top:14px"></div>
+  </div></section>
+
+  <section id="v-edits" class="view"><div class="wrap" id="edits-body"></div></section>
+</main>
+
+<script src="/static/model.js"></script>
+<script src="/static/pick.js"></script>
+<script src="/static/quest.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

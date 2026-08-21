@@ -1,0 +1,1681 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Save My Son",
+   "page_id": 26800,
+   "revision_id": 729186,
+   "source_sha256": "0ef92a36a5791f4dfe0deae30b42d43aae7be131b12214165436c3e21f5e82cc",
+   "cache_file": "0026800_save_my_son"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 5,
+   "dat_name": "Save My Son",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "time_gated",
+   "no_evidence"
+  ],
+  "notes": "The header names Dietmund as the giver but the walkthrough never has you speak to him: both the opening and the closing interaction are with the Door: Merchant's House on the second floor of Lower Jeuno (G-11), and 'Door:Name' is a real markable entity the normaliser already folds to the client's spacing. Start is therefore moved to the door with the header string kept in raw -- a marker MOVE, not a removal, the same call the pilot made for Carbuncle Debacle. Shalott is the page's own '(Optional)' and only buys a cutscene. Bullet 3 is gated on game time (21:30 to 4:00), which nothing in the packets reports, and although the Description talks about bringing back the flower's roots the walkthrough never names a key item for them, so this quest carries NO evidence anywhere and the ladder is four unobservable clicks resting on the session latch. Inventing a roots key item to fill the gap is exactly the guessing this rebuild exists to avoid. The Kraken sub-bullet is a warning about a level 37-38 aggressor above the flowers, and the 'Looks like nobody's home' sub-bullet under 4 is post-completion flavour; neither is a step.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Chocobo's Wounds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Door: Merchant's House",
+   "zone": "Lower Jeuno",
+   "grid": "G-11",
+   "raw": "Dietmund, Lower Jeuno (G-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Merchant's House"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second floor, above the chocobo stables by Home Point #1; agree to help. Dietmund is behind the door, not standing in the zone."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shalott"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page's own '(Optional)'; outside the Chocobo Stables next to Mapitoto, cutscene only"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Night Flowers"
+    },
+    "zone": "Qufim Island",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "down the ramp, and only between 21:30 and 4:00 game time -- the addon cannot see the clock. A Kraken (37-38) may be sitting above the flowers."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Door: Merchant's House"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same door; the cutscene and the rewards follow. There is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Faded Promises",
+   "page_id": 34091,
+   "revision_id": 683099,
+   "source_sha256": "f1010a45ae85091a92836b23be32ecf2eda58dbae4d3fd16e135df5ae9dc10ca",
+   "cache_file": "0034091_faded_promises"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 73,
+   "dat_name": "Faded Promises",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate"
+  ],
+  "notes": "'Quest Reqs: Ninja Job 20+' and 'Level: 20' are the same requirement written twice, so this is level 20 AND jobs ['NIN'] -- the artifact shape, not a level gate restated for any job. Bullet 3's 'open a Plb. Chest Key Treasure Chest' is a mangled wiki link, not an entity called that: the item is the Plb. Chest Key (which resolves under its long name Palborough Chest Key too) and the thing you open is a Treasure Chest in Palborough Mines, so it is one trade step with the key as its requirement and the Diary of Mukunda as its evidence. The page gives no grid for the chest and none is invented. The Diary is then carried into bullet 4 -- the Description says outright to take it to Kagetora -- so it is step 4's requirement as well as step 3's evidence, which is legal because a requirement is not an observation. Ayame is bullets 2 and 5 at the same (K-7); that is a genuine return trip the page insists on, two rungs on one marker.",
+  "gates": {
+   "fame": {
+    "region": "Norg",
+    "level": 4,
+    "raw": "Norg / 4"
+   },
+   "prev": [
+    {
+     "title": "Ayame and Kaede",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 20,
+   "jobs": [
+    "NIN"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Romualdo",
+   "zone": "Metalworks",
+   "grid": "K-9",
+   "raw": "Romualdo - Metalworks (K-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Romualdo"
+    },
+    "zone": "Metalworks",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "main job Ninja, level 20 or above; the southern Cannonry"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame"
+    },
+    "zone": "Metalworks",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the other Cannonry"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Palborough Mines",
+    "grid": null,
+    "items": [
+     {
+      "name": "Plb. Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Diary of Mukunda",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page names no grid for the chest. 'Plb. Chest Key Treasure Chest' is a run-together wiki link: the key opens the chest."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kagetora"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Diary of Mukunda",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "of the Tenshodo; the Description is what says the Diary goes to him"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame"
+    },
+    "zone": "Metalworks",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Alois"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the conference room of the President's Office"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Savory Salvation",
+   "page_id": 56717,
+   "revision_id": 645220,
+   "source_sha256": "ff70938376483a2873bfb2258ce0c5111f79f032a0ba1e439cb44190273efb42",
+   "cache_file": "0056717_savory_salvation"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 23,
+   "dat_name": "Savory Salvation",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Bullets 2 and 3 are one step: 'travel to the large tree at (G-7)' is how you reach the Gnarled Root, not a separate thing you do, and the Conflux mentions are convenience notes. Bullet 4's Fragmented Nutshell is given no grid of its own -- it is 'up top, on the slope by the tree' -- so it takes the tree's (G-7) with that stated in the note rather than left blank, since the two clicks are metres apart. Both key items are unique and resolve, so this short ladder is observable end to end: the fertilizer draws the root, the tree nut draws Piketo-Puketo. The Item Reqs line confirms the nut is what the hand-in wants. 'Zoning is required to repeat this quest' is a cooldown, not a step. Fame 'atah' is an Abyssea zone code rather than one of the nine regions, so it gates nothing and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "atah / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Piketo-Puketo (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "F-9",
+   "raw": "Piketo-Puketo (A) (F-9), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Piketo-Puketo (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vial of flower-wower fertilizer",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Western Encampment, by Veridical Conflux #03"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gnarled Root"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Vial of flower-wower fertilizer",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the large tree at (G-7), by Veridical Conflux #04; the root is below, in the pathway. Clicking it injects the fertilizer."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fragmented Nutshell"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tahrongi tree nut",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "up top, on the slope by the tree. The page gives it no grid of its own; (G-7) is the tree's."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Piketo-Puketo (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Tahrongi tree nut",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "zoning is required before it can be repeated"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Beauty and the Galka",
+   "page_id": 25835,
+   "revision_id": 734919,
+   "source_sha256": "086597f7662e9f6c71b9547b8abd1707631a54d2ef9d2c351345cd81eddd50a8",
+   "cache_file": "0025835_beauty_and_the_galka"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 1,
+   "dat_name": "Beauty and the Galka",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Three bullets, three steps, and the first two are the same Talib at the same (F-6) -- one marker, two rungs, with the Palborough Mines logs separating them. The Parraggoh sub-bullet under bullet 1 is a recovery path for players who declined the cutscene, not a step; Parraggoh is already this quest's real ending in bullet 3 and marking him twice would be wrong. 'You may need to speak with him twice' and 'In the House on the bottom level' are dialogue and location noise. The 'After the walkthrough: Notes' section says the quest pays Tenshodo fame rather than Bastok fame -- that is what you EARN, not what gates you, so the header's Bastok / 1 stands unchanged and the observation is recorded here instead of being pushed into the gate.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Talib",
+   "zone": "Port Bastok",
+   "grid": "F-6",
+   "raw": "Talib - Port Bastok (F-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Talib"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "accept after the cutscene. If you declined, Parraggoh in Bastok Mines (H-5), lower level, can restart it."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Talib"
+    },
+    "zone": "Port Bastok",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Zinc Ore",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Palborough Mines logs",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Description says Gustaberg monsters drop the ore"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Parraggoh"
+    },
+    "zone": "Bastok Mines",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Palborough Mines logs",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the House on the bottom level; you may have to speak to him twice"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Altana's Sorrow",
+   "page_id": 33994,
+   "revision_id": 755537,
+   "source_sha256": "aa328dc6c8eb9a387ef173c98a1fe13655a737958e5f5a4454ccd9641847e325",
+   "cache_file": "0033994_altana_s_sorrow"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 49,
+   "dat_name": "Altana's Sorrow",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table"
+  ],
+  "notes": "The entire walkthrough sits inside a wikitable and renders as one [TABLE] block with no [n] numbering at all, so its five asterisked items are numbered 1-5 in reading order and source_bullets refers to THOSE, not to anything the file shows. Items 2 and 3 are one step: travelling to Garlaige Citadel to locate the ??? at (H-8) and touching it are the same act, and the '**' line about a room full of bats is a Sneak warning rather than an instruction. Both key items are unique and resolve, so the ladder has two clean observation points -- the Bucket of divine paint in the citadel and the Letter from Virnage back in Bastok -- and the Letter is then Eperdur's requirement. Virnage is items 1 and 4 at the same (I-5), a real return trip and not a duplicated bullet. The ??? keeps its rung but can never carry a marker.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 4,
+    "raw": "Bastok / 4"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Virnage",
+   "zone": "Bastok Mines",
+   "grid": "I-5",
+   "raw": "Virnage - Bastok Mines (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Virnage"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Bat's Lair Inn, second level of Ore Street"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Bucket of divine paint",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "first floor, Map 1, in a room full of bats -- bring Sneak if you are at aggro level"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Virnage"
+    },
+    "zone": "Bastok Mines",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Bucket of divine paint",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Virnage",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Eperdur"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [
+     {
+      "name": "Letter from Virnage",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cathedral"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Blade of Death",
+   "page_id": 26809,
+   "revision_id": 770029,
+   "source_sha256": "14662a78f8848eaae43ec39131f8c8094f90934493d4820d30d772203e482c97",
+   "cache_file": "0026809_blade_of_death"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 47,
+   "dat_name": "Blade of Death",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "count_unobservable"
+  ],
+  "notes": "Bullet 2 IS the quest and it is entirely invisible: 100 kills with Chaosbringer, weapon-skill kills excluded, with no counter in any packet and no zone or monster named anywhere. It is recorded as one honest fight step with a null zone, no mobs and no evidence, and the quest is demoted to medium for it rather than pretending the ladder can advance. The sub-bullet about taking the boat from Palborough Mines to Zeruhn Mines for a replacement blade from Zeid is a recovery path that RESETS the blade to 200 kills; it is a warning, not a step, and Zeid is not marked. The Letter from Zeid is the only observable thing in the quest and belongs to step 1. Deathbringer is the header's Reward, so it proves the quest is over rather than that bullet 3 is done, and cannot be evidence. The ??? at Gusgen Mines (J-7) on Map 1 is the same one Bastok Mission 3-2 uses to spawn Blind Moby, which is why the page says so; it keeps its rung but can never carry a marker.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [
+    {
+     "title": "Blade of Darkness",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah, Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Zeid",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Chaosbringer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "100 more kills with the blade, anywhere; weapon-skill kills do not count, as in Blade of Darkness. Nothing observable counts them. Losing and replacing the blade resets it to 200."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gusgen Mines",
+    "grid": "J-7",
+    "items": [
+     {
+      "name": "Chaosbringer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Map 1; the same ??? Bastok Mission 3-2 uses to spawn Blind Moby. There is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Messenger from Beyond",
+   "page_id": 485,
+   "revision_id": 730755,
+   "source_sha256": "a11d07900592f10d645a6312d2f1a2d00046932f85cb452d7e4a449e218c3b8d",
+   "cache_file": "0000485_messenger_from_beyond"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 87,
+   "dat_name": "Messenger from Beyond",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "time_gated"
+  ],
+  "notes": "'Level: 40+ White Mage' is BOTH gates -- level 40 and jobs ['WHM'] -- and 'Repeatable: af' is the artifact-armour category leaking into that field, which means false, not true. Bullets 2 and 3 are one step: (B-8) Secret Beach is simply where the ??? is, and heading there is not separately doable. Bullet 4 stays its own step because clicking the ??? and killing what it spawns are different acts and only the kill yields the Pass -- so Marchelute appears twice, once with role spawn and once with role drop, which is what the two glyphs are for. The ??? only exists between 18:00 and 5:00 game time and nothing observable reports the clock. The Tavnazia Pass is an ordinary item, so it is real evidence on the kill and Narcheral's requirement on the hand-in. The Survival-Guide-to-Gustav-Tunnel line and 'you can do the rest on any job' are routing and reassurance, not steps.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": 40,
+   "jobs": [
+    "WHM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Narcheral",
+   "zone": "Northern San d'Oria",
+   "grid": "M-6",
+   "raw": "Narcheral, Northern San d'Oria (M-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Narcheral"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as White Mage, upstairs in the cathedral; the rest can be done on any job"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "B-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Marchelute",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Secret Beach, near the Song Runes, and only between 18:00 and 5:00 game time. The Survival Guide to Gustav Tunnel puts you next to the spawn on the way out."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "B-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tavnazia Pass",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Marchelute",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the dark stalker of the Description"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Narcheral"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [
+     {
+      "name": "Tavnazia Pass",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Memories: Old Bean",
+   "page_id": 58941,
+   "revision_id": 725237,
+   "source_sha256": "7eb153fe7be0f71c72ae68702c0a27006fd76ac01049e630332f4ae2b7eaf6fc",
+   "cache_file": "0058941_her_memories_old_bean"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 65,
+   "dat_name": "Her Memories: Old Bean",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "ki_name_not_unique"
+  ],
+  "notes": "Three bullets, three steps, a clean there-and-back delivery. The Tiny memory fragment named in bullet 3 is also the header's Reward, so it proves the quest is over rather than that the last step is done and cannot be evidence -- and it would not have worked anyway: the resolver rejects the name outright because more than one key item is called 'Tiny memory fragment', and a guessed id is a silently wrong marker where a missing one is honest. Thierride's bean creation IS unique and does resolve, so the ladder keeps one real observation point and the closing step falls back on the session latch. The Amaura sub-bullet warns she has several cutscenes and that talking on starts a DIFFERENT quest, Her Memories: Of Malign Maladies; nothing observable distinguishes the right conversation, so it stays a note. Fame 'Wings of the Goddess' is not one of the nine regions and gates nothing, so only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Her Memories: Homecoming Queen",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Thierride",
+   "zone": "Port San d'Oria",
+   "grid": "G-7",
+   "raw": "Thierride, Port San d'Oria (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Thierride's bean creation",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Rusty Anchor Pub, by Home Point #1"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Thierride's bean creation",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Home Point #4. She gives several cutscenes; the one for this quest is where you give her the dish. The Lilisette one starts Her Memories: Of Malign Maladies instead."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Tiny memory fragment he hands over is the quest Reward, and its name is shared by other key items, so it is deliberately not used as evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rock Racketeer",
+   "page_id": 237,
+   "revision_id": 772284,
+   "source_sha256": "b6ae6259e0c7d0d8ee5e7ca9d4ccad663cc9d30600f4a495c25d56cf0b992b2e",
+   "cache_file": "0000237_rock_racketeer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 26,
+   "dat_name": "Rock Racketeer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "duplicate_object_name"
+  ],
+  "notes": "Seven bullets, one genuine optional, and two stones that are easy to confuse. Bullet 2's 'sell the Stone to her' happens through Ardea's dialogue rather than the trade window, but holding the Sharp gray stone is exactly what makes you ready for it, so it is recorded as a trade with the key item as its requirement. The '(Optional) Speak to Ardea again to attempt to get the stone back' sub-bullet under 4 is a real action the page offers, not commentary, so it is kept as optional=true -- it costs no ladder position and would otherwise vanish. Bullets 5 and 6 are one step: pickaxes are the requirement for mining, not an errand of their own, and 'obtain some Pickaxes' cannot express a count, so it is recorded as one with a note that mining takes several. There are TWO Mythril Seams at (I-9) on the third floor and only the WESTERN one gives the Sharp Stone; both carry the same name so both will draw, which the note has to sort out. The two evidence points do not collide: 'Sharp gray stone' is key item 122 and 'Sharp Stone' is item 598, different kinds and different ids, and the key item is consumed at step 2 well before the item appears.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Mihgo's Amigo",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nanaa Mihgo",
+   "zone": "Windurst Woods",
+   "grid": "J-3",
+   "raw": "Nanaa Mihgo, Windurst Woods (J-3)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sharp gray stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ardea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Sharp gray stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Home Point #4; she buys it for 10 gil through dialogue rather than the trade window. The Goldsmiths' Guild valuation of the Description is what this is."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nanaa Mihgo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "J-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Varun"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ardea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page's own '(Optional)': an attempt to buy the stone back. It changes nothing required and is a long way from the rest of the quest."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Mythril Seam"
+    },
+    "zone": "Palborough Mines",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sharp Stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "third floor. There are two seams at (I-9) and only the WESTERN one yields the Sharp Stone; both share the name, so both will draw. Bring several pickaxes -- one is the per-attempt cost, not the total."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Varun"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Sharp Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Walking Wounded",
+   "page_id": 56708,
+   "revision_id": 764212,
+   "source_sha256": "6425570964d0f2efd4b4af7f4abe0eac9a600bc2fb308d5df96f4bf2cfc0b8b2",
+   "cache_file": "0056708_the_walking_wounded"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 14,
+   "dat_name": "The Walking Wounded",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "no_evidence"
+  ],
+  "notes": "Three bullets, and the middle one is five trades to NPCs the page names only as 'Resistance Fighter'. That is a real name and it folds to a key, so every NPC carrying it draws at once -- which is what you want here, since the five are done in any order -- but it is a SHARED name and not five distinguishable targets, so it is ONE step carrying five Soothing Potions rather than five steps a player could never tell apart or a group whose members are all the same row. Nothing in this quest is observable: no key item is granted at any point and the reward is Cruor or a random Evolith, so the whole ladder rests on the session latch and the potions are its only readiness signal. The header writes the giver 'Rashid' and the walkthrough 'Rashid (A)'; both fold to the same key and the wiki form is used, as the guide says for Abyssea NPCs. 'Zoning is not required to repeat' and the line about re-speaking to Rashid to reinitiate the log are repeat mechanics, not steps. Fame 'akon' is an Abyssea zone code rather than one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "akon / 4"
+   },
+   "prev": [
+    {
+     "title": "Full-of-Himself Alchemist",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Rashid (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "F-10",
+   "raw": "Rashid (F-10), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rashid (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "northwest of Veridical Conflux #02. Repeating means speaking to him again to put it back in your log."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Fighter"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soothing Potion",
+      "count": 5,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "five of them, all near Rashid, one potion each and in any order. The page names them only 'Resistance Fighter', so all NPCs of that name draw together -- that is the whole step, not five of them. The page gives no grid."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rashid (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zoning is not required to repeat"
+   }
+  ]
+ }
+]

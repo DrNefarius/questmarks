@@ -1,0 +1,551 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Soul of the Matter",
+   "page_id": 56711,
+   "revision_id": 654865,
+   "source_sha256": "e816e71357d299261e106b11febe450d4a0039145ac23ae390f0994dce84df16",
+   "cache_file": "0067217_the_soul_of_the_matter"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 17,
+   "dat_name": "The Soul of the Matter",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "repeating_loop",
+   "time_gated"
+  ],
+  "notes": "Bullet 2 is a real step, not commentary: the Lined Boxes beside Cleades (A) are where BOTH Item Reqs come from, so this quest hands you its own requirements rather than expecting you to arrive holding them. Their square is not stated outright -- the page says only 'Next to Cleades (A)', and Cleades is at (G-5) in the header and in bullet 1 -- so (G-5) is read off this page, not imported. Step 2 carries the Soulgauger SGR-1 and a Gauger Plate as evidence because both are obtained there and holding both is exactly the state 'gear in hand, go find an NM'; that also reads correctly on a repeat, where the player keeps the gauger and only needs to re-buy plates (5 Cruor each, up to 12 at once). Bullet 3's target is deliberately open -- any NM, and the sub-bullet restricts that to Abyssea - Konschtat. Guimauve and Pavan are offered as 'good NM suggestions' only, so they are NOT recorded as mobs: promoting a suggestion to a requirement would draw a marker on a monster the quest never demands. Target is {none,null}. The ~5 yalm distance, the frontal angle and 'you do not need to lower the mob's HP' are technique, not steps. Bullet 4 is the return to the giver and the page states it in words, so it is recorded; what you trade is called only 'your captures' and is never named as an item, so items stays empty rather than guessing that a used Gauger Plate is the traded object. The rejected-trade retry is the page's own loop. The closing line is a cooldown -- once per Vana'diel day -- not a step, and the addon cannot see the Vana'diel clock. Fame code 'akon' is an Abyssea zone code, not one of the nine regions, so region is null and raw is kept verbatim. | CORRECTED provenance: this page is reached through the redirect 'The Soul of The Matter'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: the page calls what you hand over only 'your captures' and never names it as an item, so items is empty and items_partial is true.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "akon / 1"
+   },
+   "prev": [
+    {
+     "title": "Rose on the Heath",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Cleades (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "G-5",
+   "raw": "Cleades (A) (G-5), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cleades (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "take Veridical Conflux #06 and head southeast to reach him"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Lined Boxes"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Soulgauger SGR-1",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Gauger Plate",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page places them only 'Next to Cleades (A)', who is at (G-5); the gauger is free, plates are 5 Cruor each and up to 12 may be bought at once. Both are the header's Item Reqs, obtained here rather than pre-held."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soulgauger SGR-1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gauger Plate",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "equip both, then capture ANY NM -- the page names no required target, and only NMs in Abyssea - Konschtat can be captured. Guimauve and Pavan are named as suggestions ('close by and do not aggro'), not requirements, so they are deliberately not in mobs. No need to lower the mob's HP; distance (~5 yalms) and frontal angle set the appraisal. Nothing here is observable, so no evidence."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Cleades (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "He appraises at one of four levels; a rejected trade can be repeated with another capture until one is accepted."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "For Love of a Daughter",
+   "page_id": 56720,
+   "revision_id": 689625,
+   "source_sha256": "417f2a9fbd52a6992aafe5cc957e4d13f0d120b7ddbb42260b7382f0f0a1253f",
+   "cache_file": "0067218_for_love_of_a_daughter"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 26,
+   "dat_name": "For Love of a Daughter",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "repeat_cap_unmodelled"
+  ],
+  "notes": "Three bullets, three steps, and the return to the giver is on the page in words ('Return to Baha Mannohl (A) to complete the quest'), so it is recorded rather than assumed. Step 2's zone is Abyssea - Tahrongi: Veridical Conflux #04 is a within-zone warp and the page names no second zone. The Tahrongi Cacti is bolded on the page as a 'targetable' location, which makes it an object rather than scenery, and (F-6) is the page's own square. Its 20:00-4:00 game-time window is real and invisible to the addon, so the step is recorded ungated with the window here. 'Walk into the Caoineag' describes monsters you pass through on the way, not something the quest asks you to kill or spawn, so Caoineag is not in mobs. The Cup of Tahrongi cactus water is the key item granted at bullet 2 and is step 2's evidence; it is also the header's Item Reqs entry, which is that field doubling as 'the key item this quest gives you'. The Viridian abyssite of lenity is in Reward and is granted only on a SIXTH attempt to BEGIN the quest -- the opposite of mid-quest progress -- so it is not evidence anywhere. Repeatable is 'Yes' in the header, and the walkthrough caps it at five completions; that cap has no schema field, so repeatable stays true and the cap is recorded here. The closing 'Zoning is required to repeat this quest' is a repeat mechanic, not a step. | CORRECTED provenance: this page is reached through the redirect 'For Love of A Daughter'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: the addon cannot see the clock, so the window is unmodelled.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "atah / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Baha Mannohl (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "H-4",
+   "raw": "Baha Mannohl (A) (H-4), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baha Mannohl (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he stands by Veridical Conflux #05"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Tahrongi Cacti"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cup of Tahrongi cactus water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Reached by teleporting to Veridical Conflux #04 and walking in through the Caoineag; same zone, the page names no other. Only clickable between 20:00 and 4:00 game time."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Baha Mannohl (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-4",
+    "items": [
+     {
+      "name": "Cup of Tahrongi cactus water",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "back to where bullet 1 put him, (H-4). A sixth attempt to begin the quest instead yields the Viridian abyssite of lenity and ends repeatability -- an outcome, not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Looking for Lookouts",
+   "page_id": 58980,
+   "revision_id": 767153,
+   "source_sha256": "d2d2be2115a8a65c45fe3a2b93639a481a14878585044ae408af2cc1c3de79b5",
+   "cache_file": "0067219_looking_for_lookouts"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 40,
+   "dat_name": "Looking for Lookouts",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "generic_npc_name",
+   "bullet_split",
+   "consumed_key_item",
+   "items_inferred"
+  ],
+  "notes": "Bullet 2 is not a step -- 'You will receive x5 [KI] Parradamo supply pack' is the OUTCOME of speaking to Colti (A) -- so it is folded into step 1 as that step's evidence, cited [1,2]. count is 1 rather than 5 deliberately: the resolver reports the pack as one key item id per unit carried, and the packs go out one per fighter, so holding any one of them is what proves the packs were received and the delivery run is under way; demanding 5 would go false the moment the first is handed over. Bullet 3 is five separate deliveries in five separate squares, so it is split into five steps sharing group 'resistance_fighters' -- the page gives no order, and a strict ladder would mark one and hide the other four. All five are named 'Resistance Fighter' on the page; the race words (Hume Female, Tarutaru, Mithra, Elvaan male, Galka) say WHICH one, they are not part of the name, so they live in each step's note. Two of them really do share (J-9) -- one at the southern base, one partway up the cliff -- which is the page's own reading and not a conflict. The supply pack is listed as items on each delivery step: the page never says outright that the pack is handed over, but it gives exactly five for exactly five NPCs and the header describes the quest as delivering linkpearls and rations, which is how a player reads it -- flagged items_inferred so a human can check. Parradamo Tor is a landmark inside Abyssea - Attohwa, the only zone the page names, so every step sits in that zone. Bullet 4 is the return to the giver and the page states it, so it is recorded. Fame code 'aatt' is an Abyssea zone code, not one of the nine regions, so region is null. The closing 'Zoning is required in order to repeat' is a repeat mechanic, not a step, and the reward seals are loot with no bearing on the ladder. | CORRECTED provenance: this page is reached through the redirect 'Looking For Lookouts'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aatt / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Colti (A)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "H-8",
+   "raw": "Colti (A) (H-8), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Colti (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Parradamo supply pack",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Veridical Conflux #08. Bullet 2 is this step's outcome: x5 [KI] Parradamo supply pack, one per fighter, so count 1 is what stays true across the deliveries."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Fighter"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Parradamo supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "resistance_fighters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Hume Female one, at the southern base of the Parradamo Tor"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Fighter"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Parradamo supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "resistance_fighters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Tarutaru one, partway up the southern base, wandering around the cliff -- the page puts him in the same square as the Hume Female"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Fighter"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Parradamo supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "resistance_fighters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Mithra one, almost at the top of the western face of the Parradamo Tor"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Fighter"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Parradamo supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "resistance_fighters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Elvaan male one, about halfway up the northern part of the eastern face"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Fighter"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Parradamo supply pack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "resistance_fighters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Galka one, at the eastern base of the Parradamo Tor"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Colti (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "back to Colti (A) at (H-8) for the reward; the packs are gone by now, so nothing is held"
+   }
+  ]
+ }
+]

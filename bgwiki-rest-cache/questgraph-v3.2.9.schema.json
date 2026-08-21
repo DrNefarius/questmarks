@@ -1,0 +1,1550 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/ffxi/questgraph-v2.schema.json",
+  "title": "Final Fantasy XI QuestGraph V2",
+  "description": "Evidence-backed, partially observable quest state graphs for a generic FFXI quest-marker addon.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "build",
+    "quests",
+    "stats"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "3.2.9"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "build": {
+      "$ref": "#/$defs/buildInfo"
+    },
+    "quests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/quest"
+      }
+    },
+    "stats": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unresolved"
+      ]
+    },
+    "sourceRef": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "buildInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator",
+        "generator_version",
+        "source_mode",
+        "source_status",
+        "limitations"
+      ],
+      "properties": {
+        "generator": {
+          "type": "string"
+        },
+        "generator_version": {
+          "type": "string"
+        },
+        "source_mode": {
+          "type": "string",
+          "enum": [
+            "bgwiki_mediawiki_api",
+            "bgwiki_core_rest_api",
+            "bgwiki_html",
+            "user_snapshot",
+            "mixed"
+          ]
+        },
+        "source_status": {
+          "type": "string",
+          "enum": [
+            "live",
+            "snapshot",
+            "blocked",
+            "partial"
+          ]
+        },
+        "source_revision_cutoff": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "source_manifest": {
+          "$ref": "#/$defs/sourceManifest"
+        }
+      }
+    },
+    "questSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "page_title",
+        "page_url",
+        "source_kind"
+      ],
+      "properties": {
+        "page_title": {
+          "type": "string"
+        },
+        "page_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "bgwiki_live",
+            "bgwiki_live_rest",
+            "bgwiki_snapshot",
+            "synthetic"
+          ]
+        },
+        "page_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "revision_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "revision_timestamp": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "snapshot_file": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "snapshot_generated": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "redirected": {
+          "type": "boolean"
+        },
+        "redirect_target": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_page_title": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "content_page_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "content_page_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "content_revision_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "content_revision_timestamp": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "entityRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity_type",
+        "surface_text",
+        "resolution_status"
+      ],
+      "properties": {
+        "entity_type": {
+          "type": "string",
+          "enum": [
+            "npc",
+            "object",
+            "monster",
+            "item",
+            "key_item",
+            "zone",
+            "job",
+            "spell",
+            "quest",
+            "weather",
+            "day",
+            "unknown",
+            "job_ability",
+            "weapon_skill",
+            "pet_command",
+            "monster_skill",
+            "monster_ability",
+            "status",
+            "buff",
+            "mount",
+            "title",
+            "generic_enemy",
+            "player"
+          ]
+        },
+        "surface_text": {
+          "type": "string"
+        },
+        "canonical_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "game_id": {
+          "type": [
+            "integer",
+            "string",
+            "null"
+          ]
+        },
+        "entity_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "zone_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "resolution_status": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "normalized",
+            "candidate",
+            "text_only",
+            "unresolved"
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "canonical_name",
+              "game_id",
+              "score"
+            ],
+            "properties": {
+              "canonical_name": {
+                "type": "string"
+              },
+              "game_id": {
+                "type": [
+                  "integer",
+                  "string"
+                ]
+              },
+              "score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "zone",
+        "precision"
+      ],
+      "properties": {
+        "zone": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/entityRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "grid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "world": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "x",
+                "y",
+                "z"
+              ],
+              "properties": {
+                "x": {
+                  "type": "number"
+                },
+                "y": {
+                  "type": "number"
+                },
+                "z": {
+                  "type": "number"
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "precision": {
+          "type": "string",
+          "enum": [
+            "world",
+            "grid",
+            "zone",
+            "text_only",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "observability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "supports_resync",
+        "auto_advance_safe"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "direct",
+            "event_observed",
+            "derived",
+            "manual",
+            "unobservable",
+            "unknown"
+          ]
+        },
+        "sensor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supports_resync": {
+          "type": "boolean"
+        },
+        "auto_advance_safe": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "condition_id",
+        "predicate",
+        "operator",
+        "phase",
+        "source_refs",
+        "confidence",
+        "observability"
+      ],
+      "properties": {
+        "condition_id": {
+          "type": "string"
+        },
+        "predicate": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string",
+          "enum": [
+            "eq",
+            "neq",
+            "gte",
+            "lte",
+            "gt",
+            "lt",
+            "contains",
+            "not_contains",
+            "exists",
+            "not_exists",
+            "in",
+            "not_in",
+            "custom"
+          ]
+        },
+        "value": {},
+        "phase": {
+          "type": "string",
+          "enum": [
+            "availability",
+            "acceptance",
+            "progress",
+            "turn_in",
+            "reset",
+            "informational"
+          ]
+        },
+        "negated": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "observability": {
+          "$ref": "#/$defs/observability"
+        }
+      }
+    },
+    "itemRequirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "entity",
+        "role",
+        "quantity"
+      ],
+      "properties": {
+        "entity": {
+          "$ref": "#/$defs/entityRef"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "possess",
+            "equip",
+            "trade",
+            "consume",
+            "obtain",
+            "use",
+            "reward",
+            "optional"
+          ]
+        },
+        "quantity": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "binding_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "marker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "marker_id",
+        "kind",
+        "target",
+        "location",
+        "display_policy",
+        "source_refs",
+        "confidence"
+      ],
+      "properties": {
+        "marker_id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "quest_start",
+            "talk",
+            "trade",
+            "examine",
+            "battle",
+            "collect",
+            "travel",
+            "use",
+            "choice",
+            "wait",
+            "turn_in",
+            "area",
+            "manual",
+            "unknown"
+          ]
+        },
+        "target": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/entityRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "location": {
+          "$ref": "#/$defs/location"
+        },
+        "display_policy": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "assisted",
+            "manual_only",
+            "disabled"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "annotation_id",
+        "kind",
+        "text",
+        "source_refs"
+      ],
+      "properties": {
+        "annotation_id": {
+          "type": "string"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "warning",
+            "optional",
+            "strategy",
+            "explanation",
+            "failure",
+            "reset",
+            "reference",
+            "table",
+            "reward",
+            "historical",
+            "unresolved"
+          ]
+        },
+        "text": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "objective_id",
+        "action",
+        "description",
+        "required",
+        "source_refs",
+        "confidence",
+        "observability",
+        "markers",
+        "conditions",
+        "items",
+        "annotations",
+        "semantic"
+      ],
+      "properties": {
+        "objective_id": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "talk",
+            "trade",
+            "examine",
+            "travel",
+            "obtain",
+            "battle",
+            "kill",
+            "use",
+            "equip",
+            "craft",
+            "wait",
+            "choice",
+            "escort",
+            "counter",
+            "cutscene",
+            "complete",
+            "manual",
+            "unknown"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "target": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/entityRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "location": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/location"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/itemRequirement"
+          }
+        },
+        "markers": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/marker"
+          }
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/annotation"
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "observability": {
+          "$ref": "#/$defs/observability"
+        },
+        "branch_key": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "semantic": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "parser_version",
+            "source_alignment",
+            "action_atoms",
+            "resolution_status",
+            "issues"
+          ],
+          "properties": {
+            "parser_version": {
+              "const": "3.2.9"
+            },
+            "source_alignment": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "status",
+                "score",
+                "html_text"
+              ],
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "exact",
+                    "substring",
+                    "fuzzy",
+                    "unresolved",
+                    "missing"
+                  ]
+                },
+                "score": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "html_text": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "resolution_status": {
+              "type": "string",
+              "enum": [
+                "resolved",
+                "partial",
+                "manual"
+              ]
+            },
+            "issues": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "action_atoms": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/actionAtom"
+              }
+            }
+          }
+        }
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state_id",
+        "state_type",
+        "label",
+        "objectives",
+        "terminal"
+      ],
+      "properties": {
+        "state_id": {
+          "type": "string"
+        },
+        "state_type": {
+          "type": "string",
+          "enum": [
+            "unavailable",
+            "available",
+            "active",
+            "turn_in_ready",
+            "completed",
+            "failed",
+            "unknown"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "objectives": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/objective"
+          }
+        },
+        "entry_conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
+        },
+        "terminal": {
+          "type": "boolean"
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transition_id",
+        "from_state",
+        "to_state",
+        "trigger",
+        "source_refs",
+        "confidence",
+        "observability"
+      ],
+      "properties": {
+        "transition_id": {
+          "type": "string"
+        },
+        "from_state": {
+          "type": "string"
+        },
+        "to_state": {
+          "type": "string"
+        },
+        "trigger": {
+          "type": "string",
+          "enum": [
+            "objective_complete",
+            "condition_true",
+            "manual_confirm",
+            "quest_log_state",
+            "reset",
+            "unknown"
+          ]
+        },
+        "objective_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "observability": {
+          "$ref": "#/$defs/observability"
+        }
+      }
+    },
+    "sourceNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node_id",
+        "section",
+        "node_type",
+        "text",
+        "classification",
+        "source_order"
+      ],
+      "properties": {
+        "node_id": {
+          "$ref": "#/$defs/sourceRef"
+        },
+        "section": {
+          "type": "string"
+        },
+        "node_type": {
+          "type": "string",
+          "enum": [
+            "infobox_field",
+            "ordered_item",
+            "unordered_item",
+            "paragraph",
+            "table",
+            "table_row",
+            "heading",
+            "note",
+            "synthetic"
+          ]
+        },
+        "parent_node_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "depth": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "text": {
+          "type": "string"
+        },
+        "classification": {
+          "type": "string",
+          "enum": [
+            "action",
+            "condition",
+            "warning",
+            "optional",
+            "strategy",
+            "explanation",
+            "failure",
+            "reset",
+            "reference",
+            "table",
+            "reward",
+            "historical",
+            "unresolved"
+          ]
+        },
+        "source_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "table": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "questQuality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "automation_tier",
+        "review_required",
+        "review_flags",
+        "unresolved_entity_count",
+        "unobservable_condition_count",
+        "source_coverage"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "human_approved",
+            "machine_compiled_high",
+            "machine_compiled_medium",
+            "manual_review_required",
+            "source_incomplete",
+            "disabled"
+          ]
+        },
+        "automation_tier": {
+          "type": "string",
+          "enum": [
+            "start_markers",
+            "assisted_progression",
+            "automatic_progression",
+            "manual_only",
+            "disabled"
+          ]
+        },
+        "review_required": {
+          "type": "boolean"
+        },
+        "review_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unresolved_entity_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unobservable_condition_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "quest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "quest_id",
+        "title",
+        "aliases",
+        "source",
+        "game_log",
+        "metadata",
+        "availability",
+        "graph",
+        "supplemental",
+        "source_nodes",
+        "quality"
+      ],
+      "properties": {
+        "quest_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._:-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source": {
+          "$ref": "#/$defs/questSource"
+        },
+        "game_log": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "area",
+            "source_quest_id"
+          ],
+          "properties": {
+            "area": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "source_quest_id": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "description",
+            "reward_text",
+            "fame",
+            "repeatable",
+            "uncompletable",
+            "previous_quests",
+            "next_quests",
+            "title_granted"
+          ],
+          "properties": {
+            "description": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "reward_text": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "fame": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "system",
+                "level_raw"
+              ],
+              "properties": {
+                "system": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "level_raw": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            },
+            "repeatable": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "uncompletable": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "previous_quests": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/entityRef"
+              }
+            },
+            "next_quests": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/entityRef"
+              }
+            },
+            "title_granted": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "availability": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "conditions",
+            "markers",
+            "acceptance_objective_id",
+            "observability"
+          ],
+          "properties": {
+            "conditions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/condition"
+              }
+            },
+            "markers": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/marker"
+              }
+            },
+            "acceptance_objective_id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "observability": {
+              "$ref": "#/$defs/observability"
+            }
+          }
+        },
+        "graph": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "initial_state_id",
+            "states",
+            "transitions"
+          ],
+          "properties": {
+            "initial_state_id": {
+              "type": "string"
+            },
+            "states": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/state"
+              }
+            },
+            "transitions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/transition"
+              }
+            }
+          }
+        },
+        "supplemental": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tables",
+            "notes",
+            "strategies",
+            "unclassified"
+          ],
+          "properties": {
+            "tables": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "notes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/annotation"
+              }
+            },
+            "strategies": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/annotation"
+              }
+            },
+            "unclassified": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/annotation"
+              }
+            }
+          }
+        },
+        "source_nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceNode"
+          }
+        },
+        "quality": {
+          "$ref": "#/$defs/questQuality"
+        }
+      }
+    },
+    "sourceManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category_stable",
+        "summary"
+      ],
+      "properties": {
+        "schema": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transport": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category_stable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "reported_total": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "discovered_unique_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "authoritative": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "complete",
+            "discovered_page_count",
+            "processed_page_count",
+            "failed_count"
+          ],
+          "properties": {
+            "complete": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "discovered_page_count": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "processed_page_count": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "failed_count": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "actionAtom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "atom_id",
+        "sequence",
+        "action",
+        "description",
+        "command_operands",
+        "world_target",
+        "trade_recipient",
+        "location",
+        "count",
+        "items",
+        "results",
+        "conditions",
+        "source_refs",
+        "confidence",
+        "observability",
+        "marker",
+        "issues"
+      ],
+      "properties": {
+        "atom_id": {
+          "type": "string"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "talk",
+            "trade",
+            "examine",
+            "kill",
+            "battle",
+            "travel",
+            "wait",
+            "choice",
+            "obtain",
+            "craft",
+            "escort",
+            "manual",
+            "unknown",
+            "use_ability",
+            "cast_spell",
+            "perform_weapon_skill",
+            "use_item",
+            "use_command",
+            "use_object",
+            "equip_item",
+            "return",
+            "perform",
+            "counter"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "command_operands": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          }
+        },
+        "world_target": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/entityRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "trade_recipient": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/entityRef"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "location": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/location"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/itemRequirement"
+          }
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entityRef"
+          }
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "observability": {
+          "$ref": "#/$defs/observability"
+        },
+        "marker": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/marker"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

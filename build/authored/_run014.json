@@ -1,0 +1,1322 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Blade of Darkness",
+   "page_id": 26168,
+   "revision_id": 773880,
+   "source_sha256": "856f223328bb6796831da8c78215e749c979643bc9374d2f2030be2f1b4e2b09",
+   "cache_file": "0026168_blade_of_darkness"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 28,
+   "dat_name": "Blade of Darkness",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "latent_unmodelled",
+   "ends_on_zone_entry",
+   "item_req_granted_by_quest"
+  ],
+  "notes": "Seven bullets, five steps. Bullets 1 and 2 are ONE marker on Gumbah -- 'speak to him repeatedly until you get the cutscene' is the same conversation at the same spot, not a second rung, and the sub-bullet about zoning if the dialogue loops is troubleshooting. Bullet 5 is not a step either: it is the outcome of the Dock Lever cutscene, so the Chaosbringer becomes step 3's evidence rather than a rung of its own. That makes the header's 'Item Reqs: Chaosbringer' false for a first run -- the quest hands you the sword -- and it only bites if you dropped it, which bullet 5's sub-bullet says resets the kill count to zero.\n\nStep 4 is the honest failure of this page. 100 kills with the sword equipped is a latent on the weapon: no packet, no message, no counter, and the wiki itself tells you to count them by hand or with an addon. The ladder therefore parks on step 4 and nothing observable will move it. Chaosbringer is carried in items so readiness is at least right, and all eleven sub-bullets under bullet 6 (Trusts stealing kills, no weapon skills, chat-log grepping, LatentChecker) are advice, not steps.\n\nThe quest ends by ZONING into Beadeaux -- there is no hand-in NPC, so the last step is a travel and no turn-in is invented. Zeid is a cutscene at the Dock Lever, never a standing entity, so he is not a target anywhere. Level 30 is a plain level gate with no job attached: this is the Dark Knight unlock, so gating it to DRK would be exactly backwards.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / NA"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah - Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "inside the house, upper floor; Home Point #1 is next to it. Speak repeatedly until the cutscene that names Zeid -- if the dialogue repeats forever, zone and come back."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Palborough Mines"
+    },
+    "zone": "Palborough Mines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "top floor, Map 3. Home Point #1 is at the southern end of that map; with Beyond Infinity done, Domenic can drop you at the Waughroon Shrine home point instead."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dock Lever"
+    },
+    "zone": "Palborough Mines",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Chaosbringer",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the Boat Docks: climb aboard one of the boats first, then pull the lever. Keep a free inventory slot -- the cutscene with Zeid ends by handing you the Chaosbringer, which is why bullet 5 is this step's evidence and not a step."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Chaosbringer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "100 monsters killed with the sword EQUIPPED and by a normal hit -- weapon skill kills and Trust kills do not count, and the mobs need not give experience. Anywhere at all, so no zone. The sword remembers the count across zoning and logout, but nothing reports it, so this rung cannot be advanced by observation. Drop the sword before you finish and the count resets to zero."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux"
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "zoning in is the completion -- the cutscene fires on entry and there is no NPC to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Borghertz's Lurking Hands",
+   "page_id": 11386,
+   "revision_id": 767368,
+   "source_sha256": "95e3064f9fe0a2c9489f52b2e529cf644fdcb6cb61b84dc76b50c3ab0909bf04",
+   "cache_file": "0011386_borghertz_s_lurking_hands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 56,
+   "dat_name": "Borghertz's Lurking Hands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "steps_from_after_section",
+   "unordered_group",
+   "gil_cost_unmodelled",
+   "prereq_unmodelled",
+   "unnamed_target",
+   "human_corrected"
+  ],
+  "notes": "A clean thirteen-bullet ladder with two evidence points, plus an optional tail read out of the after-section.\n\nThe coffer target: the walkthrough only ever says 'one of the chests' and 'the coffer', but the after-section names the same entity outright ('All of the Treasure Coffers are in this part of the zone'), so 'Treasure Coffer' is taken from the page rather than invented, and it is the same entity Under Oath already uses. Its OR-branch is the rare kind that fits the schema exactly, because each side is a single item: Cauldron Coffer Key in items, Thief's Tools in items_alt. The lockpick side additionally needs Thief, which the schema cannot say, so it is a note.\n\nBullet 12 is two things and is split: killing Dark Spark, then examining the SAME torch again for the Shadow flames -- the page's own note says you can come back to that torch later, so the examine really is its own rung. Bullet 7's 1,000 gil is a genuine hand-over but gil is not an inventory item the readiness check can see, so items stays empty and the cost is a note; the same sub-bullet says a player who has done any other AF hands quest skips both the cutscene and the gil, which is a branch with nothing observable to distinguish it, so the step stays required.\n\nThe after-section is NOT decoration -- it is two more coffers, in two more zones, for two more pieces of Ninja AF, and its bullets restart at [1]. They are recorded as optional group members because the page says plainly that the quest is 'completed' once you have the hands. They deliberately carry NO evidence: Ninja Kyahan and Ninja Hatsuburi are equipment you keep forever and this quest is repeatable per job, so a returning player holding last run's kyahan would jump the ladder to the end. The Mythril Door and its Mythril Beastcoin are a gate on reaching those coffers, not a step of this quest.\n\n'Quest Reqs: must have STARTED I'll Take the Big Box' is not the same as completing it, and prev has no way to say 'started', so it is left out of the gate rather than over-gating the quest; Previous carries the real one, 20 in Pirate Years.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The Thief's Tools branch also needs Thief as a job, which the schema cannot express.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "J / (empty)"
+   },
+   "prev": [
+    {
+     "title": "20 in Pirate Years",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "NIN"
+   ],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Guslam",
+   "zone": "Upper Jeuno",
+   "grid": "H-8",
+   "raw": "Guslam - Upper Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the shop 'Durable Shields'; must be Ninja to start"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ifrit's Cauldron"
+    },
+    "zone": "Ifrit's Cauldron",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Unity Warp to Yhoator Jungle and hug the right wall, or the Elshimo Uplands outpost warp / Survival Guide"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Ifrit's Cauldron",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cauldron Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Thief's Tools",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old gauntlets",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "The walkthrough calls it only 'one of the chests'; the after-section names the entity 'Treasure Coffer'. The key can be bought from any nation's Curio Vendor Moogle. You do not have to be on Ninja to open it."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Guslam"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "he cannot repair the gauntlets"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Deadly Minnow"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "inside Durable Shields with Guslam, so the shop's (H-8) is used -- the page gives him no grid of his own"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yin Pocanakhu"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "inside the Tenshodo. Speak, then trade 1,000 gil -- gil is not a held item the readiness check can see, so items is empty. If you have finished the AF hands quest on another job you skip both the cutscene and the gil."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "the crates by the Auction House and the Jeuno Duty-Free Shop"
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Baileys"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "(F-8) on the first map; Survival Guide teleport, otherwise walk from the Castle Zvahl Keep home point"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "any one of the torches; remember which, step 11 needs the same one"
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dark Spark",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Torch"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shadow flames",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "the same torch you spawned it from, after the kill. Forgetting it is recoverable -- come back to that torch any time."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "the same crates again; the cutscene here completes the quest and gives the Ninja Tekko. No hand-in NPC."
+   },
+   {
+    "n": 13,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": null,
+    "items": [
+     {
+      "name": "Grotto Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra_coffers",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the after-section 'Two Additional Coffers', whose bullets restart at [1]. Ninja Kyahan; not required, and the quest counts as complete without it. Past the Mythril Door only: interact with it until it mentions mythril dust, then trade a Mythril Beastcoin for access to Map 3. Ninja must be your main job to open it. No evidence recorded -- the kyahan is keepable equipment and this quest repeats per job."
+   },
+   {
+    "n": 14,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": null,
+    "items": [
+     {
+      "name": "Byd. Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "extra_coffers",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "same after-section, its bullet [2]. Ninja Hatsuburi; key drops from the zone's own mobs. Ninja must be your main job to open it. No evidence, for the same reason as step 13."
+   }
+  ],
+  "human": {
+   "edited_at": "2026-08-09T18:47:08Z",
+   "by": "qa-verification",
+   "basis": "reading",
+   "reason": "gates.repeatable true -> false. BG Wiki tags 5 of the 15 structurally identical Borghertz's Hands quests |Repeatable=Yes and the other 10 |Repeatable=af (= 'Yes, after Memory reset', i.e. an artifact-armour reset, not a repeatable quest). All 15 are one-shot AF1 gauntlet quests on the same giver (guslam) with a one-time armour reward and no repeat prose. quest/jeuno/52's reader already made this same call and flagged it header_repeatable_disagrees. Correcting the remaining four so the family is consistent; without this, 5 of 15 identical quests draw a blue '!' on Guslam after completion and 10 draw nothing. See AF-QUESTS-FINDING.md.",
+   "fields": [
+    "gates.repeatable",
+    "review_flags[8]"
+   ],
+   "source_at_edit": {
+    "revision_id": 767368,
+    "source_sha256": "95e3064f9fe0a2c9489f52b2e529cf644fdcb6cb61b84dc76b50c3ab0909bf04"
+   },
+   "history": []
+  }
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unwavering Resolve",
+   "page_id": 53925,
+   "revision_id": 733375,
+   "source_sha256": "51a3db265283aec99c08a38c97f6b758628413f0ebfc30a4c3dbab98c11306c1",
+   "cache_file": "0053925_unwavering_resolve"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 77,
+   "dat_name": "Unwavering Resolve",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "or_branch_unmodelled",
+   "repeating_loop",
+   "expansion_normalised"
+  ],
+  "notes": "The header's giver is unusable twice over: 'Nashmeira, Imperial Ward' names an NPC the walkthrough never sends you to, and 'Imperial Ward' is not a zone at all -- the resolver returns nothing for it, because the ward is inside Aht Urhgan Whitegate. The walkthrough opens on Naja Salaheem at Aht Urhgan Whitegate (I-10), so start is moved there and the header string is kept verbatim in raw. That is a marker recovered, not moved off anything real.\n\nTwo OR-branches, neither expressible. Bullet 4 lets you farm the Timeworn Talisman in Arrapago Reef OR Caedarva Mire; a group means 'any order', not 'either one', so that step keeps zone null and names both in the note rather than inventing a preference. Bullet 5 needs the talisman AND (Sutlac OR Irmik Helvasi OR both) -- items_alt is a whole-step alternative, so putting Irmik Helvasi there would say the food alone suffices, which is wrong. Only the talisman is carried, items_partial marks the rest, and the note names both foods and their vendors.\n\nBullet 5 is also a LOOP: appraisal can fail, and a failure eats the talisman and the food both, sending you back to bullet 4. The ladder cannot see that, but the Talisman of the rebel gods on the next step is the honest latch -- you only hold it once the appraisal has actually succeeded and you have zoned.\n\nBullet 10 is not a step (the reward cutscene follows the win automatically) and bullet 13 is not one either -- it is a note about a title and about repeat runs migrating to A Stygian Pact after twelve 'Release thy Knight' choices, which nothing observable tracks. Bullets 8 and 9 are the same Entry Gate examined twice, so they are one marker with the second examine in the note. Expansion is written 'Treasues of Aht Urhgan' (sic) in the header; recorded as toau to match the corpus. Fame 'Treasures of Aht Urhgan' does fold to the Aht Urhgan region, and with no FLevel it gates nothing anyway.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: that inner OR cannot be written, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Rider Cometh",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Nashmeira, Imperial Ward"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header names Nashmeira in the Imperial Ward instead; the walkthrough starts here"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the gate into the Imperial Ward. You may have to accept the Divine Interference quest before this cutscene will play."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoyoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Timeworn Talisman",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Ephramadian Shade",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "either zone works, so no single zone is recorded: Arrapago Reef west of the Dvucca Isle staging point around (G-10), or Caedarva Mire near its Survival Guide. A talisman farmed before the quest started still counts."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yoyoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Timeworn Talisman",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "The talisman AND a Sutlac or an Irmik Helvasi, or both at once for the best odds Sutlac from Yafaaf (J-12) and Irmik Helvasi from Fayeewah (K-12), both in Aht Urhgan Whitegate; the +1 versions are refused. A failed appraisal eats the talisman and the food and sends you back to step 4."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoyoroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Talisman of the rebel gods",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "you must zone before he will hand it over; holding this is the only proof the appraisal succeeded"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Talisman key",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Spatial pressure barometer",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the cutscene hands over both key items together, so both are the AND-list"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Entry Gate"
+    },
+    "zone": "Hazhalm Testing Grounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "examine twice: once for the cutscene, again to enter the battlefield. Same area as Einherjar; quickest in is the Caedarva Mire home point."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Hazhalm Testing Grounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Odin Prime",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Odin Image",
+      "count": 3,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "Paralyze, Dispelga and elemental magic, up to three Odin Images, and Zantetsuken if he lives long enough at low HP. The reward-choice cutscene follows the win automatically, so bullet 10 is not a rung."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8/9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "For the Birds",
+   "page_id": 124,
+   "revision_id": 762675,
+   "source_sha256": "852a000d63ffcd718df1015dceb4425940ae4d89add808343cf7e5563665fdf8",
+   "cache_file": "0000124_for_the_birds"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 104,
+   "dat_name": "For the Birds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "route_heavy",
+   "bullet_split",
+   "item_req_granted_by_quest"
+  ],
+  "notes": "Nine bullets but three of them are mostly Castle Oztroja and Beadeaux routing, and one of those routes hides the only genuinely tricky rung.\n\nThe Brass Door at (I-8) is kept as a step rather than folded into a note: it is a named, targetable entity with a real action -- pull one handle, run clear of the trap door, then pull the other -- and it is the way onto the map Daa Bola the Seer stands on. The rest of bullet 3 and all of bullet 4 are the walk to him, so they become his note.\n\nBullet 7 is the opposite case. The Mute and The Afflictor are real devices with real names, but the page describes them purely as hazards to route around -- there is nothing to do to them that this quest needs -- so they stay in the travel step's note and are not rungs. Bullet 8 is split, because talking to Ge'Fhu Yagudoeye is what SPAWNS the four notorious monsters and the fight is a separate thing you then have to survive; bullet 9 is split for the same reason, into the follow-up conversation and the walk back to Koblakiq.\n\nEvidence sits in the only two places it can. The Arnica Root is the outcome of bullet 2 and is consumed by the trade, and the Glittering fragment comes from Koblakiq in bullet 6 -- bullet 7 opens 'After receiving [KI] Glittering fragment', which is a receipt for the previous step, not a new one, so it is attached there and not to the journey. The Jaguar Mantle is the header's reward and is not evidence anywhere. Item Reqs lists the Glittering fragment as a requirement, but the quest itself hands it to you.\n\nFame 'O' is not one of the nine regions and folds to nothing, so region is null and the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "O / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Missionary Moblin",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Koblakiq",
+   "zone": "Oldton Movalpolos",
+   "grid": "H-11",
+   "raw": "Koblakiq - Oldton Movalpolos (H-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Koblakiq"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must zone out and back in after finishing Missionary Moblin before he will offer this"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Arnica Root",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says only 'if you haven't already' and names no source or place, so no zone and no target"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Brass Door"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "two handles: one opens the door, the other drops a trap door. Pull one, immediately run clear of the ground in front of the door, wait for the trap to close, then pull the other and run through."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Daa Bola the Seer"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Arnica Root",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "through the door: next map, exit at (G-7), then north along the ledge until he is in sight"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Koblakiq"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Glittering fragment",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "bullet 7 opens 'After receiving [KI] Glittering fragment' -- that is the receipt for this conversation, so the key item is this step's evidence"
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux"
+    },
+    "zone": "Beadeaux",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "in at (H-7) to the underground tunnels, out again at (F-8). The Afflictor near the route curses anyone who passes; touching The Mute at the north of (G-7) first silences you, which blocks the curse. Silena, Echo Drops or Benediction clear the silence, Cursna or Holy Water the curse; both wear off in time. Neither device is a step -- they are hazards on the way."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ge'Fhu Yagudoeye"
+    },
+    "zone": "Beadeaux",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nickel Quadav",
+      "count": 2,
+      "role": "spawn"
+     },
+     {
+      "name": "Magnes Quadav",
+      "count": 2,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "from the (F-8) exit go to (E-10) for the upper level -- past The Mute and The Afflictor again -- then out onto the large island. Talking to him is what spawns the four notorious monsters."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nickel Quadav",
+      "count": 2,
+      "role": "kill"
+     },
+     {
+      "name": "Magnes Quadav",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the Nickel Quadavs are Paladins and the Magnes Quadavs Black Mages; soloable at 75. Only one party member is credited per spawn, so a second player waits three minutes and repeats."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ge'Fhu Yagudoeye"
+    },
+    "zone": "Beadeaux",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "short cutscene after the fight"
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Koblakiq"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the Jaguar Mantle is the reward here, so it is not evidence on any step"
+   }
+  ]
+ }
+]

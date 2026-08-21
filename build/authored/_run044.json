@@ -1,0 +1,1577 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hazy Prospects",
+   "page_id": 58986,
+   "revision_id": 767968,
+   "source_sha256": "7166cd7c0f8e93c89add7ec7abc8f107113872cd4f0b0becfbcd765f7d903f4c",
+   "cache_file": "0058986_hazy_prospects"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 46,
+   "dat_name": "Hazy Prospects",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "reward_box_lists_step_grant"
+  ],
+  "notes": "Four bullets, four steps, and the only judgement call is the recipe. The header's Reward box lists [KI] Miasmal counteragent recipe AND [KI] Jade abyssite of lenity, but bullet 1 says in as many words that you obtain the recipe when you ACCEPT the quest, and bullet 2's sub-bullet says the counteragent 'can only be crafted with the recipe in possession' -- so the recipe cannot be an end-of-quest grant, it is what step 1 hands you. It is therefore used as step 1's evidence in defiance of the reward-box rule, and flagged so a human can overrule me; the abyssite is the real completion reward and is used as evidence nowhere. The quest is not repeatable, so a permanently-held recipe cannot mis-start a later run.\n\nThe unnumbered 'Note:' above bullet 1 is the Rank 2 Attohwa fame gate restated (FLevel is already 2) plus advice on which quests to farm it with -- not a step. Bullet 2's sub-bullets are a shopping list for the synth (Salinator from Upih Khachla, Windurst Waters North (H-9), 4,048g; 2x Distilled Water; Seashell from Shih Tayuun, Windurst Woods (H-13), 90g, Boneworkers' Guild 8:00-23:00) and are kept as a note rather than becoming steps in three cities. Fame 'aatt' is an Abyssea zone code, not one of the nine regions, so region is null and only raw is kept. No grid is given for the Dark Miasma -- the page gives landmarks (near Veridical Conflux #03 and #07, the rocky paths around Parradamo Tor) and warns they despawn, so grid stays null and the name does the matching.\n\nADVERSARIAL PASS (stage D): five attacks, one survivor. Evidence timing, order, targets, zones and the gates all hold -- Harith (A) and Dark Miasma are the entities you touch and not bystanders, the Miasmal Counteragent is evidence on step 2 only and a requirement (not evidence) on step 3, no step is conditional, and nothing is a reward except what was already excluded. What did not survive is the confidence. The [KI] Miasmal counteragent recipe sits in the header's Reward box AND is granted by bullet 1, which is the page contradicting itself about when the player gets it. The guide's answer to a self-contradicting page is to follow the bullet that gives the instruction and demote, so the evidence is kept -- bullet 2's sub-bullet requiring the recipe in possession before the synth makes an end-of-quest grant impossible -- and the quest drops to medium. The recipe is the only thing in this quest that breaks a hard rule; if a human overrules it, step 1 simply loses its evidence and nothing else moves.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aatt / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Harith (A)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "G-10",
+   "raw": "Harith (A) (G-10), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Harith (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Miasmal counteragent recipe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "needs Rank 2 fame in Abyssea - Attohwa first. The recipe is listed in the header's Reward box but bullet 1 grants it here -- see the quest note."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Miasmal Counteragent",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "craft it (only possible while holding the recipe) or buy it. Ingredients: Salinator from Upih Khachla, Windurst Waters North (H-9) for 4,048 gil; 2x Distilled Water, sold in three places in Windurst Waters; Seashell from Shih Tayuun, Windurst Woods (H-13) for 90 gil at the Boneworkers' Guild, open 8:00-23:00. One or more may be wanted -- a Dark Miasma may have gone by the time you reach it. No zone, because the synth is done anywhere."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Dark Miasma"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Miasmal Counteragent",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "a targetable, path-blocking Dark Miasma; most often in the rocky narrow paths around Parradamo Tor, one close to Veridical Conflux #03 and another right beside Veridical Conflux #07. They despawn, so the same spot may need rechecking. No grid is given. There is NO message on a successful trade -- you know it worked because the miasma vanishes and you can walk through, so nothing here is observable."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Harith (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the Jade abyssite of lenity is the completion reward, so it is not used as evidence anywhere"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Orastery Woes",
+   "page_id": 205,
+   "revision_id": 756999,
+   "source_sha256": "d970f2d48d09a3183cd9b9341425ebdd313d8577742cbfa68e23e00b2b290008",
+   "cache_file": "0000205_orastery_woes"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 86,
+   "dat_name": "Orastery Woes",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "multi_job_gate",
+   "latent_unmodelled",
+   "skill_gate_unmodelled",
+   "wiki_typo_corrected"
+  ],
+  "notes": "A Weapon Skill quest, and its shape is the standard one: talk, break a latent, trade the weapon back, kill an NM at a ???, return. Bullet 1 is a precondition about not holding another WS quest, not a step.\n\nTHE KEY ITEM NAME IS A WIKI TYPO. The page says 'Weapons Training Guide'; the game's key item 343 is 'Weapon training guide' (spelled correctly on the sister page The Walls of Your Mind, which is the same quest for Monk). The wiki's plural does not resolve, so the correct spelling is recorded -- this is a typo correction against res/key_items.lua, not an invented name, and losing it would cost step 1 its only evidence.\n\nBreaking the latent on the Club of Trials is deliberately NOT a step. The transcluded 'Breaking the Latent' section rendered empty, so the page as given says nothing about how; and nothing about a latent is observable. More importantly steps 1 and 2 are both Kuroido-Moido, so wedging an unmarkable rung between them would strand the mark on nothing -- it stays a note on the trade step instead, which is where the player acts on it.\n\nThe Level field carries three separate gates: 'Club skill 230+' has no slot and gates nothing, 'Level 71' is the level, and the nine listed jobs are a real multi-job gate (not the 'any job at level N' restatement -- these are the nine jobs that can wield a club). Bullet 5's sub-bullet is an alternative approach route and stays a note.\n\nADVERSARIAL PASS (stage D): the ladder survives every attack. Each key item is granted by the bullet its step is built from (Weapon training guide b2, Map to the Annals of Truth b3, Annals of Truth b7), none is the header's Reward (a weapon skill, which is not an item at all), none repeats, the order is the page's order, the ??? work is correctly split into examine / fight / re-examine on bullets 6-7, bullet 1 is correctly a precondition and not a rung, and the zone flips from Port Windurst to Ro'Maeve exactly where bullets 3-4 flip it. What did not survive is the confidence. Step 1's evidence is the one name in this batch that is NOT in its own page's text: the page writes 'Weapons Training Guide', which resolves to nothing, and the recorded 'Weapon training guide' is key item 343. It is kept, because it is a correction and not an invention -- the resolver confirms 343 and the sister page The Walls of Your Mind, read in this same batch, spells it that way -- but a name taken from outside the page is a judgement call, so the quest drops to medium. Nulling it would cost little in practice (steps 1 and 2 are both Kuroido-Moido, so the mark would not move) but would throw away a fact the res tables confirm.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "W / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [
+    "WAR",
+    "MNK",
+    "WHM",
+    "BLM",
+    "PLD",
+    "SMN",
+    "BLU",
+    "SCH",
+    "GEO"
+   ],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Kuroido-Moido",
+   "zone": "Port Windurst",
+   "grid": "E-7",
+   "raw": "Kuroido-Moido - Port Windurst (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kuroido-Moido"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you cannot flag this while another Weapon Skill quest is active -- go quit that one first. He also hands over the Club of Trials, which is consumed by step 2's trade, so only the key item is used as evidence. The page spells the key item 'Weapons Training Guide'; the game spells it 'Weapon training guide'."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kuroido-Moido"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Club of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "BREAK THE LATENT ON THE CLUB FIRST -- the trade does nothing until you have. The page's 'Breaking the Latent' section is a transclusion that rendered empty here, so no detail on it survives. He then sends you to Ro'Maeve."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ro'Maeve"
+    },
+    "zone": "Ro'Maeve",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "bring Silent Oil. Inside: down the northeastern stairs, immediately east, through the hallway on the right, left, drop the ledge, through the northeast door, left, up the north stairs at (K-8), northwest to the northeast doorway at (J-8). With the Survival Guide warp or from the Hall of the Gods side, just run down the long southeast stairs instead."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ro'Maeve",
+    "grid": "M-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Eldhrimnir",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "through the door, right, along the long southeast hallway past the Moongate; the ??? is on the ground in front of an inaccessible tunnel entrance"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ro'Maeve",
+    "grid": "M-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Eldhrimnir",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "a magic pot"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ro'Maeve",
+    "grid": "M-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the same ??? again, after Eldhrimnir is dead"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kuroido-Moido"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the reward is the Black Halo weapon skill, not an item"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "His Bridge, His Beloved",
+   "page_id": 58972,
+   "revision_id": 764367,
+   "source_sha256": "f93e655fa29e8ab06a822943aee5e44de21f4e061b7daab47bb5105164248def",
+   "cache_file": "0058972_his_bridge_his_beloved"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 32,
+   "dat_name": "His Bridge, His Beloved",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeat_section_not_steps",
+   "variable_item_count"
+  ],
+  "notes": "Three steps, and bullets 4 to 7 under '== Subsequent attempts ==' are the SAME three steps written out again for repeat runs -- not a continuation. The only difference they record is that the second time round Cheupirudaux gives you the belt but no Viscous Spittle, so you farm your own; that is a note on step 1, not four more rungs. Bullet 6 is speculation about how Cruor scales and is not a step at all.\n\nBullet 2 is one bullet holding an examine and a trade on the same object, and they stay one step: you click the bridge to hear whether it creaks, wavers or crumbles, and the answer tells you whether to trade 2, 4 or 5 Spittle. Nothing is observable in between and the target is the same either way. `items` records the minimum 2 -- the requirement is genuinely random per attempt and 'hold at least 2' is the loosest true statement; the 4 and 5 cases are in the note rather than items_alt, where they would only ever be redundant with the 2.\n\nThe Woodworker's belt is step 1's evidence and the only observable thing in the quest. The Cruor and the Crimson abyssite of lenity are completion rewards. Fame 'avun' is an Abyssea zone code, not one of the nine regions.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: examine it first: if it CREAKS trade 2 Viscous Spittle, if it WAVERS trade 4, if it CRUMBLES trade 5. items records the minimum of 2.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "avun / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Cheupirudaux (A)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "E-7",
+   "raw": "Cheupirudaux (A) (E-7), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cheupirudaux (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Woodworker's belt",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     4
+    ],
+    "note": "near Conflux #04 or Conflux #08. First run he gives the belt AND 2x Viscous Spittle; on repeats (bullet 4) only the belt, so bring your own Spittle. The Spittle is not used as evidence because it is not given on repeats and is consumed by step 2."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Derelict Bridge"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Viscous Spittle",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Spitting Spider",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     5
+    ],
+    "note": "More Spittle drops from Spitting Spiders east of Conflux #05."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Cheupirudaux (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     7
+    ],
+    "note": "you must zone before the quest can be repeated. The page suspects, without confirming, that repairing more bridges pays more Cruor."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Egg Enthusiast",
+   "page_id": 67131,
+   "revision_id": 627029,
+   "source_sha256": "59b8d482de9c9d51d1af650dc96a6e0b236d7aa2bf8119021764aceb7d83d68e",
+   "cache_file": "0067131_the_egg_enthusiast"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 61,
+   "dat_name": "The Egg Enthusiast",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "ki_name_not_unique",
+   "unnamed_target"
+  ],
+  "notes": "Three steps. The three Earthy Mounds are an OR, not a group: bullet 2 says 'one of three', so they must NOT be three grouped steps -- a group means do all of them. They are one step named 'Earthy Mound' with no grid, which lets the name match whichever of the three is nearest; the three grids (H-8)/(I-8), (J-10) near Conflux #3, and (J-6) are in the note along with the fact that the (J-6) one pays less and never drops a seal, which is the only reason to prefer one.\n\nTHE EVIDENCE CANNOT RESOLVE AND I HAVE RECORDED IT ANYWAY. 'Wivre egg' is three separate key items in res/key_items.lua (1713, 1714, 1715 -- one per mound), so the resolver rejects the name rather than guessing an id, which is right. The entry is left in so the loss is logged at validation rather than being invisible; the practical effect is that this quest has no observable progress at all and the ladder walks on position alone.\n\nBullet 3 is a note (Confluxes are fine on the way OUT) and bullet 4's sub-bullets are the return-trip rules, not steps -- so bullets 4 and 5 are one hand-in. Fame 'agra' is an Abyssea zone code. The header gives no grid for Ranpi-Monpi; (L-6) comes from bullet 1.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: 'Wivre egg' is three different key item ids, so this evidence will not resolve",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Ranpi-Monpi (A)",
+   "zone": "Abyssea - Grauberg",
+   "grid": "L-6",
+   "raw": "Ranpi-Monpi (A), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ranpi-Monpi (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "northeast of Conflux #8. The grid is from the walkthrough; the header gives none. Nothing is granted here."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Earthy Mound"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Wivre egg",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "ANY ONE of three, not all three: (H-8)/(I-8) and (J-10) near Conflux #3 both pay 200 Cruor (400 first time) with a seal chance; (J-6) pays 100 (200 first time) and never a seal. Grid is left null so the name matches whichever is closest. Confluxes may be used to get here. see the quest note."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ranpi-Monpi (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "L-6",
+    "items": [
+     {
+      "name": "Wivre egg",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "walk back -- no Conflux warp, do not get hit, do not dawdle, and do not change gear (losing HP breaks it). Break it and you must zone to try again; zoning is also what makes the quest repeatable."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A World in Flux",
+   "page_id": 86437,
+   "revision_id": 773059,
+   "source_sha256": "7c19aceb9375c76a4d38142ead18ed001a72291b58114b11c1839f4c28f3f5f5",
+   "cache_file": "0086437_a_world_in_flux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 89,
+   "dat_name": "A World in Flux",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_missing_from_header",
+   "generic_npc_name",
+   "unordered_group",
+   "or_branch_modelled"
+  ],
+  "notes": "THIS QUEST HAS NO GIVER. The Start field is empty and bullet 1 says it flags itself the moment you finish No Rest for the Weary, so start is all nulls rather than a guess. It survives validation only because the battle and hand-in steps carry markable targets; if those are dropped the quest has nowhere to begin, which is honest -- there is nowhere to begin.\n\nBullet 1 is that flag condition, not a step. Bullet 2 is three battles in three zones and therefore three steps, one zone each. The page lists them without saying they are ordered, and tier VI Voidwatch battles are not, so they share a group and all three draw at once; that is flagged, because the ordering is my reading and not the page's words. Each zone has THREE planar rifts and a step has one grid, so grid is null and the coordinates are in each note -- the name 'Planar Rift' then matches all three in the zone. The routing sub-bullets (Atmacite Refiner teleport, Survival Guides, campaign teleports) are advice and live in the notes.\n\nBullet 3's giver is 'any Shadowreign (past) era Voidwatch Officer'. 'Voidwatch Officer' is one of the names that is the same on hundreds of entities, and with no zone it would mark every one of them, so the target is recorded as none with the name in the note -- the step keeps its rung and its evidence, the Voidwatch alarum, which is a KEY ITEM (2048) and not the item the wiki's capitalisation suggests. I also record without endorsing that the page puts the alarum AFTER the three battles; that is the order as written.\n\nFame 'Wings of the Goddess' is an expansion, not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "No Rest for the Weary",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": null,
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Planar Rift"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gaunab",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "tier6_battles",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "tier VI. Three rifts, (F-5), (G-8) and (G-13) -- any of them. The Atmacite Refiner teleport and the Survival Guide both land at (E-7), just north of (F-5); campaign teleport lands at (H-10), between (G-8) and (G-13). (F-5) is also reachable via Batallia Downs (S) > Jugner Forest (S) > Vunkerl Inlet (S) at (L-6), then southwest."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Planar Rift"
+    },
+    "zone": "Grauberg (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ocythoe",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "tier6_battles",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "tier VI. Rifts at (D-14), (G-7) and (G-11); (G-7) is close to the campaign teleport."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Planar Rift"
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kalasutrax",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "tier6_battles",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "tier VI. Rifts at (D-12), (I-11) and (K-8); (I-11) is just south of the campaign teleport, and (D-12) is reached by Survival Guide to West Sarutabaruta (S) then zoning in."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Voidwatch alarum",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "any Shadowreign-era Voidwatch Officer, in any past zone. The page names no one and no place, and 'Voidwatch Officer' without a zone would mark every officer in the world, so the target is left unnamed on purpose. The alarum is a key item."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Bulwark Gate"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the cutscene here ends this quest, starts Between a Rock and Rift, and pays the 30,000 gil. No grid is given."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Walls of Your Mind",
+   "page_id": 12120,
+   "revision_id": 712436,
+   "source_sha256": "6ee8653547876a3ec95312edb6248754fb9a272c1063ee3031c328683dbbed5f",
+   "cache_file": "0012120_the_walls_of_your_mind"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 69,
+   "dat_name": "The Walls of Your Mind",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "multi_job_gate",
+   "latent_unmodelled",
+   "skill_gate_unmodelled"
+  ],
+  "notes": "The Monk twin of Orastery Woes and read the same way. Bullet 1 is the 'no other Weapon Skill quest active' precondition, not a step. Breaking the latent on the Knuckles of Trials is a note on the trade step rather than a rung of its own: the transcluded 'Breaking the Latent' section rendered empty, nothing about a latent is observable, and steps 1 and 2 are both Oggbi, so an unmarkable step between them would strand the mark.\n\nThis page spells the key item correctly -- 'Weapon training guide', key item 343 -- which is what identifies the Orastery Woes page's 'Weapons Training Guide' as a typo there.\n\nThe gates come from two fields that say the same thing twice: Quest Reqs 'Hand-to-Hand skill 250+, Monk or Puppetmaster level 71' and Level '71'. Level is 71 and jobs are MNK and PUP -- a real two-job gate, not the 'any job at level N' restatement. The hand-to-hand skill floor has no slot and gates nothing.\n\nBullet 4 is entirely route, in two variants (Unity warp 122, or Chateau d'Oraguille and Silent Oil), and belongs on the travel step. The ??? is examined twice with the fight between, which is two steps on an unmarkable object -- worth keeping because the second examine is where the Annals of Truth appears.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "B / NA"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [
+    "MNK",
+    "PUP"
+   ],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Oggbi",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Oggbi - Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Oggbi"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "quit any other Weapon Skill quest first. He also hands over the Knuckles of Trials, which step 2 consumes, so only the key item is evidence."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Oggbi"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Knuckles of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "BREAK THE LATENT ON THE KNUCKLES FIRST. The page's 'Breaking the Latent' section is a transclusion that rendered empty here. He then sends you to the Bostaunieux Oubliette."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Bostaunieux Oubliette"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Unity NPC warp 122 puts you inside, well past the drop -- then east through connection B to (I-8). Otherwise bring Silent Oil and walk in from Chateau d'Oraguille: entry hall, eastern door, north. Inside from the entrance: south to (H-7/8), west to (E-7/8), drop down, south then west, repeating west-then-south until (F-9), then east to (I-8)."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bodach",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bodach",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a skeleton, weak to Fire and Light"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again, after Bodach is dead"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Oggbi"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the reward is the Asuran Fists weapon skill, not an item"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Understanding Overlord?",
+   "page_id": 19,
+   "revision_id": 762097,
+   "source_sha256": "931418dad41ca26c60d24f4ce9f41dcad1ddc2793b0b630a8e56452f24d9cc41",
+   "cache_file": "0000019_an_understanding_overlord"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 106,
+   "dat_name": "An Understanding Overlord?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_is_zone_entry",
+   "crafting_recipe_not_rendered",
+   "time_gated"
+  ],
+  "notes": "The header names Loo Kohor as the giver, but he is not one: bullet 1 says the quest starts on a CUTSCENE when you enter Monastic Cavern through the (G-7) entrance in Davoi, and the walkthrough never has you speak to him. Loo Kohor is the Yagudo of the description, who cannot set foot in the cavern -- which is the whole premise. So start.npc is null and the header string is kept verbatim in start.raw; step 1 is the zone entry.\n\nEleven steps, and the Orc Helm is the spine of the second half: you synthesize it (bullet 5), wear it into the cavern (6), wear it to check the Cryptexphere (7 and 8), and finally trade it away (9). Bullet 5's recipe is a table the prepass replaced with a [CRAFTING RECIPE] placeholder, so the ingredients did not survive the render -- the step is real but the page as given cannot say what goes into it; the Orc Cutting from Faulpie is the one ingredient named anywhere.\n\nGadzradd's Helm and the Gold Beastcoin are both in the header's Reward box, so neither is evidence -- and this quest is REPEATABLE, which is exactly the case that rule is defending: a returning player already holds the helm. It is recorded as a requirement on the last step instead, because bullet 10's 'while wearing the helm' can only mean Gadzradd's after bullet 9 replaced the Orc Helm; that reading is an inference and is flagged as such here. The 10,000 gil in bullet 3 is in the note rather than items, since gil is not an inventory item the ladder can require.\n\nSeven NMs pop at the Cryptexphere but only the Orcish Overlord has to die -- the rest despawn with him, so the fight step lists him alone as the kill and the other six ride along on the examine step as spawns. Bullet 4's game-day wait and bullet 1's 'next Conquest Tally' if you decline are both real time gates and neither is observable.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: items_partial is set for that.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": 60,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": null,
+   "zone": "Monastic Cavern",
+   "grid": null,
+   "raw": "Loo Kohor, Monastic Cavern"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monastic Cavern"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in through the (G-7) entrance in Davoi; the cutscene on arrival is what starts the quest -- there is no NPC to speak to. Decline it and you cannot start again until the next Conquest Tally."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Faulpie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Faulpie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Buffalo Hide",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ram Leather",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "10,000 gil goes with them; gil is not something the ladder can hold, so it is only recorded here"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Faulpie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Orc Cutting",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "not until the next GAME DAY, which nothing in the packets reports. Zoning is not required. He gives the Orc Cutting and the crafting instructions."
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Orc Helm",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Synthesize the Orc Helm. The recipe was a table and rendered here only as a [CRAFTING RECIPE] placeholder, so the ingredients beyond the Orc Cutting are not on the page as given No zone: a synth happens anywhere."
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monastic Cavern"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [
+     {
+      "name": "Orc Helm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Communication from Tzee Xicu",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "WEARING the Orc Helm; the cutscene on arrival gives the key item"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cryptexphere"
+    },
+    "zone": "Monastic Cavern",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Orc Helm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Orcish Overlord",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Chillgaze Foddrud",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Grimbolt Onkzok",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Rictusgrin Prakpok",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Sevenskewer Krugglug",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Shatterskull Mippdapp",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Siegebreaker Wujroj",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "still wearing the Orc Helm. All seven pop together."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Monastic Cavern",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Orcish Overlord",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "ONLY the Orcish Overlord has to die -- the other six despawn the moment he does, which is why they are not listed as kills"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cryptexphere"
+    },
+    "zone": "Monastic Cavern",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Orc Helm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same Cryptexphere again, helm still on, for a cutscene"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Cryptexphere"
+    },
+    "zone": "Monastic Cavern",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Orc Helm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the Orc Helm comes back as Gadzradd's Helm. That helm is in the Reward box and the quest is repeatable, so it is not used as evidence."
+   },
+   {
+    "n": 11,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monastic Cavern"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [
+     {
+      "name": "Gadzradd's Helm",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "zone OUT of Monastic Cavern and back in for the closing cutscene and the Gold Beastcoin. The page says only 'the helm'; after step 10 the only helm you have is Gadzradd's, so that is what is recorded -- an inference, not the page's words."
+   }
+  ]
+ }
+]

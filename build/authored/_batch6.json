@@ -1,0 +1,1121 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cargo",
+   "page_id": 62,
+   "revision_id": 772630,
+   "source_sha256": "8ed55afa4e47b99586128a93a24ecfde7e23a579814825f3d86a27ced09c0347",
+   "cache_file": "0000062_cargo"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 20,
+   "dat_name": "Cargo",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target"
+  ],
+  "notes": "The wikitable is a three-rung UPGRADE chain, not a step list: Rolanberry -> 881 -> 874 -> 864, each rung traded to a basket to pop an NM that drops the next berry. Rungs two and three are optional -- the quest completes with any crawler-dropped berry, they only raise the gil -- so they are marked optional and can never be a ladder position, which is what stops a player who stops at 881 from being stuck. The baskets are named nowhere on the page, so their steps carry no target rather than a guessed one; the four crawler NMs ARE named and carry the markers instead. The turn-in takes any one of the three upgraded berries, which items_alt now says outright.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "O / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Vuntar",
+   "zone": "Selbina",
+   "grid": "H-9",
+   "raw": "Vuntar - Selbina (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Vuntar"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null,
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "buy plain Rolanberry -- possibly several stacks, since a trade only has a CHANCE to pop the NM. Not used as evidence: a Rolanberry is ordinary food and holding one proves nothing.",
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Crawler's Nest",
+    "grid": null,
+    "items": [
+     {
+      "name": "Rolanberry",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rolanberry 881",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Guardian Crawler",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "to a basket in one of the circular rooms; the page never names the baskets. The NM walks in from a room exit as an NPC and then aggros, and always drops its berry.",
+    "items_alt": []
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Crawler's Nest",
+    "grid": null,
+    "items": [
+     {
+      "name": "Rolanberry 881",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rolanberry 874",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Drone Crawler",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "OPTIONAL upgrade: 2,000 gil instead of 800",
+    "items_alt": []
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Crawler's Nest",
+    "grid": null,
+    "items": [
+     {
+      "name": "Rolanberry 874",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Rolanberry 864",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Matron Crawler",
+      "count": 1,
+      "role": "drop"
+     },
+     {
+      "name": "Queen Crawler",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "OPTIONAL upgrade: 3,000 gil. Either NM can pop.",
+    "items_alt": []
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Vuntar"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "any ONE of Rolanberry 881, 874 or 864 -- three equal outcomes, so no AND-list is written. Rolanberry 854, Wh. Rolanberry, Ri. Wh. Rolan. and Withered Berry are all rejected.",
+    "items_alt": [
+     {
+      "name": "Rolanberry 881",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rolanberry 874",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rolanberry 864",
+      "count": 1,
+      "kind": "item"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hat in Hand",
+   "page_id": 137,
+   "revision_id": 751373,
+   "source_sha256": "a1c162d66ac1bf2ffa92e2e37f144a4a49387105ae220335964a29e8fa546d28",
+   "cache_file": "0000137_hat_in_hand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 0,
+   "dat_name": "Hat in Hand",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "walkthrough_in_table",
+   "count_unobservable"
+  ],
+  "notes": "Quest id ZERO -- worth watching through the emitter and the Lua merge, because 0 is falsy in Lua and a truthiness test anywhere on the id would drop this quest silently. The eight mandatory NPCs are an unordered set and share a group, so all eight draw at once; walking them one at a time would mark Bondada and nothing else. What the addon cannot see is the COUNT: below 20 NPCs there is no credit at all and nothing in any packet reports how many you have shown the hat to, so the ladder can never advance past step 1 and the quest never claims to be ready. That is the honest answer for this quest. The whole walkthrough is a bulleted list inside a wikitable, so every step reports source_bullet 1.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "zilart"
+  },
+  "start": {
+   "npc": "Baren-Moren",
+   "zone": "Windurst Waters",
+   "grid": "H-7",
+   "raw": "Baren-Moren, Windurst Waters (South) (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baren-Moren"
+    },
+    "zone": "Windurst Waters",
+    "grid": "H-7",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "New model hat",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null,
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bondada"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the hat shop",
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Honoi-Gomoi"
+    },
+    "zone": "Windurst Waters",
+    "grid": "E-7",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "upper Gingerberry Grove, South Map; round the back of the house and up the stairs",
+    "items_alt": []
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "most southern door of the Rhinostery, South Map",
+    "items_alt": []
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Clais"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-10",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on the wooden bridge to the tavern, North Map",
+    "items_alt": []
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kyume-Romeh"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Timbre Timbers Tavern, North Map",
+    "items_alt": []
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "east Optistery building, North Map",
+    "items_alt": []
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pechiru-Mashiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-6",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "east Aurastery building, North Map",
+    "items_alt": []
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machitata"
+    },
+    "zone": "Windurst Waters",
+    "grid": "L-11",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hat",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Mog House, North Map",
+    "items_alt": []
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Baren-Moren"
+    },
+    "zone": "Windurst Waters",
+    "grid": "H-7",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "only after the eight above plus twelve more, twenty in all. Zoning resets everyone you have spoken to.",
+    "items_alt": []
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 02 (Altepa)",
+   "page_id": 67176,
+   "revision_id": 625705,
+   "source_sha256": "0187d5317a557c1163dfaf30fc39b72300e441d16079b1b285ef13bf406d92e9",
+   "cache_file": "0067176_dominion_op_02_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 88,
+   "dat_name": "Dominion Op #02 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Same three-beat shape as Dominion Op 01, and the same two hazards. 'Dominion Sergeant' is one of the AMBIGUOUS_NPCS, so it may only be indexed with a resolved zone -- Abyssea - Altepa gives it one, via the area-scoped rule that stops bare 'Altepa' resolving to the Altepa Deserts. The DAT writes the name with a '#' the wiki omits. The page names the target only as 'Surveyors'; the singular is recorded as written rather than guessed at a fuller name.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #8",
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "D-12",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Surveyor",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no packet counts them; the 5 is for display only",
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with",
+    "items_alt": []
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unbreak His Heart",
+   "page_id": 56698,
+   "revision_id": 765236,
+   "source_sha256": "7925ccdddd69acbabd2a122ef6902b7ae36e60525eec22f1221fc6e88a19500d",
+   "cache_file": "0056698_unbreak_his_heart"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 4,
+   "dat_name": "Unbreak His Heart",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "The pilot filed this under 'Abyssea, no evidence at all' and that turns out to be WRONG -- it has two clean item signals, the broken rod he hands you and the repaired rod you make or buy. So it steps properly, and it is a repeatable that steps, which is exactly the case the repeatable decision was taken for. The '(A)' suffix is a wiki disambiguator; the entity is named plainly, which the normaliser already handles. Zoning is required to repeat, which the addon cannot see and does not need to.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: or skip it and buy a Willow Fishing Rod outright, which is why items_partial is set",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "alth / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Joulet (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "H-7",
+   "raw": "Joulet (A) (H-7), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Joulet (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Broken Willow Fishing Rod",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Veridical Conflux #04; offer to mend the rod",
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Broken Willow Fishing Rod",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Light Crystal",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Willow Fishing Rod",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Woodworking 10 caps the synthesis.",
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Gallijaux (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-12",
+    "items": [
+     {
+      "name": "Willow Fishing Rod",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "at Veridical Conflux #06",
+    "items_alt": []
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Angling Armorer",
+   "page_id": 56700,
+   "revision_id": 750462,
+   "source_sha256": "1503ad50aee3e332d30e525ac3ea4a1299184639a65b92af6d27bf2251ea0054",
+   "cache_file": "0056700_the_angling_armorer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 6,
+   "dat_name": "The Angling Armorer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "no_evidence",
+   "or_branch_modelled"
+  ],
+  "notes": "Two steps and no evidence anywhere, which is the correct answer rather than a failure. The four rusty items are each a complete alternative, so items_alt carries all four and holding any ONE reaches the yellow turn-in. Bullets 3 to 5 are not steps: 3 is where to fish, 4 says you can re-trade without speaking to him again, and 5 ends with an unsigned-comment signature that leaked out of the talk page into the walkthrough, which the prepass carried through faithfully. No obtain step is inserted between the two Exoroche steps on purpose: an unmarkable step wedged between two on the same NPC breaks the same-target look-ahead.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "alth / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Exoroche (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "H-7",
+   "raw": "Exoroche (A) (H-7), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Exoroche (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Veridical Conflux #04",
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Exoroche (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "any ONE of Rusty Kunai (40), Rusty Spear (80), Rusty Zaghnal (120) or Rusty Shield (320 Cruor). All four fish up from any of the four ponds with any rod and bait; a lure saves your bait. Repeating needs only another trade, not another conversation.",
+    "items_alt": [
+     {
+      "name": "Rusty Kunai",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rusty Spear",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rusty Zaghnal",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Rusty Shield",
+      "count": 1,
+      "kind": "item"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Weapons, Not Worries",
+   "page_id": 56715,
+   "revision_id": 761121,
+   "source_sha256": "d162ffb0a4c47a456801407d1980256ac54b5d0f85af5be1a3148ac1c5458975",
+   "cache_file": "0056715_weapons_not_worries"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 21,
+   "dat_name": "Weapons, Not Worries",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "optional_precondition"
+  ],
+  "notes": "Kupipi is a sub-bullet condition -- 'if you've never done so before' -- so she is an optional step: markable, explained by //qm why, never a ladder position the player can be stuck on. Note this is the Abyssea Kupipi, not the Heavens Tower one that Waking the Colossus visits; they fold to the same key and the zone is the only thing separating them. The Pickaxe is used as evidence deliberately: a player who already owns one simply starts at the excavation step, which is where they would be anyway, so the failure mode is a marker that is right early rather than wrong.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "atah / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Peshi Yohnts (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "F-9",
+   "raw": "Peshi Yohnts (A) (F-9), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-12",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "only if you have never spoken to her before",
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Peshi Yohnts (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-9",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Pickaxe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Western Encampment, Veridical Conflux #03 nearby. She gives exactly one Pickaxe -- bring your own for repeats or failures.",
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Excavation Point"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "E-5",
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Hardened Bone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "scattered around the dragon skeleton, a walk from Conflux #06. Junk is common and the points have a respawn timer; the bone can also be bought on the Auction House.",
+    "items_alt": []
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Peshi Yohnts (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Hardened Bone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "engaging her to repeat flags the quest again immediately; 50 completions max the zone's fame",
+    "items_alt": []
+   }
+  ]
+ }
+]

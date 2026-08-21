@@ -1,0 +1,2004 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crystalline Mission 2",
+   "page_id": 45125,
+   "revision_id": 772040,
+   "source_sha256": "28e7f1977b168af0ecdb17c9e73f66dcd2e01029ff997b3d8cb54f20ccc1bbbc",
+   "cache_file": "0045125_crystalline_mission_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "acp",
+   "id": 1,
+   "dat_name": "The Echo Awakens",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "unordered_group",
+   "no_markable_target"
+  ],
+  "notes": "GIVER: the header Start is the ZONE 'Lower Jeuno' and names nobody; chronicle_snpc is '' and agrees, so start.npc stays null and nothing moves. The page names no NPC ANYWHERE -- every step is a mob farm or a '???' -- so this record has no markable target at all and will quarantine as start_npc_unresolved. That is the correct outcome: chronicle has no giver for this row either, so no marker is lost, and inventing one to make the record emit would be exactly the wrong trade.\n\nTHE SEEDSPALLS ARE ORDINARY ITEMS HERE, not key items. resolve.lua answers {\"id\":null} for kind ki and 2740/2741/2742 for kind item on Lux/Luna/Astrum -- the opposite of the NEXT mission (Crystalline Mission 3), whose Seedspall Roseum/Caerulum/Viridis ARE key items (1088-1090). Same word, two different resource tables, one mission apart; getting it backwards drops all three entries and the evidence with them.\n\nThe three collections are a true unordered set, so they share a group and each carries its OWN distinct item as evidence -- the mapping seedspall-to-zone is explicit on the page, and none of the three appears in Reward (which is empty), so hard rule 7 does not bite. The mob sources are BEASTMAN FAMILIES ('Orcs', 'Quadavs', 'Yagudos'), not mob names; they are recorded verbatim because the page says only that, and they cost nothing -- mobs feed core/kills' watch list, and no entity is literally named 'Orcs'.\n\nThe 'A Crystalline Prophecy Key' section after the walkthrough is the add-on's coffer loop -- collect the three seedspalls AGAIN, trade them to Squintrox Dryeyes for a Crimson Key, open the red coffer once per day. That is a reward mechanism repeatable after the mission, not part of it, so it is not steps.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: The cutscene ends the mission, so there is nothing observable to record here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Crystalline Prophecy",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "acp"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Lower Jeuno",
+   "grid": null,
+   "raw": "Lower Jeuno"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Seedspall Lux",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Orcs",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "seedspalls",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Orcs' is the family the page names, not a mob name. Nearest Survival Guide is Davoi."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Pashhow Marshlands",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Seedspall Luna",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Quadavs",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "seedspalls",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "family name, not a mob name. Nearest Survival Guide is Beadeaux."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Meriphataud Mountains",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Seedspall Astrum",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Yagudos",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": "seedspalls",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "family name, not a mob name. Nearest Survival Guide is Castle Oztroja."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Qufim Island",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Seedspall Lux",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Seedspall Luna",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Seedspall Astrum",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "All three in one trade; mid-east part of (G-6) near two rock columns."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crystalline Mission 3",
+   "page_id": 45126,
+   "revision_id": 772063,
+   "source_sha256": "ef77dd14c82146575b2814c8e8ec1c5cd6941e8a7612cba419269f5f80565273",
+   "cache_file": "0045126_crystalline_mission_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "acp",
+   "id": 2,
+   "dat_name": "Gatherer of Light (I)",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "steps_from_after_section",
+   "no_markable_target",
+   "unordered_chains_serialised"
+  ],
+  "notes": "GIVER: header Start is the zone 'Qufim Island' -- where the previous mission's cutscene left you -- and names no NPC; chronicle_snpc is '' and agrees, so start.npc is null and nothing moves. As with Crystalline Mission 2 there is no NPC anywhere on the page, so this record has no markable target and will quarantine; chronicle has no giver for this row either, so nothing is lost.\n\nTHE WALKTHROUGH SECTION CONTAINS NO STEPS. Its two bullets are a drop rate (10%, one random party member) and the rule that you must be HOLDING the matching Goblin food key item when the NM dies. The mission itself is in the three sibling '{{KI}} Seedspall X' sections, whose bullets restart at [1] -- every step below cites those, and each note says which section. That second walkthrough bullet is what puts the food key item in `items` on each NM step; the page also says the food key items are NOT consumed when they spawn the NM, so requiring them is safe.\n\nEvidence is unusually good for a mission: six distinct key items, each granted at its own step, none of them in Reward (empty). Seedspall Roseum/Caerulum/Viridis are spent by the NEXT mission (Gatherer of Light II), but they are OBTAINED here, so they are this mission's evidence, not that one's. Confirmed against resolve.lua: the food items are ki 1085-1087 and the seedspalls ki 1088-1090 -- key items here, unlike the Lux/Luna/Astrum of mission 2 which are ordinary items.\n\nThe three chains (Batallia/Rolanberry/Sauromugue) are independent and may be done in any order, but each is ORDERED internally -- food first, then the ??? -- so they are serialised into one spine rather than grouped: a group draws all six at once and would tell you to pop an NM you cannot yet pop. The distinct per-step evidence means the high-water mark still lands correctly whichever chain you do first.\n\nThe final 'A Crystalline Prophecy Key' section is the once-a-day coffer loop through Squintrox Dryeyes, plus the warning that accepting a Viridian Key starts a one-real-day timer on the NEXT mission. Reward mechanism, not steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Echo Awakens",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "acp"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Qufim Island",
+   "grid": null,
+   "raw": "Qufim Island"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Batallia Downs",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Bowl of bland Goblin salad",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Goblins",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Seedspall Roseum' section, its bullet [1]. Scattered around the west side of the zone; 'Goblins' is the family, the page names no individual mob."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Batallia Downs",
+    "grid": "F-5",
+    "items": [
+     {
+      "name": "Bowl of bland Goblin salad",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Seedspall Roseum",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Vegnix Greenthumb",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Seedspall Roseum' section, bullet [2]. Examine pops the NM; the key item comes from KILLING it, and you must still hold the salad at that moment. The ??? is on the upper level connected to Beaucedine Glacier -- reachable by Lycopodium Warp from (F-5), or in from Beaucedine at (H-11)."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rolanberry Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Jug of greasy Goblin juice",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Goblins",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Seedspall Caerulum' section, its bullet [1]."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Rolanberry Fields",
+    "grid": "D-11",
+    "items": [
+     {
+      "name": "Jug of greasy Goblin juice",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Seedspall Caerulum",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Chuglix Berrypaws",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Seedspall Caerulum' section, bullet [2]. NE corner, upper level connected to Crawlers' Nest; Unity Warp 125 lands at (D-11)."
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sauromugue Champaign",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Chunk of smoked Goblin grub",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Goblins",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Seedspall Viridis' section, its bullet [1]. Some are near the Survival Guide, close to the ??? of the next step."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sauromugue Champaign",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Chunk of smoked Goblin grub",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Seedspall Viridis",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Dribblix Greasemaw",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Seedspall Viridis' section, bullet [2]. Almost exactly on the I/J-9/10 intersection; the Survival Guide lands at (J-10). The page never says what ENDS the mission -- holding all three seedspalls appears to be it."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 1-7",
+   "page_id": 98567,
+   "revision_id": 708243,
+   "source_sha256": "592504f8ba186c23be627dc996fee4f31ea41574ae5a41e51ad6cf7542eefd17",
+   "cache_file": "0098567_seekers_of_adoulin_mission_1_7"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 126,
+   "dat_name": "Meeting of the Minds",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "GIVER: start stays Brenton, Western Adoulin (E-8) -- the header says so and chronicle_snpc says 'brenton'. They agree and nothing moves. The walkthrough's ONE action is at a different NPC entirely (Ploh Trishbahk, two zones' worth of city away at the Castle Adoulin gates), and that is the ladder's step 1, not the start: the start is who hands you the mission, the step is where you go with it. Writing Ploh Trishbahk into `start` would have replaced a correct giver with the destination and moved the marker with no warning.\n\nThe cutscene is only available between 15:00 and 22:00 game time. Nothing in the addon can see the clock, so the ladder will show the marker at all hours -- flagged rather than modelled.\n\nThe sub-bullet advising you to start 'Flavors of Our Lives' now to avoid a game-day wait in the NEXT mission is forward-planning advice, not a step of this one.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Life on the Frontier",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Brenton",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Brenton, Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Gates of Castle Adoulin; 15:00-22:00 game time only. The cutscene completes the mission, so there is nothing to observe."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 1",
+   "page_id": 50607,
+   "revision_id": 766020,
+   "source_sha256": "e4f6c31389d053ed3c56b335fee9acaf7fc460a183db4b3cbd71ff68230c2345",
+   "cache_file": "0050607_a_shantotto_ascension_mission_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 0,
+   "dat_name": "A Shantotto Ascension",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "steps_from_after_section",
+   "or_branch_modelled"
+  ],
+  "notes": "GIVER: header Start is the zone 'Windurst Walls' with no NPC, chronicle_snpc is '' -- they agree, start.npc stays null, nothing moves. This mission is started by ZONING, exactly the case AUTHORING describes for Blade of Evil.\n\nThe entry is specific and the page is emphatic about it: you must walk in from Windurst Woods or Windurst Waters. Arriving any other way -- Mog House included, so no Home Point, no teleport -- does not fire the cutscene. That belongs in the note, not in a target, because a zone step has nothing to mark.\n\nLevel 10 is a real gate stated in the walkthrough rather than in the (empty) Level field, so it is recorded as one.\n\nStep 2 comes from the 'Postponing' section after the walkthrough, whose bullets restart at [1]. It is the genuine alternative entry: a player who put the scenario on hold gets a log entry 'To Start ASA...' and restarts by using the Tales' Beginning book at (C-6/D-6). It is marked OPTIONAL because it is conditional on having postponed -- it is never a ladder position, and it is the one thing on this page that can carry a marker at all (it resolves to key 'tales' beginning'). The page notes the book is only visible to players who postponed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Windurst Walls",
+   "grid": null,
+   "raw": "Windurst Walls"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Windurst Walls"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on foot from Windurst Woods or Windurst Waters, at level 10 or above. Zoning in any other way -- Mog House included -- does not trigger the opening cutscene."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Tales' Beginning"
+    },
+    "zone": "Windurst Walls",
+    "grid": "C-6/D-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "OPTIONAL ALTERNATIVE, from the 'Postponing' section after the walkthrough (its bullet [2]). Only for a player who put the story on hold and now shows 'To Start ASA...' in the mission log; the book is visible only to them."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 4",
+   "page_id": 50614,
+   "revision_id": 694665,
+   "source_sha256": "80e8666188725d5349301df55c2ed4a6baaddba6f0ecc4849ec5d21589588bb0",
+   "cache_file": "0050614_a_shantotto_ascension_mission_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 3,
+   "dat_name": "Sugar-coated Directive",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "count_unobservable",
+   "or_branch_modelled"
+  ],
+  "notes": "GIVER: Trodden Snow, Qufim Island (H-7) -- header and chronicle_snpc ('trodden snow') agree, nothing moves.\n\nSIX PROTOCRYSTALS, ANY THREE. The mission hands you six Domina's seals and asks for at least three attached, so the six Cloisters are one unordered group -- one step each, because a step has ONE zone and these are six zones. The final return to Trodden Snow is the only ordered rung.\n\nNO EVIDENCE ANYWHERE, deliberately, and this is the interesting judgement on the page. The six counterseals are real key items and they resolve cleanly (ki 1197-1202), but the page lists all six in one breath -- 'receive a counterseal Key Item ([KI] Scarlet counterseal, ...)' -- and NEVER says which counterseal comes from which Cloister. Attaching Scarlet to a guessed crystal would be a rung that reads TRUE in the wrong zone, so all six stay null and the note says why. The Domina's seals are likewise unmapped, so `items` is empty on the crystal steps even though a seal is obviously consumed by each; they are granted by the mission itself, so requiring them would gate nothing anyway.\n\nThe return step carries items_partial: the real requirement is 'any three of six counterseals', an OR-of-combinations the schema cannot express at all.\n\nEach crystal is THREE clicks, not one: click, click again to enter the 'Sugar-coated Directive' battlefield, then click a third time after the fight to attach the seal and collect the counterseal. That is one action locus and stays one step. The weakened Prime Avatar inside is never named -- the page says only 'the corresponding Prime Avatar' -- so `mobs` is empty rather than invented. If you leave before collecting the counterseal you can return for it without refighting.\n\nBullet 5 is the gil reward table (3/4/5/6 seals -> 3k/10k/30k/50k), an outcome, not a step. The 'A Shantotto Ascension Key' section after the walkthrough is the once-a-day repeat for the Bird key and the Tenshodo coffer -- a reward loop that runs AFTER the mission is over, and it needs the Tenshodo Membership quest for the door. Not steps.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 7: an OR-of-combinations the schema cannot express, hence items_partial with an empty items list.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "That Which Curdles Blood",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": "Trodden Snow",
+   "zone": "Qufim Island",
+   "grid": "H-7",
+   "raw": "Trodden Snow, Qufim Island - (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Storms",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "protocrystals",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "any three of the six suffice. Click once, click again to enter the battlefield, beat the weakened Prime Avatar (it will not die until it has tried Astral Flow five times), then click a third time for the counterseal."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Frost",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "protocrystals",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "see step 1; three clicks with a battlefield in the middle."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Flames",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "protocrystals",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "see step 1; three clicks with a battlefield in the middle."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Tremors",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "protocrystals",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "see step 1; three clicks with a battlefield in the middle."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Tides",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "protocrystals",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "see step 1; three clicks with a battlefield in the middle."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Protocrystal"
+    },
+    "zone": "Cloister of Gales",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "protocrystals",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "see step 1; three clicks with a battlefield in the middle."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Trodden Snow"
+    },
+    "zone": "Qufim Island",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Needs at least three counterseals, any three of the six."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 5",
+   "page_id": 50615,
+   "revision_id": 694699,
+   "source_sha256": "e847913678c0aac4d8f415770e1f1a10e834833a74c3a52b7950fddf3ddb3df1",
+   "cache_file": "0050615_a_shantotto_ascension_mission_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 4,
+   "dat_name": "Enemy of the Empire (I)",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "reward_ki_not_used_as_evidence",
+   "random_target_set"
+  ],
+  "notes": "GIVER: the header Start is (empty), so the start is recovered from walkthrough bullet 1 -- Andrause at (I-8) in Norg. That AGREES with chronicle_snpc ('andrause'), so the marker does not move; the description field names him too.\n\nTHE BLACK BOOK IS NOT USED AS EVIDENCE, and this is the one place on the page I am knowingly leaving accuracy on the table. It is a key item (ki 1203), it is obtained mid-walkthrough at bullet 5, and it is spent at bullet 7 -- so on the face of it, holding it proves the soul-plate step is done and points the ladder at the Outcropping. But it is also the page's entire Reward field, and AUTHORING hard rule 7 says a Reward is not evidence. I obeyed the rule rather than argue my way around it. A human who wants the extra rung should add {ki Black book x1} as evidence on step 3; the reason it is absent is the rule, not an oversight.\n\nSOUL PLATES ARE NOT EVIDENCE EITHER, and here the rule and the reading agree. Soul Plate is one generic item id (2477) shared by every photograph in the game; a player who has ever touched a Soultrapper can be holding three of the wrong monsters. That is a rung that reads TRUE for the wrong reason, which is worse than a rung that never reads TRUE at all.\n\nTHE THREE MONSTERS ARE ASSIGNED PER PLAYER. Andrause names three of the Sea Serpent Grotto pool at random, and the page lists the whole pool -- roughly two dozen names across four Beastcoin-door tiers. Recording all of them as mobs would put a watch on two dozen monsters of which three matter, so `mobs` is empty and the pool stays in the note. Depending on which three you draw you may need a Silver, Mythril or Gold Beastcoin for the doors; Unity Warp 125 lands past the Gold door.\n\nBULLET 7 IS NOT A STEP OF THIS MISSION. Clicking the Outcropping a second time 'will immediately start the next mission' and drop you into the fight with three Tenshodo agents -- that fight belongs to Enemy of the Empire (II). This mission ends on the bullet-6 cutscene. Bullet 3 is Soultrapper how-to (ranged slot, ammo slot, does not work under Sneak or Invisible).\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: See the record note for why the Black book is not evidence here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Sugar-coated Directive",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": "Andrause",
+   "zone": "Norg",
+   "grid": "I-8",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Andrause"
+    },
+    "zone": "Norg",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he names the three monsters he is 'investigating' and sells a Soultrapper plus 12 Blank Soul Plates for 800 gil; another 12 plates per day after JP midnight."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": null,
+    "items": [
+     {
+      "name": "Soultrapper",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Blank Soul Plate",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "photograph the three monsters Andrause named -- he accepts plates of Sea Serpent Grotto monsters only. Soultrapper in the ranged slot, plates in ammo; it will not fire under Sneak or Invisible and sometimes just fails. The three are drawn from a pool the page lists in full, some of it behind Silver/Mythril/Gold Beastcoin doors, so no mob is recorded here."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Andrause"
+    },
+    "zone": "Norg",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Soul Plate",
+      "kind": "item",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Traded ONE AT A TIME, not as a stack of three. He gives the Black book; if you need another he will trade one for three more plates of his choosing."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Outcropping"
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Black book",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the cutscene here ENDS this mission. Do not click a second time until you are ready: that starts Enemy of the Empire (II) and its three-agent fight at once, and the Black book is taken the moment the fight begins."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 7",
+   "page_id": 50620,
+   "revision_id": 694713,
+   "source_sha256": "13fc351f2530d46f1c9e38d4f5fe9ea6460f49b6b05ad921f900227a468a2784",
+   "cache_file": "0050620_a_shantotto_ascension_mission_7"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 6,
+   "dat_name": "Sugar-coated Subterfuge",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "One bullet, one step, no ambiguity. GIVER: the header Start is the bare name 'Aldo' with no location; the walkthrough supplies the rest -- (J-8) inside Tenshodo Headquarters in Lower Jeuno -- and chronicle_snpc ('aldo') agrees, so the marker does not move. The zone and grid come from the walkthrough, not from the header.\n\nThe cutscene is the whole mission; nothing is granted that the addon could observe, so evidence is null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Enemy of the Empire (II)",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": "Aldo",
+   "zone": "Lower Jeuno",
+   "grid": "J-8",
+   "raw": "Aldo"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aldo"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside Tenshodo Headquarters."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 8",
+   "page_id": 50621,
+   "revision_id": 765321,
+   "source_sha256": "f1d6893b7a39a9f72cd62a3c5d29d37850031dc1b41ed72e227b064ac8d93add",
+   "cache_file": "0050621_a_shantotto_ascension_mission_8"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 7,
+   "dat_name": "Shantotto in Chains",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "start_disagrees_with_header",
+   "unordered_group",
+   "steps_from_after_section",
+   "walkthrough_incomplete"
+  ],
+  "notes": "GIVER -- I DISAGREE WITH CHRONICLE AND SAY SO HERE. chronicle_snpc is '' (no giver at all) and the header Start is the bare zone 'Ro'Maeve'. I have written start.npc = 'Ensorcelled Door', because walkthrough bullet 1 is 'click the Ensorcelled Door at (B-10) south-west corner in Ro'Maeve' and that is unambiguously where the mission begins. It resolves (key 'ensorcelled door'), so the builder will take it and this row gains a giver marker it does not have today. That is a marker added at a place the page names, not a marker moved off someone -- but it is a difference from chronicle and the brief says to declare every one.\n\nSIX FRAGMENTS, ONE GROUP. Walkthrough bullet 2 says only 'collect 6 [KI] Key Item fragments from various monsters'; the actual six NMs, their grids and their damage-type locks are in the 'Fragments' section after the walkthrough, whose bullets restart at [1]. Three are in Ro'Maeve and three in The Sanctuary of Zi'Tah, no order is implied, so they are one unordered group with one step each -- one step, one zone. Each NM drops its OWN distinct key item and the page maps them one to one (ki 1204-1209), so unlike ASA 4 every member can carry real evidence without guessing.\n\nMEDIUM, because the page never closes the loop: it tells you to note a 'hexagonal depression' on the door and to collect six fragments, and then stops. Returning to the Ensorcelled Door with all six is the obvious ending and the fragment colours make it near-certain, but the page does not say it, so there is no final rung -- I will not invent the step that ends the mission. The ladder therefore stops on the last fragment.\n\nNOT STEPS: bullet 3 (which Trust to bring for each damage type), the drop-rate and despawn mechanics under bullet 2 (5 minutes to despawn, 2 to respawn, Treasure Hunter does not apply), and 'Fragments' bullet [7], 'This is the cutscene that will break for Windower users' -- the classic Windower troubleshooting line AUTHORING warns about.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Sugar-coated Subterfuge",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": "Ensorcelled Door",
+   "zone": "Ro'Maeve",
+   "grid": "B-10",
+   "raw": "Ro'Maeve"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ensorcelled Door"
+    },
+    "zone": "Ro'Maeve",
+    "grid": "B-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "south-west corner. No cutscene -- you are just told about a 'hexagonal depression', which is the six fragments."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ro'Maeve",
+    "grid": "E-9/10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Luminous blue fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Lode Golem",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "fragments",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "detail from the 'Fragments' section, bullet [1]. Takes magic damage from Darkness-elemental spells only (Ice, Water, Earth, Dark); Quick Draw also works. Party members all receive the key item."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ro'Maeve",
+    "grid": "K-9/10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Luminous purple fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Fired Urn",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "fragments",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Fragments' bullet [2]. Slashing damage only."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ro'Maeve",
+    "grid": "G-10/11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Luminous yellow fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Steely Weapon",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "fragments",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Fragments' bullet [3]. Ranged weapons only; Daken does not count."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Luminous green fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Holey Horror",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "fragments",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Fragments' bullet [4]. Piercing damage only -- piercing, not ranged; Daken does work here."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Luminous red fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Skeleton Scuffler",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "fragments",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Fragments' bullet [5]. Blunt damage only; Quick Draw works but barely."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Luminous beige fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Blest Bones",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": "fragments",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Fragments' bullet [6]. Magic damage from Light-elemental spells only (Thunder, Fire, Wind, Light); Quick Draw also works. The page stops here and never says to take the six back to the door."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 11",
+   "page_id": 50627,
+   "revision_id": 694726,
+   "source_sha256": "9aa3bdbaacabd932e1714fa7df67e1e114486059ca5951fb4143fe9e8cff4d96",
+   "cache_file": "0050627_a_shantotto_ascension_mission_11"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 10,
+   "dat_name": "Romancing the Clone",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "One bullet, one step. GIVER: header Start is the bare name 'Aldo'; the walkthrough places him at (J-8) in Tenshodo Headquarters, Lower Jeuno, and chronicle_snpc ('aldo') agrees, so nothing moves. Zone and grid come from the walkthrough. Identical shape to Mission 7 and, like it, the cutscene is the mission -- no observable grant, so evidence is null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Battaru Royale",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": "Aldo",
+   "zone": "Lower Jeuno",
+   "grid": "J-8",
+   "raw": "Aldo"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aldo"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in Tenshodo Headquarters."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Shantotto Ascension Mission 13",
+   "page_id": 50630,
+   "revision_id": 694731,
+   "source_sha256": "221b7e2822f4ffed38f8359aa572a705dea1e77722210b62962598f07936825c",
+   "cache_file": "0050630_a_shantotto_ascension_mission_13"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "asa",
+   "id": 12,
+   "dat_name": "Project: Shantottofication",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "start_disagrees_with_header",
+   "reward_ki_not_used_as_evidence"
+  ],
+  "notes": "GIVER -- I DIFFER FROM CHRONICLE, DECLARED HERE. chronicle_snpc is '' and the header Start is the bare zone 'Sacrificial Chamber'. I have written start.npc = 'Mahogany Door', because the walkthrough's only instruction is to click that door in that zone, and it resolves (key 'mahogany door'). The builder will prefer it, so this row gains a giver marker where it has none today. Nothing is displaced -- there was no giver to displace -- but it is a difference and it is stated.\n\nThe walkthrough opens 'After the initial cutscene', which is the previous mission's ending; the door is where a player who has the mission actually acts.\n\nTHE TONBERRY KEY IS NOT EVIDENCE. It is the header's Reward, and by hard rule 7 a reward proves the mission is over, not that a step is done -- bullet 4 confirms it, awarding the key on a successful fight and pointing at the Tenshodo coffer.\n\nTHE TABLETS ARE NOT REQUIREMENTS. The tablet key items are consumed on entry and each grants a buff (a full set is +150 to elemental resistance and to every stat, triple HP/MP and a weakness-free Reraise), but the page says outright they are not necessary to begin the fight, which is soloable in 119 gear with Trusts. So `items` is empty rather than a gate that would hide the marker from anyone without them.\n\nBoth bosses are named, so both are recorded as mobs; note that 'Shantotto' folds to the same key as the Windurst NPC, which is harmless here because mobs are matched live against the local entity list and only while the mission is in progress. Bullet 3 is rage-mode mechanics -- at 50% one calls the other in to skillchain, the raged one cannot be dropped below 1%, and a wipe after it triggers does not repeat it if you stay inside. Tactics, not steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Sisters in Arms",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Shantotto Ascension"
+  },
+  "start": {
+   "npc": "Mahogany Door",
+   "zone": "Sacrificial Chamber",
+   "grid": null,
+   "raw": "Sacrificial Chamber"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mahogany Door"
+    },
+    "zone": "Sacrificial Chamber",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "click it AGAIN, after the mission's opening cutscene, for the option to enter the Project: Shantottofication battlefield. Tablet key items are optional buffs, consumed on entry."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sacrificial Chamber",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "D. Shantotto",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Shantotto",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "inside the battlefield. D. Shantotto brings Scythe weaponskills (Salvation Scythe: AoE, poison, paralysis), Shantotto staff ones (Divine Malison: AoE, stun, slow, silence, plague)."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Kupo Mission 5",
+   "page_id": 47308,
+   "revision_id": 644266,
+   "source_sha256": "1b8f42948204d2da6accceb10dcef4a0881ace5fad7452398358d03cf19a2968",
+   "cache_file": "0047308_kupo_mission_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "mkd",
+   "id": 4,
+   "dat_name": "Curses! A Horrifically Harrowing Hex",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: the header Start is (empty); the start is recovered from the single walkthrough bullet -- Shantotto in Windurst Walls (K-7) -- and it AGREES with chronicle_snpc ('shantotto'), so the marker does not move.\n\nTHE RIPE STARFRUIT IS NOT THIS MISSION'S. She asks for it during the cutscene and, in the page's own words, that 'automatically starts the next mission'. So the starfruit is Kupo Mission 6's business: it is not obtained here, it is not evidence here, and the fetch is not a step here. This mission is one conversation, which is why a page with one bullet is still confidently high rather than thin.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Welcome! To My Decrepit Domicile",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "A Moogle Kupo d'Etat"
+  },
+  "start": {
+   "npc": "Shantotto",
+   "zone": "Windurst Walls",
+   "grid": "K-7",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shantotto"
+    },
+    "zone": "Windurst Walls",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene ends this mission and starts Kupo Mission 6 by itself; the Ripe starfruit she asks for belongs to that one."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rhapsodies of Vanadiel Mission 3-6",
+   "page_id": 120851,
+   "revision_id": 696099,
+   "source_sha256": "b49230439c955ca4cc955c5935c9b0bf6660626afd592645dd465f0c0374af5a",
+   "cache_file": "0120851_rhapsodies_of_vanadiel_mission_3_6"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "rov",
+   "id": 264,
+   "dat_name": "Tears of the Generals",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "prev_gate_unmodelled"
+  ],
+  "notes": "GIVER: header Start is (empty); recovered from the single walkthrough bullet as Ploh Trishbahk at the Castle Adoulin gates in Eastern Adoulin, which AGREES with chronicle_snpc ('ploh trishbahk'). Nothing moves.\n\nGRID LEFT NULL ON PURPOSE. This page gives no grid ref. The sibling page in this same run (Seekers of Adoulin Mission 1-7) puts the same NPC at the same gates at (K-9) and it is almost certainly the same spot, but that is another page's fact and the grid is cosmetic -- the marker rides the NPC key, not the grid -- so it is not imported.\n\nTHE EXTRA PREREQUISITE IS NOT IN `prev`. The sub-bullet says you must have completed at least Seekers of Adoulin Mission 2-2 'An Aimless Journey' to get this cutscene. It is a genuine gate, but it is a CROSS-LINE one, and adoulin is a linear line with no completed bitfield, so the runtime cannot observe it; adding it to prev would risk suppressing a marker on a condition that can never read true. gates.prev therefore carries only the header's Previous ('Forward Thinking') and the cross-line requirement lives here.\n\nThe 'Notes' section after the walkthrough lists five Adoulin missions that BLOCK this cutscene while you are on them (SoA 3-6-3, 3-6-4, 4-5, 4-5-1, 5-4-1). A negative prerequisite has no expression in this schema at all -- there is no 'not currently on X' -- so it is recorded here only.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Forward Thinking",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Rhapsodies"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": null,
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Castle Adoulin gates. Needs Seekers of Adoulin Mission 2-2 done, and will not fire while you are on any of the five Adoulin missions the Notes section lists."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 4-4",
+   "page_id": 145213,
+   "revision_id": 774305,
+   "source_sha256": "d19aae1f65383963eb3801b8ad3afb178b7b3868007cc2b56ea4b80d4752b3f9",
+   "cache_file": "0145213_the_voracious_resurgence_mission_4_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 298,
+   "dat_name": "Raubahn the Blue",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_name_corrected",
+   "reward_ki_not_used_as_evidence"
+  ],
+  "notes": "GIVER: the Imperial Whitegate at (L-9) in Aht Urhgan Whitegate -- header and chronicle_snpc ('imperial whitegate') agree, nothing moves. It is an examinable entity, not a person, and it resolves (key 'imperial whitegate').\n\nZONE NAME CORRECTED. The page writes 'Aht Urghan Whitegate' twice, with the g and h transposed. The correct name is Aht Urhgan Whitegate and that is what is written here. Both happen to resolve to zone 50 through the normaliser, so this costs nothing either way, but the record should carry the real name.\n\nSTEPS 3, 4 AND 5 ARE ALL THE SAME OBJECT. Touch the Savage Scars for a cutscene, touch again for the battle, select again for a second cutscene -- three page bullets, three distinct interactions, one marker. They are kept as three rungs because the page really does separate them and the marker is identical for all three, so nothing can go wrong; merging them would just lose the audit trail.\n\nMNEJING'S RECEIVER IS NOT EVIDENCE: it is the header's Reward, granted by the final cutscene, and by hard rule 7 that proves the mission is over rather than that a step is done. This mission therefore has a six-rung ladder and no evidence at all, which for a mission is the normal case.\n\nThe route detail under bullet 2 is travel advice -- Unity Warp 135 (Shedu) needs Captain rank or a Remnants Permit, otherwise the Runic Portal to Nyzul Isle Staging Point then the teleporters marked D and J -- and the Engraved Tablet beside the Savage Scars is scenery used as a landmark, so neither becomes a target. Uran-Mafran fights alongside you and the battle is LOST if they are KOed; they can be cured, but they are not a step. The Notes section after the walkthrough is about unlocking RoE Quests 4 objectives through Elijah in Upper Jeuno -- an outcome, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Naja the Ambitious",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Imperial Whitegate",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "L-9",
+   "raw": "Imperial Whitegate, Aht Urghan Whitegate (L-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by Home Point #2."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Caedarva Mire"
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "specifically Map 4, Hediva Isle. Unity Warp 135 (Shedu) is fastest but needs Captain Mercenary Rank or a Remnants Permit; otherwise Runic Portal to the Nyzul Isle Staging Point, teleporter D at (H-8), then teleporter J, then north."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Savage Scars"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "north-east along a slightly hidden path, beside the Engraved Tablet. Summon Trusts before the cutscene -- the fight follows immediately."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Savage Scars"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Arisen Soulflayer",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Descended Winebibber",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "touch the Scars again to start it. 15 minute limit; the three Winebibbers (clot slimes, watch Fluid Toss) must die too. Uran-Mafran fights with you and the battle is lost if they are KOed."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Savage Scars"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "third interaction with the same object, for the post-fight cutscene."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the closing cutscene grants Mnejing's receiver, which is the Reward and so is not used as evidence. Completing 'A Stygian Pact' adds an extra dialogue option about Odin."
+   }
+  ]
+ }
+]

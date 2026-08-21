@@ -1,0 +1,460 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Flown the Coop",
+   "page_id": 58981,
+   "revision_id": 767151,
+   "source_sha256": "929275e0735f2d17db17b0cd8ad95a060557696b10442babd4bcfac557e9dc4d",
+   "cache_file": "0067220_flown_the_coop"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 41,
+   "dat_name": "Flown the Coop",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "multiple_target_locations",
+   "evidence_declined_ambient_item",
+   "optional_access_step_omitted"
+  ],
+  "notes": "Four top-level bullets, four steps, and the ladder is the page's own shape: take the greens from Brutus (A), trade them to a Chocobo Spoor, sneak up on the chocobo that appears and examine it, then go back to Brutus (A). Bullet 3's top line -- 'A Chocobo NPC will appear upon trading Gysahl Greens' -- is an OUTCOME of bullet 2, not an action; the action for that rung sits in its sub-bullet, 'sneak up behind the Chocobo NPC and examine it', and bullet 4's 'after capturing the Chocobo' confirms that capturing really is something the player does. That is the one place I took an instruction out of a sub-bullet. Everything else under bullets 3 and 4 is behaviour description (it runs around and checks its surroundings when it stops, it sees through Invisible, it bolts if it spots you, there is a minute cool-down) or party-credit advice, and none of it is a step.\n\nBullet 1's sub-bullet about Red Ghost (A) is deliberately NOT a step. It says the spot is Veridical Conflux #08 and that a player who has never been there needs Red Ghost (A) to teleport them above the ledge -- that is how you physically reach the start NPC in a zone whose confluxes may not be unlocked, i.e. zone navigation, not a quest action. Red Ghost (A) is the only NPC named on this page that I left out of the ladder, so it is flagged for a human to overrule.\n\nStep 2 carries no grid on purpose. The page gives THREE locations for one named entity -- 'in the vicinity of (I-8), (I-9), or (J-13)' -- and any of them satisfies the step, so committing to one square would aim the marker at a spoor the player is not walking to. The name Chocobo Spoor resolves on its own; the three squares and the routing advice (quickest is a run out of the southeast tunnel from Brutus, or take Conflux #07 or #03 for another spoor) are kept in the step note instead.\n\nNo step on this quest carries evidence. Brutus (A) does hand over Gysahl Greens at bullet 1, which is a genuine step-1 grant and would ordinarily qualify under rule 3 -- but Gysahl Greens is one of the most commonly carried items in the game, and the page itself assumes the player buys spares ('you will have to lure it back with another Gysahl Greens, but you need to supply it'). Holding a stack you bought is not proof you spoke to Brutus, and since speaking to Brutus is how the quest is ACCEPTED, a false positive there would skip the one rung that cannot be skipped. Declined and flagged. Capturing the chocobo hands you nothing at all, and the Jade abyssite of prosperity appears only in the Reward box as a first-completion prize, so by rule 7 it stays out.\n\nFame 'aatt' is an Abyssea zone code, not one of the nine regions, so region is null and only raw is kept. Repeatable and Expansion are both stated in the header in words ('Repeatable: Yes', 'Expansion: Abyssea') and the walkthrough closes with 'Zoning is required in order to repeat this quest', so neither is inferred. The step-3 target name Chocobo is generic and resolves ambiguously, but that step carries a zone, which is what the ambiguity gate asks for; it is flagged anyway. | CORRECTED provenance: this page is reached through the redirect 'Flown The Coop'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The page names it only 'Chocobo', which resolves ambiguously",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "aatt / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Brutus (A)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "H-8",
+   "raw": "Brutus (A) (H-8), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brutus (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he trades you the Gysahl Greens that step 2 spends, and this is also where the quest is accepted. The Gysahl Greens are not used as evidence -- see the quest note. The sub-bullet places this at Veridical Conflux #08 and says a player who has not been here yet needs Red Ghost (A) to teleport them above the ledge; that is travel, not a rung."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Chocobo Spoor"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Gysahl Greens",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page calls it a 'targetable location'. There are three of them, in the vicinity of (I-8), (I-9) or (J-13), and any one works, so no single grid is recorded. Quickest is a run out of the southeast tunnel from Brutus; Conflux #07 or #03 reach the others."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The instruction is in bullet 3's sub-bullet: sneak up BEHIND the chocobo and examine it. It runs around and checks its surroundings when it stops, it can see through Invisible, and if it sees you it gets spooked and runs off. After enough time or enough spooks it leaves for good and has to be lured back with another Gysahl Greens that you supply yourself, with about a minute of cool-down before one will appear again. It follows the spoor you traded at, so no grid. the zone is what keeps the target usable."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Brutus (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page's own return-to-giver bullet, not an assumed hand-in. Party members get credit for the capture, alliance members in a different party do not. The reward is the Jade abyssite of prosperity the first time and 400 Cruor afterwards, so nothing here is evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Smoke over the Coast",
+   "page_id": 58993,
+   "revision_id": 680455,
+   "source_sha256": "a53d569d1e097bfb51a603a81be2f8189c3889e3e4f941eed1aeb346c1d43d4b",
+   "cache_file": "0067221_smoke_over_the_coast"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 53,
+   "dat_name": "Smoke over the Coast",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unnamed_target",
+   "random_outcome"
+  ],
+  "notes": "Five bullets, three steps. Bullets 2, 3 and 4 are one action seen three ways: bullet 2 states the choice ('You can either purchase a sausage from the Auction House or create one within Abyssea'), bullet 3 is the craft itself (trade a Giant Sheep Meat to the ??? on the camp fire at (E-7), near Conflux #6) and bullet 4 is the prompt loop that decides what comes out. Only the trade is something the player does, so all three collapse into step 2 and all three bullet numbers are cited on it.\n\nThe or-branch is modelled rather than buried. Step 2 is marked optional because the page says in as many words that it can be skipped by buying a sausage, and its evidence -- holding a Galkan Sausage, or a +1, +2 or +3 -- is satisfied by either route, so a player who walks in with a bought sausage is pointed at the hand-in instead of at a campfire they do not need. That is the right false positive to accept, and it is deliberately the opposite call to the Gysahl Greens in Flown the Coop in this same batch: buying a sausage genuinely does complete this rung, whereas buying greens does not accept that quest.\n\nThe prompt loop's messages are outcomes, not rungs. 'The meat appears to be almost done' may give a Galkan Sausage, 'a mouthwatering aroma permeates the air' a Galkan Sausage +1, 'a burnt smell pervades the air' a +2, and 'an overpowering burnt spell pervades the air' a +3; the synth can also burn at any point and leave a Galkan Sausage -1 or nothing at all, which is why this is flagged as a random outcome and why step 2 may have to be walked repeatedly. The page states outright that Hungry Wolf will not take a Galkan Sausage -1, so the -1 is excluded from both the evidence alternatives and step 3's items. The grade only scales the reward (200~600 Cruor), so it matters to the player and not to the ladder.\n\nStep 3 is the page's own return-to-giver bullet ('Trade the sausage to Hungry Wolf (A) to receive your reward'), not an assumed hand-in. It carries no evidence: Cruor is not an item, and the Guild Flyers are a first-completion reward with no earlier mention in the walkthrough, so rule 7 keeps them out. The sausage is evidence on step 2 only and merely a held requirement on step 3, which is the split rule 4 asks for.\n\nThe target of step 2 is the page's literal '???' on the camp fire -- an object that can never carry a marker but keeps the rung. Fame 'amis' is an Abyssea zone code, not one of the nine regions, so region is null and only raw is kept. Repeatable Yes and Expansion Abyssea are both stated in the header in words, and the page closes with 'Zoning is required to repeat this quest'. The header's Item Reqs list both the Giant Sheep Meat and the Galkan Sausage/+1/+2/+3, which agrees with the walkthrough rather than contradicting it. | CORRECTED provenance: this page is reached through the redirect 'Smoke over The Coast'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: A ??? can never carry a marker; the rung is kept for ordering.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Hungry Wolf (A)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "G-7",
+   "raw": "Hungry Wolf (A), Abyssea - Misareaux (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hungry Wolf (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he is near Conflux #3. Accepting the quest is all this bullet does, so there is nothing observable here."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Giant Sheep Meat",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Galkan Sausage",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Galkan Sausage +1",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Galkan Sausage +2",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Galkan Sausage +3",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Optional because bullet 2 offers the Auction House instead buy a sausage and this rung is already satisfied. The ??? sits on the camp fire at (E-7), near Conflux #6. After the trade you get prompts and may keep going or stop: stopping earlier gives a plain Galkan Sausage, later ones give +1, +2 or +3, and the synth may burn at any point and leave a Galkan Sausage -1 or nothing, in which case this step is repeated. Any of the four acceptable grades counts as done, which is why they are evidence alternatives."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hungry Wolf (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Galkan Sausage",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Galkan Sausage +1",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Galkan Sausage +2",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Galkan Sausage +3",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "any of the four acceptable grades may be traded; the page states he will NOT take a Galkan Sausage -1, so it is not listed. The sausage is already evidence on step 2, so it is only a held requirement here. Reward is 200~600 Cruor by grade, doubled on the first completion, plus Guild Flyers on the first completion only -- end-of-quest, therefore not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dropping the Bomb",
+   "page_id": 58995,
+   "revision_id": 767051,
+   "source_sha256": "568afb805e78e47424d61bfab1f1b7cd6d696ed6ebb178c2c27c1ce2b726afd4",
+   "cache_file": "0067222_dropping_the_bomb"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 55,
+   "dat_name": "Dropping the Bomb",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeating_loop",
+   "start_grid_from_walkthrough",
+   "mob_count_unknown"
+  ],
+  "notes": "Six bullets, three steps. Bullet 6 is not a step at all: 'The Versa Breeches will have a random augment on them' is a sentence about the reward that landed at top level because the wiki left a blank line above it, and it only repeats the header's Reward box. Bullets 4 and 5 are not rungs either -- 4 is a failure case ('there is a chance he will not accept the casket because it has \"moisture\" inside. You will have to obtain another casket') and 5 is the completion sentence -- so both are cited on step 3, which is the hand-in they describe.\n\nStep 2 is the whole of bullet 2 read as one action. The casket is neither bought nor found lying about: you fish Brine Crab up out of the nearby stream and defeat them for a drop, which is one thing a player does in one place and therefore one rung, not a fishing step plus a fight step. Brine Crab is recorded with role 'drop' and count null -- the page gives no number and calls the drop rate poor enough that Treasure Hunter is 'strongly encouraged', so any count would be invented. The step carries no grid: the page says only 'the nearby stream', with Veit (A) at (H-4) as the landmark, and there is no square to point at. The sub-bullets are fishing technique (almost any pole/bait combination works, the crabs give the 'ferociously bites' message) and drop-rate advice, not steps.\n\nThe Powder Casket is step 2's evidence and step 3's held requirement, which is the split rule 4 wants -- it is obtained at step 2 and merely carried at step 3, so it is evidence on exactly one step. It sits in the header's Item Reqs and not in the Reward box, so rule 7 never comes near it.\n\nThe moisture rejection makes this a loop the addon cannot observe. A refused trade leaves the player holding nothing and standing back at step 2, and no packet distinguishes 'has not fished a casket yet' from 'just had one refused' -- both look identical from inventory. The ladder is still the right ladder, it may simply be walked more than once, and it is flagged.\n\nThe start grid is recovered from the walkthrough: the header's Start field is 'Veit (A), Abyssea - Misareaux' with no square, and bullet 1 supplies (H-4), northeast of Conflux #5. start.raw keeps the header string verbatim and the grid comes from bullet 1 of this same page. Fame 'amis' is an Abyssea zone code, not one of the nine regions, so region is null and only raw is kept. Repeatable Yes and Expansion Abyssea are stated in the header in words, and the page closes with 'Zoning is required to repeat this quest'. | CORRECTED provenance: this page is reached through the redirect 'Dropping The Bomb'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "amis / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Veit (A)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "H-4",
+   "raw": "Veit (A), Abyssea - Misareaux"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Veit (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "H-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header gives no square; bullet 1 puts him at (H-4), northeast of Conflux #5. He requests the Powder Casket here, which is the request and not yet a hand-in."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Powder Casket",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Brine Crab",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the crabs are fished up out of the nearby stream and then defeated for the drop -- fishing and fighting are one action here. Almost any pole/bait combination works and the crab bites with the 'ferociously bites' message. The drop is unreliable and Treasure Hunter is strongly encouraged, so no count is recorded and no number of crabs is implied. No grid: the page names only 'the nearby stream' near Veit (A)."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Veit (A)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "H-4",
+    "items": [
+     {
+      "name": "Powder Casket",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "the page's own trade-it-back bullet. He may refuse a casket for having 'moisture' inside, in which case another must be obtained and step 2 is repeated -- nothing observable marks a refusal, so the loop is invisible to the addon. The quest completes on an accepted casket; the 1,200 Cruor and the randomly augmented Versa Breeches are the end reward and are not evidence."
+   }
+  ]
+ }
+]

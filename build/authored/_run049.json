@@ -1,0 +1,1775 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dark Puppet",
+   "page_id": 15063,
+   "revision_id": 754361,
+   "source_sha256": "17f0e44e64218c4dfb7a6a0e33682a277d66caf64658050bad88124f0989d6bd",
+   "cache_file": "0015063_dark_puppet"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 58,
+   "dat_name": "Dark Puppet",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "bullet_split"
+  ],
+  "notes": "A clean three-NM chain and one of the better evidence ladders in this batch: each NM's drop is consumed by the next trade, so Darksteel Ingot, Gerwitz's Axe and Gerwitz's Sword can each be evidence exactly once without any of them being live on two rungs at the same time. Bullets 6 and 9 are pure in-zone routing -- south up the ramp, down the southeast hole at (H-11/12) to map 3, then south into the square room -- and are folded into the trades they lead to rather than given rungs of their own; nothing about walking across Ordelle's Caves is markable or observable. Bullet 11 is two different things and is split: killing Gerwitz's Soul, then zoning out to La Theine Plateau at (G-10), which is where the cutscene and the reward actually happen. That means the quest ends on a zone line with no hand-in NPC, so no turn-in is invented. The unnumbered line under bullet 1 ('You can be on any job from here on') is a comment on the Dark Knight gate, not a step. FLevel is 'NA', so the fame level is null while the region stands.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / NA"
+   },
+   "prev": [
+    {
+     "title": "Dark Legacy",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "DRK"
+   ],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": "G-8",
+   "raw": "Cid - Metalworks (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a Dark Knight; any job from here on"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Darksteel Ingot",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Auction House or crafting; one ingot is enough for a whole party running the quest together"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ordelle's Caves"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "a cutscene fires on zoning in; the Survival Guide and the Voidwatch warp land at the same entrance"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Darksteel Ingot",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gerwitz's Axe",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "map 1. Coming in from La Theine Plateau or the Survival Guide, take the east path."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gerwitz's Axe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Gerwitz's Axe",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "losing costs another Darksteel Ingot to respawn it. The NM and its drop share a name."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Gerwitz's Axe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gerwitz's Sword",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "map 3. Bullet 6 is the route to it: south up the ramp, down the southeast hole at (H-11/12), then east."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gerwitz's Sword",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Gerwitz's Sword",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Gerwitz's Sword",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gerwitz's Soul",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "bullet 9 is the route: south into the large square room"
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ordelle's Caves",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gerwitz's Soul",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "every party member in the zone gets credit, even out of experience range"
+   },
+   {
+    "n": 10,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "La Theine Plateau"
+    },
+    "zone": "La Theine Plateau",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "out of Ordelle's Caves at (G-10) on map 3. The cutscene and the reward come on zoning -- there is no NPC to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Scattered Into Shadow",
+   "page_id": 15065,
+   "revision_id": 754384,
+   "source_sha256": "6b38babfffd7493c889b0eab1fc098aa3664cbf61b9be891bf6bb2decdbb5b5d",
+   "cache_file": "0015065_scattered_into_shadow"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 61,
+   "dat_name": "Scattered Into Shadow",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "unnamed_target",
+   "ki_name_not_unique"
+  ],
+  "notes": "Two targets in this quest have no name on the page and neither is guessed at. Bullet 2 says only 'the pools' -- three little green marks on map 2 of Fei'Yin -- and bullet 7 says only 'a chest'; writing ??? or Treasure Chest for either would be inventing a name, so both steps keep their rung and their zone and lose their marker honestly. A human with the client open could recover both cheaply, which is why they are flagged. The three pools are ONE step rather than three: they are examined in a fixed order ((H-8), (H-5), then lastly (F-5)) and nothing about the first two is observable, so three rungs the player cannot be tracked through would be noise. Step 1's evidence is also lost, for a different reason: the page says Brutus grants three Aquaflora key items, but 'Aquaflora' is not a unique name in the client's key-item table and the resolver rejects it rather than guess an id, so the step is left evidence-free instead of carrying a wrong one. Bullet 3 contradicts itself -- the ghost 'can actually spawn at any pool' but seems to need the other two used first -- and the walkthrough's stated order is what is recorded. The Castle Oztroja half carries itself on the Oztroja Chest Key and the Beast Collar; the Curio Vendor Moogle alternative needs no branch, because the evidence is the key however you came by it.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: that name is not unique in the client's key-item table and the resolver refuses to guess between them.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Wings of Gold",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BST"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Brutus",
+   "zone": "Upper Jeuno",
+   "grid": "G-7",
+   "raw": "Brutus, Upper Jeuno (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "As a Beastmaster; any job from here on. He grants three Aquaflora key items, which cannot be used as evidence."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page names these only 'the pools' -- little green marks on map 2, examined at (H-8), then (H-5), then lastly (F-5). Home Point #2, just outside the Cloister of Frost, is the closest warp."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dabotz's Ghost",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "spawns from the (F-5) pool. A Black Mage -- Tornado and frequent curse. Take Sneak off: he pops in the water and you cannot reach him unless he aggroes you."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same unnamed pool again, after the ghost dies. The page does not say what this gives you, so nothing is claimed."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Oztroja Chest Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "off the monsters inside -- the page does not name which -- or bought from the Curio Vendor Moogle. No branch is needed: the evidence is the key however you got it."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [
+     {
+      "name": "Oztroja Chest Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Beast Collar",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page says only 'a chest inside the castle', so the target is left unnamed rather than guessed"
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tebhi"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [
+     {
+      "name": "Beast Collar",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "an Opo-opo that roams the indoor pond near the brass door to the city-mission magicite. He disappears for three minutes after taking the collar."
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Brutus"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cloak and Dagger",
+   "page_id": 11822,
+   "revision_id": 727419,
+   "source_sha256": "6be952f7af6a550ed7c40048d8f95f609377b6f2965f61e2fa806119235aa145",
+   "cache_file": "0011822_cloak_and_dagger"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 13,
+   "dat_name": "Cloak and Dagger",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "latent_unmodelled",
+   "skill_gate_unmodelled",
+   "ws_quest_exclusive"
+  ],
+  "notes": "Bullet 1 is not a step: it is a warning that only one Weapon Skill quest can be active at a time, which nothing observable reports and which the schema has no slot for. The sub-bullet under bullet 2 is a transcluded 'Breaking the Latent' section that arrived as a bare heading with nothing under it; breaking the latent on the Dagger of Trials is a genuine requirement sitting between steps 1 and 2, but it has no target, no zone and no observable state, so it is flagged rather than given a rung it could never advance off. The key item the page calls the 'Weapons Training Guide' is 'Weapon training guide' in the client -- singular -- and it is id 343, immediately before this quest's other two key items at 344 and 345, which is what settles that the plural is a wiki spelling rather than a different object. Bullets 5 and 6 sit under a '== From the Unity Warp ==' heading and are an alternate approach to the same ???, not steps of their own; bullet 4 puts it at (I-9) on map 2 and bullet 6 near the (I-9)/(J-9) intersection, which agree closely enough that (I-9) stands without a conflict flag. Quest Reqs 'Dagger skill 230+' has no schema slot and no observable predicate, so it gates nothing; the Level 71 half of the same field is a real level gate on any job. Fame is written 'k', which is the Kazham region. Downgraded to medium on review: three separate things about this page are unmodellable rather than merely noted. Bullet 1's rule that no other Weapon Skill quest may be active is an entry gate with no schema slot and nothing observable; Quest Reqs' 'Dagger skill 230+' is a second gate with no slot; and the 'Breaking the Latent' sub-bullet arrived as a bare transcluded heading with its content missing, so a genuine requirement sitting between rungs 1 and 2 is on the page in name only. The ladder itself is right and every rung resolves -- the demotion is about the gates and the truncated transclusion, not about the steps.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": null,
+    "raw": "k / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Jakoh Wahcondalo",
+   "zone": "Kazham",
+   "grid": "J-9",
+   "raw": "Jakoh Wahcondalo, Kazham (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "she also hands over the Dagger of Trials, whose latent must be broken before the quest will go on -- nothing about that is observable. The page spells the key item 'Weapons Training Guide'; the client's name is 'Weapon training guide'."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Dagger of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "only once the latent is broken; she then sends you to Gustav Tunnel"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Baronial Bat",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "map 2. Follow the path to (G-9), take the western tunnel, head east at the fork, then the eastern tunnel out of the large room at (I-8). Bullets 5 and 6 are the alternate approach from the level 128 Unity warp -- north hugging the east wall, to the (I-9)/(J-9) intersection. Bring Silent Oils and Prism Powders; there is a Grounds Tome by the warp."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Baronial Bat",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "weak to Wind and Light"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gustav Tunnel",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the same ??? again, after the bat is dead"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the reward is the Evisceration weapon skill"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Let Sleeping Dogs Lie",
+   "page_id": 167,
+   "revision_id": 763447,
+   "source_sha256": "9ed9a4a3bdfa29286daf88e22a374d5ca5f2f8cffeff09dc3855d3d84cf73096",
+   "cache_file": "0000167_let_sleeping_dogs_lie"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 46,
+   "dat_name": "Let Sleeping Dogs Lie",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "prev_contradicted_by_walkthrough",
+   "or_branch_modelled",
+   "bullet_split",
+   "unknown_zone"
+  ],
+  "notes": "The header names Reap What You Sow as Previous, but the walkthrough's own opening note says outright that completing it is NOT required to activate this quest. prev is therefore left empty and the disagreement recorded: a wrong prereq hides the quest from every player who has not done the other one, while a missing prereq costs nothing but showing it slightly early. The rest of that note -- it cannot be started while this quest or Making the Grade is active -- has no schema slot and is not a step. Bullet 1 is two NPCs and becomes two rungs, Mashuu-Ajuu first and then Paku-Nakku, in the order the page insists on; start stays on the header's Paku-Nakku because he is the giver and both stand at (K-6), so nothing moves on the map either way. The '== Alternate Option ==' section is a real OR and not commentary: a Remedy substitutes for the Blazing Peppers at the trade, and its bullet 9 warns that once you trade the remedy the peppers are locked out for good. That is modelled as items_alt on the trade, which is exactly what items_alt is for. The harvest step needs a Sickle to perform but the peppers can simply be bought on the Auction House instead, and no branch is needed for that because the evidence is the peppers however they were got. The page never says what zone Pechiru-Mashiru stands in, so those two steps carry a null zone rather than an assumed Windurst Waters. Medium because the alternate section hedges that the quest 'may have been modified'.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 4,
+    "raw": "Windurst / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Paku-Nakku",
+   "zone": "Windurst Waters",
+   "grid": "K-6",
+   "raw": "Paku-Nakku, Windurst Waters (K-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mashuu-Ajuu"
+    },
+    "zone": "Windurst Waters",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "before Paku-Nakku -- the page gives this order and the quest begins only after both"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Paku-Nakku"
+    },
+    "zone": "Windurst Waters",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the header's giver, and the same corner as Mashuu-Ajuu"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maabu-Sonbu"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Home Point #1"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Pashhow Marshlands",
+    "grid": "E-5",
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Blazing Peppers",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "a harvesting point, reached via Derfland; bring several Sickles since they break. The peppers can be bought on the Auction House instead, which needs no branch -- the evidence is the peppers however you got them."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Paku-Nakku"
+    },
+    "zone": "Windurst Waters",
+    "grid": "K-6",
+    "items": [
+     {
+      "name": "Blazing Peppers",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Remedy",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the '== Alternate Option ==' section says a Remedy will do instead, and its bullet 9 warns that trading the remedy locks the peppers out permanently"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pechiru-Mashiru"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page never says which zone he is in, so none is recorded"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Paku-Nakku"
+    },
+    "zone": "Windurst Waters",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "choose the prompt 'The automaton butler did it!'"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Pechiru-Mashiru"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "again with no zone given by the page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Catch It If You Can!",
+   "page_id": 63,
+   "revision_id": 769811,
+   "source_sha256": "eebaecf10598d8104ca71f4e76301c5323ff9332527a299117e8706b85e2c6fd",
+   "cache_file": "0000063_catch_it_if_you_can"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 21,
+   "dat_name": "Catch It If You Can!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "status_effect_unobservable"
+  ],
+  "notes": "Only bullets 1 and 2 are the quest. Bullet 3 is Home Point advice, bullet 4 is an outcome (she removes the ailment as she pays you), and the 'After the walkthrough: Notes' section is trivia about the Japanese title -- none of them is a step. Bullet 2 is the whole substance of the quest and it is a five-way OR across five zones: Bane from Lost Souls in The Eldieme Necropolis, Mute from Eight of Cups in the Outer Horutoto Ruins entered at (F-11) in West Sarutabaruta, and Plague from Bloodsuckers in Toraimarai Canal, Deathmaw Orobons in Ceizak Battlegrounds or Devouring Mosquitoes in Reisenjima. The zone changes per branch so the step records none, exactly as a per-battle-zone step would. The five monsters are deliberately NOT in mobs[]: you do not have to kill any of them, you have to be hit by one, and none of kill/drop/spawn says that -- listing them would place markers on an assertion the page does not make. Nor is any of it observable: a status effect is not an item or a key item, so the middle step carries no evidence and the ladder crosses it on the session latch. Everything a player actually needs is in that step's note. Quest Reqs is the status effect itself restated, so it gates nothing, and the reward varies by which ailment you brought.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Five branches in five zones, so no zone is recorded; being hit by a monster is not a role the schema has, so none of them is listed as a mob.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Ohruru",
+   "zone": "Port Windurst",
+   "grid": "E-7",
+   "raw": "Ohruru, Port Windurst (E-7) (HP #1)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohruru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "right by Home Point #1"
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Get yourself Bane, Mute or Plague. Bane: Lost Souls in The Eldieme Necropolis, 1,200 gil. Mute: Eight of Cups in the Outer Horutoto Ruins, in from (F-11) in West Sarutabaruta, an additional effect of its weapon, 1,000 gil. Plague, 1,500 gil: Bloodsuckers in Toraimarai Canal (melee additional effect, long duration), Deathmaw Orobons in Ceizak Battlegrounds (Vile Belch, which also silences you, so Warp by item or after Echo Drops), or Devouring Mosquitoes in Reisenjima (Infected Leech, 45 seconds, the best option at cap)."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ohruru"
+    },
+    "zone": "Port Windurst",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you must still be under the effect when you reach her, which is why bullet 3 tells you to set Home Point #1; she cures you as she pays"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Desert Rain I (Misareaux)",
+   "page_id": 59004,
+   "revision_id": 729870,
+   "source_sha256": "afa1132c444da93fb14b829450668a189bf1531c549cc05848e4c0808a4513bd",
+   "cache_file": "0059004_desert_rain_i_misareaux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 131,
+   "dat_name": "Desert Rain I (Misareaux)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "count_unobservable"
+  ],
+  "notes": "The Start field is written zone-first -- 'Abyssea - Misareaux, Resistance Sapper (Misareaux) (I-7)' -- which is the reverse of the usual order on these pages; the NPC and zone are read accordingly and the string kept verbatim in raw. The wiki's parenthesised Abyssea form is written as-is, since the normaliser folds it to the plain in-game name. Bullet 2 is not a step: it is what bullet 1 gives you, so the Magicked flaxen sack is step 1's evidence rather than a rung of its own. Bullets 3 and 4 merge, because the destination is a Target marker dropped on your map per run -- there is no fixed grid to travel to and the only thing you can actually point at is the Repair Trunk once you are standing there. The cramming has no observable state at all: the sack's four condition strings ('perfectly sound condition' through 'squeaking under tension') are dialogue, not packets, so how much to pack is a note and not a branch. The unnumbered line above bullet 1 is a once-per-Vana'dielian-day cooldown shared with every Ward Warden and Crimson Carpet quest across all Abyssea areas, which nothing visible reports. Fame 'amis' is an Abyssea zone code rather than one of the nine regions, so the region is null and only raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Misareaux)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "I-7",
+   "raw": "Abyssea - Misareaux, Resistance Sapper (Misareaux) (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magicked flaxen sack",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Veridical Conflux #00. Accepting drops a Target marker on your map and hands over the sack."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the SMALLER of the trunks, at the spot marked on your map -- placed per run, so no grid is recorded. Veridical Conflux #04 is nearby. Cram oil cloths, triangular flasks and elongated flasks: more is more reward, but overfilling tears the sack and fails the quest."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "choose 'Finish cramming' first. Cruor and Resistance Credits scale with how much you packed; the seal chance does not."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crimson Carpet I (Misareaux)",
+   "page_id": 59010,
+   "revision_id": 729882,
+   "source_sha256": "5292ca45c68e9aa5b3df2c5972be0bb1b3c8e4a8265dc492164ca34b6f52110d",
+   "cache_file": "0059010_crimson_carpet_i_misareaux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 137,
+   "dat_name": "Crimson Carpet I (Misareaux)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "The same Resistance Sapper and the same once-per-Vana'dielian-day cooldown as Desert Rain I, shared across every Abyssea area and invisible to the addon. This one models better than its sibling because both of its key items are real: the fluid on the way out and the bottle on the way back. The Rear Trap is clicked twice -- once to prime it and be told the distance to stand at, and once more from that distance to run the infusion -- and both are kept as rungs, because they sit on the same markable object and cost nothing, while the second is where the evidence lands. The page says outright that the Paralysis trap fluid bottle arrives with 'no indication', which is precisely the case for evidence rather than against it: the packet carries the key item even though the player is never told. The 1 / 2 / 5 yalm choice only scales the reward, so it is a note and not a branch, and bullet 2's travel folds into the click it leads to. Fame 'amis' is an Abyssea zone code, not one of the nine regions, so the region is null and raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Misareaux)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "I-7",
+   "raw": "Resistance Sapper (Misareaux), Abyssea - Misareaux (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Paralysis trap fluid",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near Veridical Conflux #00"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rear Trap"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the nearest is at (I-7), on the path behind the Chocobo Tamer (Misareaux). Choose 'Prime the trap for infusion' and it tells you where to stand: 1 yalm is just inside the fringe, 2 yalm just clear of it, 5 yalm the maximum."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rear Trap"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Paralysis trap fluid bottle",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same trap again, checked from the distance you were given. Done right you are told to report back and handed the bottle with no on-screen indication -- which does not stop the packet carrying it."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Cruor and Resistance Credits scale with how accurate your distance was"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Three Magi",
+   "page_id": 298,
+   "revision_id": 762385,
+   "source_sha256": "c0079eb1bedecaa9f4449bf45b3c902b49e0cda89dbc22ec5ffd452ecab7c055",
+   "cache_file": "0000298_the_three_magi"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 66,
+   "dat_name": "The Three Magi",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_unmodelled",
+   "bullet_split"
+  ],
+  "notes": "Bullet 2 is the one awkward step on the page: 'head to any Telepoint and trade a synthesis crystal'. The Telepoint is named and markable, but there are three of them in three different zones, so the step carries a null zone rather than picking one -- a nil-zone row matches everywhere, which is the honest answer for 'any'. What you trade is 'a synthesis crystal', a category of eight items the page never names one of, so items is empty and items_partial records that the requirement could not be expressed at all rather than pretending there is no requirement. The Faded Crystal it yields is the header's Item Req and is obtained here rather than rewarded, so it is legitimate evidence for that step, and it is consumed at step 3, so it is evidence only once. Bullets 3, 4 and 5 are one trade -- travel to Xarcabard, find the ??? in the glowing trenches at (E-8), trade the crystal -- because the travel and the search have the same zone and the same grid as the thing you finally click. Bullet 6 is split: the kill that drops the Glowstone, then the return to Chumimi, who takes it. 'Repeatable: af' is the artifact-armour category leaking into that field and means false. Which of the three magi you agree with in the opening cutscene decides only your title, so it is not a branch.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: which is why items is empty and items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": 40,
+   "jobs": [
+    "BLM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chumimi",
+   "zone": "Heavens Tower",
+   "grid": null,
+   "raw": "Chumimi - Heavens Tower (bottom floor)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bottom floor / basement, as Black Mage. The cutscene asks you to side with one of the three magi, which sets your title and nothing else; any job from here on."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Telepoint"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Faded Crystal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Any Telepoint will do, so no zone is recorded. What you hand over is 'a synthesis crystal' a category of eight items the page never names."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Xarcabard",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Faded Crystal",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Chaos Elemental",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "in the glowing trenches, very close to the Castle Zvahl Baileys zone line -- the Baileys Survival Guide and a zone out is the short way in. Three minute wait to repop if others are queued for it."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Glowstone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Chaos Elemental",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "a Light elemental, so resistant to all physical damage; a party of six at level 40 can take it"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Glowstone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "she gives the Casting Wand in return"
+   }
+  ]
+ }
+]

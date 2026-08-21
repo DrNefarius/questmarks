@@ -1,0 +1,1841 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rose on the Heath",
+   "page_id": 56706,
+   "revision_id": 641091,
+   "source_sha256": "db5b90c40c0cb2ff44b42483d08af93672640f962eee9031dd1acd9ff1a91e8d",
+   "cache_file": "0056706_rose_on_the_heath"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 12,
+   "dat_name": "Rose on the Heath",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "consumed_key_item"
+  ],
+  "notes": "A clean courier quest: one giver, three deliveries, one return. Step 1 hands out FOUR key items, but only the Seal of the resistance is used as evidence -- each captain's linkpearl is handed over and gone the moment you reach him, so an AND-list over all four would read false after the first delivery for no gain. The Seal survives until Ayame takes it back at the end, which is exactly the span the ladder needs it for. Nothing after step 1 is observable: losing a linkpearl is not something a packet reports, so steps 2-4 carry their linkpearl as a REQUIREMENT (what you must be holding) and no evidence.\n\nThe page lists Argus, Helga and Rashid in route order (Conflux #03, #05, #02) but never says the order matters, and all three linkpearls are in hand from the start -- so they share a group and all three draw at once. A strict ladder would mark Argus and hide the other two until you happened to visit him. The grouping is inferred from the shape of the quest, not stated by the page, which is why it is flagged.\n\nThe deliveries are recorded as 'trade' rather than 'talk' even though the page words them 'Speak to': holding that captain's linkpearl is exactly the 'ready to hand in' condition the kind exists to express.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "akon / 1"
+   },
+   "prev": [
+    {
+     "title": "Of Malnourished Martellos",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Ayame (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "I-13",
+   "raw": "Ayame (A) (I-13), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Seal of the resistance",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "also grants Captain Rashid's, Captain Argus's and Captain Helga's linkpearls; only the Seal is used as evidence because the three linkpearls are consumed one per delivery"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Argus (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "D-7",
+    "items": [
+     {
+      "name": "Captain Argus's linkpearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "linkpearls",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Conflux #03, then north/east. The page says 'Speak to'; the linkpearl changes hands in the conversation."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Helga (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "G-5",
+    "items": [
+     {
+      "name": "Captain Helga's linkpearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "linkpearls",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Conflux #05, then north through the Mesa Wivre"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rashid (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Captain Rashid's linkpearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "linkpearls",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Conflux #02, then northwest"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ayame (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [
+     {
+      "name": "Seal of the resistance",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "she takes the Seal of the resistance back"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Explosive Endeavors",
+   "page_id": 56699,
+   "revision_id": 640841,
+   "source_sha256": "2022bdaa86fded0f2d35e9c2d900a5dd398745650ea6f755e066f47f6404b60d",
+   "cache_file": "0056699_explosive_endeavors"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 5,
+   "dat_name": "Explosive Endeavors",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "or_branch_modelled",
+   "consumed_key_item"
+  ],
+  "notes": "Bullet 2 is not a step -- it is the list of what bullet 1 gives you -- so it merges into step 1. Bullet 4 (random experience points when a bomb goes off, explicitly 'no bearing on completing the quest') is an outcome, not a step, and the trailing 'Zoning is required to repeat this quest' is a cooldown.\n\nThe three grenades are numbered but the page never says which one goes into which fissure, so each fissure step takes grenade #01 with #02 and #03 as alternates -- 'hold any one of the three', which is the honest reading and exactly what items/items_alt mean. Step 1's evidence is built the same way: holding ANY grenade proves you have spoken to Fontoumant. An AND-list over all three would read false the moment the first fissure was lit, which is the wrong answer two thirds of the way through the quest.\n\nThe three fissures are one bullet with three grid refs in one zone; they share a group because the page gives no order (it only remarks that the (H-6) one is nearest to Fontoumant and the other two are together in the Ordelle's Caves chasm).",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "alth / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Fontoumant (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": null,
+   "raw": "Fontoumant (A), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fontoumant (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Anti-Abyssean grenade #01",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "ki",
+       "name": "Anti-Abyssean grenade #02",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Anti-Abyssean grenade #03",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Veridical Conflux #04; he hands over all three grenades, and holding any one of them proves this step is done"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dark Fissure"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Anti-Abyssean grenade #01",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Anti-Abyssean grenade #02",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Anti-Abyssean grenade #03",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "fissures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "choose 'Attack the darkness!'. This one and (F-7) are in the chasm where Ordelle's Caves would be; quickest from Conflux #04. The page does not say which grenade belongs to which fissure."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dark Fissure"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Anti-Abyssean grenade #01",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Anti-Abyssean grenade #02",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Anti-Abyssean grenade #03",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "fissures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the second of the two in the Ordelle's Caves chasm"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dark Fissure"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Anti-Abyssean grenade #01",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Anti-Abyssean grenade #02",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Anti-Abyssean grenade #03",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "fissures",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "just past Fontoumant, among the Pasture Funguars"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fontoumant (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "zoning is required before it can be repeated"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Say It with Flowers",
+   "page_id": 243,
+   "revision_id": 751770,
+   "source_sha256": "c3d6b2ec56f21a9adc53e358b9faa10e3538c230b35e1670dd2929fa1444cd9a",
+   "cache_file": "0000243_say_it_with_flowers"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 50,
+   "dat_name": "Say It with Flowers",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "Windurst Waters (South) is half of zone 238 and not a zone of its own, so both Moari-Kaaori and Ohbiru-Dohbiru are recorded in Windurst Waters. The wrong-answer branch is real -- answer Ohbiru-Dohbiru's questions badly and he sends you for a different flower and a smaller reward -- but the page never names that flower, so there is nothing to model and the branch is only flagged. The correct answers, 'Rare, Mystical, and Elegant', are kept in the note because they are what makes the Tahrongi Cactus the right item.\n\nThe page writes the harvest target as the plural 'Tahrongi Cacti' and the item it yields as 'Tahrongi Cactus'; the singular is used as the entity name, since a plural cannot match a client entity. Kenapa-Keppa is the page's own '(Optional)' and it gives no grid, so only the zone of the surrounding bullet is recorded.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 2,
+    "raw": "Windurst / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "zilart"
+  },
+  "start": {
+   "npc": "Moari-Kaaori",
+   "zone": "Windurst Waters",
+   "grid": "C-9",
+   "raw": "Moari-Kaaori, Windurst Waters (South) (C-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moari-Kaaori"
+    },
+    "zone": "Windurst Waters",
+    "grid": "C-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point #3 is the closest"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ohbiru-Dohbiru"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "southern Rhinostery building; answer 'Rare, Mystical, and Elegant' to be sent after the Tahrongi Cactus. Wrong answers get you a different, unnamed flower and a smaller reward."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa"
+    },
+    "zone": "Windurst Waters",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page's own '(Optional)' sub-bullet, with no location given; the zone is taken from the Rhinostery bullet it hangs under"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Tahrongi Cactus"
+    },
+    "zone": "Tahrongi Canyon",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tahrongi Cactus",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page writes the plural 'Tahrongi Cacti'; the singular is used as the entity name"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Moari-Kaaori"
+    },
+    "zone": "Windurst Waters",
+    "grid": "C-9",
+    "items": [
+     {
+      "name": "Tahrongi Cactus",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Iron Sword the first time, 400 gil after"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Flipside of Things",
+   "page_id": 19639,
+   "revision_id": 758402,
+   "source_sha256": "37ef18d7247095e0c8d0e76e4a54ad0e8cc710888ea48ec55be53b2f0adba0d1",
+   "cache_file": "0019639_the_flipside_of_things"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 11,
+   "dat_name": "The Flipside of Things",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "route_heavy"
+  ],
+  "notes": "Six bullets, three of which (2, 3, 4) are one continuous set of walking directions through Garlaige Citadel (S) and not three steps. They merge into the single thing you actually do at the end of that walk: reach the Storeroom Door at (G-7). Loutille and Duchille are NPCs you pass, not people you talk to, and the Heavy Iron Gate is on the route -- naming any of them as a target would be exactly the sentence-fragment reading this pipeline exists to avoid. The Storeroom Door is kept as a real step because it is a named, targetable object and it is the only markable thing between the giver and an unmarkable ???.\n\nThe ??? inside the Firesand Storeroom carries the Firepower case, which is the quest's one observable. Everything after it is the return.\n\nThe page puts Rarcasmeult at (J-6) in the header and then adds 'off in uncharted H-6/I-6, top right hand corner of map' in bullet 1 -- that is one spot described twice (the room is off the charted grid), not a contradiction, so (J-6) is used as written.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: on a table just inside the Storeroom; a ??? can never carry a marker, but it keeps the rung and the key item is the quest's only observable",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wog"
+  },
+  "start": {
+   "npc": "Rarcasmeult",
+   "zone": "Garlaige Citadel (S)",
+   "grid": "J-6",
+   "raw": "Rarcasmeult - Garlaige Citadel (S) (J-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rarcasmeult"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "second map, in the uncharted corner past (H-6)/(I-6); he sends you to the Firesand Storeroom"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Storeroom Door"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "the whole route in one step: back through the door you came in by, south past Loutille and Duchille, through the Heavy Iron Gate, then south and west to the square section. Slimes and bats aggro on the way, so bring Sneak or a Silent Oil."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Firepower case",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rarcasmeult"
+    },
+    "zone": "Garlaige Citadel (S)",
+    "grid": "J-6",
+    "items": [
+     {
+      "name": "Firepower case",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the Map of Vunkerl Inlet only comes if you do not already own it"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "VW Op. 026: Tavnazian Terrors",
+   "page_id": 87831,
+   "revision_id": 767064,
+   "source_sha256": "82e4794f6c3f3a9dd18d35cc6063af1e87f75f1b72c3097926737641b22a521a",
+   "cache_file": "0087831_vw_op_026_tavnazian_terrors"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 84,
+   "dat_name": "VW Op. #026: Tavnazian Terrors",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "evidence_is_reward",
+   "unordered_group",
+   "prereq_ki_unmodelled"
+  ],
+  "notes": "The page disagrees with itself about the Hyacinth stratum abyssite: the header lists it as the Reward, while walkthrough bullet 2 says you receive it when you agree to participate, BEFORE any of the four fights. Hard rule 7 is a bright line -- an item in the header's Reward proves the quest is over, not that a step is done -- and nothing on the page settles which reading is true, so the abyssite is evidence on NO step. (Verify pass: the draft put it on step 1; that has been nulled.) The cost of nulling is nil -- the ladder falls back on the session latch -- while the cost of being wrong was a mark frozen on Owain for the whole quest. The conflict stays flagged and the quest stays medium.\n\nBullet 3 is one bullet spanning four zones, so it splits into four steps -- one zone each, as the schema requires. They share a group: the page gives no order and the four notorious monsters are independent. Each zone lists three rift locations rather than one spot, so the grids stay in the notes and the steps carry no grid; a Voidwatch rift is opened where you choose, not at a fixed point.\n\n'Quest Reqs: Adventurer's Certificate, Level 75 or higher' is two gates. The level is modelled; the Adventurer's Certificate is a key item prerequisite with no slot in the schema, so it is flagged and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": 75,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Owain",
+   "zone": "Tavnazian Safehold",
+   "grid": null,
+   "raw": "Owain, Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Owain"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "by Home Point #1. Bullet 2 -- choosing to participate in voidwatch operations -- is the same conversation, not a second step. The Hyacinth stratum abyssite is bullet 2's grant AND the header's Reward, so it is not used as evidence on this or any step."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Attohwa Chasm",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Fjalar",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "voidwatch_nms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift locations (I-9), (K-7), (K-10)"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lufaise Meadows",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Abununnu",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "voidwatch_nms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift locations (H-9), (F-8), (G-7)"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Misareaux Coast",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tsui-Goab",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "voidwatch_nms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift locations (J-8), (I-7), (J-10)"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Uleguerand Range",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Isarukitsck",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "voidwatch_nms",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "rift locations (G-11), (G-10), (J-10/11)"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Owain"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "VW Op. 004: Bibiki Bombardment starts automatically off the same cutscene"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Snake on the Plains",
+   "page_id": 19672,
+   "revision_id": 605750,
+   "source_sha256": "2087a7948dc1479a3251bfcd5595787e92e6ad4c4d3e1f82a9b4b9df799bc3ab",
+   "cache_file": "0019672_snake_on_the_plains"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 8,
+   "dat_name": "Snake on the Plains",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "page_contradiction",
+   "prereq_ki_unmodelled",
+   "consumed_key_item"
+  ],
+  "notes": "The page contradicts itself on how many towers there are: bullet 1 says the putty is 'to patch the to magical towers' -- which reads as a mangled 'two' -- while bullet 2 says 'Visit the 3 towers' and then lists three grid refs, (F-4), (F-11) and (J-8). Three is used, because bullet 2 is the one giving the instruction and it names three places; the quest is demoted to medium for the conflict rather than the discrepancy being quietly dropped.\n\nThe three Sealed Entrances share a group -- the page gives no order and one jar of putty covers all of them. Both sub-bullets under bullet 1 are commentary: the Campaign allegiance change is an outcome, and 'speaking to Miah Riyuh before the conclusion will allow you to cancel it' is an escape hatch, not a rung.\n\n'Quest Reqs: Green recommendation letter' is a key item you must be holding to start, which the gates block has no slot for -- it is modelled instead as step 1's items, where it is also true and additionally useful, and flagged. The letter is handed over at step 1 and the putty replaces it, so the putty is what proves step 1 is done.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Miah Riyuh",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Miah Riyuh - Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Miah Riyuh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Green recommendation letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Zonpa-Zippa's All-Purpose Putty",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the letter is turned in here and the putty comes back in its place. Taking this quest switches your Campaign allegiance at no cost, and talking to him again before the end cancels it -- neither is a step."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sealed Entrance"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "F-4",
+    "items": [
+     {
+      "name": "Zonpa-Zippa's All-Purpose Putty",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "towers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "touch it to apply the putty; the page gives no order for the three towers"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sealed Entrance"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "F-11",
+    "items": [
+     {
+      "name": "Zonpa-Zippa's All-Purpose Putty",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "towers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sealed Entrance"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Zonpa-Zippa's All-Purpose Putty",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "towers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Miah Riyuh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "you join the Cobras here; the Sprinter's Shoes only come if this is the first initial quest you have completed"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Brugaire's Ambition",
+   "page_id": 67129,
+   "revision_id": 763443,
+   "source_sha256": "f895ada61b1131446433f48d9c0a32097e82aadf82691c20e56a9976abe27c38",
+   "cache_file": "0067129_brugaire_s_ambition"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 59,
+   "dat_name": "Brugaire's Ambition",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "spawn_method_unstated"
+  ],
+  "notes": "Four bullets, two of which are steps. Bullet 3 -- 'If you lose the Elixir, you can receive another from Brugaire (A) anytime' -- is a recovery note, not a rung: it does not advance anything, and turning it into a step would put a second Brugaire between the fight and the return. The trailing 'Zoning is required in order to repeat this quest' is a cooldown.\n\nBullet 2 packs spawning Teekesselchen, using the elixir on it and killing it into one line. It stays one step because the page never says how the NM is spawned -- there is no ??? , no trigger item and no placeholder named anywhere on the page -- so a separate spawn step would have no target and no content. The Prismatic Elixir resolves as an ITEM (not a key item) and is what proves step 1 is done; it is consumed at step 2, after which the ladder falls back on the session latch for the single remaining rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "agra / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Brugaire (A)",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Brugaire (A), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brugaire (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Prismatic Elixir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "northeast of Conflux #8; he hands over the elixir, and will hand over another any time you lose it"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [
+     {
+      "name": "Prismatic Elixir",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Teekesselchen",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "spawn it, use the elixir on it, then kill it. The page does not say how it is spawned. Anyone on the quest who uses an elixir gets credit."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Brugaire (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "L-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "zoning is required before it can be repeated"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Breaking Stones",
+   "page_id": 17184,
+   "revision_id": 729859,
+   "source_sha256": "272b451d2c8f5166d31156ef3d2ad0e8299592f0153d97bc2fade7bc9ee9599d",
+   "cache_file": "0017184_breaking_stones"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 10,
+   "dat_name": "Breaking Stones",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "weather_unobservable"
+  ],
+  "notes": "Three bullets, three steps, and the sub-bullets are all advice: the level 90-95 monsters around the ???, the fact that only the Goblins aggro, and the warning that riding the geyser at (I-8) strips Invisible so Grounds Tome Field Support will fail. None of them is a rung.\n\nThe real cost here is weather. The ??? only exists during sunny weather -- meaning no weather at all, no icon -- and nothing in the packets reports weather, so a player standing on the right spot in the wrong conditions will see the marker and find nothing. The page says so plainly, so it is flagged and put in the note rather than pretended away. The ??? sits on the (I-5)/(J-5) boundary; (I-5) is recorded and the boundary kept in the note.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 2,
+    "raw": "Bastok / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Horatius",
+   "zone": "Bastok Markets",
+   "grid": "I-9",
+   "raw": "Horatius, Bastok Markets (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Horatius"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Trader's Home; he sends you to Dangruf Wadi"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Dangruf Wadi",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Dangruf Stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on the (I-5)/(J-5) boundary, and only in sunny weather -- which is the no-icon default, so any weather at all hides it and the addon cannot see that. Choose the dialog option to check the area. Invisible is enough for the Goblins, but the geyser at (I-8) strips it."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Horatius"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Dangruf Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page words it 'head back for your reward'; the stone is what changes hands, and it is the header's Item Req"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Greeting Cardian",
+   "page_id": 11,
+   "revision_id": 684064,
+   "source_sha256": "76610adb44aa1cf1d893c374430c7c11fe0fa05b48b30e9fe0c82c5ebbdec909",
+   "cache_file": "0000011_a_greeting_cardian"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 43,
+   "dat_name": "A Greeting Cardian",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "time_gated"
+  ],
+  "notes": "Nine bullets, five steps. Bullet 1 is the precondition that you zone after The All-New C-2000, not an action. Bullets 8 and 9 sit under a 'Notes:' heading and are flagging conditions -- the quest cannot be started with Windurst Mission 9-2 or The Kind Cardian open -- so they are neither steps nor gates the schema can express; they are recorded here.\n\nBullet 3 is the one real loss. The page says only 'the Cardian that Kororo mentions' and never names it, so the target is none/null and that step gets no marker. Inventing a name -- the reward-list and later bullets do name a Five of Spades, but that is the one in Buburimu, not this one -- is exactly what would produce a confidently wrong marker. The greeting you pick genuinely does not matter, per the page.\n\nBullet 4 is one step, not two: leaving the zone and coming back after one earth minute is the gate on talking to Kororo again, and a bare 'wait' rung would carry no target and could not be tracked. Bullet 5 is information that identifies the Cardian in bullet 6, so they merge. This quest has no key items and no items at all, so every step's evidence is null and the ladder runs on the session latch throughout -- which is the honest answer, not a defect.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 3,
+    "raw": "Windurst / 3"
+   },
+   "prev": [
+    {
+     "title": "The All-New C-2000",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kororo",
+   "zone": "Windurst Woods",
+   "grid": "H-9",
+   "raw": "Kororo, Windurst Woods (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kororo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "in the Manustery. You must have zoned since The All-New C-2000, which is bullet 1 and a precondition rather than a step."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Windurst Woods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page calls it only 'the Cardian that Kororo mentions' and never names it, so there is nothing to mark. Any greeting works."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kororo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "leave Windurst Woods and come back after one earth minute first"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Five of Spades"
+    },
+    "zone": "Buburimu Peninsula",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "at the outpost; bullet 5 is what names him and bullet 6 is the instruction, so they are one step"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kororo"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Can Cardians Cry?",
+   "page_id": 58,
+   "revision_id": 772943,
+   "source_sha256": "0cb5f2094093f61e4717006733fa622569c69ee1bd683bcc4d11cb5962d91ae9",
+   "cache_file": "0000058_can_cardians_cry"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 47,
+   "dat_name": "Can Cardians Cry?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "generic_npc_name"
+  ],
+  "notes": "A three-step quest with an optional gossip round hung off bullet 1. Those three talks are the page's own '(Optional)' and are for flavour only, so they are optional and share a group -- there is no order to them. The page gives no location for Kororo, Kopuro-Popuro or Boizo-Naizo; they are recorded in Windurst Woods because that is where the bullet they hang under happens, and no grid is claimed.\n\nBullet 4 is not a step: it is the repeat reward (1,000 gil for another starfruit after completion, with the page admitting it does not know whether that is unlimited) plus a second round of closing lore AFTER the quest is over. A post-completion talk cannot be a rung on a ladder that has already ended, so those four are deliberately dropped rather than modelled as an epilogue.\n\nThe page writes 'Cursed Weapons'; the singular is used as the monster name, since a plural cannot match a live entity. The kill is not really the step -- holding a Bruised Starfruit is, which is why it is the evidence: the page says outright the fruit can just be bought at the Auction House, and the ladder is correct either way without needing a branch.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 6,
+    "raw": "Windurst / 6"
+   },
+   "prev": [
+    {
+     "title": "The All-New C-3000",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Apururu",
+   "zone": "Windurst Woods",
+   "grid": "H-9",
+   "raw": "Apururu, Windurst Woods (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Apururu"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "no zoning is needed after The All-New C-3000, which the page states explicitly"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kororo"
+    },
+    "zone": "Windurst Woods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "gossip",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page's own '(Optional)'; thoughts on the situation only, and no location is given"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kopuro-Popuro"
+    },
+    "zone": "Windurst Woods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "gossip",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "optional; no location given"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Boizo-Naizo"
+    },
+    "zone": "Windurst Woods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "gossip",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "optional; no location given"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Xarcabard",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bruised Starfruit",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Cursed Weapon",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "kill them until one drops. The page writes the plural 'Cursed Weapons'; the singular is used as the name. Buying the starfruit at the Auction House satisfies this step just as well, and the evidence reads the same either way."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Apururu"
+    },
+    "zone": "Windurst Woods",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Bruised Starfruit",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "5,000 gil the first time, 1,000 gil after"
+   }
+  ]
+ }
+]

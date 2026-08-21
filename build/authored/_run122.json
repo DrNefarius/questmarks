@@ -1,0 +1,1055 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unending Chase",
+   "page_id": 318,
+   "revision_id": 628620,
+   "source_sha256": "a23060bb15f8ca15396d4a6f4393700c53095331474b87789eb164571c1ffd00",
+   "cache_file": "0000318_unending_chase"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 2,
+   "dat_name": "Unending Chase",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "bullet_split"
+  ],
+  "notes": "Two-bullet page and only one of them is a walkthrough. Bullet 1 holds both actions -- 'Speak to Rycharde, then trade him a Puffball' -- so it splits into a talk that opens the quest and a trade that closes it, both on the same NPC in the same spot, which the runtime draws as a single marker. Bullet 2 sits under a bare 'Note' heading and is an availability window, not a step: eight real hours after Way of the Cook before Rycharde will offer this at all. Nothing in the packets sees that clock, so it is flagged and gates nothing. The page never says where a Puffball comes from, so no obtain step is invented -- holding one is what makes the trade ready, and the header's Item Reqs already names it. Fame is blank in the header even though this is a Mhaura quest; the FLevel 2 is kept and the region left null rather than guessed from the category list.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "(empty) / 2"
+   },
+   "prev": [
+    {
+     "title": "Way of the Cook",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rycharde",
+   "zone": "Mhaura",
+   "grid": "H-8",
+   "raw": "Rycharde, Mhaura (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he only offers this eight real hours after Way of the Cook finishes"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rycharde"
+    },
+    "zone": "Mhaura",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Puffball",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page does not say where a Puffball is obtained"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fear of the Dark II",
+   "page_id": 20780,
+   "revision_id": 122391,
+   "source_sha256": "d34d7c593195f85e6111bedbbbf54a78de86fbd3b9a6dd6613293c29d9bae522",
+   "cache_file": "0020780_fear_of_the_dark_ii"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 14,
+   "dat_name": "Fear of the Dark II",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "npc_availability_conditional"
+  ],
+  "notes": "Bullet 1 is numbered but it sits under a 'Note:' heading and is an availability caveat, not an action: if Suldiran has been taken prisoner in Besieged the quest cannot be started until he is rescued. Nothing observable reports that, and the NPC simply will not be standing there, so it is a note on step 1 rather than a rung. Bullets 2 and 3 are the whole quest -- talk to open, trade two Imp Wings to close -- both on Suldiran on the upper level of Al Zahbi at (J-10). Fame reads 'none' in the header, which is not one of the nine regions, so the region is null and the raw string is kept. Repeatable is an explicit Yes here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "none / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Suldiran",
+   "zone": "Al Zahbi",
+   "grid": "J-10",
+   "raw": "Suldiran, Al Zahbi - (J-10) Upper Level"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Suldiran"
+    },
+    "zone": "Al Zahbi",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "upper level. Unavailable while he is a Besieged prisoner, until he is rescued."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Suldiran"
+    },
+    "zone": "Al Zahbi",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Imp Wing",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "both in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seed Sowing",
+   "page_id": 101767,
+   "revision_id": 365638,
+   "source_sha256": "b956ddae3408447bf09ca3ce3ff6a46689423b72c646e5e9df817406b802a5b9",
+   "cache_file": "0101767_seed_sowing"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 1044,
+   "dat_name": "Seed Sowing",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "auto_started_chain",
+   "unnamed_target"
+  ],
+  "notes": "A Mog Garden tutorial link. There is no talk-to-start bullet because there is no talk-to-start: bullet 3 says this quest completes on a cutscene and automatically begins the next, and Coastal Chaos before it does the same, so the player is already holding the quest when the walkthrough opens. Step 1 is therefore the trade at the furrow, not a conversation. The Green Thumb Moogle stays as the header's giver and is the target of the closing report, so the marker still lands on him at the end. Bullet 3 is an outcome, not a step. The header's Description tells you the seeds come from 'the basket near the Mog Garden furrow' -- the walkthrough never mentions it and never names it, so no basket step is written; holding Herb Seeds is what makes the furrow ready. Fame reads 'Other' and Expansion reads 'Other'; neither is a fame region or an expansion, so both are null with the raw kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Coastal Chaos",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Garden Furrow"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "Herb Seeds",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the seeds come from an unnamed basket beside the furrow, per the header Description; the walkthrough does not name it"
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Green Thumb Moogle"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the cutscene ends this quest and opens Flotsam Finding by itself"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Minstrel in Despair",
+   "page_id": 26811,
+   "revision_id": 744153,
+   "source_sha256": "2f121cec76b28adb970c6ce5622f1e3aa69a5f5c69f20f3534581d8d95d6e7f9",
+   "cache_file": "0026811_a_minstrel_in_despair"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 12,
+   "dat_name": "A Minstrel in Despair",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "quest_not_in_log"
+  ],
+  "notes": "One bullet, one action: trade the Poetic Parchment to Mertaire. The unnumbered 'Note:' above it is the interesting part -- the quest never appears in the quest log until it is already complete, so the addon can never see it as active. That does not change the ladder but it does mean the single step is only ever reachable through the log's completed state, and it is flagged so a human can decide whether the quest is worth emitting at all. 'Return to Mertaire' is the page telling you that you already have the parchment from The Old Monument, which is the Previous quest; there is no obtain step here because the page gives none. Level 30 is a plain level gate with no job attached, so jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Old Monument",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Mertaire",
+   "zone": "Lower Jeuno",
+   "grid": "I-8",
+   "raw": "Mertaire, Lower Jeuno (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Mertaire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Poetic Parchment",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the parchment is carried over from The Old Monument; the quest does not show in the log until it is finished"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Such Sweet Sorrow",
+   "page_id": 38773,
+   "revision_id": 697514,
+   "source_sha256": "011d6351865eb0b8f822d59d97b6cc787b9be12478fecc2685425ca8b8fefe53",
+   "cache_file": "0038773_such_sweet_sorrow"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 13,
+   "dat_name": "Such Sweet Sorrow",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Clean two-bullet trade quest: talk to Dabhuh at (K-11) to open it, trade a Merrow Scale to close it, both in Aht Urhgan Whitegate. 'near The Pit' is a landmark and stays in the note rather than in the target. The item requirement is written into the header's Quest Reqs slot rather than Item Reqs, which is a wiki filling error, not a second requirement -- the walkthrough names the same Merrow Scale, so it is read as the trade item. Fame 'au' folds to Aht Urhgan; the reward locket is a reward and is nowhere used as evidence.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "au / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Dabhuh",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "K-11",
+   "raw": "Dabhuh - Aht Urhgan Whitegate (K-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dabhuh"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near The Pit"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Dabhuh"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "K-11",
+    "items": [
+     {
+      "name": "Merrow Scale",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page does not say where the scale is obtained"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Child's Play",
+   "page_id": 38707,
+   "revision_id": 700363,
+   "source_sha256": "4ccfe215e4564ac8a98cf3f1d1467b1ac44a1a01c1db51f2ce554226efcb3e28",
+   "cache_file": "0038707_child_s_play"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 23,
+   "dat_name": "Child's Play",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "prereq_quest_active_unmodelled"
+  ],
+  "notes": "Two bullets, two steps, both on Karl at Port Jeuno (H-8): he states the offer, you trade a White Rock. The Wonder Magic Set key item he hands back is the header's Reward, so by the reward rule it is NOT recorded as evidence -- it proves the quest is over, not that the trade happened, and it is the very thing the outer Wonder Magic Set quest is collecting. That outer quest is the real trap here: 'Quest Reqs: The Wonder Magic Set quest active' is a prerequisite on a quest being OPEN, not completed, and prev has no way to say that. Putting it in prev would assert the wrong relation and could hide this quest from anyone mid-chain, so prev stays empty and the requirement is flagged and noted instead.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 4,
+    "raw": "Jeuno / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Karl",
+   "zone": "Port Jeuno",
+   "grid": "H-8",
+   "raw": "Karl, Port Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Karl"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he only makes the offer while The Wonder Magic Set is active"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Karl"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "White Rock",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he returns the Wonder Magic Set key item, which is the quest reward and so is not used as evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Rumor",
+   "page_id": 511,
+   "revision_id": 676219,
+   "source_sha256": "74bac0525d0cde356fb9569b83219108e3f303b7d40a798dc38543b1f9bad607",
+   "cache_file": "0000511_the_rumor"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 61,
+   "dat_name": "The Rumor",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two bullets, two steps, both on Novalmauge in the Bostaunieux Oubliette at (G-8) -- one marker, and readiness looks across the pair. 'a vial of Beastman Blood' is the wiki writing the item's flavour into the sentence; the item is Beastman Blood and that is what is recorded. The page does not say where the blood comes from, so no obtain step is written. Level 10 is a plain level gate with no job attached. Fame 'S' folds to San d'Oria at FLevel 3.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 3,
+    "raw": "S / 3"
+   },
+   "prev": [],
+   "level": 10,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Novalmauge",
+   "zone": "Bostaunieux Oubliette",
+   "grid": "G-8",
+   "raw": "Novalmauge - Bostaunieux Oubliette (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Novalmauge"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the jailer"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Novalmauge"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Beastman Blood",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page calls it 'a vial of Beastman Blood'; the item is Beastman Blood"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Black Tiger Skins",
+   "page_id": 461,
+   "revision_id": 683416,
+   "source_sha256": "cf531a91d642d39f29bbb35a7ffca5dd836500afec664235267547770182c788",
+   "cache_file": "0000461_black_tiger_skins"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 31,
+   "dat_name": "Black Tiger Skins",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split"
+  ],
+  "notes": "The bullets are in the wrong order for a ladder and that is the whole judgement call. Bullet 1 says obtain three hides, bullet 2 says speak to Hanaa Punaa to BEGIN and trade her the three to END -- so the conversation that opens the quest is buried in bullet 2 and has to come first, because the runtime treats accepting the quest as step 1 being done. The order is written as talk, obtain, trade; the player may of course farm the hides before ever speaking to her. The obtain rung is kept rather than folded into the trade because it is genuinely observable -- holding three Black Tiger Hides is exactly what moves the mark back onto Hanaa Punaa -- and because the page states it as its own instruction. Steps 1 and 3 are the same NPC in the same spot, so this is one marker with a gap in the middle that the page really does put there. The item is Black Tiger Hide singular; the header's plural does not resolve. Nothing on the page says where the hides drop.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 3,
+    "raw": "S / 3"
+   },
+   "prev": [
+    {
+     "title": "Lizard Skins",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hanaa Punaa",
+   "zone": "Southern San d'Oria",
+   "grid": "E-8",
+   "raw": "Hanaa Punaa - Southern San d'Oria (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hanaa Punaa"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "bullet 2's first half; the page prints it after the collecting bullet"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Black Tiger Hide",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page does not say what drops them or where, so there is no target and no zone"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Hanaa Punaa"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Black Tiger Hide",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "all three in one trade; bullet 2's second half"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Undying Flames",
+   "page_id": 524,
+   "revision_id": 683273,
+   "source_sha256": "2ec06c6d7daea033df9b8897bf65ed540835d444de2fbe5bb893fe29b33a5c22",
+   "cache_file": "0000524_undying_flames"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 26,
+   "dat_name": "Undying Flames",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two bullets, two steps, both on Pagisalis in Northern San d'Oria at (M-6). 'located in the basement of the cathedral' is a position, not part of the name, so it stays in the note -- the target is Pagisalis. Two Beeswax in one trade; the page does not say where beeswax comes from, so no obtain step is invented. Fame 'S' folds to San d'Oria at FLevel 2. The Friar's Rope is a reward and is not used as evidence anywhere.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 2,
+    "raw": "S / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Pagisalis",
+   "zone": "Northern San d'Oria",
+   "grid": "M-6",
+   "raw": "Pagisalis - Northern San d'Oria (M-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pagisalis"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the basement of the cathedral"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Pagisalis"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [
+     {
+      "name": "Beeswax",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both in one trade"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Like a Shining Subligar",
+   "page_id": 36936,
+   "revision_id": 95716,
+   "source_sha256": "d2c77bcf70909007410ed9a26f7a7899f4de878ab06819b19423467370575815",
+   "cache_file": "0036936_like_a_shining_subligar"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 138,
+   "dat_name": "Like a Shining Subligar",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "walkthrough_incomplete",
+   "repeating_loop",
+   "count_unobservable"
+  ],
+  "notes": "The page has NO walkthrough at all -- the prepass flagged it no_walkthrough and there is no 'After the walkthrough' section either. Everything below comes from the header, which is unusually explicit for once: Heiji at Norg (I-7), ten Rusty Subligar, and a Description that states outright that he accepts them one at a time. That is enough for an honest two-rung ladder -- talk to open, then trade -- and it is better than emitting start-NPC only, but it is header-derived rather than read from a walkthrough, so the quest is medium and both steps are medium. The trade carries a count of ONE, not ten: one at a time is what he takes, so holding a single Rusty Subligar is genuinely ready-to-hand-in, and the ten-fold repeat is a loop nothing in the packets can count. No evidence anywhere -- the subligaria are consumed as they go in and the scroll is the reward.",
+  "gates": {
+   "fame": {
+    "region": "Norg",
+    "level": 3,
+    "raw": "Norg / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Heiji",
+   "zone": "Norg",
+   "grid": "I-7",
+   "raw": "Heiji - Norg (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Heiji"
+    },
+    "zone": "Norg",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [],
+    "note": "no walkthrough on the page; taken from the header's Start field"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Heiji"
+    },
+    "zone": "Norg",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Rusty Subligar",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [],
+    "note": "ten in total, accepted one at a time per the header Description; the running count is not observable, so the step stands for the whole loop"
+   }
+  ]
+ }
+]

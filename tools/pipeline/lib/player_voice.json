@@ -1,0 +1,329 @@
+{
+  "_README": [
+    "THE VOCABULARY OF A PLAYER-FACING STEP NOTE. One list, two readers.",
+    "",
+    "`steps[].note` is drawn on screen by the questmarks-ui detail pane, which",
+    "reads build/authored/ off disk at runtime. The quest-level `notes` field is",
+    "NOT drawn -- notes.lua's anchored pattern deliberately cannot match it -- so",
+    "the two-audience split already exists in the architecture and this file is",
+    "only ever about the per-step one.",
+    "",
+    "WHY A FILE RATHER THAN TWO CODE COPIES. tools/pipeline/check_voice.py reads",
+    "this to fail the build, and questmarks-ui/notes.lua reads it to redact at",
+    "display time. Those two disagreeing is exactly the drift this project keeps",
+    "getting bitten by, so there is one list and both read it. The UI resolves it",
+    "from the questmarks install path it already knows and falls back to a",
+    "bundled copy if the file is absent, so there is no hard dependency in either",
+    "direction.",
+    "",
+    "WHAT DECIDES WHETHER A WORD BELONGS IN `banned`: could a player who has",
+    "never opened this repository act on the sentence? They are told by the",
+    "README and NOTICE that the data comes from BG Wiki, so wiki vocabulary is",
+    "fine and stays -- `allowed` records that decision so nobody 'tidies' it away",
+    "later. What they cannot know is anything about how this pipeline works."
+  ],
+  "_format": [
+    "translate: applied FIRST, and case-preserving. An internal noun that has a",
+    "  real player-facing equivalent is substituted rather than costing its whole",
+    "  sentence. `from` is matched on a word boundary.",
+    "banned: applied SECOND, to what survives translation. Any SENTENCE still",
+    "  containing one of these is dropped whole; a note with nothing left becomes",
+    "  empty, and an empty note makes its step non-expandable, which is correct.",
+    "  `re` is a Python regex; the Lua side derives an equivalent pattern.",
+    "allowed: not enforced -- documentation of what must NOT be added to banned."
+  ],
+  "translate": [
+    {
+      "from": "rungs",
+      "to": "steps",
+      "why": "the ladder metaphor is the authoring tool's; the panel says 'step'",
+      "lua": "%f[%%w]rungs%f[%%W]"
+    },
+    {
+      "from": "rung",
+      "to": "step",
+      "why": "same",
+      "lua": "%f[%%w]rung%f[%%W]"
+    },
+    {
+      "from": "ladder",
+      "to": "step list",
+      "why": "internal structure name; the player sees a list of steps",
+      "lua": "%f[%%w]ladder%f[%%W]"
+    },
+    {
+      "from": "evidence",
+      "to": "signal",
+      "why": "panel.lua already tells the player 'The game gives no signal between steps N and M'",
+      "lua": "%f[%%w]evidence%f[%%W]"
+    }
+  ],
+  "banned": [
+    {
+      "id": "res_file",
+      "re": "\\bres[/\\\\][a-z_]+(?:\\.lua)?\\b",
+      "say": "a Windower resource table; no player has read one",
+      "lua_find": [
+        "res/",
+        "res\\"
+      ]
+    },
+    {
+      "id": "lua_file",
+      "re": "\\b[a-z_]+\\.lua\\b",
+      "say": "any source file name",
+      "lua_find": [
+        ".lua"
+      ]
+    },
+    {
+      "id": "py_file",
+      "re": "\\b[a-z_]+\\.py\\b",
+      "say": "any source file name",
+      "lua_find": [
+        ".py"
+      ]
+    },
+    {
+      "id": "house_rule",
+      "re": "\\b(?:hard\\s+)?rules?\\s+\\d+\\b",
+      "say": "a numbered rule has no referent for a player",
+      "lua_match": [
+        "rules?%s+%d"
+      ]
+    },
+    {
+      "id": "stage",
+      "re": "\\bstage\\s+[A-Ea-e]\\b",
+      "say": "pipeline stage letters",
+      "lua_match": [
+        "stage%s+%a%f[%W]"
+      ]
+    },
+    {
+      "id": "resolver",
+      "re": "resolv\\w*",
+      "say": "name resolution is invisible to the player. NO leading \b: 'unresolvable' and 'unresolved' are the same build word with a prefix, and the boundary made the gate miss them while questmarks-ui's plain substring caught them -- the two sides disagreeing on 7 sentences, which is what this one file exists to prevent",
+      "lua_find": [
+        "resolv"
+      ]
+    },
+    {
+      "id": "normalizer",
+      "re": "\\bnormali[sz]\\w*",
+      "say": "same",
+      "lua_find": [
+        "normalis",
+        "normaliz"
+      ]
+    },
+    {
+      "id": "snake_case_field",
+      "re": "\\b[a-z]+(?:_[a-z]+)+\\b",
+      "say": "any schema field name -- source_bullets, items_alt, items_partial, review_flags, by_npc, dat_names, start_disagrees_with_header",
+      "lua_match": [
+        "%f[%w]%l+_%l+"
+      ]
+    },
+    {
+      "id": "resource_id",
+      "re": "\\b(?:ids?\\s+\\d+|\\d+\\s+and\\s+\\d+\\s*\\)?\\s*$|resource\\s+ids?|the\\s+id)\\b",
+      "say": "numeric resource ids",
+      "lua_find": [
+        "resource id"
+      ],
+      "lua_match": [
+        "%f[%w]ids?%s+%d",
+        "%f[%w]the%s+id%f[%W]"
+      ]
+    },
+    {
+      "id": "chronicle",
+      "re": "\\bchronicl\\w*",
+      "say": "the other addon; a build input",
+      "lua_find": [
+        "chronicl"
+      ]
+    },
+    {
+      "id": "dat",
+      "re": "\\bDAT\\b",
+      "say": "the client's data files",
+      "lua_match": [
+        "%f[%w]DAT%f[%W]"
+      ]
+    },
+    {
+      "id": "quarantine",
+      "re": "\\bquarantin\\w*",
+      "say": "a pipeline outcome",
+      "lua_find": [
+        "quarantin"
+      ]
+    },
+    {
+      "id": "baseline",
+      "re": "\\bbaselin\\w*",
+      "say": "a gate mechanism",
+      "lua_find": [
+        "baselin"
+      ]
+    },
+    {
+      "id": "prepass",
+      "re": "\\bprepass\\w*",
+      "say": "a pipeline stage",
+      "lua_find": [
+        "prepass"
+      ]
+    },
+    {
+      "id": "emitter",
+      "re": "\\b(?:the\\s+)?(?:emitter|indexer|the\\s+builder|the\\s+index)\\b",
+      "say": "pipeline components",
+      "lua_find": [
+        "emitter",
+        "indexer",
+        "the builder",
+        "the index"
+      ]
+    },
+    {
+      "id": "schema",
+      "re": "\\bschema\\b",
+      "say": "the authoring schema",
+      "lua_find": [
+        "schema"
+      ]
+    },
+    {
+      "id": "confidence_tier",
+      "re": "\\bconfidence\\b|\\bconf\\b",
+      "say": "the per-step confidence tier is a build concept",
+      "lua_match": [
+        "%f[%w]confidence%f[%W]",
+        "%f[%w]conf%f[%W]"
+      ]
+    },
+    {
+      "id": "carries_none",
+      "re": "\\bcarr(?:y|ies|ied)\\s+(?:none\\b|no\\s+(?:marker|target|signal|evidence|step|rung|zone)\\b)",
+      "say": "'this step carries none' is describing the record, not the game. The OBJECT is restricted on purpose: a bare 'carry no ...' also matches 'you carry no crystals', which is a genuine player instruction, so only our own nouns count",
+      "lua_match": [
+        "carr%a-%s+none%f[%W]",
+        "carr%a-%s+no%s+marker",
+        "carr%a-%s+no%s+target",
+        "carr%a-%s+no%s+signal",
+        "carr%a-%s+no%s+evidence",
+        "carr%a-%s+no%s+step",
+        "carr%a-%s+no%s+rung",
+        "carr%a-%s+no%s+zone"
+      ]
+    },
+    {
+      "id": "record",
+      "re": "\\brecords?\\b",
+      "say": "'the record' is the authored JSON, not anything the player has",
+      "lua_match": [
+        "%f[%w]record%f[%W]",
+        "%f[%w]records%f[%W]"
+      ]
+    },
+    {
+      "id": "unmodelled",
+      "re": "un-?modell\\w*|\bcannot be expressed\b|\bthe schema cannot\b",
+      "say": "a limitation of our data model, not of the game. Matches 'unmodellable' as well as 'unmodelled' -- same reason as resolver above",
+      "lua_find": [
+        "unmodell",
+        "un-modell",
+        "cannot be expressed",
+        "the schema cannot"
+      ]
+    },
+    {
+      "id": "pinned",
+      "re": "\\bpinn?ed\\b",
+      "say": "a hand pin is a build-time correction",
+      "lua_match": [
+        "%f[%w]pinn?ed%f[%W]"
+      ]
+    },
+    {
+      "id": "override",
+      "re": "\\boverrid\\w*",
+      "say": "npc_overrides is a build input",
+      "lua_find": [
+        "overrid"
+      ]
+    },
+    {
+      "id": "record_bookkeeping",
+      "re": "\\b(?:the\\s+)?(?:rung|step)\\s+is\\s+kept\\b|\\bkeeps?\\s+(?:its|the)\\s+(?:rung|step|ladder|position)\\b|\\bkeeps? the (?:rung|ladder) honest\\b|\\bit keeps the (?:rung|step)\\b",
+      "say": "'the step is kept anyway' is about our record, not about the game",
+      "lua_match": [
+        "rung%s+is%s+kept",
+        "step%s+is%s+kept",
+        "keeps?%s+its%s+rung",
+        "keeps?%s+its%s+step",
+        "keeps?%s+the%s+rung",
+        "keeps?%s+the%s+step",
+        "keeps?%s+the%s+ladder",
+        "keeps?%s+the%s+position",
+        "keeps?%s+its%s+position"
+      ]
+    },
+    {
+      "id": "pipeline_self",
+      "re": "\\bpipeline\\b|\\bthe reading pass\\b|\\bthe extractor\\b",
+      "say": "the build talking about itself",
+      "lua_find": [
+        "pipeline",
+        "the reading pass",
+        "the extractor"
+      ]
+    }
+  ],
+  "_not_banned_deliberately": [
+    "'the addon cannot see X' -- 110 sentences, and every one is HONEST",
+    "TRANSPARENCY in plain English about a real limitation: 'the addon cannot",
+    "see party size, so the step asks for one', 'game time is invisible to the",
+    "addon'. That tells a player why no marker appears, which is the same",
+    "register panel.lua already uses -- 'The game gives no signal between steps",
+    "N and M'. It contains no jargon and a player can act on it. Banning it was",
+    "tried and reverted; it is not a leak, it is the feature.",
+    "",
+    "'a ??? can never carry a marker' -- same argument. A player who can see",
+    "there is no marker on this step benefits from being told why. What is",
+    "banned is the half-sentence that follows it in the corpus -- 'but it keeps",
+    "the rung' -- which is bookkeeping about the record, and that is what",
+    "record_bookkeeping targets."
+  ],
+  "_dead": [
+    {
+      "_retired": "flagged",
+      "_was": "\\bflagg?ed\\b|\\bflags\\b",
+      "_why": "REMOVED after measuring: 59 hits, 59 false positives. 'Flag' is ordinary FFXI player vocabulary -- 'speaking to him is what flags the mission', 'only members with the op flagged can enter', 'flags To Paste a Peiste'. That is exactly the sentence a player wants. The internal senses are `review_flags` and 'flagged grid_conflict', and BOTH already match snake_case_field, so this rule caught nothing the list did not already have and cost 59 good sentences. Kept as a tombstone so it is not re-added."
+    }
+  ],
+  "allowed": [
+    "page",
+    "the page says",
+    "walkthrough",
+    "bullet",
+    "bullet 3",
+    "header",
+    "Reward line",
+    "Reward field",
+    "infobox",
+    "wiki",
+    "BG Wiki",
+    "cutscene",
+    "key item",
+    "KI",
+    "zone",
+    "grid",
+    "map",
+    "NPC",
+    "and every in-game name -- quests, NPCs, items, zones, monsters"
+  ]
+}

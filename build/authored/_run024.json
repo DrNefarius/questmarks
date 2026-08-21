@@ -1,0 +1,1485 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Price of Valor",
+   "page_id": 44856,
+   "revision_id": 766517,
+   "source_sha256": "29f480c9db03b2f5b452b425d08521fcf74b651de7874a1a9f3789c54d7fc083",
+   "cache_file": "0044856_the_price_of_valor"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 44,
+   "dat_name": "The Price of Valor",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "unordered_group",
+   "unnamed_target",
+   "time_gated",
+   "mission_gate_unmodelled"
+  ],
+  "notes": "The header says the giver is 'Rahal, Jugner Forest (S)' and Rahal never appears anywhere in the walkthrough; the first thing a player actually does is speak to Rholont at (E-7) in Southern San d'Oria (S), which is where the cutscene is. I checked the two neighbouring pages before moving it: 'In a Haze of Glory' (the Previous) ENDS on Rholont at that same spot, and 'Bonds That Never Die' (the Next) has header start 'Cyranuce, Pashhow Marshlands (S)' while its bullet 1 is again 'Talk to Rholont in Southern San d'Oria (S) (E-7)' and its bullet 2 says the quest only flags in your log later, at Pashhow. So for this Crystal War chain the wiki's Start field records where the quest REGISTERS, not who you go to -- it is the flag point, not the giver. Rahal is a real NPC and would resolve, so this is a judgement call rather than a proven wiki error, hence medium: start is moved to Rholont because that is the address a player who has not started needs, and Rahal is kept verbatim in start.raw.\n\nBullet 1 is a precondition (zone, then wait one game day) and the unnumbered 'Note:' above it is a mission gate on Crossroads of Time -- neither is a step and neither is observable. Bullet 3 is one gather instruction over three key items with no order given, so its three sub-bullets become three steps sharing a group and all drawing at once; each carries its own key item as evidence, which is what makes the group legible. The logging point in East Ronfaure (S) is never named by the page, so that step has no target -- 'Hatchet' is named (Item Reqs and the sub-bullet) and is what you must hold. Bullet 7 is one object examined twice (cutscene, then pop) and bullet 8 is the same object a third time after the kill, so the Underbrush carries three rungs, which is what the page really does: the third one is load-bearing, because the page warns that zoning without that message costs you the NM again. Bullet 6's two Toppled Cressets are explicitly ordered ('First... Next...') so they are two steps, not a group; the second is written (F-9)/(F-8) and (F-9) is recorded.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "In a Haze of Glory",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Rholont",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "E-7",
+   "raw": "Rahal, Jugner Forest (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you must zone and wait one game day after In a Haze of Glory, and be on the Crossroads of Time mission; neither is visible to the addon. The header calls the giver Rahal in Jugner Forest (S) -- see the quest note."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Hatchet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ronfaure maple syrup",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "supplies",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "random from logging; the page never names the logging point, so there is no target. Bring several Hatchets -- the next quest logs as well."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Tree Hollow"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Long-life biscuits",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "supplies",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "directly behind Rholont, so his (E-7) is used"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Well"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Flask of Kingdom water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "supplies",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page places it only 'east of Rholont' and gives no grid of its own, so grid is left null rather than guessed"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rholont"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Ronfaure maple syrup",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Long-life biscuits",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Flask of Kingdom water",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Biscuit a la Rholont",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "he takes all three and hands back the one biscuit"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Felled Trees"
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "western end of (G-7). Campaign warp, or Recall-Jugner, or north then northwest from the Survival Guide."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Toppled Cresset"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "first of two, and the order is fixed; the cutscene sends you west. The Campaign warp is closer than the Survival Guide."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Toppled Cresset"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "second; the page writes (F-9)/(F-8). The cutscene sends you south."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Underbrush"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Madthrasher Zradbodd",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "examine once for the third cutscene, then again to pop the NM"
+   },
+   {
+    "n": 10,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Madthrasher Zradbodd",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "Orc BLM with heavy Fastcast; spams tier IV elementals, tier III -ga, Sleepga and Dispellga. A Blue Mage to stun the AoE helps below i119. The sub-bullets under bullet 7 are tactics, not steps."
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Underbrush"
+    },
+    "zone": "Vunkerl Inlet (S)",
+    "grid": "F-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same Underbrush a third time, after the kill. This one matters: the page says you must get the message pointing you at Pashhow Marshlands (S) BEFORE you zone, or you have to defeat the NM again. Nothing observable marks it."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Shimmering Pondweed"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "northwest corner of (G-6); the cutscene completes the quest. Campaign teleport, or the Rolanberry Fields (S) Survival Guide, which lands at the north zone line. There is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Picture Perfect",
+   "page_id": 218,
+   "revision_id": 753799,
+   "source_sha256": "e1df10989de53856532afd5351caf495240da7af80cb6e35e2c466ddcdb4a98e",
+   "cache_file": "0000218_picture_perfect"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 31,
+   "dat_name": "Picture Perfect",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "or_branch_unmodelled",
+   "grid_conflict",
+   "generic_npc_name",
+   "fellowship_gate_unmodelled"
+  ],
+  "notes": "The page is two parallel walkthroughs for one quest -- bullets 3-5 are Angelica's path and bullets 6-10 are Umberto's -- and the schema has no branch. But reading them side by side, they are the SAME ladder with one swapped rung: both dig a Bal Shell at an Excavation Point in Korroloka Tunnel, both do the identical Castle Oztroja paragraph (it is duplicated word for word as bullets 4 and 8), both end with Angelica handing over the Old woman's portrait and Umberto closing the quest in Bastok Markets. The only real divergence is WHO you hand the Bal Shell to first, plus one extra return to Diederik in the Umberto branch. So the common spine is recorded as the ladder and only step 3 is branch-specific: it is written as the Angelica trade, with the Umberto alternative in its note, because the alternative is a different TARGET and items_alt can only express different ITEMS. Every other step's source_bullets carry both branch numbers, which is the honest audit trail.\n\nStep 1's pearl IS expressible as an alternative -- Signal Pearl or Tactics Pearl, either one, so that goes in items_alt properly. The page contradicts itself on Angelica: bullet 3 puts the Rarab Tail Hostelry at (F-10) and bullet 9 at (E-10); both are recorded here and (F-10) is used, being the first and the one inside the fuller instruction. 'Windurst Waters North' is half of zone 238, not a zone.\n\n'Speak to your Adventuring Fellow' between the kill and the second ??? is deliberately NOT a rung: the Fellow carries the player's own chosen name, so it can never be resolved or marked and would only be a dead step wedged between two live ones. It is in step 7's note instead. The key item from the ??? is unnamed at that sentence but the page calls it an Opalescent stone twice, so that is what is recorded. Quest Reqs (Familiarity 35, Adventuring Fellow level 50) has no slot and no observable predicate.\n\nADVERSARY PASS: one rung of the source order is not represented. Both branches begin by SPEAKING to the shell-taker (Angelica in bullet 3, Umberto in bullet 6) and only then send you to Korroloka Tunnel; the trade is a third, later interaction. This ladder mines first and folds the opening talk into step 3, so between Diederik and the shell the marker points at Korroloka Tunnel where the page points at Windurst Waters. The practical damage is small -- the talk and the trade are the same NPC in the same spot, so step 3's marker covers both -- but it is a reorder, not a pure merge, and step 2's confidence is dropped to medium to record it. No rung was added; the quest stays medium. Everything else in this draft was re-checked against the page and stands: the pearl alternative, the (F-10)/(E-10) conflict, the duplicated Oztroja paragraph, and the decision to keep the Adventuring Fellow out of the ladder.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: a different target, which items_alt cannot express, so only the Angelica line is modelled.\n  step 5: A ??? can never carry a marker but it keeps the rung.\n  step 7: that is not a rung of its own because the Fellow is named after your own character and can never be resolved.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Mirror, Mirror",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "A Pose by Any Other Name",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Diederik",
+   "zone": "Selbina",
+   "grid": "G-10",
+   "raw": "Diederik, Selbina (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Diederik"
+    },
+    "zone": "Selbina",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Signal Pearl",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Tactics Pearl",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the pearl must be equipped. Bullet 2 is him offering the choice of branch, not a separate action."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Excavation Point"
+    },
+    "zone": "Korroloka Tunnel",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bal Shell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     6
+    ],
+    "note": "both branches ask for the shell and both send you here; excavation is random, so bring several Pickaxes. Position downgraded on review: bullet 3 puts the FIRST visit to Angelica before the excavation ('go to ... to speak to her. She will ask you for a Bal Shell. Use a Pickaxe ... then return ... to trade'), and bullet 6 does the same for Umberto. This step is therefore one rung earlier than the source puts it; the opening talk was folded into step 3 rather than kept as its own rung."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Angelica"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Bal Shell",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     6,
+     7
+    ],
+    "note": "THE branch step. On Angelica's path you speak to her first, then trade her the shell, and she asks for the Opalescent stone. On Umberto's path the shell goes instead to Umberto in Bastok Markets (L-10) and you then return to Diederik in Selbina before Oztroja Top floor of the Rarab Tail Hostelry; the page also writes this grid as (E-10) in bullet 9."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Brass Door"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     8
+    ],
+    "note": "past the Brass Door at (I-8) to map two, out at (I-9) to map six; the door you examine is the one on map six, also at (I-8). Examine for a short cutscene, then click it again to enter."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Muralist",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     8
+    ],
+    "note": "Inside the room; it pops the NM and your Adventuring Fellow together. Three minute wait before another player can pop it again."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Muralist",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     8
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Oztroja",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Opalescent stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     8
+    ],
+    "note": "You must speak to your Adventuring Fellow after the kill before this works The page calls the key item only 'the key item' here and an Opalescent stone elsewhere."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Angelica"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Opalescent stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old woman's portrait",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     9
+    ],
+    "note": "common to both branches; top floor of the Rarab Tail Hostelry, written (F-10) in bullet 3 and (E-10) in bullet 9"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Umberto"
+    },
+    "zone": "Bastok Markets",
+    "grid": "L-10",
+    "items": [
+     {
+      "name": "Old woman's portrait",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     10
+    ],
+    "note": "both branches finish here, on a cutscene"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Chips",
+   "page_id": 38801,
+   "revision_id": 688865,
+   "source_sha256": "f11888ec718bc56e80b790391c60d80840456a461f31e7d12268844d73bdc14c",
+   "cache_file": "0038801_chips"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 82,
+   "dat_name": "Chips",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "mission_gate_unmodelled"
+  ],
+  "notes": "Three real steps and a farming table. Bullets [3] and [4] are NOT steps and not even sentences -- they are the '#2:' entries inside two table cells, which the numbered-list prepass promoted to top-level bullets when the wikitable was flattened. Read as a player, the whole table is one instruction: kill things in Pso'Xja until you hold one chip of each colour. That is a single step with the eight droppers as mobs and a three-item AND-list as evidence, which is exactly what makes it trackable -- there is no per-chip progress otherwise. Bullets 3 and 4 are still listed in that step's source_bullets so the merge stays auditable.\n\nDrop map, since the table is lost downstream: Carmine from Snow Lizard and Frost Lizard; Gray from Diremite Assaulter, Diremite Stalker, Diremite Dominator and plain Diremite; Cyan from Treasure Chest and Archaic Chest. The wiki writes 'Treasure Chest (Monster)' -- the parenthetical is the wiki's own disambiguator against the furniture item, so the mob is recorded as 'Treasure Chest'. All the tower entrances quoted in the table are in Beaucedine Glacier, but they are route detail into one zone, not zones of their own.\n\nThe header's Previous is empty and the prerequisite is a mission -- Quest Reqs says Promathia Mission 6-3 and bullet 1 says 'More Questions than Answers', the same mission by name -- so prev stays empty and it is flagged instead of being smuggled in as a quest title. 'Bastok Metalworks' does not resolve; the zone is 'Metalworks', which is the name the page also uses. The last bullet's talk about Rare-ness and delivery boxes is inventory advice, not a step.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / NA"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Ghebi Damomohe",
+   "zone": "Lower Jeuno",
+   "grid": "I-7",
+   "raw": "Ghebi Damomohe - Lower Jeuno (I-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ghebi Damomohe"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must be on, or done with, the mission More Questions than Answers (Promathia 6-3), which nothing in the packets reports"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Pso'Xja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Carmine Chip",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Gray Chip",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Cyan Chip",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Snow Lizard",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Frost Lizard",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Diremite Assaulter",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Diremite Stalker",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Diremite Dominator",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Diremite",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Treasure Chest",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Archaic Chest",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "one chip of each colour; Pso'Xja is entered from towers in Beaucedine Glacier -- (I-7), (F-7), (G-9) and (H-8) reach different parts of the zone. Bullets 3 and 4 are table-cell fragments, not instructions."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [
+     {
+      "name": "Carmine Chip",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gray Chip",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Cyan Chip",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "all three in one trade. Repeatable, but the CCB Polymer reward is Rare, so you must clear the old one out first."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Vegetable Vegetable Frustration",
+   "page_id": 119929,
+   "revision_id": 746274,
+   "source_sha256": "d17f6854cbedf63d3679c2a13d40bb37e9982cc419f677ec2e3430b2ff3c3d68",
+   "cache_file": "0119929_vegetable_vegetable_frustration"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 111,
+   "dat_name": "Vegetable Vegetable Frustration",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item",
+   "repeating_loop"
+  ],
+  "notes": "A clean twelve-bullet page that shuttles between two objects, and almost all of it is real. Bullet 1 is a precondition -- one game day after Vegetable Vegetable Crisis, plus Cid's Secret and The Usual -- not a step; the header lists only two of those three Previous quests, so Cid's Secret is added to prev from the sub-bullet that names it. Fame 'Adoulin' is not one of the nine regions, so it gates nothing and only the raw is kept.\n\nBullet 5 ('bang on the rock three times and then think') is a dialogue menu at the Peculiar Fissure, not a place you go, so it folds into bullet 4's examine rather than becoming a rung with nothing to point at. Bullets 8 and 9 are the same object examined twice in a row -- cutscene, then pop -- and merge for the same reason Divine Might's Blank Target does; the fight is split out because the kill is the part that gates what follows. The long strategy tree under bullet 9 (dispel Berserk, Blaze Spikes, which Trusts carry Dispel) is advice and is summarised in the fight's note.\n\nThe self-destruct case makes the Packet of Midras's explosives a consumable in a small loop: lose the fight that way and the page says to re-examine the Contemplation Site and trade ANOTHER Sabiki Rig for a new one. So the packet is evidence on the step that grants it (5) and a held requirement on the step that spends it (6), which keeps the mark where the player actually is. The header start is Amchuchu, and bullet 2 tells you to check Amchuchu's Laboratory instead; both stand in the Inventors' Coalition, so start is left on the NPC, which is certain to exist, and only the step targets the object. Bullet 13 sits under an '== Optional ==' heading inside the walkthrough, continues the numbering, and pays the Midras's Helm +1 -- optional, and a reward is not evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Vegetable Vegetable Crisis",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "The Usual",
+     "cat": null,
+     "area": null,
+     "id": null
+    },
+    {
+     "title": "Cid's Secret",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Amchuchu",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Amchuchu (Inventors' Coalition, Western Adoulin)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Amchuchu's Laboratory"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the laboratory bench at the Inventors' Coalition, not Amchuchu herself; you must wait a game day after Vegetable Vegetable Crisis first"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Metalworks in Bastok"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Peculiar Fissure"
+    },
+    "zone": "Palborough Mines",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "map 3. Bullet 5 is the menu it opens, not a second place: bang on the rock three times, then think. Home point to Palborough Mines is the fast way in."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Contemplation Site"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Sabiki Rig",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Packet of Midras's explosives",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "by the Adoulin Waterfront Waypoint; examine it, then trade it the Sabiki Rig. You come back here for another packet every time the bomb self-destructs."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Peculiar Fissure"
+    },
+    "zone": "Palborough Mines",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Packet of Midras's explosives",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Incensed Pineapple",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "examine once for a short cutscene, then again to pop the bomb"
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Palborough Mines",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Incensed Pineapple",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "kill it before it self-destructs. Dispel Berserk immediately; it re-spams Berserk or Blaze Spikes as soon as either is dispelled, so stack Dispel Trusts and stuns. At 1 HP it tries to self-destruct and dies harmlessly. Only players this far in the quest, or past it, may join. A self-destruct costs you the packet and sends you back to the Contemplation Site."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Peculiar Fissure"
+    },
+    "zone": "Palborough Mines",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tarnished ring",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Rusty locket",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the ring is Sirius's and the locket is Almid's; both arrive together in one cutscene"
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Tarnished ring",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Rusty locket",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Contemplation Site"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": "the quest ends on an object, not an NPC -- cutscene and 2,000 Bayld here"
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Amchuchu's Laboratory"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     13
+    ],
+    "note": "the page's own '== Optional ==' section; a further cutscene and the Midras's Helm +1"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Escort for Hire (Bastok)",
+   "page_id": 14588,
+   "revision_id": 764615,
+   "source_sha256": "b2f1113d0e9b150933606081cebdc9abf0c445f3efa2a967f0da1f46c842e824",
+   "cache_file": "0014588_escort_for_hire_bastok"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 70,
+   "dat_name": "Escort for Hire (Bastok)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "contested_spawn"
+  ],
+  "notes": "Seven bullets, four of which are one escort. Bullet 2 is a real step -- you zone in from Rolanberry Fields and Olavia only appears on that zoning -- but bullet 3 is the failure case of bullet 2 (someone else has her, zone out and back until she pops), so it is that step's note rather than a rung of its own; a rung for 'try again' would be a ladder position the player can never be past. Bullet 4 is the escort mechanic (talk to stop her, talk to start her, she dies easily) and bullet 5 only points at the map section, so both fold into bullet 6, which is the step that actually pays: she hands over the Completion certificate at the end point. That key item is the one observable thing in the whole quest and it is what makes the return to Trilok trackable.\n\nThe 'After the walkthrough: Olavia's Walking Path' section was read in full and contains NO steps -- its bullets restart at [1] and describe the three routes she may take through Crawlers' Nest, ending at (G-10), (I-7) or (G-7) on the second or third map. Because the end point differs per route, the escort step keeps the zone and no grid. The header's Item Reqs is '[KI] Completion certificate', which is the quest's OWN reward-in-progress and not a prerequisite -- listing it as a held requirement on step 1 would be exactly backwards. The escort step is kind 'talk' because talking to her is literally the whole interaction; the marker belongs on her either way.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 6,
+    "raw": "B / 6"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Trilok",
+   "zone": "Port Bastok",
+   "grid": "D-6",
+   "raw": "Trilok, Port Bastok (D-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Trilok"
+    },
+    "zone": "Port Bastok",
+    "grid": "D-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Crawlers' Nest"
+    },
+    "zone": "Crawlers' Nest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in from Rolanberry Fields. The cutscene with Olavia on zoning is the signal you have her; if it does not fire, another party already does, so wait and zone back in until she pops and speaks to someone in your party."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Olavia"
+    },
+    "zone": "Crawlers' Nest",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Completion certificate",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     6
+    ],
+    "note": "talk to stop her, talk again to move her; she dies easily, so halt her and clear ahead of aggro. She takes one of three routes and every end point is different -- (G-10) or (I-7) on map 2, (G-7) on map 3 -- so no grid is recorded. EVERY member of the party or alliance must speak to her when she stops at the end, or they get no completion."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Trilok"
+    },
+    "zone": "Port Bastok",
+    "grid": "D-6",
+    "items": [
+     {
+      "name": "Completion certificate",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "10,000 gil the first time only; the Page from Miratete's Memoirs every time"
+   }
+  ]
+ }
+]

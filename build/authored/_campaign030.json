@@ -1,0 +1,2151 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stock and Awe I (S)",
+   "page_id": 19687,
+   "revision_id": 770359,
+   "source_sha256": "e1a352fb84dd0cdc735faf5b701ea394bb0cf730ec2bc1dc9072c2608e39478b",
+   "cache_file": "0019687_stock_and_awe_i_s_33a82675e8"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 81,
+   "dat_name": "Stock and Awe I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled"
+  ],
+  "notes": "RANK GATE, NOT A LEVEL GATE. The Campaign Header field 'Campaign Rank: Bronze Ribbon of Service §' is a Campaign standing requirement and has no schema field. It is deliberately NOT written into gates.level, which means character level -- the header's own Level field says 'Any', so gates.level is null. Flagged rank_gate_unmodelled.\n\nSTART. {{Campaign Header}} has no Start field; start.raw is assembled from its NPC Name / Zone / pos fields (Rasdinice, Southern San d'Oria (S), I-9). The walkthrough never says 'talk to Rasdinice to accept', but bullet 2 uses her as the landmark for the Quartermaster and bullet 4 sends you back to her, so she is unambiguously the ops NPC.\n\nTHE ITEM IS AN OR, NOT A LIST. Bullet 3 gives three 'possible options' -- Arrowwood Log x1, Ash Log x1, Maple Log x1 -- one of which is assigned per player. They are equal alternatives, so they went into items/items_alt (hold Arrowwood OR Ash OR Maple), not into one AND-list. Arrowwood Log occupies `items` only because the schema needs a primary; the page expresses no preference.\n\nGATES. repeatable and expansion are BOTH null: {{Campaign Header}} carries neither field and no sentence on this page says the op repeats or names an expansion. Nothing was inferred from the fact that Campaign is Wings of the Goddess content.\n\nTIME. Header 'Time: None' -- no time limit, so no time_gated flag.\n\nENDS AT THE GIVER. Bullet 4 splits the payout: the Quartermaster pays the experience points, Rasdinice pays the Allied Notes and closes the op. The final rung on Rasdinice is on THIS page, not borrowed.\n\nMedium rather than high solely because the Campaign Rank gate cannot be modelled; the ladder itself is unambiguous.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: the page names no source for it, so a separate 'go buy a log' rung would carry no target and no marker.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     4
+    ],
+    "note": "Accept the op. The Campaign Header names her as the ops NPC at (I-9); bullet 2 uses her as the landmark you turn away from to find the Quartermaster, and bullet 4 names her as the report-back."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "She hands out the shopping list. The page gives her the same grid as Rasdinice, (I-9), and places her 'behind you across the way near the tents' when you face Rasdinice -- that phrasing is a position, so it stays here rather than in target.name. 'Quartermaster' is the linked [[Quartermaster]] page, i.e. the NPC's actual name, not a description."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Arrowwood Log",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Ash Log",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Maple Log",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Hand over whichever of the three the Quartermaster asked for; the header Orders field says 'submit items to her'. Acquiring the log is folded into this rung Holding the item is deliberately NOT evidence here: you hold it BEFORE the trade, so it would mark the hand-in done while it is still in your inventory."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Report back for the Allied Notes and completion. The experience points come from the Quartermaster at step 3; the op is not over until this rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Vanguard-X I (S)",
+   "page_id": 19831,
+   "revision_id": 764002,
+   "source_sha256": "0bad6a2e1f09544f5a4662c716092f0d0524eff73a9bd6becb5262ff5e1171a2",
+   "cache_file": "0019831_vanguard_x_i_s_6800e4155f"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 101,
+   "dat_name": "Vanguard-X I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "walkthrough_incomplete",
+   "or_branch_unmodelled"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' has no schema field; it is NOT gates.level (the header's Level field is empty). Flagged rank_gate_unmodelled.\n\nUNIT REQUIREMENT. The header carries 'Unit Requirement: 1~6 members.' -- a party-size band with no schema field either. The walkthrough calls the op 'Easily soloable', so nothing gates on it and nothing was written into gates.jobs or gates.level.\n\nTHE CAMPAIGN NPC HAS NO NAME ON THIS PAGE. Bullet 4 links [[:Category:Campaign NPC|Campaign NPC]] -- a CATEGORY, not an NPC -- and bullet 5 is the heading 'List of Campaign NPCs:' followed by bare zone/grid lines. Neither is a name, so step 4 carries {\"type\":\"none\",\"name\":null} and the positions live in its note. Writing 'Campaign NPC' into target.name would have created a marker key that can never draw. Flagged generic_npc_name. Contrast the (B) sibling, Vanguard-X I (B) (page_id 20257), which does name its campaign NPCs.\n\nTHE SENTRY LIST IS SHORT. Bullet 3 lists exactly ONE Gate Sentry -- East Ronfaure (S) (J-11) -- while bullet 5 lists Campaign NPCs in five zones (East Ronfaure (S) (H-8), Batallia Downs (S) (J-8), Rolanberry Fields (S) (J-7), Sauromugue Champaign (S) (H-6), Pashhow Marshlands (S) (K-6)). The op can plainly be run from any San d'Orian-controlled zone, but East Ronfaure is the only start the page actually gives, so the whole middle of the ladder is pinned to East Ronfaure (S) and the other four are recorded in the notes rather than modelled as a group -- `group` means 'do all of these in any order', which would be false here. Flagged walkthrough_incomplete and or_branch_unmodelled.\n\nZONES CARRY (S). Every zone on this page is already written with the (S) suffix in the wikitext ([[East Ronfaure (S)]] etc.), so no normalisation was needed; all five resolve.\n\nSTEP ZONES ARE EXPLICIT. Steps 2-4 are recorded in East Ronfaure (S), not in the giver's Southern San d'Oria (S) -- a step left blank would inherit the giver's zone and put the sentry and the escort inside the city.\n\nGATES. repeatable and expansion are null; the header states neither and no sentence on the page does.\n\nENDS AT THE GIVER: bullet 6 sends you to make an official report to 'Sir Rasdinice', bullet 7 closes the op after talking to her. Both are on this page.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'After confirming the mission with Rasdinice' -- this is the confirmation."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Bullet 2 says to go to any San d'Orian-controlled Campaign area; bullet 3's 'List of Gate Sentries:' gives only East Ronfaure (S) (J-11), so that is the zone and grid recorded. Other San d'Orian-controlled zones almost certainly have sentries -- the page's own Campaign NPC list covers five -- but it names none of them, so none were invented."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Reinforcement"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Escort the NPC the page names in quotes, 'Reinforcement', from the Gate Sentry to the zone's Campaign NPC. He is a real, named, walking entity, so he is the target of this rung. If you outpace him he breaks off -- 'You're all slower than turtles in the mud! I've had enough!' and he heads for the Campaign NPC himself, or he chases a perceived enemy scout in a random direction; talking to him again regains control. No grid: he starts wherever the sentry is and moves."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Talk to the zone's Campaign NPC to be told to report to Rasdinice. The page NEVER names this NPC: bullet 4 links the category page [[:Category:Campaign NPC|Campaign NPC]] and bullet 5 is the heading 'List of Campaign NPCs:' over bare positions -- East Ronfaure (S) (H-8), Batallia Downs (S) (J-8), Rolanberry Fields (S) (J-7), Sauromugue Champaign (S) (H-6), Pashhow Marshlands (S) (K-6). (H-8) is used because East Ronfaure is the only zone whose Gate Sentry the page gives."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "The official report. Bullet 7: 'After talking to Rasdinice, the mission is complete.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stock and Awe I (W)",
+   "page_id": 19917,
+   "revision_id": 770363,
+   "source_sha256": "a30ab0346fda50c3418b1df9d0cbb371552e538cdaaae76045ce06251e1448f0",
+   "cache_file": "0019917_stock_and_awe_i_w_787ac3bd81"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 421,
+   "dat_name": "Stock and Awe I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "walkthrough_incomplete",
+   "step_from_sibling_page",
+   "no_return_bullet"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, NOT gates.level (Level is empty on this page). Flagged rank_gate_unmodelled.\n\nTHE WALKTHROUGH STOPS EARLY. It runs: solo mission / find the Quartermaster / he names one of three supplies / those are Giddeus-West Sarutabaruta harvest items but harvesting is not required / 'Despite the title/quest giver, this is a Windurstian quest.' It NEVER describes the hand-in and NEVER describes reporting back. I checked the cached wikitext (normalized.source) directly to be sure the renderer had not eaten anything -- it had not; the page really ends there. Flagged walkthrough_incomplete.\n\nWHERE THE LAST TWO RUNGS CAME FROM. The hand-in to the Quartermaster is on THIS page, but in the header rather than the walkthrough: the Orders field reads 'Obtain shopping list from Quartermaster and submit items to him.' The final report to Emhi Tchaoryo is NOT on this page in any form. It is taken from the sibling Stock and Awe I (S) (page_id 19687), whose walkthrough bullet 4 reads 'After you turn in your requested item to the Quartermaster and recieve your experience points speak with Rasdinice and you will recieve your Allied Notes and completion of the mission.' Emhi Tchaoryo is this nation's equivalent of Rasdinice per this page's own Campaign Header. That rung is marked medium and flagged step_from_sibling_page; this page does not say it.\n\nTHE ITEM IS AN OR. Fresh Marjoram x1 / Saruta Cotton x1 / Moko Grass x1 are three equal possibilities, one assigned per player, so they went into items + items_alt rather than an AND-list. Bullet 4 explicitly removes any gathering rung: 'harvesting is not actually required as trading an item obtained from the Auction House or store NPCs does count'.\n\nNO GRID FOR THE QUARTERMASTER. The page locates him only in prose -- 'in front of the Tavern', 'across the bridge from the tents' when facing the West Sarutabaruta exit arch. That is a position, not a name and not a grid ref, so grid is null and the prose is in the step note.\n\nGATES. repeatable and expansion null -- neither is stated anywhere on the page. Bullet 5's 'this is a Windurstian quest' is a disambiguation remark about the op's nation, not a gate. | CORRECTED: a final 'return to Emhi Tchaoryo' step was removed. No walkthrough bullet on this page says to go back -- the step was carried over from a sibling op or assumed from the family. AUTHORING.md: a quest can end without an NPC; do not invent a hand-in. If the op really does report back, the page has to say so before it is recorded.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The three are equal alternatives (one per player), so items OR items_alt; Fresh Marjoram is primary only because the schema needs one.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Accept the op. The walkthrough never names him -- bullet 2 orients you from the West Sarutabaruta exit arch instead -- so the name, zone and (H-9) all come from this page's Campaign Header (NPC Name / Zone / pos)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Get the shopping list. The page gives no grid ref: he stands 'in front of the Tavern', and if you face the West Sarutabaruta exit arch he is 'behind you across the bridge from the tents'. 'Quartermaster' is the linked [[Quartermaster]] page, the NPC's real name."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fresh Marjoram",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Saruta Cotton",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Moko Grass",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Submit the one item he asked for. That the hand-in goes to the Quartermaster comes from the header Orders field, 'submit items to him' no walkthrough bullet says it. Bullet 4 says the items are Giddeus / West Sarutabaruta harvests but that harvesting is not required, so there is no gathering rung. Holding the item is not evidence: you hold it before the trade."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crystal Fist I (S)",
+   "page_id": 20084,
+   "revision_id": 761265,
+   "source_sha256": "64c508ad8687f92ae88b38254e895514ac7372823fcb52ad031b664f93b15d99",
+   "cache_file": "0020084_crystal_fist_i_s_e5f0525797"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 121,
+   "dat_name": "Crystal Fist I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §'. No schema field, and deliberately not written into gates.level -- the header's Level field says 'Any'. Flagged rank_gate_unmodelled.\n\nTHREE RUNGS, NOT FOUR. Bullets 2 and 3 are one continuous conversation with the Adjutant -- he asks which craft you specialise in, then quizzes you on THREE synths (crystal, first ingredient, second ingredient, each from a list) -- so they are merged into a single rung. Consecutive rungs on one NPC draw one marker anyway, and splitting them would have wedged an unmarkable quiz rung between two Adjutant rungs.\n\nTHREE SYNTHS IS THE LOAD-BEARING NUMBER. The sibling op Iron Anvil I (S) (page_id 20321) is the same shape with TWO synths and a bigger payout; that page says so itself. Nothing was copied between them -- each count was read off its own page.\n\nTIME: THE HEADER AND THE NOTES DISAGREE IN SPIRIT. The header says 'Time: None' (no limit on the op) while the Notes section bullet 2 says 'There is a time limit for your answer, so when the Adjutant tells you which recipe he wants, look it up quick', with a sub-bullet admitting 'The exact time limit and when it starts are unclear at this point.' These are two different clocks -- op duration vs per-question answer window -- so it is not a flat contradiction, but the answer window is real and unobservable, so time_gated is flagged and both readings are recorded here rather than one being picked silently.\n\nREPEATABLE IS STATED IN WORDS, so it is set. It is NOT from the header -- {{Campaign Header}} has no Repeatable field. It comes from the 'After the walkthrough: Notes' section, bullet 1: 'This is repeatable (as long as you have tags), making it a very quick and easy way to stock up on Allied Notes.' expansion stays null: nothing on the page names one.\n\nTHE RECIPES SECTION IS NOT STEPS. 'After the walkthrough: Recipes' is a reference table, and most of its rows are still the unfilled placeholder 'Item name / Ingredients'. Only Smithing and Goldsmithing have real data. Nothing from it is a rung.\n\nADJUTANT'S GRID is agreed twice on this page: the header Description says 'Speak with adjutant (D-8)' and bullet 1 says 'forwarded to Adjutant at (D-8)'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Talk to Rasdinice, and you'll be forwarded to Adjutant at (D-8).'"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adjutant"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "D-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "One conversation: pick a craft to specialise in, then answer three synths' worth of questions (which crystal, first ingredient, second ingredient, each from a list). The page's worked example is Clothcraft -- a Hachimaki, a Red Grass Thread and a Mana Tunic. There is an answer time limit of unstated length (Notes bullet 2). Same zone as the giver but a different corner of it, so the grid is recorded explicitly."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Once you've completed your three tests, go back and talk to Rasdinice for your reward.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Vanguard-X I (W)",
+   "page_id": 20126,
+   "revision_id": 764140,
+   "source_sha256": "92a19ad7fe6589e7b4a83bb0679f6aa2016d64ca2b158b6427649a78a877bb7d",
+   "cache_file": "0020126_vanguard_x_i_w_d2c1d069ad"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 441,
+   "dat_name": "Vanguard-X I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "or_branch_unmodelled",
+   "steps_from_after_section",
+   "time_gated"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level is empty). Flagged rank_gate_unmodelled.\n\nTHIS OP HAS A CLOCK AND ITS (S) SIBLING DOES NOT. This page's header says 'Time: 30 minutes'; the sibling Vanguard-X I (S) (page_id 19831) leaves Time empty and Vanguard-X I (B) (page_id 20257) also says 30 minutes. Two of three agree, so the limit is recorded as real here and flagged time_gated; nothing in the schema can express it, and no note on this page contradicts it. Also carries 'Unit Requirement: 1~6 members.' with no schema field -- the walkthrough calls the op 'Easily soloable', so nothing was gated on it.\n\nMOST OF THE LADDER IS IN THE AFTER-SECTIONS, AND THEIR BULLETS RESTART AT [1]. The main Walkthrough has only two bullets. Steps 3-5 are read from 'After the walkthrough: List of Gate Sentries' bullet [4] and 'After the walkthrough: List of Campaign NPCs' bullets [1], [3] and [4]; each step note names its section, because the numbers collide with the main walkthrough's. Flagged steps_from_after_section.\n\nTHREE STARTS, ONE MODELLED. Gate Sentries are listed in West Sarutabaruta (S) (I-4), Sauromugue Champaign (S) (K-11) and Fort Karugo-Narugo (S) (E-11). You run the op from ONE of them -- that is an OR, not a set, so it is not a `group` (which would claim 'do all of these in any order' and draw three markers at once). West Sarutabaruta (S) is modelled: it is the nearest Windurstian zone and one of the two the page follows through to a Campaign NPC. Flagged or_branch_unmodelled. Note that Sauromugue Champaign (S) has a listed sentry but NO listed Campaign NPC, so that branch is unfinishable from this page alone.\n\nTHE CAMPAIGN NPC IS NAMED IN ONE ZONE ONLY. 'List of Campaign NPCs' bullet 2 gives 'Fort Karugo-Narugo (S): Lamurara, C.C. at (H-8) inside Fivespires (Not on the main map.)' -- a real name. Bullet 1 gives West Sarutabaruta (S): (H-6) with no name at all, and the walkthrough elsewhere calls it only 'the Campaign NPC of the zone'. Since the modelled branch is West Sarutabaruta, step 4 carries {\"type\":\"none\",\"name\":null} and Lamurara, C.C. is recorded in the note as the Fort Karugo-Narugo alternative. Flagged generic_npc_name. Nothing was invented for West Sarutabaruta.\n\nSTEP ZONES ARE EXPLICIT so the escort and the hand-off do not inherit Windurst Waters (S) from the giver.\n\nGATES. repeatable and expansion null -- the page states neither.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'After confirming the mission with Emhi Tchaoryo' -- main Walkthrough bullet 2. Grid from the Campaign Header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "I-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Main Walkthrough bullet 2 says to go to a Windurstian-controlled Campaign area and talk to the Gate Sentry. The positions are in the 'After the walkthrough: List of Gate Sentries' section, whose bullets restart at [1]: [1] West Sarutabaruta (S) (I-4), [2] Sauromugue Champaign (S) (K-11), [3] Fort Karugo-Narugo (S) (E-11). West Sarutabaruta (S) (I-4) is the branch modelled; the other two are alternatives, not extra rungs."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Reinforcement"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "From the 'After the walkthrough: List of Gate Sentries' section, bullet [4] (that section's own numbering): escort the NPC named 'Reinforcement' to the zone's Campaign NPC. On this page she is female and, if you get too far ahead, she runs BACK towards the Gate Sentry -- the (S) and (B) siblings describe different break-off behaviour, which is why the sibling text was not reused. Talk to her again to regain control. No grid: she starts at the sentry and moves."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "From the 'After the walkthrough: List of Campaign NPCs' section, bullets [1] and [3] of that section's own numbering. Arriving at the Campaign NPC ends the mission and pays the experience points, and you are told to report back to Emhi Tchaoryo. The page gives NO NAME for the West Sarutabaruta (S) NPC, only the position (H-6), so no target name is recorded; the only Campaign NPC it names anywhere is 'Lamurara, C.C.' at (H-8) inside Fivespires in Fort Karugo-Narugo (S), which is the other branch. Caveat from the sub-bullet: if a campaign battle is in progress the NPC stands there without despawning and you must wait for the battle to finish before the mission counts as a success."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "From the 'After the walkthrough: List of Campaign NPCs' section, bullets [3] and [4] of that section's numbering: 'After talking to Emhi Tchaoryo, you gain the Allied Notes and the mission is complete.' The experience points already came at step 4, so this rung is the Allied Notes and the close."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Stock and Awe I (B)",
+   "page_id": 20138,
+   "revision_id": 770356,
+   "source_sha256": "daf563f1e1b86b60c18834c116f67b6a71ebb985da66e79b60bba299ea45cdde",
+   "cache_file": "0020138_stock_and_awe_i_b_f7ee34471b"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 251,
+   "dat_name": "Stock and Awe I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "walkthrough_incomplete",
+   "step_from_sibling_page"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level is empty here). Flagged rank_gate_unmodelled.\n\nTHE QUARTERMASTER IS NOT WHERE THE GIVER IS. Hieronymus is at Bastok Markets (S) (E-8) per the header; bullet 2 puts the Quartermaster at (H-9), the far side of the same zone. Both grids are recorded explicitly so neither rung inherits the other's position.\n\nTHE ITEM IS AN OR: Copper Ore x1 / Zinc Ore x1 / Tin Ore x1, one assigned per player, so items + items_alt rather than an AND-list. Ore rather than logs -- this is the Bastokan list and it is not the (S) page's.\n\nTHE HAND-IN IS IN THE HEADER, NOT THE WALKTHROUGH. Orders reads 'Obtain shopping list from Quartermaster and submit items to her.' No walkthrough bullet describes the trade. Flagged walkthrough_incomplete.\n\nTHE LAST RUNG IS HALF ON THIS PAGE. Bullet 4 is mostly an outcome -- 'At the completion of this quest, Hieronymus will tell you that you do not have enough Op Credits and that you may need to rest at the Barracks' -- but it does put Hieronymus in front of you at the completion of the op, which is the report-back. The explicit wording of the payout split is on the sibling Stock and Awe I (S) (page_id 19687) bullet 4: the Quartermaster pays the experience points, the ops NPC pays the Allied Notes and closes the op. THIS page does not say that; it is recorded as sibling evidence and flagged step_from_sibling_page. The Op Credits remark itself is not a step -- it is a message you receive, and it describes a shortfall, not an action.\n\nGATES. repeatable and expansion null; neither is stated on the page in any words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Copper Ore is primary only because the schema needs one.\n  step 4: The instruction form is on the sibling Stock and Awe I (S) (page_id 19687) bullet 4, where the ops NPC pays the Allied Notes and completes the op.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Accept the op. The walkthrough names him only in bullet 4; the name, zone and (E-8) come from the Campaign Header's NPC Name / Zone / pos fields."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Get the shopping list. Bullet 2 gives her grid outright, (H-9) -- a different corner of Bastok Markets (S) from Hieronymus."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Copper Ore",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Zinc Ore",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tin Ore",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Submit the one ore she asked for. The three are equal alternatives; That the hand-in is to her comes from the header Orders field, 'submit items to her' the walkthrough never describes the trade. Acquiring the ore is folded in: the page names no source for it. Holding the ore is not evidence, since you hold it before the trade."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Report back to close the op. Bullet 4 puts Hieronymus in front of you 'at the completion of this quest' but frames it as an outcome (not enough Op Credits, rest at the Barracks) rather than an instruction."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Streetsweeper I (S)",
+   "page_id": 20158,
+   "revision_id": 729345,
+   "source_sha256": "19afc22cb2338b4442c785e2463a2d42501feb92e792f4544270d2893ebce3fc",
+   "cache_file": "0020158_streetsweeper_i_s_932df60ed0"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 141,
+   "dat_name": "Streetsweeper I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_name_normalised",
+   "multiple_spawn_points",
+   "no_return_bullet"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level: Any). Flagged rank_gate_unmodelled.\n\nZONE NAME NORMALISED. The walkthrough writes the zone as 'South San d'Oria (S)' in bullets 1 and 2. That form does not resolve. The resolvable name -- and the one this page's own Campaign Header uses in its Zone field -- is 'Southern San d'Oria (S)', so that is what is recorded on every step. The suffix is (S) throughout: this is Wings of the Goddess Campaign and the past San d'Oria is a distinct zone from the present one.\n\nONE HUNT, NOT NINE. Bullet 3 lists nine known positions for the 'Suspicious Object' -- (F-6), (J-9) near Voucheramme, (K-8), (L-7), (M-5), (M-7), (L-9), (K-10) near Chauxnatte and Alfred, (I-11) by a chocobo -- but bullet 2 says it can spawn ANYWHERE in the zone and vanishes the moment anyone touches it, respawning elsewhere. So there is exactly ONE search rung with no grid, and the nine sightings are recorded in its note. Nine rungs the player cannot be tracked through would be noise, and pinning a grid would put a marker on a spot the object has already left.\n\nTHE OBJECT IS NAMED, so it is a real target: 'Suspicious Object' is the page's own quoted name for the clickable point. Recorded as target.type object.\n\nNOT STEPS. Bullet 5, 'Suspicious Object does not show up on Wide Scan', is advice about a tool, not an action -- it is folded into the search rung's note.\n\nENDS AT THE GIVER, ON THIS PAGE. Bullet 4: after the object you get experience points and a quota-met message, 'After this occurs, go back to the Campaign Ops NPC and collect your Allied Notes.' The header names that NPC as Rasdinice at (I-9).\n\nGATES. repeatable and expansion null; the page says nothing about either. | CORRECTED: a final 'return to Rasdinice' step was removed. No walkthrough bullet on this page says to go back -- the step was carried over from a sibling op or assumed from the family. AUTHORING.md: a quest can end without an NPC; do not invent a hand-in. If the op really does report back, the page has to say so before it is recorded.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: The page writes the zone 'South San d'Oria (S)'; recorded as the resolvable 'Southern San d'Oria (S)' from the header's Zone field.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bullet 1 calls her only 'the Campaign Ops NPC'; the Campaign Header names her Rasdinice at Southern San d'Oria (S) (I-9)."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Object"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Find and click the 'Suspicious Object' somewhere in the city. No grid on purpose: bullet 2 says it can spawn anywhere in the zone and disappears the instant anyone touches it, respawning immediately somewhere else. Bullet 3's nine sightings are (F-6), (J-9) near Voucheramme, (K-8), (L-7), (M-5), (M-7), (L-9), (K-10) near Chauxnatte and Alfred, and (I-11) by a chocobo. Bullet 5 warns it does not appear on Wide Scan."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crystal Fist I (B)",
+   "page_id": 20218,
+   "revision_id": 84427,
+   "source_sha256": "054b42cc517162bec110965f187483c494ee4d7fc3c5b7fa0bfdb43f78821160",
+   "cache_file": "0020218_crystal_fist_i_b_196850448d"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 291,
+   "dat_name": "Crystal Fist I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "time_gated"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level: Any). Flagged rank_gate_unmodelled.\n\nTHREE RUNGS. Bullets 2 and 3 are one conversation with the Adjutant -- pick a craft, then three synths' worth of questions -- so they are merged; consecutive rungs on one NPC draw one marker.\n\nTHE ADJUTANT IS AT (J-9) ON THIS PAGE, agreed twice: the header Description says 'Speak with adjutant (J-9)' and bullet 1 says 'forwarded to Adjutant at (J-9)'. That is NOT the (S) page's (D-8) or the (W) page's (F-9) -- each nation's adjutant stands somewhere different, which is exactly the sort of detail a copied sibling ladder would have got wrong.\n\nTIME. The header says 'Time: None' for the op, but bullet 3's last sub-bullet says 'There is a time limit for choosing the correct ingredients.' Two different clocks -- op duration and per-answer window -- so not a flat contradiction, but the answer window is real and unobservable to the addon. Flagged time_gated.\n\nREPEATABLE IS STATED IN WORDS and so is set: 'After the walkthrough: Notes' bullet 1, 'This is repeatable (as long as you have tags), making it a very quick and easy way to stock up on Allied Notes.' It is NOT from the header -- {{Campaign Header}} has no Repeatable field. expansion stays null; nothing names one.\n\nTHE RECIPES SECTION IS NOT STEPS -- on this page EVERY row is still the unfilled placeholder 'Item name / Ingredients', so it carries no information at all.\n\nThis page is at revision 84427, far older than its (S) and (W) siblings, which is consistent with its emptier tables.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Talk to Hieronymus, and you'll be forwarded to Adjutant at (J-9).' Grid from the Campaign Header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adjutant"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "One conversation: choose a craft, then answer which crystal and which first and second ingredients for three synths, each from a list. The page's worked example is Woodworking -- a Holly Staff, a Maple Wand and a Willow Wand -- and it warns of a time limit on choosing. Same zone as the giver, different corner, so the grid is recorded explicitly."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Once you've completed your three tests, go back and talk to Hieronymus for your reward.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Vanguard-X I (B)",
+   "page_id": 20257,
+   "revision_id": 84157,
+   "source_sha256": "538d2551223c18e70a5d7b972e080bfaa11fafad27b910d906d33c422bb45f82",
+   "cache_file": "0020257_vanguard_x_i_b_aae3ff1d88"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 271,
+   "dat_name": "Vanguard-X I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "time_gated"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level is empty). Flagged rank_gate_unmodelled. The header also carries 'Unit Requirement: 1~6 members.', which has no schema field either; bullet 1 calls the op 'Easily soloable', so nothing was gated on it.\n\nTIME: 30 minutes, from this page's own header. Flagged time_gated -- the addon cannot see the clock. (For the record: Vanguard-X I (W) (page_id 20126) agrees at 30 minutes and Vanguard-X I (S) (page_id 19831) leaves Time empty; I did not need the siblings to read this one.)\n\nTHIS PAGE NAMES ITS CAMPAIGN NPCs, WHICH THE (S) AND (W) SIBLINGS DO NOT. Bullet 5 gives 'North Gustaberg (S): (D-10) Jagged Onyx, L.C.' and 'Grauberg (S): (I-8) Polished Fang, L.C.' -- real NPC names, both of which resolve, so step 4 carries a real target instead of the {\"type\":\"none\"} fallback the sibling pages force. This is the single biggest difference between the three Vanguard-X I records and the reason none of them share a ladder.\n\nTWO STARTS, ONE MODELLED. Gate Sentries: North Gustaberg (S) (F-7) and Grauberg (S) (L-4); the matching Campaign NPCs are Jagged Onyx, L.C. (D-10) and Polished Fang, L.C. (I-8) in the same two zones. You run ONE of them, so this is an OR, not a `group` -- a group would claim 'do both in any order' and draw two markers. North Gustaberg (S) is modelled and the Grauberg pairing is recorded in the step notes. Flagged or_branch_unmodelled.\n\nTHE ESCORT'S THREE MOODS are page-specific detail: Concerned (runs back to the Gate Sentry), Combative (runs a random path after a supposed scout), Impatient (heads roughly towards the outpost). Talking to him regains control in all three cases. This is behaviour, not rungs.\n\nSTEP ZONES ARE EXPLICIT so the sentry, the escort and the hand-off do not inherit Bastok Markets (S) from the giver.\n\nGATES. repeatable and expansion null; the page states neither.\n\nENDS AT THE GIVER, ON THIS PAGE: bullet 6 sends you to report to Hieronymus, bullet 7 completes the op after talking to him.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "Hieronymus, Bastok Markets (S) (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'After confirming the mission with Hieronymus'. Grid from the Campaign Header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Bullet 2 says any Bastokan-controlled Campaign area; bullet 3 lists two sentries -- North Gustaberg (S) (F-7) and Grauberg (S) (L-4). North Gustaberg is the branch modelled; Grauberg is the alternative, not another rung."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "npc",
+     "name": "Reinforcement"
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Escort the NPC named 'Reinforcement' from the sentry to the zone's Campaign NPC. Bullet 4 gives three break-off moods -- Concerned (runs back to the Gate Sentry), Combative (random path after a supposed enemy scout), Impatient (roughly towards the outpost) -- and says talking to him regains control in each. No grid: he starts at the sentry and moves. Zone recorded as North Gustaberg (S) to match the modelled sentry."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jagged Onyx, L.C."
+    },
+    "zone": "North Gustaberg (S)",
+    "grid": "D-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Deliver the reinforcement and be told to report to Hieronymus. Unlike its (S) and (W) siblings this page NAMES the campaign NPCs, so a real target is recorded: Jagged Onyx, L.C. at North Gustaberg (S) (D-10). The Grauberg (S) alternative is Polished Fang, L.C. at (I-8)."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "The official report. Bullet 7: 'After talking to Hieronymus, the mission is complete.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Streetsweeper I (W)",
+   "page_id": 20268,
+   "revision_id": 648776,
+   "source_sha256": "9239e21cedb219fc53cc7adbcc2f586db9ff7b5bbf311bc8347e47068a70712b",
+   "cache_file": "0020268_streetsweeper_i_w_84def22adf"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 481,
+   "dat_name": "Streetsweeper I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "multiple_spawn_points",
+   "walkthrough_incomplete",
+   "step_from_sibling_page",
+   "no_return_bullet"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level: Any). Flagged rank_gate_unmodelled.\n\nTHE WALKTHROUGH STOPS AT THE LOCATION LIST. Three bullets: talk to the Campaign Ops NPC and scour Windurst Waters (S) for the 'Suspicious Object'; it can spawn anywhere and vanishes when touched; fifteen known locations. There is NO bullet for the payout or the report-back. I read the cached wikitext to be sure the renderer had not dropped anything -- it had not. Flagged walkthrough_incomplete.\n\nWHERE THE LAST RUNG CAME FROM. Both nation siblings state it plainly: Streetsweeper I (S) (page_id 20158) bullet 4 -- 'After obtaining the object, you will obtain experience points and get a message that you quota has been met. After this occurs, go back to the Campaign Ops NPC and collect your Allied Notes' -- and Streetsweeper I (B) (page_id 21019), whose last bullet is the same sentence for Bastok Markets (S). This page's Campaign Ops NPC is Emhi Tchaoryo at Windurst Waters (S) (H-9) per its header. The rung is recorded at medium and flagged step_from_sibling_page; THIS page does not say it. Dropping it would leave the player unmarked for the Allied Notes and make the op read as finished when it is not.\n\nONE HUNT, NOT FIFTEEN. The object can spawn anywhere in the zone and disappears the moment anyone touches it, so the search is a single rung with no grid; the fifteen sightings are in that rung's note. Several are inside buildings and on upper floors (the Optistery, the Aurastery, the roof of the Rhinostery), which is why a pinned grid would be actively misleading. Flagged multiple_spawn_points.\n\nNORTH AND SOUTH ARE THE SAME ZONE. The list tags spots 'North' and 'South'; Windurst Waters (S) is one zone in the resolver, so the tags stay in the note and the step's zone is plain 'Windurst Waters (S)'.\n\nSAME ZONE AS THE GIVER, recorded explicitly anyway rather than left to inherit.\n\nGATES. repeatable and expansion null; the page states neither. | CORRECTED: a final 'return to Emhi Tchaoryo' step was removed. No walkthrough bullet on this page says to go back -- the step was carried over from a sibling op or assumed from the family. AUTHORING.md: a quest can end without an NPC; do not invent a hand-in. If the op really does report back, the page has to say so before it is recorded.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bullet 1 calls him only 'the Campaign Ops NPC'; the Campaign Header names him Emhi Tchaoryo at Windurst Waters (S) (H-9)."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Suspicious Object"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Find and click the 'Suspicious Object'. No grid: bullet 2 says it spawns anywhere in Windurst Waters (S) and disappears the instant anyone touches it. Bullet 3's known spots: (G-6); (F-7) across from the Home Point; and in the north half (G-5) between two fortifications, (G-7) beneath the northern end of the Optistery tunnel, (G-8) upper floor of the Optistery, (K-6) upper floor of the Aurastery by Renten-Tonten, (K-6) on the ground in the hallway between the two Aurastery buildings, (K-9) on the way to the Mog House, (I-9) east of the bridge, (J-9) on the path heading north to the Aurastery, (I-10) on the path, (L-10) in front of the Mog House, (G-11) in front of Romaa Mihgo; and in the south half (I-8) on the edge of Kocco Ehllek's garden and (J-9) on the roof of the Rhinostery. North and South are halves of the one zone, not separate zones."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crystal Fist I (W)",
+   "page_id": 20270,
+   "revision_id": 761525,
+   "source_sha256": "42a2c79cfe1e7004db53b33e069c7b05ba4d91952f06ae4190c54e881dd3e886",
+   "cache_file": "0020270_crystal_fist_i_w_f03ffc5cd2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 461,
+   "dat_name": "Crystal Fist I (W)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "grid_conflict"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Bronze Ribbon of Service §' -- no schema field, not gates.level (Level: Any). Flagged rank_gate_unmodelled.\n\nGRID CONFLICT ON THE GIVER, RESOLVED AGAINST THE SIBLINGS. THIS page's Campaign Header says Emhi Tchaoryo is at pos I-9 in Windurst Waters (S). Three other Windurstian Campaign Ops pages put him at H-9: Stock and Awe I (W) (page_id 19917), Streetsweeper I (W) (page_id 20268) and Vanguard-X I (W) (page_id 20126). I-9 is also exactly where the San d'Orian ops NPC Rasdinice stands on Crystal Fist I (S) (page_id 20084), and this page's walkthrough is otherwise a near-verbatim copy of that one, so I-9 reads as copied along with the prose. I recorded H-9 on the strength of the three sibling headers and kept this page's own I-9 verbatim in start.raw so the disagreement is visible rather than laundered. Flagged grid_conflict. The marker resolves on the NPC's name in any case; the grid is a hint.\n\nTHE ADJUTANT'S GRID IS THIS PAGE'S OWN AND IS INTERNALLY CONSISTENT: header Description 'Speak with adjutant (F-9)' and bullet 1 'forwarded to Adjutant at (F-9)'. Not the (S) page's (D-8) nor the (B) page's (J-9).\n\nTHREE RUNGS. Bullets 2 and 3 are one conversation with the Adjutant -- pick a craft, then three synths' worth of questions (crystal, first ingredient, second ingredient, each from a list) -- so they are merged. The worked example here is clothcraft: a cotton headband, a red grass thread and a flask of flaxseed oil.\n\nREPEATABLE IS STATED IN WORDS: 'After the walkthrough: Notes' bullet 1, 'This is repeatable (as long as you have tags)'. Not from the header -- {{Campaign Header}} has no Repeatable field. expansion stays null. Notes bullet 2 (do Goldsmithing, they all use Wind Crystal) is player advice, not a step or a gate.\n\nUNLIKE ITS SIBLINGS this page's Recipes table is largely filled in -- Goldsmithing, Clothcraft and Bonecraft have real rows -- but it is still a reference table and not part of the ladder.\n\nNO TIME LIMIT IS MENTIONED on this page (header 'Time: None' and no note about an answer window), so unlike the (S) and (B) siblings this record carries no time_gated flag.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: See the record notes.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Emhi Tchaoryo",
+   "zone": "Windurst Waters (S)",
+   "grid": "I-9",
+   "raw": "Emhi Tchaoryo, Windurst Waters (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Talk to Emhi Tchaoryo, and you'll be forwarded to Adjutant at (F-9).' Grid recorded as H-9 from the three sibling Windurstian ops pages (19917, 20268, 20126); THIS page's header says I-9, which is the San d'Orian giver's position and looks copied."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adjutant"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "One conversation: choose a craft, then answer which crystal and which first and second ingredients for three synths, each from a list. Worked example on this page is clothcraft -- a cotton headband, a red grass thread, a flask of flaxseed oil. (F-9) is agreed by the header Description and bullet 1."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Emhi Tchaoryo"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Once you've completed your three tests, go back and talk to Emhi Tchaoryo for your reward.' Grid as at step 1."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Iron Anvil I (S)",
+   "page_id": 20321,
+   "revision_id": 771863,
+   "source_sha256": "7f5b5679d638e64da99e602e28b2f17ec4c3df2c68b49c4b216f5892a1877bf7",
+   "cache_file": "0020321_iron_anvil_i_s_55eb16579a"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 131,
+   "dat_name": "Iron Anvil I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "RANK GATE, AND A HIGHER ONE THAN THE CRYSTAL FIST OPS. 'Campaign Rank: Brass Ribbon of Service §§' -- two marks, not one. No schema field; deliberately NOT gates.level, whose header field says 'Any'. Flagged rank_gate_unmodelled.\n\nTWO SYNTHS, NOT THREE. Bullet 3 says 'he'll test you on TWO synths' and bullet 4 says 'Once you've completed your two tests'. The page's own Notes bullet 2 spells out the difference from its near-twin: 'This Ops mission is identical to Crystal Fist I (S) in nearly every aspect except the fact that there are two synth tests instead of three, and your reward is greater.' The count was read off this page, not carried over; the reward difference (140 XP / 580 Allied Notes here against 90 / 480 there) confirms it.\n\nTHE QUESTIONS ARE LONGER TOO: crystal, then first, second and third ingredient, with an optional fourth -- four or five answers per synth against Crystal Fist's three. That is detail, not extra rungs; it is all one conversation with the Adjutant.\n\nTHREE RUNGS. Bullets 2 and 3 are merged as one Adjutant conversation; consecutive rungs on one NPC draw one marker.\n\nADJUTANT AT (D-8), agreed by the header Description ('Speak with the adjutant (D-8)') and bullet 1.\n\nREPEATABLE IS STATED IN WORDS: 'After the walkthrough: Notes' bullet 1, 'This is repeatable (as long as you have tags)'. Not from the header -- {{Campaign Header}} has no Repeatable field. expansion stays null.\n\nTIME. Header 'Time: None' and, unlike Crystal Fist I (S) and (B), this page says nothing about an answer window -- so no time_gated flag.\n\nTHE RECIPES SECTION IS A REFERENCE TABLE, not steps; several rows are still 'Item name / Ingredients' placeholders and two Alchemy rows have their ingredients run together without commas.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Talk to Rasdinice, and you'll be forwarded to Adjutant at (D-8).' Grid from the Campaign Header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adjutant"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "D-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "One conversation: pick a craft, then answer TWO synths -- which crystal, then the first, second and third ingredient, with a fourth sometimes asked. The page's worked example is Clothcraft: a pair of Brais and a pair of Gaiters. Two tests, not the three of Crystal Fist I (S)."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "'Once you've completed your two tests, go back and talk to Rasdinice for your reward.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Crimson Domino I (S)",
+   "page_id": 20625,
+   "revision_id": 591651,
+   "source_sha256": "8ec5d6a6db609e37ea77732c2dc4cf1b0a6a21d118eb82d81a679fa4c47eca26",
+   "cache_file": "0020625_crimson_domino_i_s_6b08fa9758"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 111,
+   "dat_name": "Crimson Domino I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "or_branch_modelled",
+   "generic_npc_name",
+   "consumed_key_item"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Brass Ribbon of Service §§' -- two marks. No schema field, not gates.level (Level is empty). Flagged rank_gate_unmodelled. 'Unit Requirement: 1~6 members.' likewise has no field; bullet 1 calls the op 'Easily soloable'.\n\nBULLET NUMBERING. The wikitext puts the three location lists in top-level '*' lists and the connecting prose in bare lines, so the rendered page numbers the LIST ENTRIES [3]-[11] and indents the prose under them. source_bullets cite the RENDERED numbering: [2] is the sentry instruction, [3]/[4]/[5] the three sentries, [6]/[7]/[8] the three ??? positions (with the 'Check the ??? to obtain the Key Item Campaign Supplies' line indented under [8]), [9]/[10]/[11] the three Campaign NPC positions (with the report-back prose indented under [11]).\n\nTHREE ZONES, ONE MODELLED. The op can be run in East Ronfaure (S) (sentry J-11, ??? I-11, Campaign NPC H-8), Vunkerl Inlet (S) (sentry E-7, ??? G-6, NPC G-10) or Batallia Downs (S) (sentry F-8, ??? G-8, NPC J-8). You do ONE of them, so this is an OR and not a `group` -- a group would claim all three at once and draw three markers. East Ronfaure (S) is modelled as the nearest and its two alternatives are recorded in the step notes. Flagged or_branch_unmodelled.\n\nTHE SECOND OR IS MODELLED. Bullet 2's sub-bullets say the Gate Sentry EITHER hands you the Campaign Supplies directly OR tells you the supply unit was attacked and you must find the cargo. So the ??? rung is conditional -- optional:true. The Campaign Supplies key item is placed as evidence on the ??? RUNG rather than the sentry rung, deliberately: holding the key item then satisfies both rungs and moves the marker to the Campaign NPC in either branch. Placed on the earlier sentry rung instead (which rule 4 would nominally prefer), a player who was handed the supplies directly would be left with a marker sitting on a ??? they never need to visit. Flagged or_branch_modelled.\n\nZONE NAMES. Every zone is already written with its (S) suffix in the wikitext ([[Vunkerl Inlet (S)]], [[East Ronfaure (S)]], [[Batallia Downs (S)]]) and all three resolve; no normalisation was needed.\n\nTHE CAMPAIGN NPC IS NOT NAMED. The page says only 'the Campaign NPC' and heads a list 'List of Campaign NPCs:' with bare zone/grid lines -- a heading is not a name -- so the delivery rung carries {\"type\":\"none\",\"name\":null} with the grid. Flagged generic_npc_name.\n\nMONSTERS ARE SCENERY HERE, NOT OBJECTIVES. The East Ronfaure ??? is 'surrounded by Easy Prey orcs (they will aggro at lvl75)' and the Vunkerl one is 'Guarded by a loan Dire Bat'. Nothing on the page asks you to kill anything, so mobs is [] on every rung -- these are hazards, recorded in the notes.\n\nCONSUMED KEY ITEM. Campaign Supplies is handed over at the Campaign NPC, so it cannot serve as evidence for anything after step 3. Flagged consumed_key_item.\n\nENDS AT THE GIVER, ON THIS PAGE: the prose under bullet 11 sends you to make an official report to 'Sir Rasdinice' and then says the mission is complete after talking to her.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: The key item is evidence HERE and not on the sentry rung so that holding it clears both branches and advances the marker to the delivery; a ??? can never carry a marker itself, but the rung keeps the ladder honest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'After confirming the mission with Rasdinice'. Grid from the Campaign Header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gate Sentry"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "The sentry either hands you the Campaign Supplies outright or tells you the supply unit was attacked and abandoned the cargo, which sends you to the ??? at step 3. Sentries are listed at East Ronfaure (S) (J-11), Vunkerl Inlet (S) (E-7) and Batallia Downs (S) (F-8); East Ronfaure is the branch modelled. No evidence here -- see step 3 for why the key item sits there instead."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Campaign Supplies",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     6,
+     8
+    ],
+    "note": "ONLY IF the sentry did not hand the supplies over hence optional. Check the ??? to obtain the key item 'Campaign Supplies' (that instruction is the line indented under rendered bullet 8). East Ronfaure (S) (I-11) is surrounded by Easy Prey orcs that aggro at level 75; the alternatives are Vunkerl Inlet (S) (G-6) inside a small cave guarded by a lone Dire Bat and Batallia Downs (S) (G-8) atop the hill by a stone pillar."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Campaign Supplies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9,
+     11
+    ],
+    "note": "Deliver the Campaign Supplies to the zone's Campaign NPC and be told to report to Rasdinice. The page never names this NPC -- 'the Campaign NPC' and the heading 'List of Campaign NPCs:' are not names -- so only the position is recorded: East Ronfaure (S) (H-8), with Vunkerl Inlet (S) (G-10) and Batallia Downs (S) (J-8) as the other branches. The key item is in `items` because you must be holding it to hand it in; it is not evidence here, since you hold it before the delivery, not after."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "The official report, from the prose indented under rendered bullet 11: 'After talking to Rasdinice, the mission is complete.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Delta Strike I (S)",
+   "page_id": 20626,
+   "revision_id": 84434,
+   "source_sha256": "595f3b110ec8835cad5c44e46196706cf9e1f07f01b67aad77307f6889804d4a",
+   "cache_file": "0020626_delta_strike_i_s_1705fbcc05"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 146,
+   "dat_name": "Delta Strike I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled"
+  ],
+  "notes": "TWO SEPARATE GATES, AND ONLY ONE OF THEM IS A LEVEL. The header carries BOTH 'Campaign Rank: Brass Ribbon of Service §§' and 'Level: 70+'. The rank is Campaign standing and has no schema field -- flagged rank_gate_unmodelled. The 70+ is a real character-level gate and is the one that goes in gates.level. jobs stays [] : 70+ is any job, and bullet 1's 'Easily soloed by a lvl75 Ninja' is a strategy remark, not a job requirement. Getting that backwards would gate the op to Ninja forever.\n\nA REAL FIGHT, WITH A NAMED NM. Bullet 3 names the spawn: a notorious monster, Goblin Picaroon. It is recorded twice with role 'spawn' on the examine rung and role 'kill' on the fight rung, count 1 both times -- the page describes one NM, singular. Counts use the key 'count'.\n\nTHE ??? IS CHECKED TWICE and the second check is what pays out, so the two examines are separate rungs with the fight between them: check at (H-7) to spawn, kill, check again for the 160 experience points. A ??? can never carry a marker, but the rungs keep the ladder's shape and the player's place in it.\n\nZONE. Everything from step 2 to step 4 happens in East Ronfaure (S), not in the giver's Southern San d'Oria (S); recorded explicitly on each rung. The header Description gives the same place, 'the outskirts of East Ronfaure (H-7)'.\n\nENDS AT THE GIVER, ON THIS PAGE: bullet 5, 'Go back to Rasdinice and collect your allied notes.' The experience points come from the ??? at step 4 and the Allied Notes from Rasdinice at step 5 -- the same split as the other San d'Orian ops.\n\nGATES. repeatable and expansion null; the page states neither. Header 'Time: None', so no time_gated flag.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": 70,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Bullet 2 calls her only 'the Campaign Ops NPC'; the Campaign Header names her Rasdinice at Southern San d'Oria (S) (I-9), and bullet 5 names her outright."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Picaroon",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Head to East Ronfaure (S) (H-7) and check the ??? -- this is what spawns the NM. The header Description points at the same spot ('the outskirts of East Ronfaure (H-7)')."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "npc",
+     "name": "Goblin Picaroon"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Picaroon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "One NM, Goblin Picaroon. Bullet 1 says a level 75 Ninja solos it easily -- advice, not a job gate."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Check the same ??? a second time, after the NM is dead, to collect the 160 experience points. Separate rung from step 2 because the fight sits between them."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "'Go back to Rasdinice and collect your allied notes.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Materiel Storm I (S)",
+   "page_id": 20667,
+   "revision_id": 770367,
+   "source_sha256": "d2b50fc6af7efce973f47c0c786850a44e6437683c5d2babd3e01585d336f772",
+   "cache_file": "0020667_materiel_storm_i_s_dcaddbfd33"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 91,
+   "dat_name": "Materiel Storm I (S)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "walkthrough_incomplete",
+   "step_from_sibling_page",
+   "sibling_pages_disagree"
+  ],
+  "notes": "RANK GATE. 'Campaign Rank: Brass Ribbon of Service §§' -- two marks, a step above the Stock and Awe I ops. No schema field, and NOT gates.level, whose header field says 'Any'. Flagged rank_gate_unmodelled.\n\nTHE WALKTHROUGH STOPS AT THE CRYSTAL LIST. Three bullets: solo mission / speak to the Quartermaster at (I-9) / here are the seven crystal types she may ask for. Nothing about the trade, nothing about reporting back. I read the cached wikitext to confirm the renderer had not truncated it; it had not. Flagged walkthrough_incomplete.\n\nTHE HAND-IN IS IN THE HEADER: Orders reads 'Obtain list of wanted items from Quartermaster and submit items to her.' That is this page's own text, so the turn-in rung is not borrowed.\n\nTHE REPORT-BACK IS BORROWED, AND THE SIBLINGS DO NOT AGREE. Stock and Awe I (S) (page_id 19687) bullet 4 -- the same Quartermaster procedure from the same giver -- says the Quartermaster pays the experience points and Rasdinice pays the Allied Notes and completes the op, which is also how Streetsweeper I (S) (page_id 20158) and Delta Strike I (S) (page_id 20626) end. But the nation sibling Materiel Storm I (B) (page_id 21010) says instead 'Acquire the items requested by the Quartermaster and trade them to her for your reward', with no return rung at all, and Materiel Storm I (W) (page_id 20752) stops at its item list exactly like this page. So the corpus is split. I recorded the return to Rasdinice at medium confidence, because every San d'Orian op whose page does describe its ending ends there and a missing final rung leaves the player unmarked for the payout, but the disagreement is recorded rather than hidden. Flagged step_from_sibling_page and sibling_pages_disagree. THIS page says neither thing.\n\nSEVEN OPTIONS, ONE ASSIGNED. Bullet 3 lists Wind, Fire, Earth, Ice, Light, Dark and Lightning Crystal, x12 each -- alternatives, one per player, so items + items_alt rather than an AND-list of eighty-four crystals. Wind Crystal is primary only because the schema needs one. Counts are 12, not 1.\n\nREWARDS LOOK WRONG BUT ARE NOT MY BUSINESS: this page claims 810 experience points and 1350 Allied Notes where both nation siblings claim 140 and 580 for the same rank of op. Recorded here because it is visible, but it does not touch the ladder.\n\nGATES. repeatable and expansion null; the page states neither. Header 'Time: None', so no time_gated flag.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Wind Crystal is primary only because the schema needs one.\n  step 4: Taken from Stock and Awe I (S) (page_id 19687) bullet 4, the same Quartermaster procedure from the same giver, where the Quartermaster pays the experience points and Rasdinice pays the Allied Notes. Note that the nation sibling Materiel Storm I (B) (page_id 21010) says the reward comes from the trade itself with no return rung, so the wiki is not consistent about this; see the record notes.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Rasdinice",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-9",
+   "raw": "Rasdinice, Southern San d'Oria (S) (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Accept the op. The walkthrough never says 'talk to Rasdinice' outright -- bullet 2 uses her as the landmark you turn away from to find the Quartermaster -- and the name, zone and (I-9) come from the Campaign Header."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Get the list of wanted items. Same grid as Rasdinice, (I-9); the page places her 'behind you across the way near the tents' when you face Rasdinice, which is a position and so stays out of target.name."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Wind Crystal",
+      "count": 12,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Fire Crystal",
+      "count": 12,
+      "kind": "item"
+     },
+     {
+      "name": "Earth Crystal",
+      "count": 12,
+      "kind": "item"
+     },
+     {
+      "name": "Ice Crystal",
+      "count": 12,
+      "kind": "item"
+     },
+     {
+      "name": "Light Crystal",
+      "count": 12,
+      "kind": "item"
+     },
+     {
+      "name": "Dark Crystal",
+      "count": 12,
+      "kind": "item"
+     },
+     {
+      "name": "Lightning Crystal",
+      "count": 12,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Submit twelve of whichever crystal she asked for. All seven are equal alternatives, one assigned per player; That the hand-in is to her comes from the header Orders field, 'submit items to her' no walkthrough bullet describes the trade. Acquiring the crystals is folded in: the page names no source for them. Holding them is not evidence, since you hold them before the trade."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rasdinice"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Report back for the Allied Notes. NO BULLET ON THIS PAGE SAYS THIS the walkthrough ends at the crystal list (bullet 3)."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1414 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Survey: Marjami Ravine",
+   "page_id": 102253,
+   "revision_id": 761505,
+   "source_sha256": "ed456127a27f4a3e919cca2a1380d01c145a7895999b318dea4e36a4e51d42ec",
+   "cache_file": "0102253_survey_marjami_ravine_a768305bbf"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 52,
+   "dat_name": "Survey: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "or_branch_unmodelled",
+   "time_gated",
+   "turnin_unattested"
+  ],
+  "notes": "Scouts' Coalition land survey. The assignment page names no NPC anywhere; the giver is the page's own Giver block, which stage A resolved from the Scouts' Coalition page as Task Delegator in Eastern Adoulin (F-9), and giver_conflict is null. Coalition rank 'Advisor' is a gate on receiving the assignment but there is no schema field for it -- it is NOT gates.level, which is character level, so gates.level stays null and the rank is recorded here and flagged. The walkthrough has seven top-level bullets but only two of them are things you do: bullet 1 is the journey and the search, bullet 2 is the examine. Bullet 3 restates the three squares already in the table, bullet 4 is a bare heading, and bullets 5-7 are crowd-sourced game-hour/distance readings for each locus -- data, not rungs. Nothing on the page mentions returning to the Task Delegator or reporting the outcome, so no turn-in rung was recorded rather than importing one from a sibling assignment; flagged turnin_unattested so a human can add it if play shows one. gates.repeatable and gates.expansion are left null because the page never says either in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Cited as bullet 0 because it comes from the unnumbered Giver block above the walkthrough, not from a numbered bullet -- the walkthrough itself never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Bullets 1 and 2 are one act: travel to Marjami Ravine, find a locus, examine it. Any ONE of three loci satisfies 'Survey an Ergon Locus' -- Bud of the Fragrant Breeze (K-5), Whitewater Arbor (H-11), Crag of the Triumvirate (C-8) -- so grid is null rather than picking one square, and the OR branch is flagged rather than modelled. Target is the generic 'Ergon Locus' the objective and both tables use; the three proper names are the individual loci. The examine only counts from a distance that rotates through six game-time bands (0.5-3.4 yalms), which the addon cannot see, and every locus needs the Key Item \"Climbing\" -- Whitewater Arbor alternatively by passing through two Colonization Reives."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Patrol: Cirdas Caverns",
+   "page_id": 102254,
+   "revision_id": 760092,
+   "source_sha256": "a6e2649703f3b652268dfa508f04a60ce8fd3704f8652d4f98984fba8a6f7c16",
+   "cache_file": "0102254_patrol_cirdas_caverns_5475577599"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 76,
+   "dat_name": "Patrol: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "turnin_unattested"
+  ],
+  "notes": "Peacekeepers' Coalition patrol, kill work rather than the gather-and-trade ladder. The page names no NPC; the giver is the page's own Giver block, Task Delegator in Eastern Adoulin (F-7), resolved by stage A from the Peacekeepers' Coalition page, and giver_conflict is null. Coalition rank 'Partner' gates receiving the assignment and has no schema field -- it is not gates.level, so gates.level stays null; flagged rank_gate_unmodelled. Of six bullets only bullet 1 is a rung. Bullet 2 is a credit rule (no EXP-range requirement while you are in the zone), bullet 3 is spawn locations, bullet 4 a respawn timer, bullet 5 aggro behaviour, bullet 6 imprimatur-banking strategy. Bullet 6 does talk about doing '13-14 runs in a row', which implies the assignment repeats, but it never states repeatability outright, so gates.repeatable is left null rather than asserted. Nothing on the page says to go back and report, so no turn-in rung was invented.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block; the walkthrough never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cirdas Caverns",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Marolith",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "Three Maroliths, recorded singular from the page's plural 'Maroliths'. Bullet 3 gives four confirmed spawn areas -- F-5 west of the Skirmish Waypoint, K-5 east of it, K-11, and F/G-11, two spawns at each -- so grid is null rather than one of four squares. Bullet 2 says you need not be in EXP range as long as you are in Cirdas Caverns when your party or alliance defeats them, which is why the mob and not a position carries the mark."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Patrol: Dho Gates",
+   "page_id": 102255,
+   "revision_id": 755907,
+   "source_sha256": "d04a6e3e849442542884ea7cf95665ee42dc1274dc31217b398100dad0fc2666",
+   "cache_file": "0102255_patrol_dho_gates_81164d57bd"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 77,
+   "dat_name": "Patrol: Dho Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "objective_disagrees_with_walkthrough",
+   "turnin_unattested"
+  ],
+  "notes": "Peacekeepers' Coalition patrol. Giver is the page's own Giver block, Task Delegator in Eastern Adoulin (F-7), resolved from the Peacekeepers' Coalition page; giver_conflict null. Coalition rank 'Partner' has no schema field and is not gates.level; flagged. The page disagrees with itself about the target: the assignment table's Objective says 'Defeat 3 Efts in Dho Gates' while the walkthrough says 'Defeat 3 Unyielding Tarichuks'. Read as a player would, these are the same instruction at two levels of precision -- the objective links the family and the walkthrough names the mob you actually pull -- so the specific name is what is recorded and both are stated here. If the two really are different mobs the record is wrong about the name and only the count survives; that is why confidence is medium. Only bullet 1 is a rung; its sub-bullet gives the squares and bullet 2 is route advice. No report-back is mentioned anywhere on the page, so no turn-in rung was recorded.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block; the walkthrough never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Dho Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Unyielding Tarichuk",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Three of them, name recorded singular from the page's 'Unyielding Tarichuks'. The Objective field calls them Efts; the walkthrough's specific name is preferred and the disagreement is flagged. The sub-bullet puts them in F-8 and H-8 -- two squares, so grid is null. Bullet 1 also says you need not be in EXP range while you are in Dho Gates when they die. Bullet 2, 'Zone in from Marjami Frontier Station', is how to get there, not a rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Dho Gates",
+   "page_id": 102270,
+   "revision_id": 772634,
+   "source_sha256": "be399403684db792433e880596978664ba0fc8e4021c827f34b9dea509e84086",
+   "cache_file": "0102270_gather_dho_gates_90525462fa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 43,
+   "dat_name": "Gather: Dho Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "or_branch_unmodelled",
+   "zone_typo_on_page"
+  ],
+  "notes": "Inventors' Coalition gather-and-trade, the full three-rung ladder: accept, obtain, hand in. The giver is the page's own Giver block, Task Delegator in Western Adoulin (J-10), resolved from the Inventors' Coalition page; giver_conflict null. The walkthrough refers to him only as 'the NPC', which is exactly why the Giver block exists. Coalition rank 'Partner' is a gate with no schema field and is not gates.level; flagged. The assignment table spells the zone 'Doh Gates'; the page title and bullet 5 spell it Dho Gates, which is the real zone name and what is recorded -- flagged zone_typo_on_page. '3 Slug Eyes' is recorded as name 'Slug Eye' with count 3, singularised from the page's pluralised count. Bullet 3's Despoil advice and bullet 4's Abyssea - Attohwa suggestion are farming technique, not rungs; bullet 5's 'five slugs at the northeast of Dho Gates map 1' is the only in-zone location the page gives. Because the NPC accepts eyes bought or traded as readily as farmed ones, the obtain rung's zone is the assignment's nominal zone rather than a requirement -- flagged or_branch_unmodelled. gates.repeatable and gates.expansion left null: the page says neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Task Delegator - Western Adoulin (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bullet 1, 'NPC asks you to obtain 3 Slug Eyes', is the assignment being handed to you. The page never names the NPC; the name, zone and square come from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Dho Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Slug Eye",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     5
+    ],
+    "note": "Holding three Slug Eyes is what proves this rung is behind you. No target: the page names no slug, no NPC and no shop, only that the eyes must be had. The sub-bullet of bullet 1 says it does not matter how -- bought, traded or farmed -- so the zone is where the material lives rather than where you must be; bullet 5 puts five slugs at the northeast of Dho Gates map 1 and bullet 4 offers Abyssea - Attohwa as an alternative farming ground, which is not recorded as a zone because it is advice about a different assignment-irrelevant place."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Slug Eye",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Trade these to the NPC and then Report on the quest outcome' -- the trade and the Report are one hand-in on the same NPC, so they are one rung. Evidence stays on step 2 only; putting the same three eyes here as well would make the mark jump forward the instant they were obtained."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Survey: Yorcia Weald",
+   "page_id": 102682,
+   "revision_id": 761504,
+   "source_sha256": "565638273928b8465a6876770e14e99863debd2b375a52700b04b76c90e911af",
+   "cache_file": "0102682_survey_yorcia_weald_8992edf9b6"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 51,
+   "dat_name": "Survey: Yorcia Weald",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "or_branch_unmodelled",
+   "grid_conflict",
+   "time_gated",
+   "turnin_unattested"
+  ],
+  "notes": "Scouts' Coalition land survey. Giver is the page's own Giver block, Task Delegator in Eastern Adoulin (F-9), resolved from the Scouts' Coalition page; giver_conflict null. Coalition rank 'Advisor' is a gate with no schema field and is not gates.level; flagged. The page contradicts itself on two of the three loci: the table puts Bryophitic Boulder at I-8 and Overgrown Grove at K-10, while bullets 3, 6 and 7 put them at I-7 and K-9/10. Both readings are recorded in the step note and grid is left null, which it would have been anyway because any one of three loci satisfies the objective. Bullet 5's heading reads 'Bud of the Pool of Clarity', which looks like the sibling Marjami Ravine survey page's 'Bud of the Fragrant Breeze' half-pasted in; the table's name for that locus is Pool of Clarity and that is the name used here. Bullets 3-7 are position and game-hour distance data, not rungs. The page never mentions reporting back, so no turn-in rung was recorded rather than importing one.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block; the walkthrough never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Bullets 1 and 2 are one act: reach the zone, find a locus, examine it from the right distance. Any ONE of three satisfies the objective -- Pool of Clarity (G-6), Bryophitic Boulder (table I-8, bullets 3 and 6 say I-7), Overgrown Grove (table K-10, bullets 3 and 7 say K-9/10) -- so grid is null both because of the OR branch and because the page disagrees with itself on two of the squares. Target is the generic 'Ergon Locus' the objective and tables use. The required distance rotates through six game-time bands (0.5-3.4 yalms), which the addon cannot see, and all three sit behind a timed obstructing bush; bullet 6 says that one drops at 3:00 and rises at 9:00."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Boost: Marjami Ravine",
+   "page_id": 102835,
+   "revision_id": 706315,
+   "source_sha256": "df83a02f63e3d3c560eb7fbd73a12d6349881959abf54cffe0df3d7db56fa082",
+   "cache_file": "0102835_boost_marjami_ravine_fdf910275b"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 94,
+   "dat_name": "Boost: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "giver_conflict",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "time_gated",
+   "turnin_unattested"
+  ],
+  "notes": "Mummers' Coalition morale boosting -- an emote puzzle, not a gather-and-trade. This page CARRIES A GIVER CONFLICT and stage A recorded it: the coalition page says G-11, the Task Delegator NPC page lists G-10, and stage A used the NPC page. G-10 is what this record uses, and both squares are on the rendered page. Coalition rank 'Partner' is a gate with no schema field and is not gates.level; flagged. The objective allows either frontier station -- Marjami Ravine or Yorcia Weald -- and the table gives a separate emote/direction column for each. This record is the Marjami Ravine assignment, so Marjami Ravine is the recorded zone and the Yorcia Weald alternative is flagged rather than modelled; CORRECTED: an earlier note claimed the game distinguishes this from a 'Boost: Yorcia Weald'. No such assignment exists -- dat_names.lua's coalition table holds only Boost: Foret de Hennetiel, Boost: Marjami Ravine and Boost: Kamihr Drifts. The page offers one assignment with two eligible stations; the zone recorded is the named one and the or_branch_unmodelled flag carries the rest. Bullets 1-3 are one uninterrupted interaction with the Station Worker and are merged into one rung. gates.repeatable is set true on the strength of bullet 4's own words -- 'rapidly repeat this quest' -- which is the page saying it in words; gates.expansion stays null because the page never names an expansion.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Confidence is medium here only because of the square: the Giver block flags the coalition page's G-11 against the NPC page's G-10 and takes G-10.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Station Worker"
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "One rung on one NPC: speak to the Station Worker at the frontier station, then pick from the emote list he offers while facing BOTH him and the compass direction the table gives for the current game-time band -- for Marjami Ravine, Rue your life (E) 00:00-03:00, Cheer (SE), Pretend to be flustered (S), Blush like a Maiden (SW), Rally the troops (W), Look Pleased (NW), Cry a River (N), Act Surprised (NE) 21:00-00:00. The pairing changes every three game hours, which the addon cannot see. The page gives no grid square for the frontier station, so grid is null. Bullet 1 also offers the Yorcia Weald station instead; only Marjami Ravine is recorded because that is this assignment's zone."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Research: Marjami Ravine",
+   "page_id": 102836,
+   "revision_id": 586201,
+   "source_sha256": "9695cfaf38432b0202eae25e3bc589a9889535c3627471c80e108dd9b9f60cd5",
+   "cache_file": "0102836_research_marjami_ravine_d94b68812a"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 91,
+   "dat_name": "Research: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "giver_conflict",
+   "grid_conflict",
+   "completion_unobservable",
+   "count_unobservable",
+   "turnin_unattested"
+  ],
+  "notes": "Mummers' Coalition behavioural research: you are not asked to kill anything, you are asked to be hit by a specific mob ability. This page CARRIES A GIVER CONFLICT, recorded by stage A: the coalition page says G-11, the Task Delegator NPC page lists G-10, and the NPC page won. G-10 is used here. Coalition rank 'Advisor' is a gate with no schema field and is not gates.level; flagged. Bullet 3 -- 'After being hit with Molting Plumage, the assignment will be complete' -- is the page stating outright that there is no report-back, so no turn-in rung was recorded; turnin_unattested is flagged anyway so a human can confirm against play. Nothing here is observable to the addon: no item, no key item, no kill count, only a special attack landing on you, hence completion_unobservable and a null count on the mob. Trembling Tulfaire in Lair Reives are explicitly excluded, so the mob name is the plain Tulfaire the page links to the Tulfaires category.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block. Medium only because of the square: the Giver block flags the coalition page's G-11 against the NPC page's G-10 and takes G-10."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tulfaire",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Fight Tulfaire until one uses Molting Plumage on you. There is no kill count -- you fight until the ability lands -- so count is null rather than a made-up number. Trembling Tulfaire found in Lair Reives do not count towards the assignment. Bullet 2 places them directly southwest of Bivouac #4 and south of Bivouac #1; neither is given as a grid square, so grid is null. Bullet 1's second sub-bullet notes the ability is AoE in a narrow line, so standing behind the tank credits several characters at once."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Marjami Ravine",
+   "page_id": 103235,
+   "revision_id": 510467,
+   "source_sha256": "b09feb4a69e0359a562b17a8cee9da45c794d691c9ecb01bd2283da2450445b9",
+   "cache_file": "0103235_gather_marjami_ravine_5dbb71118b"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 38,
+   "dat_name": "Gather: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Inventors' Coalition gather-and-trade, the full three-rung ladder. Giver is the page's own Giver block, Task Delegator in Western Adoulin (J-10), resolved from the Inventors' Coalition page; giver_conflict null. The walkthrough calls him only 'the NPC' in both of its two bullets. Coalition rank 'Partner' is a gate with no schema field and is not gates.level; flagged. '3 Tulfaire Feathers' is recorded as name 'Tulfaire Feather' with count 3, singularised from the page's pluralised count. This page is the shortest of the family -- two bullets and no Notes content -- so it gives no farming location at all; the obtain rung's zone is the assignment table's Zone, Marjami Ravine, and the sub-bullet's 'it does not matter how the player obtains it. It can be bought, traded, or farmed' means that zone is where the feathers come from rather than somewhere you must stand, which is flagged or_branch_unmodelled. gates.repeatable and gates.expansion left null; the page says neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Task Delegator - Western Adoulin (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bullet 1, 'NPC asks you to obtain 3 Tulfaire Feathers', is the assignment being handed to you. The name, zone and square come from the Giver block because the walkthrough gives none."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tulfaire Feather",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Holding three Tulfaire Feathers is what proves this rung is behind you. No target and no square: the page names no mob to kill and no shop, only the material. Zone is the assignment table's Marjami Ravine; the sub-bullet says bought or traded feathers count as readily as farmed ones, so it is not a place requirement."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Tulfaire Feather",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Trade these to the NPC and then Report on the quest outcome' -- trade and Report are one hand-in on one NPC, so one rung. Evidence stays on step 2 only, or the mark would jump here the moment the third feather was obtained."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Yorcia Weald",
+   "page_id": 103236,
+   "revision_id": 510468,
+   "source_sha256": "fad6b2dc73ed047996c6fa19791c553e42d16d7cf30f0243bbc535aa84e20e8a",
+   "cache_file": "0103236_gather_yorcia_weald_19bded6fd0"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 37,
+   "dat_name": "Gather: Yorcia Weald",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Inventors' Coalition gather-and-trade, the full three-rung ladder. Giver is the page's own Giver block, Task Delegator in Western Adoulin (J-10), resolved from the Inventors' Coalition page; giver_conflict null. The walkthrough says only 'the NPC'. Coalition rank here is 'Advisor', one step above the Partner rank on the sibling Marjami Ravine gather, and it is a gate with no schema field -- not gates.level, which is character level -- so gates.level stays null and the rank is flagged. '3 Snapweed Tendrils' is recorded as name 'Snapweed Tendril' with count 3, singularised from the page's pluralised count. Two bullets, no farming location given; the obtain rung's zone is the assignment table's Yorcia Weald, and the sub-bullet's 'bought, traded, or farmed' means that is where the material lives rather than where you must be, flagged or_branch_unmodelled. gates.repeatable and gates.expansion left null; the page says neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Task Delegator - Western Adoulin (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Bullet 1, 'NPC asks you to obtain 3 Snapweed Tendrils', is the assignment being handed to you. Name, zone and square come from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Snapweed Tendril",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Holding three Snapweed Tendrils proves this rung is behind you. No target and no square -- the page names no snapweed to kill and no shop. Zone is the assignment table's Yorcia Weald; the sub-bullet's 'bought, traded, or farmed' makes it the material's home rather than a place requirement."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Snapweed Tendril",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Trade these to the NPC and then Report on the quest outcome' -- one hand-in on one NPC, so one rung. Evidence stays on step 2 only."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Procure: Marjami Ravine",
+   "page_id": 103237,
+   "revision_id": 773025,
+   "source_sha256": "cd79df71e9a5e87540024f339e50b6f1e94e5aad3d133f47db1e2dea90a37834",
+   "cache_file": "0103237_procure_marjami_ravine_5ac33c8a1d"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 4,
+   "dat_name": "Procure: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "count_unobservable",
+   "turnin_unattested"
+  ],
+  "notes": "Pioneers' Coalition gathering assignment -- HELM work, not a trade. Giver is the page's own Giver block, Task Delegator in Western Adoulin (E-8), resolved from the Pioneers' Coalition page; giver_conflict null. Coalition rank 'Partner' is a gate with no schema field and is not gates.level; flagged. The important reading on this page is bullet 6: 'You do not need to keep the physical items you obtained ... the \"items\" are abstract. You can safely toss or sell any HELM results and still complete the assignment.' That means the five materials are NOT observable -- nothing in inventory can prove the count -- so the mining rung carries no evidence and count_unobservable is flagged. The Pickaxe is different: it is a real item you must hold to mine, so it is the previous rung's evidence and the mining rung's items. Bullet 4 ('repeat until five') is folded into the mining rung rather than made a rung of its own; bullet 5 is gathering-fatigue advice. Nothing on the page mentions reporting back to the Task Delegator, so no turn-in rung was invented. gates.repeatable and gates.expansion left null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block; the walkthrough never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Pickaxe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Obtain a number of Pickaxes (Extras highly recommended)' -- the page gives no count and names no vendor or place, so zone and target are null and the evidence count is 1: one pickaxe in inventory is what lets the next rung start, and the page's 'a number of' cannot be turned into a number without inventing one."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Mining Point"
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Bullet 2 is the journey and bullets 3-4 the work, so they are one rung: use the Pickaxe on Mining Points in Marjami Ravine until five items have been obtained. The sub-bullet of bullet 3 lists five squares -- (D-11), (E-10), (G-12), (I-9), (M-9) -- so grid is null rather than one of five. No evidence, because bullet 6 says the five items are abstract and the physical HELM results may be tossed or sold; the count is invisible to the addon. Bullet 5 warns that gathering fatigue sets in quickly and decays at roughly one extra attempt every two minutes."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Procure: Yorcia Weald",
+   "page_id": 103238,
+   "revision_id": 771515,
+   "source_sha256": "e2826bc27e67aabf31ffa65eb847dc2729df3982c25ca99afd8cff516c46fa4e",
+   "cache_file": "0103238_procure_yorcia_weald_8712f2834f"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 3,
+   "dat_name": "Procure: Yorcia Weald",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "count_unobservable",
+   "turnin_unattested"
+  ],
+  "notes": "Pioneers' Coalition gathering assignment, logging rather than mining. Giver is the page's own Giver block, Task Delegator in Western Adoulin (E-8), resolved from the Pioneers' Coalition page; giver_conflict null. Coalition rank here is 'Advisor', a gate with no schema field and not gates.level; flagged. As on the sibling mining assignment, bullet 6 says the five 'items' are abstract and the physical HELM results may be tossed or sold, so nothing in inventory proves the count -- the logging rung carries no evidence and count_unobservable is flagged. The Hatchet is a real held item, so it is the previous rung's evidence and the logging rung's items. Bullet 4 ('repeat until five') is folded into the logging rung; bullet 5 is gathering-fatigue advice. The page never mentions reporting back, so no turn-in rung was invented.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block; the walkthrough never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Hatchet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "'Obtain a number of Hatchets (Extras highly recommended)' -- no count, no vendor and no place named, so zone and target are null and the evidence count is 1: one hatchet in inventory is what lets the next rung start."
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Logging Point"
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [
+     {
+      "name": "Hatchet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Bullet 2 is the journey and bullets 3-4 the work, so one rung: use the Hatchet on Logging Points in Yorcia Weald until five items have been obtained. The sub-bullet of bullet 3 lists four squares -- (G-9), (I-7), (I-10), (J-8) -- so grid is null rather than one of four. No evidence: bullet 6 makes the five items abstract, so the count is invisible to the addon. Bullet 5 is the gathering-fatigue warning."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clear: Marjami Ravine",
+   "page_id": 103239,
+   "revision_id": 770766,
+   "source_sha256": "5ed2b5e1844bcaeaf20a651406575db76993181d3cdfd23b8cf3e6840e238c51",
+   "cache_file": "0103239_clear_marjami_ravine_ef580c18e8"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 12,
+   "dat_name": "Clear: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "generic_npc_name",
+   "giver_from_coalition_page",
+   "completion_unobservable",
+   "turnin_unattested"
+  ],
+  "notes": "Pioneers' Coalition 'Clearing The Way': complete one Colonization Reive in Marjami Ravine. Giver is the page's own Giver block, Task Delegator in Western Adoulin (E-8), resolved from the Pioneers' Coalition page; giver_conflict null. Coalition rank 'Partner' is a gate with no schema field and is not gates.level; flagged. The objective is the reive's completion, not a kill count, so every mob count is null -- the monsters are recorded because bullet 2 names them reive by reive and they are what a player looks for on the ground, but holding to a count would be inventing one. A reive completing is not observable to the addon, hence completion_unobservable. Bullet 2 lists seven applicable reives across seven squares, so grid is null rather than one of them; a marker on any single square would be wrong six times out of seven. Nothing on the page mentions reporting back to the Task Delegator, so no turn-in rung was invented. gates.repeatable and gates.expansion left null; the page says neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Bullet 0 = the unnumbered Giver block; the walkthrough never mentions the NPC."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gerent Apkallu",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Preening Tulfaire",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Embattled Roc",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Resilient Colibri",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Precipice Vulture",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Colonization Reive through to completion; the sub-bullet says you may join mid-battle so long as you are present for the final evaluation. Bullet 2 lists seven applicable reives -- (D-7) Gerent Apkallu and Preening Tulfaire; (K-8) Embattled Roc and Resilient Colibri; (F-9) Preening Tulfaire and Resilient Colibri; (L-9) Precipice Vulture north, Preening Tulfaire and Resilient Colibri south; (G-11) Precipice Vulture and Resilient Colibri; (I-11) Gerent Apkallu and Embattled Roc; (K-11) Precipice Vulture and Preening Tulfaire -- so grid is null. The five distinct monsters are recorded with null counts because the assignment asks for the reive, not for kills; target is none because the reive itself is not a targetable entity."
+   }
+  ]
+ }
+]

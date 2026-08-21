@@ -1,0 +1,1539 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 14 (Grauberg)",
+   "page_id": 67216,
+   "revision_id": 625745,
+   "source_sha256": "1f3ef4c0dfafaaa23bb5b8fc180710c0d86fd13ea2dc566e60f1aa366b36109a",
+   "cache_file": "0067216_dominion_op_14_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 191,
+   "dat_name": "Dominion Op #14 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "The standard three-beat Dominion Op: accept, cull, report. 'Dominion Sergeant' is one of the AMBIGUOUS_NPCS -- every Abyssea zone has several -- so it only indexes with a resolved zone, and 'Abyssea - Grauberg' gives it one. The trailing 'For more information, see Dominion Ops.' line is a cross-reference, not a bullet and not a step. Nothing here is observable: no key item, no drop, and no packet counts kills, so the 5 in step 2 is display only and every step's evidence is null. The DAT writes the name with a '#' that the wiki title omits; identity is copied verbatim from the front matter either way. The page names the quarry only in the plural, so the singular 'Goblin Meatgrinder' is recorded as written rather than guessed at a longer name.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #4; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Meatgrinder",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no packet counts them; the 5 is for display only"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Overnight Delivery",
+   "page_id": 207,
+   "revision_id": 692786,
+   "source_sha256": "993269c7193769dbacb57cad903828815a8b26a17c760b46881f2e810ffcfcce",
+   "cache_file": "0000207_overnight_delivery"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 15,
+   "dat_name": "Overnight Delivery",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Three bullets, three steps, and one genuine piece of evidence. The Small bag is a KEY ITEM (key_items 99), not an inventory item -- probing it as an item returns nothing -- so it is recorded as kind 'ki' both as step 2's evidence and as what step 3 needs you to be holding. The unnumbered line above bullet 1 ('You must zone after completing Food for Thought') is a precondition, not a step; the runtime already handles the previous-quest gate. Bullet 1's sub-bullet -- four conversations to officially open the quest -- is commentary on the same one interaction, so it stays a note rather than four rungs. Bullet 2 folds the journey to Mhaura into the conversation it exists for: one step, one zone. The whole quest is on a Vana'diel clock the addon cannot see (after 7:00, after 18:00, back before 6:00), which is flagged and modelled nowhere. 'Windurst Waters South' is half of zone 238 and does not resolve on its own, so the zone is 'Windurst Waters' with the header string kept in start.raw. The Power Gi is the reward and is not evidence for anything.\n\nVERIFY: the ladder survives the attacks -- each of the three steps is exactly one bullet in the source's order, the Small bag is obtained at step 2 and only held at step 3 so it is never evidence twice, the Power Gi reward appears nowhere, and Mhaura is the single zone bullet 2 ends in. Confidence lowered to medium on the guide's own definition of medium -- the ladder is right but a gate is unmodellable -- and here that gate is the entire quest. Three separate Vana'diel windows (speak after 7:00, collect after 18:00, return before 6:00) decide whether any of these markers does anything, the addon can observe none of them, and a player sent to Kenapa-Keppa or Kotan-Purutan outside the window finds them inert. The draft said so in its own notes and still claimed high; only the confidence was changed.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 2,
+    "raw": "Windurst / 2"
+   },
+   "prev": [
+    {
+     "title": "Food for Thought",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kenapa-Keppa",
+   "zone": "Windurst Waters",
+   "grid": "J-9",
+   "raw": "Kenapa-Keppa, Windurst Waters South (J-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "only after 7:00 Vana'diel time, and you must have zoned since Food for Thought. Speak to him four times before the quest is officially open -- one interaction, not four steps."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kotan-Purutan"
+    },
+    "zone": "Mhaura",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Small bag",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near the ferry ticket area, and only after 18:00 Vana'diel time. The journey to Mhaura is folded into this step."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kenapa-Keppa"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Small bag",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "before 6:00 -- the same Vana'diel night you collected it"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Motherly Love",
+   "page_id": 67152,
+   "revision_id": 765578,
+   "source_sha256": "090d145c050ae06282b2f8c148231f7e81024e1f8b968ef69f37ce0d6c978e7f",
+   "cache_file": "0067152_motherly_love"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 82,
+   "dat_name": "Motherly Love",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "trade_inferred"
+  ],
+  "notes": "Seven bullets and seven real actions -- an unusually clean Abyssea page, and both of the header's Item Reqs turn up in the ladder where they should. Two honest gaps. First, bullet 4 says only 'Spawn Bugul Noz at the ??? in (E-10)' and never says how; the Sabulous Clay from bullet 3 is the header's Item Req and has nothing else to do with it, so the step is read as a trade and its confidence demoted to medium to record the inference. Second, Malene (A) is only ever 'nearby', so her grid is null rather than borrowed from Alisa's (C-11). The ??? is an object that can never carry a marker, but it keeps the rung between the clay and the kill. Evidence is placed where each thing is actually obtained: the clay on the Fear Dearg step, the Moon pendant on the kill, and neither is repeated later -- steps 6 and 7 carry the pendant only as something you must be holding. The 700 Cruor reward is not evidence of anything.\n\nVERIFY: evidence placement, order and zones all hold -- the clay is obtained at step 3 and only held at step 4, the pendant is obtained at step 5 and only held at step 6, neither is evidence twice, and the 700 Cruor reward is used nowhere. Confidence lowered to medium because the page is unclear exactly where it matters: bullet 4 states an effect ('Spawn Bugul Noz at the ??? in (E-10)') and never a cause, so step 4's kind AND its Sabulous Clay requirement are both reconstructed from the header's Item Reqs rather than read off the walkthrough. The step already carries that as medium; the quest cannot claim 'I understood the page' while one of its rungs is an inference. Step 5's (E-10) is likewise inherited from bullet 4 -- bullet 5 gives no location -- and is left standing only because you fight the NM where you spawned it. Nothing was removed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "aalt / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Alisa (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "C-11",
+   "raw": "Alisa (A) (C-11), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alisa (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "C-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the outpost near Conflux #8"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Malene (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says only 'nearby', so no grid is recorded; she tells you about Bugul Noz"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sabulous Clay",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Fear Dearg",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "over by Conflux #6; the page gives no grid and no drop rate. Conflux travel is inside the same zone, so this is not a separate travel step."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "E-10",
+    "items": [
+     {
+      "name": "Sabulous Clay",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bugul Noz",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page never says HOW you spawn him -- only 'Spawn Bugul Noz at the ??? in (E-10)'. The Sabulous Clay is the header's Item Req and has no other use, so a trade is the reading; hence medium. A ??? can never carry a marker."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "E-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Moon pendant",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Bugul Noz",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the pendant is a guaranteed key item, not a random drop"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alisa (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "C-11",
+    "items": [
+     {
+      "name": "Moon pendant",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Malene (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "Malene, not Alisa, closes the quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Out of Touch",
+   "page_id": 56702,
+   "revision_id": 729298,
+   "source_sha256": "3ccdf7b29c527feb4d3c8ac00ddc702093c6389b2c9bc3cd3544358989b64185",
+   "cache_file": "0056702_out_of_touch"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 8,
+   "dat_name": "Out of Touch",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "roaming_npc"
+  ],
+  "notes": "Four bullets, three steps. Bullet 2 ('She will give you a [KI] Rainbow-colored linkpearl') is the OUTCOME of bullet 1, not a second thing you do, so it merges into step 1 and supplies its evidence -- a keyword pass would have made an 'obtain' rung out of it. Aaveleon (A) roams most of Abyssea - La Theine, so his grid is null on purpose: the marker has to follow the live entity and any grid written here would be a lie. Both sub-bullets under bullet 3 are tracking advice (Wide Scan, the roads and valleys) and neither is a step. The linkpearl rides along on step 2 as something you must be holding rather than as evidence, since it was granted at step 1 and the same key item may not be evidence twice. The reward Scarlet abyssite of kismet is exactly the trap hard rule 7 names -- it proves the quest is over, not that a step is done, so it appears nowhere in the ladder.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 6,
+    "raw": "alth / 6"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Glenne (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "L-11",
+   "raw": "Glenne (A) (L-11), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Glenne (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rainbow-colored linkpearl",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Veridical Conflux #06. Bullet 2 is what this conversation gives you, not a step of its own."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aaveleon (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [
+     {
+      "name": "Rainbow-colored linkpearl",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he roams most of the zone, mostly the main roads but sometimes down into the valleys, so no grid is recorded. Wide Scan is the practical way to find him. Speaking to him while holding the linkpearl is the delivery."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Glenne (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 13 (Grauberg)",
+   "page_id": 67215,
+   "revision_id": 625744,
+   "source_sha256": "14d42b5be345660cfcc2f7c2b5e18fd0d1e8b59d406c2ebb183c848875c3bac6",
+   "cache_file": "0067215_dominion_op_13_grauberg"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 190,
+   "dat_name": "Dominion Op #13 (Grauberg)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Identical in shape to Dominion Op 14 in the same zone, and the sergeant is the same one near Conflux #4 -- only the quarry and the grid differ. 'Dominion Sergeant' is an AMBIGUOUS_NPCS name that only indexes with a resolved zone, which 'Abyssea - Grauberg' supplies. The closing 'For more information, see Dominion Ops.' is a cross-reference, not a bullet. No key item, no drop and no kill counter anywhere in the packets, so every step's evidence is null and the 5 is display only. Singular 'Goblin Plunderer' is taken from the page's plural rather than invented.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "agra / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Grauberg",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #4; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "I-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Plunderer",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no packet counts them; the 5 is for display only"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "To Bee or Not to Bee?",
+   "page_id": 304,
+   "revision_id": 628967,
+   "source_sha256": "668be78b0ce1967aaf19284d4201b0316a19174036991a61f6e8262a19ecae9e",
+   "cache_file": "0000304_to_bee_or_not_to_bee"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 35,
+   "dat_name": "To Bee or Not to Bee?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "optional_precondition",
+   "walkthrough_ambiguous",
+   "no_evidence"
+  ],
+  "notes": "Five bullets that do not agree with each other about where the quest begins, which is why this is medium. The header and the description both make Raamimi the giver ('Follow Raamimi's advice'), and bullet 5 returns to him -- but bullet 1 says that if Zayhi-Bauhi is speaking normally rather than coughing you talk to the two onlookers 'to receive the quest'. Read as a player: those two conversations are a conditional nudge that gets Zayhi-Bauhi hoarse so Raamimi will offer the job, so they are modelled as two optional grouped steps ahead of Raamimi rather than as the start. The start is left where the header puts it.\n\nThe two onlookers appear TWICE -- once in bullet 1 and again inside bullet 3 -- and each visit is its own unordered pair, since neither bullet gives an order between Kalupa-Tawalupa and Rutango-Botango. Bullet 3 is genuinely three actions ('Trade Honey to Zayhi-Bauhi, THEN speak to...') with an explicit ordering word, so it splits into a trade followed by the second pair.\n\nNo evidence anywhere, deliberately. Honey is a common purchasable item and the header's own 'Quest Reqs: Honey x4' means a prepared player is already holding several before bullet 2 -- so 'you hold Honey' proves nothing about any step and would fire the ladder early. The Mulsum x3 is the reward and is not evidence either. Bullet 4's 'one at a time' means four separate trades of one Honey each; a count of 4 expresses the requirement to hold them, and the sequencing stays in the note.\n\nZayhi-Bauhi and the two onlookers get no grid because the page gives none -- only the description's 'by the bridge to Heavens Tower' and 'in front of him'. Their zone is Windurst Walls, which the page supports through the header's start zone and its Windurst Walls Quests category rather than by stating it outright.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 2,
+    "raw": "Windurst / 2"
+   },
+   "prev": [
+    {
+     "title": "The Postman Always K.O.s Twice",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Raamimi",
+   "zone": "Windurst Walls",
+   "grid": "F-7",
+   "raw": "Raamimi, Windurst Walls (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kalupa-Tawalupa"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "onlookers_before",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "only needed if Zayhi-Bauhi is speaking normally rather than coughing. He stands in front of Zayhi-Bauhi; the page gives no grid. Either order."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rutango-Botango"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "onlookers_before",
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the other half of bullet 1's conditional pair; no grid on the page"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raamimi"
+    },
+    "zone": "Windurst Walls",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "he hands over a single Honey -- not evidence, since Honey is buyable and you are expected to be carrying four more already"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Zayhi-Bauhi"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [
+     {
+      "name": "Honey",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the one Raamimi gave you. He is the old man giving speeches by the bridge to Heavens Tower; the page gives him no grid."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kalupa-Tawalupa"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "onlookers_after",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the second half of bullet 3, after the trade; no order given between the two onlookers"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rutango-Botango"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "onlookers_after",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the other half of the same pair"
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Zayhi-Bauhi"
+    },
+    "zone": "Windurst Walls",
+    "grid": null,
+    "items": [
+     {
+      "name": "Honey",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "four MORE Honey, traded one at a time -- four separate trades. These are the header's 'Quest Reqs: Honey x4' and you supply them yourself."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Raamimi"
+    },
+    "zone": "Windurst Walls",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the 3 Mulsum are the reward, not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 07 (Uleguerand)",
+   "page_id": 67195,
+   "revision_id": 625724,
+   "source_sha256": "4f1d47df2cd666bec7e6164fbd622e72ed654ff1b34371cc16fd6956cbfe5a5f",
+   "cache_file": "0067195_dominion_op_07_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 107,
+   "dat_name": "Dominion Op #07 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "The same three-beat Dominion Op, this time in Abyssea - Uleguerand off Conflux #6. 'Dominion Sergeant' is an AMBIGUOUS_NPCS name and only indexes once a zone resolves it, which the header's 'Abyssea - Uleguerand' does. The trailing Dominion Ops cross-reference is not a bullet. Nothing observable: no key item, no drop, no kill counter, so all evidence is null and the 5 is display only. The page writes only the plural 'Svelldrakes'; the singular is recorded as written.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #6; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Svelldrake",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no packet counts them; the 5 is for display only"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unsullied Lands",
+   "page_id": 98179,
+   "revision_id": 351013,
+   "source_sha256": "0696ef8d356c4a310b84542a1b69555438f5dcb455902ba531dbe86ec4b78278",
+   "cache_file": "0098179_unsullied_lands"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 12,
+   "dat_name": "Unsullied Lands",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unmodelled_gate"
+  ],
+  "notes": "Four bullets, three steps, one clean piece of evidence. Bullet 2 is pure routing and never leaves Foret de Hennetiel -- west toward the beach with the tree reive, then south along the coast instead of crossing -- so it merges into the examine it is directions to rather than becoming a travel rung; the destination grid (J-11) is what it actually contributes. 'Ergon Locus' resolves as a real targetable entity, so step 2 carries a marker, which is the whole value of this quest. The Fistful of pristine sand is a KEY ITEM (key_items 2186) and does not exist as an inventory item, so it is kind 'ki' as evidence on step 2 and as what you must hold at step 3. The header's 'Quest Reqs: \"Watercrafting\"' is an Adoulin unlock with no slot in this schema and no observable predicate, so it is flagged and gates nothing; the 2000 XP and 200 Bayld are rewards and are not evidence.\n\nVERIFY: the merge of bullets 2 and 3 is correct -- bullet 2 is routing that never leaves Foret de Hennetiel and contributes only the destination grid -- and the Fistful of pristine sand is obtained at step 2 and merely held at step 3, so it is never evidence twice; the XP and Bayld rewards appear nowhere. Confidence lowered to medium for the reason the draft states itself: 'Quest Reqs: \"Watercrafting\"' is a real gate with no slot in this schema and no observable predicate, which is precisely the guide's medium row -- the ladder is right but a gate is unmodellable. Only the confidence was changed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Inmot-Pinmot",
+   "zone": "Foret de Hennetiel",
+   "grid": "J-10",
+   "raw": "Inmot-Pinmot, Foret de Hennetiel - (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Inmot-Pinmot"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Bivouac #2"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fistful of pristine sand",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "bullet 2 is the route to it: head west toward the beach with the tree reive, but instead of crossing the tree go south along the coast to the hidden beach at (J-11). Same zone throughout, so no travel step."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Inmot-Pinmot"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Fistful of pristine sand",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 02 (Uleguerand)",
+   "page_id": 67190,
+   "revision_id": 625719,
+   "source_sha256": "d80f5e9e23a842d7c82796c79fb313abde75f40ab6667ef876c6d6c7a9ac5f01",
+   "cache_file": "0067190_dominion_op_02_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 102,
+   "dat_name": "Dominion Op #02 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Three-beat Dominion Op in Abyssea - Uleguerand. Worth noting against its siblings in this batch: this one's sergeant is near Conflux #7, where Ops 04 and 07 in the same zone use Conflux #6 -- recorded as each page writes it rather than reconciled, since a sergeant stands at more than one conflux. 'Dominion Sergeant' is an AMBIGUOUS_NPCS name that only indexes with a resolved zone. The Dominion Ops cross-reference line is not a bullet. No key item, no drop, no kill counter, so all evidence is null and the 5 is display only. 'Spectator' is the singular of the page's 'Spectators' and is recorded as written -- it is a beholder-family mob here, not a bystander.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #7; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Spectator",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no packet counts them; the 5 is for display only"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 04 (Uleguerand)",
+   "page_id": 67192,
+   "revision_id": 625721,
+   "source_sha256": "c6612b66a1e2a3d4259abeb4440624211b1a930c6fa597bbfa8c647f153e9e7e",
+   "cache_file": "0067192_dominion_op_04_uleguerand"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 104,
+   "dat_name": "Dominion Op #04 (Uleguerand)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Three-beat Dominion Op in Abyssea - Uleguerand, same Conflux #6 sergeant as Op 07 in this batch. 'Dominion Sergeant' is an AMBIGUOUS_NPCS name and needs the zone to index at all. The Dominion Ops cross-reference is not a bullet. No key item, no drop, no kill counter, so evidence is null throughout and the 5 is display only. 'Snowflake' is the singular of the page's 'Snowflakes' -- an Abyssea elemental, not weather -- and is recorded exactly as the page writes it rather than expanded into a guess.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aule / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Uleguerand",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #6; the page gives no grid for him"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Snowflake",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no packet counts them; the 5 is for display only"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not only the one you started with"
+   }
+  ]
+ }
+]

@@ -1,0 +1,1035 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aqua Puraga",
+   "page_id": 58976,
+   "revision_id": 773835,
+   "source_sha256": "449c20b46b2b48d6c5caa291431efe0dd07b789fde43da650d2a02ef40078666",
+   "cache_file": "0058976_aqua_puraga"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 36,
+   "dat_name": "Aqua Puraga",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "repeating_loop",
+   "time_gated",
+   "progress_unobservable"
+  ],
+  "notes": "Five real rungs out of seven bullets. Bullet 2 is framing for bullet 3 ('examine at most two of the targetable locations'), and the page's own three Watergrass locations are candidates, not a sequence: you examine one, report, and if High Bear was asking about a different pond you go to another. That is an unordered set of three, so they share a group and all three draw at once -- a strict ladder would mark (E-5) and nothing else until the player happened to walk there. Each pond is its own step because each has its own grid, and one step has one zone and one grid.\n\nNothing here is observable. The three observations per pond are log messages and a dialogue choice; no key item, no item, no count. So every step carries evidence null, which is the honest answer -- the ladder positions the player, it cannot track them.\n\nTwo waits, neither a step. The unnumbered line above bullet 1 is a START gate (the next Vana'dielian day after Aqua Pura), and bullet 7 is the reward landing at 00:00 rather than an action; both are recorded as notes and flagged time_gated. The trailing 'Zoning is not required to repeat this quest' is a cooldown remark. Fame 'avun' is an Abyssea zone code, not one of the nine regions, so region is null and the raw is kept. The wiki form 'High Bear (A)' is written as-is; the normaliser folds it to the in-game 'High Bear'.\n\nADVERSARY (stage D): downgraded to medium. Bullet 2 says \"examine at most two of the targetable locations\" and bullet 5 has you visit a second pond only if High Bear was describing a different one, so the player performs one pond or two -- never three. The three pond steps are nevertheless recorded with optional false, which asserts all three are required and contradicts this quest's own note. The group is kept because all-draw-at-once is the right marker behaviour for \"go to whichever pond\" and every step here carries evidence null, so nothing auto-advances and nothing stalls -- but the one-of-three branch is not expressible in the schema and a human should see it. Everything else on this quest survived: names, zones, grids, order and the no-evidence reading all check out against the page.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [
+    {
+     "title": "Aqua Pura",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "High Bear (A)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "I-9",
+   "raw": "High Bear (A) (I-9), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "High Bear (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "beside Conflux #00. You cannot start until the Vana'dielian day has rolled over since finishing Aqua Pura."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Watergrass"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "by Conflux #01. Gives one of: yellowish powder, beastly footprints, slimy leaves."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Watergrass"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "by Conflux #05. Gives one of: raindrops, gunpowder, a curious ooze."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Watergrass"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "north-east corner of (F-13), by Conflux #06. Gives one of: ash-coated leaves, rotted fruit, malodorous soil."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "High Bear (A)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "note": "pick the observation you saw. If his three choices belong to a different pond, answer 'Nothing of note', go to the pond he is describing (his choices never change) and come back -- at most two ponds in all. The reward arrives at the next 00:00; no zoning needed."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Thirst for the Ages",
+   "page_id": 98211,
+   "revision_id": 679289,
+   "source_sha256": "574bf5c2f0c22ed41c52a02854da6e48a657495ab605c0f8cf27615260c87e78",
+   "cache_file": "0098211_a_thirst_for_the_ages"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 114,
+   "dat_name": "A Thirst for the Ages",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "time_gated",
+   "wiki_unverified"
+  ],
+  "notes": "The best-evidenced quest in this batch: bullet 3's four errands each hand over their own key item, so three of them carry real evidence and the ladder can actually follow the player. They are four separate zones with no order given, so they share a group and draw at once.\n\nJavolio is the page's own 'Optional:', and he is the one errand whose key item is deliberately NOT used as evidence -- a player who skips him must still be able to reach the hand-in, and evidence on a step nobody has to do is a stall waiting to happen. Same reasoning, smaller, at the Scouts' Coalition: the two ???s sit next to each other and are one step, but only the Record of the 17th Assembly is evidence, because the page says outright that Copy of \"Adoulin's Patroness\" may not be needed (and bullet 4 has you tell Roskin it is unimportant).\n\nStep 7 is the payoff for all of it -- the three documents Roskin actually wants are its items, so holding them reads as ready-to-hand-in. Bullet 5 is an outcome, not a step. Bullet 6 is a real second visit after one game day, so it is its own rung on the same NPC. Two interaction verbs are inferred rather than stated: 'return to Roskin with a Frontier Soda' and 'use a Pickaxe on it' are both modelled as trades, which is how Adoulin handles both, and both are noted. Quest Reqs lists the Frontier Soda and Pickaxe -- they are step items, not a gate the schema has a slot for. Adoulin is not one of the nine fame regions, so region is null and the raw kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Roskin",
+   "zone": "Eastern Adoulin",
+   "grid": "H-8",
+   "raw": "Roskin, Eastern Adoulin - (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he asks for a Frontier Soda"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Frontier Soda",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says only 'return to Roskin with a Frontier Soda'; modelled as a trade. 125 gil from Bernegeois at (G-8) in Eastern Adoulin -- a sub-bullet about where to shop, not a rung."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Royal fiat banning colonization",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "documents",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "on the E/F-6 line, Bivouac #2 is nearest. Treants here aggro by sound, so bring Sneak. 'Use a Pickaxe on it' is modelled as a trade."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nikkhail"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Copy of the alliance agreement",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "documents",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the Pioneers' Coalition"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Record of the 17th Assembly",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "documents",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "TWO ???s side by side in the Scouts' Coalition, one step. The second gives Copy of \"Adoulin's Patroness\", which the page marks unverified as optional and which Roskin does not want, so it is not evidence."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Javolio"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "documents",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page's own 'Optional'. Grants the Ulbukan navigation chart, which is NOT used as evidence: skipping him is allowed, and Roskin may ask about the chart whether or not you have it."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Royal fiat banning colonization",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Record of the 17th Assembly",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Copy of the alliance agreement",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "name exactly these three as important and neither of the other two. 500 Bayld now; call it five for five and the whole reward collapses to 2 Bayld."
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roskin"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "one game day later, for the other 500 Bayld. The wait is not visible to the addon."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Don't Ever Leaf Me",
+   "page_id": 98189,
+   "revision_id": 729598,
+   "source_sha256": "615bf52ec086fed568057deed028fa020cac141ca981eb819324451af5e717d2",
+   "cache_file": "0098189_don_t_ever_leaf_me"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 70,
+   "dat_name": "Don't Ever Leaf Me",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "time_gated",
+   "zone_not_on_page",
+   "blocked_by_other_quest"
+  ],
+  "notes": "Twelve bullets, six of them steps. Bullets 6 to 10 are fishing advice (which rod, which bait, what the reel-in message looks like) and bullets 11 and 12 sit under 'Notes' -- a RoE cross-reference and a remark about when fame is paid. None is a rung, and a verb-scanner would have made five out of them.\n\nBullet 2 says there are three tasks and its sub-bullet says you need not return between them, so all six task steps share one group and draw at once. Within each task the coalition NPC comes before the field work, but between tasks there is no order at all, and a strict ladder would have pinned the player to Corpo-Vorpo.\n\nThe page never says which half of Adoulin the Peacekeepers', Pioneers' and Couriers' Coalitions are in -- only Audibert's Scouts' Coalition is placed, by the header. Those three steps therefore carry zone null rather than a guess; all three names resolve unambiguously, so the markers survive the missing zone. (A sibling page in this batch puts the Pioneers' Coalition in Western Adoulin, but that is not this page's text and is not carried across.)\n\nOnly the fishing step is observable: the Rusted pickaxe is a key item, so it is the one piece of evidence in the quest. Its requirement is 'a fishing rod and lure' with four rods and one bait named as suggestions -- no expressible AND-list, so items stays empty and items_partial is set. Item Reqs restates the same thing. The Daunting Emanation is night-only (20:00-4:00), which nothing in the packets reports.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 7: Unexpressible as an item list, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Audibert",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Audibert, Eastern Adoulin - (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Audibert"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Scouts' Coalition"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Corpo-Vorpo"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "tasks",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in the Peacekeepers' Coalition; the page does not say which zone that is, so none is recorded"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Daunting Emanation"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "tasks",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "south-east of the Frontier Station, and ONLY between 20:00 and 4:00. Worth 400 bayld when reported back."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Barenngo"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "tasks",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in the Pioneers' Coalition; the page does not say which zone that is, so none is recorded"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Windblown Loam"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "tasks",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "north from Bivouac #1, first right, then follow the left wall. Worth 100 bayld."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dewalt"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "tasks",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in the Couriers' Coalition; the page does not say which zone that is, so none is recorded"
+   },
+   {
+    "n": 7,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rusted pickaxe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "tasks",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "note": "Fish it up, right beside the Home Point is fine. Any decent rod (Carbon Fishing Rod, Halcyon Rod, Lu Shang's) and any bait Insect Ball works; a cheap rod may snap. IMPORTANT: an active Flavors of Our Lives blocks the Rusted pickaxe entirely. Worth 700 bayld."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Audibert"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "note": "one step, but three interactions: he pays each task separately (400 / 100 / 700 bayld) and you may collect all three at the end. No fame is paid until all three are done."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Scouting the Ashu Talif",
+   "page_id": 38790,
+   "revision_id": 767294,
+   "source_sha256": "ba7a0e9012a52413f5cc427c1395018258daef227df9c7cb9230f1252566b7c5",
+   "cache_file": "0038790_scouting_the_ashu_talif"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 101,
+   "dat_name": "Scouting the Ashu Talif",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "prev_from_quest_reqs",
+   "no_turnin",
+   "generic_mob_name",
+   "time_gated"
+  ],
+  "notes": "Eleven bullets and three rungs. Bullets 3 to 11 are one battle: waves of crew, Swiftwinged Gekko arriving and fleeing, Watch Imps, temporary items handed out mid-fight, then the treasure. They are the shape of the fight, not nine things the player does, and splitting them would put eight unmarkable rungs inside a 30 minute battlefield.\n\nThe quest ends where the fight ends -- the treasure spawns, you loot it and leave by the Lifeboat Ramp. There is no hand-in, and pointing the last marker back at Halshaob would be an invention, so the ladder simply stops on the fight (cf. Operation Teatime).\n\nThe destination is recorded as the Cutter, which is what bullet 2 tells you to find and which resolves as a real entity; the Lifeboat Ramp, also real, is only ever named as the way in and out, so it is a note. Mobs: Swiftwinged Gekko is verbatim, but the page only ever writes 'Watch Imps' plural and 'the Ashu Talif's crew' / 'Crew Members' generically -- the imps are recorded singular so the live matcher has a chance, and the crew is not recorded at all because the page never gives them a name. Killing Gekko is worth a second box but is not required, so he is a mob on the fight step, not a step of his own.\n\nQuest Reqs carries the real prerequisite -- Aht Urhgan Mission 18 -- while the Previous field is empty; it is recorded as a prev entry and flagged, since that is where a mission gate belongs. Fame 'Treasures of Aht Urhgan' is the Aht Urhgan region under its expansion name and resolves as such. The 24 hour repeat limit is a cooldown, not a rung.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Aht Urhgan Mission 18",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Halshaob",
+   "zone": "Nashmau",
+   "grid": "H-10",
+   "raw": "Halshaob, Nashmau (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Halshaob"
+    },
+    "zone": "Nashmau",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Imperial Bronze Piece",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "all three in one trade; once per 24 hours"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Cutter"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Dvucca Isle Staging Point out into Caedarva Mire, west to (G-9), zone into the Reef, north to (H-8). The Caedarva Mire Survival Guide lands on the north side, a short run to (G-8); the Arrapago Ring (100 Imperial standing accolades) drops you in front of it. You board -- and later leave -- by the Lifeboat Ramp."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Swiftwinged Gekko",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Watch Imp",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "note": "30 minute limit. Waves of crew (~600 HP each, but they pile up), then Gekko, who runs for the top deck and vanishes after casting Bindga/Graviga/Paralyga/Sleepga -- he can be stunned, and killing him spawns a second box. Then Watch Imps, whose Ancient Magic reaches anywhere on the ship for 550+. Everyone is handed temporary items mid-fight; Gekko returns between waves and appears once more with the last wave, which is the final chance at him. The treasure spawns when everything is dead. The page writes 'Watch Imps' plural and never names the crew members at all."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Little Knowledge",
+   "page_id": 19733,
+   "revision_id": 762436,
+   "source_sha256": "b6bed20fa9451212f21661b9842729c759d5b8e8818e29891b5d9bb67bea3f8a",
+   "cache_file": "0019733_a_little_knowledge"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 6,
+   "dat_name": "A Little Knowledge",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "job_gate_mid_quest",
+   "level_gate_from_walkthrough",
+   "or_branch_unmodelled",
+   "after_section_is_postquest"
+  ],
+  "notes": "The Scholar unlock. Four rungs, and the interesting decisions are all about gates and about the Vellum.\n\nGATES. The header's Level is empty but bullet 1 says 'as a level 30+ job' -- any job -- so that is a level gate of 30 with jobs left empty. Bullet 4 is the trap: BLM, RDM, SMN or BLU is needed only to fire an SP ability at the very end, and the page says outright you may switch to one then and it need not be level 30. Writing those four into gates.jobs would lock the whole quest to four jobs forever, so it stays a note on step 4 and a flag.\n\nVELLUM. Bullet 3 is a genuine step, not commentary -- Tucker is a real markable NPC and the only in-game source. It is optional because the Auction House sells Vellum under Leathercraft and that route cannot be expressed as items, which is also why items_partial is set. Either way the player ends up holding twelve sheets, so Vellum x12 is safe evidence on that step and the mark moves to Erlene the moment it is true. The trade is granular: four stacks per trade, three trades, and a short trade still burns one of the three -- 12 stacks of 12 rolanberries is what you should arrive with, so 144 is what the step asks you to hold.\n\nSteps 3 and 4 are both Erlene and both real: the page really does wedge an action between them (use Astral Flow, Chainspell, Azure Lore or Manafont, then speak again). The [KI]Grimoire is in the header's Reward, so by rule it proves the quest is over rather than that step 4 is done, and step 4's evidence is null. The 'After the walkthrough: Notes' section is not steps either -- returning to Erlene at Scholar level 5 for Embrava and Kaustra happens after this quest has already ended.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: an alternative with no item form, hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Erlene",
+   "zone": "The Eldieme Necropolis (S)",
+   "grid": "J-8",
+   "raw": "Erlene - The Eldieme Necropolis (S) (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "first map, on any job of level 30 or better. In by survival guide, or from Batallia Downs (S) (J-10): straight down the tunnel to where it forks north and south. She asks for twelve sheets of Vellum."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Tucker"
+    },
+    "zone": "Crawlers' Nest (S)",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Rolanberry",
+      "count": 144,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Vellum",
+       "count": 12
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3
+    ],
+    "note": "First map. Optional because Vellum can simply be bought at the Auction House under Leathercraft He only trades once the quest is active and you have spoken to him, and he allows exactly three trades of up to four stacks each: trade four stacks (48) at a time for four sheets, three times. A short trade still spends one of the three. Rolanberries are 120 gil from Champalpieu in Upper Jeuno."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Vellum",
+      "count": 12,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "all twelve sheets; a cutscene follows, and she then asks for an SP ability"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "switch to BLM, RDM, SMN or BLU first (any level), use Astral Flow, Chainspell, Azure Lore or Manafont, and speak to her while it is up. The [KI]Grimoire and Scholar arrive here but are the header's Reward, so they are not evidence."
+   }
+  ]
+ }
+]

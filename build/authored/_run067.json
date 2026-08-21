@@ -1,0 +1,1764 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Curse Collector",
+   "page_id": 26188,
+   "revision_id": 729857,
+   "source_sha256": "ab046dcd2a06d70dd7aff93bb1017299281a1beda9c53843a9617f6049f61f79",
+   "cache_file": "0026188_the_curse_collector"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 34,
+   "dat_name": "The Curse Collector",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "grid_map_layer",
+   "status_effect_unobservable"
+  ],
+  "notes": "Six bullets, four steps. Bullet 2 is the MECHANIC, not a step: it explains that an Afflictor curses anyone who comes near unless they are silenced, and that a Mute silences anyone who touches it, therefore curse first and silence second. Bullets 3 and 4 are one continuous set of walking directions ending at the Afflictor, and bullet 5 is the walk back ending at the Mute, so each merges into the entity it leads to rather than becoming a routing rung of its own.\n\nNeither Beadeaux step can carry evidence. What you gain there is a Curse and a Silence -- status effects, which no packet reports and which rule 2 explicitly excludes. The Cursepaper key item is granted by bullet 1 and is therefore step 1's evidence, not step 4's.\n\nThe page says to pick 'one of the sets of machines' and then gives directions to only the easiest set, so the two grid refs are the easiest set's and not the only ones. Both grids are on Beadeaux's LOWER map, which shares its grid letters with the upper one -- the addon has no map-layer concept, so (G-8) and (G-7) will also match the upper map. Recorded as given and flagged.\n\nThe Afflictor is not clicked at all: it curses on approach. It is still recorded as the step's target because that is the thing you must reach, and it is a real markable entity.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 4,
+    "raw": "Bastok / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zon-Fobun",
+   "zone": "Bastok Markets",
+   "grid": "G-5",
+   "raw": "Zon-Fobun, Bastok Markets (G-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zon-Fobun"
+    },
+    "zone": "Bastok Markets",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cursepaper",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Afflictor"
+    },
+    "zone": "Beadeaux",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "there is nothing to click -- it curses you on approach, and only if you are not already silenced, which is why it must come before the Mute. On the LOWER map: in, north to the wall at (F-7), north to (F-6), east to (H-6), then south into the cave down to (H-7) and west/south/west. This is the easiest of several sets of machines; the page gives directions to no other."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mute"
+    },
+    "zone": "Beadeaux",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     5
+    ],
+    "note": "touch it while cursed; the Silence is the second impression on the Cursepaper. Back east from the Afflictor, then the first turn north. Lower map again."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zon-Fobun"
+    },
+    "zone": "Bastok Markets",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the Poison Cesti is the reward, so it is not evidence for anything"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Scouts Astray",
+   "page_id": 67144,
+   "revision_id": 766772,
+   "source_sha256": "ffa16a0222d7df0094cfe9ef433b95ccdb9b4074d5d60edd5a017424b027a8ac",
+   "cache_file": "0067144_scouts_astray"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 74,
+   "dat_name": "Scouts Astray",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "fame_region_unmodelled"
+  ],
+  "notes": "A clean three-scout errand that v1 renders as a single talk step in the WRONG ZONE -- its row puts Rondipur in zone 5, while 'Abyssea - Uleguerand' resolves to 253. Seven steps here, five of them markable and all five in one zone.\n\nBullets 2 and 4 are Conflux routing and carry no action, so each merges forward into the scout it leads to rather than becoming a rung. Bullet 5's two clauses ('speak with him THEN trade him') are one visit to one NPC and are kept as one trade step -- wedging a talk rung in front of it would split a single marker in two for no gain.\n\nBullet 6 is the exception where sub-bullets really are steps: Olavia, then the Strewn Carrion at (J-11), then Olavia again. That unmarkable-in-between shape is what the page actually says, and the Strewn Carrion is a named targetable location, so it marks too.\n\nNothing in this quest is observable. Both soups and the flint stone are consumed on trade and no key item is ever handed out, so every evidence field is null and the ladder relies on the session latch. The Item Reqs' 'Pea Soup or Emerald Soup' is a genuine OR and is modelled as items/items_alt. The trailing 'Zoning is required in order to repeat this quest' is a cooldown note, not a step. Fame 'Abyssea - Uleguerand' is an Abyssea zone code, not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "Abyssea - Uleguerand / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Rondipur (A)",
+   "zone": "Abyssea - Uleguerand",
+   "grid": "G-11",
+   "raw": "Rondipur (A), Abyssea - Uleguerand"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rondipur (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the base camp, by Conflux #1. The header gives no grid; (G-11) is the walkthrough's."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Cannau (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Pea Soup",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Emerald Soup",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "warp to Conflux #7 and head north past the golems; she walks around (G-6). Either soup satisfies her."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Wanzo-Unzozo (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Flint Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "Conflux #6 then west to (I-5), where you have to search for him. Speak first, then trade -- one visit, one marker."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Olavia (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "from Conflux #4; she paces back and forth between the tigers and the buffalo, and the page gives her no grid, so none is recorded"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Strewn Carrion"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "a sub-bullet of 6 that is a real step: by the wall near the tigers"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Olavia (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "back to her after checking the carrion; the page really does put an unmarkable errand between two visits to the same NPC"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rondipur (A)"
+    },
+    "zone": "Abyssea - Uleguerand",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "you must zone before it can be repeated"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Coming Full Circle",
+   "page_id": 40337,
+   "revision_id": 754703,
+   "source_sha256": "c0e9e62a1fb25a778c672c7a6b84b0deed6271e8cfda52ecac772742b24247b4",
+   "cache_file": "0040337_coming_full_circle"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 73,
+   "dat_name": "Coming Full Circle",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 5
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "target_name_unverified",
+   "name_expanded_from_page",
+   "items_unnameable"
+  ],
+  "notes": "The last leg of the Mythic weapon series, and the page is written for someone who already knows the series. Three judgement calls.\n\nSTART. The header says 'Balrahn, Nyzul Isle' and the walkthrough never mentions Balrahn at all -- he is a floor cutscene inside an instance, not a standing giver, and v1 duly marks him in zone 77 where nobody can walk up to him. Start is moved to the thing bullet 1 sends you to, the tombstone in Caedarva Mire, with the header string kept verbatim in raw.\n\nNAMES. The page writes the tombstone in lower case and never gives it a grid, and writes the palace entrance as 'the Palace doors (Imperial Whitegate)'. Both are recorded as the page has them, because both are single definite objects you demonstrably click, but neither live entity name is verified and the parenthetical is NOT a zone -- 'Imperial Whitegate' resolves to nothing, while 'Aht Urhgan Whitegate' (which the page itself uses further down, for Ghanraam) resolves to 50. Steps 1 to 3 are held at medium for this.\n\n'Naja' is the page's abbreviation. The index the addon already ships names her 'Naja Salaheem' in 31 giver rows, so that is what is written; the short form would never match a live entity.\n\nITEMS. The mythic weapon itself cannot be recorded: it is one of fifteen-odd named weapons and the page names none of them, only 'your statless Mythic'. items stays empty on steps 2 and 3 with items_partial set, which is the honest way to say there is a holding requirement no name can express. The header's Quest Reqs key item, the Serpentking Zahak relief shard, resolves and is put on step 1 even though the walkthrough never mentions it.\n\nBullet 4's sub-bullets are about starting the NEXT mythic and about the storage NPC Ghanraam. They belong to a different quest and are not steps here. There is no evidence anywhere in this quest -- nothing observable is handed out until the reward.\n\nSTAGE D. Two removals. The Serpentking Zahak relief shard is gone from step 1's items: the header calls it Quest Reqs and the draft's own note calls it 'what proves Forging a New Myth is done', which makes it a PREREQUISITE, already carried by gates.prev, and not something the walkthrough ever says you must be holding when you click the tombstone. If the previous quest consumes it, a holding requirement there would stop step 1's marker from ever lighting, so it is dropped rather than guessed at. Step 4 is demoted to medium: its ladder position is certain but neither the target name nor the zone is the page's -- the page writes only 'Naja' and never says where she stands, and 'Naja Salaheem' comes from the shipped index. It is kept because it is unambiguously the same NPC and resolves, but high was overstated.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: trade the statless Mythic; the page names no weapon, so items_partial stands in for a requirement that cannot be written.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Forging a New Myth",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Tombstone",
+   "zone": "Caedarva Mire",
+   "grid": null,
+   "raw": "Balrahn, Nyzul Isle"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Tombstone"
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says only 'the tombstone in Caedarva Mire' and gives no grid. The header's Quest Reqs relief shard is a prerequisite, not something the page says you hold here, so it is not recorded as an item."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Tombstone"
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Same object as step 1, so one marker across both."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Palace doors"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the mythic must be in your inventory at any level, which is again unnameable. 'Imperial Whitegate' in the page's parentheses is not a client zone; the doors stand in Aht Urhgan Whitegate."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "approach rather than click; the cutscene hands over 3 Imperial Silver Pieces and ends the quest. The page writes only 'Naja'. Neither her name nor her zone is the page's, so this step is medium."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Emissaries of God",
+   "page_id": 67166,
+   "revision_id": 579387,
+   "source_sha256": "b18d5129217fce2fd520b2b7197a7719b7ad410adead03681153415593225c4b",
+   "cache_file": "0067166_emissaries_of_god"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 182,
+   "dat_name": "Emissaries of God",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "time_gated",
+   "evidence_is_reward",
+   "fame_region_unmodelled",
+   "title_unobservable"
+  ],
+  "notes": "Bullet 1 is one sentence that is really six fights in six different zones, and bullet 3 is the table that names them. One step per zone, all sharing a group, because the page says outright that any or all of them may already be dead before the quest is even taken -- there is no order to enforce, and a strict ladder would mark Abyssea - Tahrongi and nothing else.\n\nBullet 2 is NOT a step. It says the requirement is the TITLE from each NM, which no packet reports, and its sub-bullets are a way to CHECK: talking to the bard Zuah Lepahnyu in Port Jeuno (J-8) to read your titles back. Checking is not doing, and a marker on a Jeuno bard would be noise, so he is a note rather than a rung. That does mean the six fight steps are entirely unobservable.\n\nEVIDENCE CAUTION. The Abyssite of discernment is also the header's Reward, which normally disqualifies it. It is used anyway, and flagged, because this quest does not END there: bullet 5 still has you enter the Hall of the Gods afterwards. Holding the abyssite therefore genuinely means 'the six are done, go to the Hall', which is the only advance this ladder can ever observe. The flag is deliberate so a human can overrule it.\n\nThe page never says where Joachim stands, so his step carries no zone rather than a guessed one. Bullet 5's 18:00-5:00 window is Vana'diel time, which the addon cannot see. Fame 'Abyssea' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Abyssea / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Death and Rebirth",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Esha'ntarl",
+   "zone": "Hall of the Gods",
+   "grid": null,
+   "raw": "Esha'ntarl, Hall of the Gods"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Iratham",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "caturae",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "the title is Iratham Capturer; the title itself is unobservable"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kutharei",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "caturae",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "the title is Kutharei Unhorser"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Sippoy",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "caturae",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "the title is Sippoy Capturer"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yaanei",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "caturae",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "the title is Yaanei Crasher"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Rani",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "caturae",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "the title is Rani Decrowner"
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Raja",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "caturae",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "the title is Raja Regicide"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Joachim"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Abyssite of discernment",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page never says which zone Joachim is in, so none is recorded and the row will match him wherever he stands. The abyssite is also the header's Reward -- see the quest note for why it is used as evidence anyway."
+   },
+   {
+    "n": 8,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Hall of the Gods"
+    },
+    "zone": "Hall of the Gods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "between 18:00 and 5:00 Vana'diel time, which the addon cannot see. The cutscene on entry is what starts Beneath a Blood-red Sky."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "It Sets My Heart Aflutter",
+   "page_id": 98198,
+   "revision_id": 733941,
+   "source_sha256": "c44e5fcd473ba2455f0f9c654ea1597fe75431f63296a19286572a661f05cc4f",
+   "cache_file": "0098198_it_sets_my_heart_aflutter"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 79,
+   "dat_name": "It Sets My Heart Aflutter",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "fame_region_unmodelled",
+   "repeat_gate_unmodelled"
+  ],
+  "notes": "Five bullets and only two of them are steps. Bullet 3 is a note about repeat rewards; bullet 4 is the repeat rule; bullet 5 is the questline order. None is anything you do.\n\nThe header's 'Quest Reqs: Twitherym Wing x2' is the trade, not a prerequisite quest, so prev stays empty and the wings ride on the trade step as an AND-count of two. There is no obtain rung in front of it: a trade step already carries its own holding requirement, and an unmarkable 'go get wings' row between two visits to the same NPC would only split one marker into two.\n\nThe four sources under bullet 2 -- Auction House, Ceizak Battlegrounds (G-10), Yahse Hunting Grounds (I-8), Outer Ra'Kaznar map 1 (F/G-6) -- are advice about where to farm, not places the quest sends you, so they stay in the note.\n\nRepeating requires finishing the whole three-quest chain (this, A Good Pair of Crocs, A Shot in the Dark) in order every time. Nothing in the packets expresses a repeat precondition on OTHER quests, so it is flagged and left as prose. Fame 'Adoulin' is not one of the nine regions and gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Saldinor",
+   "zone": "Rala Waterways",
+   "grid": "F-10",
+   "raw": "Saldinor, Rala Waterways - (F-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Saldinor"
+    },
+    "zone": "Rala Waterways",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the nearest way in is the southeastern entrance from Western Adoulin Waypoint #6, the Rent-a-room at (I-12)"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Saldinor"
+    },
+    "zone": "Rala Waterways",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Twitherym Wing",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both wings in one trade. Buy them from the Auction House under Materials > Clothcrafting, or farm twitherym in Ceizak Battlegrounds (G-10), Yahse Hunting Grounds (I-8) or Outer Ra'Kaznar map 1 (F/G-6)."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gift of Light",
+   "page_id": 56695,
+   "revision_id": 750438,
+   "source_sha256": "03a2e51d5d80e9a2103cdff5c0fc86873896d68cc656dfa831821878f3096038",
+   "cache_file": "0056695_gift_of_light"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 1,
+   "dat_name": "Gift of Light",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "or_branch_unmodelled",
+   "fame_region_unmodelled"
+  ],
+  "notes": "Small and clean, and it fixes a real v1 error: v1 puts Amaura in zone 102, La Theine Plateau, when the quest is in Abyssea - La Theine, zone 132. Three steps, all three markable, all in one zone.\n\nBullets 2 and 3 are ONE step. Bullet 2 sends you to the Jagged Cliff and bullet 3 describes what happens once you are there -- the bungee mini-game, the 'NOW' prompt, three attempts. There is only one thing to click, so there is one rung, and the Sunbeam fragment it can yield is its evidence.\n\nThe fragment is an Item Req rather than a Reward, so it is legitimate evidence. It sits on step 2 where it is obtained and NOT on step 3, which would be a duplicate.\n\nStep 3 is the one place the schema cannot say what the page says. You may return to Amaura WITHOUT the fragment and still finish, for 60 Cruor instead of 120. items therefore holds the fragment, because that is the intended path and the one worth marking readiness for, and items_partial records that an alternative exists which no list can express. The Hi-Reraiser caveat -- you must not already be holding one -- is the same shape and is left as prose.\n\nThe mini-game only works between 6:00 and 18:00 Vana'diel time, which the addon cannot see. 'Zoning is required to repeat this quest' is a cooldown, not a step. Fame 'alth' is an Abyssea zone code and gates nothing.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "alth / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Amaura (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "E-3",
+   "raw": "Amaura (A) (E-3), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Amaura (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "beside Conflux #01; she asks for the Sunbeam fragment"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Jagged Cliff"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sunbeam fragment",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "southeast corner of (J-6), near Conflux #07. Daytime only, 6:00 to 18:00 Vana'diel, which is invisible to the addon. The mini-game is a bungee jump with a 'NOW' prompt, best hit as your descent turns into an ascent; three attempts and you may miss all three."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Amaura (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [
+     {
+      "name": "Sunbeam fragment",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "You can also hand in empty-handed for 60 Cruor instead of 120, which items cannot express If you already hold a Hi-Reraiser you must get rid of it first."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ghosts of the Past",
+   "page_id": 13332,
+   "revision_id": 730268,
+   "source_sha256": "7da2a69152522fefa41ae9c2d50640896574351a40a2e13ee5e25c265004f9ea",
+   "cache_file": "0013332_ghosts_of_the_past"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 51,
+   "dat_name": "Ghosts of the Past",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "unmarkable_object"
+  ],
+  "notes": "Monk artifact, and the header's two gates are the classic pair the pilot warns about: 'Level: 40+ Monk' is BOTH a level gate and a job gate, so level 40 and jobs ['MNK'], and 'Repeatable: af' is the artifact-armour category leaking into the field, which means false. Previous is the literal string 'None' and Expansion likewise, so both are empty.\n\nv1 hangs both Item Reqs -- Pickaxe and Miner's Pendant -- off the single Oggbi talk step, which means the marker only lights when you happen to hold both at once. Here they land where they belong: the pickaxe on the errand that gets it, the pendant on the hand-in.\n\nBullet 2 is a real step even though it names no place you must go: 'from the Auction House or from any source'. Its target is therefore none and its zone null, and Numa's shop is a note. Holding a pickaxe is genuinely observable, so it carries the evidence -- and because bullet 5 says the pickaxe SURVIVES the trade, that evidence stays true for the rest of the quest, which is correct: the step really is done.\n\nBullets 3 and 4 are one step. Bullet 3 is the walk to Gusgen's second map and bullet 4 the walk to the third plus the actual trade, so the route becomes a note on the trade rather than a rung of its own. The ??? is recorded as an object even though ??? can never carry a marker -- it keeps the rung honest.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "B / 1"
+   },
+   "prev": [],
+   "level": 40,
+   "jobs": [
+    "MNK"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Oggbi",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Oggbi - Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Oggbi"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Steaming Sheep Restaurant. You must be on Monk for this cutscene; every later step is any job. Over 250 hand-to-hand skill and he offers the Asuran Fists trial first, so you may have to talk past it."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Pickaxe",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page says the Auction House or any source, so there is no place to mark. Numa at (E-7) in Port Bastok is the shop right in front of the Steaming Sheep, down the stairs."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gusgen Mines",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Wandering Ghost",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "second map: straight ahead, down the staircase, west switch to open the door. Third map: the ramp down at (F-5), then the ??? at (G-7). About three minutes to repop if you are doing several."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Gusgen Mines",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Miner's Pendant",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Wandering Ghost",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the pickaxe is not consumed by the trade and is still in your bags afterwards"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Oggbi"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Miner's Pendant",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the Beat Cesti is the reward, so it is not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Wyrm God",
+   "page_id": 67168,
+   "revision_id": 368198,
+   "source_sha256": "540b435cbdcceec1feea641eed0e46a9a548d26dd1404259f3fd33492829bf39",
+   "cache_file": "0067168_the_wyrm_god"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 184,
+   "dat_name": "The Wyrm God",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_not_first_step",
+   "duplicate_name_across_zones",
+   "fame_region_unmodelled"
+  ],
+  "notes": "Three bullets, four steps, and a zone fix: v1 puts Prishe in zone 36, the Chains-of-Promathia Empyreal Paradox, when this quest lives in Abyssea - Empyreal Paradox, zone 255.\n\nBullet 1 spans two zones -- you click the Transcendental Radiance standing in Qufim Island (F-7) and you arrive in Abyssea - Empyreal Paradox -- so it is recorded in the zone where the clicking happens, with the destination in the note. The Crimson traverser stone is the page's own 'for a key item', obtained at that step, so it is that step's evidence.\n\nThere are TWO entities called Transcendental Radiance, one at each end, which is exactly why every step carries its own zone: without them the two rows would be indistinguishable and each would draw in both places.\n\nBullet 2 is two rungs. Its own sentence is the examining -- once for a cutscene, again to enter the battlefield -- and its six sub-bullets are all Shinryu tactics, which is where the fight itself is described; there is no top-level bullet for the fight at all. A verb-scanner would have produced six steps out of those sub-bullets.\n\nStart is left as the header's Prishe. She is a real standing NPC in the Paradox and the quest's closing step, but she is NOT what bullet 1 sends you to, so the flag records that the start marker and step 1 are in different zones. This quest is handed to you by the previous mission's cutscene rather than by talking to anyone.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Abyssea / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Beneath a Blood-red Sky",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Prishe",
+   "zone": "Abyssea - Empyreal Paradox",
+   "grid": null,
+   "raw": "Prishe, Abyssea - Empyreal Paradox"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Transcendental Radiance"
+    },
+    "zone": "Qufim Island",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Crimson traverser stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Qufim Island end of the pair; it takes you into Abyssea - Empyreal Paradox, and the page says entering is what yields the Crimson traverser stone"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Transcendental Radiance"
+    },
+    "zone": "Abyssea - Empyreal Paradox",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the far end of the same pair, inside the Paradox. Examine once for a short cutscene, then again to enter the battlefield."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Empyreal Paradox",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Shinryu",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the fight has no top-level bullet of its own; it is bullet 2's sub-bullets. He absorbs damage with his wings up while readying a weaponskill or casting, Mighty Guard cuts physical and magical damage hard, Cosmic Breath is a cone with Plague and Attack Down, Gyre Charge is AoE with Paralyze, and his ordinary melee counts as weaponskills for the Red/Blue/Green staggers."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Prishe"
+    },
+    "zone": "Abyssea - Empyreal Paradox",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the header lists no reward at all; what follows is the next quest, Meanwhile, Back on Abyssea"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Peace for the Spirit",
+   "page_id": 489,
+   "revision_id": 759885,
+   "source_sha256": "2d8b2aa3713c9dd92cf55a58b60d611d0c87c490997788065d73519eebb93dff",
+   "cache_file": "0000489_peace_for_the_spirit"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 86,
+   "dat_name": "Peace for the Spirit",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "access_gate_unmodelled",
+   "grid_inferred"
+  ],
+  "notes": "Red Mage artifact, nine bullets, ten steps, and the longest honest ladder in this batch: five zones, eight markable rungs and two evidence points. v1 collapses the whole thing into one Curilla talk carrying both Item Reqs, so the Antique Coin and the Nail Puller only light the marker if you hold both at once -- here each sits on the step that produces it and each is consumed by the step after, which is exactly the shape the ladder is for.\n\n'Level: 50+ Red Mage' is both gates: level 50 AND jobs ['RDM']. 'Repeatable: af' means false. 'Quest Reqs: Ability to access Chateau d'Oraguille' has no slot in the schema and no observable predicate, so it is flagged and gates nothing.\n\nBullet 5 is two NPCs and therefore two steps. The page places Sharzalion at (K-6) in the Lion Springs Tavern and says only that Daggao is 'in the bar as well', so Daggao inherits (K-6) -- an inference, flagged, and the alternative was no grid at all.\n\nBullets 6, 7 and 8 are three separate interactions in one room and stay three rungs: examine the Oaken Box to spawn the Guardian Statue, kill it for the Nail Puller, trade the puller back to the SAME box. Two of the three mark the same object, which is one marker, and the fight between them is genuinely there.\n\nThe quest does not end on an NPC. Bullet 9 is a zone-entry cutscene into Northern San d'Oria that hands over the Warlock's Chapeau, so the last step is a travel with nobody to turn in to. Inventing a hand-in back at Curilla would be a wrong marker. The chapeau is the Reward and is not used as evidence.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "San d'Oria / 1"
+   },
+   "prev": [
+    {
+     "title": "Enveloped in Darkness",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "RDM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Curilla",
+   "zone": "Chateau d'Oraguille",
+   "grid": "I-9",
+   "raw": "Curilla, Chateau d'Oraguille (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Curilla"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as Red Mage; the rest of the quest is any job"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sharzalion"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the Lion Springs Tavern"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fei'Yin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Antique Coin",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Miser Murphy",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he only pops at (H-8) on map 1 while the quest is active; ten minute respawn"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Dry Fountain"
+    },
+    "zone": "Fei'Yin",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Antique Coin",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the fountain shares Murphy's grid ref"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sharzalion"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Daggao"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page says only that he is 'in the bar as well', so (K-6) is taken from Sharzalion and is an inference, not the page's own grid"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Oaken Box"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Guardian Statue",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "map 2, behind the first banishing gate, first room on the left. 'Something feels wrong, but nothing happens' means drop Sneak."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Nail Puller",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Guardian Statue",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Oaken Box"
+    },
+    "zone": "Garlaige Citadel",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Nail Puller",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same box you opened in step 7"
+   },
+   {
+    "n": 10,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Northern San d'Oria"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "zoning in is what triggers the closing cutscene and the Warlock's Chapeau; there is no NPC to hand in to"
+   }
+  ]
+ }
+]

@@ -1,0 +1,1414 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ward Warden II (Misareaux)",
+   "page_id": 59001,
+   "revision_id": 640235,
+   "source_sha256": "2ff70262b4ed252e46e8cbcd6fd655424facf7f1f2f6dd39ed729004a61580bc",
+   "cache_file": "0059001_ward_warden_ii_misareaux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 128,
+   "dat_name": "Ward Warden II (Misareaux)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated",
+   "object_name_conflict",
+   "bullets_merged"
+  ],
+  "notes": "An escort quest, and almost nothing in it is observable. The unnumbered line above bullet 1 is a real gate rather than commentary -- only ONE Ward Warden / Desert Rain / Crimson Carpet quest can be completed per Vana'dielian day across the whole of Abyssea -- and no packet reports a Vana'dielian day boundary, so it is a note and a flag and the quest is demoted for it. Bullets 3 and 4 are merged into one step: both happen at (G-5) and the marker would not move between guiding the bird there and clicking the supply container, so two rungs at one coordinate would be noise. That container is named twice and differently -- 'the Repair Crate located at (G-5)' in bullet 3, 'the large Repair Trunk' in bullet 4. They may be two objects or one object under two names; the step's action is the click, so the click bullet's name is the one recorded, and both are kept here. Neither is in OBJECT_DENY, so whichever name is right keeps its marker and the wrong one would simply never draw -- a silent loss, not a wrong marker. The Chocobo Blinkers sub-bullet is technique, not a step: they are an aid, they are consumed a minute at a time, and a player who buys none still finishes, so they are not evidence of anything and get no rung. Bullet 7 sits under 'Effects on Bastion:' and is an outcome. Nothing here grants a key item, so every evidence is null and the ladder rests entirely on the session latch. Fame 'amis' is an Abyssea zone code, not one of the nine regions, so the region is null and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Misareaux)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "I-7",
+   "raw": "Resistance Sapper (Misareaux), Abyssea - Misareaux"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo Tamer (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page places him only 'near the Resistance Sapper', so no grid is invented. He sells the supplies; the page's advice is at least six Chocobo Blinkers, traded to the chocobo from inventory, each lasting about one Earth minute and blinding it to everything not directly ahead. The bird's HP drains for the whole escort, so speed matters."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "bullets 3 and 4 merged -- see the quest note on the Repair Crate / Repair Trunk naming; bullet 3 calls the thing at (G-5) a Repair Crate. Guide the chocobo here without letting anything get line of sight on it: if it says 'Kweh!?' in the log it is bolting back to the last safe spot and you must run to it and interact to stop it. A message tells you when it is close enough to load. Click the trunk for supplies, then click the chocobo to load them; 'Depart' ends loading, and one load is enough -- more only slows the bird."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo Tamer (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "guide the loaded chocobo back to him and speak to end the escort"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Forge Your Destiny",
+   "page_id": 38742,
+   "revision_id": 774579,
+   "source_sha256": "c20655ce42610e432fd77c9e79c9bec855c7f4680a3c0dd1685fa6c8e4ce391c",
+   "cache_file": "0038742_forge_your_destiny"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 129,
+   "dat_name": "Forge Your Destiny",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "The Samurai unlock, and an unusually well-written page: a two-NM ladder with four observable rungs. 'Level: 30+ any job' is the level gate restated -- level 30 and jobs stays EMPTY; gating the job-unlock quest to a job would lock it away from exactly the people who need it. Bullet 6 carries a purchase, a journey and a trade. The purchase is not a step: 'you must be holding a Hatchet' is what `items` is for, so the Hatchet rides on the trade that consumes it rather than becoming a marker-less rung of its own. Bullet 7 carries two actions -- the Treant has to die between the two ??? interactions -- so it splits, which also makes Zi'Tah mirror Konschtat: trade to spawn, kill, collect. Both ??? are in OBJECT_DENY and can never carry a marker, but they keep their rungs and the last of them carries the Sacred Branch. Bullet 9 never names whom you return to; it can only be Jaucribaix, whom bullets 1 and 8 both name, so recording him is a reading and not an invention. It stays a rung of its own rather than merging into bullet 8 because readiness differs: bullet 8 wants both crafted parts in hand, bullet 9 wants nothing but 72 in-game hours, which no packet reports. The Mumeito is a reward and so can never be evidence; the whole 'After the walkthrough: Notes' section is one bullet telling you to keep it for The Sacred Katana or pay Ranemaud 30,000 gil, which is advice, not a step. Fame 'Outlands' is not one of the nine regions, so the region is null. VERIFY: step 10 demoted to medium -- bullet 9 names no target at all, so Jaucribaix there is a reading carried in from bullets 1 and 8; the note conceded that while the confidence denied it. Everything else on this quest survived the adversary pass unchanged.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Outlands / (empty)"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Jaucribaix",
+   "zone": "Norg",
+   "grid": "K-8",
+   "raw": "Jaucribaix, Norg (K-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Captain's Chamber"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aeka"
+    },
+    "zone": "Norg",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Oriental Steel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ranemaud"
+    },
+    "zone": "Norg",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sacred Sprig",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Konschtat Highlands",
+    "grid": "D-8",
+    "items": [
+     {
+      "name": "Oriental Steel",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Forger",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the ??? is inside the cave. The level 99 Unity warp (Sleepy Mabel) lands close by at (G-7). Forger is a Bomb, roughly level 33."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Konschtat Highlands",
+    "grid": "D-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bomb Steel",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Forger",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the Bomb Steel is a drop, not a hand-out. If you die or otherwise lose it, Aeka will trade you another Oriental Steel for a Darksteel Ore and you start the spawn over. Four minute respawn if you are running this for several people."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "L-9",
+    "items": [
+     {
+      "name": "Hatchet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Guardian Treant",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "buy the Hatchet first -- a Trbl. Hatchet does NOT work. In through an area off the map at the northern part of (K-10), which puts you on a block at (L-9); the ??? is reached by climbing a nearby rock. The level 122 Unity warp (Keeper of Heiligtum) lands at (K-12)."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Guardian Treant",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "it only needs killing once for a whole group, but its minimum respawn is ten minutes, so make sure everyone has their Sacred Sprig before it goes down"
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "L-9",
+    "items": [
+     {
+      "name": "Sacred Sprig",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Sacred Branch",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the same ??? as the Hatchet trade, once the Treant is down"
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Bomb Steel",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sacred Branch",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the two crafted parts together"
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Jaucribaix"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "bullet 9 says only 'return', but Jaucribaix is the only candidate -- bullets 1 and 8 both put you in front of him. 72 in-game hours, about three real hours; nothing observable reports the wait. Downgraded to medium in verification: the step target is inferred from elsewhere on the page, not stated by its own bullet."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ward Warden II (Vunkerl)",
+   "page_id": 59002,
+   "revision_id": 640237,
+   "source_sha256": "ee1dcbf73b3d8b55c6af83646e4aaedc4cd6c8f0e0875ffdbb51839d8c05af9b",
+   "cache_file": "0059002_ward_warden_ii_vunkerl"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 129,
+   "dat_name": "Ward Warden II (Vunkerl)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated",
+   "object_name_conflict",
+   "bullets_merged"
+  ],
+  "notes": "Word for word the Misareaux page with the zone and two grids swapped, and it is read the same way. The unnumbered line above bullet 1 is a gate, not commentary: one Ward Warden / Desert Rain / Crimson Carpet completion per Vana'dielian day across ALL of Abyssea, which no packet reports -- hence the demotion. Bullets 3 and 4 merge, because both happen at (H-11) and the marker would not move between guiding the bird there and clicking the container. That container is 'the Repair Crate located at (H-11)' in bullet 3 and 'the large Repair Trunk' in bullet 4; the step's action is the click, so the click bullet's name is used and both are recorded. Neither is in OBJECT_DENY, so a wrong guess loses the marker silently rather than putting one somewhere wrong. Chocobo Blinkers are technique and not a rung -- optional, consumable, and no evidence of anything. Bullet 7 is under 'Effects on Bastion:' and is an outcome. No key item is granted anywhere, so every evidence is null. Fame 'avun' is an Abyssea zone code, not one of the nine regions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Vunkerl)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "F-8",
+   "raw": "Resistance Sapper (Vunkerl), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo Tamer (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page places him only 'near the Resistance Sapper', so no grid is invented. He sells the supplies; the page advises at least six Chocobo Blinkers, traded to the chocobo from inventory, about one Earth minute each. The bird's HP drains for the whole escort."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "bullets 3 and 4 merged -- see the quest note; bullet 3 calls the thing at (H-11) a Repair Crate. Guide the chocobo here without letting anything get line of sight on it: 'Kweh!?' in the log means it is bolting for the last safe spot and you must run to it and interact to stop it. Click the trunk for supplies, then click the chocobo to load; 'Depart' ends loading, and one load is enough -- more slows the bird."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo Tamer (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "guide the loaded chocobo back to him and speak to end the escort"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Children of the Rune",
+   "page_id": 98213,
+   "revision_id": 770302,
+   "source_sha256": "bde8c047f08e666f7c2771c6d693aaef7386f5294bdf563a7710f301a18ff411",
+   "cache_file": "0098213_children_of_the_rune"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 119,
+   "dat_name": "Children of the Rune",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeating_loop"
+  ],
+  "notes": "Three steps and no ambiguity anywhere -- the Rune Fencer unlock. Bullet 4 is the outcome, not a step: job access and a Sowilo Claymore, and the claymore is in the Reward list so it could never be evidence anyway. The Yahse wildflower petal is the only observable thing in the quest and it is granted at bullet 2, so that is the only place it can sit. Bullet 3's long sub-bullet block is Octavien's escalating insults on every tenth failure; it is pure flavour, and the only load-bearing sentence in it is that the attempt takes between 1 and 100 tries and apparently cannot truly fail -- which makes step 3 a loop the ladder cannot count through, since nothing distinguishes attempt 1 from attempt 99. 'Level: 30+' names no job, so it is the level gate only and jobs stays empty; gating the Rune Fencer unlock to RUN would lock it away from everyone who needs it. Adoulin is not one of the nine fame regions, so the region is null and only the raw is kept. The Next field lists two follow-ons and is not a gate on this quest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Octavien",
+   "zone": "Eastern Adoulin",
+   "grid": "I-8",
+   "raw": "Octavien, South down the ramp from the Sverdhried Hillock waypoint at Eastern Adoulin (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "reached by the stairs; south down the ramp from the Sverdhried Hillock waypoint"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Yahse Wildflower"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yahse wildflower petal",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the northern end of the three beaches"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "choose 'Use Rune Enhancement' and keep choosing it -- anywhere from 1 to 100 attempts, and the page says you cannot actually fail. Nothing observable separates one attempt from the next, so this is one rung and not a hundred."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Truth Lies Hid",
+   "page_id": 56921,
+   "revision_id": 729040,
+   "source_sha256": "13fafa809b6038045d20b9fa76fb1d78fe2999ac2c50f4b65ff8a94841d3865b",
+   "cache_file": "0056921_the_truth_lies_hid"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 58,
+   "dat_name": "The Truth Lies Hid",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated",
+   "unordered_group",
+   "unnamed_target",
+   "or_branch_unmodelled"
+  ],
+  "notes": "A logic puzzle wearing a fetch quest. The unnumbered notice at the top is a precondition and not a step -- one game day AND a re-zone after What Price Loyalty before this will start, neither of which is observable, which is what demotes the quest. Bullet 1 is deliberately NOT a step: an Elixir is a common consumable that plenty of players already carry, so making 'you hold an Elixir' a rung would jump the ladder for anyone who happens to have one; `items` on the trade step asserts the same requirement without that risk, and bullet 1 is cited there so it stays auditable. Bullet 4 is description -- its three sub-bullets name and place the imps -- and bullet 5 is the action, so bullet 4's names land on bullet 5's steps. The three imps are an unordered group and all draw at once: the page says outright that one or two may be enough and that you do not need to speak to all three, so a strict ladder would mark Rikke and nothing else. Bullet 6 cannot name its target and no reading fixes that -- which imp is honest is redrawn every game day, and the page's table is a deduction key over three scenarios rather than an answer. Naming one would be a wrong marker a third of the time, so that step keeps its zone and loses its marker, with all three candidates in the note. Nothing in this quest grants a key item, so there is no evidence anywhere; the Sanctus Rosary is the Reward and rule 7 rules it out in any case, though it matters in the next quest.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: the honest imp is redrawn each game day, so no name can be recorded: it is Rikke (G-7), Rakke (G-10) or Rokke (H-10) on the first map, and the page's three-scenario table resolves it from what they say about each other.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "What Price Loyalty",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Gentle Tiger",
+   "zone": "Bastok Markets (S)",
+   "grid": "H-6",
+   "raw": "Gentle Tiger, Bastok Markets (S) (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "wait one game day and re-zone after What Price Loyalty or he will not open this"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Baileys (S)"
+    },
+    "zone": "Castle Zvahl Baileys (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the cutscene fires on the zone line"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rikke"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "imps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the northwest imp on the first map. Any order, and you may not need all three -- each demands an Elixir and then says something about another imp being honest or dishonest; the line immediately after the Elixir request is the one that matters."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rakke"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "imps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the southwest imp on the first map"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rokke"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "imps",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the southeast imp on the first map. You do not have to trade to make them talk -- the Elixir only changes hands once you have worked out who is honest."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": null,
+    "items": [
+     {
+      "name": "Elixir",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     6
+    ],
+    "note": "Bullet 1 buy the Elixir from the Curio Moogle or the Auction House is the prerequisite for this step and is cited here rather than given a rung of its own. A wrong choice does not consume the Elixir, but you must wait for the next game day, and the answer may have changed by then."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the south-west room on the third map, the one with the teleporters"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Displaced Block"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "drop down and take the centre teleporter; the page gives the block no grid. The cutscene here ends the quest and pays the Sanctus Rosary, which the next quest wants."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bonds of Mythril",
+   "page_id": 56922,
+   "revision_id": 770985,
+   "source_sha256": "2ff68b1408c3778b4b3146427fac58193cea4beb94be6358bf16b9fdcc513aaa",
+   "cache_file": "0056922_bonds_of_mythril"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 59,
+   "dat_name": "Bonds of Mythril",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_is_zone_entry",
+   "bullets_merged",
+   "zone_reading_uncertain",
+   "unnamed_mob"
+  ],
+  "notes": "The header names Volker in Castle Zvahl Baileys (S) as the giver, but bullet 1 says the quest opens when you ZONE into Baileys (S) from Keep (S) -- Volker is almost certainly a cutscene actor at that zone line rather than a standing entity. His name is kept in start.npc because an unmatched name simply never draws (a silent loss, not a wrong marker) and the header string is preserved verbatim in start.raw; the real trigger is flagged as a zone entry. Bullet 4 holds three actions and splits into three rungs -- examine to spawn, kill, examine again -- and the third grants the Zvahl passkey, the only observable thing in the entire quest. Bullets 5 and 6 are the same door twice, so they merge: the first examine is a cutscene, the second enters the battlefield, and the marker never moves between them. I read 'Enter the Throne Room (S), and examine the Throne Room door' literally -- the door is a battlefield entrance INSIDE zone Throne Room (S), not the way into it -- because bullet 5 puts the zone entry first and bullet 6 has the door leading onward to the BC. If that reading is wrong the door and the fight belong in Castle Zvahl Keep (S) instead, which is why those three steps are individually medium and the quest with them. The page never says where the Zvahl passkey is spent; presumably on the way to the throne room, but it is not stated, so the passkey is evidence where it is granted and appears in no step's items -- putting it in items would be inventing a requirement. The first BC opponent is described in detail but never named, so only Marquis Amon is recorded as a mob; Zeid is an ally, not a target, and the battle ends if he falls. The last sub-bullet under bullet 7 is a genuine optional action -- a second conversation for Trust Magic: Klara, gated on holding the Bundle of half-inscribed scrolls -- and the closing line pointing at Adieu, Lilisette is a mission signpost, not a step. The Excelsis Ring is the Reward and can never be evidence.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Truth Lies Hid",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Volker",
+   "zone": "Castle Zvahl Baileys (S)",
+   "grid": null,
+   "raw": "Volker, Castle Zvahl Baileys (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Baileys (S)"
+    },
+    "zone": "Castle Zvahl Baileys (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in from Castle Zvahl Keep (S) -- the cutscene on the zone line is what opens the quest, not a conversation with Volker"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the south-west room on the third map, the one with the teleporters -- the same ??? that ended The Truth Lies Hid"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Keep Imp",
+      "count": 4,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "drop back down into the main room of the third map. All four must die AFTER the bullet 2 cutscene -- any killed before it have to be waited out and killed again."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gargouille Warden",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same ??? again; it will not spawn anything until all four Keep Imps are down"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gargouille Warden",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "resistant to magic, and its melee hits carry en-stun"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Castle Zvahl Keep (S)",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Zvahl passkey",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same ??? a third time, once the Warden is dead"
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Throne Room (S)"
+    },
+    "zone": "Throne Room (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page never says where the Zvahl passkey is spent; this is the likely place, but since it is not stated nothing is required here"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Throne Room Door"
+    },
+    "zone": "Throne Room (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "examine twice -- the first gives a cutscene, the second enters the battlefield. Bullets 5 and 6 merged because the marker never moves between them. See the quest note: the page's wording puts this door inside Throne Room (S) rather than being the way in, and if that is wrong it belongs in Castle Zvahl Keep (S)."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Throne Room (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Marquis Amon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "two opponents in one battlefield. The first is never named -- a humanoid with standard sword weaponskills plus the AoE Temblor Blade (petrify) and Darkling Blade (damage, knockback, curse) -- so no mob is recorded for it. Zeid fights alongside you and the battle ends if he falls. Marquis Amon is a scythe-wielding BLM demon with tier 3 AoE nukes and a weaponskill that draws everyone in, wipes shadows and dooms; the Sanctus Rosary from The Truth Lies Hid blocks the doom, and it can also be stunned."
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gentle Tiger"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Bundle of half-inscribed scrolls",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     7
+    ],
+    "note": "a second conversation, after the reward, that teaches Trust Magic: Klara -- only if you are holding the key item"
+   }
+  ]
+ }
+]

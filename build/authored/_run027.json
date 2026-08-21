@@ -1,0 +1,1325 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Brygid the Stylist Returns",
+   "page_id": 34126,
+   "revision_id": 700694,
+   "source_sha256": "4b760b1ddf9b32db8aa042b53e85049de464ba8acc666b3ff8f33dfc9d741ef5",
+   "cache_file": "0034126_brygid_the_stylist_returns"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 74,
+   "dat_name": "Brygid the Stylist Returns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "or_branch_unmodelled",
+   "item_req_unresolvable",
+   "equipped_not_held",
+   "walkthrough_in_table"
+  ],
+  "notes": "Three visits to one NPC and nothing else -- the whole quest happens at Brygid, so the marker never moves and only the item lists carry any information. Bullet 2 is not a step: it is what Brygid says when you talk to her in bullet 1, so it merges into step 1. Bullet 5 is the repeat notice and is not a step either.\n\nThe two OR-sets are deliberately handled differently. The Subligar in bullet 4 is a genuine one-of-thirteen: every one of the thirteen is named in the Rewards table, every one resolves, and any single one satisfies the trade -- so all thirteen go in items_alt with items left empty, which the runtime reads as 'holds one of the 13 accepted alternatives'. The armour request in bullets 2 and 3 cannot be done that way: it is one of 20 Body AND one of 15 Legs, 300 combinations, and an OR-list of 35 pieces would claim any single one is enough. That one is items_partial with the tables described in the note.\n\nNothing here is ever HELD in the sense the schema means -- bullets 1 and 3 ask you to be WEARING the armour. Equipped gear does sit in inventory, so a list would have worked in principle, but the page never says which pieces, so the point is moot and flagged rather than guessed. No step carries evidence: no key item is granted anywhere in this quest and the reward body armour is a reward, which rule 7 excludes.\n\nThe thirteen Fomors in the Rewards table are not recorded as mobs. Only one of them is ever the right one for the reward you picked, that choice is not observable, and thirteen drop-markers across two zones would be noise rather than help.\n\nADVERSARIAL PASS -- demoted to medium. The ladder survives every attack: three visits to one named NPC in the page's own bullet order, no evidence claimed anywhere (correctly -- the only items granted are the reward armour, which rule 7 excludes), no reward smuggled in as evidence, no item used as evidence twice, and all thirteen Subligars appear verbatim in the Rewards table and resolve. What is not high is the quest as a whole: two of its three steps carry items_partial because the page cannot be made to say what you must hold. The AF pieces are never named, and the Body/Legs request is 20x15 = 300 combinations. A quest whose entire informative content is a requirement the schema cannot express is 'a gate is unmodellable' on the confidence table, and in this corpus every prior quest flagged item_req_unresolvable (15 of 15) or equipped_not_held (5 of 5) is medium. No step, target, item, mob or evidence was altered.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: 300 combinations are neither an AND-list nor a one-of list, so items_partial carries it.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Brygid the Stylist",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 52,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Brygid",
+   "zone": "Bastok Markets",
+   "grid": "K-9",
+   "raw": "Brygid, Bastok Markets (K-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brygid"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "any job, but you must be WEARING one to five pieces of original Artifact Armor -- Artifact +1 and Reforged Artifact do not count. The AF differs per job and the page names none of it, so nothing can be listed. She answers by naming one Body and one Legs piece from the Armor requests table (bullet 2)."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brygid"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Return WEARING both requested pieces. The request is one of 20 Body (Banded Mail through Wool Gambison) and one of 15 Legs (Beak Trousers through Wool Hose); She then offers thirteen level 50 body armours."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Brygid"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Aquarius Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Libra Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Aries Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Ophiuchus Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Scorpius Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sagittarius Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Capricornus Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Taurus Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Pisces Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Gemini Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Virgo Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Cancer Subligar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Leo Subligar",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "which Subligar she wants follows from the body armour you chose, and that choice is not observable -- so all thirteen are recorded as alternatives and any one of them makes the trade ready. They are rare/ex drops from the matching Fomor in Phomiuna Aqueducts and Sacrarium. The reward armour arrives on the trade."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Curious Case of Melvien",
+   "page_id": 113367,
+   "revision_id": 679507,
+   "source_sha256": "ddcbe88d4890d34008e00180a496f4748811176b3d5a951ac6d99528fdde1a12",
+   "cache_file": "0113367_the_curious_case_of_melvien"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 138,
+   "dat_name": "The Curious Case of Melvien",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "fame_region_unmodelled",
+   "prereq_unmodelled",
+   "unnamed_target",
+   "consumed_key_item"
+  ],
+  "notes": "An unusually well-evidenced page: five of the first six steps hand over a key item and every one of them resolves, so this ladder can be tracked almost the whole way through. The same ??? in the crates at Eastern Adoulin (I-9) is visited three times (bullets 2, 5, 10) with different evidence each time, which is legal because rule 4 forbids repeating an ITEM, not a target.\n\nBullets 7, 8 and 9 are not steps. They are the two answers -- Arciela and Morimar -- to the questions asked inside the cutscene that bullet 6 starts, so they fold into step 6's note and its source_bullets.\n\nBullet 3 does not say which Adoulin, but bullet 4 says 'in Western Adoulin' where bullets 1, 2 and 5 all say Eastern, so Chumli-Mojumli is read as Eastern Adoulin. You talk to Chumli-Mojumli; Estienneux is who the conversation is WITH, not what you click, so the target is Chumli-Mojumli.\n\n'Fame: Adoulin' is not one of the addon's nine regions, so the region gates nothing and only the raw survives. The Quest Reqs name two prerequisites: the SoA mission Balamor's Ruse, which goes in prev even though an unresolved prev reads as 'unknown, not blocked' rather than a hard gate, and 'the intro quest for Monstrosity', which the page never gives a title -- so it is a note and not an invented prev entry. The Gladiatorial writ of summons is explicitly NOT required to still be held, so it is not an item on any step.\n\nThe two Optional bullets are kept in place and marked optional. Bullet 12 transforms both surviving key items into the two imposter's ciphers, which is why it carries them as evidence and bullet 13 carries them as items -- and bullet 13 destroys them. Bullet 13 is one step, not two: the map above the helmsman is on the ferry and the page never names it or the ship's zone, so the step is anchored where the player actually acts, in Selbina, with the rest in the note. The five High-Purity Baylds it pays are in the header's Reward, so rule 7 keeps them out of evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 10: The page names neither the map nor the ship's zone, so the step is anchored in Selbina where you board and carries no target of its own.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 7,
+    "raw": "Adoulin / 7"
+   },
+   "prev": [
+    {
+     "title": "Balamor's Ruse",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Estelle",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Estelle, Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Estelle"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Margret's writ of summons",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "behind the Scout Coalition building"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Portrait of Melvien",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the crates in the alcove next to the base of the ramp. The quest only enters your log here, not at step 1."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chumli-Mojumli"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Melvien's turn",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ask for Estienneux, then 'Tell me about Melvien when he was alive' and 'Show him the portrait of Melvien'. The Castle Adoulin gates waypoint is closest. The page does not say which Adoulin; bullet 4 marks Mastan as the Western one, so this is Eastern."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mastan"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Melvien's death?",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Platea Triumphus waypoint, north then left before the ramp down. Choose 'Tell me about Soufrriand's death', then 'Show him the portrait of Melvien', then 'I believe you'. The key item really is spelled with the question mark."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Margret's memo",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same crate as step 2"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Storage Container"
+    },
+    "zone": "Rala Waterways",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "note": "nearest entrance is the Big Bridge at Western Adoulin (K-8). Bullets 7 to 9 are the two answers demanded inside this cutscene -- Arciela, then Morimar -- not steps of their own."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Ring of supernal disjunction",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same crate again; choose 'Show your Ring of supernal disjunction', which is why the ring is an item requirement here and nowhere else"
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Estelle"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": null
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Margret's imposter's cipher",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Margret's imposter's cipher redux",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     12
+    ],
+    "note": "the page's own Optional section. From bivouac #4 go to (G-7), examine the Castoff Point, answer Yes to 'Head to the other side?' and choose Upstream to reach (F-7); the ??? is at the river's edge. Both surviving key items transform here."
+   },
+   {
+    "n": 10,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Selbina"
+    },
+    "zone": "Selbina",
+    "grid": null,
+    "items": [
+     {
+      "name": "Margret's imposter's cipher",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Margret's imposter's cipher redux",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     13
+    ],
+    "note": "Board the Mhaura ferry for 100 gil, then examine the map directly above the helmsman. Both ciphers are destroyed; the five High-Purity Baylds you get back are in the header's Reward and so are not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ward Warden I (Attohwa)",
+   "page_id": 58997,
+   "revision_id": 753778,
+   "source_sha256": "7cbe1cb9c7510105826897350acdef2fb542090fac31ab002580761be83e9ed3",
+   "cache_file": "0058997_ward_warden_i_attohwa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 124,
+   "dat_name": "Ward Warden I (Attohwa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "fame_region_unmodelled",
+   "time_gated",
+   "consumed_key_item",
+   "progress_unobservable"
+  ],
+  "notes": "A three-rung fetch loop entirely inside one zone. Bullets 2 and 3 are one step, not two: 'Travel to the Target marked on your map' has no named target of its own, and the thing you actually interact with when you arrive is the Repair Trunk, which is a real entity and resolves. The long sub-bullet under 2 is a route and the long sub-bullet under 3 is packing advice; both stay as notes.\n\nBullet 5, under the 'Effects on Bastion:' heading, is an outcome -- Martello and Clone Ward HP -- and not a step. The unnumbered line above bullet 1 is a cooldown: one Ward Warden / Desert Rain / Crimson Carpet per Vana'dielian day across all of Abyssea, which nothing in the packets reports.\n\nOnly step 1 can carry evidence. The Magicked hempen sack is granted there and its NAME does not change when you fill it, so nothing observable separates 'sack in hand' from 'sack packed' -- the ladder therefore cannot advance past step 2 on its own, and that is recorded rather than papered over with a second use of the same key item, which rule 4 forbids anyway. The sack is instead the item requirement on steps 2 and 3, which is what makes the turn-in read ready.\n\nThe page contradicts itself about the sack: bullet 1 says it disappears when you zone or log out 'only if it is filled first', while the route bullet says flatly that you cannot warp or you will lose the key item. The safe reading, and the one the route assumes, is that zoning costs you the sack.\n\n'Fame: aatt' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw survives.\n\nADVERSARIAL PASS -- demoted to medium. The steps hold up: the Repair Trunk is the thing you actually select and it resolves, (G-6) is the page's own number for the correct crates, the cooldown line and the 'Effects on Bastion' outcome are rightly not steps, and the sack is evidence once and an item requirement twice, which is legal. But the notes above establish the page contradicting itself about when the sack is lost -- bullet 1's 'only if it is filled first' against the route's flat 'you cannot warp or you will lose the key item' -- and the confidence table makes a self-contradicting page medium, not high. The same reading also concedes the ladder can never advance past step 2, since sack-in-hand and sack-packed are one key item under one name. Steps, targets, items, mobs and evidence are unchanged.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aatt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Attohwa)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "F-9",
+   "raw": "Resistance Sapper (Attohwa) (F-9), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magicked hempen sack",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00. The sack is lost if you zone, log out or warp before handing it back."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Magicked hempen sack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the game marks the target on your map; the page's route ends at the correct crates in the nook at (G-6) and warns you past several wrong ones. Warp to Veridical Conflux #06, west over the bridge, through the tunnel hugging the right wall (Sneak for the skeletons, avoid the true-sound NM Gieremund), back out by hugging the left wall -- you cannot warp. Pack pointy first, drop to round when the message changes, stop at 'about to reach the limit' or 'squeaking under the tension'; overpacking tears the sack and fails the quest. How full the sack is is not observable, so this step can never report itself done."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Attohwa)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Magicked hempen sack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Cruor and Resistance Credits scale with how full the sack was"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Equipped for All Occasions",
+   "page_id": 15072,
+   "revision_id": 761020,
+   "source_sha256": "5a7b16db4161e696bdd0481a66fc1919a36ce692fa2bf9c47ef33187e9ccd26a",
+   "cache_file": "0015072_equipped_for_all_occasions"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 24,
+   "dat_name": "Equipped for All Occasions",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "start_recovered_from_walkthrough",
+   "af_job_gate"
+  ],
+  "notes": "The header's giver is a bare '??? - Arrapago Reef (H-10)', which can never carry a marker, and the walkthrough opens somewhere else entirely: at Ratihb in the Shararat Teahouse, who is also the NPC the quest is handed in to. Start is therefore moved to Ratihb, the header string kept verbatim in start.raw. That is a marker MOVE from a key that cannot match anything live to one that can. It is honest about the log too: the page says outright that the quest does not appear in your log until the ??? is examined, so the ??? keeps its rung as step 4.\n\nBullet 2 is three steps. Its sub-bullets contain the whole approach: get a Lamian Fang Key from the ??? in Caedarva Mire, use it on the locked Iron Gate at Arrapago Reef (J-10), and only then reach and examine the ??? at (H-10). Splitting them keeps two markable objects that a single rung would have thrown away, and puts the key where it is actually spent.\n\nBullet 4 is two steps for the reason the pilot noted: 'Defeat the Lost Soul and check the Iron Door again' is a fight and an examine, and only the second grants the Wheel lock trigger.\n\nThe Lamiae and Draugers that also drop the key are not recorded as mobs -- those are family plurals, not names, and inventing 'Lamia' or 'Draugar' from them is exactly the guessing the rules forbid. The alternative source is why step 2 is items_partial. Note this page puts the Caedarva Mire ??? at (I-7) where Operation Teatime's page puts it at (I-6); this page's own number is used.\n\nImutira appears only inside the step 7 cutscene and is not something you click, so he is a note. The COR level 40 gate applies to the ??? in bullet 2 only -- bullet 3 says explicitly that you do not need to be a Corsair to spawn the NM.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: that unexpressible second route is why items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "AU / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Luck of the Draw",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 40,
+   "jobs": [
+    "COR"
+   ],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Ratihb",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-12",
+   "raw": "??? - Arrapago Reef (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ratihb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Shararat Teahouse. If he only welcomes you and offers tea you have already had this cutscene as the previous quest's optional last step. The quest does not enter your log until step 4."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Lamian Fang Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Map 1, southern part of the block; one key per game day. The key also drops from the Lamiae and Draugers inside the reef, which the page names only as families."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Lamian Fang Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Arrapago Reef Survival Guide is the quick way in; otherwise walk from Nashmau or take the Azouph Isle Staging Point. Past this gate, go west on the small map to a second Iron Gate, which is already unlocked."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "as Corsair, level 40 or higher. This is the header's giver and where the quest finally enters your log. The cutscene asks a question; Maze of Shakhrami is right, but a wrong guess costs nothing."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Door"
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lost Soul",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Map 2, in the room in the northwestern corner of (K-9). Unity Warp 119 to Buburimu Peninsula drops you on the zone line, then exit H to map 2; the Abyssea - Attohwa warp and the Buburimu Survival Guide also work. You do not need to be a Corsair to spawn it."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lost Soul",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Door"
+    },
+    "zone": "Maze of Shakhrami",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Wheel lock trigger",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same door again, after the kill; the cutscene is with Imutira, who is not a standing entity you can click"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Wheel lock trigger",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? as step 4, back behind the Iron Gate"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ratihb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "you may have to speak to him twice"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Souls in Shadow",
+   "page_id": 498,
+   "revision_id": 764545,
+   "source_sha256": "5f56cac0432dd602ea01c2b42b0e7ec90ebea1eb425abb3b7c4088d8fd62ac85",
+   "cache_file": "0000498_souls_in_shadow"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 99,
+   "dat_name": "Souls in Shadow",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "latent_unmodelled",
+   "walkthrough_incomplete",
+   "skill_gate_unmodelled",
+   "or_branch_unmodelled",
+   "shared_key_item_across_quests"
+  ],
+  "notes": "A weapon-skill quest, and the page is incomplete in exactly the place that matters. Bullet 3 is headed 'Breaking the Latent' but its sub-bullets never say how to break it -- they jump straight to trading the Scythe of Trials back. Bullet 2 warns that the latent must be broken 'before completing the rest of the quest' and nothing anywhere explains it, which is the whole reason this quest is medium rather than high. Nothing in the packets sees weapon-skill latent progress in any case, so it is flagged and left as a note on the trade rather than given an unmarkable rung of its own.\n\nBullet 1 is not a step: it is a precondition -- you cannot hold two Weapon Skill Quests at once, and must go back and quit the other. That exclusivity is also what makes step 1's evidence safe. The Weapon training guide is the generic key item every WS quest grants, so on its own it would be a cross-quest false positive; because only one WS quest can be open at a time, holding it while this quest is the open one really does mean step 1 is done. The page spells it 'Weapons Training Guide'; the game's own name is 'Weapon training guide' and that is the form recorded, since the plural does not resolve.\n\nStep 1 also grants the Scythe of Trials, which is deliberately NOT part of the evidence: it is consumed by the very next step, so an AND-list over both would read false the moment you progressed.\n\nBullets 4 to 6 are the long way in, and bullet 3's own sub-bullet says Den of Rancor Home Point #1 skips all of them by landing you on the ??? map. Those three steps are kept mandatory rather than optional -- most players do not have that Home Point -- and the shortcut is flagged and noted instead. Inside them, two things are real interactions rather than routing: the Temple Guardian that has to be killed, and the Granite Door at (I-7) that the Paintbrush of Souls opens. The Paintbrush sits on the door step, where it is spent; a party member may carry it instead of you, which no item list can say, hence items_partial. The zone-out into Yhoator Jungle and straight back in (bullet 5) is a routing trick and stays a note.\n\nBullet 8 is a fight and an examine: kill Mokumokuren, then re-check the same ??? for the Annals of Truth. Quest Reqs gates on Scythe skill 240+ as well as level 71; the level is recorded, the skill has no slot and no observable predicate.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: hence items_partial.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": null,
+    "raw": "S / (empty)"
+   },
+   "prev": [],
+   "level": 71,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Novalmauge",
+   "zone": "Bostaunieux Oubliette",
+   "grid": "G-8",
+   "raw": "Novalmauge - Bostaunieux Oubliette (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Novalmauge"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Weapon training guide",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you cannot have another Weapon Skill Quest open (bullet 1). He also hands over the Scythe of Trials, which the next step consumes, so only the guide is used as evidence."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Novalmauge"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Scythe of Trials",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Map to the Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "break the latent on the Scythe of Trials first -- the page's own 'Breaking the Latent' heading never says how, and nothing observable reports latent progress. He then points you at the Den of Rancor."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Temple of Uggalepih"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "bring Silent Oil and Prism Powder, and make sure you or someone in your party holds the Paintbrush of Souls. The way through needs the zone-out trick: first intersection south, next T north, next T north again to zone into Yhoator Jungle, then west and south straight back into the Temple. All of this is skippable if you have Den of Rancor Home Point #1."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Temple Guardian",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "on the second entry go west at the first intersection, through the Wooden Gate, south to the T-intersection and east; the Guardian stands between you and the Granite Door"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Granite Door"
+    },
+    "zone": "Temple of Uggalepih",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Paintbrush of Souls",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "East into the large circular room, then the hallway in its northeastern part at (J-9). The Paintbrush of Souls opens the door into the Den of Rancor; someone else in your party holding it is enough, which no item list can express."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Den of Rancor",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mokumokuren",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     7,
+     8
+    ],
+    "note": "inside the Den: south, immediately east where the room opens, north tunnel, east at the intersection, down to the large room and south to (I-13). Unity Warp 128 starts you on the ledge at (G-12) -- drop down the east side and walk southeast. Den of Rancor Home Point #1 lands on this map and skips steps 3 to 5 entirely."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Den of Rancor",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mokumokuren",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "a hecteyes"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Den of Rancor",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Annals of Truth",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same ??? again, once it is dead"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Novalmauge"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Annals of Truth",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the reward is the Spiral Hell weapon skill"
+   }
+  ]
+ }
+]

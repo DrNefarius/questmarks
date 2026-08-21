@@ -1,0 +1,51 @@
+# Titles the two category walks never reached, recovered by name from
+# data/dat_names.lua. Fed to fetch_wiki.py --titles-file.
+#
+# RUN 1, 2026-08-15: reported all 15 as 404 and this file recorded that as a
+# dead end. THAT CONCLUSION WAS WRONG, on two counts, and the manifest carried
+# the disproof: request_count was 19, where one probe plus 15 source fetches is
+# 16, and the extra 3 are titles whose source returned 200 and went on to ask
+# for /with_html.
+#
+#   (a) '#' IS NOT IN THE WIKI'S TITLES. MediaWiki forbids it. Every cached
+#       Voidwatch page is "VW Op. 054: ..." with no '#'. The DAT writes
+#       "VW Op. #050:", so the '#' has to be dropped, not preserved.
+#   (b) fetch_page WRAPPED BOTH REQUESTS IN ONE try, so a 404 from Parsoid's
+#       /with_html -- which is what a REDIRECT STUB returns -- was reported as
+#       "the page does not exist". Fixed: the html fetch has its own guard and a
+#       missing html body degrades the record instead of discarding it.
+#
+# Titles below are the corrected forms. Genuinely absent ones are kept, marked,
+# so the next person does not retry them.
+
+# quest/jeuno/33-40 -- the elemental "Mystery of" series.
+# CONFIRMED ABSENT: 404 on /page as well as /with_html. No article of this name.
+#Mystery of Fire
+#Mystery of Water
+#Mystery of Earth
+#Mystery of Wind
+#Mystery of Ice
+#Mystery of Lightning
+#Mystery of Light
+#Mystery of Darkness
+
+# mission/sandoria/8-9 -- CONFIRMED ABSENT under these names; the wiki
+# documents San d'Oria 2-3 as one page covering both destinations.
+#Journey to Bastok
+#Journey to Windurst
+
+# mission/cop/568 -- redirect stub into a section of the CoP 5-3 page.
+Flames for the Dead
+
+# quest/sandoria/75 -- the DAT merges two names with a slash. Both fetched OK
+# and both are redirect stubs pointing at "The Rivalry/The Competition" --
+# which is itself a BROKEN REDIRECT: that target 404s under every encoding
+# tried (literal slash, %2F, underscored). So the stubs are on disk, carry no
+# walkthrough, and the row stays on chronicle. Not a fetcher fault; the wiki
+# points at a page it does not have.
+The Rivalry
+The Competition
+
+# quest/toau/68-69 -- Voidwatch ops, WITHOUT the '#' the DAT writes.
+VW Op. 050: Aht Urhgan Assault
+VW Op. 068: Subterranean Skirmish

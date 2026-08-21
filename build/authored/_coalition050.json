@@ -1,0 +1,1778 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Rala Waterways",
+   "page_id": 98628,
+   "revision_id": 772341,
+   "source_sha256": "0d2f4541460e94fcdefc257104604649a0e23e004717ec8ae9d0537a4d92644e",
+   "cache_file": "0098628_gather_rala_waterways_3261730767"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 32,
+   "dat_name": "Gather: Rala Waterways",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled"
+  ],
+  "notes": "A coalition assignment, not a quest: there is no Quest Header and no Start field, and the walkthrough deliberately never names its NPC -- it says 'NPC asks you' and 'Trade these to the NPC'. The giver is read from this page's own ## Giver block, Task Delegator - Western Adoulin (J-10), which stage A resolved from the Inventors' Coalition page; start.raw is null because there is no Start field on the page to quote verbatim. The assignment table's Zone (Rala Waterways) is where the WORK happens and is not the giver's zone. Objective 'Procure 3 spools of Bloodthread' becomes item name 'Bloodthread' count 3 -- the wikitext links [[Bloodthread]] and 'spools of' is the page's measure word, not part of the name. The page states outright that it does not matter how the item is obtained (bought, traded or farmed), so the middle rung is an obtain and not a fight; Pewter Diremite is carried as a drop-source mob because the page names it in this same zone. The Diremite Stalker hint is deliberately NOT recorded as a mob: it stands in the Pso'Xja tower near the Beaucedine Glacier Survival Guide, a different zone from this step's, and one step has one zone -- it is an alternative farming route, recorded in the step note only. Rank 'Petitioner' is a coalition-rank gate with no schema field; it is NOT gates.level (that is character level), so it is stated here and flagged. gates.repeatable and gates.expansion are null: coalition assignments do repeat in practice, but this page never says so in words and the schema will not carry an invented assertion.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. Bullet 1's 'NPC' is unnamed on the assignment page; the name and square come from this page's ## Giver block (Inventors' Coalition, Western Adoulin J-10). Accepting also costs Imprimaturs, which the addon cannot see."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rala Waterways",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bloodthread",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Pewter Diremite",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "No specific target: the page names no NPC, object or ??? for this, and says the item may equally be bought or traded, so target is {none,null} rather than a bare null. Pewter Diremites are plentiful in the northwest of this zone, reached from Western Adoulin (F-5). Grid left null: the page gives an area, not a square. Holding 3 Bloodthread is what proves this rung done."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Bloodthread",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Trade these to the NPC and then Report on the quest outcome' is one interaction at one NPC, so it is one turnin rung rather than a trade followed by a turnin. The Report is the hand-in, not flavour."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Support: Ceizak Battlegrounds",
+   "page_id": 98668,
+   "revision_id": 527786,
+   "source_sha256": "d7ae556502f53b8a16c9143ea5a995dd27985dc7bba54725517cd981962ef867",
+   "cache_file": "0098668_support_ceizak_battlegrounds_9beaed53a5"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 26,
+   "dat_name": "Support: Ceizak Battlegrounds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "consumed_key_item"
+  ],
+  "notes": "Couriers' Coalition delivery, not a gather. The giver is this page's own ## Giver block, Task Delegator - Western Adoulin (G-7), resolved by stage A from the Couriers' Coalition page; start.raw is null because a coalition assignment page has no Start field. Unusually for this family the walkthrough DOES name the Task Delegator itself (bullets 1 and 5), so the giver is corroborated on the page and not only by the Giver block. Accepting hands you the key item Cei. FB op. materials container -- the page's own Notes call it a key item -- so holding it is step 1's evidence under the 'obtained AT that step' rule. The middle rung is the reason this record is medium: the objective is satisfied at ANY of six Bivouac Administrators, three in Ceizak Battlegrounds (northeast of H-9, centre of H-7, southwest of F-9) and three in Yahse Hunting Grounds (I-8, G-8, H-9), and the schema has no OR across steps. I record one delivery step in Ceizak Battlegrounds, the zone this assignment is named for, with grid null -- naming any one of the three squares would be a preference the page does not express -- and list all six in the step note. Rank 'Petitioner' is a coalition rank, not gates.level, so it is stated here and flagged. gates.repeatable/expansion stay null; the page never says either in words. The Notes section is entirely advice (route blockages, reward variation, the broken-container message, Wide Scan) and yields no rungs.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cei. FB op. materials container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accepting the assignment is what grants the container, so the key item is this step's evidence and not the next one's. Square from the ## Giver block; the bullet names the Task Delegator but no location."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Bivouac Administrator"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Cei. FB op. materials container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "Any ONE of six administrators completes it, and the page says the reward is the same regardless of zone. In this zone: #1 northeast corner of (H-9), #2 centre of (H-7), #3 southwest corner of (F-9). Equally valid is Yahse Hunting Grounds -- #1 north (I-8), #2 north (G-8), #3 southwest (H-9) -- reached by zoning to Eastern Adoulin at (M-9) and taking Lamaron's boat at (G-5)/(G-6). Grid is null because the page names three squares here and three more elsewhere; picking one would invent a preference. Bullet 4's Beady Panopt warning (aggros through Sneak and Invisible) is route advice, not a rung. Not a group: these are alternatives, not a set to be done in any order."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "'Return to the Task Delegator to receive your reward' -- the report-back, attested by its own bullet on this page. No items: the container was surrendered at step 2."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Procure: Ceizak Battlegrounds",
+   "page_id": 98765,
+   "revision_id": 742183,
+   "source_sha256": "dc40fb5bb442e248f9beda24b936c5b88e6333c3c4293418c9af025cd414efaf",
+   "cache_file": "0098765_procure_ceizak_battlegrounds_586c88dc95"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 0,
+   "dat_name": "Procure: Ceizak Battlegrounds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "giver_steps_not_in_walkthrough",
+   "or_branch_unmodelled",
+   "count_unobservable"
+  ],
+  "notes": "Pioneers' Coalition HELM assignment. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (E-8), resolved by stage A from the Pioneers' Coalition page; start.raw null, no Start field exists. This page is medium for one honest reason: its walkthrough describes ONLY the field work. It has no bullet for accepting the assignment and no bullet for reporting back, unlike the Gather and Courier pages in this family. I still record both rungs, because the ## Giver block on this very page attests the NPC and the square and a coalition assignment cannot be held or closed anywhere else -- but their source_bullets cite the nearest walkthrough bullet for traceability, NOT because that bullet describes them, and the flag says so. Bullet 1 (obtain Hatchets) is a requirement, not a rung with a place, so it becomes the logging step's items with Trailblazing Hatchet +1 as items_alt -- the page prefers the +1 but either works. Bullet 2 (travel to either zone) is folded into the logging step, which already carries that zone. Bullet 5 (you may toss or sell the results) is explicitly an outcome and is why evidence is null: the assignment counts five successful gathers, not five items held, and nothing observable tracks that -- hence count_unobservable. The five items are never named, so no evidence could be written even if the count were tracked. Yahse Hunting Grounds is an equally valid work zone per the objective; only Ceizak Battlegrounds carries logging-point squares on this page, so it is the zone recorded. Rank 'Petitioner' is a coalition rank, not gates.level. repeatable/expansion null -- unstated in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: this rung is read from the page's ## Giver block (Task Delegator - Western Adoulin (E-8)); source_bullets cites bullet 1 only as the nearest anchor, not as its source sentence.\n  step 2: Yahse Hunting Grounds is equally allowed by bullet 2 but the page lists no points there. items/items_alt are the tool, which you must hold to work a point\n  step 3: this rung comes from the page's ## Giver block and from the assignment's structure, and source_bullets cites bullet 4 as the nearest anchor only. Flagged giver_steps_not_in_walkthrough.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The walkthrough has NO accept bullet."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Logging Point"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [
+     {
+      "kind": "item",
+      "name": "Hatchet",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "kind": "item",
+      "name": "Trailblazing Hatchet +1",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "note": "Log five times. Logging Points in this zone are at E8, F8, F10, H7 and J8 as the page writes them (no hyphens); grid is null because there are five and the page ranks none. bring several, the page warns HELM tools break often in Adoulin even with Kithvalio's key items. Evidence null: bullet 5 says the results may be tossed or sold, so holding them proves nothing, and they are never named. Gathering fatigue (decays ~1 attempt/2 min, resets on zoning) is advice, not a rung."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Report the assignment. The walkthrough has NO report bullet."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clear: Ceizak Battlegrounds",
+   "page_id": 98769,
+   "revision_id": 510435,
+   "source_sha256": "c77241af0cae17fa863c1549e70b1e52df4fb58057a4dd5ac227627baf251dbc",
+   "cache_file": "0098769_clear_ceizak_battlegrounds_cb15524f18"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 8,
+   "dat_name": "Clear: Ceizak Battlegrounds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "giver_steps_not_in_walkthrough",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Pioneers' Coalition combat assignment. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (E-8), resolved by stage A from the Pioneers' Coalition page; start.raw null because there is no Start field. Like the Procure page in the same coalition, the walkthrough covers only the field work: there is no accept bullet and no report bullet. Both rungs are recorded anyway -- the ## Giver block on this page attests the NPC and square -- with source_bullets citing the nearest walkthrough bullet as an anchor, and the flag giver_steps_not_in_walkthrough saying so plainly. The work itself is one Colonization Reive taken through to completion in either Ceizak Battlegrounds or Yahse Hunting Grounds; joining mid-fight is fine so long as you are present for the final evaluation. Bullet 2 lists nine reive sites across the two zones. I record the four in Ceizak Battlegrounds, the zone this assignment is named for, as the fight step's mobs -- Floodplain Spider (F/G-7), Lightfoot Lapinion (G-8), Lavender Twitherym (G-9), Bounding Chapuli (I-8). They are ALTERNATIVES, not a kill list: one reive completes the assignment, so every count is null rather than 1, and the note carries the OR. The five Yahse Hunting Grounds reives (Temblor Beetle H-7, Lancing Wasp H-8 and J-8, Quivering Twitherym G-9, Shrubshredder Chapuli I-9) are deliberately NOT in mobs: they are in a different zone from this step and one step has one zone. Rank 'Petitioner' is a coalition rank, not gates.level. repeatable/expansion null -- never stated in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Not described by any walkthrough bullet; read from this page's ## Giver block. source_bullets cites bullet 1 as the nearest anchor only.\n  step 2: Yahse Hunting Grounds hosts five more and is equally valid, but is a different zone and so is left to the record notes.\n  step 3: Flagged giver_steps_not_in_walkthrough.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Floodplain Spider",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Lightfoot Lapinion",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Lavender Twitherym",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Bounding Chapuli",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "ONE Colonization Reive, taken to completion. The four mobs are the reive sites in this zone Floodplain Spider (F/G-7), Lightfoot Lapinion (G-8), Lavender Twitherym (G-9), Bounding Chapuli (I-8) and are alternatives, so counts are null, not 1. Grid null: four squares, none preferred. Target is {none,null}, not a bare null: a reive is not a standing entity you click."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Report the assignment. No walkthrough bullet describes it; read from this page's ## Giver block, with bullet 2 cited as the nearest anchor only."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Provide: Foret de Hennetiel",
+   "page_id": 98789,
+   "revision_id": 567342,
+   "source_sha256": "371abf79f266987260d23f802aad64eb2ee1fea2c6f2029716ef7aa295804b8e",
+   "cache_file": "0098789_provide_foret_de_hennetiel_5cca3671a1"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 16,
+   "dat_name": "Provide: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "npc_name_conflict",
+   "availability_unmodelled"
+  ],
+  "notes": "Couriers' Coalition long delivery run. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (G-7), resolved by stage A from the Couriers' Coalition page; the walkthrough itself names the Task Delegator in bullets 1 and 7, so the giver is corroborated on the page. start.raw is null -- a coalition assignment page has no Start field to quote. Accepting grants the key item Hen. FS building mat. container, which is step 1's evidence under the 'obtained AT that step' rule; the strike-through warning about Waypoints breaking it is superseded on the page itself by the Feb 18 2014 update note, so no rung and no flag for it. Bullets 2, 3 and 4 are three separate zone crossings and are three travel rungs because one step has one zone: out of Western Adoulin at (C-9), across Ceizak Battlegrounds to the (G-11)/(H-11) border with Sih Gates, then south out of Sih Gates at (H-11). Bullet 5 (run to (J-7) inside Foret de Hennetiel) is in-zone route guidance and is folded into the delivery rung rather than given a rung of its own. THE ONE REAL AMBIGUITY, and the reason this record is medium: bullet 1 says the container goes to 'a Station Administrator in Foret de Hennetiel' while bullet 6 says 'Speak to the Bivouac#2 Administrator at (J-10)'. I record Station Administrator. 'Bivouac#2 Administrator' is a wikilink artefact -- the source is [[Bivouac#2 Administrator]], a link to the Bivouac page's '2 Administrator' anchor, so the '#2' is markup bleeding into the display text and no entity is named with '#2' jammed against 'Bivouac'. Station Administrator is a plain wikilink to a page of that name and matches the objective, which is about the site where the frontier station is to be built. The square (J-10) is taken from bullet 6 regardless, since that is the only square given for the NPC. Flagged npc_name_conflict so a player can overturn it from the game. Notes bullet 3 -- once the Foret de Hennetiel Frontier Station is built this assignment can no longer be taken -- is a world-state availability condition the schema cannot express; flagged availability_unmodelled. Rank 'Probationer' is a coalition rank, not gates.level. repeatable/expansion null.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 5: See record notes; flagged npc_name_conflict.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hen. FS building mat. container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accepting is what hands you the container, so it is this rung's evidence, not the delivery rung's. Square from the ## Giver block; the bullet names the NPC but no location."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ceizak Battlegrounds"
+    },
+    "zone": "Western Adoulin",
+    "grid": "C-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The zone line out of Western Adoulin at (C-9); the step's own zone is the one you are standing in."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sih Gates"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Southwest across Ceizak Battlegrounds. The page puts the crossing on the (G-11)/(H-11) border; G-11 is recorded and H-11 is the same border, not a competing claim."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Foret de Hennetiel"
+    },
+    "zone": "Sih Gates",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "South out of Sih Gates at (H-11)."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Hen. FS building mat. container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "Bullet 5's route (into the first open area, south path to (J-7)) is folded in; (J-7) is a waypoint on the way, (J-10) is where the NPC stands, so J-10 is the square. Name taken from bullet 1's 'a Station Administrator'; bullet 6 writes 'Bivouac#2 Administrator', which is [[Bivouac#2 Administrator]] in the wikitext a page-anchor link whose '#2' leaks into the display text."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Return to the Task Delegator to receive your reward' -- the report-back, on its own bullet. No items: the container was surrendered at step 5."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Provide: Morimar Basalt Fields",
+   "page_id": 98790,
+   "revision_id": 549250,
+   "source_sha256": "0a6c1d56ea99aaef9a5b24d5ec2bbf65a65bc17a4728595a4e3f4f61fb8f1de2",
+   "cache_file": "0098790_provide_morimar_basalt_fields_eba0127e76"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 17,
+   "dat_name": "Provide: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page"
+  ],
+  "notes": "Couriers' Coalition delivery run, and the cleanest ladder in this batch: every rung has its own bullet and its own square. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (G-7), resolved by stage A from the Couriers' Coalition page and corroborated by bullets 1 and 7, which name the Task Delegator outright. start.raw is null because a coalition assignment page has no Start field. Accepting grants the key item Mor. FS building mat. container, so that is step 1's evidence; the strike-through Waypoint warning is superseded on the page by the Feb 18 2014 update note and yields no rung. Bullets 2-5 are four legs, each in a different zone, so each is its own travel rung -- one step, one zone. Bullet 3 is a talk, not a travel: Lamaron at (G-5) in Eastern Adoulin is an NPC you speak to for instant boat passage, and the boat, not your feet, moves you to Yahse Hunting Grounds. Note that (G-5) occurs twice on this page for two different zones (Lamaron in Eastern Adoulin, and the Moh Gates exit north into Morimar Basalt Fields); both are recorded on their own steps and neither is a conflict. The Cave Panopt in the first small room of Morimar Basalt Fields aggros through Sneak and Invisible -- a warning, carried in the step note, not a rung, and not recorded as a mob since nothing asks you to fight it. Delivery is to the Station Administrator at (K-10), which bullet 6 names as a plain wikilink and bullet 1 corroborates. Rank 'Probationer' is a coalition rank with no schema field; it is NOT gates.level, which is character level. gates.repeatable and gates.expansion stay null: never stated in words on this page. Notes bullet 3 is speculation ('presumably aids with the construction'), not a condition.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mor. FS building mat. container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accepting hands you the container, so it is this rung's evidence and not the delivery rung's. Square from the ## Giver block; the bullet names the NPC without a location."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Eastern Adoulin"
+    },
+    "zone": "Western Adoulin",
+    "grid": "M-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The zone line to Eastern Adoulin at (M-8)."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lamaron"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "A talk, not a travel: Lamaron runs the instant boat to Yahse Hunting Grounds, so he is the entity you interact with and the marker belongs on him."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Moh Gates"
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "North to (H-5) and out of Yahse Hunting Grounds."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Morimar Basalt Fields"
+    },
+    "zone": "Moh Gates",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "North to (G-5) in Moh Gates -- a different zone's G-5 from Lamaron's, both stated on this page. A Cave Panopt in the first small room beyond aggros through Sneak and Invisible; a warning, not a fight the assignment asks for."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": "K-10",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Mor. FS building mat. container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Follow the path from the entrance to (K-10) and hand over the container. Named the same way in bullets 1 and 6, so no ambiguity here."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "'Return to the Task Delegator to receive your reward' -- the report-back, on its own bullet. No items: the container went to the Station Administrator."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Ceizak Battlegrounds",
+   "page_id": 98817,
+   "revision_id": 510459,
+   "source_sha256": "1a18f8cc83075acd8e9795aaba7183aac8c839f06ba5c99ceeadb0c44eacda5c",
+   "cache_file": "0098817_gather_ceizak_battlegrounds_808ae3b896"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 33,
+   "dat_name": "Gather: Ceizak Battlegrounds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "unnamed_target"
+  ],
+  "notes": "Inventors' Coalition gather, the shortest shape in this family: two walkthrough bullets, three rungs. No Quest Header and no Start field; the walkthrough refuses to name its NPC ('NPC asks you', 'Trade these to the NPC'), so the giver is this page's own ## Giver block, Task Delegator - Western Adoulin (J-10), which stage A resolved from the Inventors' Coalition page. start.raw is null because there is no Start field to quote. The assignment table's Zone (Ceizak Battlegrounds) is where the work happens, not where the giver stands. Objective 'Procure 5 Chapuli Wings' becomes item 'Chapuli Wing' count 5 -- the wikitext is [[Chapuli Wing]]s, so the plural is the page's, not the item's. The middle rung is an obtain and not a fight: the page says explicitly that it does not matter how you get them, bought, traded or farmed, and it names NO monster and NO gathering point in this zone, so the target is {none,null} and mobs is empty rather than filled from what a sibling page happens to say about Chapuli. Holding 5 Chapuli Wing is the obtain rung's evidence; the same item is items on the turnin rung, which is a different field and not a second evidence claim. Rank 'Petitioner' is a coalition rank with no schema field -- it is NOT gates.level, which is character level. gates.repeatable and gates.expansion are null: this page never says either in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. Bullet 1's 'NPC' is unnamed; the name and square are this page's ## Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Chapuli Wing",
+       "count": 5
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Target {none,null}, not a bare null: the page names no entity at all for this, and says the wings may be bought or traded rather than farmed. mobs stays empty because this page names no monster -- the obvious Chapuli source is left unrecorded rather than imported. Item name singularised from the page's '5 Chapuli Wings'; the wikitext links [[Chapuli Wing]]."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Chapuli Wing",
+      "count": 5
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "'Trade these to the NPC and then Report on the quest outcome' is one interaction at one NPC, so one turnin rung. The Report is the hand-in and is not dropped."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Yahse Hunting Grounds",
+   "page_id": 98818,
+   "revision_id": 510460,
+   "source_sha256": "ded7dec6e4a9f7069107d6908b069323469a4c1b08ca6678cf31efb279ffce51",
+   "cache_file": "0098818_gather_yahse_hunting_grounds_ed16190c93"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 34,
+   "dat_name": "Gather: Yahse Hunting Grounds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "unnamed_target"
+  ],
+  "notes": "Inventors' Coalition gather. No Quest Header, no Start field, and the walkthrough names no NPC ('NPC asks you', 'Trade these to the NPC'), so the giver is this page's ## Giver block, Task Delegator - Western Adoulin (J-10), resolved by stage A from the Inventors' Coalition page; start.raw is null for want of a Start field. The table's Zone (Yahse Hunting Grounds) is the work zone, not the giver's. Objective 'Procure 5 Twitherym Wings' becomes item 'Twitherym Wing' count 5 -- the wikitext links [[Twitherym Wing]]s, so the plural belongs to the sentence and not to the item. The middle rung is an obtain, not a fight: the page says outright that acquisition method does not matter, and it names no monster and no gathering point, so the target is {none,null} and mobs is empty -- the Twitherym that obviously drop these are NOT imported from a sibling page. Holding 5 Twitherym Wing is that rung's evidence; the same item appears as items on the turnin rung, a different field and not a duplicate evidence claim. Rank 'Petitioner' is a coalition rank with no schema field and is not gates.level. gates.repeatable and gates.expansion null -- unstated in words on this page.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The bullet's 'NPC' is unnamed; the name and square come from this page's ## Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yahse Hunting Grounds",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Twitherym Wing",
+       "count": 5
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Target {none,null}, never a bare null. No monster and no square are named on this page, and the wings may be bought or traded instead of farmed, so mobs stays empty and grid stays null. Item singularised from '5 Twitherym Wings'; the wikitext links [[Twitherym Wing]]."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Twitherym Wing",
+      "count": 5
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade the five, then Report on the quest outcome -- one interaction at one NPC, so one turnin rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Moh Gates",
+   "page_id": 98819,
+   "revision_id": 772343,
+   "source_sha256": "156288704b5e9bb9ea0e0d29246e6c8576e58cc5e92683bdb5d6e6e4896c7b02",
+   "cache_file": "0098819_gather_moh_gates_919bbba7cc"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 41,
+   "dat_name": "Gather: Moh Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "unnamed_target"
+  ],
+  "notes": "Inventors' Coalition gather. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (J-10), resolved by stage A from the Inventors' Coalition page; the walkthrough itself says only 'NPC', and there is no Start field, so start.raw is null. The table's Zone (Moh Gates) is the work zone, not the giver's. Objective 'Procure 3 Matamata Shells' becomes item 'Matamata Shell' count 3 -- the wikitext links [[Matamata Shell]]s and the plural is the sentence's. The middle rung is an obtain: the page says the method does not matter (bought, traded or farmed). This page DOES name a source in the work zone -- 'a few Matamatas at the north end of Moh Gates map #1' -- so Matamata is carried as a drop-role mob, singularised from the page's plural exactly as the item name is. Its count is null: the page gives no number of kills, only a number of shells. The page's better hint, 'significantly more in Morimar Basalt Fields near Bivouac #3', is deliberately NOT in mobs: that is a different zone from this step's, and one step has one zone; it lives in the step note as an alternative farming route. Rank 'Probationer' is a coalition rank with no schema field and is NOT gates.level. gates.repeatable and gates.expansion null -- never stated in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The bullet's 'NPC' is unnamed; name and square come from this page's ## Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Moh Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Matamata Shell",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Matamata",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Target {none,null}: no NPC, object or ??? is named, and the shells may be bought or traded. A few Matamatas live at the north end of this zone's map #1; grid is null because the page gives an end of a map, not a square. Mob name singularised from the page's 'Matamatas'. The page's own advice is that Morimar Basalt Fields near Bivouac #3 has far more -- a different zone, so not recorded as a mob here."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Matamata Shell",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade the three, then Report on the quest outcome -- one interaction at one NPC, so one turnin rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Sih Gates",
+   "page_id": 98820,
+   "revision_id": 772342,
+   "source_sha256": "1623458d2a37234fdbe6e6a23749a384386e84dd31eff40aa987eec5d5e51b88",
+   "cache_file": "0098820_gather_sih_gates_b38ae5bc18"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 40,
+   "dat_name": "Gather: Sih Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "unnamed_target"
+  ],
+  "notes": "Inventors' Coalition gather. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (J-10), resolved by stage A from the Inventors' Coalition page; the walkthrough only ever says 'NPC', and there is no Start field, so start.raw is null. The table's Zone (Sih Gates) is the work zone, not the giver's. Objective 'Procure 3 jars of Acuex Poison' becomes item 'Acuex Poison' count 3 -- the wikitext links [[Acuex Poison]] and 'jars of' is the page's measure word, not part of the name, exactly as 'spools of' is on the Rala Waterways page. The middle rung is an obtain, not a fight: the page states the method does not matter. Bloated Acuex IS recorded as a drop-role mob because the page names it in this same zone -- 'several Bloated Acuex in the north part of Sih Gates map 1' -- with count null, since the page gives a number of jars and no number of kills. The access hint (the entrance near Bivouac #3 in Ceizak Battlegrounds) is route advice about a different zone and gets no rung and no mob. Rank 'Probationer' is a coalition rank with no schema field and is NOT gates.level, which is character level. gates.repeatable and gates.expansion null -- never stated in words here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The bullet's 'NPC' is unnamed; name and square come from this page's ## Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Sih Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Acuex Poison",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Bloated Acuex",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Target {none,null}: nothing is named to click, and the poison may be bought or traded. Bloated Acuex are several in the north part of this zone's map 1, reached by the entrance near Bivouac #3 in Ceizak Battlegrounds; grid null because the page names a part of a map, not a square."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Acuex Poison",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade the three jars, then Report on the quest outcome -- one interaction at one NPC, so one turnin rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Foret de Hennetiel",
+   "page_id": 98821,
+   "revision_id": 510463,
+   "source_sha256": "859bd260d8a4c21c16e316adbc4bdcbca376ffd9c46e76a7f38b0920aa776348",
+   "cache_file": "0098821_gather_foret_de_hennetiel_05044c53d6"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 35,
+   "dat_name": "Gather: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "unnamed_target"
+  ],
+  "notes": "Inventors' Coalition gather, two bullets long. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (J-10), resolved by stage A from the Inventors' Coalition page; the walkthrough says only 'NPC' and there is no Start field, so start.raw is null. The table's Zone (Foret de Hennetiel) is the work zone, not the giver's. Objective 'Procure 3 Craklaw Pincers' becomes item 'Craklaw Pincer' count 3 -- the wikitext links [[Craklaw Pincer]]s, so the plural is the sentence's. The middle rung is an obtain and not a fight: the page says the method does not matter, bought, traded or farmed, and this page names NO monster and NO gathering point, so the target is {none,null} and mobs stays empty rather than being filled in with the Craklaw that obviously drop them -- that name is not on this page and would be an import. Holding 3 Craklaw Pincer is the obtain rung's evidence; the same item is items on the turnin rung, which is a different field. Rank 'Disciple' is a coalition rank with no schema field, and it is NOT gates.level, which is character level -- note this assignment sits a rank above the Petitioner gathers in the same coalition. gates.repeatable and gates.expansion null: never stated in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The bullet's 'NPC' is unnamed; name and square come from this page's ## Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Craklaw Pincer",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Target {none,null}, not a bare null. This page names no monster and no square, and allows buying or trading instead of farming, so mobs is empty and grid is null. Item singularised from '3 Craklaw Pincers'; the wikitext links [[Craklaw Pincer]]."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Craklaw Pincer",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade the three, then Report on the quest outcome -- one interaction at one NPC, so one turnin rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Morimar Basalt Fields",
+   "page_id": 98822,
+   "revision_id": 510464,
+   "source_sha256": "5cc77218037d1b7051884a5a64f71d8f1552f3f07d60c478e98e24c7b75ac3a5",
+   "cache_file": "0098822_gather_morimar_basalt_fields_8d493a8d0c"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 36,
+   "dat_name": "Gather: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_from_coalition_page",
+   "or_branch_unmodelled",
+   "unnamed_target"
+  ],
+  "notes": "Inventors' Coalition gather, two bullets long. Giver from this page's ## Giver block, Task Delegator - Western Adoulin (J-10), resolved by stage A from the Inventors' Coalition page; the walkthrough says only 'NPC' and there is no Start field, so start.raw is null. The table's Zone (Morimar Basalt Fields) is where the work happens, not where the giver stands. Objective 'Procure 3 Peiste Stingers' becomes item 'Peiste Stinger' count 3 -- the wikitext links [[Peiste Stinger]]s and the plural belongs to the sentence. The middle rung is an obtain, not a fight: the page says explicitly the method does not matter, and it names no monster and no square, so the target is {none,null} and mobs stays empty; the peistes that obviously drop these are not named on this page and are not imported. Holding 3 Peiste Stinger is the obtain rung's evidence, and the same item is items on the turnin rung -- a different field, not a second evidence claim. Rank 'Disciple' is a coalition rank with no schema field and is NOT gates.level, which is character level. gates.repeatable and gates.expansion null -- this page never says either in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The bullet's 'NPC' is unnamed; name and square come from this page's ## Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Peiste Stinger",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Target {none,null}, never a bare null. No monster and no square are named on this page, and the stingers may be bought or traded, so mobs is empty and grid is null. Item singularised from '3 Peiste Stingers'; the wikitext links [[Peiste Stinger]]."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Peiste Stinger",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade the three, then Report on the quest outcome -- one interaction at one NPC, so one turnin rung."
+   }
+  ]
+ }
+]

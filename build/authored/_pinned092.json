@@ -1,0 +1,168 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 1-8",
+   "page_id": 98568,
+   "revision_id": 749742,
+   "source_sha256": "fff23372bd6815462339c723f86c890f5d5f0a878892d26e433d4b1d182093c5",
+   "cache_file": "0098568_seekers_of_adoulin_mission_1_8_a5a016f6c9"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 128,
+   "dat_name": "Arciela Appears Again",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "hand_pinned_identity",
+   "start_recovered_from_walkthrough",
+   "imprimatur_gate_unmodelled",
+   "fame_region_unmodelled",
+   "start_zone_withheld",
+   "walkthrough_is_mostly_advice"
+  ],
+  "notes": "PINNED BY HAND because the DAT name 'Arciela Appears Again' is a redirect stub, so no automatic binder could reach this page. identity, source, match_rule and match_conf are copied verbatim from the pinned rendering's front matter; match_conf stays 'medium' and is not upgraded.\n\nTHE LADDER IS ONE RUNG and it comes from the UNNUMBERED lead sentence of the Walkthrough section: 'Use a certain number of Imprimaturs and then speak to Levil in the Pioneers' Coalition to complete this Mission and start the next.' That sentence sits above bullet [1] and carries no number of its own, so the step cites source_bullets [0] in its documented sense of 'not read from a numbered walkthrough bullet'. It is NOT from the header -- the header's Start field is empty on this revision (the pinned rendering omits the line entirely, the auto rendering prints '(empty)'), which is why start.raw is null.\n\nGIVER RECOVERED FROM THE WALKTHROUGH. Levil is the only NPC this mission asks you to interact with, and that same sentence makes him both where the mission ends and where the next one begins, so start.npc is Levil rather than null. Leaving it null would have left this mission with no marker at all: the header names no Start and the rendering carries no chronicle giver either. What I did withhold is the LOCATION. The page names the Pioneers' Coalition, but that is a building/organisation and not a zone the client knows, and no sentence anywhere on the page gives a zone or a map square for Levil -- so start.zone, start.grid and the step's zone and grid are all null rather than guessed. The name is distinctive enough to resolve without a zone hint.\n\nWHAT IS NOT A STEP, and why. Bullet [1] is the REQUIREMENT, and it says outright that it 'can be fulfilled prior to this Mission' -- something you are allowed to finish before the mission begins is a gate, not a rung, so the Imprimatur spend is described here and kept out of the ladder. Its sub-bullets give the requirement's shape (Coalition Assignments, measured by total Imprimaturs spent on them, plus a level of Adoulin Fame) and one worked figure (15 imps utilised + Fame 2). NEITHER HALF IS MODELLABLE: there is no schema field for Imprimaturs spent, and Adoulin is not one of the nine fame regions, so gates.fame is left wholly null rather than half-asserted with a level and no region. Bullets [2] and [3] are two ways to GRIND that requirement -- repeat the 'Gather Materials: Rala Waterways' Task at the Inventors' Coalition, trading 3 Bloodthread to the Task Delegator and talking to him again, or run Couriers' Coalition deliveries via waypoints and bivouacs. The Task Delegator is a named NPC and would have been easy to promote, but he belongs to a coalition assignment and not to this mission; a rung on him would move the marker off Levil and onto a counter. Bullet [4] is a link to a trio of repeatable item-turn-in fame quests plus AH and Home Point advice, and bullet [5] is a bare link to Adoulin Quests. Bullets [6]-[8] are the 'Going Forward' section as this pinned rendering numbers it -- the auto rendering splits the same three bullets out under 'After the walkthrough: Going Forward' and restarts them at [1]-[3] -- and all three are advice about LATER content: banking Imprimaturs for a future mission, and ranking coalitions to Legend for Ergon Weapons and the Golden shovel cordon. None of it is a rung of this mission.\n\nNO EVIDENCE and NO RETURN STEP. The header's Reward field is empty and no bullet hands you an item or key item, so evidence is null. The one interaction on the page IS the completion, so there is nothing to return to and none was invented. gates.repeatable is null because the header's Repeatable field is empty and no sentence on the page says either way -- not false, because the page never says so.\n\ngates.expansion is the corpus's code 'adoulin' for the header's words 'Seekers of Adoulin' -- the field is asserted because the page states the expansion in words, and the code is the spelling 102 other adoulin records already use.\n\nConfidence is medium: the single rung is right and is stated in plain words, but the substance of the mission is a spend-and-fame gate the schema cannot express, and the giver had to be recovered from prose because the header gave none.\n\nPROVENANCE NOTE for whoever reads this next: check_authored.py resolves the rendered front matter by cache_file, and build/rendered/ still holds the pre-pin auto rendering under that exact filename (match_rule 'header_mission_name', match_conf 'exact'). Every other field on the two renderings is byte-identical, including source_sha256, so the record traces to the right revision; the two match_* fields are copied from the PINNED rendering as instructed and are what the checker reports.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Meeting of the Minds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": null,
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "From the unnumbered lead sentence above bullet [1], not from the header: 'speak to Levil in the Pioneers' Coalition to complete this Mission and start the next.' The page places him in the Pioneers' Coalition, which is a building rather than a client zone, and gives no zone and no map square anywhere, so zone and grid are null instead of guessed. Speaking to him is the completion, so there is no separate hand-in rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aht Urhgan Mission 47",
+   "page_id": 13871,
+   "revision_id": 606826,
+   "source_sha256": "bc97dafc631e5f3e4465accb428b2ea9247c0e622cea2992b3e35e383b6001b6",
+   "cache_file": "0013871_aht_urhgan_mission_47_57f94379e7"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "toau",
+   "id": 46,
+   "dat_name": "The Empress Crowned",
+   "match_rule": "pinned_by_hand",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "hand_pinned_identity",
+   "walkthrough_incomplete",
+   "walkthrough_is_reward_only",
+   "start_is_object",
+   "step_from_header",
+   "reward_choice_unmodelled"
+  ],
+  "notes": "PINNED BY HAND because the DAT name 'The Empress Crowned' is a redirect stub, so no automatic binder could reach this page. identity, source, match_rule and match_conf are copied verbatim from the pinned rendering's front matter; match_conf stays 'medium' and is not upgraded.\n\nTHE WALKTHROUGH INSTRUCTS NOTHING. Its one bullet is 'You get to choose your ring now!' and both sub-bullets are reward rules: that you need not choose immediately and will get the Imperial Standard regardless, and that Nadeey in Aht Urhgan Whitegate (J-7) will swap your Aht Urhgan Mission reward afterwards, with the timer to reacquire one resetting on the next conquest tally (Sunday 0:00 JST). Rewards, outcomes and cooldowns are not steps. The Nadeey sentence in particular is an after-the-fact service for changing a reward you already hold -- 'You may now change...' -- and NOT a return-to-giver, so it is deliberately left out of the ladder rather than promoted into one; recording it would have put a rung on an NPC this mission never sends you to.\n\nTHE ONE RUNG IS READ FROM THE HEADER, which is why it cites source_bullets [0]. What the page does state about where this mission happens is its Start field: 'Imperial Whitegate, Aht Urhgan Whitegate - (L-8)'. The Imperial Whitegate is the gate itself, a targetable object rather than an NPC, so start.npc carries the object's name and the step targets it as type object with the header's own zone and square. Entity, zone and grid are all the header's words; nothing here is inferred from anywhere else. The step's kind is 'cutscene' because the page names the ceremony at length in its Description ('the honor of crowning Empress Nashmeira II') but never states an interaction verb -- I am not going to claim you examine it when the page does not say so.\n\nNO EVIDENCE. The Imperial Standard and the choice of one of Balrahn's Ring, Jalzahn's Ring or Ulthalam's Ring are this mission's Reward. On a one-rung ladder, holding any of them would prove the mission is OVER rather than that a rung is behind you, which is exactly the end-of-quest case hard rule 7 keeps out; no numbered bullet hands you anything earlier. The ring CHOICE itself is a menu attached to the reward with no place and no NPC of its own, so it is not modelled at all -- flagged rather than faked.\n\nCONFIDENCE MEDIUM, not high and not low. The rung cannot point anywhere the page does not name, so it is safe; but the ladder is plainly incomplete, and the Reward field is malformed on this revision -- 'One of the following:' followed by three empty list rows in the auto rendering, a bare '{{imgpop' in the pinned one -- which reads like a page that was never finished rather than a walkthrough I have failed to find. For the record, an earlier machine reading of this same revision (build/authored/_mission009.json, confidence low) recorded an EMPTY ladder on the grounds that the page instructs nothing. I agree about the walkthrough and differ only about the header: naming the entity, zone and square that the mission's own Start field gives is reading the page, not manufacturing a rung, and the marker lands in the same square either way. That record is machine-authored and carries no human block, so this is a disagreement between two readings and not an overwrite of a correction.\n\ngates.repeatable is false because the header says 'Repeatable: No' in words. gates.fame is wholly null: the header has no Fame field and no bullet mentions fame. gates.expansion is the corpus's code 'toau' for the header's words 'Treasures of Aht Urhgan' -- asserted because the page states the expansion in words, spelled the way 115 other toau records already spell it.\n\nPROVENANCE NOTE for whoever reads this next: check_authored.py resolves the rendered front matter by cache_file, and build/rendered/ still holds the pre-pin auto rendering under that exact filename (match_rule 'header_mission_name', match_conf 'exact'). Every other field on the two renderings is byte-identical, including source_sha256, so the record traces to the right revision; the two match_* fields are copied from the PINNED rendering as instructed and are what the checker reports.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Imperial Coronation",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Imperial Whitegate",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "L-8",
+   "raw": "Imperial Whitegate, Aht Urhgan Whitegate - (L-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Read from the header's Start field, not from a walkthrough bullet: 'Imperial Whitegate, Aht Urhgan Whitegate - (L-8)'. The Imperial Whitegate is the gate, an object and not an NPC. 'cutscene' because the page describes the coronation but never states what you do at the gate; no bullet instructs an examine, so none is claimed. Nadeey at (J-7) is a post-mission reward swap and is not a rung."
+   }
+  ]
+ }
+]

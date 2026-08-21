@@ -1,0 +1,1137 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 3-3-1",
+   "page_id": 104720,
+   "revision_id": 677892,
+   "source_sha256": "4be3a82fd9e7137be889b3678f6760859df469473ddcd9f198c976946dd05ee3",
+   "cache_file": "0104720_seekers_of_adoulin_mission_3_3_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 202,
+   "dat_name": "Evil Entities",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the single walkthrough bullet as Elmric, which AGREES with chronicle_snpc ('elmric') -- nothing moves.\n\nOne bullet, one rung: go to the Ceizak Battlegrounds and talk to Elmric at the Frontier Station. The mission orders say the same thing in prose ('Return to the Ceizak Battlegrounds to see what became of her'), so there is nothing else on the page to read. No key item is granted, held or spent anywhere in this mission, so evidence is null on the only step -- that is the correct reading, not an omission.\n\nThe page gives no grid. Elmric's own BG Wiki page puts him at the Frontier Station in Ceizak Battlegrounds (K-7); that is where the grid comes from and it is display text only, since the marker rides the NPC key. Header Repeatable is (empty), so gates.repeatable stays null rather than false -- the page did not say, and an unknown written as false is a marker that can never appear.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Summoned by Spirits",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Elmric",
+   "zone": "Ceizak Battlegrounds",
+   "grid": "K-7",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Elmric"
+    },
+    "zone": "Ceizak Battlegrounds",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Frontier Station; grid from Elmric's own BG Wiki page, the mission page gives none"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 3-4",
+   "page_id": 108175,
+   "revision_id": 753411,
+   "source_sha256": "f5347518bd65739051953bf4f0782d50d739545fae912f63012e4274455a76b0",
+   "cache_file": "0108175_seekers_of_adoulin_mission_3_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 212,
+   "dat_name": "The Man in Black",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "or_branch_unmodelled",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from bullet 1 as Masad at the Mummers' Coalition in Western Adoulin, which AGREES with chronicle_snpc ('masad'). Teodor is named all over this page, but he is the cutscene partner and the minigame opponent, not a standing entity you walk up to -- every interaction, including retrying after a loss, is with Masad. Targeting Teodor would have been the classic pattern-match error here.\n\nTWO RUNGS, NOT EIGHT. Bullet 1 is the cutscene. Bullet 2 is the Boom or Bust minigame you must actually beat (three rounds). Bullet 3 -- talk to Masad twice in a row after a loss -- is how you re-enter that same rung, so it merges into it rather than becoming a rung of its own. Bullets 4 through 8 are the RULES of the minigame (shooting, staying, the three tricks, folding, the bust-over-11 arithmetic): commentary on how to play, not things you go and do. Both rungs sit on the same NPC, so this is one marker either way; the second rung exists because beating the game is a real obstacle between the two cutscenes.\n\nALTERNATIVE PATH RECORDED BUT NOT MODELLED. The after-the-walkthrough section says that if you hold the key item 'Rhapsody in Azure' you may buy the key item 'Card Jailer Teodor' from a Curio Vendor Moogle for 1,000 gil and skip the minigame entirely, then return to Masad for the final cutscene. It is a genuine OR branch, but both arms begin and end on Masad so the marker is identical on either, and NEITHER key item name resolves against this client's KI table -- resolve.lua returns no id for 'Rhapsody in Azure' or for 'Card Jailer Teodor' under any casing -- so putting either in items_alt would have produced an entry stage C drops. It stays here and in or_branch_unmodelled. The Curio Vendor Moogle is likewise not made a step: the page never says which one or where, and 'Moogle' with no zone is the ambiguous-target shape the validator forbids outright.\n\nGrid (G-10) is from Masad's own BG Wiki page; the mission page gives none.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Clear Skies",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Masad",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Masad"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Mummers' Coalition; the cutscene is with Teodor, who is not a standing entity here"
+   },
+   {
+    "n": 2,
+    "kind": "other",
+    "target": {
+     "type": "npc",
+     "name": "Masad"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "beat Teodor at Boom or Bust -- three rounds won. On a loss, talk to Masad twice in a row to try again, which is why bullet 3 merges here. Skippable with the Card Jailer Teodor key item; see the mission note."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 3-4-4",
+   "page_id": 108274,
+   "revision_id": 664623,
+   "source_sha256": "5c5e2206b360252b5bf4048c9c4148d9c5273754a2c82d3ca1b690c637dff2bc",
+   "cache_file": "0108274_seekers_of_adoulin_mission_3_4_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 222,
+   "dat_name": "August's Heirloom",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Ploh Trishbahk at the castle gate in Eastern Adoulin (K-9), which AGREES with chronicle_snpc ('ploh trishbahk').\n\nOne bullet, one rung, and this is the one page in the lane that states its own grid, so nothing is imported here. The bullet's tail -- 'for a cutscene that starts the next mission' -- is an OUTCOME and not a second step; authoring it would put a rung of Beauty and the Beast on this record.\n\nTeodor's riddle and Arciela in the mission orders are story: nothing is held, traded or received, so items is empty and evidence is null. Header Repeatable is (empty), so gates.repeatable stays null rather than false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Order's Treasures",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": "K-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the castle gate; the cutscene rolls straight into the next mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 3-5-2",
+   "page_id": 108298,
+   "revision_id": 417168,
+   "source_sha256": "3bfafd8edb13c43f89cd9ddcd9cc6847ceed7a45727d962d80a182ff7efbea5c",
+   "cache_file": "0108298_seekers_of_adoulin_mission_3_5_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 228,
+   "dat_name": "In Search of Arciela",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Levil at the Pioneers' Coalition in Western Adoulin, which AGREES with chronicle_snpc ('levil').\n\nOne bullet, one rung. The mission orders add nothing the bullet does not already say -- Rosulatia's pome glowing red is the reason you are sent, not a thing you carry -- so items is empty and evidence null.\n\nThe page names the zone but no grid. (E-8) comes from Levil's own BG Wiki page and is display text only; the marker rides the NPC key. Header Repeatable is (empty) so gates.repeatable stays null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Wildcat with a Gold Pelt",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Pioneers' Coalition; grid from Levil's own BG Wiki page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 3-6-5",
+   "page_id": 108349,
+   "revision_id": 683753,
+   "source_sha256": "d0eea9080a141fbe275e3df17fd969bb73941e0d78dc41eb2525ef8b64a5c184",
+   "cache_file": "0108349_seekers_of_adoulin_mission_3_6_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 250,
+   "dat_name": "Glimmer of Portent",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "time_gated",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Levil, which AGREES with chronicle_snpc ('levil').\n\nMEDIUM FOR THE GATE, NOT THE LADDER. The bullet is 'wait until the next game day and speak to Levil'. The talk is a clean rung; the wait is not modellable at all -- no packet reports game time, so it cannot be a predicate, and it cannot be a rung of its own either, because a wait step with target none would be an unmarkable rung that can never read done. It lives in the step note and in the time_gated flag. The player sees the right marker; the addon simply cannot tell them it is armed yet.\n\nThis page names only 'the Pioneers' Coalition' and no zone. Western Adoulin (E-8) is from Levil's own BG Wiki page, corroborated by two sibling pages in this same lane -- In Search of Arciela (adoulin 228) and Tree Grafting (adoulin 284) both write 'the Pioneers' Coalition in Western Adoulin'.\n\nNo key item anywhere on the page, so evidence is null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Salvation",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Pioneers' Coalition, and only after the next game day rolls over -- game time is invisible to the addon. Zone and grid from Levil's own BG Wiki page; the page names only the Coalition."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-1",
+   "page_id": 110425,
+   "revision_id": 771660,
+   "source_sha256": "6a6cab4e8f74befaa4f177a82caa82b278979c9663068b419bde704dc33d2dc3",
+   "cache_file": "0110425_seekers_of_adoulin_mission_4_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 252,
+   "dat_name": "...Into the Fire",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Kipligg at the entrance of the Couriers' Coalition, which AGREES with chronicle_snpc ('kipligg').\n\nTHE SUB-BULLET IS NOT A STEP. 'His request for you to head to the Waterfront in Western Adoulin begins the next Mission' is the NEXT mission starting -- authoring a Waterfront rung here would put a step of Melvien de Malecroix on this record and send the player onward before this mission has closed. One bullet, one rung.\n\nThe page never names the zone Kipligg is in; the only 'Western Adoulin' on it belongs to the Waterfront in that sub-bullet. Western Adoulin (G-7) is from Kipligg's own BG Wiki page.\n\ngates.prev carries the header's Previous, and its identity is filled in because that mission is in this same lane and bound by the same exact DAT lookup (mission/adoulin/250, Glimmer of Portent). Note that adoulin is a linear line -- the runtime gets a current-mission pointer and no completed bitfield -- so prev cannot actually be observed; it is recorded for the human, not for a predicate.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Glimmer of Portent",
+     "cat": "mission",
+     "area": "adoulin",
+     "id": 250
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Kipligg",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kipligg"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the entrance of the Couriers' Coalition; zone and grid from Kipligg's own BG Wiki page, the mission page states neither"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-1-3",
+   "page_id": 110407,
+   "revision_id": 389571,
+   "source_sha256": "ddce2ad4d868dffc20a7c1cc51119bd8212db72e160db1b52b007293d4aad5ca",
+   "cache_file": "0110407_seekers_of_adoulin_mission_4_1_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 258,
+   "dat_name": "Done and Delivered",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Kipligg at the entrance of the Couriers' Coalition, which AGREES with chronicle_snpc ('kipligg'). Same NPC at the same spot as ...Into the Fire (adoulin 252) earlier in this lane.\n\nOne bullet, one rung -- 'return to, and speak with' is one talk, not a travel followed by a talk.\n\nNOTHING IS CARRIED. The mission orders' 'now that the warehouse finally has enough materials to fill its order' describes the previous mission's outcome and is not a requirement you hold: no item, no key item, so items is empty and evidence is null. This is the normal shape for an Adoulin mission and not a gap in the reading.\n\nZone and grid (Western Adoulin, G-7) are from Kipligg's own BG Wiki page; this page states neither.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Courier Catastrophe",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Kipligg",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kipligg"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the entrance of the Couriers' Coalition; zone and grid from Kipligg's own BG Wiki page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-1-4",
+   "page_id": 110428,
+   "revision_id": 678809,
+   "source_sha256": "7a5597a6666760b966ad4fcf2dd37fa38a5aa56e6a3ad496a667d3b8dc501ad2",
+   "cache_file": "0110428_seekers_of_adoulin_mission_4_1_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 260,
+   "dat_name": "Ministerial Whispers",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Levil, which AGREES with chronicle_snpc ('levil').\n\nThe bullet names no place at all -- just 'speak with Levil for a small reward'. The mission orders say to return to the Pioneers' Coalition, and Levil's own BG Wiki page puts him there in Western Adoulin (E-8); that is where zone and grid come from.\n\nTHE REWARD IS NOT EVIDENCE. The header Reward is '*500 Bayld'. A reward proves the mission is over rather than that a step is done, and Bayld could not be evidence in any case -- it is a currency, not an inventory item the addon can see held. evidence stays null, items stays empty.\n\ngates.prev identity is filled in because that mission is in this same lane under the same exact DAT lookup (mission/adoulin/258, Done and Delivered).",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Done and Delivered",
+     "cat": "mission",
+     "area": "adoulin",
+     "id": 258
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Pioneers' Coalition per the mission orders; the bullet itself names no place. Zone and grid from Levil's own BG Wiki page."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-1-5",
+   "page_id": 110429,
+   "revision_id": 696308,
+   "source_sha256": "38de9f49ea612b2d9088e42ae87b548d856b0823ab9426e95c766db14f66d120",
+   "cache_file": "0110429_seekers_of_adoulin_mission_4_1_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 262,
+   "dat_name": "A Day in the Life of a Pioneer",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from bullet 1 as Levil at the Pioneers' Coalition, which AGREES with chronicle_snpc ('levil').\n\nTWO BULLETS, ONE RUNG. Bullet 2 -- choose 'What happened after that?' -- is a dialogue option inside the cutscene bullet 1 triggers, not a second thing you travel to and do. Both bullet numbers ride the single step so the merge stays auditable.\n\nThe bullet names only the Pioneers' Coalition; Western Adoulin (E-8) is from Levil's own BG Wiki page. No key item, no trade, so evidence is null and items empty.\n\ngates.prev identity is filled in because that mission is in this same lane under the same exact DAT lookup (mission/adoulin/260, Ministerial Whispers).",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Ministerial Whispers",
+     "cat": "mission",
+     "area": "adoulin",
+     "id": 260
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at the Pioneers' Coalition; pick 'What happened after that?' in the cutscene -- bullet 2 is a dialogue option, not a rung. Zone and grid from Levil's own BG Wiki page."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-3-3",
+   "page_id": 110438,
+   "revision_id": 679135,
+   "source_sha256": "3e9dfac486e4a8bf6f2698594c3b83d48cb9ef676a11c348edd19d203b94e95e",
+   "cache_file": "0110438_seekers_of_adoulin_mission_4_3_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 282,
+   "dat_name": "The Sacred Sapling",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "grid_conflict",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from bullet 1 as Ploh Trishbahk at the Castle Gates in Eastern Adoulin, which AGREES with chronicle_snpc ('ploh trishbahk').\n\nTWO BULLETS, ONE RUNG. Bullet 2 -- select 'Tree Grafting.' -- is a dialogue choice inside the cutscene bullet 1 triggers; it is also the name of the NEXT mission, which is exactly the kind of thing a keyword pass would turn into a second step.\n\nGRID CONFLICT, DECIDED AGAINST THIS PAGE. This page writes the Castle Gates as (L-9). The sibling page in this same lane -- August's Heirloom (adoulin 222) -- writes (K-9) for the same NPC at the same gates, and Ploh Trishbahk's own BG Wiki page also says (K-9). Two independent sources beat one, so (K-9) is recorded and the page's (L-9) is written down here so the override is auditable. Nothing about the marker turns on it: the grid is display text and the marker rides the NPC key.\n\nThe sapling Sajj'aka gave you is in the mission orders, but the walkthrough never asks you to hold or trade anything, so items is empty and evidence null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A New Force Arises",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": "K-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at the Castle Gates; select 'Tree Grafting.' in the cutscene. This page says (L-9); (K-9) recorded instead -- see the mission note."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-3-4",
+   "page_id": 110439,
+   "revision_id": 379191,
+   "source_sha256": "4ef0a758bd3facf44aac5b02cebb7d1101f93ec797fe8b3ab27634801cd5c9e8",
+   "cache_file": "0110439_seekers_of_adoulin_mission_4_3_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 284,
+   "dat_name": "Tree Grafting",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Levil at the Pioneers' Coalition in Western Adoulin, which AGREES with chronicle_snpc ('levil').\n\nOne bullet, one rung. The mission orders talk about grafting Sajj'aka's sapling onto the World Tree and about Ygnas's vision, but the walkthrough asks for nothing to be carried and nothing to be traded -- the whole mission is a conversation -- so items is empty and evidence is null.\n\nGrid (E-8) is from Levil's own BG Wiki page; the mission page gives none.\n\ngates.prev identity is filled in because that mission is in this same lane under the same exact DAT lookup (mission/adoulin/282, The Sacred Sapling).",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Sacred Sapling",
+     "cat": "mission",
+     "area": "adoulin",
+     "id": 282
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Seekers of Adoulin"
+  },
+  "start": {
+   "npc": "Levil",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Levil"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the Pioneers' Coalition; grid from Levil's own BG Wiki page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-4-2",
+   "page_id": 111619,
+   "revision_id": 679148,
+   "source_sha256": "d3c6866b41624a1c15463f424f5279dcbe28a5e8b075bf518063754647da7a75",
+   "cache_file": "0111619_seekers_of_adoulin_mission_4_4_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 300,
+   "dat_name": "The Tomatoes of Wrath",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Ploh Trishbahk, which AGREES with chronicle_snpc ('ploh trishbahk').\n\nTHE ZONE IS NOT WHAT THE PAGE CALLS IT. The bullet says 'head back to Adoulin Castle and talk to Ploh Trishbahk', but Ploh Trishbahk is the gate NPC and stands OUTSIDE the castle, in Eastern Adoulin (K-9) -- that is where his own BG Wiki page puts him and where the two sibling pages in this lane put him (adoulin 222 'at the castle gate in Eastern Adoulin (K-9)', adoulin 282 'at the Castle Gates in Eastern Adoulin'). Writing 'Adoulin Castle' as the step zone would have been a zone the marker cannot live in, so Eastern Adoulin is recorded and the page's phrasing is written down here.\n\nOne bullet, one rung: the extended cutscene with Arciela and the Order of Renaye is the payload, not a second step. Fremilla is named in the mission orders as the messenger and is not an entity you interact with. No key item, so evidence is null.\n\nHeader Expansion on this page reads 'Adoulin' rather than 'Seekers of Adoulin'; it is carried verbatim, as on the last three records of this lane.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Seeds of Doubt",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Adoulin"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": "K-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says 'Adoulin Castle', but he stands at the castle gate in Eastern Adoulin; zone and grid from his own BG Wiki page"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-4-4",
+   "page_id": 111621,
+   "revision_id": 741781,
+   "source_sha256": "13ff0df13c7142346c8071c3358ec9f8fd1109e4a36f8beba4af5431f8d7c304",
+   "cache_file": "0111621_seekers_of_adoulin_mission_4_4_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 306,
+   "dat_name": "An Emergency Convocation",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "zone_reset_trigger",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Ploh Trishbahk at the castle gate in Eastern Adoulin, which AGREES with chronicle_snpc ('ploh trishbahk').\n\nMEDIUM FOR THE TRIGGER, NOT THE LADDER. The bullet is 'zone out of Eastern Adoulin and then return and talk to Ploh Trishbahk'. The zone-out-and-back is a RESET that arms the cutscene, not a journey to somewhere else, and nothing in the addon observes it. Modelling it as a travel rung would have added an unmarkable step whose target is the zone the player is already standing in, and a marker on the zone you are in tells them nothing. It stays a note on the single talk rung. The mission orders say the same in prose: 'return to the castle after the ministers and maesters have had time to assemble'.\n\nThe bullet does name Eastern Adoulin, so the zone is the page's own; the grid (K-9) is from Ploh Trishbahk's BG Wiki page and is corroborated by adoulin 222 in this lane.\n\nNo key item is granted or spent, so evidence is null.\n\nHeader Expansion reads 'Adoulin' on this page and is carried verbatim.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Grave Mistake",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Adoulin"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": "K-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must zone out of Eastern Adoulin and back before he gives the cutscene -- a trigger condition the addon cannot observe, not a journey, so it is not a rung of its own. Grid from his own BG Wiki page."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Seekers of Adoulin Mission 4-5",
+   "page_id": 111622,
+   "revision_id": 384671,
+   "source_sha256": "d12ff2c37648d420f015d5f9f047741021aa28e691711a172506d4af9de7cb6d",
+   "cache_file": "0111622_seekers_of_adoulin_mission_4_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "adoulin",
+   "id": 308,
+   "dat_name": "Balamor, the Deathborne Xol",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "time_gated",
+   "location_from_npc_page"
+  ],
+  "notes": "GIVER: header Start is (empty). Recovered from the only bullet as Ploh Trishbahk, which AGREES with chronicle_snpc ('ploh trishbahk').\n\nMEDIUM for the same reason as Glimmer of Portent (adoulin 250): the bullet is 'wait until the next game day then speak to Ploh Trishbahk', and game time is invisible to the addon. The wait is a note and the time_gated flag, never a rung -- a wait step with no target would be a rung that can never read done.\n\nThe page is explicit that, unlike An Emergency Convocation immediately before it (adoulin 306), ZONING IS NOT REQUIRED here. That is worth recording precisely because the two adjacent missions look alike and differ: 306 needs a zone reset, this one needs a day roll. Neither is observable, but they are different unobservables and a reader comparing the records should not think one was copied onto the other.\n\nThis page names neither zone nor grid. Eastern Adoulin (K-9) is from Ploh Trishbahk's own BG Wiki page, corroborated by adoulin 222 in this lane. No key item, so evidence is null.\n\ngates.prev identity is filled in because that mission is in this same lane under the same exact DAT lookup (mission/adoulin/306, An Emergency Convocation). Header Expansion reads 'Adoulin' and is carried verbatim.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "An Emergency Convocation",
+     "cat": "mission",
+     "area": "adoulin",
+     "id": 306
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "Adoulin"
+  },
+  "start": {
+   "npc": "Ploh Trishbahk",
+   "zone": "Eastern Adoulin",
+   "grid": "K-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ploh Trishbahk"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the castle gate, after the next game day rolls over; the page says zoning is NOT required. Zone and grid from his own BG Wiki page."
+   }
+  ]
+ }
+]

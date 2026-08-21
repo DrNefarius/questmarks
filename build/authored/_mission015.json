@@ -1,0 +1,2759 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 1-1",
+   "page_id": 143359,
+   "revision_id": 731310,
+   "source_sha256": "53302f472b1e6e6404742a95d0f40efd2810ab0b2768a434274cd07b9dbef7e8",
+   "cache_file": "0143359_the_voracious_resurgence_mission_1_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 0,
+   "dat_name": "The Voracious Resurgence",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "The whole mission is one conversation. The page has a single top-level bullet and its one sub-bullet is a Home Point hint ('This is nearest HP #1'), not a step. Start agrees with chronicle_snpc 'gumbah' -- Gumbah, Bastok Mines (J-7), upstairs in the back room of the house on the upper walkway, which the later missions in this line describe at length and this one only gestures at. Previous is empty (this is the first rung of the tvr line), so gates.prev is []. No key items and no items anywhere: Reward is empty and nothing is handed over, so evidence is null and that is the correct answer, not a gap. tvr sends only a current-mission pointer and no completed bitfield, so nothing here can be corrected by observation later -- one honest rung is worth more than an invented second.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah, Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the back of the house on the upper walkway; nearest Home Point #1"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 1-3",
+   "page_id": 143361,
+   "revision_id": 746977,
+   "source_sha256": "378d0652821ccbf012a12265215878fb79296819627a1e38cc63304fa23a2f1d",
+   "cache_file": "0143361_the_voracious_resurgence_mission_1_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 118,
+   "dat_name": "The Brygid Cup",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "steps_from_after_section",
+   "or_branch_unmodelled",
+   "equipment_gate_unmodelled"
+  ],
+  "notes": "The Walkthrough section stops mid-mission: its three bullets get you as far as Brygid asking you to pick a costume, and the REST OF THE MISSION is in the sibling section 'After the walkthrough: NPC Outfits'. Its bullets [6] (Ruenda, outside The Steaming Sheep, Port Bastok (E-7), in costume) and [7] (back to Brygid for the reward) are real steps and are recorded as such; that section's bullets [1]-[5] are five per-NPC gear lists and are reference, not rungs. source_bullets 6 and 7 are that section's numbering, which restarts at [1].\n\nThe costume itself is the one thing I could not model. There are five mutually exclusive outfits, each three to five pieces, and they must be WORN rather than merely held, so neither items (an AND-list) nor items_alt (a flat OR of single items) can say 'any one of these five sets'. Step 3 therefore carries items_partial with the alternatives spelled out in its note, rather than a made-up AND-list that would hold the marker back until you happened to own one particular set. Azima is explicitly impossible to copy in her present-day form -- only her Shadowreign outfit -- which is another reason not to pick a winner here.\n\nStart agrees with chronicle_snpc 'gumbah'. Reward is Gil only, so there is no evidence anywhere in this mission; the second Notes section (passing gear between accounts) is advice.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Five alternative outfits, unmodellable as items: Azima (present-day impossible;",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Gloom Phantom's Approach",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah, Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "not the NPC beside Home Point #3 -- up the stairs, over the bridge, through the door, back room"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brygid"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "speak twice; the second conversation is where you agree and pick which NPC to cosplay. Home Point #4."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ruenda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "From the 'NPC Outfits' section, bullet [6]. Outside The Steaming Sheep, wearing the costume (/lockstyle off or an equipment set). Shadowreign = Witch Hat, Marduk's Jubbah, Marduk's Dastanas, Marduk's Shalwar, Sorcerer's Sabots first prize), Naji (Gavial Mail, Breeches, Battle Boots), Black Mud (Wool Hat, Doublet, Slops, Ash Clogs), Michea (Gambison, Brais, Gaiters), Nbu Latteh (Bronze Harness, Scale Cuisses, Scale Greaves cheapest)."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Brygid"
+    },
+    "zone": "Bastok Markets",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "from the 'NPC Outfits' section, bullet [7] -- speak to her once more for the reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 1-4",
+   "page_id": 143553,
+   "revision_id": 774145,
+   "source_sha256": "7d67f3777c220174d338f4753687a57d83815fc64dcd9bc799e4ef12747c6cec",
+   "cache_file": "0143553_the_voracious_resurgence_mission_1_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 128,
+   "dat_name": "The Destiny Destroyers",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "The canonical tvr shape, and the one every later mission in this lane repeats: talk to the giver, travel, touch a scenery object for a cutscene, touch it again to open a 15-minute fight, touch it a third time for the closing cutscene, then return to the giver. Bullets 3, 4 and 5 are three separate touches of the same Stalagmite and are three rungs, because the page itself separates them and each is a distinct interaction.\n\nBullet 2 gets its own travel rung: it is a top-level bullet, it crosses a zone boundary, and the route (Bastok Mines -> Zeruhn Mines -> Korroloka Tunnel, or the Survival Guide warp to Zeruhn Mines) is the whole content of the bullet. Where a page folds movement into an action bullet I fold it into that step instead; that rule is applied consistently across this lane.\n\nEverything under bullet 4 -- HP totals, SP abilities, the two skillchain lines, the AA TT sleep tip -- is tactics. Reward is Maat's Mix and Om. Sandwich x12, neither of which is evidence (hard rule 7), and no key item is granted anywhere, so evidence is null throughout. Start agrees with chronicle_snpc 'gumbah'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Brygid Cup",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah, Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point #1"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Korroloka Tunnel"
+    },
+    "zone": "Korroloka Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in through Zeruhn Mines from Bastok Mines, or the Survival Guide warp to Zeruhn Mines"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stalagmite"
+    },
+    "zone": "Korroloka Tunnel",
+    "grid": "D-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Map 1, the first map you reach entering via Zeruhn Mines; bottom level, no need for the upper path"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Stalagmite"
+    },
+    "zone": "Korroloka Tunnel",
+    "grid": "D-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Gloom Phantom",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Magh Bihu",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Dazbog",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "touching the Stalagmite a second time opens the fight; 15 minutes, ~30k HP each, all three have their jobs' SP abilities"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stalagmite"
+    },
+    "zone": "Korroloka Tunnel",
+    "grid": "D-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "third touch, after the fight"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 2-1",
+   "page_id": 143839,
+   "revision_id": 774151,
+   "source_sha256": "710fa3f86c792ccaf65cfea283205628e7d1ec918fc4227f1bf5286389e6789c",
+   "cache_file": "0143839_the_voracious_resurgence_mission_2_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 138,
+   "dat_name": "Kupipi's Dilemma",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "steps_from_after_section",
+   "unordered_group"
+  ],
+  "notes": "Half this mission is in the sibling section 'After the walkthrough: Obtaining the Rolanberries'. Its bullets [1]-[5] are item sourcing -- Auction House categories, the Crawler's Nest NM climb, Pellio's 50:50 trade -- and are NOT rungs; its bullets [6] (trade Kupipi the white rolanberry) and [7] (Shantotto, Windurst Walls (K-7), final cutscene and 20,000 Gil) are the end of the mission and are recorded. Those two source_bullets are that section's own numbering.\n\nThe three Tarutaru of bullet 2 are one bullet, three trades, in no stated order, so they are three steps sharing the group 'heavens-tower-tarutaru' and all draw at once. Each carries the item it wants. The Alraune / Bibiki Bay sub-bullet is advice on where the Dream Flower Petal drops, not a rung.\n\nKupipi is in Heavens Tower, which is its own zone (the page's 'Windurst Walls HP #1' is the nearest home point, in the adjacent zone), so every Kupipi step is zoned Heavens Tower. Steps 5 and 6 are consecutive on her and therefore one marker; I kept them apart because bullet 3 is the cutscene that asks for the berry and after-bullet [6] is the trade that answers it.\n\nWh. Rolanberry and Ri. Wh. Rolan. are the short forms of White Rolanberry (6604) and Ripe White Rolanberry (6605); the HQ is a genuine independent alternative, so it is items_alt rather than a second step. Reward is Gil, no key item is granted anywhere, evidence is null throughout. Start agrees with chronicle_snpc 'kupipi'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Destiny Destroyers",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Kupipi",
+   "zone": "Heavens Tower",
+   "grid": null,
+   "raw": "Kupipi, Heavens Tower"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in her office; nearest home point is Windurst Walls HP #1"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sassa-Kotassa"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Red Grass Cloth",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "heavens-tower-tarutaru",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "lobby area outside Kupipi's office; any order"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sheelala"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo Drink",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "heavens-tower-tarutaru",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the drink comes from the Curio Vendor Moogle or the Auction House"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Habida-Jubida"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Dream Flower Petal",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "heavens-tower-tarutaru",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "page writes the short form 'Dream Fl. Petal'; drops from Alraune on Bibiki Bay - Purgonorgo Isle after it uses Dream Flower, with the mission inactive too"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the cutscene in which she asks for a white rolanberry"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "White Rolanberry",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Ripe White Rolanberry",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "from the 'Obtaining the Rolanberries' section, bullet [6]. Either berry works; the cutscene differs slightly and the HQ version is replayable from Mashua."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shantotto"
+    },
+    "zone": "Windurst Walls",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "from the 'Obtaining the Rolanberries' section, bullet [7] -- final cutscene and 20,000 Gil"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 2-2",
+   "page_id": 143840,
+   "revision_id": 770241,
+   "source_sha256": "bedba77ec2e7a2af587dbaf7109bd0a4c8b9dcb8d82c83322a403684cdefc485",
+   "cache_file": "0143840_the_voracious_resurgence_mission_2_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 146,
+   "dat_name": "The Cardians' Duty",
+   "match_rule": "header_mission_name+relaxed",
+   "match_conf": "relaxed_name"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "header_name_variant"
+  ],
+  "notes": "The header's Mission Name is 'The Cardian's Duty' and the client's is 'The Cardians'' Duty' -- one misplaced apostrophe, which is why match_rule is the relaxed one. Identity is copied verbatim from the front matter and not second-guessed; the same misspelling appears as the Previous field of Mission 2-3, where I wrote the client's spelling instead so the prerequisite can resolve.\n\nStandard tvr shape: giver, second NPC, touch scenery for a cutscene, touch again for a 15-minute fight, touch again, return. Bullet 2's sub-bullet re-visiting the three Tarutaru from Mission 2-1 is marked '(Optional)' by the page and gives hints only, so it is not a rung. Bullet 3's movement folds into the Disturbed Earth step rather than becoming its own travel rung, because the bullet's action is the check, not the journey.\n\nKing of Spades is an ally in the fight, not a target, and the fight is lost if he dies -- recorded as a note, never as a mob. Reward is Gil, no key item at any step, so evidence is null throughout. Start agrees with chronicle_snpc 'shantotto'; the page notes no zoning is needed between this mission and the last.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Kupipi's Dilemma",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Shantotto",
+   "zone": "Windurst Walls",
+   "grid": "K-7",
+   "raw": "Shantotto, Windurst Walls (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Shantotto"
+    },
+    "zone": "Windurst Walls",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in her manor; no zoning required after the previous mission"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page's '(Optional)' re-visit to Sassa-Kotassa, Sheelala and Habida-Jubida in the lobby is hints only and is not a step"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Disturbed Earth"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "northeast corner, south of the Tower and close to the canyon wall; Unity Warp (99) to East Sarutabaruta or the Survival Guide to Inner Horutoto Ruins"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Disturbed Earth"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Vicar",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Yagudo Centurion",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Yagudo Underling",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "clicking it again spawns the battle; 15 minutes, ~30k HP each. King of Spades (PLD) fights alongside you and you lose automatically if he dies -- he is an ally, not a target."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Disturbed Earth"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "third check, after the battle"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "final cutscene and reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 2-3",
+   "page_id": 143965,
+   "revision_id": 774283,
+   "source_sha256": "85540f7c1401cbb644efad83e747047afb35d0973390cc35986f50cc93735ae6",
+   "cache_file": "0143965_the_voracious_resurgence_mission_2_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 158,
+   "dat_name": "Zhuu Buxu's Gambit",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "The best-observed mission in this lane: two key items, both granted mid-mission and neither in the Reward field (which is Gil), so both are legitimate evidence. Star-crested summons (KI 3229) lands at step 1 and Strange doll (KI 3230) at step 4, different items on different rungs, so the mark cannot jump.\n\nBullet 3 is one action, not two: the page is explicit that there is NO preemptive cutscene and that touching the Worn Chest gets you attacked from behind immediately, so it is a single fight rung targeting the chest rather than an invented examine followed by a fight. Bullet 4 -- touching the chest again -- IS its own rung, and the page adds that zoning out mid-fight lets you come back and check the chest without refighting.\n\nPrevious is written 'The Cardian's Duty' on this page, but the client's name for that mission is 'The Cardians'' Duty' (see Mission 2-2's front matter); I recorded the client's spelling so the prerequisite resolves rather than the header's typo. Start agrees with chronicle_snpc 'kupipi' -- Kupipi in Heavens Tower, the zone next to Windurst Walls HP #1. Repeatable is 'No' here, unlike the earlier pages that leave the field empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Cardians' Duty",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Kupipi",
+   "zone": "Heavens Tower",
+   "grid": null,
+   "raw": "Kupipi, Heavens Tower"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Star-crested summons",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Windurst Walls HP #1 is the nearest home point; zoning after the last mission is not required"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "east wing of the Optistery, Map 1, near Home Point #1"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Worn Chest"
+    },
+    "zone": "Giddeus",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Lookout",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "storage room of the basement, second map; drop via exit E on Map 1, and click the DOOR to the treasure room, not the Yagudo guard. Touching the chest starts the fight with no cutscene first -- ~30k HP, 15 minutes, Meikyo Shisui near 66% and Yaegasumi near 33%."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Worn Chest"
+    },
+    "zone": "Giddeus",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Strange doll",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "if you zoned during the fight you can return and check the chest without refighting"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 2-4",
+   "page_id": 143966,
+   "revision_id": 774284,
+   "source_sha256": "2eaa36864dfef9c1dd5002d1f2248ff0363a726df6973527a30fd4fa8d31fd93",
+   "cache_file": "0143966_the_voracious_resurgence_mission_2_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 168,
+   "dat_name": "Star Onion Fortune",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "temporary_key_item_unobservable",
+   "bullet_split"
+  ],
+  "notes": "Bullets 2, 3 and 4 collapse into one rung. Bullet 3 -- 'open your Temporary Key Item menu and examine the Piece of evidence' -- has no world target at all, and bullets 2 and 4 are both Kohlo-Lakolo, so wedging an unmarkable rung between two steps on the same NPC would buy nothing. The cipher, and the page's aside that your character deciphers it whether you did or not, live in that step's note.\n\nPiece of evidence DOES resolve as key item 3231, and I deliberately did NOT use it as evidence. The page calls it a Temporary Key Item, and temporary key items are not in the key-item bitfield the runtime reads; evidence that can never read true would pin the ladder on this rung forever, which is a wrong marker rather than a missing one. Sublime lucky egg (KI 3232) is a normal key item, is granted on defeating the NM, and is not the Reward (Oden x12), so it is the mission's one evidence point and sits on the fight.\n\nBullet 5 names three Muggy Air sites -- (D-5), (H-6), (H-9), Map 1, bottom floor -- of which only one is live at a time and the live one glows white. That is one search, so one examine rung; grid holds the first and the note holds all three. The Templar Crawler fight is split out because the touch spawns it and the kill is what grants the egg. Speaking to Shanruru and re-talking to Kohlo-Lakolo are the page's own '(Optional)'. Start agrees with chronicle_snpc 'tosuka-porika'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Zhuu Buxu's Gambit",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Tosuka-Porika",
+   "zone": "Windurst Waters",
+   "grid": "G-8",
+   "raw": "Tosuka-Porika, Windurst Waters (G-8) Map 1"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tosuka-Porika"
+    },
+    "zone": "Windurst Waters",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Optistery, Map 1; zoning is not required after the previous mission"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "behind Warehouse 1, near Home Point #1. Two conversations with a menu action between them: examine the Piece of evidence in your Temporary Key Items to see the cipher, then speak to him again and say yes. The cipher is a Caesar shift reading 'I require the special egg and a very strong individual. First comes the egg.'"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Muggy Air"
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "D-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Templar Crawler",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6
+    ],
+    "note": "three sites on Map 1's bottom floor -- (D-5), (H-6), (H-9) -- and only the live one, which glows white, works; you may have to walk all three. Proto-Waypoint lands at (D-4); Unity Warp (125) needs you to turn around and zone to Map 1."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Boyahda Tree",
+    "grid": "D-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Sublime lucky egg",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Templar Crawler",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "spawns on the touch and every party member gets the egg on the kill; enhanced Poison Breath, and an extra Protect after Cocoon"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 2-5",
+   "page_id": 143967,
+   "revision_id": 764840,
+   "source_sha256": "9de1599040afc14a50bdf6417aa87310a4613ded4569e9a369ea2f67e675f982",
+   "cache_file": "0143967_the_voracious_resurgence_mission_2_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 178,
+   "dat_name": "The Doll Whisperer",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Standard shape again: giver, touch the Secluded Spot for a cutscene, touch it again for the Chepelle fight, touch it a third time, back to the giver, then Kupipi for the close.\n\nOne evidence point: Magicked doll (KI 3233), handed over at step 5 and not in the Reward field (Maat's Mix and Per. Lucky Egg), so it is this mission's own. The Sublime lucky egg the Description leans on ('you have the egg that the Yagudo require') was granted by Mission 2-4 and is that mission's evidence, not mine -- and since this walkthrough never asks you to trade or hold it, I did not put it in items either; inventing a hold requirement would grey a marker for a player who spent or lost it.\n\nThe last rung is 'Speak to Kupipi', with no location on this page. She is in Heavens Tower, as Missions 2-1, 2-2 and 2-3 in this same line all state; I recorded that zone rather than leaving it null and said so here. Chepelle's three pets, Familiar reuse and damage resistance are tactics. The optional S.O.B. chatter and Nanaa Mihgo cutscene are the page's own '(Optional)'. Start agrees with chronicle_snpc 'kohlo-lakolo'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Star Onion Fortune",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Kohlo-Lakolo",
+   "zone": "Port Windurst",
+   "grid": "G-5",
+   "raw": "Kohlo-Lakolo, Port Windurst (G-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zoning is not required after the previous mission"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Secluded Spot"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "south of the Tower, behind the tree; closest exit is Windurst Waters HP #1 (E)"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Secluded Spot"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Chepelle",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "second touch opens the fight. Her pets -- Chepelle's Tiger from the start, Chepelle's Sheep near 75%, Chepelle's Hare near 50% -- need not be killed and can be slept; she reuses Familiar from 60% every minute."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Secluded Spot"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "third touch, after she is defeated"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Magicked doll",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "final cutscene and reward. This page gives no location for her; Heavens Tower is taken from Missions 2-1/2-2/2-3 of this same line."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 3-1",
+   "page_id": 144444,
+   "revision_id": 768451,
+   "source_sha256": "5b8670a1fa686c26edd5d1ec7e17ee8182a4d96eaae47f22fc0eda9c47b973b4",
+   "cache_file": "0144444_the_voracious_resurgence_mission_3_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 192,
+   "dat_name": "Dancing Prince",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two key items, two rungs, no overlap: Orcish battle plan (KI 3254) is granted automatically on killing the Orcish Bewitcher, and Quemaricond's report (KI 3255) comes from Quemaricond afterwards. The Reward is 20,000 Gil, so neither is a reward and both are honest evidence.\n\nBullet 5 is a single fight rung, not an examine plus a fight: the page says touching the Ritual Site BEGINS the confrontation, with no cutscene in between, so there is nothing to mark separately. It straddles (H-10)/(H-9); grid holds H-10 and the note holds both. Bullet 4 is a bare journey across a zone line and gets its own travel rung, with the Davoi-side entrance in the note.\n\nQuemaricond paces between (G-7) and (H-7) on the path, so both his rungs carry G-7 with the pacing in the note -- a marker on a walking NPC is the resolver's problem, not the ladder's. Start agrees with chronicle_snpc 'halver'; Chateau d'Oraguille is its own zone, reached from Northern San d'Oria HP #2.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Doll Whisperer",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": null,
+   "raw": "Halver, Chateau d'Oraguille"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in from Northern San d'Oria, Home Point #2"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Royal Knights' quarters, to the west"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quemaricond"
+    },
+    "zone": "Davoi",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he paces the path between (G-7) and (H-7). Proto-Waypoint is quickest; Survival Guide (Norvallen) otherwise."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Monastic Cavern"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "in from the Davoi entrance at (H-11)"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Ritual Site"
+    },
+    "zone": "Monastic Cavern",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Orcish battle plan",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Orcish Bewitcher",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "on the (H-10)/(H-9) border. Touching it starts the fight outright -- ~30k HP, Manafont as early as 90%. The key item is automatic on the kill."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quemaricond"
+    },
+    "zone": "Davoi",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Quemaricond's report",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Escape and re-enter Davoi is the fastest way back"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "final cutscene and reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 3-2",
+   "page_id": 144445,
+   "revision_id": 774285,
+   "source_sha256": "fa469392244b96913c470a71166d685f0a673eebd6b0b34019d7d4f91e0cd47c",
+   "cache_file": "0144445_the_voracious_resurgence_mission_3_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 202,
+   "dat_name": "Claidie's Concern",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "location_trigger_unmarkable"
+  ],
+  "notes": "Bullet 2 is a place, not an entity: you walk to Queen Leaute's Memorial Garden (F-7), west of the Central Garden, and the cutscene fires. There is nothing to click, so the target is type none with the place named in the note rather than invented as an object -- it keeps the rung without pointing a marker at something that does not exist.\n\nBullet 3 is the one evidence point: harvesting the glowing flower Harvesting Point at Attohwa Chasm (H-8) grants Solidago flower (KI 3256), which is not the Reward (20,000 Gil). The page is emphatic that this is a SPECIFIC harvesting point, that Trailblazing Sickles and their +1 do not work, and that the point can vanish for you alone once you have the key item. Items carries one Sickle because a count of 'some Sickles' is not observable and one is what a single harvest needs; the plural is in the note.\n\nChalvatot is met back at the Majesty's Garden, inside the Chateau, and the page gives no grid for him. Start agrees with chronicle_snpc 'halver'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Dancing Prince",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": null,
+   "raw": "Halver, Chateau d'Oraguille"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "re-zoning is not required if you continue straight from the previous mission"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "walk to Queen Leaute's Memorial Garden, west of the Central Garden; the cutscene fires on arrival and there is nothing to click"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Harvesting Point"
+    },
+    "zone": "Attohwa Chasm",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Sickle",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Solidago flower",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the glowing flower point at (H-8) specifically -- no other harvesting point in the zone works, and Trailblazing Sickle / +1 do not work here. Bring more than one sickle; the page says 'some'. Unity Warp 125, then turn around and follow the tunnel. The point can disappear for you alone once you hold the key item."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chalvatot"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "back at the Majesty's Garden; the page gives no grid"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "final cutscene and reward"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 3-3",
+   "page_id": 144604,
+   "revision_id": 774286,
+   "source_sha256": "a1851b7f0c223d20e2301c8cd4fd80293169e404a6193fce2795ddd34538562c",
+   "cache_file": "0144604_the_voracious_resurgence_mission_3_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 210,
+   "dat_name": "Curilla Unleashed",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "The longest ladder in this lane: nine rungs across four zones, two fights, and one key item. Missive to Altennia (KI 3257) is granted by the opening cutscene and is not the Reward (Twinned Shield), so it is evidence on step 1 -- the only observable point in the whole mission, since nothing else is handed over.\n\nThis page is the one that insists you must ZONE after the previous mission before Halver will talk, unlike 3-2 which says the opposite; that is recorded on step 1.\n\nBoth confrontations are single fight rungs because both begin on the first touch with no preceding cutscene (Vicious Claw Marks -> Harnessed Smilodon, Frigid Confluence -> Trion); only the Vicious Claw Marks has a separate second touch, and that is its own rung. The Door:Prince Royal's RM at (H-7), the northern door of the Central Garden, is a real markable entity and resolves as 'door:prince royal's rm'. Curilla is in the Temple Knights' Quarters inside the Chateau; the page gives no grid, and warns she may need speaking to twice if she is also holding quests for you. Start agrees with chronicle_snpc 'halver'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Claidie's Concern",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": null,
+   "raw": "Halver, Chateau d'Oraguille"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Missive to Altennia",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must zone after the previous mission before this cutscene will fire"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ranguemont Pass"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Survival Guide (Fauregandi / Ranguemont Pass), or zone in from East Ronfaure at (K-4)"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Vicious Claw Marks"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Harnessed Smilodon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the first touch starts the fight -- ~35k HP, Mighty Strikes"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Vicious Claw Marks"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "second touch, for the cutscene with Altennia"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Prince Royal's Rm"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page writes it 'Door:Prince Royal's RM' -- the northern door in the Central Garden"
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Bostaunieux Oubliette"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "in from the Chateau; stay on the top floor and do not drop down the pit at (E-7/8)"
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Frigid Confluence"
+    },
+    "zone": "Bostaunieux Oubliette",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Trion",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "top floor. Very high defence, ~25k HP, Invincible from as high as 75%; ends in a short cutscene."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Curilla"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "Temple Knights' Quarters; you may need to speak twice if she also has quests for you"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 3-4",
+   "page_id": 144807,
+   "revision_id": 774844,
+   "source_sha256": "3787050f1f66de94f7a256732416797664a0d12db64ca276c574de9881b5f170",
+   "cache_file": "0144807_the_voracious_resurgence_mission_3_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 228,
+   "dat_name": "Run, Excenmille, Run!",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Six rungs. The one evidence point is Carmine Swallows' map (KI 3258), granted after the Ferric Stench fight and absent from the Reward field (Hi-Elixir Tank), so it is legitimate. The Hi-Elixir Tank named at bullet 6 IS the header's Reward and is therefore NOT evidence -- it proves the mission over, not the step done (hard rule 7).\n\nBullet 7 ('if you're heading to the next Mission, do not warp away!') is advice about the NEXT mission's opening, not a step. The whole 'After the walkthrough: Preparation' section is likewise about Mission 3-5: it tells you to pick up a Doll Gizmo while you wait out the day reset. That is a requirement of 3-5 and I recorded it there, in that mission's items, not here -- items required to complete one mission are not items required to start the next.\n\nThe closing Point of Interest is described as 'the lowest left corner intersection of (J-6)/(I-6)', on the lowest level next to the Mirror Pond; grid holds J-6 and the note holds the pair. Mission 3-5 sends you back to this same object. Start agrees with chronicle_snpc 'halver'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Curilla Unleashed",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": null,
+   "raw": "Halver, Chateau d'Oraguille"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rahal"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Royal Knights' Quarters"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beaucedine Glacier"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Survival Guide (Fauregandi) is quickest"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Ferric Stench"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Carmine Swallows' map",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Orcish Atlatl",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Orcish Axeman",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Orcish Praetor",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Harnessed Smilodon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "next to the east side of the tower; the touch begins the fight and the key item comes after it"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ferric Stench"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "second touch, for the cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Point of Interest"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the lowest left corner intersection of (J-6)/(I-6), lowest level, next to the Mirror Pond. Unity Warp 128 to Fei'Yin and zone out into the glacier; mounts work here. The Hi-Elixir Tank granted by this cutscene is the header's Reward, so it is not used as evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 3-5",
+   "page_id": 144808,
+   "revision_id": 774846,
+   "source_sha256": "0a1f0119e8d589a90fccf6c1b4eff0a1b04ca85e60c12abf098252dbaecc6327",
+   "cache_file": "0144808_the_voracious_resurgence_mission_3_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 240,
+   "dat_name": "Of Knights and Orcs",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "steps_from_after_section"
+  ],
+  "notes": "READ THE START CAREFULLY. The header says 'Halver, Chateau d'Oraguille' and chronicle_snpc says 'halver', so start.npc is Halver and the giver marker does NOT move -- but Halver appears NOWHERE in this walkthrough. Bullet 1 is a zone entry: you zone into Fei'Yin from Beaucedine Glacier, which is where Mission 3-4 left you standing and why 3-4's last bullet tells you not to warp away. So the ladder begins on a zone line while the record's giver stays where chronicle put him; flagged start_is_zone_entry so the disagreement between the header and the walkthrough is visible rather than silently resolved one way.\n\nThe 'After the walkthrough: Preparation' section is a real requirement, not commentary: get a Doll Gizmo before starting. It is recorded as the items of step 2, the trade to Talos, which is the step that actually spends it -- Auction House (Others -> Misc. 1) or a 100% drop from the Manipulator in Temple of Uggalepih Map 2, 15-minute respawn.\n\nThe Point of Interest of steps 3, 4 and 5 is the same object Mission 3-4 ended on; this page places it only 'next to Mirror Pond', so its grid is taken from 3-4's page ((J-6)/(I-6)) and said so in the note. Reward is Maat's Mix and Twinned Blade and no key item is granted at any step, so evidence is null throughout.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Run, Excenmille, Run!",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Halver",
+   "zone": "Chateau d'Oraguille",
+   "grid": null,
+   "raw": "Halver, Chateau d'Oraguille"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Fei'Yin"
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the mission opens on the zone line: zone in from Beaucedine Glacier for the cutscene. Unity Concord (128) warp to Fei'Yin, then turn around and re-zone."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Talos"
+    },
+    "zone": "Fei'Yin",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Doll Gizmo",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Map 2. Get the gizmo BEFORE starting (Preparation section): Auction House under Others -> Misc. 1, or a 100% drop from the Manipulator patrolling the big room of Temple of Uggalepih Map 2 at (I-10)/(J-10), 15-minute respawn. If you already had it, the Unity warp route works; otherwise use Fei'Yin HP #2 rather than crossing Map 1 to exit A."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Point of Interest"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "back out to the glacier, next to the Mirror Pond -- this page gives no grid, so (J-6) comes from Mission 3-4's page for the same object. Subjob BLM and Escape lands a short walk away."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Point of Interest"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Slackjawed Mukdrom",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "second touch opens the fight -- ~50k HP, Mighty Strikes, en-Drain on his attacks"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Point of Interest"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "J-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "third touch, for the cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Prince Royal's Rm"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page writes it 'Door:Prince Royal's RM'; final cutscene and rewards"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Voracious Resurgence Mission 4-1",
+   "page_id": 145094,
+   "revision_id": 774857,
+   "source_sha256": "7c88ff6a4cfa75f748f9769c3e413ba791928a8fe99d070ab283912556e8b8dc",
+   "cache_file": "0145094_the_voracious_resurgence_mission_4_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "tvr",
+   "id": 256,
+   "dat_name": "Best Served Cold",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "looked_up_off_page"
+  ],
+  "notes": "The page contradicts itself about where Drangord is. The Description says 'Seek Drangord near the entrance in the Zeruhn Mines', which reads as inside that zone, while the walkthrough speaks to him at bullet 2 and only enters Zeruhn Mines at bullet 3. I resolved it off-page rather than guessing: BG Wiki's NPC page 'Drangord' (rest.php/v1/page/Drangord) gives Location=Bastok Mines, Position=D-7, so he stands in Bastok Mines beside the Zeruhn Mines entrance, the walkthrough's order is right, and the Description's wording is the loose one. Recorded zone Bastok Mines (D-7) and flagged looked_up_off_page.\n\nAfter that it is the standard tvr shape: three touches of the Quadav Inquest, cutscene / fight / cutscene. Bullet 3's entry cutscene keeps its own travel rung because it fires on the zone line, not on an object. Drake Fang at (H-6) is the page's own 'Optional' signpost and is not a rung. Reward is Naji's Loop and no key item is granted anywhere, so evidence is null throughout. Start agrees with chronicle_snpc 'gumbah'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Of Knights and Orcs",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "tvr"
+  },
+  "start": {
+   "npc": "Gumbah",
+   "zone": "Bastok Mines",
+   "grid": "J-7",
+   "raw": "Gumbah, Bastok Mines (J-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point #1, upper level"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Drangord"
+    },
+    "zone": "Bastok Mines",
+    "grid": "D-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "beside the entrance to Zeruhn Mines. The mission Description reads as if he were inside Zeruhn Mines; BG Wiki's Drangord NPC page places him in Bastok Mines at (D-7), which also matches the walkthrough's order."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Zeruhn Mines"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "enter from Bastok Mines for a cutscene. Drake Fang at (H-6) inside will point you south, which the page marks Optional."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Quadav Inquest"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Quadav Inquest"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Do'Bho Venomtail",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Old Quadav",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Brass Quadav",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Copper Quadav",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "second touch opens the fight. Do'Bho Venomtail (BLM) has 30k HP, uses Manafont and puts a 100 HP/tic Enpoison on melee hits; the three Quadav have 25k each."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Quadav Inquest"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "third touch, for the final cutscene and reward"
+   }
+  ]
+ }
+]

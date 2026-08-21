@@ -1,0 +1,1330 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Forging New Bonds",
+   "page_id": 102307,
+   "revision_id": 761971,
+   "source_sha256": "56c0a0da8ee29ff3ec269f1a03812f96990456b9afd89f4e0596c2a870df651c",
+   "cache_file": "0102307_forging_new_bonds"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 23,
+   "dat_name": "Forging New Bonds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled",
+   "consumed_key_item",
+   "time_gated",
+   "bullet_split"
+  ],
+  "notes": "Nine bullets, twelve rungs. Bullet 9 is an outcome -- finishing this unlocks commissioning the three non-quested Rune Fencer artifact pieces -- and is not a step. The two '(Optional)' sub-bullets are recorded as optional steps because the page marks them so itself: Gaddiux for blacksmith gossip, and a return trip to Octavien for extra dialogue that sits between bullets 2 and 3.\n\nBullet 3 is three things at one object. Checking the Tomato Vantage Point gives the Jerra Ndala cutscene; asking about the Rune saber requires trading a Sowilo Claymore OR an Elixir to the Vantage Point itself, which grants the Rune saber key item; asking about the gem then hands over the Flask of fruiserum. The cutscene folds into the trade because both happen on the same object, and the two key items sit on separate rungs because they are separate grants and neither may share evidence with the other. The OR is expressible, so it is items/items_alt rather than items_partial.\n\nBullet 5 is a spawn click and a fight, so it splits. The Flask of fruiserum is consumed by the Molten Rift trade and the Rune saber and the flame gem are both consumed at the Barrel in bullet 6, which is why step 10 carries them as requirements and has no evidence of its own -- the ladder falls back on the session latch across that gap. Step 11 waits one game day, which nothing in the packets reports.\n\nLevel '90+ Rune Fencer' is BOTH gates. The page says the job requirement lapses after bullet 1; the runtime gets that free, since prereqs are only evaluated for quests you have not started. Fame 'Seekers of Adoulin' is not one of the nine regions, so it gates nothing and only the raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Seekers of Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Endeavoring to Awaken",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 90,
+   "jobs": [
+    "RUN"
+   ],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Octavien",
+   "zone": "Eastern Adoulin",
+   "grid": "I-8",
+   "raw": "Octavien, Eastern Adoulin (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as a Rune Fencer, and you must have zoned since Endeavoring to Awaken. Near the Sverdhried Hillock waypoint. The job gate lapses after this bullet."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gaddiux"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page's own '(Optional)': he talks about the blacksmith's whereabouts. At the Inventors' Coalition."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Inconspicuous Barrel"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the alley near the Adoulin Waterfront waypoint. Yestin-Ovestin appears on the wall during the cutscene and asks for a Rune saber and a Frost-encrusted flame gem; he is not a standing entity, the barrel is what you click."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page's own '(Optional)': additional dialogue only"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Tomato Vantage Point"
+    },
+    "zone": "Rala Waterways",
+    "grid": "E-10",
+    "items": [
+     {
+      "name": "Sowilo Claymore",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Elixir",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rune saber",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the Arboretum; closest access is the entrance near Western Adoulin's Mog House. Checking it first gives the Jerra Ndala cutscene, then you ask her about the Rune saber and trade to the Vantage Point itself -- either a Sowilo Claymore or an Elixir, not both."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "object",
+     "name": "Tomato Vantage Point"
+    },
+    "zone": "Rala Waterways",
+    "grid": "E-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Flask of fruiserum",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "same object, second question: ask for the Frost-encrusted flame gem and Jerra Ndala hands over the Flask of fruiserum instead"
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Molten Rift"
+    },
+    "zone": "Moh Gates",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Ifritite",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Flask of fruiserum",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the cutscene consumes the Flask of fruiserum, so there is nothing to observe here. Morimar Frontier Station waypoint is fastest, Yahse Bivouac #1 otherwise; you must pass a Colonization Reive at (I-7). In a group, everyone trades their Ifritite before the NM is spawned."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Molten Rift"
+    },
+    "zone": "Moh Gates",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Staumarth",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same rift again. A wipe costs no second Ifritite -- click it again to bring him back."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Moh Gates",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Frost-encrusted flame gem",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Staumarth",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "no job requirement here. Resists everything but Thunder and spams Spectral Floe and Scouring Spate; the surrounding Apex Efts do not aggro."
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Inconspicuous Barrel"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-4",
+    "items": [
+     {
+      "name": "Rune saber",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Frost-encrusted flame gem",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the cutscene takes both key items, so this rung has requirements but no evidence"
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Inconspicuous Barrel"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the same barrel a third time, but only after one game day has passed -- the addon cannot see that clock. The note you find sends you back to Octavien."
+   },
+   {
+    "n": 12,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Octavien"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "he hands over the Beorc Sword, which is a reward and therefore not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Desert Rain II (Vunkerl)",
+   "page_id": 59008,
+   "revision_id": 758687,
+   "source_sha256": "26f35f97419c392d69726e7b3db5784ab79ea4f030cb63679602f03789eb16e3",
+   "cache_file": "0059008_desert_rain_ii_vunkerl"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 135,
+   "dat_name": "Desert Rain II (Vunkerl)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "generic_npc_name",
+   "unnamed_target",
+   "escort_unobservable"
+  ],
+  "notes": "Seven bullets, five rungs, and no observable point anywhere in the quest -- nothing is ever held, so every step's evidence is null and the ladder rides the session latch from end to end. That is the honest answer for an escort.\n\nThe un-numbered line above bullet 1 is a cooldown: one Ward Warden / Desert Rain / Crimson Carpet quest per Vana'dielian day across all of Abyssea. Not a step. Bullet 2 -- 'a spot on the map will be marked with a Target marker' -- is an outcome of bullet 1 and names no entity, so it is not a rung either; the destination it means is the Repair Trunk that bullet 4 names outright at (F-8).\n\nBullets 4 and 5 merge into one rung. The escort's destination and the thing you click are the same object in the same place, and splitting them would wedge an unmarkable travel step in front of a markable one for no gain. The chocobo you click to load the supplies is never given a name, so it stays in the note rather than becoming a target the resolver would throw away.\n\nThe Chocobo Blinkers are bought from the Tamer during that step, not carried into it, so they are not requirements on any rung. The 'After the walkthrough: Notes' section is Azouph Greens advice about topping up the bird's HP and contributes no steps. Both quest NPCs are written with a zone suffix on the wiki and fold to bare 'resistance sapper' and 'chocobo tamer', names that exist in every Abyssea zone -- each step's zone is doing real disambiguating work here. Fame 'avun' is an Abyssea zone code, not one of the nine regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "avun / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Vunkerl)",
+   "zone": "Abyssea - Vunkerl",
+   "grid": "I-9",
+   "raw": "Resistance Sapper (Vunkerl) (I-9), Abyssea - Vunkerl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00. Only one Ward Warden / Desert Rain / Crimson Carpet quest can be taken per Vana'dielian day across all of Abyssea, which nothing in the packets reports."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo Tamer (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page places him only 'near the Resistance Sapper', so no grid is claimed. Buy at least six Chocobo Blinkers here and trade them to the bird as you go -- they last about an Earth minute each and its HP drains throughout."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "escort the chocobo here avoiding every line of sight; it bolts back to the last safe spot with a 'Kweh!?' and you must run to it and interact to stop it. Click the trunk to gather supplies, then click the chocobo -- which the page never names -- to load them. Load only one if you just want the quest done; Depart ends loading. Recommended route out is the north path past the Marids and Smilodons, dropping off the cliffs along the south wall."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chocobo Tamer (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "guide the bird back and speak to him to end the escort. The return leg goes past the Aestutars hugging the left wall; expect bats and probably Lord Varney."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Vunkerl)"
+    },
+    "zone": "Abyssea - Vunkerl",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "cruor, Resistance Credits and possibly an Empyrean +1 feet seal; all rewards, none evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Champion of the Dawn",
+   "page_id": 109704,
+   "revision_id": 759846,
+   "source_sha256": "b87ba31e22403dc3eda901084603a5d15763eb9cac4f2eed0ad85a14eaa1008e",
+   "cache_file": "0109704_champion_of_the_dawn"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 73,
+   "dat_name": "Champion of the Dawn",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "unordered_group",
+   "unnamed_target",
+   "count_unobservable",
+   "ki_name_not_unique",
+   "repeating_loop"
+  ],
+  "notes": "Nine bullets, eight rungs. The header's Start is a bare 'Walk of Echoes' with no giver at all, and bullet 1 confirms it: zoning in from any entrance flags the quest. So start.npc is null and the first rung is the zone itself -- this quest can only ever be marked at zone granularity until the Ornate Door.\n\nBullet 2's three finds are a set, not a sequence: the page presents them as three locations to collect three of, and nothing orders them, so they share a group and all three draw at once. None of the three is named. Beaucedine's is explicitly 'an unlabeled (blank) point of interest'; the other two are given only as places by a tree and by a lake shore. Bullet 9 calls them 'shining spots' in passing, which is a description and not a name, so all three targets are none/null and keep only their zone and grid. That is three unmarkable rungs, and it is the correct answer rather than inventing an object.\n\nEvidence is deliberately null on all three. The page and the header both say Breath of dawn x3, but a key item is a flag and not a counter, so holding one is indistinguishable from holding three -- putting the evidence on the last group member (the pattern An Explorer's Footsteps uses) would fire the moment the FIRST remnant was collected and throw the mark forward to Walk of Echoes early. It is also moot: 'Breath of dawn' is not a unique name in res/key_items.lua, so the resolver rejects it outright. It therefore does not appear in any items list either; the requirement lives in the notes where it cannot do harm.\n\nBullet 4 is one rung, not three: the Ornate Door is clicked three times in a row, and three rungs on one object that nothing can tell apart is noise. Bullets 6 and 7 are tactics for the Cait Sith fight and bullet 8 is the reward menu (including the 'For Lilisette to...' option that does nothing) -- none is a step. Bullet 9 is the loss path and is recorded as an optional rung on the Regal Pawprint, with the loop back through the previous mission's shining spots in its note. Fame 'Wings of the Goddess' is not one of the nine regions and gates nothing; the whole quest is demoted to medium for the unmodellable x3 gate, not for any doubt about the ladder.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / N/A"
+   },
+   "prev": [
+    {
+     "title": "Lest We Forget",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Walk of Echoes",
+   "grid": null,
+   "raw": "Walk of Echoes"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Walk of Echoes"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "zoning in flags the quest; the page says it does not matter which entrance you use. There is no giver NPC."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beaucedine Glacier (S)",
+    "grid": "G/H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "remnants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page calls it 'an unlabeled (blank) point of interest' -- it has no name, so no marker. At the bottom of the ramp down from the campaign warp, on the G-9/H-9 border; the Campaign Arbiter warp is the fastest way in. Grants a temporary Breath of dawn."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "remnants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "northwest corner of H-7, by a tree alongside the river; use the Eastgate exit. Unnamed, as above. Second Breath of dawn."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Jugner Forest (S)",
+    "grid": "H/I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "remnants",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "southeast corner of Lake Mechieume on the H-6/I-6 border. Survival Guide to East Ronfaure (S) then east. Unnamed, as above. Third Breath of dawn. Same three spots as the dawndrops in Fork in the Road."
+   },
+   {
+    "n": 5,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Walk of Echoes"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "carry all three Breath of dawn key items in. In via the Grauberg (S) Veridical Conflux at (F-5), reached fastest from the Campaign Arbiter warp, or the Pashhow Marshlands (S) Conflux at (J-9) if Voidwatch has opened it; the Rolanberry Fields Lightsworm entrance is another way. The key item is not carried in items because its name is not unique in the resource table."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ornate Door"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "three times: a cutscene, a shorter one introducing the fight, then the fight itself. One rung, because nothing distinguishes the three clicks."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cait Sith",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7
+    ],
+    "note": "you need not be a Summoner; up to six may enter and Trusts are allowed. He casts -ja spells and can sleep the party with Mewing Lullaby. Winning ends the quest and opens the reward choice, so there is no hand-in step."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Regal Pawprint"
+    },
+    "zone": "Walk of Echoes",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     9
+    ],
+    "note": "only if you lose. The shining pawprint is just outside the Ornate Door; check it, revisit any one of the previous mission's shining spots, then return to the door and retry. A loop, not a ladder position."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "No Laughing Matter",
+   "page_id": 98209,
+   "revision_id": 773095,
+   "source_sha256": "e9c79913694b4b1767d7f2dea3299d5155fca48ee7efceb507e3393d6c4e6b09",
+   "cache_file": "0098209_no_laughing_matter"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 102,
+   "dat_name": "No Laughing Matter",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "count_unobservable",
+   "zone_inferred"
+  ],
+  "notes": "Eight bullets, five rungs, and no evidence anywhere -- nothing in this quest is ever held as a result of doing a step, only spent. Bullet 3 is Tuffle-Buffle stating the first shopping list and bullet 5 is a warning that he may botch the synth; neither is an action. The vendor sub-bullets under bullets 4, 6 and 7 are shopping advice.\n\nBullet 8 is the closing cutscene, and it matters that it is not a step: Peladi Shalmohr walks into the scene AT the Mischief Marker, signs you on and pays out. The quest ends where the last trade happens, so there is no hand-in. Sending the player back to (G-11) would be a wrong marker, and the temptation to do it is exactly what the header's 'Start' field invites.\n\nThe three trades are three separate rungs on the same object because each is a distinct ingredient list, and consecutive rungs on one target are one marker anyway with readiness looking ahead. The header's totals are the per-course counts summed -- 3 Fire Crystal is one per course, 2 Selbina Butter is the appetiser plus the dessert -- so each rung carries one of each. Where the walkthrough gives the long item name it is used (Stick of Selbina Butter, Pot of Maple Sugar, Stick of Cinnamon); all three resolve to the same ids as the short forms.\n\nThe header's 'You may need more than the listed amount, in case of failures' is real -- a failed synth eats the ingredients -- but a count cannot say 'one or more', so it is a note. Bullet 2 gives (J-11) for the Mischief Marker without restating the zone; it is read as Western Adoulin, which bullets 4, 6 and 7 confirm by saying 'head back'. The header puts Peladi Shalmohr at (G-10/11) and bullet 1 at (G-11) inside the Mummers Coalition -- the instruction is used for the step and the header's range is kept in start.raw. Fame 'Adoulin' is not one of the nine regions.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "soa"
+  },
+  "start": {
+   "npc": "Peladi Shalmohr",
+   "zone": "Western Adoulin",
+   "grid": "G-10/11",
+   "raw": "Peladi Shalmohr, Western Adoulin - (G-10/11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Peladi Shalmohr"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Mummers Coalition. The header says (G-10/11), the walkthrough (G-11); the instruction is used."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the page gives (J-11) without a zone; Western Adoulin is inferred from bullets 4, 6 and 7 saying 'head back'. Cutscene with Tuffle-Buffle and Musto-Rusto, who are the duo Tarutaru Sauce and are not standing entities -- the marker is the object. Tuffle-Buffle then asks for the appetiser ingredients."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [
+     {
+      "name": "Fire Crystal",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Popoto",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Stick of Selbina Butter",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "the appetiser. Bring spares -- Tuffle-Buffle can fail the synth repeatedly and the ingredients are gone when he does, which no count can express. Popoto from Ansegusele in Western Adoulin (I-11); Selbina Butter from Chomo Jinjahl at the Windurst Waters Cooking Guild at 28+ cooking, or the AH."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [
+     {
+      "name": "Fire Crystal",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Dhalmel Meat",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Olive Oil",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Black Pepper",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the main course. Dhalmel Meat from a Kolshushu regional vendor; Olive Oil from Kanil in Western Adoulin (K-8) or Malfud in Aht Urhgan Whitegate (F-8); Black Pepper from Malfud."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Mischief Marker"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-11",
+    "items": [
+     {
+      "name": "Fire Crystal",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Stick of Selbina Butter",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Faerie Apple",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Pot of Maple Sugar",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Stick of Cinnamon",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "the dessert, and the end of the quest: Peladi Shalmohr appears in this cutscene, makes you an apprentice manager and pays 900 experience points. There is no hand-in NPC to return to. Faerie Apple from Ansegusele (I-11) or Kopopo at the Windurst Waters Cooking Guild (E-8); Maple Sugar from Benaige in Southern San d'Oria (F-7) when San d'Oria places 2nd or better in Conquest, or Chomo Jinjahl at 18+ cooking; Cinnamon from Kopopo (E-8) or Ghemi Sinterilo in Kazham (G-7)."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Luck of the Draw",
+   "page_id": 17077,
+   "revision_id": 774585,
+   "source_sha256": "6e26fa0e320557102514538d019261ce7988b939af02b58fbb5c38d86d1600dc",
+   "cache_file": "0017077_luck_of_the_draw"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 6,
+   "dat_name": "Luck of the Draw",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "bullet_split"
+  ],
+  "notes": "Nine bullets, nine rungs after one split and one merge. Bullet 3's headline is the journey to Arrapago Reef but its sub-bullets are entirely about where the free Lamian Fang Key comes from, so the ??? in Caedarva Mire (I-7) is lifted out as its own rung AHEAD of the travel -- both routes the page offers collect the key before entering the reef -- and bullet 4, which only restates 'ensure you have a key', merges into it. That ??? is the quest's only observable point before the Forgotten hexagun, so it earns the split.\n\nitems_partial is set on that rung because the key also drops from lamiae and draugar inside the reef; that is a different way of getting the same item and not a second held item, so it cannot go in items_alt. The page's own advice is to take the free one, and the free one is once per game day, which nothing in the packets reports.\n\nThe optional sub-bullet under bullet 1 starts a DIFFERENT quest, The Die is Cast, and is not a step here -- it is mentioned only because it shares the locked gate. Bullet 5's second Iron Gate is unlocked from behind and needs no key, so it is a note on the first. Bullet 6's ??? is explicitly not the shining spot labelled '-' beside it, and can fire a Zweeha cutscene or a pier hint before the right one; nothing observable tells those apart, so the note carries it. Bullet 9 ends the quest on a Rock Slab and not on an NPC, so there is no turn-in and none is invented.\n\nLevel '30+ (Any job)' is a level gate only -- Quest Reqs restates the same thing in words, so jobs stays empty. Fame 'au' resolves to Aht Urhgan with no level given.\n\nADVERSARY: removed the Lamian Fang Key from step 4's items. Entering Arrapago Reef requires holding nothing -- bullet 3's headline is a bare 'Go to Arrapago Reef Map 1' and the key is only spent on the Iron Gate in bullet 5, which already carries it. The claim was also actively wrong for the drop route items_partial admits: a player farming the key off lamiae gets it INSIDE the reef, so a hold-requirement on the zone-in can never be met that way. Step 3's evidence already orders the key ahead of the travel, so nothing is lost.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Free, but only once per game day. items_partial is set because the key also drops from lamiae and draugar in Arrapago Reef",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "au / (empty)"
+   },
+   "prev": [],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Ratihb",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-12",
+   "raw": "Ratihb, Aht Urhgan Whitegate (J-12)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ratihb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Shararat Teahouse. Speaking to him again opens The Die is Cast, a separate quest behind the same locked gate -- not part of this one."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mafwahb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by the Palace Door"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Caedarva Mire",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Lamian Fang Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "Map 1, west of the southern pool of water. roughly a 16 minute repop and only five candidates between the zone line and the gate, which is why the page tells you not to bother."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Arrapago Reef"
+    },
+    "zone": "Arrapago Reef",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "map 1. The Survival Guide is fastest, but it drops you inside, so zone out to Caedarva Mire (I-6) for the key first and come back north. Walking: north exit from Nashmau to Caedarva Mire map 1, then in at (I-6)."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Lamian Fang Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "map 1. Then go immediately west on the small map to a second Iron Gate, which needs no key because you open it from behind."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Arrapago Reef",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "northeast corner of (H-10), on a ship on a raised wooden platform. NOT the shining spot labelled '-' beside it. It can give a Zweeha cutscene instead, or point you at a pier to the northwest; keep clicking until you get the one that opens with Wasuhd and Mutihb."
+   },
+   {
+    "n": 7,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Talacca Cove"
+    },
+    "zone": "Talacca Cove",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "entered from Caedarva Mire (E-9) on map 1, outside Nashmau's west exit; Home Point #1 in Caedarva Mire lands right at the zone line"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Talacca Cove",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Forgotten hexagun",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "round the left side of the lake in the large room. It is not by the water -- northwest corner, up on a rock near the tunnel entrance heading west. No grid is given."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rock Slab"
+    },
+    "zone": "Talacca Cove",
+    "grid": null,
+    "items": [
+     {
+      "name": "Forgotten hexagun",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "west into the tunnel then north, following it to the end. The cutscene here ends the quest and pays the Corsair Die and the job unlock -- rewards, not evidence. There is no NPC to hand in to."
+   }
+  ]
+ }
+]

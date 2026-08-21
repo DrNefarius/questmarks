@@ -1,0 +1,1832 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trust: Bastok",
+   "page_id": 106030,
+   "revision_id": 678261,
+   "source_sha256": "e28dac5447799f42b49110e4388f8d9599aab79ff8b61feaf1c0ee26883c9111",
+   "cache_file": "0106030_trust_bastok"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 92,
+   "dat_name": "Trust: Bastok",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "conditional_branch_unobservable",
+   "evidence_also_in_reward_list",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "Two bullets and two sub-bullets, and the sub-bullets are the whole shape of the quest: this is a two-step errand for a veteran and a five-step one for a first-timer, and nothing in a packet says which you are. Steps 3 to 5 are therefore marked optional -- they are conditional on this being your first Trust quest, not a ladder position everyone climbs.\n\nSteps 3 and 4 are ALTERNATIVES, not a set: the page says the Trust spell may be cast in EITHER South or North Gustaberg. They are given a shared group so both are drawn at once, which is the right guidance for an OR even though 'group' nominally means an unordered AND. Neither is a talk or a trade, so both are kind 'other' targeting the zone itself -- what the player has to do is be standing in Gustaberg.\n\nThe Blue institute card is in the header's Reward list, which normally disqualifies it as evidence, but bullet 1 says outright that Clarion Star hands it over at the start. The reward table here is really 'everything this quest yields', and the walkthrough is the more specific statement, so the card is used as step 1's evidence. The Bastok Trust permit is genuinely a completion reward -- it is what you get at the END of either branch -- so it is not evidence anywhere. Blue and Green institute cards are distinct key items, so there is no cross-talk with Trust: Windurst.\n\n'Level 5+ on any Job' is the level gate restated for any job, so jobs stays empty. The header gives no grid for Clarion Star; bullet 1 does, so (K-7) is recovered from the walkthrough and start.raw is kept verbatim.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / (empty)"
+   },
+   "prev": [],
+   "level": 5,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Clarion Star",
+   "zone": "Port Bastok",
+   "grid": "K-7",
+   "raw": "Clarion Star, Port Bastok"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Clarion Star"
+    },
+    "zone": "Port Bastok",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Blue institute card",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "by Home Point #1"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Home Point #1. If this is not your first Trust quest the quest ENDS here and the Bastok Trust permit is handed over; that permit is the completion reward, so it is not used as evidence."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "zone",
+     "name": "South Gustaberg"
+    },
+    "zone": "South Gustaberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "trust_cast",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "first Trust quest only: cast the Trust spell 'Naji' here. Steps 3 and 4 are EITHER/OR, not both -- they share a group so both are drawn and the player picks one."
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "zone",
+     "name": "North Gustaberg"
+    },
+    "zone": "North Gustaberg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "trust_cast",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the other half of the same choice as step 3"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "first Trust quest only: return after casting for the Bastok Trust permit"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Path of the Bard",
+   "page_id": 13074,
+   "revision_id": 769969,
+   "source_sha256": "76b8a05a89cc1743ba23cea02b13dcf7741b7954d222b89057d971b6987b9d4b",
+   "cache_file": "0013074_path_of_the_bard"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 20,
+   "dat_name": "Path of the Bard",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "zone_unstated"
+  ],
+  "notes": "Short and clean. The leading 'Note: This quest will not appear on your quest list until completion' is not a bullet and not a step, but it is the reason nothing here can be latched on quest-log state -- the ladder has to stand on its own.\n\nBullet 2 is the page's own '(Optional)' -- Mataligeat is extra dialogue about Lewenhart and nothing more. The page never says which zone Mataligeat is in, so zone and grid are null rather than guessed at Lower Jeuno; a nil-zone row matches anywhere, which for an optional flavour step is the honest cost.\n\nBullet 3 reads as travel plus examine but is one action in one zone: the tunnel at Valkurm Dunes (C-6) is the way in and the Song Runes at (B-7) are what you click. The two sub-bullets are route advice (Survival Guide to Gustav Tunnel, or Unity Warp plus a /BLM Escape) and stay in the note.\n\nFame 'J' is Jeuno, confirmed against the resolver. Level 30 is a plain level gate with no job attached.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "J / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A Minstrel in Despair",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 30,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Bki Tbujhja",
+   "zone": "Lower Jeuno",
+   "grid": "H-8",
+   "raw": "Bki Tbujhja, Lower Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bki Tbujhja"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Merry Minstrel; he only gives a hint about where to go"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mataligeat"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page marks this '(Optional)' and never says where Mataligeat stands, so no zone is recorded. Extra dialogue about Lewenhart only."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Song Runes"
+    },
+    "zone": "Valkurm Dunes",
+    "grid": "B-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "through the tunnel at (C-6) to the 'Secret Beach'. Quick route: Survival Guide to Gustav Tunnel then exit into Valkurm Dunes; without that guide, Unity Warp and a /BLM Escape lands at the same exit."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promotion: Superior Private",
+   "page_id": 13568,
+   "revision_id": 595624,
+   "source_sha256": "855e9edd1f42b06eb9343342e609e5b20e6129513f10789b233424877d0c07f9",
+   "cache_file": "0013568_promotion_superior_private"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 91,
+   "dat_name": "Promotion: Superior Private",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_modelled",
+   "unordered_group",
+   "header_grid_typo"
+  ],
+  "notes": "Three bullets, and the middle two are one act: find the Warhorse Hoofprint and click it. What makes this worth splitting is the sub-bullet -- there is ONE hoofprint and it can be in any of four zones, and since the December 2015 update it shows on widescan. Four group members, one per zone, all drawn at once, is the only honest way to say 'it is in exactly one of these and we cannot tell you which'. It is an OR rather than the AND a group usually means, which is flagged.\n\nThe Dark Rider hoofprint key item goes on the LAST group member, not on all four: duplicate evidence across steps is a hard gate, and putting it last means satisfying it lands the mark on Naja rather than back inside the group. That follows An Explorer's Footsteps.\n\nThe header writes the giver's grid as '(1-10)' -- a digit one where the letter I belongs. Every other page in the corpus puts Naja Salaheem at Aht Urhgan Whitegate (I-10), so that is what is recorded; start.raw keeps the typo verbatim.\n\n'Complete 25 points worth of Assaults as Private First Class' has no slot in the schema and no observable predicate, so it gates nothing and is flagged.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": 1,
+    "raw": "AU / 1"
+   },
+   "prev": [
+    {
+     "title": "Promotion: Private First Class",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Naja Salaheem - Aht Urhgan Whitegate (1-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "bullet 1 opens with 'After accepting the quest', which is this step"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Warhorse Hoofprint"
+    },
+    "zone": "Bhaflau Thickets",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hoofprint",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "one of four possible zones; it shows on widescan since the December 2015 update. Steps 2 to 5 are the same single hoofprint, so this is an OR and only one of them will ever exist at a time."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Warhorse Hoofprint"
+    },
+    "zone": "Caedarva Mire",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hoofprint",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Warhorse Hoofprint"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "hoofprint",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Warhorse Hoofprint"
+    },
+    "zone": "Wajaom Woodlands",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Dark Rider hoofprint",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "hoofprint",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the group's LAST member, which is why it carries the Dark Rider hoofprint for all four -- see the quest note"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Dark Rider hoofprint",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says only 'Naja'; the full name is from the header"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hope Blooms on the Battlefield",
+   "page_id": 56704,
+   "revision_id": 710792,
+   "source_sha256": "5926343e41a85a27615ffeed94aef892d148ef30d2ca3cea30534bd99f0ab541",
+   "cache_file": "0056704_hope_blooms_on_the_battlefield"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 10,
+   "dat_name": "Hope Blooms on the Battlefield",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unverified_object_name"
+  ],
+  "notes": "Six bullets, five steps: bullet 4 is a count and a hint ('seven total crates, only three give an item, one hides behind the Maw exit') attached to bullet 3's search, not an action of its own.\n\nThe three key items are the cleanest evidence in this batch -- all three are granted at the trunks and nowhere else, the header's Reward is 'None' so there is no reward collision, and they are gone by the time Raibaht is done with you. They therefore sit as a single AND-list on step 3 and reappear as step 4's items, which is what you must be holding to hand them over.\n\nThe page writes the object plural, 'Repair Trunks', because there are seven of them; the entity name is recorded singular. That is a reading, not a verification -- there is no entity table to check it against, hence the flag.\n\nEverything happens around (I-13) in one zone, so this is a very short walk despite being five rungs. Fame code 'akon' is an Abyssea zone code, not one of the nine regions, so it gates nothing; the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "akon / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Ayame (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "I-13",
+   "raw": "Ayame (A), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "near the magical barrier to the north"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rainbow pearl",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Chipped wind cluster",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Piece of dried ebony lumber",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "seven trunks stand around (I-13) and only three of them give anything; one is hidden behind the Maw exit. The page writes 'Repair Trunks' -- the name is recorded singular."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [
+     {
+      "name": "Rainbow pearl",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Chipped wind cluster",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Piece of dried ebony lumber",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the delivery the quest description asks for"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Ayame (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Sisters in Crime",
+   "page_id": 56721,
+   "revision_id": 641203,
+   "source_sha256": "e2ef8af6dc059470ae31755304f2fd1f86eb1bef6781021381715f819a354e57",
+   "cache_file": "0056721_sisters_in_crime"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 27,
+   "dat_name": "Sisters in Crime",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "unordered_group",
+   "ki_name_singularised"
+  ],
+  "notes": "The header names two givers, 'Cha Lebagta (A) and Bopa Greso (A)', but the walkthrough only ever speaks to Bopa Greso, at the start and at the finish. Start follows the walkthrough; the header string is kept verbatim in start.raw. Cha Lebagta is never interacted with anywhere on the page, so she gets no step -- naming her as a target would be reading the infobox instead of the quest.\n\nThe four Signboards are explicitly 'go around to' them, with four grid refs and no order, so they share a group and all four draw at once. Each needs the poster key item in hand, which is why it is listed as items on all four rather than as evidence on any of them.\n\nThe page writes the key item plural, 'Hastily scrawled posters'. The game's name is singular, 'Hastily scrawled poster' (key item 1596); the plural does not resolve at all, so the singular is what is recorded. It is granted when Bopa Greso hands out the job, so it is step 1's evidence.\n\nThe trailing 'Zoning is required to repeat this quest' is a repeat condition, not a step -- and nothing in a packet reports a zone change against a quest, so it is only a note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "atah / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Bopa Greso (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "I-10",
+   "raw": "Cha Lebagta (A) and Bopa Greso (A) (I-10), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bopa Greso (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hastily scrawled poster",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "southeast of Conflux #02. The header also names Cha Lebagta (A) as a giver, but the walkthrough uses Bopa Greso."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Signboard"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Hastily scrawled poster",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "posters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "four signboards along the path, no order given"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Signboard"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Hastily scrawled poster",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "posters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Signboard"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Hastily scrawled poster",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "posters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Signboard"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Hastily scrawled poster",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "posters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Bopa Greso (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "zoning is required before this can be repeated"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trust: Windurst",
+   "page_id": 105810,
+   "revision_id": 523902,
+   "source_sha256": "62c6efaa7fec5d339cd0aa7cced8212913965af07ca5458db5a67347944d88c1",
+   "cache_file": "0105810_trust_windurst"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 96,
+   "dat_name": "Trust: Windurst",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "conditional_branch_unobservable",
+   "evidence_also_in_reward_list",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "The same quest as Trust: Bastok with the names changed, and it is authored the same way. Steps 3 to 5 exist only if this is your first Trust quest, which nothing observable reports, so they are optional. Steps 3 and 4 are EITHER West or East Sarutabaruta -- an OR given a shared group so both are drawn.\n\nHeavens Tower is a zone in its own right (id 242), not a landmark inside Windurst Walls, so Kupipi's steps get a real zone and a real marker. That is worth noting because the page names no grid for her at all.\n\nThe Green institute card is in the header's Reward list but bullet 1 says Wetata hands it over at the start, so it is step 1's evidence; the reward table here is 'everything this quest yields' rather than 'what you get at the end'. The Windurst Trust permit really is the completion reward and is not evidence anywhere. Green and Blue institute cards are separate key items, so Trust: Bastok cannot bleed into this ladder.\n\n'Level 5 on any job' is a plain level gate, so jobs stays empty. The header gives no grid for Wetata; bullet 1 gives (G-10), which is recovered into start while start.raw stays verbatim.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": null,
+    "raw": "Windurst / (empty)"
+   },
+   "prev": [],
+   "level": 5,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Wetata",
+   "zone": "Windurst Woods",
+   "grid": "G-10",
+   "raw": "Wetata, Windurst Woods"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wetata"
+    },
+    "zone": "Windurst Woods",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Green institute card",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page gives no grid. If this is not your first Trust quest the quest ENDS here with the Windurst Trust permit, which is the completion reward and so is not used as evidence."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "zone",
+     "name": "West Sarutabaruta"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "trust_cast",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "first Trust quest only: cast the Trust spell 'Kupipi' here. Steps 3 and 4 are EITHER/OR, not both -- they share a group so both are drawn and the player picks one."
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "zone",
+     "name": "East Sarutabaruta"
+    },
+    "zone": "East Sarutabaruta",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "trust_cast",
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "the other half of the same choice as step 3"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "first Trust quest only: return after casting for the Windurst Trust permit"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Catering Capers",
+   "page_id": 56694,
+   "revision_id": 765235,
+   "source_sha256": "c20b74ce6fb48ce1ab7d49350c332209fd1dbf8b9f48af29a3996e7f7d6fb3a6",
+   "cache_file": "0056694_catering_capers"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 0,
+   "dat_name": "Catering Capers",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unverified_object_name"
+  ],
+  "notes": "Three bullets, three steps, and the interesting decision is what NOT to use as evidence. Regine hands you three Hatchets, which looks like a clean step 1 latch until the sub-bullet says 'You can bring your own Hatchets obtained by other means' -- a Hatchet is a common woodworking tool and holding one proves nothing about this quest. Step 1 therefore has no evidence.\n\nThe Plateau Chestnuts do work: three of them, obtained only by logging, and they are handed straight to Rugiette. They are step 2's evidence and step 3's items, which is the Operation Teatime shape. The header writes 'Plat. Chestnut Plateau Chestnut x3' -- the wiki's icon name followed by the long name; both resolve to item 2608 and the long form is used.\n\nThe logging points are given as regions of the map rather than grid refs ('between Conflux #01 and #02, around Puks, West/South of Conflux #07 and in the Opo-opo'), so step 2 gets a zone and no grid. 'Logging Point' is the object name and is a reading of the sub-bullet's plural, not something verifiable here.\n\nFame code 'alth' is an Abyssea zone code and gates nothing. The trailing 'Zoning is not required to repeat this quest' is a repeat condition, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "alth / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Regine (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "E-3",
+   "raw": "Regine (A) (E-3), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Regine (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "E-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "near Veridical Conflux #01. She gives three Hatchets, which are NOT used as evidence -- the page says you may bring your own, so holding one says nothing about this quest."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Logging Point"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": null,
+    "items": [
+     {
+      "name": "Hatchet",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Plateau Chestnut",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "logging points sit between Conflux #01 and #02, around the Puks, west and south of Conflux #07, and in the Opo-opo. The page gives no grid refs for any of them."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Rugiette (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Plateau Chestnut",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at Veridical Conflux #04. Zoning is not required to repeat."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Wes...Eastern Waypoints, Ho!",
+   "page_id": 98183,
+   "revision_id": 676023,
+   "source_sha256": "7c613717727fb20e867a02c3e043b450e54d982bdf3a31b96179c61ac93ff76d",
+   "cache_file": "0098183_wes_eastern_waypoints_ho"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 51,
+   "dat_name": "Wes...Eastern Waypoints, Ho!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "count_unobservable"
+  ],
+  "notes": "Bullet 2 is not a step -- it is a shortcut for the player who already attuned every Eastern Adoulin waypoint before taking the quest, and the action it describes is the same hand-in as bullet 4. It is merged into the last step rather than given a rung of its own.\n\nThe nine waypoints are a set with no order, so they share a group and all nine draw at once. The parenthetical names the page gives them ('Peacekeepers' Coalition', 'The auction house', 'Castle Adoulin gates') are place descriptions, not entity names, so each is a Waypoint at its grid ref with the description in the note.\n\nNothing here is observable. Geomagnetron attunement is not a key item and not an inventory item, so no step in this quest can carry evidence and there is no way to count how many of the nine are done -- flagged. Everything is in one zone, so the group is a walking tour of Eastern Adoulin rather than a scatter.\n\nFame 'Adoulin' is not one of the nine fame regions and gates nothing; the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Sharuru",
+   "zone": "Eastern Adoulin",
+   "grid": "F-8",
+   "raw": "Sharuru, Eastern Adoulin - (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "outside the Peacekeepers' Coalition"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Peacekeepers' Coalition. Nine waypoints, any order."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Scouts' Coalition"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Statue of the Goddess"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the wharf to Yahse"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "your Rent-a-Room"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the auction house"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Sverdhried Hillock"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the Coronal Esplanade"
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "K-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Castle Adoulin gates"
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Sharuru"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     4
+    ],
+    "note": "bullet 2 is the shortcut for a player who already had all nine waypoints attuned; it is the same hand-in as bullet 4"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Sahagin's Stash",
+   "page_id": 36968,
+   "revision_id": 756572,
+   "source_sha256": "3262bb762db653876c293e4294f9e4e69629a43fea9d5e045a622954e0583330",
+   "cache_file": "0036968_the_sahagin_s_stash"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 136,
+   "dat_name": "The Sahagin's Stash",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "route_heavy",
+   "trade_item_not_consumed"
+  ],
+  "notes": "Ten bullets and five steps. Bullets 3, 4, 5, 6 and 8 are turn-by-turn directions through Sea Serpent Grotto -- 'head South until the fork at (H-6), head East', 'turn South at (J-5)' -- and none of them is a thing you do to an entity. They fold into the travel step and the examine step as notes; a verb scan would have produced five bogus rungs out of them.\n\nBullet 7 is the one that looks like routing and is not: the Silver Door at (N-14) is a real targetable object, and getting through it means examining it three times and then trading a Silver Beastcoin. The page is explicit that you KEEP the coin, so it is items on the step and never evidence -- holding a Silver Beastcoin says nothing about how far along you are, and the coin is also listed under Item Reqs for that reason.\n\nThe Sea serpent statue at the ??? at (H-3) is the only observable thing in the quest and is the natural anchor: hold it and the mark belongs back on Laisrean. The ??? itself keeps its rung even though it can never carry a marker.\n\n'Anything will do' in the description is flavour -- the walkthrough names exactly one thing to fetch.",
+  "gates": {
+   "fame": {
+    "region": "Norg",
+    "level": 4,
+    "raw": "Norg / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Laisrean",
+   "zone": "Norg",
+   "grid": "H-7",
+   "raw": "Laisrean, Norg (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Laisrean"
+    },
+    "zone": "Norg",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sea Serpent Grotto"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "in from Norg, then south to the fork at (H-6) and east, south at (J-5), east at (J-10), east again at (K-12)"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Silver Door"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "N-14",
+    "items": [
+     {
+      "name": "Silver Beastcoin",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "examine the door THREE times first, then trade the coin. The page says you keep the Silver Beastcoin, so it is not consumed and cannot be evidence for anything."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": "H-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Sea serpent statue",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "fall off the path onto the one below at (H-8), then follow it north to the ???"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Laisrean"
+    },
+    "zone": "Norg",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Sea serpent statue",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fly High",
+   "page_id": 120,
+   "revision_id": 773832,
+   "source_sha256": "83400191ff2b05e2c9c94ee509a6dba0993ef5945621d563b1f22e7f1799ae30",
+   "cache_file": "0000120_fly_high"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 71,
+   "dat_name": "Fly High",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "mission_gate_unmodelled"
+  ],
+  "notes": "Four numbered bullets and only two of them are the quest. Bullets 3 and 4 sit under a 'Note:' heading and are about what the Mistmelt REWARD does afterwards -- forcing Ouryu out of the sky, and having no effect in The Savage II. They are consequences of finishing, not steps, and a keyword pass would have made a step out of 'force Ouryu out of the sky'.\n\nWhat is left is talk, then trade, both on Ferchinne in one spot -- the same shape as A Feather in One's Cap. No separate gathering step is recorded for the tailfeathers: the page offers two Riverne zones OR the auction house, so there is no single place to point at, and wedging an unmarkable rung between two steps on the same NPC would break the marker run for nothing. Holding two feathers already reads as ready-to-hand-in through step 2's items.\n\n'Quest Reqs: Promathia Mission 4-2' has no slot in the schema and no observable predicate, so it gates nothing and is flagged. Fame 'Other' is not one of the nine regions and gates nothing either. The page is tagged Category:Disambiguation but carries only the Tavnazian Safehold quest, so identity is untouched.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Ferchinne",
+   "zone": "Tavnazian Safehold",
+   "grid": "G-9",
+   "raw": "Ferchinne, Tavnazian Safehold (G-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ferchinne"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "lower section of the main floor (Map 2), near the waterfalls and bridges"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ferchinne"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Hippogryph Tailfeather",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both feathers in one trade. They drop from Hippogryphs in Riverne - Site A01 and Riverne - Site B01, or can be bought at the auction house under Materials > Clothcraft -- two zones or a counter, so no gathering step is recorded."
+   }
+  ]
+ }
+]

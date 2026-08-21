@@ -1,0 +1,936 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Gobbiebag Part I",
+   "page_id": 20680,
+   "revision_id": 702103,
+   "source_sha256": "ee35535c416ab5390625d4b80cfc9c50dc72ac57d463d97252ca0b385f217954",
+   "cache_file": "0020680_the_gobbiebag_part_i"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 27,
+   "dat_name": "The Gobbiebag Part I",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "changed",
+    "changes": 5
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "wrong_item_corrected"
+  ],
+  "notes": "Bullet 3 -- 'After trading the items, your Gobbiebag capacity will be increased' -- is an OUTCOME, not an action. A keyword parser would emit it as a step and leave the marker pointing at a thing you cannot do. Two steps, both on Bluffnix, so the marker never moves; the gain here is a working turn-in, which this quest never had. This is also the quest that forced `alt` to mean an ALTERNATIVE rather than an extra condition: a single Goblin Stew REPLACES all four items, so conjoining them would be wrong in precisely the case the field was added for. Verified both routes reach yellow. VERIFY: the alternative was recorded as the item \"Goblin Stew\", but the page -- Item Reqs and bullet 2 -- names only \"Goblin Stew 880\", which is a DIFFERENT item: res/items.lua 4094 (Goblin Stew 880) vs 4465 (Goblin Stew, an unrelated usable food). As recorded, carrying any Goblin Stew would have turned the trade step yellow. This pass may not rename an item, so the alt is dropped and items_partial records that a real alternative exists which the verifier may not name. The four-item primary path is exactly what the page says and is untouched. \"or_branch_modelled\" is now stale -- see \"or_branch_unmodelled\". The claim in this note that both routes were verified to reach yellow cannot distinguish the two stews, so it does not vouch for the name.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: so the AND-list records it.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "J / 1"
+   },
+   "prev": [],
+   "level": null,
+   "repeatable": false,
+   "expansion": null,
+   "jobs": []
+  },
+  "start": {
+   "npc": "Bluffnix",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Bluffnix, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside Muckvix's Junk Shop",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Bluffnix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Dhalmel Leather",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Steel Ingot",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Linen Cloth",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Peridot",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "OR a single Goblin Stew 880 instead of all four. Unlike 'Only the Best' there IS a primary path here the description names these four Someone taking the stew shortcut sees grey instead of yellow, which is a missed signal rather than a wrong one.",
+    "mobs": [],
+    "group": null,
+    "items_alt": [
+     {
+      "name": "Goblin Stew 880",
+      "count": 1,
+      "kind": "item"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Blade of Evil",
+   "page_id": 44,
+   "revision_id": 768836,
+   "source_sha256": "54f12127a30a8a84a0866c82163a94f80197db6370d21e0169ac445942352114",
+   "cache_file": "0000044_blade_of_evil"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 59,
+   "dat_name": "Blade of Evil",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "changed",
+    "changes": 1
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "job_gates_start_only",
+   "start_disagrees_with_header"
+  ],
+  "notes": "The infobox names Zeid in Beadeaux as the giver, but the walkthrough is explicit that ZONING IN as a Dark Knight is what starts it -- there is nobody to talk to. Recorded as a zone entry, so step 1 is deliberately unmarkable and the marker will hold nowhere until step 2. The job gate applies to STARTING only ('you may complete the rest on a job other than Dark Knight'), which the runtime already gets right for free: prereq.evaluate runs for available quests, not for in-progress ones. VERIFY: ladder checked bullet by bullet against the page and it holds -- bullets 3+4 really are one journey, and bullet 6's \"you only need to defeat Gerwitz's Scythe\" is commentary, not a fourth mob. Added start_disagrees_with_header: start.npc still carries the header's Zeid (Beadeaux G-8) while the walkthrough is explicit that nobody is there to talk to, and AUTHORING names this quest as the case for that flag. Step 6 also takes its instruction (\"stand on the teleporter\") from bullet 6, not bullet 7 alone, but this pass may not widen source_bullets.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": null,
+    "raw": "Bastok / NA"
+   },
+   "prev": [
+    {
+     "title": "Dark Puppet",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "repeatable": false,
+   "expansion": null,
+   "jobs": [
+    "DRK"
+   ]
+  },
+  "start": {
+   "npc": "Zeid",
+   "zone": "Beadeaux",
+   "grid": "G-8",
+   "raw": "Zeid - Beadeaux (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux"
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "enter from Pashhow Marshlands as a Dark Knight; the cutscene starts the quest",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Quadav Mage Blood",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "farm Topaz Quadav; only one is needed",
+    "mobs": [
+     {
+      "name": "Topaz Quadav",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Middle Delkfutt's Tower"
+    },
+    "zone": "Middle Delkfutt's Tower",
+    "grid": "J-6",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "teleporter at (J-6) on the 7th floor leads to a sealed chamber on the 6th",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Middle Delkfutt's Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Quadav Mage Blood",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "spawns Gerwitz's Scythe and two Scythe Victims",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Middle Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "only Gerwitz's Scythe must die to progress",
+    "mobs": [
+     {
+      "name": "Gerwitz's Scythe",
+      "count": null,
+      "role": "kill"
+     },
+     {
+      "name": "Scythe Victim",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Middle Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "stand on the teleporter; the return trip gives the cutscene and the reward -- there is no NPC hand-in",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Dominion Op 01 (Altepa)",
+   "page_id": 67175,
+   "revision_id": 625704,
+   "source_sha256": "dcb1e36e38a47396d34c02d35ef763b05314cb450414e9ce3a96b8e467d92a11",
+   "cache_file": "0067175_dominion_op_01_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 87,
+   "dat_name": "Dominion Op #01 (Altepa)",
+   "match_rule": "exact",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "'Dominion Sergeant' is one of the generic names that once marked every matching NPC in the world, so it may only be indexed with a resolved zone. Abyssea - Altepa resolves, so this is safe -- but note the zone name needs the Abyssea-scoped rule: bare 'Altepa' would otherwise resolve to Western/Eastern Altepa Desert. Also 42 of these pages exist and the DAT writes them with a '#' the wiki omits.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "aalt / 1"
+   },
+   "prev": [],
+   "level": null,
+   "repeatable": true,
+   "expansion": "abyssea",
+   "jobs": []
+  },
+  "start": {
+   "npc": "Dominion Sergeant",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Dominion Sergeant, Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the one near Conflux #8",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "D-10",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "5 Sand Sweepers",
+    "mobs": [
+     {
+      "name": "Sand Sweeper",
+      "count": 5,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dominion Sergeant"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "ANY Dominion Sergeant, not necessarily the one you started with",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Waking the Colossus",
+   "page_id": 53922,
+   "revision_id": 717158,
+   "source_sha256": "dcb3fb7b61b0be8d0055357b8580e4918b68cc4b1cea280fe62f91b6139291ee",
+   "cache_file": "0053922_waking_the_colossus"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 74,
+   "dat_name": "Waking the Colossus",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/1",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "changed",
+    "changes": 9
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "bullet_split",
+   "mission_prereq_unmodelled",
+   "start_disagrees_with_header",
+   "unnamed_target",
+   "unordered_group"
+  ],
+  "notes": "The best case in the corpus for step tracking: nine key items granted in order, all of which resolve exactly against res/key_items.lua. Bullet 4 is ONE wiki bullet holding three independent journeys to three different cities, so it is split into three steps -- source_bullets records that. The infobox says the giver is Nashmeira in the Imperial Ward, but the walkthrough opens on Naja Salaheem in Whitegate (I-10); the walkthrough is what you actually do, so step 1 follows it. VERIFY: bullet 4 says the three nation visits \"can be done in any order\", but steps 4-6 carry group=null, so the ladder forces San d'Oria -> Bastok -> Windurst and will point at Halver even for a player who went to Kupipi first -- the exact failure AUTHORING describes under Groups. A group may not be added by this pass, so the three steps and the quest are demoted and unordered_group is flagged instead. Step 11's \"blank target\" is the page describing an UNNAMED clickable on the dark lamp, not an entity name; it resolves to no marker key, so the name is dropped and the description stays in the note. Also flagged: the header giver (Nashmeira, Imperial Ward) disagrees with the walkthrough's Naja Salaheem, which the note already described but nothing flagged; and Quest Reqs \"Eternal Mercenary (Complete all ToAU Missions)\" is a mission gate that nothing in gates models. Names all resolve, including the nine key items and Plumbago (2860, same id as the page's \"Slab of Plumbago\").",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "repeatable": false,
+   "expansion": "toau",
+   "jobs": []
+  },
+  "start": {
+   "npc": "Naja Salaheem",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-10",
+   "raw": "Nashmeira, Imperial Ward"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Imperial missive",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-6",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Halver"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "I-9",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "San d'Orian approval letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the three nation visits may be done in any order",
+    "mobs": [],
+    "group": "approvals",
+    "items_alt": []
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Bastokan approval letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null,
+    "mobs": [],
+    "group": "approvals",
+    "items_alt": []
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Windurstian approval letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null,
+    "mobs": [],
+    "group": "approvals",
+    "items_alt": []
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-6",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Jeunoan approval letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "present for Megomak",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Acid-eaten Door"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "I-9",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Megomak's shopping list",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "past the Gates of Halvung near Halvung Staging Point; opening those needs [KI] Cast metal plate",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Acid-eaten Door"
+    },
+    "zone": "Mount Zhayolm",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Plumbago",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "lightning cell",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 11,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "J-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the single dark lamp at the Nyzul Isle Staging Point",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 12,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Runic Seal"
+    },
+    "zone": "Alzadaal Undersea Ruins",
+    "grid": "I-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Whisper of radiance",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10,
+     11
+    ],
+    "note": "BCNM against Alexander; no Trust magic, tuned for level 75",
+    "mobs": [
+     {
+      "name": "Alexander",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 13,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Imperial Whitegate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "L-8",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     12
+    ],
+    "note": null,
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   },
+   {
+    "n": 14,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Naja Salaheem"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-10",
+    "items": [],
+    "items_partial": false,
+    "evidence": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     13
+    ],
+    "note": "choose one of five rewards",
+    "mobs": [],
+    "group": null,
+    "items_alt": []
+   }
+  ]
+ }
+]

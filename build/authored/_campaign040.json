@@ -1,0 +1,2124 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Slaughterhouse IV (B)",
+   "page_id": 153563,
+   "revision_id": 729509,
+   "source_sha256": "a6bbf271c287d1018b52c85eaa368af4cd6388bc940354a6890284c26190cbb1",
+   "cache_file": "0153563_slaughterhouse_iv_b_784850c1df"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 224,
+   "dat_name": "Slaughterhouse IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "unit_requirement_unmodelled",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Mythril Wings of Service §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Header Time and Level are both empty, so no time limit and no character-level gate are asserted; Unit Requirement is 1, which is a party-size note with no schema field. Six walkthrough bullets, five rungs: bullet 3 (\"There are 2 ???s near the stronghold; one is for the Hawk Eye campaign operations\") is disambiguation for bullet 2, not something you do, so it is folded into the travel and examine rungs rather than becoming one. The page never names a zone -- it says only \"an area controlled in the Northern Area by the Beastman Confederate\" -- so the field steps carry zone null rather than silently inheriting Hieronymus's room in Bastok Markets (S); nothing on the page supports naming Beaucedine Glacier (S) or Xarcabard (S) here, and I did not import them from the Frozen Flame (B) page that does name them. The ~90 second wait for the bomb is folded into the first examine instead of being wedged as its own rung between two examines of the same ???, which would split one marker in two for something the addon cannot observe anyway. The Notes section's four failure conditions are recorded on the second examine, which is the rung they threaten. No key item anywhere on this page, so every evidence is null.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: A ??? can never carry a marker, but it keeps the rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "take the op from the Campaign Ops NPC named in the header"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the page names no zone: \"an area controlled in the Northern Area by the Beastman Confederate\". Two ???s sit near the stronghold and the other one belongs to the Hawk Eye ops, so the page itself warns you to pick the correct one."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     4
+    ],
+    "note": "Touching the ??? sets up a bomb; it goes off after around 90 seconds. A beastman that wanders close disarms it (Notes bullet 1), which is why the wait belongs to this rung rather than being a rung of its own."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "check the same ??? again after the explosion for \"The stronghold has sustained considerable damage.\" Notes bullet 1: waiting too long after the explosion, Warping or leaving the area before this second click, or being K.O.'d all fail the op."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "report back to finish the mission -- the op is not over at the ???"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Frozen Flame (B)",
+   "page_id": 153564,
+   "revision_id": 729510,
+   "source_sha256": "e752ac83bb2e692602eda96687808813f46e713b3499d2a2e42b9ab6dbfddd8d",
+   "cache_file": "0153564_frozen_flame_b_a4a3ede12c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 225,
+   "dat_name": "Frozen Flame (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "sign_up_step_from_header",
+   "unit_requirement_unmodelled",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Moonlight Medal §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. This page's walkthrough has NO sign-up bullet -- it opens at \"Travel to either...\" -- so step 1 is read from the {{Campaign Header}} NPC Name/Zone/pos trio plus bullet 6, which names Hieronymus as the one who completes the Op. The nation sibling Frozen Flame (W) on BG Wiki does spell that rung out (\"After confirming the mission with Emhi Tchaoryo\"); that is cited as evidence for the SHAPE of the op only -- this page does not say it, and nothing else was taken from the (W) page. The spawn ??? has two alternatives, Beaucedine Glacier (S) (H-9) and Xarcabard (S) (G-10), and a step has one zone, so rather than pick one or split an OR into two rungs that would both have to be done, the step carries zone null with both alternatives and both grids in its note. Bullets 4 and 5 are the success and failure messages -- outcomes, not steps. The Frost Bomb is a spawn, never a kill: the page says outright not to attack it, so its mob role is \"spawn\" on the examine that spawns it and it is deliberately absent from the kiting rung. \"the Campaign Fortification\" is a description, not a name on this page, so that rung's target is {\"type\":\"none\"}.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "sign-up rung recovered from the header and from bullet 6; this walkthrough has no \"get your mission\" bullet of its own"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Frost Bomb",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "either Beaucedine Glacier (S): ??? at (H-9), down the ramp nearby the tower where the C.A. stands when the area is under Beastmen control; or Xarcabard (S): ??? at (G-10). The area must be under Beastman control. Examining spawns a Frost Bomb which attacks shortly after -- do not attack it, but do not lose all enmity and leave it unclaimed either, or it despawns and the op fails (Notes bullet 2)."
+   },
+   {
+    "n": 3,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "lead the Frost Bomb to the Campaign Fortification, where it automatically uses Hypothermal Combustion and damages the fort and only the fort. The page calls it \"the Campaign Fortification\" and does not name it, so no target name is invented here."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "speak with Hieronymus to complete the Op and collect the Allied Notes"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aegis Scream III (B)",
+   "page_id": 153565,
+   "revision_id": 729513,
+   "source_sha256": "4278e7db5057454072402de4bb6eefdc7a43fd4db9834de59a760aab72959883",
+   "cache_file": "0153565_aegis_scream_iii_b_6f431a2177"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 193,
+   "dat_name": "Aegis Scream III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "sign_up_step_from_header",
+   "count_unobservable",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Golden Star §§§§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. The walkthrough has no sign-up bullet, so step 1 is read from the {{Campaign Header}} NPC Name/Zone/pos trio together with bullet 2, which names Hieronymus as the one you report back to. Bullet 1 is the whole body of work and it is a Campaign battle: no zone, no NPC and no monster is named, so that rung carries {\"type\":\"none\"} and zone null -- it will never draw a marker, and that is the honest reading rather than pointing it at the giver's room. Bullet 3 is a warning attached to the report-back rung, not a rung: reporting to Hieronymus before the \"Objective Completed\" message fails the op. The Notes section's completion threshold is prefixed \"presumably\" by the wiki itself and is not observable to the addon in any case. This tier fights on a Bastokan stronghold and its Notes guess at a minimum of Allied Notes OR Experience Points; the IV (B) and V (B) pages guess at Experience Points with numbers, which is why this one is left with no number at all rather than borrowing theirs.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "sign-up rung recovered from the header and bullet 2"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "participate in a Campaign battle on a Bastokan stronghold. No zone and no monster is named, so mobs is empty rather than guessed."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "report back only AFTER the \"Objective Completed\" message; bullet 3 says reporting before it ends the mission in failure"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aegis Scream IV (B)",
+   "page_id": 153566,
+   "revision_id": 729514,
+   "source_sha256": "44ab17d35f2dcb984cb1725b857b26c59c1e92a24b9dc329dbfce1600200824c",
+   "cache_file": "0153566_aegis_scream_iv_b_abc9122fb8"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 194,
+   "dat_name": "Aegis Scream IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "sign_up_step_from_header",
+   "count_unobservable",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Brass Wings of Service §\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. The walkthrough has no sign-up bullet, so step 1 is read from the {{Campaign Header}} NPC Name/Zone/pos trio together with bullet 2, which names Hieronymus as the one you report back to. Bullet 1 is the whole body of work and it is a Campaign battle: no zone, no NPC and no monster is named, so that rung carries {\"type\":\"none\"} and zone null -- it will never draw a marker, and that is the honest reading rather than pointing it at the giver's room. Bullet 3 is a warning attached to the report-back rung, not a rung: reporting to Hieronymus before the \"Objective Completed\" message fails the op. The Notes section's completion threshold is prefixed \"presumably\" by the wiki itself and is not observable to the addon in any case. Same three bullets as Aegis Scream III (B), so the same three rungs; what differs on this page is the rank, the Description (\"are now planning\"), and a Notes guess of 4000 Experience Points instead of III's unquantified guess. The ladder was read from this page, not copied from the sibling.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "sign-up rung recovered from the header and bullet 2"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "participate in a Campaign battle on a Bastokan stronghold. Notes guess a 4000 Experience Point threshold, with the wiki's own question mark; no packet carries it, so it is not modelled."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "report back only AFTER the \"Objective Completed\" message; bullet 3 says reporting before it ends the mission in failure"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Aegis Scream V (B)",
+   "page_id": 153567,
+   "revision_id": 729515,
+   "source_sha256": "c71dc85964d5f6b8c825fe723842f8993a78b336d1828fde051faff40d76d924",
+   "cache_file": "0153567_aegis_scream_v_b_88f1445862"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 195,
+   "dat_name": "Aegis Scream V (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "sign_up_step_from_header",
+   "count_unobservable",
+   "header_conflicts_with_body",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Moonlight Medal §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. The walkthrough has no sign-up bullet, so step 1 is read from the {{Campaign Header}} NPC Name/Zone/pos trio together with bullet 2, which names Hieronymus as the one you report back to. Bullet 1 is the whole body of work and it is a Campaign battle: no zone, no NPC and no monster is named, so that rung carries {\"type\":\"none\"} and zone null -- it will never draw a marker, and that is the honest reading rather than pointing it at the giver's room. Bullet 3 is a warning attached to the report-back rung, not a rung: reporting to Hieronymus before the \"Objective Completed\" message fails the op. The Notes section's completion threshold is prefixed \"presumably\" by the wiki itself and is not observable to the addon in any case. This tier differs from III (B) and IV (B) in a way that matters: bullet 1 sends you to \"any Northlands allied controlled region\", not to a Bastokan stronghold, and Notes bullet 1 says the op is only available while Beaucedine Glacier (S) or Xarcabard (S) is under ALLIED control. Those two zone names are the availability condition the page states, not a place bullet 1 names, so the fight rung still carries zone null and the names stay in the note. The page also contradicts itself in tone: Campaign Type is \"Defensive operations\" while the Description says the Republic will be \"conducting a series of attacks on northern Confederate strongholds\" -- recorded, not resolved. Notes guess 5000 Experience Points, again with the wiki's question mark.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "sign-up rung recovered from the header and bullet 2"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "participate in a Campaign battle in any Northlands allied controlled region. Notes bullet 1: the op is only offered while Beaucedine Glacier (S) or Xarcabard (S) is under allied control -- an availability gate the addon cannot see, and not a zone this bullet names."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "report back only AFTER the \"Objective Completed\" message; bullet 3 says reporting before it ends the mission in failure"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve II (B)",
+   "page_id": 153572,
+   "revision_id": 729573,
+   "source_sha256": "df227ee095e7243917356c670a7eb1e9ba72cc8b931859dc45fd78a1eb8db71d",
+   "cache_file": "0153572_steel_resolve_ii_b_ecfa30737b"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 322,
+   "dat_name": "Steel Resolve II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Allied Ribbon of Glory §§§§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs. The sub-bullet under bullet 2 (\"You do not need to bring any crystals\") is reassurance, not a step, and the Notes section is the answer key for the minigame rather than a ladder. Neither the Campaign Arbiter rung nor the teleport rung can be given a zone: the page says only \"any Bastok controlled area\", so zone stays null instead of inheriting Bastok Markets (S) and dropping a marker in Hieronymus's room for an NPC standing in a field. \"Campaign Arbiter\" is a wikilinked NPC name on the page, not a category or a heading, so it is a real target. Nothing here is observable -- no key item, no item to hold -- so every evidence is null. I compared this page's cached wikitext with Steel Resolve III (B)'s: the walkthrough and Notes are identical word for word and the ONLY difference is the Campaign Rank (this one Allied Ribbon of Glory, III's Golden Star). The ladders match because the pages match, not because the titles rhyme.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "\"After speaking with Hieronymus\" -- the sign-up is stated on this page"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "go to any Bastok controlled area and talk to the Campaign Arbiter, then give the correct Crystal orders for whichever NPCs are on screen. The page names no zone, only \"any Bastok controlled area\", so zone is null. You do not need to carry crystals -- the choices come from a menu. The Notes section's crystal-to-NPC key (fire = Elvaan in a red hat, ice = blonde Tarutaru, wind = Hume goldsmither, earth = old Elvaan with the axe, lightning = Mithra in black, water = Tarutaru in blue, light = Hume in white, dark = Elvaan painter) is reference for playing this rung, not a rung of its own."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "talk to the Campaign Arbiter again to teleport back to Bastok Markets (S). Same NPC as the rung before, so one marker covers both; kept separate because it is what moves you back to the giver's zone."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Steel Resolve III (B)",
+   "page_id": 153573,
+   "revision_id": 729574,
+   "source_sha256": "df394f2a5370849b58454de50678b9cd0650545d786befe64c2ad12584e93b69",
+   "cache_file": "0153573_steel_resolve_iii_b_fae67a2a5f"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 323,
+   "dat_name": "Steel Resolve III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Golden Star §§§§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs. The sub-bullet under bullet 2 (\"You do not need to bring any crystals\") is reassurance, not a step, and the Notes section is the answer key for the minigame rather than a ladder. Neither the Campaign Arbiter rung nor the teleport rung can be given a zone: the page says only \"any Bastok controlled area\", so zone stays null instead of inheriting Bastok Markets (S) and dropping a marker in Hieronymus's room for an NPC standing in a field. \"Campaign Arbiter\" is a wikilinked NPC name on the page, not a category or a heading, so it is a real target. Nothing here is observable -- no key item, no item to hold -- so every evidence is null. I compared this page's cached wikitext with Steel Resolve II (B)'s: the walkthrough and Notes are identical word for word and the ONLY difference is the Campaign Rank (this one Golden Star, II's Allied Ribbon of Glory). The ladders match because the pages match, not because the titles rhyme.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "\"After speaking with Hieronymus\" -- the sign-up is stated on this page"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "go to any Bastok controlled area and talk to the Campaign Arbiter, then give the correct Crystal orders for whichever NPCs are on screen. The page names no zone, only \"any Bastok controlled area\", so zone is null. You do not need to carry crystals -- the choices come from a menu. The Notes section's crystal-to-NPC key (fire = Elvaan in a red hat, ice = blonde Tarutaru, wind = Hume goldsmither, earth = old Elvaan with the axe, lightning = Mithra in black, water = Tarutaru in blue, light = Hume in white, dark = Elvaan painter) is reference for playing this rung, not a rung of its own."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Campaign Arbiter"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "talk to the Campaign Arbiter again to teleport back to Bastok Markets (S). Same NPC as the rung before, so one marker covers both; kept separate because it is what moves you back to the giver's zone."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Magna Cache III (B)",
+   "page_id": 153574,
+   "revision_id": 729575,
+   "source_sha256": "bdd7fcd0d8e801e4ca4fb916cdb92e8e490dfee0fafd792d3104450e7ea393c2",
+   "cache_file": "0153574_magna_cache_iii_b_615d577bdf"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 328,
+   "dat_name": "Magna Cache III (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "time_gated",
+   "zone_from_wiki_lookup",
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Iron Emblem of Service §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs, no key item and nothing observable. The op IS timed -- bullet 3 says pass/fail is \"based on ride time\" -- while the header's Time field is empty, which is a real conflict inside the page and the main reason this is medium rather than high. The Notes section is a stub: one measured successful ride time (North Gustaberg 2m32s) and nothing for the other three destinations, and the page carries Category:Information Needed. The four destination zones all resolve with their (S) suffixes exactly as the page spells them. I diffed the cached wikitext of all three Bastok tiers: Magna Cache I (B), II (B) and III (B) are identical apart from the Campaign Rank, so identical ladders here are a finding about the pages, not a copy. (The (W) tiers are NOT the same op text -- Magna Cache III (W) names a different NPC, different destinations and explicit times to beat -- so nothing was carried across nations.)\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: A step has one zone and this is a four-way choice, so zone is null and the four resolvable names stay in the note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "\"Gain your mission from Hieronymus\""
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melina"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page gives Melina's grid (H-5) but no zone. Bastok Markets (S) is from two BG Wiki lookups, NOT from this page: Melina's own NPC page carries Location=Bastok Markets (S), and the Bastok Markets (S) zone page lists Melina at H-5. She asks which stronghold you want to ride to: North Gustaberg (S), Grauberg (S), Pashhow Marshlands (S) or Rolanberry Fields (S)."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Ride the chocobo to whichever of the four strongholds you picked. On arrival the chocobo disappears and a cutscene plays whether you passed or failed pass/fail is decided by ride time, so the cutscene is not proof of success."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Magna Cache II (B)",
+   "page_id": 153575,
+   "revision_id": 729576,
+   "source_sha256": "f398ed02c88283d577deead9fcdb278e0d9df5a43d216d1c7ceacbf1e07ae253",
+   "cache_file": "0153575_magna_cache_ii_b_dc42dce639"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 327,
+   "dat_name": "Magna Cache II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "time_gated",
+   "zone_from_wiki_lookup",
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Sterling Star §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs, no key item and nothing observable. The op IS timed -- bullet 3 says pass/fail is \"based on ride time\" -- while the header's Time field is empty, which is a real conflict inside the page and the main reason this is medium rather than high. The Notes section is a stub: one measured successful ride time (North Gustaberg 2m32s) and nothing for the other three destinations, and the page carries Category:Information Needed. The four destination zones all resolve with their (S) suffixes exactly as the page spells them. I diffed the cached wikitext of all three Bastok tiers: Magna Cache I (B), II (B) and III (B) are identical apart from the Campaign Rank, so identical ladders here are a finding about the pages, not a copy.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: A step has one zone and this is a four-way choice, so zone is null and the four resolvable names stay in the note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "\"Gain your mission from Hieronymus\""
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melina"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page gives Melina's grid (H-5) but no zone. Bastok Markets (S) is from two BG Wiki lookups, NOT from this page: Melina's own NPC page carries Location=Bastok Markets (S), and the Bastok Markets (S) zone page lists Melina at H-5. She asks which stronghold you want to ride to: North Gustaberg (S), Grauberg (S), Pashhow Marshlands (S) or Rolanberry Fields (S)."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Ride the chocobo to whichever of the four strongholds you picked. On arrival the chocobo disappears and a cutscene plays whether you passed or failed pass/fail is decided by ride time, so the cutscene is not proof of success."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Magna Cache I (B)",
+   "page_id": 153576,
+   "revision_id": 729577,
+   "source_sha256": "102c1459dce80f7933db320a9d7acbe1c20d2838e84e6d6e07b18182699a5685",
+   "cache_file": "0153576_magna_cache_i_b_eee9bf2c52"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 326,
+   "dat_name": "Magna Cache I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "time_gated",
+   "zone_from_wiki_lookup",
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Brass Ribbon of Service §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs, no key item and nothing observable. The op IS timed -- bullet 3 says pass/fail is \"based on ride time\" -- while the header's Time field is empty, which is a real conflict inside the page and the main reason this is medium rather than high. The Notes section is a stub: one measured successful ride time (North Gustaberg 2m32s) and nothing for the other three destinations, and the page carries Category:Information Needed. The four destination zones all resolve with their (S) suffixes exactly as the page spells them. I diffed the cached wikitext of all three Bastok tiers: Magna Cache I (B), II (B) and III (B) are identical apart from the Campaign Rank, so identical ladders here are a finding about the pages, not a copy.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: A step has one zone and this is a four-way choice, so zone is null and the four resolvable names stay in the note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "\"Gain your mission from Hieronymus\""
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melina"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the page gives Melina's grid (H-5) but no zone. Bastok Markets (S) is from two BG Wiki lookups, NOT from this page: Melina's own NPC page carries Location=Bastok Markets (S), and the Bastok Markets (S) zone page lists Melina at H-5. She asks which stronghold you want to ride to: North Gustaberg (S), Grauberg (S), Pashhow Marshlands (S) or Rolanberry Fields (S)."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Ride the chocobo to whichever of the four strongholds you picked. On arrival the chocobo disappears and a cutscene plays whether you passed or failed pass/fail is decided by ride time, so the cutscene is not proof of success."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Search and Seizure I (B)",
+   "page_id": 153590,
+   "revision_id": 770378,
+   "source_sha256": "dee1b388c2320e5090a0118c1c01d0b8619e615563dab142a982120f010e8e04",
+   "cache_file": "0153590_search_and_seizure_i_b_2efb92e67c"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 266,
+   "dat_name": "Search and Seizure I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled",
+   "zone_varies_by_control",
+   "consumed_key_item",
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Golden Star §§§§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Twelve bullets, six rungs. The Quartermaster's zone is NOT a guess and NOT inherited: the wikitext links [[Quartermaster - Bastok Markets (S)|Quartermaster]], so the page itself binds him to Bastok Markets (S), and the Bastok Markets (S) NPC list on BG Wiki confirms a Quartermaster at H-9. target.name is the plain in-game name \"Quartermaster\", not the wiki's disambiguated title, which would be a marker key nothing in game answers to. The hunt rung has no zone: the page says any Beastmen-controlled zone and explicitly that it need not be one of your own nation's, then lists fifteen zones across three beastman families. Exactly ONE Transporter has to die, but which family's depends on the zone you pick, so all three are recorded with count 1 and role kill and the OR is flagged; kill counts are display-only in this addon and never advance a step, so three candidates cost nothing and give the player a marker wherever they go. The two Guards are NOT recorded as mobs -- the page says they warp off on their own and never asks you to kill them. Bullets 5 and 7 sit slightly at odds (bullet 5 has the Transporter dying outright to any hit from behind under Sneak, bullet 7 gives it about 1500 HP and has you defeat it normally); both are kept in the note rather than one being picked. Bullets 6, 10 and 12 are advice and respawn timing, not rungs. The [KI] Beastman Confederate crate is honest evidence for the ??? rung: it is granted there, it is not in the Rewards field (which lists lower enemy Supplies, Experience Points and 900 Allied Notes), and it is then handed to the Quartermaster, so it appears as evidence exactly once and as a held item on the turn-in.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: All fifteen zone names already carry the (S) suffix on the page and all fifteen resolve.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "select Resource Procurement from the Campaign Ops menu"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Hieronymus sends you to the Quartermaster at (H-9); the wikitext link target [[Quartermaster - Bastok Markets (S)]] is what puts him in Bastok Markets (S). He tells you to go to a \"Beastman influenced\" area, attack any Beastmen Supply Divisions and seize their cargo."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Quadav Transporter",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Orcish Transporter",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Yagudo Transporter",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "note": "Any Beastmen-controlled zone, and the page says it need not be one in your allied nation's area, so no zone is recorded. Kill ONE Transporter Quadav in Crawler's Nest (S), Grauberg (S), North Gustaberg (S), Pashhow Marshlands (S), Rolanberry Fields (S); Orcish in Batallia Downs (S), East Ronfaure (S), Jugner Forest (S), The Eldieme Necropolis (S), Vunkerl Inlet (S); Yagudo in Fort Karugo-Narugo (S), Garlaige Citadel (S), Meriphataud Mountains (S), Sauromugue Champaign (S), West Sarutabaruta (S). A Sneak Attack, critical hit, or any hit from behind under Sneak kills it outright (bullet 5); bullet 7 instead gives it about 1500 HP and has the two Guards warp off shortly after, which is why the Guards are not recorded as kills."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Beastman Confederate crate",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "click the ??? where the Transporter died for the [KI] Beastman Confederate crate. It disappears after a couple of minutes; you get it even if you did not help kill the Transporter, and you cannot get it at all if you are not on the op."
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Quartermaster"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Beastman Confederate crate",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "return with the crate and speak to the Quartermaster at (H-9). Bullet 10 notes you do NOT have to see him again before obtaining the key item, which is why this rung sits after the ??? and not before it."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "report back to Hieronymus to complete the mission -- the op does not end at the Quartermaster"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye II (B)",
+   "page_id": 153591,
+   "revision_id": 730162,
+   "source_sha256": "17670f09ffa07df1bc4ea87ada47fb02e28e4569a7ecdf2465eba15fa76a68af",
+   "cache_file": "0153591_hawk_eye_ii_b_696e0f127b"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 212,
+   "dat_name": "Hawk Eye II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Allied Ribbon of Glory §§§§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs, no key item, nothing observable. The travel and examine rungs carry zone null: the page says \"any Quadav controlled area\" and names none, so inheriting Bastok Markets (S) from the giver would put a marker in Hieronymus's room for something out in the field. Both sub-bullets under bullet 3 are commentary -- there are two ???s around the Stronghold and only one is this op's, and the message sequence is Commencing intel extraction, repeated ---Gathering intel---, then Investigation complete! -- so neither becomes a rung. Notes bullet 1 is an availability gate (the op is offered only when at least one of your nation's areas is under Beastmen control) with no schema field and no packet behind it. Against Hawk Eye I (B), whose cached wikitext I read: the two differ only in Campaign Rank (this one Allied Ribbon of Glory, I's Bronze Ribbon of Service), in the Allied Notes reward (1107 here, 729 there), and in one extra explanatory clause that appears on the I (B) page only. Everything above was read from this page.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "talk to Hieronymus and sign up"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "head to any Quadav controlled area and make your way to the Stronghold; the page names no zone"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "examine the ??? at the Stronghold to gather the intel. There are two ???s around the Stronghold and only one is this mission's. You get \"Commencing intel extraction\", then repeated \"---Gathering intel---\", then \"Investigation complete!\"."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hawk Eye I (B)",
+   "page_id": 153592,
+   "revision_id": 775168,
+   "source_sha256": "d607cb632c140b16db78a8f10a30eff930c33a3480cffe84d5c4ca762a8d8f12",
+   "cache_file": "0153592_hawk_eye_i_b_a11c2acdb0"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 211,
+   "dat_name": "Hawk Eye I (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Bronze Ribbon of Service §\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Four bullets, four rungs, no key item, nothing observable. The travel and examine rungs carry zone null: the page says \"any Quadav controlled area\" and names none, so inheriting Bastok Markets (S) from the giver would put a marker in Hieronymus's room for something out in the field. Both sub-bullets under bullet 3 are commentary -- there are two ???s around the Stronghold and only one is this op's, and the message sequence is Commencing intel extraction, repeated ---Gathering intel---, then Investigation complete! -- so neither becomes a rung. Notes bullet 1 is an availability gate (the op is offered only when at least one of your nation's areas is under Beastmen control) with no schema field and no packet behind it. This page adds one clause the II (B) page lacks and it is worth keeping: \"The 'Stronghold' is just the zone's fortification, the one around which defensive and offensive Campaign battles occur\" -- which is what the unnamed target of the travel rung actually is. Against Hawk Eye II (B), whose cached wikitext I read, the two differ only in Campaign Rank, in the Allied Notes reward (729 here, 1107 there) and in that clause.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "talk to Hieronymus and sign up"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "head to any Quadav controlled area and make your way to the Stronghold. This page explains what that is: the zone's fortification, the one around which Campaign battles occur. No zone is named."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "examine the ??? at the Stronghold to gather the intel. There are two ???s around the Stronghold and only one is this mission's. You get \"Commencing intel extraction\", then repeated \"---Gathering intel---\", then \"Investigation complete!\"."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "report back to complete the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Smokescreen II (B)",
+   "page_id": 153593,
+   "revision_id": 730188,
+   "source_sha256": "850860360b97bfc46c603b96a626a7b037bc446f5dfbe8eab90c8d0f124f327d",
+   "cache_file": "0153593_smokescreen_ii_b_9e463877d7"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 172,
+   "dat_name": "Smokescreen II (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "zone_varies_by_control",
+   "unnamed_target",
+   "count_unobservable",
+   "generic_npc_name"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Allied Ribbon of Glory §§§§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. The shortest page in the batch: three bullets, three rungs, no Notes section and no Category:Information Needed, so there is nothing after the walkthrough to read. The middle rung is a Campaign Battle in a \"Quadav Shieldwarriors controlled area\" -- that is the name of the controlling beastman force, not a monster you are told to defeat, so it is deliberately NOT recorded in mobs, where it would become a kill target that never completes. No zone is named either, so zone is null rather than the giver's. Its sub-bullet gives the real completion condition, an even 2000 EXP which may be accumulated over several battles in different areas; no packet carries that, so it is a note and a flag rather than a gate. The header's 351 Experience Points is the op's reward and is unrelated to that 2000.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "talk to Hieronymus and sign up"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "join a Campaign Battle in a Quadav Shieldwarriors controlled area. You need an even 2000 EXP to complete the op and it may be spread over several campaign battles in different areas. \"Quadav Shieldwarriors\" is the controlling force, not a mob to kill, so mobs stays empty."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "after the battle, return to Hieronymus to complete the operation"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Iron Anvil IV (B)",
+   "page_id": 153600,
+   "revision_id": 730428,
+   "source_sha256": "c623f9de6364e188436706f442cdbb1b67916c82c55ff205d9d906f61904ee14",
+   "cache_file": "0153600_iron_anvil_iv_b_184d597040"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "campaign",
+   "id": 304,
+   "dat_name": "Iron Anvil IV (B)",
+   "match_rule": "campaign_page_title",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/campaign-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "craft_gate_unmodelled",
+   "time_gated",
+   "zone_from_wiki_lookup"
+  ],
+  "notes": "Campaign Rank is a real gate with no schema field, so it is here and flagged rather than in gates.level, which means CHARACTER level: this op's rank is \"Mythril Wings of Service §§\". gates.repeatable and gates.expansion are null because {{Campaign Header}} carries neither field and this page says nothing about either in words. Three bullets, three rungs, all three targets named. The Adjutant's grid (J-9) is on this page twice -- in the walkthrough and in the header Description -- but his ZONE is not, so Bastok Markets (S) comes from the Bastok Markets (S) NPC list on BG Wiki, which places an Adjutant at J-9; the Adjutant NPC page itself has only the San d'Oria entry filled in. The three earlier Bastok tiers (Iron Anvil I (B), II (B), III (B)) give the same (J-9) with the same giver, which is corroboration, not the source. The five sub-bullets under bullet 2 are all conditions on that one conversation, not rungs: a developed craft at level 61 or he turns you away, a timed menu, TWO recipes, failure for slowness or wrong picks, and up to eight ingredients with a \"No more ingredients are required\" option. That level 61 is a CRAFT level, so gates.level stays null -- putting it there would gate the op on character level, which the header gives as Any. The \"Recipes\" section after the walkthrough is an unfilled placeholder table whose rows literally read \"Item name / Ingredients\", with a single real Clothcraft row (Aketon); it is reference material and contributes no steps.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hieronymus",
+   "zone": "Bastok Markets (S)",
+   "grid": "E-8",
+   "raw": "NPC Name=Hieronymus | Zone=Bastok Markets (S) | pos=E-8"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "talk to Hieronymus and select this Campaign Op"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Adjutant"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Adjutant asks which craft you specialize in, then tests you on TWO recipes from it: crystal first, then up to eight ingredients, with a time limit on each selection and failure for a wrong or late pick. Requires a developed craft at level 61 or better -- a craft level, not a character level. Grid (J-9) is from this page; the zone is from the Bastok Markets (S) NPC list on BG Wiki."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hieronymus"
+    },
+    "zone": "Bastok Markets (S)",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "once both tests are done, go back to Hieronymus for the reward"
+   }
+  ]
+ }
+]

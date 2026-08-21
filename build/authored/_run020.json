@@ -1,0 +1,890 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Root of the Problem",
+   "page_id": 295,
+   "revision_id": 696293,
+   "source_sha256": "4497bb84185d49d97786c543c08303543ae52674401bdeeeb0906a7340458e91",
+   "cache_file": "0000295_the_root_of_the_problem"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 68,
+   "dat_name": "The Root of the Problem",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 4
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "af_job_gate",
+   "walkthrough_in_table",
+   "unordered_group",
+   "steps_from_after_section",
+   "quoted_key_item_name"
+  ],
+  "notes": "The whole walkthrough survived the prepass as one [TABLE] blob, so the bullet levels are asterisks inside a single line rather than real list markup; the eleven top-level '*' items are numbered here in the order they appear and every '**' below them is commentary. Three of those eleven are not steps: bullet 4 is the framing for the two ??? that follow (merged into them), and bullet 9 is a party-credit caveat and a respawn timer (merged into the fight).\n\nThe two survey points are a genuine unordered pair -- bullet 7 says the black-power prompt is 'usually the second point you examine, however there is a very low chance that the first point can require it too', which only makes sense if the player picks the order -- so (H-7) and (I-9) share a group and draw at once. The Manafont re-examine that follows is a third, separate action and deliberately carries NO grid, because the page itself cannot say which of the two asks for it.\n\nThe only observable in the quest is the key item Chumimi hands back at step 3, and its real name carries literal double quotes: res/key_items.lua 180 is en=\"\\\"Sluice Surveyor Mk. I\\\"\". Written bare it does not resolve; written with the quotes it resolves to 180, and that is what the wiki's Item Reqs field writes too. It is filed under 'Temporary Key Items', so expect it not to survive the quest -- which is fine, it is step 3's evidence and nothing later depends on holding it.\n\nThe 'Optional Dialogue' section is real quest content, not notes, so its bullets 2-4 become the last two steps (its numbering restarts at [1], recorded as such in source_bullets). Kupipi's earthen charm resolves as key item 182 but is NOT used as evidence: the branch is optional and trails the turn-in, so advancing on it buys nothing, while a player already holding that charm from elsewhere would be thrown to the end of the ladder for free. Its two route sub-bullets fold into the Gate of Earth step's note.\n\nEvery name here resolves -- Chumimi, Koru-Moru, Kupipi and Gate of Earth as NPC keys, all four zones by id, Silk Cloth as item 829. Magic Sludge resolves as a name but is a monster, so it stays in mobs. The four ??? are objects that can never carry a marker; they are kept because they are the rungs.\n\nADVERSARY (stage D): two corrections. (a) The 'Optional Dialogue' section's own bullet [1] reads 'The following steps are optional', and the draft's notes even argue the branch is optional as the reason for withholding evidence from it -- but both steps taken from that section were written optional:false, i.e. as required rungs sitting after the turn-in. Kupipi (n=11) and the Gate of Earth (n=12) are now optional:true. Nothing else about them changed. (b) Quest confidence demoted high -> medium. The whole walkthrough survived the prepass as a single [TABLE] line, so the eleven top-level bullets are a reconstruction by eye rather than real list markup (three of them -- '*Return to Chumimi', '*Proceed to Toraimarai', '*At one of the ???' -- have no space after the asterisk, so the split is inferred); and the page states outright that it does not know which of the two survey points asks for the Mage's black power, which is why n=6 already carries no grid. The ladder is defensible but it is read off an unclear page, which is what medium is for. Verified independently and left alone: every name resolves (Chumimi/Koru-Moru/Kupipi/Gate of Earth as npc keys, Heavens Tower 242, Windurst Walls 239, Toraimarai Canal 169, Inner Horutoto Ruins 192, Silk Cloth 829, Magic Sludge as an npc key); the quoted KI resolves to 180 and the bare form does not, so the literal quotes are right; the single evidence is granted AT n=3 by the bullet that is n=3, is not the header's Reward (Wizard's Petasos), and is used on exactly one step; n is dense 1..12 and the source order is the page's order; the surveys group holds two steps in one zone with a grid each. The one thing I would have changed but may not: n=12's target.type is 'npc' where the guide says named doors and gates take 'object' -- left as authored because the resolver returns it under npc and retyping it is not a removal.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: res/key_items.lua 180",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [
+    {
+     "title": "Recollections",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "BLM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chumimi",
+   "zone": "Heavens Tower",
+   "grid": null,
+   "raw": "Chumimi - Heavens Tower"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the basement of Heavens Tower, as Black Mage. You must zone out of the tower after finishing Recollections before he will start this."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Koru-Moru"
+    },
+    "zone": "Windurst Walls",
+    "grid": "E-7",
+    "items": [
+     {
+      "name": "Silk Cloth",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cloth is for the magic doll he is building"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"Sluice Surveyor Mk. I\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "The key item's real name includes the literal double quotes and it is a Temporary Key Item, so do not expect it to outlive the quest."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Toraimarai Canal",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "surveys",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "north-east corner of (H-7) on map 1; from the Survival Guide follow the left wall to the grate blocking the path and it is right there. You must be facing it and on the near side of the concrete grate or you are told you cannot examine further. Either survey point may be done first."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Toraimarai Canal",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "surveys",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     6
+    ],
+    "note": "map 1; same facing and grate rule as the other point"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Toraimarai Canal",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "one of the two survey points asks for 'the Mage's black power': use the Black Mage SP Manafont, then examine that same ??? again for a second cutscene. No grid is recorded because the page says it is usually the second point you visited but rarely the first. Black Mage is not needed after this."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Toraimarai Canal",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Magic Sludge",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "two ??? sit side by side here; the correct one is the one that is NOT glowing"
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Toraimarai Canal",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Magic Sludge",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "a Dark Elemental NM, highly resistant to physical damage and resistant to magic to a lesser extent. With several Black Mages in the party only the one who triggered the pop cutscene gets credit, and there is a 3 minute wait before another can be spawned."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Toraimarai Canal",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same ??? again, once the NM is dead, for another cutscene"
+   },
+   {
+    "n": 10,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chumimi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "final cutscene and the Wizard's Petasos"
+   },
+   {
+    "n": 11,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kupipi"
+    },
+    "zone": "Heavens Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "from the 'Optional Dialogue' section, whose bullets restart at [1] -- this is its bullet 2. She gives an earthen charm (key item 182), which is deliberately not used as evidence: the branch is optional and trails the turn-in, and a player holding that charm from elsewhere would be jumped to the end of the ladder."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Gate of Earth"
+    },
+    "zone": "Inner Horutoto Ruins",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "'Optional Dialogue' bullets 3 and 4, merged: bullet 3 is only the route. In through the Sealed Portal at the Three Mage Gate, or from Toraimarai Canal if you hold a Rhinostery certificate; the Toraimarai Canal Survival Guide teleport puts you just outside the zone line, right by the gate."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040324_unlocking_a_myth_dark_knight"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 109,
+   "dat_name": "Unlocking a Myth (Dark Knight)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "count_unobservable",
+   "item_reqs_unmodelled",
+   "job_from_title",
+   "job_gate_inferred",
+   "shared_page_body",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "The Unlocking a Myth pages share one body: this file, the Beastmaster one, the White Mage one and the Black Mage one all carry source_sha256 777d9e82..., byte for byte. Nothing in the walkthrough or the header names a job -- the only thing that says this is the Dark Knight quest is the identity the table lookup already bound, quest/jeuno #109 / 'Unlocking a Myth (Dark Knight)'. jobs is therefore set to DRK from that identity rather than read off the page, and flagged, because Zalsuhm gives every one of these from the same spot in Muckvix's Junk Shop and an ungated ladder would pile twenty start markers on one NPC. If the inference is wrong the cost is the quest never showing for anyone but a Dark Knight, which is why this sits at medium.\n\nThe requirement that actually gates the quest cannot be expressed at all. 'Vigil Weapon equipped' is the header's Item Reqs and step 1's precondition, but 'Vigil Weapon' is the wiki's collective term for the twenty Nyzul Isle weapons, not an item name, and res/items.lua has no entry beginning with Vigil at all -- Vigil Sword and Vigil Weapon both come back unresolved. Committing an unresolvable name would be worse than leaving items empty, so the requirement lives in the step notes on both the talk and the hand-in.\n\nFour bullets, three steps. Bullet 3 is an outcome -- the new weapon skill showing up in the list -- not an action, so it folds into step 2. Step 2 itself is a real step with nothing observable anywhere in it: 250 weapon skill points, no named enemy, no zone, and no packet that reports a trial counter, so it has target none and zone null and simply holds a rung. The wikitable that survived the prepass is the points-per-skillchain schedule and belongs in that note.\n\nThe 'Notes' section is five bullets of gauge dialogue, history and version-update trivia; none is a step. The one worth carrying forward is that storing the weapon with Ghanraam in Aht Urhgan Whitegate (K-10) wipes the accumulated points, which is a hazard, not an instruction. Zalsuhm and Lower Jeuno both resolve.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Dark Knight)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: You must have the Vigil Weapon equipped for the cutscene; that requirement cannot go in items because nothing named Vigil* exists in res/items.lua.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "DRK"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Death Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "250 Weapon Skill Points, earned only with the same Vigil Weapon in the main hand and only against enemies that grant experience (Incredibly Easy Prey or better). Weapon skills used before the quest was opened do not count. Per weapon skill: 5 with no skillchain, 7 at skillchain level 1, 9 at level 2, 11 at level 3. Bullet 3 is the outcome -- the new weapon skill appearing in your list while the Vigil Weapon is equipped -- not an action. Nothing in the packets reports the counter, and the page names no enemy and no zone, so this rung is deliberately placeless."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "trade him the Vigil Weapon -- again unnameable, so items stays empty. He unlocks the weapon skill for any weapon of that type and hands the Vigil Weapon straight back. Trading it early only gets you a progress line, so that is not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040325_unlocking_a_myth_beastmaster"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 110,
+   "dat_name": "Unlocking a Myth (Beastmaster)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "count_unobservable",
+   "item_reqs_unmodelled",
+   "job_from_title",
+   "job_gate_inferred",
+   "shared_page_body",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "Same body as the Dark Knight, White Mage and Black Mage pages -- identical source_sha256 777d9e82... and identical revision text -- so the page itself says nothing about Beastmaster anywhere. jobs is set to BST from the bound identity, quest/jeuno #110 / 'Unlocking a Myth (Beastmaster)', not from anything on the page, and is flagged for it: Zalsuhm hands out all twenty of these from one square in Muckvix's Junk Shop, and without the gate every one of them would draw its start marker on him at once. Wrong inference costs only this quest's visibility to non-Beastmasters, which is what keeps the whole object at medium.\n\n'Vigil Weapon equipped' is the header's only requirement and it cannot be modelled: the term is the wiki's collective name for the twenty Nyzul Isle weapons, and res/items.lua resolves neither 'Vigil Weapon' nor any concrete Vigil name. Rather than commit a name that would not resolve, items is empty on both the opening talk and the hand-in and the requirement is written into their notes.\n\nFour bullets, three steps: bullet 3 is the outcome of bullet 2 (the weapon skill appears in your list) and merges into it. Step 2 is 250 weapon skill points against unnamed enemies in an unnamed zone with no packet reporting the count -- a real step that can never be marked or observed, kept as a rung with target none and zone null; the surviving wikitable is its points-per-skillchain schedule.\n\nThe 'Notes' section is gauge dialogue, a storage warning and version history -- no steps. Ghanraam in Aht Urhgan Whitegate (K-10) resetting the points is the only line with consequences and is recorded as a hazard. Zalsuhm and Lower Jeuno both resolve.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Beastmaster)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The Vigil Weapon must be equipped for the cutscene; the requirement cannot go in items because res/items.lua has no Vigil entry to point at.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "BST"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Double Axe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "250 Weapon Skill Points, earned only with the same Vigil Weapon in the main hand and only against enemies that grant experience (Incredibly Easy Prey or better). Weapon skills used before the quest was opened do not count. Per weapon skill: 5 with no skillchain, 7 at skillchain level 1, 9 at level 2, 11 at level 3. Bullet 3 is the outcome -- the weapon skill appearing in your list while the Vigil Weapon is equipped -- not an action. No enemy is named, no zone is named, and no packet reports the counter, so this rung is deliberately placeless."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "trade him the Vigil Weapon -- unnameable, so items stays empty. He unlocks the weapon skill for any weapon of that type and returns the Vigil Weapon. Trading it before it is ready only gets a progress line, which is not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040319_unlocking_a_myth_white_mage"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 104,
+   "dat_name": "Unlocking a Myth (White Mage)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "count_unobservable",
+   "item_reqs_unmodelled",
+   "job_from_title",
+   "job_gate_inferred",
+   "shared_page_body",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "One shared body again: this page is byte-identical to the Dark Knight, Beastmaster and Black Mage ones, same source_sha256 777d9e82..., so nothing in the header, the walkthrough or the Notes mentions White Mage. jobs is WHM on the strength of the bound identity alone -- quest/jeuno #104 / 'Unlocking a Myth (White Mage)' -- and flagged as inferred. The gate earns its place because Zalsuhm is the single giver for all twenty of these quests and an ungated ladder would stack twenty start markers on him in Muckvix's Junk Shop; the object stays at medium because the inference is mine, not the page's.\n\nThe quest's real requirement, 'Vigil Weapon equipped', is unmodellable. 'Vigil Weapon' is a category covering the twenty Nyzul Isle weapons rather than an item, and the resolver returns nothing for it or for any concrete Vigil name, so items is empty on both steps that need it and the requirement is written into their notes instead of committing a name that would not resolve.\n\nFour bullets, three steps. Bullet 3 states an outcome -- the new weapon skill appears under your weapon skills, but only with the Vigil Weapon equipped -- and folds into bullet 2's step. That step is 250 weapon skill points with no named enemy, no named zone and no packet that reports the trial counter: a genuine step that can never be marked, kept as a placeless rung. The wikitable the prepass left behind is its points-per-skillchain schedule and belongs in the note.\n\nThe 'Notes' section holds progress dialogue, a reset warning, and update history; none of its five bullets is a step. Storing the weapon with Ghanraam at Aht Urhgan Whitegate (K-10) wiping the points is the only consequential line. Zalsuhm and Lower Jeuno both resolve.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (White Mage)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The Vigil Weapon must be equipped for the cutscene; there is no resolvable item name for it, so it cannot go in items.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "WHM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Werebuster",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "250 Weapon Skill Points, earned only with the same Vigil Weapon in the main hand and only against enemies that grant experience (Incredibly Easy Prey or better). Weapon skills used before the quest was opened do not count. Per weapon skill: 5 with no skillchain, 7 at skillchain level 1, 9 at level 2, 11 at level 3. Bullet 3 is the outcome, not an action. No enemy, no zone and no observable counter, so the rung is deliberately placeless."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "trade him the Vigil Weapon -- unnameable, so items stays empty. He unlocks the weapon skill for any weapon of that type and gives the Vigil Weapon back. An early trade only produces a progress line and is not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unlocking a Myth",
+   "page_id": 41395,
+   "revision_id": 753770,
+   "source_sha256": "777d9e827e6694e766b6d2ff000541a12d191824d5219fc2ddab88ff74837e5c",
+   "cache_file": "0040320_unlocking_a_myth_black_mage"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 105,
+   "dat_name": "Unlocking a Myth (Black Mage)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "count_unobservable",
+   "item_reqs_unmodelled",
+   "job_from_title",
+   "job_gate_inferred",
+   "shared_page_body",
+   "vigil_weapon_pinned"
+  ],
+  "notes": "The last of the four identical Unlocking a Myth pages in this batch -- same source_sha256 777d9e82... as the Dark Knight, Beastmaster and White Mage ones -- so once again the page never says Black Mage. jobs is BLM from the bound identity, quest/jeuno #105 / 'Unlocking a Myth (Black Mage)', and flagged as inferred rather than read. It is worth setting: Zalsuhm gives every one of these quests from the same square in Muckvix's Junk Shop, so twenty ungated ladders would put twenty start markers on one NPC. Because the gate is my inference and not the page's statement, the object sits at medium.\n\nThe one requirement the header does state, 'Vigil Weapon equipped', is unmodellable. It is the wiki's collective term for the twenty Nyzul Isle weapons, not an item name, and the resolver finds nothing under Vigil at all, so items is left empty on both steps that need it rather than committing a name that would fail to resolve.\n\nFour bullets become three steps: bullet 3 is the outcome of the grind, not a separate action. The grind itself -- 250 weapon skill points -- names no enemy, names no zone, and is reported by no packet, so it stays a placeless rung with target none. The wikitable that survived the prepass is the points-per-skillchain schedule and is folded into that step's note.\n\nNothing in the 'Notes' section is a step: it is progress dialogue, the Ghanraam storage reset at Aht Urhgan Whitegate (K-10), and version history. Zalsuhm and Lower Jeuno both resolve.\n\nVIGIL WEAPON PINNED. The page says only \"a Vigil Weapon equipped\" and never names it, so the reading pass was right to leave it unresolvable -- 'Vigil Weapon' is a wiki CATEGORY, not an item. The job -> weapon mapping lives on Category:Vigil_Weapons, which is not in the scrape; it was fetched once and recorded in bgwiki-rest-cache/supplemental/vigil_weapons.json. This job's weapon is a real item with a real id, so the requirement is now checkable. Caveat kept honest: the quest wants it EQUIPPED and the addon can only see that you HOLD it, which is the near-miss direction -- you are one keystroke from ready rather than being told you are ready when you are not. | CORRECTED provenance: this page is reached through the redirect 'Unlocking a Myth (Black Mage)'. The record previously cited the STUB's page id and revision, whose content is a single #REDIRECT line -- not the wikitext the ladder was read from. It now cites the article.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The Vigil Weapon must be equipped for the cutscene; no resolvable item name exists for it, so it is kept out of items.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [
+    "BLM"
+   ],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Zalsuhm",
+   "zone": "Lower Jeuno",
+   "grid": "H-9",
+   "raw": "Zalsuhm, Lower Jeuno (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Mage's Staff",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Inside Muckvix's Junk Shop."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "250 Weapon Skill Points, earned only with the same Vigil Weapon in the main hand and only against enemies that grant experience (Incredibly Easy Prey or better). Weapon skills used before the quest was opened do not count. Per weapon skill: 5 with no skillchain, 7 at skillchain level 1, 9 at level 2, 11 at level 3. Bullet 3 is the outcome -- the weapon skill appearing in your list -- not an action. Nothing here is named or observable, so the rung carries no place."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Zalsuhm"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "trade him the Vigil Weapon -- unnameable, so items stays empty. He unlocks the weapon skill for any weapon of that type and returns the weapon. Trading it early only yields a progress line, not a step."
+   }
+  ]
+ }
+]

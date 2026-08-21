@@ -1,0 +1,1393 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rhapsodies of Vanadiel Mission 1-3",
+   "page_id": 116633,
+   "revision_id": 766555,
+   "source_sha256": "a435e24fac390a332f1f360099e0fde4d351f4689e58daa9221699629a9ddb5a",
+   "cache_file": "0116633_rhapsodies_of_vanadiel_mission_1_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "rov",
+   "id": 111,
+   "dat_name": "Emissary from the Seas",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'naillina' and my start is Naillina, so nothing moves. The header Start field is '(empty)', so the NPC comes from the walkthrough rather than the header.\n\nTHE WHOLE PAGE IS A TWO-WAY BRANCH AND ONLY ONE SIDE IS MODELLED. Rhapsodies 1-1 makes you pick Selbina or Mhaura, and that choice is fixed for the rest of chapter 1; this mission is the same conversation in whichever town you picked. Bullet 1 is the Selbina side -- Naillina at (F-9) in the Mayor's Residence, first option 'You wanted an adventurer?'. Bullet 2 is the Mhaura side -- Numi Adaligo at (F-9) in the Governor's House, first option \"You're searching for adventurers?\". You do EXACTLY ONE of them.\n\nI modelled the Selbina side only, for the same reason Aht Urhgan Mission 2 in this corpus refused to turn its six staging points into a group: `group` means 'do all of these in any order', which is a different and false claim, and drawing both would put a marker in a town half the players have no business in -- a wrong marker that sends somebody somewhere, which the project ranks as worse than no marker. Selbina wins the coin toss because chronicle already carries 'naillina', so writing it changes nothing at all; writing Numi Adaligo would silently move the marker across the Selbina-Mhaura ferry.\n\nA Mhaura-path player therefore gets a marker one zone away from the right one. That is the cost, it is recorded here rather than hidden, and it is why this is medium and not high. The two towns are a five-minute boat ride apart and the NPC is the town leader in both, so the reading is still useful; nothing about it is a misreading of the page.\n\nNO EVIDENCE, and none is available: the header Reward is empty, no key item changes hands, and a conversation is not observable. Header Repeatable is '(empty)' -- unknown, recorded as null, not false. rov is one of the LINEAR lines that sends only a current-mission pointer and no completed bitfield, so nothing here will ever be corrected by observation; that is another reason not to invent the second rung.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the same rung in a different town, which the schema cannot express as an OR.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Resonance",
+     "cat": "mission",
+     "area": "rov",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "rhapsodies"
+  },
+  "start": {
+   "npc": "Naillina",
+   "zone": "Selbina",
+   "grid": "F-9",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naillina"
+    },
+    "zone": "Selbina",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "In the Mayor's Residence; choose the first dialogue option, 'You wanted an adventurer?'. SELBINA PATH ONLY. A Mhaura-path character instead talks to Numi Adaligo at (F-9) in the Governor's House in Mhaura and picks \"You're searching for adventurers?\"."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rhapsodies of Vanadiel Mission 1-5",
+   "page_id": 116635,
+   "revision_id": 766556,
+   "source_sha256": "bb537f9c7d919ea00c54ac6e73af8527c5d93fadbe40ae0f575b75e1a7a01508",
+   "cache_file": "0116635_rhapsodies_of_vanadiel_mission_1_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "rov",
+   "id": 114,
+   "dat_name": "The Beginning",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "start_recovered_from_walkthrough",
+   "door_target_deferred_to_npc",
+   "grid_conflict"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'pacomart' and my start is Pacomart, so nothing moves. Header Start is '(empty)'; the NPC is recovered from the walkthrough.\n\nSAME SELBINA/MHAURA FORK as Rhapsodies 1-3, and again only one side is modelled. Bullet 1: Pacomart at (H-10) in Selbina ferries you to Norg. Bullet 2: Tonasav at (H-9) in Mhaura does the same thing for a Mhaura-path character. You do exactly one, so this is or_branch_unmodelled rather than a group -- a group asserts 'do both in any order', which is false. Selbina is chosen because chronicle already carries 'pacomart' and writing anything else would move the marker without a word. Both sub-bullets say the ferryman will take you back again if you fail to finish the next step, which is a convenience, not a rung.\n\nThe SECOND rung is common to both paths, so the branch only costs the first one, and step 2 is where both readings converge.\n\nTHE DOOR. The page's step 2 is 'Talk to the Oaken Door at (K-8) in Norg to Gilgamesh's room'. I did NOT write 'Oaken Door' as the target. BG Wiki has no page for it and the Norg zone page lists no such entity, while 'gilgamesh' is a proven NPC key in this addon's own shipped data (mission_index rows for zilart 22, 27 and 30 all mark him at zone 252, and quest_index turns quests in on him there). An unproven door name would cost the step its marker; Gilgamesh keeps it, and it is the same doorway either way. Flagged door_target_deferred_to_npc so the judgement is findable, and grid_conflict because I keep the page's (K-8) -- the door -- while BG Wiki's Norg NPC list places Gilgamesh himself at (L-8).\n\nNO EVIDENCE. The header Reward is '[KI] Reisenjima Sanctorium orb', and hard rule 7 keeps a reward out of evidence: it proves the mission is over, not that a rung is done. Nothing else here is observable. The Description's aside about 'Gilgamesh's letter of introduction' is a shortcut for players who already hold one and is not a walkthrough bullet, so it is not a step and not a requirement. Repeatable '(empty)' -> null.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the Mhaura equivalent is Tonasav at (H-9) in Mhaura, which the schema cannot express as an alternative to this rung.\n  step 2: Target is Gilgamesh rather than the door because the door is not an entity name this addon or BG Wiki can corroborate; see the record note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Set Free",
+     "cat": "mission",
+     "area": "rov",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "rhapsodies"
+  },
+  "start": {
+   "npc": "Pacomart",
+   "zone": "Selbina",
+   "grid": "H-10",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pacomart"
+    },
+    "zone": "Selbina",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "He takes you to Norg, and will take you again if you do not finish step 2. SELBINA PATH ONLY."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gilgamesh"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "The page says 'Talk to the Oaken Door at (K-8) in Norg to Gilgamesh's room' the same rung on both paths. (K-8) is the door; BG Wiki puts Gilgamesh at (L-8) in the same room."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rhapsodies of Vanadiel Mission 2-10",
+   "page_id": 117270,
+   "revision_id": 766580,
+   "source_sha256": "eeec11eef33de81a1590e7bbdb8ea52ef3d8224832309777dd13785330384da2",
+   "cache_file": "0117270_rhapsodies_of_vanadiel_mission_2_10"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "rov",
+   "id": 172,
+   "dat_name": "Reunited",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "zone_from_lookup"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'nadeey' and my start is Nadeey, so nothing moves. Header Start is '(empty)' and the name comes from the one walkthrough bullet.\n\nONE BULLET, ONE STEP, and that is the whole mission: enter Walahra Temple and talk to Nadeey for a cutscene.\n\nWALAHRA TEMPLE IS NOT A ZONE. It probes as {\"id\": null} because it is a building inside Aht Urhgan Whitegate (zone 50), not a zone of its own -- this corpus already settled the same point for quest/toau/47, whose record says so outright and puts Nadeey at zone 50, (K-7). I record the zone as Aht Urhgan Whitegate so the step keeps a zone rather than degrading to the nil that matches everywhere. The grid stays null because THIS page gives none; (K-7) is where the shipped quest index has Nadeey standing, and the header Description points at the Hall of Binding inside the temple, which may or may not be the same spot -- not worth asserting for a display hint. Flagged zone_from_lookup.\n\nNO EVIDENCE. The header Reward is empty, nothing is handed over, and a cutscene is not observable -- null is the correct reading, not a hole.\n\nThe 'After the walkthrough: Notes' section is a disambiguation, not a step: it warns that an automatic cutscene on arrival belongs to The Rider Cometh and is not part of this mission. Repeatable '(empty)' -> null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Aphmau's Light",
+     "cat": "mission",
+     "area": "rov",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "rhapsodies"
+  },
+  "start": {
+   "npc": "Nadeey",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": null,
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nadeey"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in Walahra Temple, which is a building inside Aht Urhgan Whitegate rather than a zone; the shipped quest index has Nadeey at (K-7). An automatic cutscene on arrival is The Rider Cometh, not this mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Queen of the Dance",
+   "page_id": 37477,
+   "revision_id": 760908,
+   "source_sha256": "04805e6b82dea4922fb4dbc18a71532aefd33889cdd9185f7ed1e1ced6f1ff53",
+   "cache_file": "0037477_the_queen_of_the_dance"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 3,
+   "dat_name": "The Queen of the Dance",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER -- I DIFFER FROM chronicle, WHICH IS EMPTY, AND THIS IS DELIBERATE. The header Start is the bare zone 'Southern San d'Oria (S)' with no NPC, and chronicle_snpc is '', so today this mission has no giver marker at all. The walkthrough's first real instruction is to touch the Lion Springs Tavern door at (K-6), and that door is itself a named entity -- this corpus already uses 'Lion Springs Tavern' as an object target twice in _mission010, once promoting it to start.npc for exactly this reason. Here the door is the FIRST thing a player does, not the last, so promoting it moves the marker from nowhere to the right doorway rather than off anybody. Flagged start_is_zone_entry and start_recovered_from_walkthrough.\n\nERA MATTERS AND IS LOAD-BEARING. Southern San d'Oria (S) is zone 80, the present-day city is 230, and BOTH hold a Lion Springs Tavern door. A step without its zone would draw in the wrong century. Step 2 is deliberately the other way round: the page says 'present day Upper Jeuno', so Turlough is zone 244 and not an (S) zone.\n\nBULLET 1 IS NOT A STEP: 'triggered automatically after completion of Cait Sith' is the mission's own precondition, which is what gates.prev is for. The sub-bullet under bullet 2 -- door locked, so zone in from East Ronfaure (S) to clear the Cait Sith cutscene, or do nation quests 3 and 4 -- is troubleshooting for an unfinished prerequisite, not a rung, and lives in the note.\n\nEVIDENCE, AND IT IS REAL. Turlough hands over [KI] Mayakov show ticket (key item 1022) at his own step, and the header Reward is empty, so hard rule 7 does not touch it -- this is one of the few missions in the lane with a genuine observation. The ticket then rides step 3 as `items`, since it is what gets you through the door the second time; it is evidence on exactly one step, so the mark cannot jump.\n\nSteps 1 and 3 are the same door with Turlough between them, so they are two rungs and not one: the page really does send you away and back.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Cait Sith",
+     "cat": "mission",
+     "area": "wotg",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Lion Springs Tavern",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "K-6",
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lion Springs Tavern"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "touch the tavern door for a cutscene. If the door will not open you probably still owe the Cait Sith cutscene: zone into Southern San d'Oria (S) from East Ronfaure (S), or clear nation quests 3 and 4 first. The past city, zone 80, not the present-day one."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Turlough"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Mayakov show ticket",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "PRESENT DAY Upper Jeuno, watching the dancers. He gives the [KI] Mayakov show ticket, which is not in the header Reward and so is honest evidence for this rung."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Lion Springs Tavern"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "K-6",
+    "items": [
+     {
+      "name": "Mayakov show ticket",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "touch the same door a second time, holding the ticket, for the closing cutscene."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "While the Cat is Away",
+   "page_id": 37478,
+   "revision_id": 649570,
+   "source_sha256": "1aee8b3dc7ad0203cc2ef0938e99c7d8037ab019f44c1b3a2fd355f57a95c2b7",
+   "cache_file": "0037478_while_the_cat_is_away"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 4,
+   "dat_name": "While the Cat Is Away",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "no_markable_entity"
+  ],
+  "notes": "GIVER: header Start is the bare zone 'Southern San d'Oria (S)' and names no NPC; chronicle_snpc is ''. They AGREE, start.npc stays null, and nothing moves. This is the zone-entry case the brief describes.\n\nTHERE IS NOTHING IN THIS MISSION TO MARK, and that is the honest reading rather than a failure. Bullet 1 says it begins automatically at the last cutscene of the previous mission. Bullet 2 is the only instruction and it is a zone line: walk out of Southern San d'Oria (S) into East Ronfaure (S) and the cutscene fires. Bullet 3 -- 'the next mission will be triggered at the conclusion of this part' -- is an outcome. No NPC, no object, no item, no monster is named anywhere on the page, so there is no target and inventing one would be a wrong marker pointing at nothing.\n\nI expect stage C to flag start_npc_unresolved on this record, because start.npc is null and no step carries an npc or object target. That is correct and it costs nothing: the mission has no giver today either, so the outcome is identical to what ships, and the rung is still recorded truthfully. Confidence is medium for that reason -- the page is perfectly clear and I understood it completely; there is simply nothing here the addon can point a marker at.\n\nERA: East Ronfaure (S) is zone 81, not zone 101. Both halves of the walk are past-era zones and the (S) suffix is what keeps them apart.\n\nNo evidence anywhere: header Reward is empty and nothing changes hands. Repeatable '(empty)' -> null, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Queen of the Dance",
+     "cat": "mission",
+     "area": "wotg",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Southern San d'Oria (S)",
+   "grid": null,
+   "raw": "Southern San d'Oria (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "East Ronfaure (S)"
+    },
+    "zone": "East Ronfaure (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "on foot out of Southern San d'Oria (S); the cutscene fires on the zone line. Past era both sides -- zone 80 to zone 81."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Will of the World",
+   "page_id": 47174,
+   "revision_id": 774959,
+   "source_sha256": "23ed459d9d584e7415efb1a41356bb6063b6ff2f3e0fdcdf328c385eda609e57",
+   "cache_file": "0047174_the_will_of_the_world"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "wotg",
+   "id": 24,
+   "dat_name": "The Will of the World",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'raustigne' and my start is Raustigne, so nothing moves. Header Start is '(empty)', so the NPC and the grid both come from the single walkthrough bullet.\n\nONE BULLET, ONE STEP, and the page is unambiguous: speak to Raustigne in Southern San d'Oria (S) at (I-7) for a cutscene. Nothing else on the page is an instruction.\n\nERA: Southern San d'Oria (S) is zone 80. The present-day city is 230 and Raustigne is not in it, so the (S) suffix has to survive into the zone field or the marker lands in the wrong century.\n\nThe header's Title field, 'Bestrider of Futures', is a title the mission AWARDS, not a gate on entering it, so it is recorded nowhere. Reward is empty, nothing is handed over, no key item, no monster -- evidence is null and that is the reading, not a gap. Repeatable '(empty)' -> null, not false. gates.prev takes the header Previous verbatim, 'Distorter of Time'; its numeric mission id is not in this lane, so cat and area are recorded and id is left null rather than guessed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Distorter of Time",
+     "cat": "mission",
+     "area": "wotg",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Raustigne",
+   "zone": "Southern San d'Oria (S)",
+   "grid": "I-7",
+   "raw": "(empty)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raustigne"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "past-era San d'Oria, zone 80, not the present-day city."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Zilart Mission 3",
+   "page_id": 13128,
+   "revision_id": 727768,
+   "source_sha256": "7332303734619e43c8c4c60431eedb3af903aab38d6406a5c1447cd4addc9351",
+   "cache_file": "0013128_zilart_mission_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 6,
+   "dat_name": "Kazham's Chieftainess",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'jakoh wahcondalo' and my start is Jakoh Wahcondalo, so nothing moves. The header Start field says the literal string 'None', which is not a giver but an absence; the walkthrough names her and gives her grid, so the start is recovered from there.\n\nONE BULLET, ONE STEP. Go to Kazham (J-9) and speak with Jakoh Wahcondalo. The sub-bullet is a travel shortcut -- Elshimo Low, Kazham, Home Point #1 lands next to her house -- and route advice is not a rung.\n\nNO EVIDENCE, AND THE KEY ITEM IS THE TRAP HERE. She hands over [KI] Sacrificial Chamber key (key item 238), and it is tempting to call that an observation because it is granted at the only step there is. It is also the header's Reward field verbatim, and hard rule 7 is explicit: a reward proves the mission is over, not that a step is done. With a one-rung ladder the two are the same instant anyway, so evidence would buy nothing and would set a precedent that quietly re-admits rewards. Left null. Worth knowing that the key is what the NEXT stretch of the storyline spends in the Temple of Uggalepih -- that makes it that mission's requirement, not this one's observation.\n\nRepeatable is the explicit 'No', so false rather than unknown -- one of the few pages in this lane that actually says.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Welcome t'Norg",
+     "cat": "mission",
+     "area": "zilart",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Jakoh Wahcondalo",
+   "zone": "Kazham",
+   "grid": "J-9",
+   "raw": "None"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jakoh Wahcondalo"
+    },
+    "zone": "Kazham",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Elshimo Low > Kazham > Home Point #1 puts you next to her house. She grants the [KI] Sacrificial Chamber key, which is the header Reward and therefore not used as evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Zilart Mission 8",
+   "page_id": 13150,
+   "revision_id": 723244,
+   "source_sha256": "ef58e7afb9cb3120d2b9a28240d979bedb4467b7a955f21728afdd8b47d5b273",
+   "cache_file": "0013150_zilart_mission_8"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 16,
+   "dat_name": "Return to Delkfutt's Tower",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "steps_from_after_section",
+   "or_branch_unmodelled"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'aldo' and my start is Aldo, so nothing moves. Header Start is the literal 'None'. Aldo's rung is the page's own '(Optional) Aldo's Decision', which is an odd giver -- but it is the first thing the walkthrough tells you to do, chronicle already carries him, and setting anything else would move the marker for no gain.\n\nTHE PAGE IS OUT OF ORDER AND THAT IS THE MAIN JUDGEMENT HERE. Bullet 3 states the objective, 'zone into Stellar Fulcrum for a cutscene', and bullets 4 through 10 are the route that gets you there. Read as a player rather than as a list, the mission is: cutscene with Aldo (optional), cutscene on entering Lower Delkfutt's Tower, climb to Upper Delkfutt's Tower, cross to Stellar Fulcrum, click the gate, fight. So bullet 3 is folded into the Stellar Fulcrum rung it describes, and the climb bullets are folded into the two travel rungs they belong to. Every merge keeps its bullet numbers.\n\nTHE KEY IS A SHORTCUT, NOT A REQUIREMENT, so `items` stays empty on step 3. Bullet 4 says a Delkfutt Key (item 549) or the [KI] Delkfutt key (key item 1111) 'will greatly speed this mission up'; bullet 5 is the fast route through the cermet doors and the staircase ???; bullet 6 says without one you climb the tower normally. Requiring it would gate a rung shut for every player who does it the slow way. Flagged or_branch_unmodelled and both routes are in the note.\n\nSix stairwell bullets did NOT become six rungs. Nothing in Lower or Upper Delkfutt's Tower between the zone lines is a named entity, nothing there is observable, and a ladder that cannot tell you which floor you are on would sit on the first rung of six for the whole climb. Two travel rungs, one per zone reached, with the coordinates in the notes.\n\nTHE BOSS FIGHT IS A STEP AND IT COMES FROM AFTER THE WALKTHROUGH. The '## After the walkthrough: Boss Fight' section's bullets 1 and 2 are the real end of the mission -- a BCNM against Kam'lanaut, and clearing it ends the mission -- so they earn a rung, flagged steps_from_after_section. Its bullets 3 to 8 are tactics (Great Wheel, Light Blade, the elemental en-spell that heals him, immune to sleep and silence, ~10,000 HP) and are not steps; the useful parts ride in the note.\n\nNO EVIDENCE ANYWHERE, correctly: the header Reward is 'None' and nothing in the mission hands over an item. 'Destroyer of Antiquity' is a title the mission awards, not a gate. Repeatable 'No' -> false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Chamber of Oracles",
+     "cat": "mission",
+     "area": "zilart",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Aldo",
+   "zone": "Lower Jeuno",
+   "grid": null,
+   "raw": "None"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aldo"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page marks this '(Optional) Aldo's Decision'; he is at the Tenshodo HQ in Lower Jeuno, which the shipped quest index puts at (J-8). No grid on the page, so none is recorded."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Lower Delkfutt's Tower"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in from Qufim Island or by Survival Guide; the cutscene fires on the zone line."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Upper Delkfutt's Tower"
+    },
+    "zone": "Upper Delkfutt's Tower",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5,
+     6
+    ],
+    "note": "TWO ROUTES, neither required. With a Delkfutt Key or the [KI] Delkfutt key: (E-8) on the first floor through the cermet door to the basement, then (J-8) for a second cermet door, then the ??? in the middle of the spiral staircase at (H-8), which teleports you to the 10th floor. Without a key you climb the tower normally. The key only saves time, so it is not recorded as an item requirement."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Stellar Fulcrum"
+    },
+    "zone": "Stellar Fulcrum",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     7,
+     8,
+     9,
+     10
+    ],
+    "note": "from Upper Delkfutt's Tower: (F-8) on the first map and through the door -- that area is not drawn on the map -- then the stairs to the 11th floor, (J-6) to the 12th, and the teleporter at (F-10). Sneak and Invisible for the bats and giants; the dolls and pots aggro magic. Home Point #1 in Upper Delkfutt's Tower drops you beside the teleporter. Bullet 3 states this objective out of order, ahead of the route that reaches it."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Qe'lov Gate"
+    },
+    "zone": "Stellar Fulcrum",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "walk forward from the zone line and click it; the gate opens the battlefield."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Stellar Fulcrum",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kam'lanaut",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "FROM THE 'Boss Fight' SECTION AFTER THE WALKTHROUGH, whose bullets restart at [1]: its [1] and [2] say this is a BCNM against Kam'lanaut and that clearing it ends the mission. Buffs wear on entry, Trusts can be used, roughly 10,000 HP, immune to sleep and silence. Its remaining bullets are tactics and are not steps."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Zilart Mission 9",
+   "page_id": 13151,
+   "revision_id": 727809,
+   "source_sha256": "c4dedbe7d9bdb022f1ccb3e76b326007e0ad260576bbeccebcdd58a1ebff53d9",
+   "cache_file": "0013151_zilart_mission_9"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 18,
+   "dat_name": "Ro'Maeve",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "door_target_deferred_to_npc",
+   "grid_conflict"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'aldo' and my start is Aldo, so nothing moves -- even though Aldo's rung is the page's own '(Optional)'. The progression rung is the second one, in Norg; keeping Aldo as start.npc leaves the giver row exactly as it ships while the ladder still draws the rung that matters.\n\nWHERE ALDO IS. Bullet 1 says only 'head to the Tenshodo and speak to Aldo' -- no zone, no grid. The Tenshodo HQ is in Lower Jeuno, which Zilart Mission 8's page in this same corpus states outright and which the shipped quest index corroborates (Aldo, zone 245, (J-8)). I record the zone because a nil zone matches everywhere, and leave the grid null because this page does not give one.\n\nTHE DOOR IS THE INSTRUCTION AND GILGAMESH IS THE TARGET. Bullet 2's sub-bullet is emphatic: click the 'Oaken Door' at (K-8) in Norg and choose 'Open the door'. Bullet 3 exists only because a player mid-CoP or mid-Rhapsodies will be offered other options at the same door and must pick this one. I did not write 'Oaken Door' as the target: BG Wiki has no page for it and the Norg zone page lists no such entity, whereas 'gilgamesh' is a proven NPC key in this addon's own shipped data at zone 252. An unproven door name costs the step its marker for nothing; Gilgamesh keeps it and stands in the same room. Flagged door_target_deferred_to_npc, and grid_conflict because the (K-8) I keep is the door's while BG Wiki's Norg NPC list puts Gilgamesh at (L-8).\n\nBULLET 4 IS NOT A STEP: 'after the cut-scene you will be standing outside the Oaken Door again and the next mission will have started' is an outcome.\n\nNO EVIDENCE: header Reward is 'None', nothing changes hands, and two cutscenes are not observable. Repeatable 'No' -> false.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: Target is Gilgamesh rather than the door because the door is not a corroborated entity name; see the record note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Return to Delkfutt's Tower",
+     "cat": "mission",
+     "area": "zilart",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Aldo",
+   "zone": "Lower Jeuno",
+   "grid": null,
+   "raw": "None"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aldo"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page marks this '(Optional)' and names only 'the Tenshodo'; the Tenshodo HQ is in Lower Jeuno, per Zilart Mission 8's page and the shipped index, which puts him at (J-8). No grid on this page, so none is recorded."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gilgamesh"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "Click the Oaken Door at (K-8) and choose 'Open the door' if you are also running Chains of Promathia or Rhapsodies the door offers other options and only this one advances this mission. He speaks of ruins north of The Sanctuary of Zi'Tah."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Zilart Mission 11",
+   "page_id": 13153,
+   "revision_id": 712352,
+   "source_sha256": "feb6be1d20bd5ce240e7c06309c84d0f31750c45dd7b8be045694fb9eaefe779",
+   "cache_file": "0013153_zilart_mission_11"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 22,
+   "dat_name": "The Hall of the Gods",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'gilgamesh' and my start is Gilgamesh, so nothing moves. Header Start is the literal 'None'; the walkthrough names him.\n\nONE BULLET, ONE STEP: unable to get past the grate, head back to Norg, open the door, and speak to Gilgamesh. Both sub-bullets are outcomes -- he mentions a Mithra who was trying to sell a crystal, and you will then be on the next mission -- not rungs.\n\nTHE DOOR IS NOT NAMED ON THIS PAGE. Zilart Missions 9 and 15 in this same corpus both call it the Oaken Door at (K-8) in Norg, and this page simply says 'open the door'. I record Gilgamesh, which is what the page actually names, which is what chronicle carries, and which is a proven NPC key at zone 252 in this addon's shipped data. No grid is given here, so grid stays null rather than importing (K-8) from a sibling page for what is only a display hint.\n\nNO EVIDENCE: header Reward is 'None', nothing changes hands, and a conversation is not observable -- null is the reading, not a hole. Repeatable 'No' -> false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Temple of Desolation",
+     "cat": "mission",
+     "area": "zilart",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Gilgamesh",
+   "zone": "Norg",
+   "grid": null,
+   "raw": "None"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gilgamesh"
+    },
+    "zone": "Norg",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says 'head back to Norg, open the door, and speak to Gilgamesh' and does not name the door; Zilart Missions 9 and 15 call it the Oaken Door at (K-8). No grid is given here."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Zilart Mission 12",
+   "page_id": 13154,
+   "revision_id": 767601,
+   "source_sha256": "7800790245f7f9692aefdf984214bf58500f716c627f359497c716625ff821bc",
+   "cache_file": "0013154_zilart_mission_12"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 23,
+   "dat_name": "The Mithra and the Crystal",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "consumed_key_item"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'maryoh comyujah' and my start is Maryoh Comyujah, so nothing moves. Header Start is the literal 'None'; the walkthrough gives both the name and (G-7).\n\nTHE LONGEST LADDER IN THIS LANE and the only one with a real observation in the middle of it. Eight rungs out of nine bullets, across four zones.\n\nWHAT MERGED AND WHY. Bullet 2 ('she will ask you to go to the Quicksand Caves') is the request restated and is not a rung. Bullet 4's pressure-door navigation on maps 5 and 6 has no named entity and nothing observable, so it rides in the note of the ??? rung it leads to rather than becoming a rung of its own that the addon could never tell you had finished. Bullets 7 and 8 are two touches of the SAME Cermet Grate -- cutscene, then pass through -- and consecutive touches of one object are one marker, so they are one rung with both bullet numbers.\n\nWHAT SPLIT AND WHY. Bullet 5 is three separate actions and becomes three rungs: dig the ??? to pop the Ancient Vessel, kill it, then check the ??? again for the [KI] Scrap of papyrus. The fight in the middle is genuinely there and is the only markable thing in the caves, since a ??? can never carry a marker.\n\nEVIDENCE, ONCE, AND DELIBERATELY NOT TWICE. [KI] Scrap of papyrus (key item 451) is obtained at its own rung, is not in the header Reward, and is the mission's one observable -- so it sits on the second ??? rung and nowhere else. [KI] Cerulean crystal (key item 452) is NOT evidence: it is the header's Reward field verbatim, and hard rule 7 keeps a reward out of evidence whatever else is true of it. It does ride the Cermet Grate rung as `items`, because holding it is what lets that rung happen -- the page never says so in as many words, but the header Description does ('The depression in the center may be the key to getting through') and the mission hands it over in the bullet immediately before. Flagged consumed_key_item, because if the grate eats the crystal the requirement stops reading true and readiness on that rung regresses.\n\nTHE SECRET ENTRANCE. Bullet 3's (C/D-11) is a Western Altepa Desert coordinate for a hole that leads into the Quicksand Caves, so the rung's zone is the destination and the grid stays null rather than sitting a desert coordinate under a cave zone. Everything the page says about getting there -- the same hidden entrance as Zilart Mission 6 but the opposite side of the area, the Rabao Proto-Waypoint at (G-8), the Home Point #1 route out of exit 5 (H-4) -- is route advice and lives in the note.\n\nBoth ??? rungs will be quarantined as placeholder_target, which is by design and not a failure: they keep their ladder positions and lose only their markers. Repeatable 'No' -> false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Hall of the Gods",
+     "cat": "mission",
+     "area": "zilart",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Maryoh Comyujah",
+   "zone": "Rabao",
+   "grid": "G-7",
+   "raw": "None"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maryoh Comyujah"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "in front of the windmill, by Home Point #2. Choose the TOP option, 'Sounds fair' -- spamming enter skips past it. Bullet 2 only restates what she asks for."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Quicksand Caves"
+    },
+    "zone": "Quicksand Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in by the hidden entrance in Western Altepa Desert at (C/D-11) -- the same one Zilart Mission 6 uses, though this mission happens on the opposite side of the area. Rabao's Proto-Waypoint at (G-8) reaches the right map but not the right hole. Alternatively from Quicksand Caves Home Point #1, east to exit 5 (H-4) and down a ledge into the crevasse at Western Altepa Desert (D-10), out by the ramp and south. Grid is left null because (C/D-11) belongs to the desert, not to the cave zone this rung is filed under."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Quicksand Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ancient Vessel",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "route from bullet 4: on map 5 go to (K-8) and through the pressure door to map 6, then (G-8) for a second pressure door; enter and fall down the hole, and the ??? is near where you land. Buff up first and answer 'Yes' to dig. You may need to stand very close for it to pop."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Quicksand Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ancient Vessel",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a Pot NM, spawned by the dig. The only markable thing in the caves, since a ??? cannot carry a marker."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Quicksand Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Scrap of papyrus",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "check the same ??? again once the NM is dead for the [KI] Scrap of papyrus. Not in the header Reward, obtained at its own rung, and the one observation this mission has."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maryoh Comyujah"
+    },
+    "zone": "Rabao",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Scrap of papyrus",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "she gives the [KI] Cerulean crystal, which is the header Reward and therefore not used as evidence here."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Grate"
+    },
+    "zone": "Hall of the Gods",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cerulean crystal",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "TWO TOUCHES, ONE MARKER: the first is the cutscene (bullet 7), the second passes you through (bullet 8). The page never says the crystal is what fills the depression, but the header Description does and the previous rung hands it over -- so it is recorded as held, not as a trade."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Shimmering Circle"
+    },
+    "zone": "Hall of the Gods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "down the hallway past the grate; the last cutscene of the mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Zilart Mission 15",
+   "page_id": 13157,
+   "revision_id": 767869,
+   "source_sha256": "8e41f27080076436a2e972a7a69cd602bf926ae5db7800acec89bf33e39242ca",
+   "cache_file": "0013157_zilart_mission_15"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "zilart",
+   "id": 27,
+   "dat_name": "The Sealed Shrine",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "door_target_deferred_to_npc",
+   "grid_conflict"
+  ],
+  "notes": "GIVER: chronicle_snpc is 'gilgamesh' and my start is Gilgamesh, so nothing moves. Header Start is the literal 'None'; the walkthrough names him and gives (K-8).\n\nTWO BULLETS, TWO RUNGS, and the page is clear about both. Speak to Gilgamesh in Norg by clicking the Oaken Door at (K-8), then go back to Ru'Aun Gardens and enter the Shrine of Ru'Avitau by any entrance for a cutscene.\n\nTHE DOOR AGAIN. This page, unlike Zilart Mission 11, names the Oaken Door outright. I still record Gilgamesh as the target: BG Wiki has no page for an 'Oaken Door' and the Norg zone page lists no such entity, while 'gilgamesh' is a proven NPC key in this addon's own shipped data (mission_index already marks him at zone 252 for this very mission). Writing an uncorroborated door name would cost the rung its marker and gain nothing, since the door and the man are the same doorway. Flagged door_target_deferred_to_npc so the call is findable, and grid_conflict because the (K-8) I keep is the door's grid while BG Wiki's Norg NPC list places Gilgamesh at (L-8).\n\nTHE SHRINE RUNG IS A ZONE LINE, not an NPC: the cutscene fires on entering The Shrine of Ru'Avitau from Ru'Aun Gardens, and the page says teleporting to the home point triggers it too. Any entrance works, so no grid is recorded; the sub-bullet's (I-6) is advice about saving time for the NEXT mission, not a requirement of this one, and rides in the note.\n\nNO EVIDENCE: header Reward is 'None', nothing changes hands, and neither a conversation nor a zone line is observable. Repeatable 'No' -> false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Ark Angels",
+     "cat": "mission",
+     "area": "zilart",
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Gilgamesh",
+   "zone": "Norg",
+   "grid": "K-8",
+   "raw": "None"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gilgamesh"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says to speak to him by clicking the Oaken Door at (K-8). Target is Gilgamesh rather than the door because the door is not a corroborated entity name; BG Wiki puts Gilgamesh himself at (L-8) in the same room."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Shrine of Ru'Avitau"
+    },
+    "zone": "The Shrine of Ru'Avitau",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "back to Ru'Aun Gardens and in by ANY entrance; the cutscene fires on the zone line, and teleporting to the home point triggers it as well. The page's (I-6) entrance, near Ru'Aun Gardens Home Point #1, is advice about saving time for the next mission rather than a requirement here, so no grid is recorded."
+   }
+  ]
+ }
+]

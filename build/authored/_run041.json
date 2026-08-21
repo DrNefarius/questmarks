@@ -1,0 +1,1834 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Flyers for Regine",
+   "page_id": 472,
+   "revision_id": 628409,
+   "source_sha256": "ddcbddf8e681b5260295191ec20ad201ef8b06c5ccb272c7fd6d6ed14c5c2524",
+   "cache_file": "0000472_flyers_for_regine"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 16,
+   "dat_name": "Flyers for Regine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "multi_zone_group",
+   "count_unobservable"
+  ],
+  "notes": "Only three of the six bullets are actions. Bullet 1 (two free inventory slots) is preparation, bullet 3 is the outcome of bullet 2 rather than a step of its own, and bullet 4 is entirely ambient: the /say 'looks over curiously' hint and the sub-bullet about replacing lost flyers at 10 gil each or off the Auction House. That leaves talk, hand out, return.\n\nBullet 5's fifteen recipients are the whole quest and they are an UNORDERED SET. The page groups them by zone for convenience and never imposes an order -- you walk San d'Oria handing flyers to whoever is nearest -- so all fifteen share one group and draw at once. A strict ladder would mark Answald and nothing else until you happened to pass him. The group spans three zones, and each member keeps its own zone and grid, which is what the one-step-one-zone rule requires.\n\nThe fifteen flyers granted at step 1 are recorded as that step's evidence even though acceptance already asserts step 1 is done, because it is what the page says you receive and it is genuinely observable. It is worth knowing that the count DECREMENTS as you hand them out: holding fifteen is only true before the first delivery, and after that the session latch is what keeps the mark on the group rather than bouncing it back to Regine. Partial progress -- 'seven of fifteen delivered' -- is not observable at all, since the remaining count cannot be told apart from flyers bought to replace lost ones.\n\nThe header's Item Reqs of Magicmart Flyer x15 is the quest handing them to you, not something you must bring.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "San d'Oria / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Regine",
+   "zone": "Port San d'Oria",
+   "grid": "J-8",
+   "raw": "Regine - Port San d'Oria (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Regine"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Magicmart Flyer",
+       "count": 15
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "choose the option to look for work; after her story all fifteen flyers arrive at once. Keep two inventory slots free."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Answald"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "J-10",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in front of the Mog House"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Portaure"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Cargo room B"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Miene"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "I-9",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the open area by the water"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Prietta"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "up the stairs above the cargo rooms"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Auvare"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "behind the Air Travel Agency"
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Guilberdrier"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-3",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in front of the Carpenters' Guild"
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Villion"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-3",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Carpenters' Guild, second floor balcony"
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Capiria"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-6",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "near the Laborman's Way arch, overlooking the sluice gates"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Boncort"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Phoenix Perch Inn, second floor"
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Coullene"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in the Cathedral"
+   },
+   {
+    "n": 12,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Leuveret"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Raimbroy's Grocery, second floor balcony"
+   },
+   {
+    "n": 13,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Blendare"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "J-9",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "under the tree near the Auction House"
+   },
+   {
+    "n": 14,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Maugie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "L-9",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "near Eastgate"
+   },
+   {
+    "n": 15,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Adaunel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "up the stairs on top of the Eastgate archway"
+   },
+   {
+    "n": 16,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Rosel"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Magicmart Flyer",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "flyers",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "in Rosel's Armour Shop"
+   },
+   {
+    "n": 17,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Regine"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "only after all fifteen have been distributed"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Generous General?",
+   "page_id": 9,
+   "revision_id": 767521,
+   "source_sha256": "e7cb7f4dbd388e93c4a8aa431e5c68c0b89f6d0d5feaf49ca3310216e7ab0e38",
+   "cache_file": "0000009_a_generous_general"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 109,
+   "dat_name": "A Generous General?",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "start_disagrees_with_header",
+   "time_gated",
+   "crafting_recipe_not_rendered",
+   "reward_not_used_as_evidence"
+  ],
+  "notes": "The header names Gu'Zho Thunderblade as the giver, but the walkthrough never has you speak to him: bullet 1 says the quest starts on a cutscene when you ZONE into Oldton Movalpolos through the far eastern (K-6) entrance in North Gustaberg. He is kept as start.npc because he is a named entity in the same zone and keeping him can only ever add a marker -- if the live entity turns out to be cutscene-only, no marker appears, which is exactly today's behaviour -- but the ladder's first rung is the zone line, not a conversation.\n\nEvery bullet here is a step, which is unusual, but two of them split and one of the sub-bullets carries real requirements. Bullet 7 is both the Iron Box check that spawns four NMs and the fight that follows, so it splits across steps 7 and 8; only the Goblin Preceptor has to die and the other three despawn with him, which is why he alone carries role kill. Bullets 8, 9 and 10 are then three separate interactions -- check the box, trade the box, zone out and back -- and the two box steps are consecutive on the same entity with the fight the page really does put between them.\n\nEvidence is thin on purpose. The Goblin Cutting (step 4) and the Goblin Coif (step 5) are both real, held, obtained-at-that-step observables. Choplix's Coif and the Gold Beastcoin are NOT used, even though the coif genuinely arrives at bullet 9 with one step still to go, because both sit in the header's Reward list and hard rule 7 forbids it. The cost is small: without them the mark rests on the Iron Box at (G-8), and with them it would move to a zone-entry rung that carries no marker anyway.\n\nThe crafting recipe block did not render, so step 5's ingredient list is only the Goblin Cutting the page names by hand -- items_partial records that the requirement is incomplete rather than pretending it is whole. The 10,000 gil on step 3 and the 100,000 gil replacement Cutting have no slot in the schema and stay in notes. Two time gates the addon cannot see: the game-day wait before bullet 4, and the once-per-Conquest-Tally repeat, which also governs re-offering the quest if you decline it.\n\nFame is empty in the header, so both region and level are null and only the raw survives.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: plus 10,000 gil in the same trade; gil has no slot in the schema\n  step 5: the page's recipe block did not render, so the Goblin Cutting is the only ingredient it names and items_partial marks the list as incomplete.\n  step 10: the coif comes back as Choplix's Coif, which is in the header's Reward list and so cannot be evidence under hard rule 7",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": 60,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Gu'Zho Thunderblade",
+   "zone": "Oldton Movalpolos",
+   "grid": null,
+   "raw": "Gu'Zho Thunderblade, Oldton Movalpolos"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Oldton Movalpolos"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in from North Gustaberg through the far eastern entrance at (K-6); the cutscene fires on the zone line. Decline it and you cannot start again until the next Conquest Tally."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Faulpie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "by Home Point #4"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Faulpie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Buffalo Hide",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Sheep Leather",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Faulpie"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Goblin Cutting",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "not before the next game day, which nothing observable reports. Zoning is no longer required. She gives the Goblin Cutting and the crafting instructions."
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Goblin Cutting",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Goblin Coif",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Lose the Cutting and Faulpie sells another for 100,000 gil."
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Oldton Movalpolos"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": null,
+    "items": [
+     {
+      "name": "Goblin Coif",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Goblin recommendation letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the same (K-6) far eastern entrance from North Gustaberg, wearing the Goblin Coif"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Box"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Goblin Coif",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Preceptor",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Grimoire Guru Grimogek",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Dread Dealing Dredodak",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Bugbear Porterman",
+      "count": 4,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "still wearing the coif. The four NMs pop together: Preceptor RDM, Grimogek BLM, Dredodak DRK, four Portermen MNK."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Goblin Preceptor",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "only he has to die; the other three despawn the instant he does, which is why they are spawn-role on step 7 and not kill-role here"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Box"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Goblin Coif",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "the same box again, coif still on, for a cutscene"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Iron Box"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Goblin Coif",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": null
+   },
+   {
+    "n": 11,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Oldton Movalpolos"
+    },
+    "zone": "Oldton Movalpolos",
+    "grid": null,
+    "items": [
+     {
+      "name": "Choplix's Coif",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "zone out and back through the same far eastern entrance wearing Choplix's Coif. The Gold Beastcoin that follows is a reward, not evidence."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "First Contact",
+   "page_id": 59021,
+   "revision_id": 747838,
+   "source_sha256": "494e8e9fdcdd13b71f68fa9062fa40311c0f2087afa7c69d3ad70f138a192d45",
+   "cache_file": "0059021_first_contact"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 167,
+   "dat_name": "First Contact",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 5
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "contradictory_completion",
+   "evidence_unresolvable_ki",
+   "or_branch_unmodelled",
+   "time_gated",
+   "prev_partially_unmodelled",
+   "fame_region_unmodelled",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "This page contradicts itself about where the quest ends, which is why it sits at medium. Bullet 3 says speaking to Joachim 'for a cutscene to complete this quest'; bullet 4 says clicking the ??? in the La Theine stone circle 'will complete this quest'. Both cannot be true. The header's Description settles which is the real content -- it talks only about the stone circle and the mystery man -- and bullet 4 opens with 'Upon completing Dawn of Death', which is this quest's Previous, so bullets 1 to 3 read as the abyssite chain that leads INTO this quest rather than out of it. All four are kept as rungs anyway: bullets 1 to 3 are three real conversations with a real, markable NPC at the place the header calls the start, and they are consecutive on Joachim so they cost one marker between them.\n\nThe nine quests each of bullets 1 to 3 lists are the sub-quests Dawn of Death's nine Cavernous Maws flag. 'Any one of nine', then 'any two', then 'any three' is not something the schema's prev list or any packet can express, so it stays in the notes.\n\nStep 1 has no evidence and it is not for want of an observable: the Lunar abyssite is a key item, but res/key_items.lua holds THREE entries under that exact name (1439, 1440, 1441 -- one per Abyssea add-on) and the resolver refuses to guess an id rather than pick the wrong one. The two Ivory abyssites are unique and do carry steps 2 and 3.\n\nStep 4 loses its marker and keeps its place: the target is a bare ??? , which is in OBJECT_DENY and can never be pointed at, but the zone resolves so the rung still says La Theine Plateau (G-6). The dusk-to-dawn window (18:00 to 05:00) is Vana'diel time and invisible to the addon.\n\nThe Previous field lists 'Dawn of Death' and then, under an 'Expansion Set Quests:' label, three more names: The Forbidden Frontier, Scars of Abyssea and Heroes of Abyssea. The last two are Abyssea ADD-ON names, not quests -- Dawn of Death's own walkthrough uses them that way to say which add-on each maw belongs to -- so all three are read as expansion labels and only Dawn of Death is recorded as a prerequisite. Recording an unmatchable title as prev could gate the quest on something that never completes.\n\nFame 'Abyssea' is not one of the nine regions, so it gates nothing. The header's Start gives no grid; (H-8) comes from the walkthrough.\n\nADVERSARY PASS. The Ivory abyssite evidence is removed from steps 2 and 3. The page nowhere says Joachim hands those key items over. All three of bullets 1 to 3 put the abyssite inside the 'after' clause -- 'Speak to Joachim ... after completing N of the following quests AND RECEIVING <abyssite> Key Item' -- which makes holding it a PRECONDITION of the conversation rather than its product, and hard rule 3 forbids evidence obtained earlier than its step. Bullet 3 settles the grammar on its own: what speaking gets you is spelled out as 'for a cutscene to complete this quest', and the abyssite is still left in the 'after' clause beside the three quest completions. Contrast the phrasing a page uses when an item really is granted at a step -- A Generous General? bullet 6, 'for a cutscene and to receive a Goblin recommendation letter'. Both key items resolve cleanly (1397, 1409), so this is a reading call and not a resolver one. Removing them costs nothing and prevents a real fault: with the evidence in place, a player who had already banked three of the nine sub-quests would advance the ladder straight to step 4 without ever speaking to Joachim, and step 4's bare ??? carries no marker, so the quest would show nothing at all. Without it the mark rests on Joachim, who is three of the four rungs and the header's own Start. The consequence is that this ladder can now never advance by itself; that is the honest reading of the page.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: He hands over a Lunar abyssite, which would be this step's evidence but for three key items sharing that name in res/key_items.lua; the resolver rejects it rather than guess.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Abyssea / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Dawn of Death",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Joachim",
+   "zone": "Port Jeuno",
+   "grid": "H-8",
+   "raw": "Joachim, Port Jeuno"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Joachim"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "After ONE of the nine Vision/Scars/Heroes quests."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Joachim"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "after TWO of the same nine. The Ivory abyssite of fortune is NOT this step's evidence: the page lists it among the things you must already have -- 'after completing two of the following quests and receiving the Ivory abyssite of fortune Key Item' -- which is a precondition of the conversation, not something obtained at it."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Joachim"
+    },
+    "zone": "Port Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "after THREE of the same nine. The page claims this completes the quest, which bullet 4 flatly contradicts. The Ivory abyssite of acumen sits in the same 'after ... and receiving' precondition clause; what speaking gives you is stated separately as 'a cutscene to complete this quest', so the key item is not obtained here and is not this step's evidence."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "La Theine Plateau",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the ??? in the stone circle, and only between 18:00 and 05:00 game time, which nothing observable reports. Unity Warp 99 to La Theine is the fast way in. The cutscene ends this quest and starts An Officer and a Pirate automatically."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Ward Warden I (Misareaux)",
+   "page_id": 58998,
+   "revision_id": 753780,
+   "source_sha256": "9a81ba5dfbac88a72a13605ce0cdbd1cf73f216afe8d6b03428fb977e6367a35",
+   "cache_file": "0058998_ward_warden_i_misareaux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 125,
+   "dat_name": "Ward Warden I (Misareaux)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "fame_region_unmodelled",
+   "time_gated",
+   "consumed_key_item",
+   "progress_unobservable",
+   "garbled_source_line"
+  ],
+  "notes": "The Misareaux twin of Ward Warden I (Attohwa), and it reads the same way: a three-rung fetch loop inside one zone. Bullets 2 and 3 are ONE step, not two. 'Travel to the Target marked on your map' names nothing at all -- the game draws the marker, the wiki does not name a place -- and the thing you actually interact with when you get there is the Repair Trunk, which is a real entity. Splitting them would put an unnamed, unmarkable rung in front of the only markable one in the middle of the quest. This page, unlike the Attohwa one, gives no grid for the trunk, only Veridical Conflux #05, so the step's grid is null.\n\nThe Flame Skimmer is a hazard to walk around, not a kill, a drop or a spawn. There is no role for that, so it is not recorded as a mob and lives in the note instead -- recording it as a kill would put a sword glyph on something the page tells you to avoid.\n\nOnly step 1 can carry evidence. The Magicked hempen sack is granted there, and its NAME does not change when you pack it, so nothing observable separates 'sack in hand' from 'sack full'. The ladder therefore cannot advance past step 2 by itself, and reusing the same key item on step 3 to fake it is what rule 4 forbids. The sack is instead the item requirement on steps 2 and 3, which is what makes the turn-in read ready rather than merely present.\n\nBullet 1's sub-bullet is garbled -- 'This sack will disappear when you zone or log out only if it is filled first!' -- and cannot be parsed either way with confidence. It is recorded verbatim in the note and read conservatively: do not zone or log out while carrying it.\n\nThe unnumbered line above bullet 1 is a cooldown, not a step: one Ward Warden / Desert Rain / Crimson Carpet per Vana'dielian day across all of Abyssea, which no packet reports. Bullet 5, under the 'Effects on Bastion:' heading, is an outcome -- Martello and Clone Ward HP, destroyed wards respawning -- and the long sub-bullet under bullet 3 is packing advice. Neither is a step. 'Fame: amis' is an Abyssea zone code rather than one of the nine regions, so only the raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "amis / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Resistance Sapper (Misareaux)",
+   "zone": "Abyssea - Misareaux",
+   "grid": "I-7",
+   "raw": "Resistance Sapper (Misareaux) (I-7), Abyssea - Misareaux"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Magicked hempen sack",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at Veridical Conflux #00. The page's own words on the sack are 'will disappear when you zone or log out only if it is filled first', which is garbled; treat zoning or logging out while carrying it as losing it."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Repair Trunk"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": null,
+    "items": [
+     {
+      "name": "Magicked hempen sack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the game marks the target on your map; it is by Veridical Conflux #05, and the page gives no grid. Beware the Flame Skimmer on the way -- avoid it, do not fight it. Three material types, pointy, jagged and round: pack pointy first, drop to round when the message changes, and stop at 'It's about to reach the limit'. The more you pack the better the reward, but overpacking tears the sack and fails the quest, and bag size varies. How full the sack is is not observable, so this step can never report itself done."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Resistance Sapper (Misareaux)"
+    },
+    "zone": "Abyssea - Misareaux",
+    "grid": "I-7",
+    "items": [
+     {
+      "name": "Magicked hempen sack",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Cruor (max 1,000) and Resistance Credits (max 70) scale with how full the sack was"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Swarm",
+   "page_id": 42841,
+   "revision_id": 765961,
+   "source_sha256": "7531bacf225ea84e6f9e35830d5ae7cf45de8b280c3cdbfc832044e6e5df1a81",
+   "cache_file": "0042841_the_swarm"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 31,
+   "dat_name": "The Swarm",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "quest_never_in_log",
+   "battlefield",
+   "unnamed_mobs",
+   "fame_region_unmodelled",
+   "event_item_gated"
+  ],
+  "notes": "Seven bullets, three steps. Bullet 1 is not a step at all and is the most important line on the page: the quest only APPEARS as available when the Pest Repellent is used, and it never shows in the completed section afterwards. That means 0x056 will likely never report this quest available, in progress or done, and core/steps only consults a position for quests reported in progress -- so the ladder below is honest but may simply never be reached. That, not any doubt about the reading, is why this is medium.\n\nBullet 3 is one step even though it names two actions: the party LEADER uses the Pest Repellent and then checks the Fortilace. Using an item on yourself is not markable and has no place of its own, so it rides in the note on the Fortilace check, which is both the markable thing and the header's own Start.\n\nNo monster is recorded, deliberately. Bullet 5 says 'an endless swarm of various monsters' and its sub-bullets refer to them collectively as 'the Swarmspawn monsters' and then guess -- the page's own question mark -- at 'Adamantoise mobs perhaps?'. A collective noun and a guess are not entity names, and putting either in mobs would be exactly the pattern-matching this pipeline exists to avoid. The battlefield's zone is never named either, so the fight step carries none; markers inside a battlefield would be no use regardless.\n\nBullets 4, 6 and 7 fold in or drop out: bullet 4's one-minute buff window belongs to the fight, bullet 6 is individual scoring the page itself says has no effect on the outcome, and bullet 7 is the title reward.\n\nFame 'Wings of the Goddess' is an expansion, not one of the nine regions, so it gates nothing and only raw survives. The Pest Repellent is the one real observable: it is in the header's Item Reqs, not its Reward, so it is fair evidence for the obtain step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Fortilace",
+   "zone": "Rolanberry Fields (S)",
+   "grid": "D-9",
+   "raw": "Rolanberry Fields (S) (D-9) Fortilace"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Pest Repellent",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "from the FFXI events held through the year; the page names no vendor, drop or zone, so the step has none"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Fortilace"
+    },
+    "zone": "Rolanberry Fields (S)",
+    "grid": "D-9",
+    "items": [
+     {
+      "name": "Pest Repellent",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the party leader uses the Pest Repellent first, then checks the Fortilace. Three players minimum, and party only -- alliance members cannot come. Everyone in the zone is warped into the battlefield."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "one minute to buff before 'contact made', then a five minute limit. The page names no monster -- 'various monsters', collectively 'Swarmspawn', with 'Adamantoise mobs perhaps?' as its own guess -- so none is recorded, and it names no battlefield zone either. They drop from the ceiling at the entrance and walk away without responding to anything, so self-centred AoE (BLM, GEO, BLU) is the page's advice."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Blue Ribbon Blues",
+   "page_id": 50,
+   "revision_id": 762592,
+   "source_sha256": "eb12d4aba1a3ae22ce1c91a1352aad5c2743f650ff4b39b0af8ad1847579bfec",
+   "cache_file": "0000050_blue_ribbon_blues"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 17,
+   "dat_name": "Blue Ribbon Blues",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "steps_from_unnumbered_lines",
+   "or_branch_unmodelled",
+   "time_gated",
+   "route_heavy",
+   "reward_not_used_as_evidence"
+  ],
+  "notes": "Two of the eight rungs come from lines the page never numbered, and both are real. The 'Note:' above bullet 1 sends you to Roberta in Windurst Woods (I-13) for the Purple Ribbon; without it there is no quest at all, and it is the only place in the whole page where the quest's one observable is handed over, so it is step 1 rather than a footnote. The closing line 'You can return to Kerutoto and complete the quest' is the hand-in and is step 8. Both carry an empty source_bullets because there is no bullet number to cite.\n\nBullet 1 is genuinely two visits to Kerutoto, not one: you give her the ribbon and she pays 3,600 gil, and then a full Earth minute later you talk to her AGAIN and she gives the ribbon back -- which you need, because bullet 7 trades it to the Hume Bones. They are consecutive on the same NPC so they cost one marker between them. The returned ribbon is not step 3's evidence: rule 4 allows an item once, and step 1 is the earlier of the two, which is also the correct one -- putting it on step 3 would let a player who bought a ribbon from Roberta and never met Kerutoto jump the mark straight past her.\n\nBullets 3 to 6 are a route through the Eldieme Necropolis and nothing else -- intersection, left turn, Titan's Gate, a square of bones that drops you to map 2 -- four rungs no player can be tracked through and none of which is where you do anything. They fold into the travel step with the route in its note. Titan's Gate is a real named entity, but giving it a rung of its own would only park the mark on a rung earlier in the ladder than the trade it leads to.\n\nThe necropolis doors need the [KI] Magicked astrolabe OR a friend hitting switches. The key item is expressible and is recorded; a friend is not, which is exactly what items_partial is for.\n\nThe Blue Ribbon from bullet 8 is deliberately NOT evidence: it is in the header's Reward list and hard rule 7 forbids it. Here that costs nothing at all, because step 2 and step 8 are the same NPC in the same spot -- the marker sits on Kerutoto either way.\n\n'Windurst Waters South' is one half of zone 238 and not a zone of its own, so the zone is Windurst Waters.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: rule 4 gives it to step 1, the earlier of the two.\n  step 4: The doors need the [KI] Magicked astrolabe or a friend to hit switches; the friend cannot be expressed, hence items_partial.\n  step 7: The Blue Ribbon comes from here but is in the header's Reward list, so hard rule 7 keeps it out of evidence",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 5,
+    "raw": "Windurst / 5"
+   },
+   "prev": [
+    {
+     "title": "Water Way to Go",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kerutoto",
+   "zone": "Windurst Waters",
+   "grid": "J-8",
+   "raw": "Kerutoto, Windurst Waters (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Roberta"
+    },
+    "zone": "Windurst Woods",
+    "grid": "I-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Purple Ribbon",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered 'Note:' line above bullet 1: inside Nchaa's Good Goods. No ribbon, no quest, so this is a rung."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kerutoto"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Purple Ribbon",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the northern Rhinostery building in Windurst Waters South, which is half of zone 238 and not a zone of its own. She pays 3,600 gil."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kerutoto"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "One Earth minute later she hands the Purple Ribbon back, which you need for the Hume Bones. It cannot be this step's evidence."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "The Eldieme Necropolis"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": null,
+    "items": [
+     {
+      "name": "Magicked astrolabe",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "In from Batallia Downs (J-10), or the Survival Guide once it is unlocked. Bullets 3 to 6 are the route and fold in here: straight to the intersection at (J-8), left, west to Titan's Gate at (G-8), north through it onto the square of bones, which drops you to map 2 at (L-10), then east to (M-10)."
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Hume Bones"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "M-10",
+    "items": [
+     {
+      "name": "Purple Ribbon",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lich C Magnus",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "he can drop the unique level 50 club Lilith's Rod; if it does not drop, rezone WITHOUT touching the bones and run the quest again. Lose the Purple Ribbon and you wait for the next Conquest Tally to get it back. Five minutes between spawns if several party members need it."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "M-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Lich C Magnus",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "bullet 8 is what says he has to die first"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Hume Bones"
+    },
+    "zone": "The Eldieme Necropolis",
+    "grid": "M-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "The same bones again once he is dead. which costs nothing, since the mark rests on Kerutoto either way."
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kerutoto"
+    },
+    "zone": "Windurst Waters",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [],
+    "note": "from the unnumbered closing line, 'You can return to Kerutoto and complete the quest.'"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Pose by Any Other Name",
+   "page_id": 21,
+   "revision_id": 763607,
+   "source_sha256": "00a5d128d0376ee645b95c14e3464fa17f42cbfc472bfa25b0bb712d2325d72c",
+   "cache_file": "0000021_a_pose_by_any_other_name"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 7,
+   "dat_name": "A Pose by Any Other Name",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "job_dependent_item",
+   "time_gated",
+   "bullet_merge"
+  ],
+  "notes": "One NPC, one errand, three rungs. Bullets 3, 4 and 5 are a single return visit to Angelica -- talk and stand still for ten seconds, talk again to be told to put the piece on, talk a last time to finish -- so they merge into one step rather than three rungs on the same marker. Bullet 6 is not a step: it is the title you get for refusing or dawdling, and its sub-bullet is a trick for collecting both titles in one run.\n\nBullet 2's five job-to-armour rows are the quest's whole shape and they are an OR, not a list of things to fetch: Bronze Harness for WAR/PLD/DRK/DRG/COR, Robe for MNK/BRD/BLU, Leather Vest for THF/BST/RNG/DNC, Tunic for WHM/RDM/BLM/SMN/PUP, Kenpogi for NIN/SAM. You are asked for exactly one, decided by the job you are on, and nothing in the packets says which. So the Bronze Harness sits in items/evidence.all as the first alternative and the other four in items_alt/evidence.alt, which is precisely the 'items OR any one of items_alt' shape. The risk is mild and worth naming: these are cheap common body pieces, so a player who happens to own a spare Tunic satisfies step 2 without doing it. That only advances the mark from Angelica to Angelica.\n\nThe 'After the walkthrough: Notes' section is three real constraints and no steps. [1] you must already be wearing SOME body piece or the quest will not start, which is recorded on step 1. [2] the quest is TIMED -- take too long and she calls you 'so yesterday's style' and it ends, recoverable by zoning out and in -- and no packet reports a quest timer. [3] +1 versions of the five items do not work, which is why every count is a plain 1 and no +1 name is recorded.\n\nAncient Blood is in the header's Reward, so hard rule 7 keeps it out of evidence. Angelica's autograph is NOT in the Reward list -- the page gives it in a sub-bullet of bullet 5 -- and it is granted at the merged final step, so it is that step's evidence.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "zilart"
+  },
+  "start": {
+   "npc": "Angelica",
+   "zone": "Windurst Waters",
+   "grid": "F-10",
+   "raw": "Angelica, Windurst Waters (F-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Angelica"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "you must already be wearing some body piece or she will not start it (After the walkthrough: Notes, bullet 1)"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Bronze Harness",
+       "count": 1
+      }
+     ],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Robe",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Leather Vest",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Tunic",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Kenpogi",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "exactly one, chosen by your job: Bronze Harness for WAR/PLD/DRK/DRG/COR, Robe for MNK/BRD/BLU, Leather Vest for THF/BST/RNG/DNC, Tunic for WHM/RDM/BLM/SMN/PUP, Kenpogi for NIN/SAM. Nothing observable says which one she asked you for, so all five are modelled as alternatives. +1 versions do not work."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Angelica"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Bronze Harness",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Robe",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Leather Vest",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tunic",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Kenpogi",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Angelica's autograph",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "one visit, three conversations: talk and stand still ten seconds, talk again to be told to wear it, talk once more to finish. The quest is timed from bullet 1 -- too slow and she ends it, which zoning out and back lets you retry. Ancient Blood is a reward and so not evidence; Angelica's autograph is not in the Reward list and is granted here."
+   }
+  ]
+ }
+]

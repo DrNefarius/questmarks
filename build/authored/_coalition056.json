@@ -1,0 +1,1461 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clear: Kamihr Drifts",
+   "page_id": 105040,
+   "revision_id": 718891,
+   "source_sha256": "e01a4a6c36262c5683cbf62f1914090f481cc086c132ac3b69998e5a570cf290",
+   "cache_file": "0105040_clear_kamihr_drifts_e265d0217d"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 13,
+   "dat_name": "Clear: Kamihr Drifts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "or_branch_unmodelled",
+   "unnamed_target",
+   "report_back_step_absent_from_page"
+  ],
+  "notes": "Pioneers' Coalition assignment, Type 'Clearing The Way'. The page has no Start field and the walkthrough names no NPC; the giver is the Task Delegator at Western Adoulin (E-8) taken from the page's own Giver block, which stage A resolved from the Pioneers' Coalition page (giver_conflict is null). The rank gate is 'Magnate', a coalition rank -- it is NOT a character level, so gates.level stays null and the rank is only recorded here; see rank_gate_unmodelled. The work zone is Kamihr Drifts from the assignment table's Zone column, which is a different zone from the giver's. TWO DELIBERATE OMISSIONS. (a) The reive can be at any of four sites and the objective is completion of the reive, not a named monster, so the fight step carries no grid and no mobs; recording (H-8)'s Chilblain Snoll and Umberwood Tiger would point the marker at one site out of four and the other three are written only as '??? Monsters'. (b) There is NO report-back bullet on this page -- the walkthrough ends at 'participate in one Colonization Reive through to completion' -- so no return-to-the-delegator rung was added. Sibling Courier assignments (Provide/Deliver) do spell out 'Return to the Task Delegator', but importing that here would be exactly the cross-page import the pipeline forbids. If play shows a report step is required, it belongs after step 2 at Western Adoulin (E-8). gates.repeatable and gates.expansion are null because the page never states either in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The walkthrough has no accept bullet -- bullet 1 is cited because it is the assignment being taken on, and the NPC, zone and square come from the page's Giver block rather than from that sentence."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Colonization Reive through to completion. Bullet 2 lists four possible sites -- (F-7) '??? Monsters', (H-8) Chilblain Snoll and Umberwood Tiger, (I/J-9) '??? Monsters', (H/I-10) '??? Monsters' -- which is a choice of one, not a set to clear, so no grid and no mobs are recorded. A sub-bullet says you may join mid-battle provided you are present for the final evaluation; that is advice, not a rung. Reive completion is not observable from any packet, so evidence is null."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Preserve: Kamihr Drifts",
+   "page_id": 105041,
+   "revision_id": 773515,
+   "source_sha256": "ab44b6e4334d4114a65e23e0114d5b3415ccfde7bc22da818bbab5012e64db3c",
+   "cache_file": "0105041_preserve_kamihr_drifts_176c3ce664"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 70,
+   "dat_name": "Preserve: Kamihr Drifts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "or_branch_unmodelled",
+   "unnamed_target",
+   "report_back_step_absent_from_page"
+  ],
+  "notes": "Peacekeepers' Coalition assignment, Type 'Preserve the peace'. No Start field and no NPC in the walkthrough; the giver is the Task Delegator at Eastern Adoulin (F-7) from the page's Giver block, resolved from the Peacekeepers' Coalition page (giver_conflict null). Rank 'Magnate' is a coalition rank and has no schema field -- recorded here only, gates.level stays null. Work zone Kamihr Drifts comes from the assignment table and is not the giver's zone. The fight step carries no grid: bullet 2 gives three alternative reive sites, (H-7), (H-6)/(I-8) and (H-9)/(I-11), and you complete any ONE of them, so a single square would be a guess. Its named monsters -- 2 Contumacious Ovim and 2 Incensed Lacerewe at (H-7), 2 Famished Raaz and 2 Frostfang Tiger at (H-6)/(I-8) -- belong to individual sites, so they are not recorded as mobs; the objective is completing the reive, not defeating a named list. No report-back rung: this walkthrough never says to return to the delegator, and importing that from a sibling Courier page is the cross-page import the pipeline forbids. gates.repeatable and gates.expansion null -- the page states neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; bullet 1 is cited as the assignment itself and the NPC, zone and square come from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Lair Reive. Bullet 2's three sites are alternatives, not a sequence, so grid is null; its (H-7) entry also carries walking directions out of Bivouac #3, which is routing advice rather than a step. The per-site monsters are left out of mobs for the same reason the grid is: they identify one site out of three. Reive completion is unobservable, so evidence is null."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Patrol: Woh Gates",
+   "page_id": 105042,
+   "revision_id": 752063,
+   "source_sha256": "2b2ce443e0e9b2299415a3db74f87763169d6ffea549522e7033ac815b3d5fea",
+   "cache_file": "0105042_patrol_woh_gates_11eb4df68c"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 78,
+   "dat_name": "Patrol: Woh Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "generic_npc_name",
+   "report_back_step_absent_from_page"
+  ],
+  "notes": "Peacekeepers' Coalition assignment, Type 'Patrol' -- kill work, so it does not fit the trade-and-report shape. Giver is the Task Delegator at Eastern Adoulin (F-7) from the page's Giver block (Peacekeepers' Coalition page, giver_conflict null). Rank 'Magnate' is a coalition rank with no schema field; gates.level stays null. MOB NAME. The objective and bullet 1 both write the family, 'Defeat 3 Acuexs in Woh Gates'; bullet 2 names the concrete monster, 'Wheezing Acuexes can be found at I-9'. I recorded Wheezing Acuex x3 because that is the monster this page tells you to hunt and it is the only spelling the kill counter can match exactly -- but in game any acuex in Woh Gates should satisfy the assignment, so a player who kills a different acuex will complete it while the addon's counter stays put. Grid I-9 comes from bullet 2; bullet 3's alternative route (in via the Kamihr Drifts Frontier Station, four more north and south of the I-7 bridge) is a second approach to the same step, not a second step, so it is not a grid conflict. Bullet 1's 'you do not need to be in EXP range as long as you are in Woh Gates when your party/alliance defeats the monsters' is a rules note, not a rung. No report-back bullet on this page, so no return rung was invented. gates.repeatable and gates.expansion null -- unstated.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. The NPC, zone and square are from the Giver block; bullet 1 is cited as the assignment being accepted."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Woh Gates",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Wheezing Acuex",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Defeat three acuexes in Woh Gates. Count 3 is from the objective's '3 Acuexs', singularised; the name is bullet 2's Wheezing Acuex, the variety the page says is at I-9. Kills are not observable as held items, so evidence stays null."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Analyze: Marjami Ravine",
+   "page_id": 106302,
+   "revision_id": 681133,
+   "source_sha256": "78732e4b5eec2e9b1040fe84267b82ddb0bc5dd29cfa3d4382163cf5fa272233",
+   "cache_file": "0106302_analyze_marjami_ravine_fcb499ca94"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 60,
+   "dat_name": "Analyze: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "unnamed_target"
+  ],
+  "notes": "Scouts' Coalition assignment, Type 'Component Analysis'. One-line walkthrough: 'After receiving the assignment, trade one Wootz Ore to the Task Delegator to complete the assignment.' That sentence names the giver outright and matches the page's Giver block -- Task Delegator, Eastern Adoulin (F-9), resolved from the Scouts' Coalition page (giver_conflict null). Rank 'Magnate' is a coalition rank, not a character level; gates.level stays null. The obtain rung is not in the walkthrough at all: its zone (Marjami Ravine) and its count come from the assignment table's Zone and Objective columns, so it is cited to bullet 1 and marked medium. The page does not say how the ore is obtained -- no mob, no gathering point, no vendor -- so the target is none and mobs is empty rather than guessed. Wootz Ore resolves as an inventory item (res/items 1469), so holding one is genuine evidence for the obtain rung; it is the trade fodder on the turn-in rung, which is a different field and does not double-book the evidence. gates.repeatable and gates.expansion null -- the page states neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment -- bullet 1's 'After receiving the assignment' is the accept. Square and zone from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Marjami Ravine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Wootz Ore",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Procure one Wootz Ore. The zone is the assignment table's Zone column, not the walkthrough, which says nothing about where or how; grid is null for the same reason. Holding the ore is what proves this rung is behind you."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Wootz Ore",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Trade the ore back to the Task Delegator; bullet 1 says this completes the assignment, so the trade and the report are the one conversation and the one rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Analyze: Yorcia Weald",
+   "page_id": 106303,
+   "revision_id": 474818,
+   "source_sha256": "a493d541ac4dcb1cfb1742540aa89702a03eb9ea991c9fa2d9e30e4c69fd3f36",
+   "cache_file": "0106303_analyze_yorcia_weald_655438eea0"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 59,
+   "dat_name": "Analyze: Yorcia Weald",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "unnamed_target"
+  ],
+  "notes": "Scouts' Coalition assignment, Type 'Component Analysis'. Single walkthrough bullet: 'After receiving the assignment, trade one Guatambu Log to the Task Delegator to complete the assignment.' The bullet names the Task Delegator and the Giver block places him in Eastern Adoulin (F-9), resolved from the Scouts' Coalition page (giver_conflict null). Rank 'Magnate' is a coalition rank with no schema field; gates.level stays null. The obtain rung's zone (Yorcia Weald) and count come from the assignment table's Zone and Objective columns, since the walkthrough never mentions acquiring the log; hence bullet 1 as the citation and medium on that rung. Nothing on the page says which mob drops it or where it is gathered, so the target is none and mobs is empty. Guatambu Log resolves as an inventory item (res/items 4018). gates.repeatable and gates.expansion null -- unstated on the page.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment -- 'After receiving the assignment' in bullet 1. Square and zone from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Guatambu Log",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Procure one Guatambu Log. Zone from the assignment table's Zone column; the walkthrough gives no location or method, so grid is null and no target is named."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Guatambu Log",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Trade the log to the Task Delegator; bullet 1 says the trade completes the assignment, so trade and report are one rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Provide: Kamihr Drifts",
+   "page_id": 106304,
+   "revision_id": 549253,
+   "source_sha256": "5c93194df53dd461277b93a9ef6b1edbf081f38cc573a0116509606527fc068c",
+   "cache_file": "0106304_provide_kamihr_drifts_91a593379f"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 20,
+   "dat_name": "Provide: Kamihr Drifts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "consumed_key_item",
+   "generic_npc_name"
+  ],
+  "notes": "Couriers' Coalition assignment, Type 'Base Provisions' -- delivery work, so the ladder is accept, deliver, report rather than accept, gather, trade. The walkthrough names the Task Delegator itself and the Giver block places him in Western Adoulin (G-7), resolved from the Couriers' Coalition page (giver_conflict null). Rank 'Magnate' is a coalition rank and has no schema field; gates.level stays null. The Kam. FS building mat. container is a KEY ITEM (res/key_items 2464), not an inventory item -- it does not resolve as an item -- and the delegator hands it over on accepting, so it is step 1's evidence, not step 2's. The page gives NO coordinates for the Station Administrator in Kamihr Drifts, so step 2's grid is null; the sibling Deliver pages give a square for their own zones and importing one here would be wrong. Bullet 1's struck-through 'DO NOT use a Waypoint warp' is contradicted by its own sub-bullet citing the Feb 18 2014 version update, which says warping is now safe -- the page corrects itself and neither line is a rung. The three bullets under 'After the walkthrough: Notes' are a forum link, a movement-speed suggestion and a lore guess; none are steps. Bullet 2 says speaking to the Station Administrator 'completes the assignment' while bullet 3 says to return to the Task Delegator for the reward -- both are kept, because bullet 3 is explicit. gates.repeatable and gates.expansion null -- unstated in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "Task Delegator - Western Adoulin (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Kam. FS building mat. container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment; bullet 1 says the delegator provides the container at this point, so holding the key item is what proves this rung is done."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Kam. FS building mat. container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Carry the container to the Station Administrator in Kamihr Drifts and speak to him. The page gives no square for him, so grid is null. Kind is turnin rather than talk because the container is handed over here."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Report back for the reward. Bullet 3 is explicit that you return to the Task Delegator, so this rung is read from the page, not from the coalition pattern. No items are carried -- the container was surrendered at step 2."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deliver: Marjami Ravine",
+   "page_id": 106305,
+   "revision_id": 510412,
+   "source_sha256": "1a241a9907841c327317178a80179e38fb6fcc67b52a86eede6b4c34073f97be",
+   "cache_file": "0106305_deliver_marjami_ravine_546b7e2be6"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 24,
+   "dat_name": "Deliver: Marjami Ravine",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "consumed_key_item",
+   "generic_npc_name"
+  ],
+  "notes": "Couriers' Coalition assignment, Type 'Supply Delivery'. This one runs the delivery BACKWARDS compared with Provide: you are given nothing at the desk and instead collect the goods in the field, so bullet 1 carries no evidence and bullet 2 does. Giver is the Task Delegator at Western Adoulin (G-7) from the Giver block, resolved from the Couriers' Coalition page (giver_conflict null); the walkthrough names him in bullet 3. Rank is 'Advisor' here, a lower coalition rank than the Magnate on most of this batch -- a gate with no schema field, so gates.level stays null and see rank_gate_unmodelled. Mar. FS resource container is a KEY ITEM (res/key_items 2447), not an inventory item. Step 2's square (K-10) is stated by bullet 2 on this page. The sub-bullet about Waypoints and Warp no longer breaking the container since the Feb 18 2014 update is travel advice, not a rung, and the single 'After the walkthrough: Notes' bullet about movement speed is not either. gates.repeatable and gates.expansion null -- the page states neither in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "Task Delegator - Western Adoulin (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. Bullet 1 is emphatic that you are NOT provided with any supplies here, so there is nothing to hold and evidence is null."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Marjami Ravine",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mar. FS resource container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Speak to the Station Administrator at the Frontier Station, (K-10), to receive the container. Holding the key item is what proves this rung is behind you."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Mar. FS resource container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Return to the Task Delegator to deliver the supplies and take the reward -- the report-back rung, stated outright by bullet 3."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Deliver: Yorcia Weald",
+   "page_id": 106306,
+   "revision_id": 510413,
+   "source_sha256": "73896c7cd3e6c01ef18961b138955933bd664fe25d3434d7c97c1bc3f1ffa361",
+   "cache_file": "0106306_deliver_yorcia_weald_4032132c32"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 23,
+   "dat_name": "Deliver: Yorcia Weald",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "consumed_key_item",
+   "generic_npc_name",
+   "grid_absent_on_page"
+  ],
+  "notes": "Couriers' Coalition assignment, Type 'Supply Delivery' -- the Yorcia Weald twin of Deliver: Marjami Ravine, and the difference matters. Bullet 2 here is 'Speak to the Station Administrator to receive Yor. FS resource container' with NO square, whereas the Marjami page gives (K-10). Step 2's grid is therefore null; borrowing the sibling's square would put the marker in the wrong zone entirely. Giver is the Task Delegator at Western Adoulin (G-7) from the Giver block, resolved from the Couriers' Coalition page (giver_conflict null), and bullet 3 names him. Rank 'Advisor' is a coalition rank, not a character level; gates.level stays null. Yor. FS resource container is a KEY ITEM (res/key_items 2448). As with the Marjami twin, nothing is handed over at the desk -- bullet 1 says so explicitly -- so evidence sits on step 2. The Feb 18 2014 Waypoint/Warp sub-bullet and the movement-speed note after the walkthrough are advice, not rungs. gates.repeatable and gates.expansion null -- unstated.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "Task Delegator - Western Adoulin (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. Bullet 1 states you are not provided with any supplies here, so evidence is null."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Station Administrator"
+    },
+    "zone": "Yorcia Weald",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Yor. FS resource container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Speak to the Station Administrator at the Frontier Station in Yorcia Weald to receive the container. This page gives no square for him -- grid deliberately null rather than taken from the Marjami twin. Holding the key item proves the rung is done."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Yor. FS resource container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Return to the Task Delegator to deliver the supplies and take the reward -- the report-back rung, from bullet 3."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Support: Kamihr Drifts",
+   "page_id": 106327,
+   "revision_id": 510426,
+   "source_sha256": "4f1a5c09d440dc42921f7c61037e0e1983a42f7ffece15750bc283ff2f071049",
+   "cache_file": "0106327_support_kamihr_drifts_b4c0e42d86"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 31,
+   "dat_name": "Support: Kamihr Drifts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "consumed_key_item",
+   "generic_npc_name",
+   "or_branch_unmodelled",
+   "report_back_step_absent_from_page"
+  ],
+  "notes": "Couriers' Coalition assignment, Type 'Frontline Support' -- delivery work with a choice of destination. Giver is the Task Delegator at Western Adoulin (G-7) from the Giver block (Couriers' Coalition page, giver_conflict null); bullet 1 names him. Rank 'Magnate' is a coalition rank, not a character level; gates.level stays null. Kam. FB op. materials container is a KEY ITEM (res/key_items 2463), handed over on accepting, so it is step 1's evidence. Step 2 may be satisfied at ANY of four Bivouac Administrators -- #1 (H-9), #2 (H-10), #3 (H-7), #4 (G-6) -- which is an OR, not an unordered group, so the step carries one target under the base name the bullet uses and no grid; the four squares are recorded here instead. NO REPORT-BACK RUNG. Bullet 2 says delivering the container 'completes the assignment' and this page never says to return to the Task Delegator, unlike its sibling Provide: Kamihr Drifts, whose bullet 3 does. Adding a return rung here would be a sibling import, so it was left out; if play shows one is needed it belongs at Western Adoulin (G-7). The sub-bullets about Waypoints being safe since Feb 18 2014 and about Imprimaturs being refunded on cancellation are advice, and the pre-walkthrough line about rewards scaling with bivouac distance is a reward note, not a rung. gates.repeatable and gates.expansion null -- unstated in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-7",
+   "raw": "Task Delegator - Western Adoulin (G-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Kam. FB op. materials container",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment; bullet 1 says the delegator provides the container on accepting, so holding it proves this rung is done."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Bivouac Administrator"
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [
+     {
+      "kind": "ki",
+      "name": "Kam. FB op. materials container",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Bring the container to ANY one of the four Bivouac Administrators in Kamihr Drifts -- #1 (H-9), #2 (H-10), #3 (H-7), #4 (G-6). Because it is one of four, no single square is right and grid is null; the target keeps the bare name the bullet uses rather than a numbered one. Bullet 2 says this completes the assignment."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Gather: Kamihr Drifts",
+   "page_id": 106588,
+   "revision_id": 773589,
+   "source_sha256": "ad96f5ee38c74e82f99df3eb7d7b37b15e0059cac2818f11dc1af8a198b0ac97",
+   "cache_file": "0106588_gather_kamihr_drifts_d49464104f"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 39,
+   "dat_name": "Gather: Kamihr Drifts",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "unnamed_target",
+   "count_unobservable"
+  ],
+  "notes": "Inventors' Coalition assignment, Type 'Gather Materials' -- the archetypal accept, gather, trade-and-report ladder. The walkthrough says only 'NPC', never a name; the NPC is the Task Delegator at Western Adoulin (J-10) from the page's Giver block, resolved from the Inventors' Coalition page (giver_conflict null). Rank 'Magnate' is a coalition rank with no schema field, so gates.level stays null. ITEM NAME. The objective writes 'Procure 3 Raaz Tusks'; recorded singular as Raaz Tusk with count 3, which is how the item resolves (res/items 8709). MOB. Bullet 1's sub-bullet is explicit that it does not matter how you get them -- bought, traded or farmed -- so the raazes bullet 3 points at north of Bivouac #2 and toward Bivouac #1 are one route among several; recorded as a drop source with count null because the page gives neither a kill count nor a drop rate. The page's word is the plain 'raazes', so the plain name is what I recorded rather than any particular variety. Bullet 3 gives no grid, only landmarks, so the gather rung has no square. THE REPORT IS KEPT: bullet 2 is 'Trade these to the NPC and then Report on the quest outcome', and the trade and the Report are one conversation with one NPC at one square, so they are step 3 together rather than two rungs the runtime would draw as a single marker anyway. gates.repeatable and gates.expansion null -- the page never states either in words. The 'Notes' section after the walkthrough is empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "J-10",
+   "raw": "Task Delegator - Western Adoulin (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. Bullet 1's unnamed 'NPC' is the Task Delegator from the Giver block; nothing is handed over, so evidence is null."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kamihr Drifts",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Raaz Tusk",
+       "count": 3
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Raaz",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     3
+    ],
+    "note": "Obtain three Raaz Tusks. Zone from the assignment table; bullet 3 places raazes north of Bivouac #2 near the waypoint and more at the junction toward Bivouac #1, but gives no square, so grid is null. The mob is a drop source with no count because the page says the tusks may equally be bought or traded. Holding three tusks proves the rung is done."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-10",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Raaz Tusk",
+      "count": 3
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Trade the three tusks to the Task Delegator and then Report on the quest outcome. This rung covers BOTH halves of bullet 2 -- the trade and the Report -- because they are one conversation with one NPC and would be one marker regardless."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Analyze: Outer Ra'Kaznar",
+   "page_id": 108958,
+   "revision_id": 510507,
+   "source_sha256": "deda54ef36d0138fcfebf6e2c5d684eb80f61aec5766ab77cfdc827220a469fe",
+   "cache_file": "0108958_analyze_outer_ra_kaznar_444a5c9b20"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 63,
+   "dat_name": "Analyze: Outer Ra'Kaznar",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "unnamed_target"
+  ],
+  "notes": "Scouts' Coalition assignment, Type 'Component Analysis'. Single walkthrough bullet: 'After receiving the assignment, trade one Vanadium Ore to the Task Delegator to complete the assignment.' The bullet names the Task Delegator and the Giver block places him in Eastern Adoulin (F-9), resolved from the Scouts' Coalition page (giver_conflict null). Rank here is 'Legend', the highest coalition rank in this batch and a harder gate than the Magnate on its Marjami and Yorcia siblings -- still a coalition rank with no schema field, so gates.level stays null. The obtain rung's zone (Outer Ra'Kaznar) and count come from the assignment table's Zone and Objective columns; the walkthrough says nothing about how or where the ore is found, so the target is none, mobs is empty and grid is null rather than guessed. Vanadium Ore resolves as an inventory item (res/items 3920). gates.repeatable and gates.expansion null -- neither is stated in words.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment -- 'After receiving the assignment' in bullet 1. Square and zone from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Outer Ra'Kaznar",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Vanadium Ore",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Procure one Vanadium Ore. Zone from the assignment table's Zone column; the walkthrough gives no location or method, so no target and no square."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "kind": "item",
+      "name": "Vanadium Ore",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Trade the ore to the Task Delegator; bullet 1 says the trade completes the assignment, so trade and report are the one rung."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Preserve: Outer Ra'Kaznar",
+   "page_id": 108961,
+   "revision_id": 566689,
+   "source_sha256": "603ff3519039b85e5e537d73f9a6403034a5f583c4a735c4316fa2fd3e060ef7",
+   "cache_file": "0108961_preserve_outer_ra_kaznar_ec1df15d1d"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 72,
+   "dat_name": "Preserve: Outer Ra'Kaznar",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_from_coalition_page",
+   "walkthrough_in_table",
+   "or_branch_unmodelled",
+   "unnamed_target",
+   "report_back_step_absent_from_page"
+  ],
+  "notes": "Peacekeepers' Coalition assignment, Type 'Preserve the peace', Rank 'Legend'. Giver is the Task Delegator at Eastern Adoulin (F-7) from the page's Giver block, resolved from the Peacekeepers' Coalition page (giver_conflict null). The rank is a coalition rank with no schema field -- gates.level stays null, see rank_gate_unmodelled. Work zone Outer Ra'Kaznar is from the assignment table and is not the giver's zone. THE REIVE IS NOT RECORDED AS A TARGET. Bullet 2 says the Lair Reives show as 'Dimensional Tether' on widescan and lists four sites, all Map 1 - Upper Floor: (J-8), (J-6), (G-8), (G-6). Dimensional Tether is a real name on this page and would resolve, but the page says only that it is what the reive LOOKS LIKE on widescan, not that you talk to it, examine it or defeat it -- so recording it as a target or a mob would be an assertion the page does not make, and it is left here in the note instead. Grid is null for the same reason it is on the other reive pages: four alternative sites, of which you complete one, and the page also does not say which of the zone's maps 'Map 1 - Upper Floor' corresponds to in a single grid ref. Bullet 3's Festering Umbril and Procrustean Draugar are described as the enemy types SURROUNDING the reives -- ambient monsters, not the objective -- so they are not mobs. No report-back rung: this walkthrough never says to return to the delegator, and importing one from a sibling Courier page is the cross-page import the pipeline forbids. gates.repeatable and gates.expansion null -- unstated in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: so no single square; the reive is identified on widescan as Dimensional Tether, which the record keeps as prose rather than as a target.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Accept the assignment. No accept bullet exists; bullet 1 is cited as the assignment itself and the NPC, zone and square come from the Giver block."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Outer Ra'Kaznar",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Participate in one Lair Reive through to its evaluation. Four alternative sites on Map 1 - Upper Floor (J-8), (J-6), (G-8), (G-6) Bullet 3's surrounding monsters are not the objective. Reive completion is unobservable, so evidence is null."
+   }
+  ]
+ }
+]

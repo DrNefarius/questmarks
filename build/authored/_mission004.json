@@ -1,0 +1,2457 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 5-1",
+   "page_id": 11673,
+   "revision_id": 728104,
+   "source_sha256": "3c1c0c829e25430dddf7a53c9e2809b0f02b79b2a0c55e0964f5e886d010033e",
+   "cache_file": "0011673_promathia_mission_5_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 448,
+   "dat_name": "The Enduring Tumult of War",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "optional_steps_omitted"
+  ],
+  "notes": "Start is the ZONE 'Port Bastok' and names no NPC, and chronicle_snpc is empty for this row, so start.npc is null and the ladder begins on the zone line -- the two agree and nothing moves. The mission really does start on zoning: bullet 6 is the whole of the accept.\n\nBullets 1 through 5 are ALL marked '(Optional)' by the page and are deliberately NOT steps. Bullet 1 is Despachiaire through the Walnut Door at (K-10) in Tavnazian Safehold, with Parelbriaux at the Walnut Door (K-7) and Odeya at (J-10) under it; the page says outright that those 'are ultimately lead ins for the X Marks the Spot quest, and are not necessary to move 5-1 forward'. Bullet 2 ('look for your companions at the aforementioned meeting place') names no target and no zone at all. Bullets 3-5 are Chasalvige in Northern San d'Oria (L-6, Cathedral Manuscript Room) and Anoki in Port San d'Oria (H-6, Air Travel Agency), twice -- flavour plus a hint at where to go, which is Port Bastok, which bullet 6 states plainly. Keeping them would have put all five at the HEAD of the ladder, and since nothing in this mission is observable the marker parks at step 2 the moment 0x056 says in_progress; step 2 would then have been an optional Tavnazian door or an unnamed 'meeting place'. Every rung here is on the required path instead.\n\nNo evidence anywhere. The header's Reward is 'Access to Promyvion - Vahzl', which is not an item at all, and nothing in the walkthrough hands over anything the addon can see. That is the correct reading for this mission, not a gap.\n\nBullet 11 (take the elevator down) is movement inside Pso'Xja and folds into the last step's note; bullet 13 (a cutscene on entering Promyvion - Vahzl) is an outcome. Header Repeatable is '(empty)', which is unknown and not false, so gates.repeatable is null and chronicle's own answer is left standing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Slanderous Utterings",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Port Bastok",
+   "grid": null,
+   "raw": "Port Bastok"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Port Bastok"
+    },
+    "zone": "Port Bastok",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the header's Start; zoning in is what plays the cutscene and starts the mission. The airship went to Bastok, not San d'Oria."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the page gives no grid for Cid here"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Pso'Xja"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "in through the Nue Tower at (F-7); this is the UNCAPPED area of Pso'Xja and the page warns that Home Point will not work"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Door"
+    },
+    "zone": "Pso'Xja",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nunyunuwi",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "first of the two Stone Doors on the way to Promyvion - Vahzl; checking it spawns the golem"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Pso'Xja",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Nunyunuwi",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "about 3,800 HP but roughly 100 HP/tick of Regen, so burn it down rather than trading damage"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Door"
+    },
+    "zone": "Pso'Xja",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same door again, once Nunyunuwi is dead -- the page really does check it twice"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Stone Door"
+    },
+    "zone": "Pso'Xja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11,
+     12
+    ],
+    "note": "second of the two Stone Doors, and the page gives it no grid. Bullet 11 (take the elevator to the bottom -- no Diremites down there) and the walk that follows are route, not rungs. Checking this door plays a cutscene and puts you into Promyvion - Vahzl."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 5-2",
+   "page_id": 11692,
+   "revision_id": 723288,
+   "source_sha256": "b2bc3aca804798273de640980c762d7b02510d9f4c6fb76838191d4d8b05e81c",
+   "cache_file": "0011692_promathia_mission_5_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 518,
+   "dat_name": "Desires of Emptiness",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "bullet_split",
+   "steps_from_after_section"
+  ],
+  "notes": "DISAGREES WITH chronicle_snpc, but only in the sense that chronicle has no usable answer: its giver for this row is the string 'promyvion', which is a truncation of the zone name and not an NPC anybody can stand in front of. The header's Start is the zone 'Promyvion - Vahzl' and names nobody, so start.npc is null and step 1 is the zone line. Nothing moves off a real giver here -- there was never one.\n\nBullets 1-4 are a shopping list (Instant Reraise, Yagudo Drink, Psychoanima, Hi-Potion), not steps. The Psychoanima line's sub-bullet points at Empty Memories, which is a different quest.\n\nBullet 6 SPLITS into three rungs, one per floor, and each merges its own check-spawn-kill-check-again cycle: the third floor flux at (J-8) with the Propagator, the fourth at (M-6) with the Solicitor, the fifth at (D-6) with the Ponderer. Three rungs is the right grain -- they are three distinct places -- while nine would be six rungs the player cannot be tracked through. All three are the same entity name, Memory Flux, in the same zone, so they share a marker; the grid is what separates them and it is recorded on each.\n\nNO EVIDENCE ANYWHERE, and that is deliberate. The header's Reward is [KI] Light of Vahzl, and a reward proves the mission is over, not that a step is done (hard rule 7). The Map of Promyvion - Vahzl in the 'Optional' after-section is a White Memosphere trade to a ??? that has nothing to do with this ladder, so it is not a step either.\n\nThe 'Boss Fight' after-section is where the three bosses are named -- Procreator, Cumulator, Agonizer -- so the final fight step draws its mob names from there; the rest of that section is tactics. Bullet 7's sub-bullet is the real gate on the mission: skip any of the three flux cutscenes and the Web of Recollections cannot be crossed. Header Repeatable is '(empty)' -- unknown, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Enduring Tumult of War",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Promyvion - Vahzl",
+   "grid": null,
+   "raw": "Promyvion - Vahzl"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Promyvion - Vahzl"
+    },
+    "zone": "Promyvion - Vahzl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the header's Start; you arrive here through the second Stone Door at the end of 5-1"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Promyvion - Vahzl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Memory Receptacle",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "levels 1 and 2, played normally: find and kill a Memory Receptacle to move up a floor. The page gives no count and no location."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Memory Flux"
+    },
+    "zone": "Promyvion - Vahzl",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Propagator",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "THIRD floor, northwest. Check the flux to spawn the Propagator, defeat it, check the flux again for the cutscene, then find the Memory Receptacle for the fourth floor. Skipping the cutscene blocks the Web of Recollections later."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Memory Flux"
+    },
+    "zone": "Promyvion - Vahzl",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Solicitor",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "FOURTH floor, straight east of the entry point. Same cycle: check, kill, check again, then the Memory Receptacle."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Memory Flux"
+    },
+    "zone": "Promyvion - Vahzl",
+    "grid": "D-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ponderer",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "FIFTH floor, northwest of the starting point. Check, kill the Ponderer, check again."
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Spire of Vahzl"
+    },
+    "zone": "Promyvion - Vahzl",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the uncapped area. All three flux cutscenes must be behind you or the Web of Recollections cannot be reached."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Web of Recollections"
+    },
+    "zone": "Spire of Vahzl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "opens the battlefield 'Desires of Emptiness'. Buffs wear on entry, so buff inside. The FrameRateDivisor sub-bullet is client troubleshooting."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Spire of Vahzl",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Procreator",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Cumulator",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Agonizer",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "inside the battlefield. The three names come from the 'Boss Fight' after-section, whose bullets restart at [1]; the walkthrough proper never names them. They arrive one after another at about 20% of the previous one's HP. You are dropped back into Beaucedine Glacier afterwards."
+   },
+   {
+    "n": 9,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Torino-Samarino"
+    },
+    "zone": "Beaucedine Glacier",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     9,
+     10
+    ],
+    "note": "the page's own '(Optional)'. Potete and Leigon-Moigon stand at the same spot and are spoken to as well; one rung rather than three because they are one stop. Zone is Beaucedine Glacier because bullet 9 says that is where the battlefield returns you."
+   },
+   {
+    "n": 10,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "completes the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 5-3",
+   "page_id": 11693,
+   "revision_id": 688497,
+   "source_sha256": "29e79c990f5a2717bc7c6daa510622dd90a2aaf805271726faef52a3df293142",
+   "cache_file": "0011693_promathia_mission_5_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 530,
+   "dat_name": "Three Paths",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "or_branch_unmodelled"
+  ],
+  "notes": "DISAGREES WITH chronicle_snpc, and the disagreement is worth stating plainly: chronicle carries the empty string for this row, so today the mission has no giver marker at all. The header's Start is the bare zone 'Metalworks', but the walkthrough names the man -- 'Speak with Cid in the Metalworks to begin the mission' -- so start.npc is Cid. giver_of prefers my ladder's start NPC unconditionally, which here means the marker goes from nowhere to Cid rather than moving off anybody.\n\nThis is the CoP chapter fork and the page is a stub for it on purpose. Cid offers a choice of three paths -- the page says outright it does not matter which you pick, since all three can be done at any time -- and every one of them is a separate storyline written up elsewhere. None of it is on this page, so none of it is in this ladder. Modelling a merged path here would invent a route no player follows, which is exactly what flag or_branch_unmodelled is for. What remains is honest and small: Cid to start, Cid again once all three are done. Both rungs land on the same marker, which is the truthful answer -- Cid is the only thing about this mission the addon can point at.\n\nConfidence is medium for that reason, not because the page is unclear. It is perfectly clear; it just holds two of the mission's steps and none of its middle.\n\nThe 'Trust: Shikaree Z' after-section is a reward you collect from Perih Vashai in Windurst Woods (K-7) after the fact, gated on a Windurst Trust permit and on not having pushed the storyline too far. It is not a step of this mission. No evidence anywhere: the header's Reward is empty and nothing here hands over an item. Header Repeatable is '(empty)' -- unknown, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Desires of Emptiness",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": null,
+   "raw": "Metalworks"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "he offers the choice of which path to start on; the page says the choice does not matter. Fastest approach is Bastok - Metalworks - Home Point #1. The page gives no grid."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "only after all three paths are finished. The three paths themselves are not on this page and are not modelled -- see the mission note."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 6-1",
+   "page_id": 11945,
+   "revision_id": 770758,
+   "source_sha256": "b47aef8fb186eba6fe8dea27fc26bd2eaa13fce41017936115312597139fadbd",
+   "cache_file": "0011945_promathia_mission_6_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 578,
+   "dat_name": "For Whom the Verse Is Sung",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Clean three-rung page and the shortest reading in the lane. Start agrees with chronicle_snpc (pherimociel) and with the walkthrough's own first line, so nothing moves.\n\nBullet 2's target is the door of the Marble Bridge tavern, not the tavern -- 'check the door' -- and Marble Bridge is the name the game gives that entity, so it is an object target rather than a zone. Its sub-bullet, Mojuro-Nojuro outside joking about Tarutaru day, is the page's own 'Optional' and is flavour with no bearing on the mission; it is a note, not a rung.\n\nBullet 3 is a zone line and nothing else: you walk back into Ru'Lude Gardens and the cutscene fires on the zone, so the target is the zone and there is no NPC to point at. That is why step 3 carries no npc even though steps 1 and 3 happen in the same place.\n\nNo evidence: the header's Reward is empty and nothing on this page hands over an item or key item. Three cutscenes, nothing observable, which is the normal shape for a CoP bridging mission. Header Repeatable is '(empty)' -- unknown, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Three Paths",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Pherimociel",
+   "zone": "Ru'Lude Gardens",
+   "grid": "G-6",
+   "raw": "Pherimociel, Ru'Lude Gardens - (G-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pherimociel"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Marble Bridge"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "check the tavern door. Mojuro-Nojuro stands right outside and is the page's own optional aside, not a rung."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ru'Lude Gardens"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the cutscene fires on the zone line, not on an NPC, so there is nothing here to point at"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 6-2",
+   "page_id": 11948,
+   "revision_id": 756672,
+   "source_sha256": "ddf69d7feea324d1ddac5983bfff8425471989343759ae35a49d71fc9b487d40",
+   "cache_file": "0011948_promathia_mission_6_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 618,
+   "dat_name": "A Place to Return",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc: chronicle says 'palace' and the header says 'Palace, Ru'Lude Gardens - (H-7)'. The Palace is a real entity the resolver folds to a key, so this is a genuine marker and not a zone stand-in; nothing moves.\n\nStep 1 is a proximity cutscene -- 'head toward the Palace' -- which is why its kind is cutscene rather than talk: there is no conversation, but there is a definite thing to walk at, so the rung keeps a target.\n\nBullets 3 and 4 are one action split across two lines: bullet 3 says checking the gate at (I-11) spawns three Detector-type NMs and bullet 4 names them. They merge into the examine, and the fight that follows is its own rung because all three Warders must die before the gate does anything else. Sleep works on them but they resist it after a while, which is tactics and stays in the note.\n\nThis zone has TWO Dilapidated Gates that matter to CoP and they are not the same one: this mission's is at (I-11) in Misareaux Coast, while 7-2 opens on the north gate at (F-7). Both fold to the same entity key, so the grid on each step is the only thing separating them and it is recorded.\n\nNo evidence: the header's Reward is empty and nothing here is handed over. Header Repeatable is '(empty)' -- unknown, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "For Whom the Verse is Sung",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Palace",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-7",
+   "raw": "Palace, Ru'Lude Gardens - (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Palace"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "walking toward it is enough; the grid comes from the header's Start, which the walkthrough does not repeat"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pherimociel"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Warder Thalia",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Warder Aglaia",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Warder Euphrosyne",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the (I-11) gate, NOT the north one at (F-7) that 7-2 uses. Lower western exit from Tavnazian Safehold. Bullet 4 is where the three are named, so both bullets feed this rung."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Misareaux Coast",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Warder Thalia",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Warder Aglaia",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Warder Euphrosyne",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all three must die. They can be slept and taken one at a time, though they start resisting Sleep after a while."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same gate again, once the Warders are down"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 6-3",
+   "page_id": 11950,
+   "revision_id": 723367,
+   "source_sha256": "8c90a30f8206b53c29b2e847cdefcc1e12951a9b60c11b17c57c1ecb334c3811",
+   "cache_file": "0011950_promathia_mission_6_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 628,
+   "dat_name": "More Questions Than Answers",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Start agrees with chronicle_snpc (pherimociel) and with the walkthrough's first line; nothing moves.\n\nThree rungs, three zones -- Ru'Lude Gardens twice and then Selbina. Bullet 2's Audience Chamber is a real markable entity and gets an object target, but the page gives it no grid, only 'head up the stairs', so grid stays null rather than borrowing (H-7) from the Palace on the mission before. Its sub-bullet (Pherimociel and Auchefort have new minor dialogue afterwards) is the page's own 'Optional' and is dialogue flavour, not a rung.\n\nThe entire 'Optional' after-section is a reading list -- eleven bullets of other quests that are worth doing while the armada prepares, plus a note that this was once the last mission in the expansion. Not one of them is a step of this mission, and several are gated on jobs or levels that have nothing to do with CoP. Read and deliberately discarded.\n\nNo evidence: the header's Reward is empty and the mission ends on a conversation. Header Repeatable is '(empty)' -- unknown, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Place to Return",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Pherimociel",
+   "zone": "Ru'Lude Gardens",
+   "grid": "G-6",
+   "raw": "Pherimociel, Ru'Lude Gardens - (G-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Pherimociel"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Home Point #1 is next to him"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "up the stairs from Pherimociel; the page gives no grid for it"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mathilde"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the Weaver's Guild office; completes the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 6-4",
+   "page_id": 11981,
+   "revision_id": 766642,
+   "source_sha256": "169757e548dcc70a1ab46ec902761d282c4c656fe6f818ccbc76f0ecb6b5816e",
+   "cache_file": "0011981_promathia_mission_6_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 638,
+   "dat_name": "One to Be Feared",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "steps_from_after_section",
+   "unnamed_target"
+  ],
+  "notes": "START DISAGREES WITH THE HEADER AND AGREES WITH CHRONICLE. The header's Start is the bare zone 'Sealion's Den', but the walkthrough's first action is bullet 9, 'Go to the Metalworks and speak with Cid for a cutscene', and only bullet 10 sends you to Sealion's Den. chronicle_snpc for this row is 'cid', so my reading and the shipped index already agree and the marker does not move; it is the wiki header that is the odd one out, and it is describing where the mission HAPPENS rather than who starts it. start.raw keeps the header string verbatim.\n\nBullets 1-8 are a preparation list -- your best gear, a charged Reraise Hairpin or Gorget, potions, Echo Drops, Antidotes, drinks, Icarus Wings, food, CCB Polymer Pumps -- and not one of them is a step. The Pumps sub-bullet points at the quest Chips, which is where you get them; that is a different quest.\n\nCONFIDENCE MEDIUM because bullets 11-16 say the same two actions twice in a confusing order. Bullet 11 clicks the Iron Gate for a cutscene, 12 says you are then aboard the airship, 13 clicks 'the door on the airship' for a third cutscene 'and to begin the first fight' -- then 15 clicks the Iron Gate AGAIN to actually enter the battlefield and 16 clicks the door again to start the battle. The honest reading is that 11 and 15 are the same gate used twice and 13 and 16 are the same door used twice, so the ladder carries one Iron Gate rung and one door rung rather than four. Bullet 14 is a time limit (45 minutes), not a step.\n\nThe airship door has NO NAME on this page -- the page only ever writes 'the door' -- so its target is none rather than an invented entity, and its zone is null because it is inside the battlefield instance and not in Sealion's Den. That rung keeps its place and loses its marker, which is the right trade.\n\nThe boss names come from the 'Boss Fight' after-section, whose bullets restart at [1]: five Mammets, then Omega, then Ultima, three stages with a return to the airship deck between each. Omega and Ultima are also named in the walkthrough proper, in bullet 8's CCB Polymer Pump sub-bullet.\n\nNO EVIDENCE. The Ducal Guard's Ring is the header's Reward -- it proves the mission is over, not that a step is done (hard rule 7) -- and it is handed to you in the closing cutscene in Lufaise Meadows, after the last fight. The 'Trust: Cherukiki' after-section is Taillegeas at Ru'Lude Gardens (I-7) afterwards, a reward collection and not a step. Header Repeatable is '(empty)' -- unknown, not false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "More Questions than Answers",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": null,
+   "raw": "Sealion's Den"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the real start of the mission; the header points at Sealion's Den instead. The page gives no grid."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sealion's Den"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "cutscene on the zone line. It is at the bottom of the stone ramps in Tavnazia near Home Point #2, the opposite direction from the aqueducts."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     11,
+     15
+    ],
+    "note": "one rung for both mentions -- bullet 11 checks it for the cutscene and bullet 15 checks it again to enter the battlefield 'One to be Feared'. Buffs wear on entry, so buff inside. Leaving the battlefield toward Tavnazia gets you unique Cherukiki dialogue, which is trivia."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     13,
+     16
+    ],
+    "note": "the door on the airship deck, inside the battlefield. The page never gives it a name, so there is nothing to target; zone is null because the deck is not Sealion's Den. One click transports the whole party, so everyone must be ready."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mammet",
+      "count": 5,
+      "role": "kill"
+     },
+     {
+      "name": "Omega",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Ultima",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     13,
+     14
+    ],
+    "note": "three stages, from the 'Boss Fight' after-section whose bullets restart at [1]. You are put back on the deck with full HP/MP between stages and click the door again. 45 minute limit. After Ultima you appear in Lufaise Meadows at the Dilapidated Gate."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 7-1",
+   "page_id": 11999,
+   "revision_id": 772846,
+   "source_sha256": "9a5634b3f70350424f168110a7e54081dde1d78c09bf0cddedd482a4829ce8a5",
+   "cache_file": "0011999_promathia_mission_7_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 648,
+   "dat_name": "Chains and Bonds",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_is_zone_entry",
+   "unordered_group"
+  ],
+  "notes": "Start is the bare zone 'Tavnazian Safehold' with no NPC, and chronicle_snpc is empty for this row, so start.npc is null and the ladder opens on the zone line. The two agree and nothing moves.\n\nBullet 2 says outright that its three cutscenes 'can be done in any order', so its three sub-bullets become three rungs sharing group 'safehold_scenes' and all draw at once. A strict ladder would mark the first and nothing else until the player happened to visit it, which is exactly the failure a group exists to avoid. They sit in two different zones -- Sealion's Den for one, Tavnazian Safehold for the other two -- and each rung keeps its own zone, since a step has one zone even inside a group.\n\nThe Phomiuna Aqueducts rung is a zone line you CLICK rather than walk through: the page says exit Sealion's Den, run straight ahead on the bottom floor and click the entrance for a cutscene with Louverance. So its zone is Tavnazian Safehold (where you stand) and its target is the zone the entrance leads to.\n\nThe Walnut Door rung at (K-7) is the one that completes the mission, but the page's 'any order' means it need not be last, so it is not treated as a turn-in.\n\nNo evidence: Level, Repeatable, Title and Reward are all explicitly 'None' on this page. Repeatable 'No' is a real reading, so gates.repeatable is false here rather than null as on the earlier pages that left the field empty. The Ducal Guard's Ring named in bullet 1 was 6-4's reward, already in your hands before this mission starts -- it belongs to that mission, not this one, and it is not recorded as evidence anywhere here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "One to be Feared",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": null,
+   "zone": "Tavnazian Safehold",
+   "grid": null,
+   "raw": "Tavnazian Safehold"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Tavnazian Safehold"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any Tavnazia home point works; the page says you do not need to run through Lufaise Meadows. This follows the Lufaise scene at the end of 6-4."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sealion's Den"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "safehold_scenes",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you may need to zone in more than once -- the page says there can be multiple cutscenes here"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "zone",
+     "name": "Phomiuna Aqueducts"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "safehold_scenes",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "exit Sealion's Den and run straight ahead; the aqueducts entrance is on the bottom floor. Clicking it gives the cutscene with Louverance -- you do not go in."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Walnut Door"
+    },
+    "zone": "Tavnazian Safehold",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "safehold_scenes",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "top floor, Home Point #3. This is the cutscene with Ulmia that completes the mission, but the page's 'any order' means it need not be done last."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 7-2",
+   "page_id": 12003,
+   "revision_id": 759059,
+   "source_sha256": "6caabf27cc7498e336494689f268842cda86724d118d82058d62cba22b657921",
+   "cache_file": "0012003_promathia_mission_7_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 718,
+   "dat_name": "Flames in the Darkness",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "grid_conflict"
+  ],
+  "notes": "DIFFERS FROM chronicle_snpc, which is empty for this row: the header names a concrete object, 'Misareaux Coast - Dilapidated Gate - (F-7)', and the walkthrough's first line agrees with it word for word, so start.npc is the Dilapidated Gate. Today this mission has no giver marker at all; after this it has one. Nothing moves off a real NPC.\n\nGRID CONFLICT worth being explicit about, because it is a same-name-different-place trap rather than a page contradiction: Misareaux Coast has two Dilapidated Gates that CoP uses. This mission wants the NORTH one at (F-7); mission 6-2 spawns the three Warders at the one at (I-11). Both fold to the same entity key, so if the marker ever lands on the wrong one the grid on the step is the only thing that says so. Recorded on the step and on the start.\n\nThe route sub-bullets under bullet 1 -- Unity Warp 122, or Tavnazian Safehold Home Point #1 and out into Misareaux -- are travel advice and not rungs. Same for bullet 3's note that the Ducal Guard's Ring warps you in front of the Palace: that ring is 6-4's reward, so it is a convenience you already hold, not a requirement of this step, and it is not recorded in items.\n\nBullet 4's sub-bullets are the page's own 'Optional' Mojuro-Nojuro joke and a client note about needing to click twice if an RoV cutscene is queued. Neither is a step.\n\nThe page gives no grids for Sueleen, the Palace or the Marble Bridge. Those are all known from other pages in this same lane -- Sueleen at (H-6) on the 7-4 page, the Palace at (H-7) and the Marble Bridge at (F-7) on the 6-2 and 6-1 headers -- but importing them would be reading a different page into this record, so they stay null. No evidence: Reward is explicitly 'None' and nothing is handed over. Repeatable is explicitly 'No', so false rather than null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Chains and Bonds",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Dilapidated Gate",
+   "zone": "Misareaux Coast",
+   "grid": "F-7",
+   "raw": "Misareaux Coast - Dilapidated Gate - (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Dilapidated Gate"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the NORTH gate at (F-7). Mission 6-2 uses a different Dilapidated Gate at (I-11) in this same zone -- do not confuse them."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sueleen"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "this page gives no grid for her"
+   },
+   {
+    "n": 3,
+    "kind": "cutscene",
+    "target": {
+     "type": "object",
+     "name": "Palace"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "head toward the Palace; the scene fires on approach. This page gives no grid."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Marble Bridge"
+    },
+    "zone": "Upper Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "check the tavern door for the final cutscene. If an RoV scene is queued the page says you may need to click twice."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 7-3",
+   "page_id": 12050,
+   "revision_id": 747508,
+   "source_sha256": "4eb56c20aa4fe7d79910f59c66fa6367db73805e44db93d94da50adb6c4017ab",
+   "cache_file": "0012050_promathia_mission_7_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 728,
+   "dat_name": "Fire in the Eyes of Men",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "DIFFERS FROM chronicle_snpc, which is empty for this row. The header names an object -- 'Mine Shaft 2716 - Shaft Entrance' -- and bullet 1 repeats it, so start.npc is the Shaft Entrance. The mission gains a giver marker where it had none; nothing moves off an existing NPC.\n\nZone name normalisation is the one thing to watch here: the header and the walkthrough write the zone as 'Mine Shaft 2716' and 'Mine Shaft #2716' respectively, and only the hashed form resolves. Both steps use the hashed form; start.raw keeps the header's unhashed string verbatim.\n\nBullet 1's four sub-bullets are ROUTES INTO the zone, not steps: the Newton Movalpolos #1 home point you should already have from 5-3, a Snow Lily traded to Tarnotik at (K-10) in Oldton Movalpolos for a warp, gambling with Twinkbrix at (E-13) until he yields the [KI] Shaft 2716 operating lever plus 2000 gil for the warp, or the long walk through Newton Movalpolos operating the furnace hatches, which needs three people. None of them is required -- they are four ways to reach one place -- so nothing goes into items and there is no items_alt either, because items_alt is alternatives for one step's requirements and these are alternatives for getting there. The Snow Lily and the operating lever are inputs to those routes, not to this mission.\n\nTwo rungs and the mission is over. No evidence: Reward is explicitly 'None'. The 'Notes' after-section is two bullets of context -- this was the last mission of the second CoP update, and finishing Rise of the Zilart is recommended while Cid repairs the airship -- and neither is a step. Repeatable is explicitly 'No', so false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Flames in the Darkness",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Shaft Entrance",
+   "zone": "Mine Shaft #2716",
+   "grid": null,
+   "raw": "Mine Shaft 2716 - Shaft Entrance"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Shaft Entrance"
+    },
+    "zone": "Mine Shaft #2716",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page lists four ways to reach the zone (home point, Tarnotik warp for a Snow Lily, Twinkbrix gamble plus 2000 gil, or the long walk); they are routes, not requirements, so none is recorded as an item"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "completes the mission; the page gives no grid"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 7-4",
+   "page_id": 12057,
+   "revision_id": 769926,
+   "source_sha256": "77cbf2f7972cffd0fec6641a2510ad81dd05522f994fcfce0a3bb5f03aab8b8e",
+   "cache_file": "0012057_promathia_mission_7_4"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 738,
+   "dat_name": "Calm Before the Storm",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "steps_from_after_section",
+   "unordered_group",
+   "consumed_key_item"
+  ],
+  "notes": "DIFFERS FROM chronicle_snpc, which is empty for this row: the header gives 'Metalworks - Cid - (H-8)' and bullet 1 says 'after your conversation with Cid', so start.npc is Cid with a grid. The mission gains a giver marker where it had none.\n\nTHE WALKTHROUGH IS ONE BULLET AND THE MISSION IS ENTIRELY IN THE AFTER-SECTIONS. This is the case AUTHORING warns about: the single top-level bullet says only that you will fight three monsters across the globe in any order, and the four sibling sections -- 'Boggelmann', 'Cryptonberry Executor', 'Dalham', 'Finishing Up' -- carry every location, every spawn and both key items. Their bullets restart at [1], so every source_bullets number below except step 1's refers to the section named in that step's note.\n\nThe three monsters share group 'monsters' because bullet 1 says in any order. Each is one rung rather than three (check to spawn, kill, check again), because none of the intermediate clicks is observable and three rungs per monster would be nine the player cannot be tracked through. Two of the three spawn on a ??? that can never carry a marker; recorded anyway, since the rung is worth keeping even without the mark.\n\nEVIDENCE, and this is the only mission in the lane that has real evidence on more than one rung. The [KI] Vessel of light comes from the SECOND check of the Storage Compartment after Boggelmann dies, which is that step and no other, and the header's Reward is 'None' so it is not a reward. It sits on the Boggelmann rung -- the first group member, matching the page's own section order -- and NOT on a later one: it proves Boggelmann is dead and nothing else, and putting it on the last member would claim it proved all three. The consequence is that a player who kills Boggelmann first advances the mark within the group while two members are still undone; the group draws them all at once regardless, so the marker set is unchanged and only the //qm why line reads odd. That is the least-wrong of the available placements.\n\nThe [KI] Letters from Ulmia and Prishe come from Cid in 'Finishing Up' and are that rung's evidence. Two different key items on two different rungs, no duplication.\n\nThe kiting and 2-hour advice under each monster is tactics. Note that the Cryptonberry rung is really four mobs -- the NIN Executor plus three Assassins that pop shortly after -- and the page is emphatic that the Executor dies first, before Mijin Gakure. Repeatable is explicitly 'No', so false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Fire in the Eyes of Men",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": "H-8",
+   "raw": "Metalworks - Cid - (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the grid comes from the header's Start; bullet 1 refers to the conversation without describing it"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Storage Compartment"
+    },
+    "zone": "Misareaux Coast",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Vessel of light",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Boggelmann",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "monsters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "from the 'Boggelmann' after-section, whose bullets restart at [1]. Check the compartment to spawn the bugard, kill it -- high defence, uses Blood Weapon -- then check again for the cutscene and the [KI] Vessel of light, which is this rung's evidence. Unity Warp 122 lands near it."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Carpenters' Landing",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Cryptonberry Executor",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Cryptonberry Assassin",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": "monsters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "from the 'Cryptonberry Executor' after-section, bullets restarting at [1]. The ??? is near the water; in from the east entrance in Jugner Forest (J-8), or the Carpenters' Landing Survival Guide. Three Assassins (THF, SMN, BLM) join the NIN Executor shortly after it pops -- kill the Executor first and fast to avoid Mijin Gakure. Check the ??? again once they are all down. A ??? can never carry a marker."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Bibiki Bay",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Dalham",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": "monsters",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "from the 'Dalham' after-section, bullets restarting at [1]. The ??? is inside a cave; Survival Guide and Unity Warp 119 are both close. It uses no 2 hour -- the dust cloud animation only marks its multiattack rate stepping up. Check the ??? again afterwards."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letters from Ulmia and Prishe",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "from the 'Finishing Up' after-section, bullet [1]. Only after all three monsters are dead; he hands over the [KI] Letters from Ulmia and Prishe, which is this rung's evidence."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Sueleen"
+    },
+    "zone": "Sealion's Den",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "from the 'Finishing Up' after-section, bullet [2]. Near Tavnazian Safehold Home Point #2; the cutscene here ends the mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 7-5",
+   "page_id": 12062,
+   "revision_id": 689906,
+   "source_sha256": "3190d6f40b7a283c778728d408ca1def9d88fd51fc74820fca7524f362232990",
+   "cache_file": "0012062_promathia_mission_7_5"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 748,
+   "dat_name": "The Warrior's Path",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "walkthrough_incomplete"
+  ],
+  "notes": "DIFFERS FROM chronicle_snpc, which is empty for this row: the header gives 'Metalworks - Cid - (H-8)', so start.npc is Cid. The mission gains a giver marker where it had none. Note though that the WALKTHROUGH never mentions Cid at all -- it opens at the Iron Gate in Sealion's Den -- so the ladder does not carry a talk-to-Cid rung. Adding one would be inventing a step the page does not describe, while dropping the header's own giver would throw away the only thing that says where the mission begins. Header for the start, walkthrough for the ladder.\n\nBullets 1-3 are a preparation list (Icarus Wing, Echo Drops, HP/MP regen drinks) and not steps.\n\nTHE BOSS IS DELIBERATELY UNNAMED. The after-section is headed 'Boss Fight (Spoiler Free!)' and writes the boss as '???' in all fifteen bullets, so the fight rung carries no mob name and target none. The name is certainly recoverable from elsewhere on the wiki, but importing it would be reading a different page into this record for no marker gain -- a battlefield mob cannot be marked either way. The rung keeps its place and says so. Confidence is medium for that and because the walkthrough proper is three lines long for a mission whose whole substance is the fight.\n\nNO EVIDENCE. The header's Reward is [KI] Light of Al'Taieu, and a reward proves the mission is over rather than that a step is done (hard rule 7). The two Titles are likewise outcomes.\n\nThe fight rung's zone is null because it happens inside the battlefield instance, not in Sealion's Den. The three unkillable NPCs on the platform above (RNG, BLM, WHM) and the Shogun Rice Ball are tactics. Repeatable is explicitly 'No', so false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Calm Before the Storm",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Cid",
+   "zone": "Metalworks",
+   "grid": "H-8",
+   "raw": "Metalworks - Cid - (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the walkthrough's own first action; the header's Cid is not mentioned anywhere on the page"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Iron Gate"
+    },
+    "zone": "Sealion's Den",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same gate again, when the party is ready, to enter the battlefield 'The Warrior's Path'. Uncapped, but buffs still wear on entry, and once inside you cannot leave until you win or lose."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "inside the battlefield. The page's 'Boss Fight (Spoiler Free!)' after-section writes the boss as '???' throughout and never names it, so mobs is empty rather than invented. It gives up at 15-20% HP; a connected Meikyo Shisui skillchain will eject you. Zone is null because this is a battlefield instance."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 8-1",
+   "page_id": 37039,
+   "revision_id": 747202,
+   "source_sha256": "1e2ca3275d9a80cbb67b88118bcbbe198d68ad41c7e78207ae779809ee4cb214",
+   "cache_file": "0037039_promathia_mission_8_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 800,
+   "dat_name": "Garden of Antiquity",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target"
+  ],
+  "notes": "DIFFERS FROM chronicle_snpc, which is empty for this row: the header gives 'Al'Taieu - Crystalline Field - (H-11)' and bullet 1 repeats it exactly, so start.npc is the Crystalline Field. The mission gains a giver marker where it had none.\n\nThe Crystalline Field is used TWICE and the page really does that -- bullet 1 examines it for the opening cutscene, bullet 3 returns to it to enter the Grand Palace of Hu'Xzoi -- so it appears on two rungs at the same grid. That is not a contradiction.\n\nBullet 2 is THREE Rubious Crystals and is deliberately ONE rung, not three. The page gives no grid for any of them, only the aside that the Auroral Updrafts at (E-8) and (L-8) shorten the running; three rungs distinguished by nothing would be noise, and none of the three is observable. The mob name is 'Ru'aern', which is the family the page names rather than any individual NM -- it says 'trios of Ru'aern NMs' and never names one. If that fold does not match a live mob it costs the rung its glyph and nothing else, which is better than inventing three names.\n\nThe Auroral Updraft aside is worth keeping in the note because it has a real cost: the page warns those teleports count as a zone, so buffs drop and trusts are dismissed. The 'nothing of interest here' wait when other players are spawning the same NMs is likewise a real thing to expect, not a step.\n\nNO EVIDENCE. The Tavnazian Ring named in bullet 4 is the header's Reward -- it proves the mission is over, not that a step is done (hard rule 7) -- so it is not recorded as evidence even though the page ties it to a particular cutscene. The 'Optional' after-section (In the Name of Science becomes available) is an outcome. Repeatable is explicitly 'No', so false.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Warrior's Path",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Crystalline Field",
+   "zone": "Al'Taieu",
+   "grid": "H-11",
+   "raw": "Al'Taieu - Crystalline Field - (H-11)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Crystalline Field"
+    },
+    "zone": "Al'Taieu",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Auroral Updraft at (H-12), the red pillar of light, runs back to Sealion's Den; Sueleen sends you here again"
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Rubious Crystal"
+    },
+    "zone": "Al'Taieu",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ru'aern",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "THREE crystals, one rung: check each to spawn a trio of Ru'aern NMs, kill them, check again -- three cutscenes in all. The page gives no grid for any crystal and names no individual NM. Auroral Updrafts at (E-8) and (L-8) shorten the running but count as a zone, so buffs drop and trusts are dismissed. 'There is nothing of interest here' means another party has it and it can take two minutes to come back."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Crystalline Field"
+    },
+    "zone": "Al'Taieu",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the same field as step 1, now that all three cutscenes are done; it puts you into the Grand Palace of Hu'Xzoi"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate of the Gods"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "cutscene and the Tavnazian Ring. The ring is the header's Reward, so it is not evidence."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Particle Gate"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the EAST gate at (H-8); completes the mission. Pick up the nearby Home Point -- 8-2 starts on this same gate."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Promathia Mission 8-2",
+   "page_id": 37040,
+   "revision_id": 723372,
+   "source_sha256": "8d63148d273c4bf00fbe199c178a52ca87a8e98005e63bc4fc4bae43c7e9190f",
+   "cache_file": "0037040_promathia_mission_8_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "cop",
+   "id": 818,
+   "dat_name": "A Fate Decided",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "steps_from_after_section",
+   "grid_conflict"
+  ],
+  "notes": "DIFFERS FROM chronicle_snpc, which is empty for this row: the header gives 'Grand Palace of Hu'Xzoi - Particle Gate - (H-8)' and bullet 1 repeats it, so start.npc is the Particle Gate. The mission gains a giver marker where it had none. The page is explicit about WHICH gate: the eastern one at (H-8) starts the mission, and the northern one beside the Home Point goes to the Garden of Ru'Hmet and is the wrong door. That warning is on the step.\n\nTHE ROUTE IS IN AN AFTER-SECTION. The walkthrough proper (bullets 2-5) explains the escort mechanic in prose and gives no locations at all; every grid in this ladder comes from the 'Complete Route' section, whose bullets restart at [1]. Each escort rung's source_bullets refers to that section, and each note says so.\n\nGRID CONFLICT, and it is structural rather than a page error: the Grand Palace has an upper level (Map 1) and a basement (Map 2) that share one grid space, so (H-8) is both this mission's starting Particle Gate on Map 1 and the Ix'ghrah room on Map 2. The schema has no floor field, so the level lives in each note and the marker cannot distinguish them. That is the main reason this record is medium rather than high.\n\nThe three transporters in the route -- Map 1 (L-7), Map 2 (G-12), Map 1 (G-4) -- are movement between escorts and are not rungs. The four escorts ARE rungs and are ORDERED, not a group: each one opens the Particle Gates that let you reach the next, so the sequence is forced. Each is the same cycle -- check a Cermet Alcove to spawn a Quasilumin, keep it alive along its fixed route while it opens gates, then check it again at the alcove it stops at -- with a time limit the page states per escort and which is recorded in the note.\n\nThe aside that ten stationary Quasilumins can be talked to for a map of the area is a convenience, not a step. Bullet 5's threat list (Ix'ghrah, Eo'ghrah, Eo'zdei waiting at the end of the first and second escorts) is tactics.\n\nNo evidence: Reward is empty and nothing is handed over on this page. Repeatable is explicitly 'No', so false. The final rung leaves through the Gate of the Gods into The Garden of Ru'Hmet, which is where 8-3 picks up.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: the two floors share a grid space and the schema cannot say which.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Garden of Antiquity",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Particle Gate",
+   "zone": "Grand Palace of Hu'Xzoi",
+   "grid": "H-8",
+   "raw": "Grand Palace of Hu'Xzoi - Particle Gate - (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Particle Gate"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the EASTERN gate on the upper level. Examine once for the cutscene that starts the mission, again to enter. The northern Particle Gate next to the Home Point leads to the Garden of Ru'Hmet and is the wrong door."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Alcove"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "first escort, UPPER level (Map 1), 5 minute limit. Grid from the 'Complete Route' after-section bullet [1], whose numbering restarts at [1]. Check the alcove to spawn a Quasilumin, protect it along its fixed route while it opens Particle Gates, then check it again at the alcove it stops at."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Alcove"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "L-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "second escort, BASEMENT level (Map 2), 30 minute limit. 'Complete Route' bullet [3]; you get there through the Map 1 (L-7) transporter, which is movement and not a rung."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Alcove"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "third escort, BASEMENT level (Map 2), 30 minute limit. 'Complete Route' bullet [4]."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Alcove"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "fourth escort, UPPER level (Map 1), 40 minute limit. 'Complete Route' bullet [6]; in via the Map 2 (G-12) transporter. Players who have already cleared When Angels Fall can join here through the west door from the lobby."
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Portal"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ix'ghrah",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     8,
+     9
+    ],
+    "note": "'Complete Route' bullets [8] and [9]. This (H-8) is on the BASEMENT level (Map 2) and is NOT the Particle Gate of step 1, which is (H-8) on Map 1 In via the Map 1 (G-4) transporter."
+   },
+   {
+    "n": 7,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ix'ghrah",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "it cycles all four forms -- ball, bird, spider, human -- each with its own 2 hour and its own resistances. Basement level (Map 2)."
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Portal"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "the same portal again once the Ix'ghrah is dead, for the cutscene. 'Complete Route' bullet [10]."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gate of the Gods"
+    },
+    "zone": "Grand Palace of Hu'Xzoi",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     11
+    ],
+    "note": "back at the palace entrance; it opens The Garden of Ru'Hmet. 'Complete Route' bullet [11]. Warping to Home Point #1 in the Grand Palace via Lumoria beats walking back through the Cermet Portals."
+   }
+  ]
+ }
+]

@@ -1,0 +1,2305 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Regaining Trust",
+   "page_id": 15079,
+   "revision_id": 699294,
+   "source_sha256": "a6edada425fe5b655fc6f1dcf5972d6d3bf4385a24850798be7523e560b37ab1",
+   "cache_file": "0015079_regaining_trust"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 85,
+   "dat_name": "Regaining Trust",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "bullet_split",
+   "unnamed_target",
+   "fellowship_gate_unmodelled"
+  ],
+  "notes": "A Fellowship quest, and almost all of it is cutscene chaining between two Upper Jeuno NPCs. Bullets 2 and 5 each hold TWO journeys -- 'speak to X ... then return to Y' -- so each splits into two steps carrying the same bullet number. Bullet 3 is nothing but the route to the Giant Footprint and merges into the examine in bullet 4; the sub-bullet about the cermet spine is the landmark, not a step. Bullet 4 is itself three actions: click the footprint, kill what pops, then speak to the fellow.\n\nNothing here is observable. No key item is granted, nothing is traded, and the reward is a level cap raise, so every evidence is null and the ladder rides the session latch the whole way. That is the honest answer for a quest made of cutscenes.\n\nThe Adventuring Fellow is a PLAYER-NAMED entity -- there is no fixed string that could ever be written here -- so step 6 is an unnamed target that keeps its rung and loses its marker rather than guessing at 'Adventuring Fellow'. The header's two gates (Familiarity 55+, Adventuring Fellow level 51+) are real requirements but no packet reports either, so they are flagged and gate nothing; level and jobs stay empty because neither is a gate on the PLAYER. Ingaevon's 3-minute respawn is advice.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 6: there is no fixed name to record, so this step keeps its place and loses its marker",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Picture Perfect",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene here is what opens the quest"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Infirmary"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the same bullet's second journey, back to Luto"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "npc",
+     "name": "Giant Footprint"
+    },
+    "zone": "Qufim Island",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ingaevon",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "north past Delkfutt's Tower and along the tunnel; it sits beside a cermet spine. Examining it pops both Ingaevon and your fellow."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qufim Island",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Ingaevon",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "a Gigas NM; it can be respawned 3 minutes after it dies"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qufim Island",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Your Adventuring Fellow, whose name the PLAYER chose."
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Monberaux"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "his cutscene is what completes the quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Lost in Translocation",
+   "page_id": 19657,
+   "revision_id": 692780,
+   "source_sha256": "65aabb846133a0a4c3856790a663eaf7f0ac6143917d92844c75839d80fa65a2",
+   "cache_file": "0019657_lost_in_translocation"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 0,
+   "dat_name": "Lost in Translocation",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "object_denied_target"
+  ],
+  "notes": "Bullet 3 is a heading -- 'There are three pieces to the map' -- with one sub-bullet per piece and no order given anywhere; bullet 4's 'After you receive the final map piece' confirms it. So the three are one unordered group and all three draw at once, which is what a player wants inside a necropolis. Two are clicked objects (Sarcophagus, Gravestone) and the third is handed over by an NPC, Erik, so they are not even the same kind of step.\n\nEach piece is a DISTINCT key item obtained at its own step, so unlike a group whose members all drop the same thing, each member can carry its own evidence with no duplicate-evidence hazard -- this quest gets per-piece progress for free.\n\nThe Crypt Door beside Thorben is the entity you click to get in, so the travel step targets the door in Batallia Downs (S) rather than the destination zone: a marker on the door is in the zone the player is actually standing in. The Blank Target brazier in bullet 4 is kept as a rung although it is in OBJECT_DENY and can never draw a marker; it is the page's own instruction and the only way out it names, and dropping it would hide a real loss. Erik is qualified as 'now present during Campaign as per the 11/26/07 patch', which may mean he is not always there -- nothing observable distinguishes that, so it is a note. The DAT id for this area really is 0 and is copied as the table gave it.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Thorben",
+   "zone": "Batallia Downs (S)",
+   "grid": "J-10",
+   "raw": "Thorben - Batallia Downs (S) - (J-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Thorben"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Crypt Door"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "right next to Thorben; it leads into The Eldieme Necropolis (S)"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Sarcophagus"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Right map piece",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "map_pieces",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "any order with the other two pieces"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gravestone"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Middle map piece",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "map_pieces",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "any order with the other two pieces"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erik"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Left map piece",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "map_pieces",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "an NPC, not a clicked object; the page says he is present during Campaign as of the 11/26/07 patch"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Blank Target"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the brazier next to Erik; choose 'Into the fire' and it warps you out to Batallia Downs (S) (J-10). Blank Target is a denied object name, so this rung can never carry a marker."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Thorben"
+    },
+    "zone": "Batallia Downs (S)",
+    "grid": "J-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Water of Life",
+   "page_id": 56701,
+   "revision_id": 640850,
+   "source_sha256": "d907aeffdd15bb008896de4c7a30cd1b1e50e60f1bcd99271f17ee04436f4573",
+   "cache_file": "0056701_water_of_life"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 7,
+   "dat_name": "Water of Life",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "evidence_deferred_to_last_group_member",
+   "or_branch_modelled"
+  ],
+  "notes": "Bullet 2 is not a step: it is the LIST OF WHAT BULLET 1 GIVES YOU, so the four vials of purification agent are step 1's evidence rather than a rung of their own. Bullet 3 is four ponds in one sentence -- (L-10), (K-11) and TWO at (H-7) -- so it becomes four steps, and since the page gives no order they share a group and all four draw at once.\n\nThe page never says which vial belongs to which pond; it only says that with each pond examined 'your key items will be replaced with' the four labelled ones. So no pond can claim a specific labelled vial as its own evidence. The AND-list over all four labelled vials therefore sits on the LAST group member, the same shape An Explorer's Footsteps uses, because it can only become true once every pond is done and it has to land the mark on Miageau rather than back inside the group.\n\nWhat you must hold to examine a pond is 'at least one unlabelled vial', which is exactly items OR items_alt: the black vial in items and the other three as alternates. That reads true on the first pond, when you hold all four, and on the last, when you hold one. Between step 1 and the last pond the step-1 AND-list has already gone false, so the ladder falls back on the session latch across the middle of the group, which is unavoidable and harmless here. Fame 'alth' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw is kept. The closing line about zoning to repeat is a cooldown, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 4,
+    "raw": "alth / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Miageau (A)",
+   "zone": "Abyssea - La Theine",
+   "grid": "L-11",
+   "raw": "Miageau (A) (L-11), Abyssea - La Theine"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Miageau (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vial of purification agent (blk.)",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Vial of purification agent (brz.)",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Vial of purification agent (slv.)",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Vial of purification agent (gld.)",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at Veridical Conflux #06. Bullet 2 is what this conversation hands you, not a step."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Murky Pond"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-10",
+    "items": [
+     {
+      "name": "Vial of purification agent (blk.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Vial of purification agent (brz.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (slv.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (gld.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "any one unlabelled vial will do; the page does not say which pond takes which"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Murky Pond"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "K-11",
+    "items": [
+     {
+      "name": "Vial of purification agent (blk.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Vial of purification agent (brz.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (slv.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (gld.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "any order"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Murky Pond"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Vial of purification agent (blk.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Vial of purification agent (brz.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (slv.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (gld.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "first of the TWO ponds the page places at (H-7)"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Murky Pond"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Vial of purification agent (blk.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Vial of purification agent (brz.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (slv.)",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Vial of purification agent (gld.)",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Black-labeled vial",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Bronze-labeled vial",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Silver-labeled vial",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Gold-labeled vial",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "ponds",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "second pond at (H-7). This is the group's LAST member and so carries the all-four labelled-vial evidence for the whole group -- see the quest note."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Miageau (A)"
+    },
+    "zone": "Abyssea - La Theine",
+    "grid": "L-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "zoning is required before it can be repeated"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Grave Concerns",
+   "page_id": 474,
+   "revision_id": 729109,
+   "source_sha256": "8e3f266abd8b6c26851314adb14c4cba68563a5cc4cce682abec8ecfbeae4d42",
+   "cache_file": "0000474_grave_concerns"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 11,
+   "dat_name": "Grave Concerns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "recovery_path_unmodelled"
+  ],
+  "notes": "A clean three-rung fetch with evidence on both halves: Well Water proves the conversation happened, Tomb Waterskin proves the tombstone was traded. Bullet 2 is only the journey and merges into bullet 3's trade, which is the action that happens there.\n\nThe page writes the target as a quoted lower-case 'tombstone'. It is recorded as Tombstone, the entity name, since that is plainly the thing being named rather than a description.\n\nThe 'Notes' section after the walkthrough restarts at [1] and is a RECOVERY PATH, not the rest of the quest: it tells you what to do if you lose the Well Water -- touch the tombstone for a Tomb Waterskin, then trade that to the water well in Southern San d'Oria (F-6) to get Well Water back. It is a loop out of a failure state, not a ladder position, and modelling it would put the same Tomb Waterskin on two steps, which is a hard gate. It is left as prose here and flagged.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Andecia",
+   "zone": "Southern San d'Oria",
+   "grid": "M-7",
+   "raw": "Andecia - Southern San d'Oria (M-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Andecia"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Well Water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "middle house on the first floor of Squire's Alley. Speak TWICE: the first pass is story text, the second puts the Well Water in your inventory."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Tombstone"
+    },
+    "zone": "King Ranperre's Tomb",
+    "grid": "I-10",
+    "items": [
+     {
+      "name": "Well Water",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tomb Waterskin",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "on the first map"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Andecia"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "M-7",
+    "items": [
+     {
+      "name": "Tomb Waterskin",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the trade completes the quest"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Three Men and a Closet",
+   "page_id": 18461,
+   "revision_id": 754764,
+   "source_sha256": "b74f67bcd4f11d84ea7663f8fd2689d01d1ff71d6ad583995ea311da4267ce77",
+   "cache_file": "0018461_three_men_and_a_closet"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 31,
+   "dat_name": "Three Men and a Closet",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "fame_level_unknown"
+  ],
+  "notes": "Six bullets, six steps, and the page says so itself: 'the rest of the Quest involves running around Whitegate and watching cutscenes'. Everything but bullet 2 happens inside Aht Urhgan Whitegate.\n\nFoudeel, Wahboud and Bashraf are named in the DESCRIPTION and again in the sub-bullet under bullet 4, but you never interact with any of them -- they are what the cutscenes are about. Ratihb is who you talk to. That sub-bullet ('if the cutscene does not involve Foudeel and Wahboud, speak to him again') is a retry instruction and stays a note.\n\nBullet 2 is a zone-line step. The Ironbound Gate at the (G/H-10) boundary is the entity you click, so it is the target and the step's zone stays Whitegate -- a marker on the gate is in the zone the player is standing in, where a marker on Wajaom Woodlands would not be. The cutscene fires as you zone, which is an outcome and not a second step.\n\nNothing in this quest is observable: no key item, nothing traded, and the reward is an Imperial Bronze Piece, which is a reward and therefore never evidence. FLevel is literally 'Unknown' on the page, so the fame level is null and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Aht Urhgan / Unknown"
+   },
+   "prev": [
+    {
+     "title": "Got It All",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Kubhe Ijyuhla",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-8",
+   "raw": "Kubhe Ijyuhla, Aht Urhgan Whitegate (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kubhe Ijyuhla"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the Serpentking Square"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "object",
+     "name": "Ironbound Gate"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G/H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "out into Wajaom Woodlands; the cutscene plays as you zone"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kubhe Ijyuhla"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ratihb"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-12",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "inside the Shararat Teahouse. If the cutscene does not involve Foudeel and Wahboud, speak to him again."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tehf Kimasnahya"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "on Balrahn's Way; he explains the whole thing"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kubhe Ijyuhla"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Wondrous Whatchamacallit",
+   "page_id": 50603,
+   "revision_id": 765460,
+   "source_sha256": "dcef22f407576c92130a150b83b5065114a9c818c65b977f98b3143ae4b5bebb",
+   "cache_file": "0050603_the_wondrous_whatchamacallit"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 90,
+   "dat_name": "The Wondrous Whatchamacallit",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "walkthrough_in_table",
+   "unordered_group",
+   "unzoned_target",
+   "craft_skill_gate",
+   "skill_level_not_definite_false"
+  ],
+  "notes": "The whole middle of this quest is a wikitable that survived the prepass, and it is the real content: six stones, one per Cloister, gathered from ??? spots. No order is given or implied, so the six share a group and all draw at once. Every one of them is a ???, which can never carry a marker -- but each yields a DIFFERENT stone, so unlike a row of anonymous ??? these six rungs are individually observable and worth keeping apart. Their zones are the six Cloister BCNM zones, which all resolve.\n\nBullet 3 is two actions and splits: synergize the six stones into Astral Matter, then trade that to Selliste. The furnace step is the one place the page gives no location at all -- it names a Synergy Furnace but not which one -- so that step has a target and no zone, which is deliberate: furnaces stand in several cities and the nearest one is always the right one. The sub-bullet about Enternity and frame rates above 30fps is Windower troubleshooting and is not a step.\n\n'Synergy skill of 5 or higher' is a real gate with no slot in the schema and nothing observable behind it, so it is flagged and gates nothing; it is a CRAFT skill, not a job or a level, so neither of those fields is touched. Astral Matter appears in Item Reqs and not in Reward, so using it as the furnace step's evidence is not a reward being read as evidence.\n\nTHE SYNERGY GATE IS NOW MODELLED, AND THE NOTE ABOVE PLACED IT WRONG. It is not a condition on the furnace step: the page header reads `|Quest Reqs=Synergy skill of 5 or higher.`, which makes it an ENTRY condition on the quest. Recorded as skill 57 level 5.\n\nIt is a LEVEL and not a rank, and the difference matters by a factor of ten: rank 5 is Journeyman, which BG Wiki's Rank-up Test page puts at skill 48-60, so reading \"5 or higher\" as a rank would fire the gate roughly ten times too late. validate.py would accept either, so the guard has to be the reading. The gate is recorded as a LEVEL, and it is deliberately one the runtime may never grey a marker on. Packet 0x062 reports NATURAL skill -- the number the in-game menu shows -- and equipment adds on top of it invisibly: Trainee's Spectacles give +1 Fishing and the menu still reads 1 when the effective skill is 2. Since the NPC checks the effective number, natural-below-threshold means \"cannot tell\", not \"cannot start\", so core/prereq.lua returns nil there and the marker goes BLACK rather than grey. Above the threshold is still a definite true, so the false yellow is removed without a false grey replacing it. A craft RANK is different and does grey, because no equipment moves the stored result of a rank-up test.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [
+    {
+     "title": "Synergistic Pursuits",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null,
+   "craft": [
+    {
+     "skill": "Synergy",
+     "rank": null,
+     "level": 5,
+     "raw": "Quest Reqs=Synergy skill of 5 or higher."
+    }
+   ]
+  },
+  "start": {
+   "npc": "Selliste",
+   "zone": "Bastok Mines",
+   "grid": "K-7",
+   "raw": "Selliste - Bastok Mines (K-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Selliste"
+    },
+    "zone": "Bastok Mines",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Cloister of Flames",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Flamestone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "stones",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any order; the page gives no spot within the zone"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Cloister of Frost",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Froststone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "stones",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any order"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Cloister of Gales",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Galestone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "stones",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any order"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Cloister of Tremors",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tremorstone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "stones",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any order"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Cloister of Storms",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Stormstone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "stones",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any order"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Cloister of Tides",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Tidestone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "stones",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "any order"
+   },
+   {
+    "n": 8,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Synergy Furnace"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Flamestone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Froststone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Galestone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tremorstone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Stormstone",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Tidestone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Astral Matter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page names a Synergy Furnace but never says which one, so this step has no zone on purpose. Synergy skill 5+ is needed and cannot be seen."
+   },
+   {
+    "n": 9,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Selliste"
+    },
+    "zone": "Bastok Mines",
+    "grid": "K-7",
+    "items": [
+     {
+      "name": "Astral Matter",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the cutscene here is reported to lock up with Enternity and frame rates above 30fps"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Granddaddy Dearest",
+   "page_id": 101756,
+   "revision_id": 675369,
+   "source_sha256": "283b33e393e47bc9f3681c84412fe0686169b9237ac606d9cc69417fc7b72972",
+   "cache_file": "0101756_granddaddy_dearest"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 26,
+   "dat_name": "Granddaddy Dearest",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "unordered_group"
+  ],
+  "notes": "A courier run with two key items, both observable, so steps 1 and 2 each carry their own evidence and the ladder is tight until bullet 3.\n\nBullet 3 is the interesting one. Anastase sends you to ONE subordinate 'chosen at random' out of four, in four different towns. That is not an ordered ladder and it is not four things you do -- it is one thing with four possible destinations, and nothing in the packets says which you were given. The four are therefore one group so that all four draw at once and the player walks to whichever one they were actually told; each keeps its own zone, as a group must. They are NOT marked optional, because doing one of them is required -- optional would let the ladder skip past all four.\n\nThe Small bag key item is what you hand over there, so it is the group's items rather than its evidence; nothing new is granted at that step. Zurko-Bazurko's sub-bullet ('you may have to talk to him more than once for him to take the key item') is a retry note. Bullet 6 is a Conquest Tally cooldown, not a step, and nothing reports the tally anyway. Fame 'Adoulin' is not one of the nine regions, so the region is null and only the raw is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "Adoulin / 3"
+   },
+   "prev": [
+    {
+     "title": "Researchers from the West",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Alienor",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Alienor, Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alienor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tray of Adoulinian delicacies",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "next to the waypoint at the Pioneers' Coalition"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [
+     {
+      "name": "Tray of Adoulinian delicacies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Small bag of Adoulinian delicacies",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jillia"
+    },
+    "zone": "Selbina",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Small bag of Adoulinian delicacies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "subordinate",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of four subordinates, chosen at random; only the one Anastase named applies"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zurko-Bazurko"
+    },
+    "zone": "Mhaura",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Small bag of Adoulinian delicacies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "subordinate",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of four, chosen at random. You may have to talk to him more than once before he takes the key item."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Quwi Orihbhe"
+    },
+    "zone": "Rabao",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Small bag of Adoulinian delicacies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "subordinate",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of four, chosen at random"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wistful Bison"
+    },
+    "zone": "Norg",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Small bag of Adoulinian delicacies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "subordinate",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one of four, chosen at random"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Anastase"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "G-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 8,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Alienor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "repeatable after every Conquest Tally, which nothing in the packets reports"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hypocritical Oath",
+   "page_id": 106226,
+   "revision_id": 744668,
+   "source_sha256": "2c65656984e7416dad42f5af3e9750c998683ed21f560f897902f3edd204c31d",
+   "cache_file": "0106226_hypocritical_oath"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 124,
+   "dat_name": "Hypocritical Oath",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "start_disagrees_with_header"
+  ],
+  "notes": "Bullet 1 is a precondition -- a game day must pass after Do Not Go Into the Light -- not a step; game time is not visible to the addon, so it is flagged and folded into step 1's note.\n\nThe header's giver is Alianne and the walkthrough's is a door: you flag this by clicking the door to Svenja's Manor, not by talking to anybody. Both sit at (I-8) in Western Adoulin, so start is left as the header's Alianne -- she resolves, she is where the page puts her, and start only matters before the quest is open -- while step 1 targets Svenja's Manor, which is what you actually click. That is recorded rather than reconciled.\n\nMargret is named twice in sub-bullets and is never a target: she is the one asking, inside the cutscene, and Wegellion is the NPC you stand in front of and trade to. The Frost Turnip and Slime Oil sourcing sub-bullets (rabbits in Kamihr Drifts or Uleguerand Range, or the Green Thumb Moogle with the right Monster Rearing memento) are shopping advice, not steps -- so no obtain rung is invented for them. Nothing in this quest is observable: the two items are requirements consumed at step 3 and the reward is Bayld, so every evidence is null.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Adoulin / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Do Not Go Into the Light",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Alianne",
+   "zone": "Western Adoulin",
+   "grid": "I-8",
+   "raw": "Alianne, Western Adoulin - (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the door. You must wait a game day after Do Not Go Into the Light before this will flag, which nothing can see."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Wegellion"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "at the back of the Scout's Coalition. Margret is the one asking for the items in the cutscene, but Wegellion is who you speak to."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Wegellion"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": null,
+    "items": [
+     {
+      "name": "Frost Turnip",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Slime Oil",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "both in one trade"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "object",
+     "name": "Svenja's Manor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "back to the manor door for the closing cutscene"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Wild Card (Quest)",
+   "page_id": 338,
+   "revision_id": 771282,
+   "source_sha256": "2d94fe8f1986896ea4fbab995e184e70b6b766f203dd075e2d75661f159d0b0b",
+   "cache_file": "0000338_wild_card_quest"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 77,
+   "dat_name": "Wild Card",
+   "match_rule": "quest_suffix_verbatim",
+   "match_conf": "medium"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 4
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_modelled",
+   "target_may_not_be_an_entity"
+  ],
+  "notes": "Bullet 1 is a zone precondition and folds into step 1's note. The spine of the quest is clear, but two things hold it at medium.\n\nFirst, bullets 6 and 7 are a genuine OR: 'If you spoke to Joker during the previous cut-scene' send you back to the House of the Hero, 'If you spoke to Apururu' send you to the Manustery in Windurst Woods. The choice was made in an earlier cutscene and nothing in the packets records which. They are modelled as one group so both draw and the player picks the one that matches their own cutscene; neither is optional, because doing one of them is required. Apururu is named only as the person you spoke TO in that cutscene -- she is not the target of anything -- so the second branch targets the Manustery, the only entity the page names there, and it may well not be a clickable entity at all; the page gives no grid for it either and only suggests Home Point #3.\n\nSecond, bullet 5 says only 'open a Coffer there'. VERIFY: the draft recorded that target as 'Treasure Coffer', borrowed from what Under Oath's page writes for the same kind of object -- but THIS page never writes those words, and a name that does not appear in the page text is not a name this pass may record. The target is nulled; the rung stays, keeps its evidence and loses only its marker. Nothing the page supports is lost by that: 'Coffer' on its own would not match the entity either, and coffers in Toraimarai Canal spawn wherever they like, so a fixed marker was never going to be worth much. The zone, Toraimarai Canal, is given but no grid is. The Thief-picks-the-lock alternative is why items_partial is set on that step, and the Joker card is a KEY ITEM, so the rung is still observable and the ladder still advances through it.\n\n'Check the door at the House of the Hero' is the same entity Carbuncle Debacle and Class Reunion use, and it appears twice here -- once in bullet 4 and once as one arm of the branch -- which is fine, since neither carries evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 4: the page says only 'open a Coffer there' and never names the entity, so this rung has no target and can carry no marker. A Thief can pick it instead, which is why items_partial is set.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 6,
+    "raw": "Windurst / 6"
+   },
+   "prev": [
+    {
+     "title": "Crying Over Onions",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Honoi-Gomoi",
+   "zone": "Windurst Waters",
+   "grid": "E-7",
+   "raw": "Honoi-Gomoi, Windurst Waters South (E-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Honoi-Gomoi"
+    },
+    "zone": "Windurst Waters",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "upstairs in his house, up the back stairway. You must have zoned since finishing Crying Over Onions."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kohlo-Lakolo"
+    },
+    "zone": "Port Windurst",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "House of the Hero"
+    },
+    "zone": "Windurst Walls",
+    "grid": "G-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "check the door"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Toraimarai Canal",
+    "grid": null,
+    "items": [
+     {
+      "name": "Toraimarai Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Joker card",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "The key drops in the zone or is 5,000 gil from the Curio Vendor Moogle."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "object",
+     "name": "House of the Hero"
+    },
+    "zone": "Windurst Walls",
+    "grid": "G-3",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "reward_branch",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "ONLY if you spoke to Joker in the earlier cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "object",
+     "name": "Manustery"
+    },
+    "zone": "Windurst Woods",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "reward_branch",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "ONLY if you spoke to Apururu. The page names no grid and no entity beyond the building itself; Home Point #3 is the way in. This target may not be a clickable entity."
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Honoi-Gomoi"
+    },
+    "zone": "Windurst Waters",
+    "grid": "E-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Empty Memories",
+   "page_id": 24575,
+   "revision_id": 682105,
+   "source_sha256": "6110eb3735bcb3bb29ef48d12971d9911f97667c39334a2af67fdfb2f6853c89",
+   "cache_file": "0024575_empty_memories"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 70,
+   "dat_name": "Empty Memories",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "gil_cost_unmodelled",
+   "fame_field_malformed"
+  ],
+  "notes": "This page has no ladder at all: it is a price list. Six numbered bullets, each one 'Recollection X -> item Y', all traded to the same NPC standing in one spot, and the quest is repeatable. Reading them as six steps would build a six-rung ladder for something that is one trade, and would mark the player as five-sixths incomplete forever. They are one step: any ONE Recollection satisfies it, which is exactly items OR items_alt -- Recollection of Pain in items and the other five as alternates.\n\nThe first three also cost 2,000 gil and the last three do not. Gil is not an item and has no slot, so that split is a note and a flag rather than two steps; it changes nothing about where the player has to stand.\n\nEvery one of the six results -- the three animas, Hamayumi, Stone Gorget, Dia Wand -- is in the header's Reward, so none of them is evidence. Nothing here is observable at all. The Fame field is malformed: it holds '1' where the region belongs and FLevel is empty. '1' is not one of the nine regions, so the region is null; the 1 is read as the fame LEVEL, which is the only thing it can sensibly be, and the raw keeps the original either way.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Gil cannot be expressed.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "1 / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "cop"
+  },
+  "start": {
+   "npc": "Harith",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Harith, Ru'Lude Gardens (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Harith"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Recollection of Pain",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Recollection of Fear",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Recollection of Guilt",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Recollection of Suffering",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Recollection of Anxiety",
+      "count": 1,
+      "kind": "item"
+     },
+     {
+      "name": "Recollection of Animosity",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "Any ONE Recollection. Pain, Fear and Guilt each also cost 2,000 gil traded alongside and give an anima; Suffering, Anxiety and Animosity cost nothing extra and give an item."
+   }
+  ]
+ }
+]

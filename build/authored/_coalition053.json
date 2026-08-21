@@ -1,0 +1,1505 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Recover: Morimar Basalt Fields",
+   "page_id": 99476,
+   "revision_id": 746905,
+   "source_sha256": "78b44d490e0361239617eceb8c07e92c76ff17df91daf9c91ee3e463c2cc54d7",
+   "cache_file": "0099476_recover_morimar_basalt_fields_38b9027c59"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 82,
+   "dat_name": "Recover: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "turnin_not_in_walkthrough",
+   "spawn_point_random"
+  ],
+  "notes": "A Mummers' Coalition assignment. The page carries no Start field and its walkthrough names no NPC; the giver is stage A's, from the '## Giver' block -- Task Delegator, Western Adoulin -- resolved from the Mummers' Coalition page. GIVER_CONFLICT is present and is repeated here as instructed: the assignment page says (G-11), the Task Delegator NPC page says (G-10), and stage A used the NPC page, so G-10 is what I recorded; that disagreement is why this record is medium and why it carries grid_conflict. Coalition Rank 'Disciple' is a real gate with no schema field -- it is NOT gates.level, which means character level -- so it lives here and in rank_gate_unmodelled. The Objective names no count and no item: 'Find a Lost article', one article, so there is no items list to write. The work zone from the assignment table is 'Morimar Basalt Fields / Moh Gates' -- an OR, and a step has one zone, so step 2 takes Morimar Basalt Fields (the zone in this assignment's own title and dat_name) and the Moh Gates alternative is recorded in the step note under or_branch_unmodelled. Bullet 4 lists six possible Morimar squares and seven Moh Gates squares and the article spawns at one of them, so steps[2].grid is null rather than any one of them -- naming a square the page offers as one of six would draw a marker the page does not attest for this run. Bullets 2 and 3 are behaviour advice, not steps: one article per zone, it despawns and respawns on retrieval (possibly in the same spot), and it does not show on Wide Scan. Nothing in the walkthrough grants an observable item, so no step has evidence. gates.repeatable and gates.expansion are null because this page never says either in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: and bullet 1 is cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Read from the '## Giver' block, not from a numbered bullet the walkthrough has no accept bullet Grid G-10 is the Task Delegator NPC page's square; this assignment page says G-11 (see notes)."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Lost article"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     4
+    ],
+    "note": "The Lost article is a clickable object in the field, not an NPC and not a mob. Moh Gates satisfies the objective equally well (bullet 1, and the table's Zone field); one step takes one zone, so Morimar Basalt Fields is recorded and the alternative is here. Grid is null on purpose: bullet 4 gives six candidate Morimar squares -- (E-7) east, (F-7) south, (H-10/I-10) near pond, (I-7) NW near the hill, (I-9) near the north edge east of the cliff, (K-9) at the corner -- and seven for Moh Gates, and exactly one article exists per zone at a time. It does not appear on Wide Scan (bullet 3), and it respawns immediately when retrieved (bullet 2)."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Report back to the Task Delegator who issued the assignment. This walkthrough does not spell the report-back out in a bullet -- the step comes from the coalition-assignment structure and the '## Giver' block, not from bullet 1, which is cited only as an anchor. items is empty because the page never says the Lost article is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Research: Foret de Hennetiel",
+   "page_id": 99477,
+   "revision_id": 773261,
+   "source_sha256": "c54c08b30ea78fa17a7f127d3cd0fd7d875b288c0a206d0dee3889d8bfdf31d2",
+   "cache_file": "0099477_research_foret_de_hennetiel_86b874dbec"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 88,
+   "dat_name": "Research: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "turnin_not_in_walkthrough",
+   "count_unobservable"
+  ],
+  "notes": "A Mummers' Coalition 'Behavioral research' assignment. No Start field, no NPC named in the walkthrough; the giver is stage A's Task Delegator in Western Adoulin from the '## Giver' block, resolved from the Mummers' Coalition page. GIVER_CONFLICT is present: the assignment page says (G-11) and the Task Delegator NPC page says (G-10); stage A used the NPC page, so G-10 is recorded and the record carries grid_conflict and medium. Coalition Rank 'Contributor' is a gate with no schema field -- not gates.level, which is character level -- so it is noted here and flagged rank_gate_unmodelled. The objective is not a kill and not a fetch: you must BECOME THE VICTIM of Sundering Snip, a craklaw special attack. That completion condition is not observable in any packet -- no item, no key item -- so steps[2].evidence is null and the Craklaw count is a placeholder 1 rather than a real requirement (count_unobservable). The mob is still recorded because it is the thing you go and engage. Zone is an OR, 'Foret de Hennetiel / Sih Gates'; step 2 takes Foret de Hennetiel, the zone in the title and dat_name, and Sih Gates is in the step note. Bullet 1's sub-bullets are advice: four Craklaws sit directly west of Bivouac #4, the Defense Down effect is NOT required (this differs from the matamata assignment, which does require its effect), the move is a short-ranged beam under 7 yalms, and you should stand behind whoever holds hate when clearing for a party. Bullet 2 is a genuine restriction rather than a step: Reive mobs do not count. gates.repeatable and gates.expansion stay null -- the page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 is cited only because source_bullets may not be empty.\n  step 2: role 'kill' is the nearest of the three roles the schema offers.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. G-10 is the NPC page's square, against this page's G-11 (see notes)."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Craklaw",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "The page pluralises 'Craklaws'; the mob name is recorded singular. count 1 is a placeholder, NOT a requirement: the assignment completes when Sundering Snip hits you, so the number of craklaws you fight is unbounded and no kill is strictly needed Sih Gates works equally well (bullet 1, and the table's Zone field); one step, one zone. Grid is null the only positional hint is 'directly west of Bivouac #4', where four Craklaws stand, and the page gives no square. Reive craklaws do NOT count (bullet 2)."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Report back to the Task Delegator. Not spelled out in a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is cited as an anchor only. Nothing is traded, so items is empty."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Research: Morimar Basalt Fields",
+   "page_id": 99478,
+   "revision_id": 773772,
+   "source_sha256": "3d174c152ceeddd390006817fa9a5ffef330d208622ef0d838d94ed2a51c7acc",
+   "cache_file": "0099478_research_morimar_basalt_fields_592ca2284e"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 89,
+   "dat_name": "Research: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "grid_conflict",
+   "or_branch_unmodelled",
+   "turnin_not_in_walkthrough",
+   "count_unobservable"
+  ],
+  "notes": "A Mummers' Coalition 'Behavioral research' assignment, the matamata twin of the craklaw one -- but read on its own page, because the two do not actually agree about what completes them. Here bullet 1's sub-bullet says the assignment completes 'After being hit with Defense Down effect from Tail Thwack', i.e. the effect must land, and it adds that if Tail Thwack misses nothing applies (recommending a non-evasive job and no +evasion gear). The craklaw assignment says the opposite about its own move. No Start field and no NPC in the walkthrough; the giver is stage A's Task Delegator in Western Adoulin from the '## Giver' block, resolved from the Mummers' Coalition page. GIVER_CONFLICT is present: page says (G-11), the Task Delegator NPC page says (G-10), stage A used the NPC page -- G-10 recorded, grid_conflict flagged. Coalition Rank 'Contributor' is a gate with no schema field and is not gates.level; flagged rank_gate_unmodelled. Being hit by a mob TP move is not observable, so no evidence anywhere and the matamata count is a placeholder 1 (count_unobservable). Zone is an OR, 'Morimar Basalt Fields / Moh Gates'; step 2 takes Morimar Basalt Fields per the title and dat_name, with Moh Gates in the step note. Bullet 2 is a location hint, not a step -- matamata cluster near the Morimar Basalt Fields Home Point -- and it gives no grid, so steps[2].grid is null. Bullet 3 is a restriction, not a step: Reive mobs do not count. repeatable and expansion stay null; the page never says either.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.\n  step 2: count 1 is a placeholder, not a requirement: completion is being hit by Tail Thwack AND taking its Defense Down, so the number of matamata fought is unbounded and role 'kill' is the closest of the three the schema allows.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "G-10",
+   "raw": "Task Delegator - Western Adoulin (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. G-10 is the NPC page's square against this page's G-11 (see notes)."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Matamata",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Moh Gates satisfies the objective equally (bullet 1 and the table's Zone field); one step, one zone. Grid null bullet 2's only hint is 'in quantity near the Morimar Basalt Fields Home Point', with no square given. Reive matamata do NOT count (bullet 3)."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation only. Nothing is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Procure: Foret de Hennetiel",
+   "page_id": 99489,
+   "revision_id": 510428,
+   "source_sha256": "d2ca7d1ed9bbeedc049cdae7aeef91988d2ddccbb56040fd03f1baabed35af3c",
+   "cache_file": "0099489_procure_foret_de_hennetiel_dea4c90ee3"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 1,
+   "dat_name": "Procure: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "repeating_loop"
+  ],
+  "notes": "A Pioneers' Coalition harvesting assignment. No Start field and no NPC in the walkthrough; the giver is stage A's Task Delegator in Western Adoulin (E-8) from the '## Giver' block, resolved from the Pioneers' Coalition page. No giver_conflict on this page. Coalition Rank 'Disciple' is a gate with no schema field -- it is not gates.level, which means character level -- so it is recorded here and flagged rank_gate_unmodelled. Bullet 1 ('Obtain at number of Sickles', a typo for 'a number of') is not a place you go: it is a thing you must be HOLDING to do the work, which is what steps[2].items is for, so it folds into step 2 rather than becoming a rung of its own. The page gives no count for the sickles and no vendor, so count is 1 -- the minimum to swing once -- with 'extras highly recommended' in the note. The five 'materials' of the Objective are NOT an item: bullet 6 says outright that the items are abstract and that you may toss or sell any HELM results and still complete the assignment, so there is no items entry for them and no evidence anywhere on this record (count_unobservable). Bullet 2 is travel that belongs to step 2's zone, and bullet 4 is the repetition of bullet 3 rather than a separate rung (repeating_loop). Bullet 5 is advice: gathering fatigue sets in quickly, is affected by Ionis, and decays to roughly one more attempt every two minutes. gates.repeatable and gates.expansion stay null -- nothing on this page says either in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: and bullet 1 is cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Read from the '## Giver' block, not from a numbered bullet the walkthrough has no accept bullet."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Harvesting Point"
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [
+     {
+      "name": "Sickle",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "Bullets 1-4 are one act: hold sickles, travel, use them on Harvesting Points, repeat to five. The page pluralises 'Sickles' and 'Harvesting Points'; both are recorded singular as the item and the entity. count 1 on the sickle is the minimum needed to make one attempt -- the page asks for 'a number' of them and says extras are highly recommended, but never states a number, and each successful swing consumes one. No grid: the page gives no square for the harvesting points. evidence is null because bullet 6 says the five 'items' are abstract and the physical HELM results may be tossed or sold, so nothing you hold proves this done."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator who issued the assignment. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation only. items is empty: bullet 6 is explicit that the harvested items are not what you hand in."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Procure: Morimar Basalt Fields",
+   "page_id": 99490,
+   "revision_id": 510429,
+   "source_sha256": "d6249a812a03e3d7e9ee7f4dc24ea87394e982af5f057ac50f806cf747bbd007",
+   "cache_file": "0099490_procure_morimar_basalt_fields_1fd728c4e1"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 2,
+   "dat_name": "Procure: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "repeating_loop"
+  ],
+  "notes": "A Pioneers' Coalition MINING assignment -- this page's Objective is 'Procure 5 materials by mining', and bullets 1 and 3 say Pickaxes and Mining Points, so nothing here is carried over from the harvesting sibling. No Start field, no NPC in the walkthrough; the giver is stage A's Task Delegator in Western Adoulin (E-8) from the '## Giver' block, resolved from the Pioneers' Coalition page, and there is no giver_conflict. Coalition Rank 'Disciple' is a gate with no schema field and is NOT gates.level (character level); flagged rank_gate_unmodelled. Bullet 1 is a holding requirement rather than a destination, so it becomes steps[2].items instead of a rung; the page names no vendor and no count, only 'a number' of pickaxes with extras highly recommended, so count is the minimum 1. The Objective's five 'materials' are not an item and are not observable: bullet 6 says the items are abstract and that HELM results may be tossed or sold with the assignment still completing, so evidence is null throughout (count_unobservable). Bullet 2 is the travel that gives step 2 its zone; bullet 4 is repetition of bullet 3 (repeating_loop); bullet 5 is gathering-fatigue advice, affected by Ionis and decaying to roughly one extra attempt every two minutes. repeatable and expansion are null -- the page states neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Mining Point"
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "Bullets 1-4 are one act: hold pickaxes, travel, use them on Mining Points, repeat to five. The page pluralises 'Pickaxes' and 'Mining Points'; both are recorded singular. count 1 is the minimum for a single attempt -- the page asks for 'a number' with extras recommended but never states one, and a swing consumes a pickaxe. Grid is null; the page gives no square for the mining points. evidence null: bullet 6 says the five items are abstract and the physical results may be tossed or sold."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator. Not written as a bullet here -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. items empty: bullet 6 rules out handing in the mined items."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Procure: Cirdas Caverns",
+   "page_id": 99491,
+   "revision_id": 630030,
+   "source_sha256": "2f79fd1c6976de8281b12d20a5cb4b59008a32dc9e1111b51643e3d6bc3663a8",
+   "cache_file": "0099491_procure_cirdas_caverns_4354e0171e"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 6,
+   "dat_name": "Procure: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "repeating_loop"
+  ],
+  "notes": "A Pioneers' Coalition mining assignment in Cirdas Caverns. No Start field, no NPC in the walkthrough; the giver is stage A's Task Delegator in Western Adoulin (E-8) from the '## Giver' block, resolved from the Pioneers' Coalition page; no giver_conflict. Coalition Rank here is 'Contributor', a rank above the two lower-tier Procure assignments in this batch -- read off this page's own table, not assumed from them -- and it is a gate with no schema field, so it is noted and flagged rank_gate_unmodelled rather than written into gates.level, which means character level. Bullet 1 ('Obtain a number of Pickaxes') is a holding requirement, so it becomes steps[2].items rather than a rung; no count is given, so count is the minimum 1 with 'extras highly recommended' noted. The Objective's five 'materials' are abstract by bullet 6's own words -- you may toss or sell any HELM result and still complete -- so nothing is observable and evidence is null everywhere (count_unobservable). Bullet 2 is the travel folded into step 2's zone; bullet 4 is repetition (repeating_loop); bullet 5 is gathering-fatigue advice. repeatable and expansion stay null: this page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Mining Point"
+    },
+    "zone": "Cirdas Caverns",
+    "grid": null,
+    "items": [
+     {
+      "name": "Pickaxe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "Bullets 1-4 are one act: hold pickaxes, travel to Cirdas Caverns, use them on Mining Points, repeat to five. The page pluralises 'Pickaxes' and 'Mining Points'; recorded singular. count 1 is the minimum for one attempt; the page asks for 'a number' with extras recommended and gives none. No grid on the page for the mining points. evidence null -- bullet 6 makes the five items abstract and disposable."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. Nothing is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clear: Foret de Hennetiel",
+   "page_id": 99492,
+   "revision_id": 510436,
+   "source_sha256": "fb1f466327004aeee0ac7b5899bf63602f4c973ab1d120c0af42276e2082b21e",
+   "cache_file": "0099492_clear_foret_de_hennetiel_817a11b053"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 9,
+   "dat_name": "Clear: Foret de Hennetiel",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "unnamed_target"
+  ],
+  "notes": "A Pioneers' Coalition 'Clearing The Way' assignment: complete one Colonization Reive in Foret de Hennetiel. No Start field and no NPC in the walkthrough; the giver is stage A's Task Delegator in Western Adoulin (E-8), from the '## Giver' block, resolved from the Pioneers' Coalition page; no giver_conflict. Coalition Rank is 'Probationer' -- the lowest rank in this batch -- a gate with no schema field, so it is noted and flagged rank_gate_unmodelled, never written into gates.level (character level). The work step's target is {none, null}: a Reive is an event, not a targetable NPC or object, and the page names none. I deliberately left steps[2].mobs EMPTY even though bullet 2 names Cinder Crab, Blood Toad, Craklaw, Primrose Jagil and Wetlands Orobon: those names identify WHICH reive sits where, not creatures you must kill a count of -- completion is being present for the final evaluation (bullet 1's sub-bullet), which no packet reports. The five squares are in the step note rather than in grid for the same reason the Recover assignment has no grid: bullet 2 gives five alternatives, one per pair of reives 'one on either side of the river', and picking one would draw a marker the page does not single out. Note that (E-8) appears twice on this page meaning two different places -- the giver's square in Western Adoulin and a reive pair in Foret de Hennetiel; they are unrelated. repeatable and expansion stay null; the page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. This E-8 is the Western Adoulin giver square, not the Foret de Hennetiel reive at (E-8) in bullet 2."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Foret de Hennetiel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Colonization Reive through to completion. A Reive is an event with no name the page gives it and no targetable entity, hence {none, null}. You may join mid-battle so long as you are there for the final evaluation. Grid is null because bullet 2 offers five sites, two applicable reives at each, one on either side of the river: (G-6) Cinder Crab and Blood Toad, (E-8) Craklaw and Primrose Jagil, (H-7) Cinder Crab and Blood Toad, (G-9/10) Wetlands Orobon and Primrose Jagil, (I-10) Wetlands Orobon and Primrose Jagil. Those creature names label the reives; they are not a kill list, so mobs is empty."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. Nothing is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clear: Morimar Basalt Fields",
+   "page_id": 99493,
+   "revision_id": 510437,
+   "source_sha256": "ab9007885dfa155b919ecff3cb48d90728e6dec7cff6b075e12a80d1dcc3d32f",
+   "cache_file": "0099493_clear_morimar_basalt_fields_d4ad7ea209"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 10,
+   "dat_name": "Clear: Morimar Basalt Fields",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "unnamed_target"
+  ],
+  "notes": "A Pioneers' Coalition 'Clearing The Way' assignment: complete one Colonization Reive in Morimar Basalt Fields. No Start field and no NPC in the walkthrough; giver is stage A's Task Delegator in Western Adoulin (E-8) from the '## Giver' block, resolved from the Pioneers' Coalition page; no giver_conflict. Coalition Rank 'Probationer' is a gate with no schema field -- not gates.level, which is character level -- so it is noted and flagged rank_gate_unmodelled. The work step's target is {none, null}: a Reive is an event, not a targetable entity, and the page names none. steps[2].mobs is empty on purpose: bullet 2's Matamata, Snaggletooth Raptor and Basalt Lizard label which reive sits at which square, they are not a kill count -- the completion condition is presence at the final evaluation, which nothing observes. Grid is null because bullet 2 lists SEVEN sites: (H-8) and (I-8) Matamata and Snaggletooth Raptor, (H-10 W), (G-11), (F-9 SE), (F-9 W) Matamata and Basalt Lizard, and (F-6 E) Matamata and Snaggletooth Raptor. Bullet 2's lead-in reads 'An applicable Colonization Reives can be found', an obvious grammatical slip on the wiki's part but not an ambiguity about the reading. repeatable and expansion stay null; the page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Morimar Basalt Fields",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Colonization Reive through to completion; you may join mid-battle if you are present for the final evaluation. {none, null} because a Reive is an event the page gives no name and no targetable entity. Grid null: bullet 2 offers seven sites -- (H-8), (I-8), (H-10 W), (G-11), (F-9 SE), (F-9 W), (F-6 E) -- and the creature names attached to each label the reive rather than list kills, so mobs is empty."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. Nothing is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Clear: Cirdas Caverns",
+   "page_id": 99494,
+   "revision_id": 580105,
+   "source_sha256": "5c6978395646086e1b3592adf5df7fa7aad7d52e491ee49232ca3e1e54244b79",
+   "cache_file": "0099494_clear_cirdas_caverns_0cb6ce1d98"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 14,
+   "dat_name": "Clear: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "unnamed_target"
+  ],
+  "notes": "A Pioneers' Coalition 'Clearing The Way' assignment: complete one Colonization Reive in Cirdas Caverns. No Start field and no NPC in the walkthrough; giver is stage A's Task Delegator in Western Adoulin (E-8) from the '## Giver' block, resolved from the Pioneers' Coalition page; no giver_conflict. Coalition Rank is 'Contributor' on THIS page -- a rung above the Foret and Morimar Clear assignments, read off its own table -- and is a gate with no schema field, so it is noted and flagged rank_gate_unmodelled rather than put in gates.level, which means character level. This is the one Clear assignment in the batch where the grid is not ambiguous: bullet 2 lists exactly one site, (I-6), so steps[2].grid is I-6 rather than null. mobs is still empty: 'Acuex & Tooth Cave Tarantula' names which reive sits there, not a kill requirement, and completion is presence at the final evaluation, which nothing observes. The work step's target is {none, null} because a Reive is an event with no targetable entity. repeatable and expansion stay null; the page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Task Delegator - Western Adoulin (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cirdas Caverns",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Colonization Reive through to completion; you may join mid-battle if you are present for the final evaluation. (I-6) is the single applicable site bullet 2 gives, so unlike the other Clear assignments this step carries a grid. 'Acuex & Tooth Cave Tarantula' identifies that reive; it is not a kill list, so mobs is empty. {none, null} because a Reive is an event, not a targetable entity."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Task Delegator. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. Nothing is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Preserve: Cirdas Caverns",
+   "page_id": 99495,
+   "revision_id": 689976,
+   "source_sha256": "2d1a5abb6e8c7d23f63a63bef835ad51c2126873bc1cf7cbfae9f204de3f40ec",
+   "cache_file": "0099495_preserve_cirdas_caverns_d1566caa89"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 71,
+   "dat_name": "Preserve: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "turnin_not_in_walkthrough",
+   "count_unobservable",
+   "unnamed_target"
+  ],
+  "notes": "A PEACEKEEPERS' Coalition assignment, and that matters for the giver: this one's Task Delegator stands in EASTERN Adoulin (F-7), not the Western Adoulin square the Pioneers' and Mummers' assignments in this batch use. Stage A resolved it from the Peacekeepers' Coalition page and it is in the '## Giver' block; no giver_conflict. The page has no Start field and its walkthrough names no NPC. Coalition Rank 'Contributor' is a gate with no schema field -- it is not gates.level, which means character level -- so it is noted here and flagged rank_gate_unmodelled. The objective is a LAIR Reive, not a Colonization Reive: a different event type from the Clear assignments, taken from this page's own Objective line and bullet 1. The work step's target is {none, null} because a Reive is an event with no targetable entity and the page names none; mobs is empty because bullet 2's 'Acuex Monster Type' is a label for what kind of reive sits at each square, not a creature you must kill a count of, and completion is presence at the final evaluation, which nothing observes. Grid is null because bullet 2 gives two sites, (G-7) and (H-11), and neither is singled out. repeatable and expansion stay null; the page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Read from the '## Giver' block, not from a numbered bullet; bullet 1 cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-7",
+   "raw": "Task Delegator - Eastern Adoulin (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Eastern Adoulin (F-7) is the Peacekeepers' Task Delegator a different square and a different city half from the Pioneers' one."
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cirdas Caverns",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Participate in one Lair Reive -- not a Colonization Reive -- through to completion; you may join mid-battle so long as you are present for the final evaluation. Grid null: bullet 2 gives two sites, (G-7) and (H-11), both described only as 'Acuex Monster Type', which labels the reive rather than naming a kill target, so mobs is empty. {none, null} because a Reive is an event with no targetable entity."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Peacekeepers' Task Delegator in Eastern Adoulin. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. Nothing is traded."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Analyze: Cirdas Caverns",
+   "page_id": 102179,
+   "revision_id": 510505,
+   "source_sha256": "d131a2e2587d29c1f984a3b783ded890fd5b8f8a6523053758253802c2d79669",
+   "cache_file": "0102179_analyze_cirdas_caverns_2517f6f9c6"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 62,
+   "dat_name": "Analyze: Cirdas Caverns",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "walkthrough_incomplete",
+   "consumed_item"
+  ],
+  "notes": "A SCOUTS' Coalition 'Component Analysis' assignment, and the only record in this batch whose walkthrough actually names the Task Delegator: its single bullet reads 'After receiving the assignment, trade one Scholar Stone to the Task Delegator to complete the assignment.' So both ends of the ladder are attested here in words, not just inferred from the coalition structure -- that bullet is the accept AND the hand-in. The Scouts' Task Delegator stands in EASTERN Adoulin (F-9), a third square distinct from the Pioneers' Western Adoulin (E-8) and the Peacekeepers' Eastern Adoulin (F-7); stage A resolved it from the Scouts' Coalition page and it is in the '## Giver' block, with no giver_conflict. Coalition Rank 'Partner' is a gate with no schema field, not gates.level (character level); flagged rank_gate_unmodelled. The page is INCOMPLETE in one specific way and that is why this is medium: it never says where or how a Scholar Stone is obtained. Step 2 exists because you plainly cannot trade a stone you do not have, and its zone is Cirdas Caverns taken from the assignment table's own Zone field on this page -- not from any sibling Analyze page -- and its target is {none, null} because the page names no source. Step 2's evidence is the one genuinely observable thing on any record in this batch: holding one Scholar Stone. Per the rule that the same item may not be evidence twice, it is evidence on step 2 only, and appears on step 3 as items -- what you must hold to make the trade -- where it is consumed.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: Unlike the other eleven records in this batch the accept is genuinely in the walkthrough: bullet 1 opens 'After receiving the assignment'.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Receive the assignment. The square is the '## Giver' block's."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Cirdas Caverns",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Scholar Stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Obtain one Scholar Stone. The walkthrough does not say where or how -- it only presumes you have one to trade -- so the target is {none, null} and the grid is null; the zone is Cirdas Caverns from this page's own assignment-table Zone field, which is the only place on the page that says where the analysis work happens. The stone is a tradeable item, so holding one is observable and is this step's evidence."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [
+     {
+      "name": "Scholar Stone",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Trade the Scholar Stone to the Task Delegator; bullet 1 states this outright, so this is the one turn-in in the batch the page itself writes down. The Objective says 'Procure one Scholar Stone', singular, so count is 1. No evidence here -- the stone is evidence on step 2 and is consumed by this trade, and putting it on both would make the marker jump forward the instant it was obtained."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Survey: Dho Gates",
+   "page_id": 102216,
+   "revision_id": 774553,
+   "source_sha256": "b56450ade3f4486bdcd79e8db8870083352a01f26485b3d6062eb24ebd4d7844",
+   "cache_file": "0102216_survey_dho_gates_908f86b646"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "coalition",
+   "id": 56,
+   "dat_name": "Survey: Dho Gates",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-15",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "rank_gate_unmodelled",
+   "giver_resolved_by_stage_a",
+   "or_branch_unmodelled",
+   "turnin_not_in_walkthrough",
+   "time_gated",
+   "walkthrough_in_table",
+   "key_item_gate_unmodelled",
+   "objective_disagrees_with_walkthrough"
+  ],
+  "notes": "A Scouts' Coalition 'Land Surveys' assignment. Giver is stage A's Task Delegator in Eastern Adoulin (F-9) from the '## Giver' block, resolved from the Scouts' Coalition page; no giver_conflict, and the page has no Start field and names no NPC in its walkthrough. Coalition Rank 'Partner' is a gate with no schema field, not gates.level (character level); flagged rank_gate_unmodelled. THE PAGE DISAGREES WITH ITSELF ABOUT THE ZONE and that is the main reason for medium: the Objective is 'Survey an Ergon Locus located in Dho Gates', but bullet 1 says 'Travel to Dho Gates or Woh Gates', the Ergon Loci table lists two loci in each zone, and the page even carries a '== Ergon Locus - Woh Gates ==' section. That looks like text shared with the Woh Gates assignment. I used the Objective, which agrees with the title and dat_name, so steps[2].zone is Dho Gates. Within Dho Gates there are still TWO loci and either one satisfies the survey, so the grid is null and both are in the step note (or_branch_unmodelled) rather than committing the marker to one square the page does not single out. Bullet 2 and its table are the real mechanic and it cannot be modelled at all: you must examine the locus from a distance that changes with Vana'diel time -- six time bands, each with its own range in yalms -- so nothing about being at the right place is observable and there is no evidence anywhere on this record (time_gated, walkthrough_in_table). Two more unmodellable gates sit in the table's Notes column: Prominence of the Ripple requires the key item 'Climbing', and Saliferous Spring is behind a Colonization Reive that must be passed unless cleared in the past hour, with Silent Oil and Prism Powder recommended for the Apex mobs (key_item_gate_unmodelled). Bullet 3 is advice, not a step -- it recommends logging Patrol: Dho Gates at the same time because you pass four efts on the way -- and the two '== Ergon Locus - ... ==' sections are logs of observed time/distance readings, not rungs. repeatable and expansion stay null; the page says neither in words.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: and bullet 1 is cited only because source_bullets may not be empty.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Task Delegator",
+   "zone": "Eastern Adoulin",
+   "grid": "F-9",
+   "raw": "Task Delegator - Eastern Adoulin (F-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Accept the assignment. Read from the '## Giver' block, not from a numbered bullet this walkthrough has no accept bullet Eastern Adoulin (F-9) is the Scouts' Task Delegator."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Ergon Locus"
+    },
+    "zone": "Dho Gates",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "Locate an Ergon Locus and examine it at the correct distance for the current Vana'diel time. Zone is Dho Gates from the Objective; bullet 1 also offers Woh Gates, which belongs to the other Survey assignment (see notes). Grid is null because Dho Gates holds two qualifying loci and either will do: Prominence of the Ripple at (E-10), which requires the key item 'Climbing' and is closest to the Marjami Ravine entrance, and Saliferous Spring at (G-12), which sits behind a Colonization Reive. The required distance runs 0.5-3.4 yalms depending on which of six time bands is current, per bullet 2's table, and neither the distance nor the survey is observable, so there is no evidence."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Task Delegator"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "Report back to the Scouts' Task Delegator in Eastern Adoulin. Not written as a bullet on this page -- read from the coalition-assignment structure and the '## Giver' block; bullet 1 is an anchor citation. Nothing is traded."
+   }
+  ]
+ }
+]

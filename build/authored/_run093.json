@@ -1,0 +1,1741 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Creepy Crawlies",
+   "page_id": 81,
+   "revision_id": 735922,
+   "source_sha256": "7deb877cc0e90eba68a6a861d2fda7471fa64fdc39c022c6bb5c1998ff8b40ca",
+   "cache_file": "0000081_creepy_crawlies"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 39,
+   "dat_name": "Creepy Crawlies",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "Two bullets, both on the same NPC, so one marker that never moves. The only real decision is the OR: the header and bullet 2 both offer 3x Silk Thread OR 3x Crawler Calculus, and that is exactly what items_alt is for, so it is modelled rather than flattened to one of the two. The page writes the plural 'Crawler Calculus' in the item requirement and 'Crawler Calculus' again in bullet 2; the singular is what resolves (id 1156) -- 'Crawler Calculi' does not resolve at all, so the singular is used. Both sub-bullets under bullet 2 are sourcing advice (who sells thread, what drops the calculi) and are not steps. The reward is 600 gil, so nothing in this quest is observable and every evidence field is null.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "Windurst / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Illu Bohjaa",
+   "zone": "Windurst Woods",
+   "grid": "I-6",
+   "raw": "Illu Bohjaa, Windurst Woods (I-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Illu Bohjaa"
+    },
+    "zone": "Windurst Woods",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the first time, you must answer in the affirmative (Yup!) or the quest does not open"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Illu Bohjaa"
+    },
+    "zone": "Windurst Woods",
+    "grid": "I-6",
+    "items": [
+     {
+      "name": "Silk Thread",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Crawler Calculus",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "either three threads or three calculi, in one trade. Thread comes from Meriri or Kuzah Hpirohpon at the Clothcrafting Guild; both drop from Crawlers in East and West Sarutabaruta."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Expanding Horizons",
+   "page_id": 58938,
+   "revision_id": 756385,
+   "source_sha256": "2bc7d4343f19b46356368e994d954829977152c3cf34734ae90ef4b715d5cf07",
+   "cache_file": "0058938_expanding_horizons"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 134,
+   "dat_name": "Expanding Horizons",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "merit_gate_unmodelled"
+  ],
+  "notes": "A two-rung limit-break quest on one NPC. The second half of the Item Reqs -- four unspent merit points -- is a real gate that no packet this addon reads reports, so it is recorded only as a note and the quest is demoted to medium for it; the crest count alone will show ready when the player may not be. 'Nomad Moogle' is in the resolver's AMBIGUOUS_NPCS set (there is one in every city), so the step zone Ru'Lude Gardens is what makes the marker safe -- it must not be dropped. The nested sub-bullets under bullet 2 are ways to acquire seals (Login Campaign points, Shemo's 3:1 exchange) and are not steps; note also that they talk about seals while the quest wants crests, which is the wiki being loose rather than a second requirement. The reward is a level cap raise, so there is nothing observable to hang evidence on anywhere.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "New Worlds Await",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 76,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Nomad Moogle",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Nomad Moogle, Ru'Lude Gardens (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Nomad Moogle"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Kindred's Crest",
+      "count": 5,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "you must also be holding four unspent merit points at the moment of the trade, which nothing observable reports"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Rowing Together",
+   "page_id": 119930,
+   "revision_id": 621162,
+   "source_sha256": "7c93883d3f73799a126df853b6fd09ccedc95717f98a03a24a2e0942d9d9a265",
+   "cache_file": "0119930_rowing_together"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 207,
+   "dat_name": "Rowing Together",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "unresolved_key_item",
+   "start_is_zone_entry"
+  ],
+  "notes": "Bullet 1 is not really part of this quest -- it is the header's Quest Reqs restated: you must already have bought the 'Sakura and the Holy Grail' key item after roughly a hundred rearing interactions. It is kept as an optional precondition rung rather than dropped, because it is the only thing on the page that tells a player why the quest will not start. Its key item does NOT resolve under any spelling I tried (ki, item, upper and lower case), so it cannot be evidence and the rung carries none; that unmodellable gate is why the quest is medium.\n\nThe page also does not say where Zenicca stands. The surrounding sentence is all Mog Garden and the Skipper Moogle certainly is one, but guessing a zone costs the step its marker if the guess is wrong, whereas leaving it null costs nothing here -- 'zenicca' is not an ambiguous name, so a nil zone still resolves. Zenicca and a Skipper Moogle are alternatives, and an OR of two TARGETS has no expression in this schema (items_alt is items, not targets), so only the named one is the target and the moogle is a note.\n\nThe header's giver is the Green Thumb Moogle and the walkthrough never speaks to it -- bullet 2 opens the quest with a cutscene on entering the Mog Garden. The header string is kept as the start because it resolves and the Green Thumb Moogle is a real standing entity in that zone, but the flag records that what actually fires is a zone entry. Bullet 4's 'Rearing Grounds' is a sub-area of the Mog Garden, not a zone of its own, so the step keeps zone Mog Garden and the location goes in the note.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: A Skipper Moogle sells it too, which cannot be expressed as a second target. The key item does not resolve, so there is no evidence here.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Doctor Chacharoon",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Garden"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Zenicca"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "Precondition, and the header's Quest Reqs: buy the key item 'Sakura and the Holy Grail' after about 100 rearing interactions. The page does not say where Zenicca is, so no zone is claimed."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mog Garden"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene fires on entering; there is nothing to click, and this is what actually opens the quest"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Stinknix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Chacharoon's sack of supplies",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "inside Muckvix's Junk Shop"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Chacharoon"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "Chacharoon's sack of supplies",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page is emphatic: he is in the Rearing Grounds, not the main area of the Mog Garden. The Rearing Grounds is a sub-area of zone 280, not a zone of its own."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Unexpected Treasure",
+   "page_id": 525,
+   "revision_id": 769855,
+   "source_sha256": "b2f83496842c486c80e9ba6dcd3af7e966c2524191868a95c18f977934738979",
+   "cache_file": "0000525_unexpected_treasure"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 70,
+   "dat_name": "Unexpected Treasure",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "time_gated",
+   "consumed_key_item",
+   "bullet_split",
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "Bullet 1 is really two things -- buy the Cupboard, then place it in your mog house -- and they split, because holding the Cupboard proves only the purchase and PLACING it takes the item out of inventory again. So step 1 is the purchase with the Cupboard as its evidence, and step 2 is the placement plus bullets 2 and 3 (zone out and back, then wait 10-15 REAL minutes), which are mechanics of the same single wait and merge into one rung.\n\nThe header gives Morunaude no grid; bullet 1 puts the furniture shop at (F-8) and bullet 5 says 'return to the furniture shop and speak to Morunaude', which is what identifies the shop as hers, so (F-8) is recovered from the walkthrough for both start and steps. That is a recovery, not a conflict -- nothing in the page disagrees.\n\n'Talk to your Moogle' is the mog house Moogle. 'Moogle' is in the resolver's AMBIGUOUS_NPCS set, so the step MUST keep its zone or the entry is dropped outright; Northern San d'Oria resolves, and the mog house is a sub-area of that zone rather than a zone of its own, so the marker stays bounded. I did not substitute the unambiguous 'Mog House Moogle' because that string is not on the page.\n\nThe Cathedral (M-6) is in Northern San d'Oria, so Calovour's two rungs stay in the same zone as the rest -- they are consecutive on one NPC and draw as one marker.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 4,
+    "raw": "San d'Oria / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Morunaude",
+   "zone": "Northern San d'Oria",
+   "grid": "F-8",
+   "raw": "Morunaude, Northern San d'Oria"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Morunaude"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Cupboard",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the furniture shop at (F-8); bullet 5 names Morunaude as the shop's NPC"
+   },
+   {
+    "n": 2,
+    "kind": "wait",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Northern San d'Oria",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cupboard",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2,
+     3
+    ],
+    "note": "put the Cupboard in your mog house -- which takes it out of inventory -- then zone out and back in and wait 10 to 15 real-world minutes. Real time is not observable, and the mog house is a sub-area of Northern San d'Oria rather than a zone."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Moogle"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Small teacup",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "your mog house Moogle. If he has nothing for you, you did not wait long enough. The name is ambiguous world-wide, so the zone is load-bearing here."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Morunaude"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Small teacup",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "back at the furniture shop; speak to her twice"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Calovour"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "in the Cathedral, which is inside Northern San d'Oria"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Calovour"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-6",
+    "items": [
+     {
+      "name": "Mistletoe",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the 12,000 gil reward follows, so nothing here is observable"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Cold Light of Day",
+   "page_id": 25923,
+   "revision_id": 63768,
+   "source_sha256": "8d0e9952b1d2e889adf4d3c8a432616fdd8e7ba47276813f5a9cba92f59939cf",
+   "cache_file": "0025923_the_cold_light_of_day"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 11,
+   "dat_name": "The Cold Light of Day",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "bullet_split"
+  ],
+  "notes": "Three bullets, but bullet 2 is a whole sub-quest in one paragraph and it holds TWO independent ways to get the Steam Clock. The Auction House route has no place and no target, so it cannot be a rung at all; the Bubbly Bernie route does, and it splits into two -- a trade of the Quus to the ??? by the South Gustaberg lighthouse, which pops him, and the kill, which drops the clock. Neither is marked optional, because the Steam Clock sitting on step 3 as evidence already handles the other route correctly: a player who bought one on the AH satisfies step 3 the instant they hold it and the mark jumps straight to Malene, which is exactly right.\n\nThe ??? is in OBJECT_DENY and can never carry a marker, but it keeps its rung -- the grid (M-10) is the only location information the page gives and losing the rung would lose it. The description's 'ask Dalzakk how to lure the beast out' is flavour that the walkthrough never uses; Dalzakk appears nowhere in the steps, so no rung is invented for him. Reward is 500 gil, so the only evidence in the quest is the clock.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 2: buy it or catch it. items_partial is set because the whole of this rung and the next can be skipped by buying a Steam Clock on the Auction House instead.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Malene",
+   "zone": "Bastok Markets",
+   "grid": "I-5",
+   "raw": "Malene - Bastok Markets (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Malene"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "South Gustaberg",
+    "grid": "M-10",
+    "items": [
+     {
+      "name": "Quus",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Bubbly Bernie",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "The ??? is by the lighthouse. The Quus is a fish."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "South Gustaberg",
+    "grid": "M-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Steam Clock",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Bubbly Bernie",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "loot the corpse for the clock. Holding a Steam Clock satisfies this rung however it was obtained, which is how the Auction House route rejoins the ladder."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Malene"
+    },
+    "zone": "Bastok Markets",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Steam Clock",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Distant Loyalties",
+   "page_id": 464,
+   "revision_id": 771235,
+   "source_sha256": "dd48548ea79de4a08050496d4afa36cf3c0d542dfce4acf8c04a2db92d74d05f",
+   "cache_file": "0000464_distant_loyalties"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 74,
+   "dat_name": "Distant Loyalties",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "race_gate_unmodelled",
+   "time_gated"
+  ],
+  "notes": "A clean two-city ladder with two evidence points, one at each end of the Bastok leg. The gate is the problem: 'Only Elvaan need apply', repeated in bullet 1. Race has no slot in the schema and nothing in gates can express it, so it is flagged and noted and the quest is medium for it -- a non-Elvaan will be shown a marker they cannot use.\n\nBullet 3 ends with 'you must zone out of Bastok Markets once' and bullet 4 is the return, so those really are two rungs on Michea with an unmarkable zone-out between them; the page does put it there, so it stays. Two consecutive rungs on one NPC draw as one marker anyway.\n\nRouva is the page's own '(Optional)' -- a hint about where to go -- so it is optional and carries no evidence. The page never says where Rouva stands, only that the hint is available while you are with Femitte, so no zone is claimed rather than guessing Southern San d'Oria: 'rouva' is not an ambiguous name, so a null zone still resolves and still marks. Bullet 6 is the same shape at the far end, extra lore from Michea after the quest is over.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: the page says so twice and nothing in the schema can gate on race",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 4,
+    "raw": "S / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Femitte",
+   "zone": "Southern San d'Oria",
+   "grid": "I-8",
+   "raw": "Femitte - Southern San d'Oria (I-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Femitte"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Goldsmithing order",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Elvaan only."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rouva"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page's own '(Optional)': a hint about where to go. It never says which zone Rouva is in, so none is claimed."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Michea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [
+     {
+      "name": "Mythril Ingot",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "upstairs inside Brunhilde the Armorer's shop; Home Point #1 is the near warp. After the trade you must zone out of Bastok Markets once."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Michea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mythril hearts",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "after zoning back into Bastok Markets"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Femitte"
+    },
+    "zone": "Southern San d'Oria",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Mythril hearts",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Michea"
+    },
+    "zone": "Bastok Markets",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     6
+    ],
+    "note": "the page's own '(Optional)': extra lore after the quest is finished"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Look to the Sky",
+   "page_id": 67153,
+   "revision_id": 625792,
+   "source_sha256": "7385cd12c3af69a7cc9755bf5917b8cf4e69b5ddb0e60b1861226c25b4c63af3",
+   "cache_file": "0067153_look_to_the_sky"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 83,
+   "dat_name": "Look to the Sky",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "reward_not_evidence",
+   "consumed_key_item"
+  ],
+  "notes": "Six numbered bullets that are only three actions. Bullet 2 ('she will return the Moon pendant to you') is the OUTCOME of bullet 1, not a step, so it becomes step 1's evidence -- the pendant is granted there, which is where rule 3 says it belongs. Bullet 3 is walking directions and merges into the note of the ??? rung.\n\nBullets 4 and 5 are the same ??? examined twice with nothing between them, so they are one rung, exactly like the Blank Target in Divine Might. The tempting evidence for bullet 5 is the Emerald abyssite of expertise -- and it must NOT be used, because it is the header's Reward field verbatim: it proves the quest is over, not that a rung is done. That is the one real trap on this page and the flag records it.\n\nThe Moon pendant is buried at the ???, so it leaves inventory partway through and the ladder falls back on the session latch for the return trip; there is nothing observable left after the burial. Fame 'aalt' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw string is kept. 'Alisa (A)' is the wiki's Abyssea suffix form and the normaliser folds it to 'alisa', so it is written as the page writes it. The line above bullet 1 ('you must zone after completing Motherly Love') is a precondition on the previous quest, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 5,
+    "raw": "aalt / 5"
+   },
+   "prev": [
+    {
+     "title": "Motherly Love",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Alisa (A)",
+   "zone": "Abyssea - Altepa",
+   "grid": "C-11",
+   "raw": "Alisa (A) (C-11), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alisa (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "C-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Moon pendant",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "at the outpost near Conflux #8. You must have zoned since finishing Motherly Love. Bullet 2 is what she hands you, not a separate action."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "D-11",
+    "items": [
+     {
+      "name": "Moon pendant",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5
+    ],
+    "note": "south through the tunnel and up past the Surveyors; the ??? is on the concrete slab. Examine it twice -- once for the cutscene, then again for the Emerald abyssite of expertise. The abyssite is the header's Reward, so it is deliberately not evidence. The pendant is buried here and leaves your inventory."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Alisa (A)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": "C-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Western Waypoints, Ho!",
+   "page_id": 98182,
+   "revision_id": 676022,
+   "source_sha256": "38ec0b8ed3eaeb448c0a19a1301cb33b7a1b4cf82a7a5e2f402a2454fc03024a",
+   "cache_file": "0098182_western_waypoints_ho"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 50,
+   "dat_name": "Western Waypoints, Ho!",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unordered_group",
+   "generic_npc_name"
+  ],
+  "notes": "The whole quest is bullet 3, and it is the Lure of the Wildcat shape: nine Waypoints in one zone, no order given or implied, and a strict ladder would mark one of them and go quiet until the player happened to walk into it. So all nine share a group and draw at once, each with its own grid.\n\nThe parenthesised strings in the list -- 'Platea Triumphus (COU Co.)', 'Pioneers' Coalition', 'Auction house', 'Your Rent-a-Room' -- are BUILDINGS, not entity names; the thing you attune to is the Waypoint, which resolves cleanly and is not in the resolver's ambiguous set. Each building name goes in that rung's note where it belongs. There is no observable progress at all here: attunement is a per-character flag, not an item, so every evidence field is null and nothing can track how many of the nine are done.\n\nBullet 2 is not a step but a shortcut -- if you already attuned everything before taking the quest, you just talk to Alienor again -- so it is folded into the final turn-in's source bullets and note. Fame 'Adoulin' is not one of the nine fame regions and does not resolve, so it gates nothing; the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Alienor",
+   "zone": "Western Adoulin",
+   "grid": "E-8",
+   "raw": "Alienor, Western Adoulin - (E-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alienor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "outside the Pioneers' Coalition"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Platea Triumphus (COU Co.); attune your geomagnetron. Any order."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Pioneers' Coalition -- the same corner Alienor stands on"
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Mummers' Coalition"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Inventors' Coalition"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "F-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Auction house"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "your Rent-a-Room"
+   },
+   {
+    "n": 8,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "L-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Big Bridge"
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "H-4",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Airship docks"
+   },
+   {
+    "n": 10,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waypoint"
+    },
+    "zone": "Western Adoulin",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "waypoints",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Adoulin Waterfront -- the ninth and last of the group"
+   },
+   {
+    "n": 11,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Alienor"
+    },
+    "zone": "Western Adoulin",
+    "grid": "E-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     4
+    ],
+    "note": "bullet 2 is the same rung reached early: if you already had all nine Waypoints, talking to her a second time finishes it outright"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Missing Piece",
+   "page_id": 38758,
+   "revision_id": 746256,
+   "source_sha256": "cf1e2b8f61bbcca3d2901748ede7a5db751dd52f006ac11c91d68d718b8bd660",
+   "cache_file": "0038758_the_missing_piece"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 193,
+   "dat_name": "The Missing Piece",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "consumed_key_item",
+   "time_gated",
+   "grid_conflict"
+  ],
+  "notes": "The header files 'Ancient tablet fragment' under Item Reqs, but it is a KEY item (ki id 274) and does not resolve as an item at all -- getting that wrong would have cost the middle of the ladder its evidence, which is the whole point of probing before writing.\n\nThe five ???s in the Quicksand Caves are ONE rung, not five. Only one is live at a time and it respawns at a random one of the five the moment it is found, so there is no order to record and no way to know which grid to point at; the rung therefore carries no grid and the five locations, with their map numbers, go in the note. That is the As Thick as Thieves six-tower shape. The rung is unmarkable anyway -- '???' is in OBJECT_DENY -- but it keeps its place and its zone.\n\nBullet 3 hands over TWO key items at once and both are granted there, so both are its evidence as a single AND-list; neither appears anywhere else in the quest, so the duplicate gate is clean. Bullet 4 says 'speak to' Charlaimagnat, not trade, so no items are claimed on that rung even though you are carrying both key items to him. Bullet 5's zone-and-wait-one-earth-minute is real time, which nothing observable reports, and the payoff is the Teleport-Altep scroll -- a reward, so not evidence. Fame 'r' is the wiki's Rabao abbreviation and resolves to the rabao_selbina region.",
+  "gates": {
+   "fame": {
+    "region": "Rabao",
+    "level": 4,
+    "raw": "r / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Alfesar",
+   "zone": "Rabao",
+   "grid": "H-7",
+   "raw": "Alfesar, Rabao (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alfesar"
+    },
+    "zone": "Rabao",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Quicksand Caves",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ancient tablet fragment",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "one of five ???s, and only one is live at a time: (H-6), (H-10), (E-9) on map 1 and (D-9), (L-11) on map 2. It relocates to a random one of the five as soon as it is found, so no single grid is recorded."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Alfesar"
+    },
+    "zone": "Rabao",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Ancient tablet fragment",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tablet of ancient magic",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Letter from Alfesar",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "he takes the fragment and gives both key items in the same conversation"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Charlaimagnat"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "you are carrying the tablet and the letter, but the page says speak, not trade, so nothing is claimed as required"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Charlaimagnat"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "M-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "zone out and come back after one earth minute; the reward is the Teleport-Altep scroll, which is a reward and not evidence"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Shady Business Redux",
+   "page_id": 56709,
+   "revision_id": 766942,
+   "source_sha256": "e2d4092a82b009b779f27032060f5534cd214abbc3b9d0785d8e15bcb3b7dd33",
+   "cache_file": "0056709_shady_business_redux"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 15,
+   "dat_name": "Shady Business Redux",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A repeatable four-pincer fetch, two rungs, both on Talib (A). Bullet 2 is his request rather than an action of yours, so it folds into rung 1 rather than becoming a rung of its own; its sub-bullets are drop and Auction House advice. The trailing line 'Zoning is not required to repeat this quest' is a repeat note, not a step. The reward is 400 Cruor, so nothing here is observable and both evidence fields are null. 'Talib (A)' is the wiki's Abyssea suffix form and folds to 'talib'; fame 'akon' is an Abyssea zone code, not one of the nine regions, so it gates nothing and only the raw string survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "akon / 1"
+   },
+   "prev": [
+    {
+     "title": "Rose on the Heath",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Talib (A)",
+   "zone": "Abyssea - Konschtat",
+   "grid": "D-7",
+   "raw": "Talib (A) (D-7), Abyssea - Konschtat"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Talib (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "D-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "slightly north/east of Veridical Conflux #03; he wanders, so the marker will drift around (D-7). He asks for four Limule Pincers."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Talib (A)"
+    },
+    "zone": "Abyssea - Konschtat",
+    "grid": "D-7",
+    "items": [
+     {
+      "name": "Limule Pincer",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "pincers drop from the Limule family, some of which spawn around (E-8)/(F-8) a short walk away, or come off the Auction House. Zoning is not required to repeat."
+   }
+  ]
+ }
+]

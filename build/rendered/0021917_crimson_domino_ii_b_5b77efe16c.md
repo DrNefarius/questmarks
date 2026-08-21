@@ -1,0 +1,69 @@
+---
+{
+ "area": "campaign",
+ "cache_file": "0021917_crimson_domino_ii_b_5b77efe16c",
+ "cat": "mission",
+ "categories": [
+  "Category:Campaign",
+  "Category:Campaign Ops",
+  "Category:Verification"
+ ],
+ "dat_name": "Crimson Domino II (B)",
+ "id": 282,
+ "in_mission_index": true,
+ "indexed_snpc": null,
+ "match_conf": "exact",
+ "match_rule": "campaign_page_title",
+ "page_id": 21917,
+ "revision_id": 84163,
+ "source_sha256": "e4a4a645b22c1b1e3efc55d2d999e889160d7ffa5241629f769abf41e646bcf3",
+ "source_template": "Campaign Header",
+ "wiki_title": "Crimson Domino II (B)"
+}
+---
+
+# Crimson Domino II (B)
+
+The game knows this mission as: Crimson Domino II (B)   (mission/campaign #282)
+
+## Campaign Header
+Campaign Type: Supply transport
+Description: Deliveries of supplies important for maintaining stronghold defenses have arrived at checkpoint garrisons under Bastokan control. You are to travel to one of the garrisons then proceed in delivering the supplies to their final destination.
+Orders:      For this operation, you'll have to deliver supplies to our outposts.
+NPC Name:    Hieronymus
+Zone:        Bastok Markets (S)
+pos:         E-8
+Campaign Rank: Sterling Star §§
+Unit Requirement: 1~6 members.
+Time:        (empty)
+Level:       (empty)
+Rewards:     * 250 Experience Points
+            * 800 Allied Notes
+
+## Walkthrough
+
+[1] Easily soloable mission
+[2] After confirming the mission with Hieronymus, go to a Bastokan controlled Campaign area and talk to the Gate Sentry. He will either:
+    - Give you the Campaign Supplies directly, or
+    - Tell you that "The supply unit carrying rations and munitions to our stronghold in this area was attacked en route, and forced to abandon the cargo. You are to locate the supplies and deliver them to their final destination."
+    - The Gate Sentry can impose additional conditions:
+        - "Some of the items are raw and will spoil if not delivered immediately You must hurry."
+        - "Some of the items are very delicate and will be destroyed if you are not careful. Avoid all confrontation with the enemy."
+    List of Gate Sentries:
+[3] North Gustaberg (S): (F-7)
+[4] Grauberg (S): (L-5)
+[5] Pashhow Marshlands (S): (I-11)
+[6] Rolanberry Fields (S): (I-14)
+    List of ??? positions:
+[7] North Gustaberg (S): (F-9) next to a few boxes.
+[8] Grauberg (S): (L-6) off of the main path to the east, next to a tree.
+[9] Pashhow Marshlands (S): (H-8) at the intersection of two paths.
+[10] Rolanberry Fields (S): (G-10) near a small shed.
+    Check the ??? to obtain the Key Item "Campaign Supplies".
+    List of Campaign NPCs:
+[11] North Gustaberg (S)- Jagged Onyx, L.C.: (D-10)
+[12] Grauberg (S)- Polished Fang, L.C.: (I-8)
+[13] Pashhow Marshlands (S)- Stray Boar, L.C.: (K-6)
+[14] Rolanberry Fields (S)- Wayward Echo, L.C.: (J-7)
+    Once you've arrived at the Campaign NPC, talk to him/her and you will be told to make an official report to Hieronymus.
+    After talking to Hieronymus, the mission is complete.

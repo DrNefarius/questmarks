@@ -1,0 +1,1334 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Between a Rock and Rift",
+   "page_id": 86438,
+   "revision_id": 221682,
+   "source_sha256": "24facd96e3adc008c05b2b7ab5d19b2779aa9c7ac7c411942b951593f70bf1af",
+   "cache_file": "0086438_between_a_rock_and_rift"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 90,
+   "dat_name": "Between a Rock and Rift",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_recovered_from_walkthrough"
+  ],
+  "notes": "A one-bullet Voidwatch link quest and the page is complete rather than truncated -- the single cutscene is the whole quest. The header's Start field is empty, so the start is recovered from the walkthrough: the Veridical Conflux in Pashhow Marshlands (S) at (J-9), which resolves as a real targetable entity and is not one of the ambiguous names, so the marker is exact. 'Warp to the Walk of Echoes' is a MENU OPTION on that conflux, not a second destination step -- you never act in the Walk of Echoes, the cutscene fires on selecting it -- so no travel step is recorded and the Walk of Echoes is not used as a zone. No evidence: the cutscene ends this quest and opens A Farewell to Felines, and nothing observable is granted. Fame 'Wings of the Goddess' is an expansion name that leaked into the field and gates nothing, so region is null and only the raw string is kept.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "A World in Flux",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Veridical Conflux",
+   "zone": "Pashhow Marshlands (S)",
+   "grid": "J-9",
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Veridical Conflux"
+    },
+    "zone": "Pashhow Marshlands (S)",
+    "grid": "J-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "choose the 'Warp to the Walk of Echoes' option; the cutscene both ends this quest and begins A Farewell to Felines"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Wonder Magic Set",
+   "page_id": 38696,
+   "revision_id": 575801,
+   "source_sha256": "ae1d9b6e86576eccc0850674a3f4c86b504f504678de5d53f572b1fb84365a2f",
+   "cache_file": "0038696_the_wonder_magic_set"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 7,
+   "dat_name": "The Wonder Magic Set",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled"
+  ],
+  "notes": "Bullet 1 is a three-way OR -- Naruru, Teigero-Bangero OR Panta-Putta will give the opening cutscene, and all three stand in the same merchant's house at (G-10). That is not a group: a group means do all of them, and here one suffices. All three resolve, but only Panta-Putta is recorded, because he is the header's giver and the target of bullets 2 and 3 as well, so one marker covers the whole visit; the other two names are in the note. Bullets 1 and 2 merge for the same reason -- consecutive talks to the same NPC are one marker.\n\nThe sub-bullet 'the Wonder Magic Set is obtained from the related quest Child's Play' is declarative, not an instruction, so it is NOT made into a step; the key item sits in the final step's items instead, which is what drives the runtime's ready-to-hand-in check anyway. Note that Child's Play is not in the header's Previous field, so nothing gates on it. 'Wonder Magic Set' resolves as a key item (there is no item of that name), which matches the header's [KI] marking.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 4,
+    "raw": "Jeuno / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Panta-Putta",
+   "zone": "Lower Jeuno",
+   "grid": "G-10",
+   "raw": "Panta-Putta, Lower Jeuno (G-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Panta-Putta"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "Naruru or Teigero-Bangero, in the same merchant's house, will give the opening cutscene just as well; the page says there is no Fame requirement for it. Talking to Panta-Putta afterwards is what asks for the Wonder Magic Set."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Panta-Putta"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Wonder Magic Set",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the key item comes from the quest Child's Play, which the page mentions but does not gate on"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Farewell to Felines",
+   "page_id": 86439,
+   "revision_id": 603205,
+   "source_sha256": "0cf2522a8f8909a24c951c7aca19f71fc74d24db229af7448122b2c03fc461b9",
+   "cache_file": "0086439_a_farewell_to_felines"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 91,
+   "dat_name": "A Farewell to Felines",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_recovered_from_walkthrough",
+   "generic_npc_name",
+   "time_gated",
+   "walkthrough_incomplete"
+  ],
+  "notes": "One bullet, and the page never says how the quest actually ends -- receiving the alarum is all it records -- hence medium.\n\nThe interesting decision is the target. 'Voidwatch Officer' RESOLVES, but the resolver marks it ambiguous: there is one in most major cities and the page names no zone, so the step cannot be given a zone without inventing one. An ambiguous name with no zone is the 'every Moogle in Vana'diel' shape that validate treats as fatal, and tripping it would demote the whole quest to start-only. So the step's target is deliberately left as none and the name is carried in start.npc instead, where no ambiguity guard applies. The practical result is the same marker -- every Voidwatch Officer draws -- and here that is CORRECT rather than sloppy, because the page says 'any Voidwatch Officer'. The header's Start field is empty, so nothing is overridden by doing this.\n\nThe Voidwatch alarum is a real key item and is the one observable thing here, so it is the step's evidence. The sub-bullet is a genuine gate -- the Vana'diel day must roll over to 0:00 after Between a Rock and Rift before the alarum is offered -- but game time is not visible to the addon, so it is a note and a flag only.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Between a Rock and Rift",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Voidwatch Officer",
+   "zone": null,
+   "grid": null,
+   "raw": null
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Voidwatch alarum",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any Voidwatch Officer; the page names no zone and the name is an ambiguous one, so it is carried on start.npc rather than here -- see the quest note. You must wait for the Vana'diel day to roll over to 0:00 after finishing Between a Rock and Rift before the alarum is offered."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Fear of Flying",
+   "page_id": 26189,
+   "revision_id": 755532,
+   "source_sha256": "3cba577ddab734bb0a7ec11ca63117a528cad635093e5b226b920d43a52af34d",
+   "cache_file": "0026189_fear_of_flying"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 35,
+   "dat_name": "Fear of Flying",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A clean four-rung ladder. Bullet 3 ('look for the NM') and bullet 4 ('upon defeating it you receive a Silkworm Egg') are one action, not two -- finding and killing the same NM -- so they merge into the fight step, which carries the egg as evidence because that is where it is obtained. The egg is then the trade step's requirement, which is allowed: it is evidence once, at the step that grants it.\n\nSilk Caterpillar's spawn condition is an airship passing overhead roughly every 14 minutes. Nothing in the packets reports an airship, so it is a note. The mob's role is 'drop' rather than 'kill' because the point of the fight is the egg, and that is the glyph a player wants.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Kurando",
+   "zone": "Port Bastok",
+   "grid": "H-6",
+   "raw": "Kurando - Port Bastok (H-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kurando"
+    },
+    "zone": "Port Bastok",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Rolanberry Fields"
+    },
+    "zone": "Rolanberry Fields",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": null
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Rolanberry Fields",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Silkworm Egg",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Silk Caterpillar",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "the NM only spawns when an airship passes over, about every 14 minutes -- nothing the addon can see, so expect to wait"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Kurando"
+    },
+    "zone": "Port Bastok",
+    "grid": "H-6",
+    "items": [
+     {
+      "name": "Silkworm Egg",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Brugaire Consortium",
+   "page_id": 502,
+   "revision_id": 36577,
+   "source_sha256": "b4b85ace8859fa12e07609849207ae74a3f0720ee3c6ded154af9e967d2d188e",
+   "cache_file": "0000502_the_brugaire_consortium"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 12,
+   "dat_name": "The Brugaire Consortium",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "repeating_loop",
+   "unordered_group",
+   "or_branch_modelled"
+  ],
+  "notes": "A LOOP, not a sequence, and the page says so outright: you can hold only one parcel at a time, so the cycle is Fontoumant -> one recipient -> back to Fontoumant, three times over. Bullet 1's three sub-bullets are not commentary here -- they are the three deliveries, with a name and a grid each -- so they become steps, which is the one place in this batch where sub-bullets carry the quest.\n\nThe page never states an order, so the three deliveries share a group and all draw at once; each keeps its own recipient's grid. Each also carries its own parcel in items, so the runtime lights the one you are actually holding.\n\nAll three parcels resolve as ITEMS (593/594/595), not key items, so the pickup is observable. Which parcel Fontoumant hands over first is not stated, so step 1's evidence is an alt-list of all three -- inventory.meets treats a bare alt-list as 'any one of these', which is exactly right. They are evidence only there; on the delivery steps they are requirements, which is a different field and not a duplicate.\n\nBullet 2 is the reward hand-in and the only step that needs all three done first, which no evidence can express -- the parcels are gone as you deliver them -- so it is simply the last rung.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 1,
+    "raw": "S / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Fontoumant",
+   "zone": "Port San d'Oria",
+   "grid": "H-9",
+   "raw": "Fontoumant - Port San d'Oria (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Fontoumant"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [],
+     "alt": [
+      {
+       "kind": "item",
+       "name": "Magic Shop Parcel",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Auction Parcel",
+       "count": 1
+      },
+      {
+       "kind": "item",
+       "name": "Pub Parcel",
+       "count": 1
+      }
+     ]
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "one parcel at a time; you come back here after every delivery. Holding any one of the three proves you have collected one."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Regine"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Magic Shop Parcel",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "parcels",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the magic shop"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Apstaule"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-10",
+    "items": [
+     {
+      "name": "Auction Parcel",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "parcels",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "upstairs, by the auction house"
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Thierride"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Pub Parcel",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "parcels",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the pub"
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Fontoumant"
+    },
+    "zone": "Port San d'Oria",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "only after all three are delivered"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Her Majesty's Garden",
+   "page_id": 478,
+   "revision_id": 543134,
+   "source_sha256": "bb69ede3753a979e6788886e92f5bfd897eb0881c99879a3eee6fbda5146cdf9",
+   "cache_file": "0000478_her_majesty_s_garden"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "sandoria",
+   "id": 62,
+   "dat_name": "Her Majesty's Garden",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Two bullets, two steps, both on Chalvatot, which is one marker. The sub-bullet about Doom Scorpions in the Crawlers' Nest is declarative -- where the humus comes from, not an instruction to go get it -- so it stays a note rather than becoming a farming step in a third zone; the humus is already in the trade step's items, which is what drives readiness, and the Auction House is an equally valid source, so a Crawlers' Nest marker would often point the wrong way. Compare The Antique Collector in this same batch, whose equivalent line IS a top-level imperative and does become a step.\n\nThe Northlands map in the Reward block is a reward, not evidence.",
+  "gates": {
+   "fame": {
+    "region": "San d'Oria",
+    "level": 4,
+    "raw": "San d'Oria / 4"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Chalvatot",
+   "zone": "Chateau d'Oraguille",
+   "grid": "F-7",
+   "raw": "Chalvatot, Chateau d'Oraguille (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Chalvatot"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chalvatot"
+    },
+    "zone": "Chateau d'Oraguille",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Derfland Humus",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the humus drops from Doom Scorpions in the Crawlers' Nest, or can be bought off the Auction House"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Perils of Kororo",
+   "page_id": 67136,
+   "revision_id": 751805,
+   "source_sha256": "69157976142ccb7c2494d5f2cd80dfc05206944c4464068224d4fc1d4729fa86",
+   "cache_file": "0067136_the_perils_of_kororo"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 66,
+   "dat_name": "The Perils of Kororo",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A three-rung errand, entirely inside Abyssea - Grauberg, and the page is unusually clean. The unnumbered line above bullet 1 ('you do not need to zone after completing Master Missing, Master Missed') is a precondition being waived, not a step; it is recorded on step 1 because it is the kind of thing a player checks before wondering why the NPC will not talk.\n\nBoth NPCs are written in the wiki's Abyssea form with the (A) suffix -- 'Kororo (A)' and 'Eight of Clubs (A)' -- which the normaliser folds to the plain in-game names; both resolve and neither is ambiguous. Conflux numbers are navigation notes, not targets. Fame 'agra' is an Abyssea zone code, not one of the addon's fame regions, so it gates nothing and only the raw string is kept; the 1,200 Cruor reward is a reward, not evidence, and nothing observable is granted anywhere in this quest.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "agra / 2"
+   },
+   "prev": [
+    {
+     "title": "Master Missing, Master Missed",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Kororo (A)",
+   "zone": "Abyssea - Grauberg",
+   "grid": "H-13",
+   "raw": "Kororo (A) (H-13), Abyssea - Grauberg"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Kororo (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "H-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "southwest of Conflux #2. You do NOT need to zone after Master Missing, Master Missed for this to be offered."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Eight of Clubs (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "a short walk from Conflux #5"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Kororo (A)"
+    },
+    "zone": "Abyssea - Grauberg",
+    "grid": "H-13",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Cafe...teria",
+   "page_id": 98206,
+   "revision_id": 342066,
+   "source_sha256": "9dccc7cb635458da2307144217c681843bddb38ea5fa05898eeb5e00b0987fee",
+   "cache_file": "0098206_cafe_teria"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "adoulin",
+   "id": 94,
+   "dat_name": "Cafe...teria",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "weekly_repeat"
+  ],
+  "notes": "Bullet 3 -- 'this quest is repeatable once per conquest tally' -- is a COOLDOWN, not a step, and is the one line on this page a verb-scanner would have turned into a rung. It is recorded as repeatable plus a flag; the tally is not in any packet the addon reads.\n\nThe header's 'Quest Reqs: 2 Elshimo Coconut' is an item requirement restated, not a level or job gate, so level stays null and jobs stays empty. Both coconuts go in one trade as a count of 2, not two steps. The vendor sub-bullet (Ghemi Sinterilo in Kazham) is sourcing commentary and stays a note -- it is a different zone from the trade, and one step has one zone. Fame 'Adoulin' is an expansion name that leaked into the field and is not one of the addon's fame regions, so it gates nothing.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 1,
+    "raw": "Adoulin / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "adoulin"
+  },
+  "start": {
+   "npc": "Yocile",
+   "zone": "Eastern Adoulin",
+   "grid": "G-8",
+   "raw": "Yocile, Eastern Adoulin - (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yocile"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the Statue of the Goddess Waypoint"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yocile"
+    },
+    "zone": "Eastern Adoulin",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Elshimo Coconut",
+      "count": 2,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "both in one trade; they are sold in Kazham by Ghemi Sinterilo at (G-7)"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Antique Collector",
+   "page_id": 38709,
+   "revision_id": 543165,
+   "source_sha256": "a9e01142678fff7afdb93a6e80aa26d4f7fc91fdf5c89f4b7a0711c67c2d62a0",
+   "cache_file": "0038709_the_antique_collector"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 25,
+   "dat_name": "The Antique Collector",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Three bullets, three steps. Bullet 2 is a top-level imperative -- 'head to Qufim Island and kill Dancing Weapons until you obtain a Kaiser Sword' -- so unlike the sourcing sub-bullet in Her Majesty's Garden it really is a step, with its own zone, its own mob and the sword as evidence at the step that grants it.\n\nThe mob is recorded singular, 'Dancing Weapon', where the page writes the plural; that is the same name de-pluralised, not an invented one, and mobs are folded and matched live against the mob list, where the plural would never hit. Count is null because the page says 'until you obtain one', which is not a number.\n\nThe Auction House alternative does not set items_partial -- that field is about what you must HOLD, and this step requires nothing held. Buying the sword instead simply satisfies the evidence and the ladder moves on by itself. The Delkfutt's Tower map is a reward, not evidence.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 2,
+    "raw": "Jeuno / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Imasuke",
+   "zone": "Port Jeuno",
+   "grid": "E-6",
+   "raw": "Imasuke, Port Jeuno (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Imasuke"
+    },
+    "zone": "Port Jeuno",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qufim Island",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Kaiser Sword",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Dancing Weapon",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "kill them until one drops; the sword also turns up on the Auction House, which skips this step entirely"
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Imasuke"
+    },
+    "zone": "Port Jeuno",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "Kaiser Sword",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Under the Sea",
+   "page_id": 317,
+   "revision_id": 762152,
+   "source_sha256": "6816bc0da70a1c37f5fcb6ac8cba9e1e4053f20dfd8f01baeb04f82dfaab7b68",
+   "cache_file": "0000317_under_the_sea"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 17,
+   "dat_name": "Under the Sea",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "repeating_loop",
+   "consumed_key_item"
+  ],
+  "notes": "The header names Oswald as the giver, but the walkthrough is explicit that you speak to Yaya FIRST, and that the quest only appears in your log after Jimaida three bullets later. So the start is moved to Yaya (H-9) and the header string is kept verbatim in start.raw. This is a marker MOVE of about one grid square inside Selbina, not a removal -- Oswald is still steps 2 and 7 -- and it points a player who has not started at the NPC who actually starts them.\n\nThe whole quest is in Selbina, so every step keeps that zone. Bullets 1 to 4 are four separate talks in a fixed order, each with its own NPC and grid, and all four resolve.\n\nStep 5 is fishing, which is why it has no target: the Fat Greedie comes out of the water, not off an entity. It is evidence there, at the step that grants it, and a requirement on step 6, which is a different field and allowed. Step 6 is a LOOP -- the page says you keep fishing one up and trading it until Zaldon finally hands over the ring -- and no count can express 'until'; the Etched ring is the observable that ends it. The page calls it a temporary key item, so expect it to vanish at the end of the quest; that is fine as evidence, because the ladder only needs it while step 6 is the frontier. Step 5's unmarkable rung does sit between two Zaldon steps, but the page really does send you away and back.\n\nFishing skill is a real gate on step 5 and there is no field for it.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Yaya",
+   "zone": "Selbina",
+   "grid": "H-9",
+   "raw": "Oswald, Selbina (I-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yaya"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the walkthrough starts here, not at the header's Oswald"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Oswald"
+    },
+    "zone": "Selbina",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the building by the Nomad Moogles, Shepherd's Muster"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jimaida"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the quest only becomes active in your log here"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zaldon"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Selbina",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Fat Greedie",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "fished up in Selbina; no entity to target, and the fishing skill it needs has no field here"
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Zaldon"
+    },
+    "zone": "Selbina",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Fat Greedie",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Etched ring",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "one fish at a time, and you repeat the fish-and-trade until he gives up the Etched ring -- the page calls it a temporary key item"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Oswald"
+    },
+    "zone": "Selbina",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ }
+]

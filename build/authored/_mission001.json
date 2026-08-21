@@ -1,0 +1,3492 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 1-1",
+   "page_id": 12149,
+   "revision_id": 751570,
+   "source_sha256": "bbdbdc459420de111a68f1d8a43dd0ac0467d61e8f3e0538c1b9ff233b2877e5",
+   "cache_file": "0012149_bastok_mission_1_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 0,
+   "dat_name": "The Zeruhn Report",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Start AGREES with chronicle: the header says only 'Any Bastok Gate Guard', which is a class and not an entity, and the walkthrough's own sub-bullets name all four of them -- Argus (Port Bastok L-7), Cleades (Bastok Markets D-11), Rashid (Bastok Mines H-10), Malduc (Metalworks J-8). Chronicle's giver for the whole Bastok line is argus, so Argus is what start.npc carries; writing 'Gate Guard' instead would have swapped a precise giver for a name the resolver reports as ambiguous. Argus's post (Port Bastok L-7) is taken from this page's own list, which is why every later record in this lane can reuse it. Three rungs, one of them observable: the [KI] Zeruhn report is handed over at Makarim and is not in the Reward field, so it is honest evidence for step 2. Bullet 2 is the route into the Zeruhn Mines and folds into that step rather than becoming a rung of its own. The sub-bullet about examining the key item only changes Lucius' dialogue in the closing cutscene -- flavour, not a step.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any of the four Bastokan Gate Guards works: Argus (Port Bastok L-7), Cleades (Bastok Markets D-11), Rashid (Bastok Mines H-10), Malduc (Metalworks J-8)"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Makarim"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "H-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Zeruhn report",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the Zeruhn Mines are entered from Bastok Mines (D-7); bullet 2 is that route and is not a rung of its own"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "top floor of the Metalworks. Examining the [KI] Zeruhn report beforehand only changes Lucius' lines in the cutscene."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 1-2",
+   "page_id": 12562,
+   "revision_id": 686732,
+   "source_sha256": "becac89973943a93282e8038efe46f3e65bfea7356a46b2e28ac10ca8f7ab736",
+   "cache_file": "0012562_bastok_mission_1_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 1,
+   "dat_name": "A Geological Survey",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "unnamed_target",
+   "consumed_key_item"
+  ],
+  "notes": "Start AGREES with chronicle (argus). The header is the generic 'Any Bastok Gate Guard' again and the page's sub-bullet only points out that Malduc, who stands beside Naji, will also start it -- a convenience, not a different giver. Argus's post is carried over from the Bastok Mission 1-1 page, which lists all four guards.\n\nTwo key items and both are real evidence: the Blue acidity tester is handed over by Cid at step 2, and the geyser at Dangruf Wadi (I-8) turns it into the Red acidity tester at step 4. The Blue one therefore STOPS reading true the moment step 4 succeeds -- that is fine, core/steps.lua takes a high-water mark over positive evidence, so a consumed key item on an earlier rung can never pull the mark backwards. Flagged consumed_key_item so a reader is not surprised by it.\n\nThe geyser itself is the one weak spot: the page writes it in lower case and names no entity, so the target is {none, null} rather than an invented object. Bullet 4 is the route to it and merges into that rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Zeruhn Report",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any Bastokan Gate Guard; the page recommends Malduc (Metalworks J-8) because he stands beside Naji"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Blue acidity tester",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Cid's Lab, Metalworks top floor"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Dangruf Wadi"
+    },
+    "zone": "South Gustaberg",
+    "grid": "D-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the entrance is in South Gustaberg, which is why this rung's zone is South Gustaberg and not the Wadi"
+   },
+   {
+    "n": 4,
+    "kind": "other",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Dangruf Wadi",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Red acidity tester",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "turn right at the fork after zoning in and head north to (I-8), then stand on the geyser in the south-east corner until it pushes you onto the ledge. The page names no entity for the geyser, so there is no target to mark."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 1-3",
+   "page_id": 12648,
+   "revision_id": 754820,
+   "source_sha256": "9b81d1d8867dc3971af3ae07fe75cc0855addee18ce6299bbec501d551a46d52",
+   "cache_file": "0012648_bastok_mission_1_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 2,
+   "dat_name": "Fetichism",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Start AGREES with chronicle (argus); the header is the generic gate-guard class again.\n\nThree rungs. The middle one is a collection step and it is the only place evidence can sit: holding all four Fetich pieces at once proves it, and all four resolve as ordinary items (606-609), not key items. They are spent at step 3, which the high-water mark tolerates.\n\nThe page gives THREE ways to get the pieces -- Palborough Mines Quadav, the Auction House or a bazaar, and (from the Notes section) the second-tier Quadav in Konschtat Highlands and Pashhow Marshlands. Only the first has anywhere to put a marker, so that is the rung's zone and its mobs, with the rest in the note. Buying them skips the rung entirely, and the evidence still fires, so nothing breaks either way.\n\nThe long sub-bullets under bullet 3 are navigation and a warning about the boat at (H-8) stranding you in the Zeruhn Mines; neither is a step. The header's Repeatable is 'Yes', which is a real answer, unlike the two missions before it.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "A Geological Survey",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any Bastokan Gate Guard"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Palborough Mines",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Fetich Head",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Fetich Torso",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Fetich Arms",
+       "kind": "item",
+       "count": 1
+      },
+      {
+       "name": "Fetich Legs",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Amber Quadav",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Greater Quadav",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Onyx Quadav",
+      "count": null,
+      "role": "drop"
+     },
+     {
+      "name": "Veteran Quadav",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "in from North Gustaberg (K-3); the higher-level Quadav are on the second floor, up the elevator in the centre. The pieces are not Exclusive, so the Auction House or a bazaar skips this rung, and the Notes section adds Konschtat Highlands and Pashhow Marshlands as further sources. Watch for Zi'Ghi Boneeater, and do not take the boat at (H-8)."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Fetich Head",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Fetich Torso",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Fetich Arms",
+      "kind": "item",
+      "count": 1
+     },
+     {
+      "name": "Fetich Legs",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all four SIMULTANEOUSLY, in one trade, to any Bastok Gate Guard"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 2-1",
+   "page_id": 12652,
+   "revision_id": 768888,
+   "source_sha256": "92837d54601c5bad46cf4aee0127820d5251a86086bd30672b9eaf4271363847",
+   "cache_file": "0012652_bastok_mission_2_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 3,
+   "dat_name": "The Crystal Line",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "rank_gate_unmodelled",
+   "or_branch_unmodelled"
+  ],
+  "notes": "Start AGREES with chronicle (argus).\n\nDemoted to medium for two gates the ladder cannot carry. First, the mission does not appear at all until the rank bar has been raised by trading crystals to a Conquest Overseer -- the page guesses three -- and rank points are not in any packet the addon reads, so the mission simply looks available when it is not. Second, the Faded Crystal has four sources and none of them is the page's own preference: the Auction House, a bazaar, or a synthesis crystal traded to the Crag of Dem (Konschtat Highlands I-6), the Crag of Holla (La Theine Plateau K-8) or the Crag of Mea (Tahrongi Canyon I-6). I did not model the three Crags as a group, because a group asserts an unordered SET and this is a pick-one; and I could not put a synthesis crystal in `items` because 'synthesis crystal' is a category -- it does not resolve against res/items.lua, only the eight specific crystals do. So step 2 is a zone-less obtain rung whose only content is its evidence, and the routes live in the note.\n\nCid's grid is deliberately null: this page never gives it, Bastok Mission 1-2 puts his lab at (G-8) and Bastok Mission 7-1 puts him at (H-8). Guessing between two other pages is not something this page supports. The '(Optional)' talks to Cid and Naji in bullets 1 and 2 are the page's own word for optional and carry no key item, so they are not rungs.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Fetichism",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": null,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the mission only unlocks once the rank bar has been raised by trading crystals to a Conquest Overseer -- about three, says the page. Rank points are not observable, so that gate is not modelled."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": true,
+    "evidence": {
+     "all": [
+      {
+       "name": "Faded Crystal",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "Auction House or bazaar, or trade a synthesis crystal to a Crag Telepoint: Crag of Dem (Konschtat Highlands I-6), Crag of Holla (La Theine Plateau K-8), Crag of Mea (Tahrongi Canyon I-6). No zone, because no one of these is the page's own answer. The Notes add that only the NORTH platform of the Crag of Dem still yields one."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [
+     {
+      "name": "Faded Crystal",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "C. L. report",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "grid left null -- this page does not give Cid's, and the other Bastok pages disagree about it"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ayame"
+    },
+    "zone": "Metalworks",
+    "grid": "K-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in the Cannonry; you may have to speak to her several times before the right dialogue comes up"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 2-2",
+   "page_id": 12756,
+   "revision_id": 774152,
+   "source_sha256": "7a9b7abc88db180b79987cb940e3217bae1117d9a4166b641cf409dbb24e4320",
+   "cache_file": "0012756_bastok_mission_2_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 4,
+   "dat_name": "Wading Beasts",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Start AGREES with chronicle (argus). This walkthrough has NO accept bullet at all -- it opens on 'Obtain a Lizard Egg' -- so there is no gate-guard rung; the giver is carried by start.npc alone and build_index.lua emits it as the s=0 row. Adding an invented 'speak to a guard' step would have been a rung the page does not have.\n\nTwo rungs, one observable. The Lizard Egg is an ordinary stackable food item, so a player may already be carrying one and the ladder will read step 1 as done -- that is not a failure, because step 2 is then exactly what they should do next. The egg's sources are a shop in Windurst and any lizard anywhere, which is why the rung carries no zone: sending a Bastok player to Windurst Waters for an egg they can buy at the Auction House would be a marker doing harm.\n\nThe mission description says the egg comes from monsters in the Dangruf Wadi and the page contradicts it outright ('regardless what the Mission description states'). The page is right and the description is decoration.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Crystal Line",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Lizard Egg",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Auction House, Chomo Jinjahl in Windurst Waters (E-8), or any lizard-type enemy anywhere. No zone: none of those is the page's own choice."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Senator Alois"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Lizard Egg",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "in the President's Office Conference Room"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 2-3",
+   "page_id": 12758,
+   "revision_id": 768889,
+   "source_sha256": "8c6756f9f9bd0b323f471ead8f7ec9a4f6bbe03ef38958bc6b21632501ba0152",
+   "cache_file": "0012758_bastok_mission_2_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 5,
+   "dat_name": "The Emissary",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "or_branch_unmodelled",
+   "unordered_group",
+   "steps_from_after_section"
+  ],
+  "notes": "Start AGREES with chronicle (argus), even though the walkthrough proper opens on Naji: the header is the gate-guard class and Naji is where you are sent, not who gives it.\n\nTHIS IS A GENUINE TWO-WAY BRANCH AND I HAVE MODELLED ONLY THE SPINE. The walkthrough is two bullets long; the rest of the mission lives in four sibling sections that pair up into two whole different routes. Go to San d'Oria first ('Bastok to San d'Oria' then 'San d'Oria to Windurst') and you fight Warchief Vatgit in the Ghelsba Outpost, get the [KI] Dark key from Kupipi, and clear the Black Dragon at Balga's Dais. Go to Windurst first ('Bastok to Windurst' then 'Windurst to San d'Oria') and you instead get the [KI] Sword offering and [KI] Dull sword, kill Eyy Mon the Ironbreaker for an Aspir Knife to trade to Uu Zhoumo, and clear the Dread Dragon at Horlais Peak for the [KI] Kindred crest and [KI] Kindred report. The two routes share almost no content, so there is no merged path a player follows and inventing one would be a marker sending somebody to the wrong BCNM.\n\nWhat IS common to both orders: Naji at the start with the [KI] Letter to the consuls, Helaku in the Consulate of Bastok in Northern San d'Oria, Melek in the Consulate of Bastok in Port Windurst, and Naji again at the end. Helaku and Melek share a group because the order between them is the player's choice -- that is exactly what a group means -- and they draw together. Every branch-only key item is left out of `evidence` on purpose: each is true on only one of the two routes, so any of them would read false for half the players.\n\nStep source_bullets for rungs 2-4 are numbered within the After sections they came from, which restart at [1]; the notes say which section each is.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Wading Beasts",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the consuls",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "outside the President's Office, HP #1. He escorts you in to President Karst; the bottom option 'No questions.' skips the interview. The key item arrives at the end of it, which is why both bullets are one rung."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Helaku"
+    },
+    "zone": "Northern San d'Oria",
+    "grid": "K-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "consulates",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Consulate of Bastok; the receptionist Baraka stands in front of him and he is in the back room. From 'Bastok to San d'Oria' [1] and 'Windurst to San d'Oria' [1]. His arm continues to Halver in Chateau d'Oraguille (I-9) and then to a fight, but WHICH fight depends on the order you chose, so it is not modelled."
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Melek"
+    },
+    "zone": "Port Windurst",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "consulates",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "Consulate of Bastok, behind the Bastokan Consul door on the right. From 'San d'Oria to Windurst' [1] and 'Bastok to Windurst' [1]. His arm continues to Kupipi in Heavens Tower (Windurst Walls H-7) and then to a Giddeus errand or a BCNM, again depending on order."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from 'San d'Oria to Windurst' [5], which is 'Windurst to San d'Oria' [6] on the other route. Rank 3. Malduc, beside him, gives the next mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 3-1",
+   "page_id": 13170,
+   "revision_id": 773109,
+   "source_sha256": "9753752b9dc58cbfe82797a8d1b95b6ff93fd50fc38b59fddf39bf039d157797",
+   "cache_file": "0013170_bastok_mission_3_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 10,
+   "dat_name": "The Four Musketeers",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Start AGREES with chronicle (argus). The header is the gate-guard class; the walkthrough opens on Iron Eater, who is where the guard sends you and not the giver, so he is rung 1 and start.npc is still Argus.\n\nZero evidence anywhere and that is the correct reading. The whole mission is a kill count -- 20 Copper Quadav -- and no packet reports kills, so the ladder cannot see the tally the game itself keeps. Flagged count_unobservable. Nothing else in the mission produces a key item or an item: the two cutscenes are the reward.\n\nBullet 3 is split, because it is two different things in one sentence: zoning into Beadeaux for the opening cutscene, and then the killing. Bullet 4 is a separate rung because zoning OUT to Pashhow Marshlands is what actually ends the mission -- and the page warns that Escape skips the cutscene, so it is a real action, not an outcome. The 'Recommendations' section is a pointer to the Mission 4-1 page's Beadeaux prerequisites and is not part of this mission.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Emissary",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Iron Eater"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the President's Office, HP #1; may take several attempts. If you have started the quest The Weight of Your Limits you may have to change jobs first."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Beadeaux"
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "zoning in gives a cutscene. Unity Warp 122 reaches Pashhow Marshlands; the Survival Guide inside Beadeaux is much closer."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Copper Quadav",
+      "count": 20,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the game tracks the 20 across sessions and party kills count, but the addon cannot see the tally -- this rung has no evidence and never will. 7 spawn in the entry area and 3 more in the tunnel at the first Afflictor. AoE overkill from a Trust does not count."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Pashhow Marshlands"
+    },
+    "zone": "Pashhow Marshlands",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "zone OUT for the closing cutscene with Ayame. Escape skips it, and a short kill count gives a different cutscene that does not finish the mission."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 3-2",
+   "page_id": 13172,
+   "revision_id": 774999,
+   "source_sha256": "1229ab9a96ce847f3d1f49c38881bb4a4def33a3599d049499bdba3d9b02b625",
+   "cache_file": "0013172_bastok_mission_3_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 11,
+   "dat_name": "To the Forsaken Mines",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Start AGREES with chronicle (argus).\n\nA clean six-rung ladder with two observable points, the Hare Meat you go in with and the Glocolite you come out with. Hare Meat is a common item so step 1 may already read true for a player carrying one; that costs nothing, because the next rung is Davyad and they should go there anyway.\n\nBullet 5 is split into the trade that pops Blind Moby and the fight that drops the Glocolite, the same way the corpus splits every spawn-then-kill. The ??? is recorded as an object even though it can never carry a marker -- it keeps the rung. Bullet 4's turn-by-turn directions and the Smothered Schmidt warning are commentary on the trade rung, not rungs.\n\nBullet 6 says 'any Gate Guard', so the hand-in goes back to Argus, the same entity the mission starts on.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Four Musketeers",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Hare Meat",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page says only 'Obtain a Hare Meat' and names no source, so there is nowhere to put a marker"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Davyad"
+    },
+    "zone": "Bastok Mines",
+    "grid": "K-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "inside the corner house on the upper deck"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Gusgen Mines"
+    },
+    "zone": "Konschtat Highlands",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in from Konschtat Highlands, or the Zulkheim Survival Guide. Sneak or Silent Oil unless the mobs /check as incredibly easy prey."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Gusgen Mines",
+    "grid": "J-7",
+    "items": [
+     {
+      "name": "Hare Meat",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Blind Moby",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "the pond at (J-7): right/East at the first three-way, left/North at the next, right/East at the fork and right again. Three minutes between pops. Smothered Schmidt spawns in the same spot at 0:00, 1:00 or 2:00 when the siren sounds."
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Gusgen Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Glocolite",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Blind Moby",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a Pugil NM. Everyone in the party who is on the mission needs their own Glocolite, so it may have to be killed repeatedly."
+   },
+   {
+    "n": 6,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [
+     {
+      "name": "Glocolite",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "any Gate Guard takes it"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 3-3",
+   "page_id": 13168,
+   "revision_id": 766614,
+   "source_sha256": "2674f0902c74b40a6e916a81d8ff553ef8c7b9c75f4be97b061ef4ba9fa79921",
+   "cache_file": "0013168_bastok_mission_3_3"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 12,
+   "dat_name": "Jeuno",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "generic_npc_name",
+   "or_branch_unmodelled",
+   "steps_from_after_section",
+   "latent_unmodelled"
+  ],
+  "notes": "Start AGREES with chronicle (argus), even though no gate guard appears anywhere in the walkthrough -- the header is still 'Any Bastok Gate Guard' and Lucius is where you are sent.\n\nThe judgement call here is that the [KI] Delkfutt key is NOT used as evidence anywhere, and it is the only key item the middle of the mission produces. The page's own Notes say outright that you do not have to be on this mission to get a Delkfutt Key from Porphyrion, and the key item persists; a player who climbed the tower on another character's errand, or who did San d'Oria's or Windurst's 3-3, walks in already holding it. Using it would jump the ladder straight to the embassy door in Ru'Lude Gardens while the Basement cutscene is still undone -- a marker sending somebody to the wrong city. So this mission carries evidence only at rung 1, and that is the honest reading.\n\nThe climb is not modelled either. Three of the four After sections ('Obtaining Delkfutt Key Short Way', 'Obtaining Delkfutt Key', 'Navigation') are two alternative routes up thirteen floors of Delkfutt's Tower to Porphyrion; they are ways to satisfy rung 3's item requirement, not rungs. What I did take from 'Finishing the Mission' is the door grid, because the walkthrough's own '(K/L-9)' is useless without the warning that Windurst's door is at (L-7)/(M-7) and San d'Oria's at (L-8)/(M-8) and the wrong one gives no cutscene.\n\nBoth Cermet Door rungs carry the Delkfutt Key item in `items` and the key item variant in `items_alt`, which is exactly the 'items OR any one of items_alt' the field is for. Medium, for the two unmodelled routes and the missing middle evidence.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: see the record note.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "To the Forsaken Mines",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Lucius"
+    },
+    "zone": "Metalworks",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to the ambassador",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the Aide's Office, HP #1; keep talking until the key item arrives. The page writes the grid as (J/I-9); Bastok Mission 5-2 writes (I-9) for the same office, which is the form kept here."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Goggehn"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the Bastokan Embassy"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Door"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": "E-8",
+    "items": [
+     {
+      "name": "Delkfutt Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Delkfutt key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Map 1; this door is the way into the Basement. Trading the Delkfutt Key item to it converts it into the [KI] Delkfutt key. Another player opening it with their own key does not work. No evidence here on purpose."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Door"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Delkfutt Key",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Delkfutt key",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Bastok's door in the Basement is (K-9)/(L-9). Windurst's is (L-7)/(M-7) and San d'Oria's (L-8)/(M-8); no cutscene means the wrong door. The grids come from the 'Finishing the Mission' section [1], not from the walkthrough."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Bastokan Emb."
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the 3rd door inside the embassy building -- several doors carry this same name"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 4-1",
+   "page_id": 13164,
+   "revision_id": 774298,
+   "source_sha256": "6391abec80c81a9c47cfd035a8ee1078e214044757ec78eb222f5c23dd92df81",
+   "cache_file": "0013164_bastok_mission_4_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 13,
+   "dat_name": "Magicite",
+   "match_rule": "header_mission_name+category",
+   "match_conf": "category_disambiguated"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_disagrees_with_header",
+   "unordered_group",
+   "or_branch_unmodelled",
+   "steps_from_after_section",
+   "latent_unmodelled"
+  ],
+  "notes": "I DISAGREE WITH chronicle_snpc HERE AND THE MARKER MOVES. Chronicle's giver is the string \"bastokan embassy in ru'lude gardens\", which is the header's Start field verbatim -- a place, not an entity, and nothing the by_npc index can have a row for. The walkthrough's own bullet 1 says to speak with GOGGEHN and then click the innermost Door: Bastokan Emb., both in Ru'Lude Gardens (H-10), and Goggehn is also who you return to at bullet 7. So start.npc is Goggehn: a real NPC standing at the place chronicle was pointing at, which turns a marker that could not be drawn into one that can. Flagged start_disagrees_with_header.\n\nThe walkthrough proper is a seven-bullet summary and the mission is in the six After sections. The three magicites are a genuine unordered set, so they share a group and draw together -- but the evidence for all three sits on the LAST group member only. That is deliberate and it is the batch4 monuments reasoning: core/steps.lua takes a high-water mark, so one magicite key item per arm would advance the whole ladder past the other two arms the instant a player finished whichever they chose first, leaving the mark on the Audience Chamber with two magicites missing. An AND-list on the last rung advances only when all three are held.\n\nThe [KI] Silver bell carries NO evidence, because the page says in so many words that if you did this mission for another nation you already hold it and must still take Aldo's cutscene. Holding it proves nothing about this run. The same latent risk applies in principle to the Archducal audience permit and the Letter to Aldo, but the page raises it only for the bell, and those two are handed over at their own rungs, so they are kept.\n\nThe two Sattal-Mansal trades are two rungs because the page insists they must be separate trades or the second key item never arrives; they are consecutive on the same NPC and so draw one marker. Both key items sit on the SECOND of the two, because the page never says which of the Quadav Charm and the Quadav Augury Shell yields the Coruscant rosary and which the Black matinee necklace, and guessing a pairing would be an assertion the page does not support.\n\n[KI] Message to Jeuno (Bastok), granted by the final Goggehn cutscene, does not resolve against res/key_items.lua and is in any case a completion reward, so it is not used. Medium overall: the ordering inside each magicite arm, the Delkfutt-style route notes, and the Tenshodo membership prerequisite are all real content that no ladder position can express.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 15: see the record note for why they are not one per arm.\n  step 17: Rank 5 and 10,000 gil, plus [KI] Message to Jeuno (Bastok), which does not resolve against res/key_items.lua and is a reward in any case",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Jeuno",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Goggehn",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-10",
+   "raw": "Bastokan Embassy in Ru'Lude Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Goggehn"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "inside the Bastokan Embassy"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: Bastokan Emb."
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Archducal audience permit",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the INNERMOST one -- 3rd on the left; several doors share the name"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter to Aldo",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "bullet 6 names this entity plainly as 'the Audience Chamber', which is why the target is that and not an invented door name"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Aldo"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the back of the Tenshodo H.Q. inside Neptune's Spire; the grid is from the 'Tenshodo' section [3]. Getting in needs Tenshodo Membership -- buy a Tenshodo Invite and trade it to Ghebi Damomohe. NO evidence: the page says the [KI] Silver bell is already yours if you did this mission for another nation, and you still have to take the cutscene."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Paya-Sabya"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": null
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Muckvix"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Yagudo torch",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "inside Muckvix's Junk Shop. Paya-Sabya must be spoken to first."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Baudin"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Coeurl Meat",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Crest of Davoi",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from the 'Key Items' section [3]. Coeurl Meat off a Coeurl in Sauromugue Champaign or Meriphataud Mountains, or the Auction House."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Quadav Charm",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "De'Vyu Headhunter",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from 'Beadeaux (Prerequisite)' [11]; the page writes (H-9/10). A Warrior NM of level 40-45. Everything in Beadeaux aggros sound, and the Mute devices silence you so the Afflictors cannot Curse you."
+   },
+   {
+    "n": 9,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Beadeaux",
+    "grid": "F-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Quadav Augury Shell",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Go'Bhu Gascon",
+      "count": 1,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from 'Beadeaux (Prerequisite)' [14]; the second Warrior NM"
+   },
+   {
+    "n": 10,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sattal-Mansal"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Quadav Charm",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "behind the Tenshodo Guild Doors. This starts Mysteries of Beadeaux I and II, which the page says are SEPARATE quests -- their key items are still required here."
+   },
+   {
+    "n": 11,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Sattal-Mansal"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Quadav Augury Shell",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Coruscant rosary",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Black matinee necklace",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "a SECOND, separate trade -- both at once and the second key item never comes. Both key items sit on this rung because the page does not say which item yields which; the two rungs are the same NPC and draw one marker anyway."
+   },
+   {
+    "n": 12,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Wall of Dark Arts"
+    },
+    "zone": "Davoi",
+    "grid": "G-7",
+    "items": [
+     {
+      "name": "Crest of Davoi",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "magicites",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from 'Davoi Magicite' [2]-[3]. Drop invisible to click it; two Orcs stand there. It opens into the Monastic Cavern. The page lists the Crest of Davoi among the mission's required key items but never says where it is spent, so it is recorded as held rather than as a gate."
+   },
+   {
+    "n": 13,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Monastic Cavern",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "magicites",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from 'Davoi Magicite' [4]: down the path into the large room, no enemies inside. Gives [KI] Magicite: Optistone -- held for the group's last rung rather than used here."
+   },
+   {
+    "n": 14,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [
+     {
+      "name": "Yagudo torch",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": "magicites",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "from 'Castle Oztroja Magicite' [6]-[13], in the Altar Room; gives [KI] Magicite: Orastone. In via the Brass Door at (I-8) -- one of its two levers opens a pit -- then Map 2, (G-7) into Map 6, (I-7) into Map 7, right wall to the door at (H-9) where the torch is lit, then a second Brass Door. Without the Yagudo torch the magicite only 'glows ominously'."
+   },
+   {
+    "n": 15,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Qulun Dome",
+    "grid": null,
+    "items": [
+     {
+      "name": "Coruscant rosary",
+      "kind": "ki",
+      "count": 1
+     },
+     {
+      "name": "Black matinee necklace",
+      "kind": "ki",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Magicite: Optistone",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Magicite: Orastone",
+       "kind": "ki",
+       "count": 1
+      },
+      {
+       "name": "Magicite: Aurastone",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicites",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "From 'Beadeaux Magicite' [2]-[4]: from the Beadeaux entrance hug the left wall to the tunnel at (H-7), left at the intersection, and you zone into Qulun Dome. Investigate the Door first, then the Magicite, for [KI] Magicite: Aurastone. This is the LAST member of the group and carries the AND-list over all three magicites."
+   },
+   {
+    "n": 16,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Audience Chamber"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "only after all three magicites. The [KI] Airship Pass -- or 20,000 gil instead if you already hold one -- comes from this cutscene and is a reward, not evidence."
+   },
+   {
+    "n": 17,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Goggehn"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 5-1",
+   "page_id": 13165,
+   "revision_id": 766616,
+   "source_sha256": "e2f6edc2c07c73e749ff39d6ea2bc85c6bb063550576558e4c97c57dc79362f6",
+   "cache_file": "0013165_bastok_mission_5_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 14,
+   "dat_name": "Darkness Rising",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "consumed_key_item"
+  ],
+  "notes": "Start AGREES with chronicle (argus); bullet 1 is literally 'Speak to a Gate Guard'.\n\nA level 50 gate, which the header states outright and which is the only gate on any mission in this lane. Seven rungs and two observable points that bracket the BCNM: Naji hands over the [KI] New Fei'Yin seal at rung 2 and winning gives the [KI] Burnt seal at rung 6 -- the same seal, burnt, so the first stops reading true. The high-water mark in core/steps.lua makes that harmless, and it is flagged rather than hidden.\n\nBullet 3 is split three ways because it is three things: getting to Fei'Yin (and the Zeid cutscene on arrival), opening the Cermet Portal at (K-8) that leads to Qu'Bia Arena, and then bullet 4's Burning Circle. The (K-8) belongs to FEI'YIN -- bullet 4 repeats it as if it were in Qu'Bia Arena, which is the page being sloppy, so the arena rung carries no grid. The long tactics sub-bullets under bullet 4 are strategy. The Notes section is about background music.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Magicite",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "any Gate Guard; you are directed to the President's Office"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "New Fei'Yin seal",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "this page gives no grid for Naji; (J-8) comes from the earlier Bastok pages in this lane, which all put him outside the President's Office"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Fei'Yin"
+    },
+    "zone": "Fei'Yin",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "north-east corner of Beaucedine Glacier; arriving gives the cutscene with Zeid. HP #1 lands at the Qu'Bia Arena zone line, Unity Warp 128 at the Fei'Yin entrance, 125 in central Beaucedine. Most of Fei'Yin detects by sound and some by spellcasting."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Portal"
+    },
+    "zone": "Fei'Yin",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "east of the entrance with two Dolls in front of it; opening it lets you into Qu'Bia Arena"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Burning Circle"
+    },
+    "zone": "Qu'Bia Arena",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the BCNM 'The Rank 5 Mission'; all buffs wear on entry. No grid -- the page's (K-8) is the Fei'Yin portal, not anything inside the arena."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Qu'Bia Arena",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Burnt seal",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Archlich Taber'quoan",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Ancient Sorcerer",
+      "count": 2,
+      "role": "kill"
+     },
+     {
+      "name": "Ancient Warrior",
+      "count": null,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "only the Archlich has to die; the Sorcerers spawn with it and the Warriors run in from the hallway"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 5-2",
+   "page_id": 13167,
+   "revision_id": 766617,
+   "source_sha256": "00900831f57fc67db37de8a47d70893e8bf31afbb4dbe1e4aa794952a6ab0d16",
+   "cache_file": "0013167_bastok_mission_5_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 15,
+   "dat_name": "Xarcabard, Land of Truths",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "steps_from_after_section"
+  ],
+  "notes": "Start AGREES with chronicle (argus) -- but only after a decision. This is the ONE page in the lane whose walkthrough names a specific gate guard: bullet 1 says 'Malduc right beside Naji will give the mission.' Malduc is a Bastok Gate Guard like Argus, the header is still the generic 'Any Bastok Gate Guard', and the page is recommending him for convenience because he stands next to where you are sent, not correcting the giver. Moving start.npc to Malduc would have shifted the marker from Port Bastok to the Metalworks for one mission in the middle of a line that is otherwise entirely Argus, so chronicle keeps it. Malduc is named in rung 1's note instead.\n\nPresident Karst is not the target of the two Metalworks rungs; Door: President's Office is. The page tells you to CLICK the door and Karst is behind it, so the door is the entity you interact with -- and it is the same entity on the way back for the reward.\n\nThe three After sections are route directions through Castle Zvahl Baileys and the Keep, plus the Shadow Lord's tactics. None of them is a step; the route collapses into rung 3, whose real answer is the Castle Zvahl Keep home point. The one thing that IS observable is the [KI] Shadow fragment from winning, which is not in the Reward field. Trust: Volker from Lucius afterwards is a reward, not a rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Darkness Rising",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Argus"
+    },
+    "zone": "Port Bastok",
+    "grid": "L-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page recommends Malduc (Metalworks J-8), the gate guard beside Naji, because you are going there anyway; any Bastok Gate Guard works and the marker stays on Argus"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: President's Office"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "next to Iron Eater; through it to President Karst for the cutscene. The page gives no grid for it."
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Castle Zvahl Keep"
+    },
+    "zone": "Castle Zvahl Keep",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Castle Zvahl Keep Home Point #1 is the fast way. Otherwise Xarcabard (D-7/8) into Castle Zvahl Baileys and up through it -- the two '[[Castle Zvahl ...]]' sections are turn-by-turn directions, not steps. Four teleporters inside the Keep lead to the door that zones you to the Throne Room."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Throne Room",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Shadow fragment",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Shadow Lord",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "two forms back to back, with a cutscene between them; you are put back at the Castle Zvahl Baileys entrance afterwards. The 'BCNM Fight' section is tactics."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Door: President's Office"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Rank 6 and 20,000 gil. Lucius in the Metalworks (I-9) teaches Trust: Volker afterwards, and the other nations' trust permits unlock Trion and Ajido-Marujido -- rewards, not rungs."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 6-1",
+   "page_id": 13174,
+   "revision_id": 748937,
+   "source_sha256": "ae5e1a61986c9f4ce5d9b5b0e8c0615d10d0333581902d6d533184bc3ac8984a",
+   "cache_file": "0013174_bastok_mission_6_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 16,
+   "dat_name": "Return of the Talekeeper",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Start AGREES with chronicle (argus). The walkthrough has no accept bullet -- it opens on 'You'll be instructed to go see Medicine Eagle' -- so there is no gate-guard rung and the giver rides on start.npc alone.\n\nSix rungs, one observable: the [KI] Altepa moonpebble from checking the ??? a second time, which is not in the Reward field. Bullet 4 is split from bullet 5 because the ??? is checked TWICE with the fight in between, which is a real ordering the page is explicit about -- and the page's warning that zoning before you take the key item means fighting both NMs again is why the second check is its own rung rather than a footnote.\n\nThe two Sphinxes are both recorded even though only one has to die, because the page says the key item will not come while the other is alive and unaggroed; a reader needs both names.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Xarcabard, Land of Truths",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Medicine Eagle"
+    },
+    "zone": "Bastok Mines",
+    "grid": "G/H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "all the way north, on post near the entrance to Ore Street"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Drake Fang"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "H-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "near the boat; in from Bastok Mines (D-7) or the Survival Guide. The cutscene sends you to the Western Altepa Desert."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Western Sphinx",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Eastern Sphinx",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "west side of (G-8), in between three glowing rocks. Unity Warp 125 lands at (I-7), the Survival Guide at (K-7)."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Western Sphinx",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Eastern Sphinx",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "level 62 Manticore NMs, ~7,000 HP each, immune to Sleep and Lullaby. Only one has to die, but the key item will not come until the other is dead or de-aggroed."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Western Altepa Desert",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Altepa moonpebble",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "check it AGAIN, and do not zone first -- zoning before the key item arrives means fighting both NMs over"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tall Mountain"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6,
+     7
+    ],
+    "note": "HP #3, bottom level near the restricted area; the cutscene ends the mission"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 6-2",
+   "page_id": 13176,
+   "revision_id": 775918,
+   "source_sha256": "03020120a2a044a5e03bed0326955c6745f229f6aa47f285626a211ad680a631",
+   "cache_file": "0013176_bastok_mission_6_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 17,
+   "dat_name": "The Pirates' Cove",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "count_unobservable"
+  ],
+  "notes": "Start AGREES with chronicle (argus); the walkthrough opens on Naji, who is where the guard sends you.\n\nEight rungs and two observable points, the Adaman Ore you bring and the Frag Rock you leave with. Both are ordinary items. The Adaman Ore count is 'one for every 6 players in your party or alliance', which is a live party size the addon cannot check, so the rung carries 1 and the note carries the rule -- flagged count_unobservable.\n\nThe ore rung has no zone deliberately: the page's own first answer is the Auction House, and mining it in Ifrit's Cauldron is called a long session at a Very Rare rate. Pointing a marker at the mining points would be sending a player on the page's worst option.\n\nBullet 7 splits into the trade that pops the NMs and the kill that drops the rocks, the standard split. Only the Bomb, Magma, has to die -- Salamander is recorded because the page names it and it is in the same pull.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "Return of the Talekeeper",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in front of the President's Office; may take several tries for the right cutscene. This page gives no grid -- (J-8) is from the earlier Bastok pages in this lane."
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gilgamesh"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "behind the Oaken Door; keep talking until he mentions Frag Rocks"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Adaman Ore",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "one per six players in the party or alliance -- the addon cannot see party size, so the rung asks for one. Auction House first; mining it in Ifrit's Cauldron is Very Rare and the page says to expect a long session."
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ifrit's Cauldron"
+    },
+    "zone": "Yhoator Jungle",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "Ifrit's Cauldron HP #1 then Escape and zone back in is fastest; Unity Warp 122 to Yhoator Jungle and hug the right wall, or the Elshimo Uplands outpost or Survival Guide"
+   },
+   {
+    "n": 5,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ifrit's Cauldron",
+    "grid": "H-7",
+    "items": [
+     {
+      "name": "Adaman Ore",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Magma",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Salamander",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     6,
+     7
+    ],
+    "note": "Map 1, in a lava flow area: left at the first intersection, right at the next. Sneak and Invisible get you past the Bats and Bombs."
+   },
+   {
+    "n": 6,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ifrit's Cauldron",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Frag Rock",
+       "kind": "item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Magma",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Salamander",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7,
+     8
+    ],
+    "note": "only Magma, the level 65 Bomb, has to die; it drops 6 Rare/Ex Frag Rocks. Barfira recommended, it may Self-Destruct. Sneak-pull it and leave the Lizard alone."
+   },
+   {
+    "n": 7,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Gilgamesh"
+    },
+    "zone": "Norg",
+    "grid": "K-8",
+    "items": [
+     {
+      "name": "Frag Rock",
+      "kind": "item",
+      "count": 1
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "everyone in the group needs their own before going back"
+   },
+   {
+    "n": 8,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Naji"
+    },
+    "zone": "Metalworks",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": "Rank 7 and 40,000 gil"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 7-1",
+   "page_id": 13178,
+   "revision_id": 769204,
+   "source_sha256": "f79a3030b0592837d28936fb0edb1bf64cd2151352d3ed922c0550bd28331bd7",
+   "cache_file": "0013178_bastok_mission_7_1"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 18,
+   "dat_name": "The Final Image",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name",
+   "roaming_target"
+  ],
+  "notes": "Start AGREES with chronicle (argus); the walkthrough opens on Cid.\n\nThe interesting decision is rungs 3 and 5, which carry NO grid on purpose. The ??? moves between ten listed positions roughly every 15 minutes, and it can move mid-fight; any one of the ten written into `grid` would be wrong nine times out of ten and would be a marker sending a player to a specific spot the object is not at. The zone is right and the ten positions are in the note where a reader can use them. The page also warns that the ??? at (M-8) is a different one, which is exactly the sort of thing a single guessed grid would collide with.\n\nSame double-check shape as Bastok Mission 6-1: examine, fight, examine again, and only the second examine produces the [KI] Reinforced cermet, which is the mission's only observable and is not in the Reward field.\n\nPREVIOUS FIELD TYPO, corrected deliberately: the header writes 'Bastok Mission 6-2 | The Pirate's Cove', but that mission's DAT name -- the one the client uses and the one in this very lane's record for bastok/17 -- is 'The Pirates' Cove', with the apostrophe after the s. gates.prev carries the DAT spelling so build_index.lua's resolve_prev_name can actually match it; the wiki's spelling would have resolved to nothing.\n\nCid's grid is this page's own (H-8). Bastok Mission 1-2 puts his lab at (G-8). Each record keeps what its own page says.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Pirates' Cove",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ro'Maeve"
+    },
+    "zone": "The Sanctuary of Zi'Tah",
+    "grid": "F-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "everything in Ro'Maeve aggros magic and most aggro sound and sight too. Unity Warp 125 lands at (H-11), the Survival Guide at (H-6)."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ro'Maeve",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mokkurkalfi",
+      "count": 2,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4
+    ],
+    "note": "it MOVES about every 15 minutes among (D-10), (E-9), (E-10/11), (G-9), (I-8), (J-8), (K-10), (K-11), (L-10) and (L-7), west to east -- no single grid is right, so none is given. The ??? at (M-8) is unrelated to this mission."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ro'Maeve",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Mokkurkalfi",
+      "count": 2,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "two Golem NMs; sneak-pullable despite Golems being sight aggro, and you only refight them if you zone or die"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Ro'Maeve",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Reinforced cermet",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "check it AGAIN; it may have moved during the fight, in which case find it again"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cid"
+    },
+    "zone": "Metalworks",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bastok Mission 7-2",
+   "page_id": 11808,
+   "revision_id": 737130,
+   "source_sha256": "13f1e5996864574dcd5d58a6eab0b7d17475cdae14b4f25bb9dc6f929aaca19a",
+   "cache_file": "0011808_bastok_mission_7_2"
+  },
+  "identity": {
+   "cat": "mission",
+   "area": "bastok",
+   "id": 19,
+   "dat_name": "On My Way",
+   "match_rule": "header_mission_name",
+   "match_conf": "exact"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/mission-1",
+   "extracted_at": "2026-08-14",
+   "verify": null
+  },
+  "confidence": "high",
+  "review_flags": [
+   "generic_npc_name"
+  ],
+  "notes": "Start AGREES with chronicle (argus); the walkthrough opens on Karst.\n\nThe target name for the President is 'Karst', not 'President Karst': bullet 1 writes 'the President Karst' with the title attached, but bullet 6 writes plainly 'speak to Karst', so the bare entity name is on the page and is what the rungs carry. No name is invented.\n\nSeven rungs, one observable: the [KI] Letter from Werei out of the BCNM. It is not in the Reward field -- the reward is Rank 8 and 60,000 gil -- and it is still in hand at rung 7, which is the point, because Gumbah has to read it.\n\nGumbah is the mission's real ending and the page is emphatic about how badly it goes wrong: he prioritises The Voracious Resurgence, he runs through unrelated cutscenes first, and after a Voracious Resurgence epilogue cutscene you have to zone before he will continue. All of that is in the rung's note because none of it is a separate action.\n\nThe Notes section's Cornelia's door is a cutscene you can take after the fact, and a second one after three unrelated quests. It is not part of this mission and is not a rung.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": null
+   },
+   "prev": [
+    {
+     "title": "The Final Image",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Argus",
+   "zone": "Port Bastok",
+   "grid": "L-7",
+   "raw": "Any Bastok Gate Guard"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Karst"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "in the President's Office; the page gives no grid for it"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hilda"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "at the Steaming Sheep, HP #3; you can talk to her from the bottom floor"
+   },
+   {
+    "n": 3,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Waughroon Shrine"
+    },
+    "zone": "Waughroon Shrine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "reached through the Palborough Mines, or from the Palborough Mines home point. Domenic in Lower Jeuno (J-7) teleports you straight to the battlefield for 750 gil."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Burning Circle"
+    },
+    "zone": "Waughroon Shrine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the BCNM 'On My Way': six-person uncapped, buffs erased on entry, Trusts allowed, no EXP loss"
+   },
+   {
+    "n": 5,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Waughroon Shrine",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "name": "Letter from Werei",
+       "kind": "ki",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Sa'Nha Soulsaver",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Go'Bha Slaughterer",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Ku'Jhu Graniteskin",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Da'Shu Knightslayer",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "all four Quadav use their SP abilities. The standard line is Sleepga and one at a time, pulling the WHM to the bottom of the ramp first so Benediction does not wake the rest."
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Karst"
+    },
+    "zone": "Metalworks",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "Rank 8 and 60,000 gil -- but the mission is not over"
+   },
+   {
+    "n": 7,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Gumbah"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "the house next to HP #3 -- up the stairs to the second floor and across the bridge. Keep clicking until he actually READS the letter: he runs through other cutscenes first, he prioritises The Voracious Resurgence if that is active, and after one of its epilogue cutscenes you must zone before he will go on."
+   }
+  ]
+ }
+]

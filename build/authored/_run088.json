@@ -1,0 +1,1784 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Test of True Love",
+   "page_id": 34056,
+   "revision_id": 763827,
+   "source_sha256": "45ed5e1772f97c4a217c19d1ccdb1aa4c9c95db7ff36150d8d7275e33afc1bcd",
+   "cache_file": "0034056_a_test_of_true_love"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 62,
+   "dat_name": "A Test of True Love",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "or_branch_unmodelled"
+  ],
+  "notes": "The three song pages are KEY ITEMS, not items: the wiki writes them as Item:\"Un Moment\" but bullet 4 calls them key items, and the resolver settles it -- only the ki table has them, and only WITH the literal quotation marks around the name (ids 339/340/341). The bare forms resolve to nothing at all, so the quotes are kept verbatim.\n\nBullet 3 is one instruction covering three zones, so it splits into three steps sharing a group -- the page gives no order and there is none. \"Un Moment\" is in Castle Zvahl Baileys OR Castle Zvahl Keep, and that is the one thing here that cannot be modelled: a step has one zone, and making it two steps is not a way out, because both would have to carry \"Un Moment\" as evidence and duplicate evidence is a hard demotion. Baileys is recorded and the Keep lives in the note.\n\nBullet 1 is a precondition, not a step. Bullets 4 and 5 are one visit to Carmelo split by a zone-out; both rungs point at the same NPC and neither is observable, so they merge into one turn-in with the zone-out in the note.\n\nVERIFY: demoted to medium. Step 2's zone is a coin flip the schema cannot hold -- the page says Castle Zvahl Baileys OR Castle Zvahl Keep, and half the time the recorded marker is in the wrong zone. The draft flagged or_branch_unmodelled and then kept high anyway; an unmodellable branch that decides where a marker is drawn is exactly the medium case. Nothing else here is wrong: the three pages are distinct key items, each is obtained at its own step, the source order is preserved and every name resolves with the quotes kept.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 6,
+    "raw": "Bastok / 6"
+   },
+   "prev": [
+    {
+     "title": "Love and Ice",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Carmelo",
+   "zone": "Port Bastok",
+   "grid": "E-6",
+   "raw": "Carmelo - Port Bastok (E-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Carmelo"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is the precondition, not a step -- you must zone after finishing Love and Ice before he will talk"
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Castle Zvahl Baileys",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"Un Moment\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "pages",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says Castle Zvahl Baileys OR Castle Zvahl Keep; one step has one zone, so Baileys is recorded and the Keep is here"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Labyrinth of Onzozo",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"L'Ancienne\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "pages",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "obtain",
+    "target": {
+     "type": "object",
+     "name": "Treasure Chest"
+    },
+    "zone": "Sea Serpent Grotto",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "\"L'Ephemere\"",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "pages",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 5,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Carmelo"
+    },
+    "zone": "Port Bastok",
+    "grid": "E-6",
+    "items": [
+     {
+      "name": "\"Un Moment\"",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "\"L'Ephemere\"",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "\"L'Ancienne\"",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "all three at once. Bullet 5 is the same NPC again: after the conversation you must zone out and speak to him one last time, which is one more rung on the same marker rather than a step of its own."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Stars of Ifrit",
+   "page_id": 26322,
+   "revision_id": 750525,
+   "source_sha256": "210ee945df69f232eebd30cb1da17cae769cf7ae88d71072380a01eeacb2280f",
+   "cache_file": "0026322_the_stars_of_ifrit"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 42,
+   "dat_name": "The Stars of Ifrit",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "time_gated"
+  ],
+  "notes": "Bullet 1 is a requirement, not a step -- the [KI] Airship pass comes from another quest entirely and is never obtained here, so it gates nothing the schema can express and is not used as evidence.\n\nThe airship IS a real zone and the page names it: \"the San d'Oria-Jeuno airship\" resolves to zone 223, so the boarding step and the ??? step both keep a place. Bullets 4 and 5 are one act -- find the abnormal ??? and touch it -- and the ??? is an object that can never carry a marker, so it is one rung with the key item on it.\n\nFull Moon AND night time together, which is the whole trick of the quest and completely invisible to the addon; the page's own advice is to watch /clock. Nothing else here is unclear.\n\nVERIFY: demoted to medium. The ladder is right, but steps 2 and 3 sit behind a Full Moon AND night-time gate that nothing observable reports, so the addon will draw them at times the quest cannot be advanced at all. The draft says so itself and then scores high; an unmodellable gate is the medium case. Evidence placement, order and the airship zone are all sound and are left alone.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 3,
+    "raw": "Bastok / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Agapito",
+   "zone": "Port Bastok",
+   "grid": "G-6",
+   "raw": "Agapito - Port Bastok (G-6)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Agapito"
+    },
+    "zone": "Port Bastok",
+    "grid": "G-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "you need the [KI] Airship pass before he will start it; that is bullet 1's requirement, not something you do here"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "San d'Oria-Jeuno Airship"
+    },
+    "zone": "San d'Oria-Jeuno Airship",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "during a Full Moon at night only -- neither is visible to the addon. /clock on shows the moon phase."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "San d'Oria-Jeuno Airship",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Carrier pigeon letter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "somewhere on the ship, and only inside that time window; the page gives no position"
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Agapito"
+    },
+    "zone": "Port Bastok",
+    "grid": "G-6",
+    "items": [
+     {
+      "name": "Carrier pigeon letter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Led Astray",
+   "page_id": 38787,
+   "revision_id": 729856,
+   "source_sha256": "a226a8b17da7e22ca6e7b952cccbcfcbfc731d765596d16a2f61395b102933a0",
+   "cache_file": "0038787_led_astray"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 65,
+   "dat_name": "Led Astray",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unnamed_target",
+   "bullet_split"
+  ],
+  "notes": "A clean errand: five conversations and two walk-into cutscenes, all but the last inside Aht Urhgan Whitegate. Bullet 4 is two NPCs joined by \"and then\", so it splits into two ordered steps rather than a group -- the page gives an order and there is no reason to loosen it.\n\nTwo steps are unmarkable and honestly so. Bullet 2's target is written only as \"the pillar\", which is a description and not a name, so target is none rather than a guess; bullet 5 is a spot on the ground at (I-11) with nothing to click at all. Both keep their zone and grid, so they still tell you where to stand.\n\nThe Port Ephramad choice at Tohka Telposkha, Rubahah and Cacaroon is not a step and not observable -- a wrong pick just lets you choose again. Fame reads \"Treasures of Aht Urhgan\", the expansion name in the fame field, and the resolver maps it to the Aht Urhgan region anyway; raw is kept verbatim.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "Treasures of Aht Urhgan / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Mhasbaf",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "J-8",
+   "raw": "Mhasbaf, Aht Urhgan Whitegate (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mhasbaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "downstairs from Mhasbaf, same grid; the page calls it only \"the pillar\" and never names it, so no target is recorded"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tohka Telposkha"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "tell the Galka to go to Port Ephramad; any other option can simply be picked again"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rubahah"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "F-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "same Port Ephramad choice"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Cacaroon"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "G-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "same again; the page says Rubahah \"and then\" Cacaroon, so these stay ordered"
+   },
+   {
+    "n": 6,
+    "kind": "cutscene",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-11",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Letter from Bernahn",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "down the ramp beside the ferry; the cutscene fires on arrival, there is nothing to click"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Tataroon"
+    },
+    "zone": "Nashmau",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Letter from Bernahn",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the only step outside Aht Urhgan Whitegate"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Glyph Hanger",
+   "page_id": 131,
+   "revision_id": 765489,
+   "source_sha256": "2aa9d9051cf3c69faa942637e9c31344581cb1a0e95fc4f3c103a5027b14ce68",
+   "cache_file": "0000131_glyph_hanger"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "windurst",
+   "id": 30,
+   "dat_name": "Glyph Hanger",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "A three-rung courier quest and both rungs that matter are observable: the two notes are key items with distinct ids (25 and 26), so the ladder tracks itself perfectly. Bullets 1 and 2 are one conversation -- being given the note is not a separate act -- so they merge, and the note is step 1's evidence.\n\n\"Windurst Waters (north)\" is half of zone 238 and not a zone of its own, so it is recorded as Windurst Waters. Ipupu's position is given as a two-cell range (I-8/J-8); the first cell is recorded and the range is in the note. Bullet 4 is the delivery back to Hariga-Origa plus the reward line, which is an outcome and adds no rung.",
+  "gates": {
+   "fame": {
+    "region": "Windurst",
+    "level": 1,
+    "raw": "W / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Hariga-Origa",
+   "zone": "Windurst Waters",
+   "grid": "F-8",
+   "raw": "Hariga-Origa, Windurst Waters (F-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Hariga-Origa"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Note from Hariga-Origa",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "the page says Windurst Waters (north), which is one half of zone 238 rather than a zone of its own"
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Ipupu"
+    },
+    "zone": "West Sarutabaruta",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Note from Hariga-Origa",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Note from Ipupu",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the page gives (I-8/J-8), near the entrance to Windurst Waters; the first cell is recorded"
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Hariga-Origa"
+    },
+    "zone": "Windurst Waters",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Note from Ipupu",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the map and the experience points are the reward, not a rung"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Hyper Active",
+   "page_id": 34227,
+   "revision_id": 771133,
+   "source_sha256": "368d9f28036c2b92a49c1b3854fc122abd2415ba90cefc82de8c66ad7d106382",
+   "cache_file": "0034227_hyper_active"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 80,
+   "dat_name": "Hyper Active",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled",
+   "bullet_split"
+  ],
+  "notes": "Bullet 5 is two acts in one sentence -- kill Orna, then touch the Cermet Door again -- so it splits into a fight and a second examine of the same door. That does wedge an unmarkable fight between two steps on the same object, but the page really does work that way and the door is the thing you click both times.\n\nThe basement entry is a genuine OR: \"A Delkfutt Key or [KI] Delkfutt key\". Both resolve, as separate resources (item 549 and key item 1111), so it is modelled properly -- items holds the item, items_alt the key item.\n\nThe [KI] Molybdenum box is granted at step 1 and then never mentioned again by the walkthrough; it is presumably what the altimeter goes into. It is used as step 1's evidence because that is where it is obtained and it is the only observable thing early in the ladder. The Street Lamps in Lower Jeuno are a search with no grid given and no count -- \"until you find\" -- so the altimeter carries that step rather than any position.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 4,
+    "raw": "Bastok / 4"
+   },
+   "prev": [
+    {
+     "title": "Teak Me to the Stars",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Raibaht",
+   "zone": "Metalworks",
+   "grid": "G-8",
+   "raw": "Raibaht - Metalworks (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Molybdenum box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "bullet 1 is a precondition -- zone first if you have just finished Teak Me to the Stars"
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Lower Delkfutt's Tower"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": null,
+    "items": [
+     {
+      "name": "Delkfutt Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [
+     {
+      "name": "Delkfutt key",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "down to the basement; the consumable Delkfutt Key and the permanent [KI] Delkfutt key are different resources and either one works"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Door"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Orna",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Fomorian Spear",
+      "count": 2,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "(I-6) on the basement map"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Orna",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "Orna only -- killing him depops the two Fomorian Spears"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Cermet Door"
+    },
+    "zone": "Lower Delkfutt's Tower",
+    "grid": "I-6",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same door again, after Orna is dead"
+   },
+   {
+    "n": 6,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Street Lamp"
+    },
+    "zone": "Lower Jeuno",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Hyper altimeter",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "inspect them until one yields the altimeter; the page gives no grid and no count"
+   },
+   {
+    "n": 7,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Raibaht"
+    },
+    "zone": "Metalworks",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Hyper altimeter",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Chacharoon's Cheer",
+   "page_id": 113364,
+   "revision_id": 721833,
+   "source_sha256": "969bd8fd4ce3d4ae22b26c9fa435280d87945beb55a31c9631623da78d8cafbc",
+   "cache_file": "0113364_chacharoon_s_cheer"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "other",
+   "id": 204,
+   "dat_name": "Chacharoon's Cheer",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "start_is_zone_entry",
+   "rank_gate_unmodelled"
+  ],
+  "notes": "Three bullets, exactly one of which is a step. The quest is a single trade.\n\nThe real gate is Monster Rearing level 2, which is reached by tending Mog Garden creatures day after day once you hold \"Sakura and the Magic Spoon\". Nothing in the packets reports a Monster Rearing rank, and that key item does not resolve against res/key_items.lua at all, so the gate is recorded only in prose -- which is why this is medium and not high. The ladder itself is not in doubt.\n\nThe header's giver, the Green Thumb Moogle, is never mentioned by the walkthrough; the only entity you touch is Chacharoon. The Moogle is kept as start because it resolves, it is a real standing NPC in the Mog Garden, and the page gives no positive contradiction -- only silence. Bullet 3 and its sub-bullet are outcomes: the \"Discuss a cheering effect\" option and the automatic [KI] Cheer: Lamb are what completing the quest hands you, and by the reward rule the Cheer key item is not used as evidence even though it resolves (2716).\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The header writes the zone \"Mog Gardens\"; both forms resolve to zone 280.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Other / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Cry Not, Caretaker",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Green Thumb Moogle",
+   "zone": "Mog Garden",
+   "grid": null,
+   "raw": "Green Thumb Moogle, Mog Gardens"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Mog Garden"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "The quest opens on zoning in, once Monster Rearing has reached level 2 a rank nothing observable reports."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Chacharoon"
+    },
+    "zone": "Mog Garden",
+    "grid": null,
+    "items": [
+     {
+      "name": "Gold Beastcoin",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the trade finishes the quest outright; bullet 3 is what you get for it, not another rung"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Painful Memory",
+   "page_id": 14893,
+   "revision_id": 699268,
+   "source_sha256": "570cf4ce3235f4973d7c52be2ef81987c48463db729f375574304a7710bc03fe",
+   "cache_file": "0014893_painful_memory"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 63,
+   "dat_name": "Painful Memory",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "bullet_split"
+  ],
+  "notes": "This page's numbering starts AFTER the first step: the opening line -- speak to Mertaire at the Merry Minstrel Meadhouse, receive [KI] Mertaire's bracelet -- is an unnumbered paragraph above bullet 1. It is recorded as source bullet 0 so the offset stays visible rather than silently shifting every other step's citation.\n\nBullet 3 is two acts: Tros has to die, and only then do you click the pool again. Split into a fight and a second examine of the Waters of Oblivion, which does put an unmarkable fight between two steps on the same object -- but that is exactly what the page describes.\n\nThe Paper Knife is deliberately NOT evidence on the final step. It is the header's Reward, so holding it proves the quest is over, not that a rung is done. The bracelet is the one real evidence point and it lands on step 1 where it is granted.\n\nThe trailing paragraph is the useful part of the page and is not a step: the 40+ Bard gate applies to starting the quest, not to activating the pool, so you may swap to a stronger job to kill Tros. The gate is still recorded as level 40 + BRD because that is what opens the quest.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": null,
+    "raw": "Jeuno / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Path of the Bard",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 40,
+   "jobs": [
+    "BRD"
+   ],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Mertaire",
+   "zone": "Lower Jeuno",
+   "grid": "H-8",
+   "raw": "Mertaire - Lower Jeuno (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Mertaire"
+    },
+    "zone": "Lower Jeuno",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Mertaire's bracelet",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     0
+    ],
+    "note": "from the unnumbered paragraph above bullet 1, recorded as bullet 0. He is inside the Merry Minstrel Meadhouse."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Ranguemont Pass"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "head for the pool at (E-5)"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waters of Oblivion"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "E-5",
+    "items": [
+     {
+      "name": "Mertaire's bracelet",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tros",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "holding the bracelet is all that is required here -- any job may activate it. One pop clears for a whole group."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Tros",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page's closing advice is to switch to a higher-level job for this"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Waters of Oblivion"
+    },
+    "zone": "Ranguemont Pass",
+    "grid": "E-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the same pool again, once Tros is dead. The cutscene and the Paper Knife follow immediately; the knife is the quest Reward, so it is not used as evidence, and there is no NPC to hand in to."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Groceries",
+   "page_id": 26191,
+   "revision_id": 683652,
+   "source_sha256": "c38e1eb104ee0bbdf194ac66e667ae1e42ca17c2859ab582831eb97dfe5afed9",
+   "cache_file": "0026191_groceries"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "bastok",
+   "id": 37,
+   "dat_name": "Groceries",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_modelled"
+  ],
+  "notes": "The page forks on something no packet can see: whether you OPENED the key item and read it. Bullets 3-5 are the read branch, bullets 6-8 the unread branch, and the two share a spine -- Tami, then Zelman in Zeruhn Mines at (I-8), then back to Tami. Zelman's two bullets are one step carrying both citations.\n\nThe fork is modelled where it actually differs. The Meat Jerky purchase from Griselda is the read branch's extra errand, so it is optional; the return to Tami takes nothing on the unread branch and the jerky on the read branch, which is precisely items=[] with the jerky in items_alt.\n\nGriselda's step carries NO evidence on purpose. Meat Jerky is a cheap, commonly-carried vendor food, and using it as evidence would jump the mark past Zelman for anyone who happened to have some in the bag. Tami's note is the one honest evidence point.\n\nReading the note also ends the quest's repeatability, which the header still reports as Yes; the header describes the unread path and is kept.",
+  "gates": {
+   "fame": {
+    "region": "Bastok",
+    "level": 1,
+    "raw": "Bastok / 1"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Tami",
+   "zone": "Bastok Mines",
+   "grid": "J-8",
+   "raw": "Tami, Bastok Mines (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Tami"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Tami's note",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "opening and reading the key item permanently ends the quest's repeatability -- the page's own warning, and the thing the whole fork hangs on"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Zelman"
+    },
+    "zone": "Zeruhn Mines",
+    "grid": "I-8",
+    "items": [
+     {
+      "name": "Tami's note",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3,
+     6
+    ],
+    "note": "both branches pass through him; on the unread branch he says he is busy and sends you back to Tami"
+   },
+   {
+    "n": 3,
+    "kind": "obtain",
+    "target": {
+     "type": "npc",
+     "name": "Griselda"
+    },
+    "zone": "Bastok Mines",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "buy a Meat Jerky at the Bat's Lair Inn. Read branch only, which is why it is optional. No evidence: Meat Jerky is common enough that holding it would skip the mark past Zelman."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Tami"
+    },
+    "zone": "Bastok Mines",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [
+     {
+      "name": "Meat Jerky",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5,
+     7,
+     8
+    ],
+    "note": "read branch: trade the jerky for a Rabbit Mantle and the quest is finished for good. Unread branch: just speak, take 10 gil, and it stays repeatable."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Bringing Down the Mountain",
+   "page_id": 56718,
+   "revision_id": 766851,
+   "source_sha256": "5e2fdce25947b90a4bb26718df9905c0ad501764d4cc37769cf00ba9c6aad2cd",
+   "cache_file": "0056718_bringing_down_the_mountain"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 24,
+   "dat_name": "Bringing Down the Mountain",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [],
+  "notes": "Straightforward and entirely inside Abyssea - Tahrongi. The one trap is the item name: the wiki renders it twice, short then long -- \"Gunpwdr. Swathe Gunpowder Swathe\". Only the long form resolves (item 2212); the abbreviation resolves to nothing, so the long form is what is written.\n\nTen swathes are the evidence on the kill step, which is right -- they are farmed there and consumed by the trade at the next step, so the count is meaningful while you are holding them. Bullet 4's sub-bullet says you may trade them one at a time, and the reward line (500 Cruor per trade, 5,000 total) confirms it; that changes nothing about the ladder, so it is a note.\n\nBullet 5 is explicitly \"may\" and gives dialogue only, so it is optional. Fame \"atah\" is an Abyssea zone code and not one of the nine regions, so it gates nothing; the raw string and the FLevel are kept.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 3: Swathe\" is the short name and does not resolve, so the long name is used.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "atah / 2"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Diegai (A)",
+   "zone": "Abyssea - Tahrongi",
+   "grid": "H-7",
+   "raw": "Diegai (A) (H-7)/(I-7), Abyssea - Tahrongi"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Diegai (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on the (H-7)/(I-7) border, near Veridical Conflux #07"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Baladanzo (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "no quick way there; walk from Conflux #07"
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "J-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Gunpowder Swathe",
+       "count": 10
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [
+     {
+      "name": "Bog Body Qutrub",
+      "count": null,
+      "role": "drop"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Around (J-5) near Conflux #08; kill until ten drop. The wiki's \"Gunpwdr."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Baladanzo (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Gunpowder Swathe",
+      "count": 10,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all ten at once, or one at a time for 500 Cruor a trade -- the page says either is fine"
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Diegai (A)"
+    },
+    "zone": "Abyssea - Tahrongi",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     5
+    ],
+    "note": "the page says \"may\" -- additional dialogue only, after the quest is already done"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Discerning Eye (Kazham)",
+   "page_id": 38739,
+   "revision_id": 548493,
+   "source_sha256": "4d376866bcc888d2bb6c7108b98c939ec44e1c3dab3e6d6e9d98fab7d267390c",
+   "cache_file": "0038739_a_discerning_eye_kazham"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 14,
+   "dat_name": "A Discerning Eye (Kazham)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "generic_npc_name"
+  ],
+  "notes": "Six bullets and only two of them are things you do. Bullet 2 (Swift shows you a picture) is part of the same conversation; bullet 4 (look-alike NPCs spawn) is description; bullet 6 and its sub-bullets are the outcome of the guess.\n\nEverything after Swift is unmarkable, and honestly so. The page says only \"the next airship\" and never names the zone, and it names none of the look-alike NPCs -- there is nothing to name, because the whole quest is that you cannot tell them apart. Rather than leave two zoneless, targetless rungs the player cannot be tracked through, boarding and handing over merge into one step. Medium, because the ladder is right but two thirds of it can never draw anything.\n\n[KI] Dropped item resolves (348) and is the header's Item Req, and bullet 5 confirms you are holding it. The walkthrough never actually says Swift gives it to you, but step 1 is the only place it can come from, so it is step 1's evidence -- flagged here because it is an inference from the header rather than something the page states.",
+  "gates": {
+   "fame": {
+    "region": "Kazham",
+    "level": null,
+    "raw": "k / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Swift",
+   "zone": "Kazham",
+   "grid": "H-7",
+   "raw": "Swift, Kazham (H-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Swift"
+    },
+    "zone": "Kazham",
+    "grid": "H-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Dropped item",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he shows you a picture to memorise. The page never says he hands over the [KI] Dropped item, but the header requires it and bullet 5 has you holding it, and this is the only step it can come from."
+   },
+   {
+    "n": 2,
+    "kind": "turnin",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Dropped item",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "note": "board the next airship and give the item to the right one of several look-alike NPCs. The page names neither the airship zone nor any of the NPCs, so nothing is recorded for either. You get exactly one guess: right is 500 gil, wrong fails the quest."
+   }
+  ]
+ }
+]

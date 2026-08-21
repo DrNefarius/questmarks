@@ -1,0 +1,1667 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Blighted Gloom",
+   "page_id": 15028,
+   "revision_id": 772926,
+   "source_sha256": "c6319aef33504480abff6b4312628b86173a1cc8de6b411e1607b48623fcb420",
+   "cache_file": "0015028_blighted_gloom"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 81,
+   "dat_name": "Blighted Gloom",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "or_branch_unmodelled",
+   "walkthrough_in_table",
+   "unnamed_target",
+   "familiarity_gate_unmodelled"
+  ],
+  "notes": "A Fellowship quest, and the interesting decision is bullet 1's table: Luto sends you to ONE of three sites (Ordelle's Caves, Korroloka Tunnel, Ranguemont Pass) and the page cannot say which, because she picks. That is an OR over zones, not a set to visit, so it is NOT a group -- a group draws all its members and would claim you must do all three. Instead the site is one step with zone null, which matches wherever the ??? and the slime actually are, and all three candidates with their grids live in the note. Nothing is lost by the null: the target is a ???, which can never carry a marker anyway, and Metallic Slime exists only at those three spots.\n\nBullet 2 is four actions, not one: touch the ??? to pop the slime, kill it, talk to your Fellow for the line about Vitrallum, then touch the ??? again to receive it. The Fellow step keeps its rung but has no target -- an Adventuring Fellow is displayed under the name its owner gave it, so no name on the page could ever match a live entity. Vitrallum is a KEY ITEM (res id 732), not an inventory item, despite the header filing it under Item Reqs; that is why the evidence is kind ki. Its single evidence point is the second ??? touch, where you actually receive it.\n\n'Quest Reqs: Familiarity Level of 45' is a Fellowship stat with no packet behind it, so it gates nothing here. The sub-bullets on bullet 4 are Geomagnetic Fount / Nexus Cape travel advice.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Past Reflections",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Luto Mewrilah",
+   "zone": "Upper Jeuno",
+   "grid": "G-8",
+   "raw": "Luto Mewrilah, Upper Jeuno (G-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "the cutscene names which one of the three sites you are sent to"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Metallic Slime",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "one of three, chosen by Luto: Ordelle's Caves (I-5) on the second map, in from La Theine Plateau (H-7); Korroloka Tunnel (F-10) on the fifth map; Ranguemont Pass (I-9). No zone is recorded because the page cannot say which. The brief cutscene pops the slime and your Adventuring Fellow together."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Metallic Slime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "it can be spawned again three minutes after it is killed"
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "your own Adventuring Fellow, who comments on the Vitrallum. The page names no entity and none exists -- a Fellow carries the name its owner gave it -- so the target stays empty."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Vitrallum",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the same ??? again, after the Fellow's comment"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Luto Mewrilah"
+    },
+    "zone": "Upper Jeuno",
+    "grid": "G-8",
+    "items": [
+     {
+      "name": "Vitrallum",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page says only 'return to' her, so whether the Vitrallum is traded or simply carried is not stated"
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Jugner Forest",
+    "grid": "G-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the northern part of the lake. In from East Ronfaure through King Ranperre's Tomb, out at (K-5); the Jugner Geomagnetic Fount or a Nexus Cape are faster. The cutscene here completes the quest -- there is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Trial-Size Trial by Water",
+   "page_id": 38749,
+   "revision_id": 729908,
+   "source_sha256": "8167d08af1c8375c81ed9531e7814bd6688027c5e0c16ed1d120bb163febc390",
+   "cache_file": "0038749_trial_size_trial_by_water"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 148,
+   "dat_name": "Trial-Size Trial by Water",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 2
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "job_gate",
+   "zone_not_named",
+   "after_section_changed_reading"
+  ],
+  "notes": "Four bullets and only three of them are actions. Bullets 2 and 3 contradict each other and the page never resolves it: bullet 2 says trade the fork to Verctissa to be 'transported to the arena', bullet 3 says trade the same fork to the Water Protocrystal to 'enter the fighting arena'. You are given one fork and the page never says what happens to it after the Verctissa trade. Notes bullet 6 only says you may RE-OBTAIN the fork from the starting NPC and that she will then stop teleporting you to the Cloister -- which is as easily read as the fork being consumed as it is as the fork surviving. Because the walkthrough's own instruction for entering the arena is bullet 3, that is kept as the required rung and Verctissa's trade is marked optional (a shortcut the page's own Notes say you can lose and still finish). The whole quest is demoted to medium on account of that unresolved contradiction rather than asserting a mechanic the page does not state.\n\nThe walkthrough never names the Cloister zone: the Description says 'the protocrystal in the Den of Rancor' and Notes bullet 6 says only 'the Cloister'. Rather than write a zone the page does not, the protocrystal step carries zone null, which costs nothing -- there is exactly one Water Protocrystal in the game, so a null-zone row lands in the right place anyway. The battle arena is an instanced BCNM with no name at all, so that step is zone-less too.\n\n'Summoner Level 20 or higher' is both gates: level 20 AND jobs SMN. 'Outlands' is not one of the nine fame regions, so region is null and only the raw survives. Everything else in the Notes section is a battle condition -- solo only, Carbuncle only, 15 minute limit, buffs survive the level cap -- and none of it is a step.\n\nMoved out of the player-facing step notes (build vocabulary; see AUTHORING.md, 'Two notes, two audiences'):\n  step 1: The fork is an inventory item (res id 1549), not a key item.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 2,
+    "raw": "Outlands / 2"
+   },
+   "prev": [],
+   "level": 20,
+   "jobs": [
+    "SMN"
+   ],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Verctissa",
+   "zone": "Norg",
+   "grid": "H-9",
+   "raw": "Verctissa, Norg (H-9)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Verctissa"
+    },
+    "zone": "Norg",
+    "grid": "H-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Mini Tuning Fork of Water",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "As Summoner."
+   },
+   {
+    "n": 2,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Verctissa"
+    },
+    "zone": "Norg",
+    "grid": "H-9",
+    "items": [
+     {
+      "name": "Mini Tuning Fork of Water",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": true,
+    "source_bullets": [
+     2
+    ],
+    "note": "a transport shortcut, not a requirement: Notes bullet 6 says she stops teleporting you once you re-obtain the fork, and the fight is still doable on foot. Prepare before trading -- you arrive ready to fight."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Water Protocrystal"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Mini Tuning Fork of Water",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "the page never names the zone -- the Description says 'the protocrystal in the Den of Rancor' and the Notes call it 'the Cloister' -- so none is recorded rather than guessed"
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Leviathan Prime",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "alone, in an unnamed instanced arena, 15 minute limit. Only Carbuncle may be summoned (the page says Siren also works but reads as unintended); buffs applied outside survive the level cap."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "An Acrididaen Anodyne",
+   "page_id": 58985,
+   "revision_id": 640027,
+   "source_sha256": "10bdb350c22bee028d235994d95da701944ccfad031fcdb42f27e091f6283760",
+   "cache_file": "0058985_an_acrididaen_anodyne"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 45,
+   "dat_name": "An Acrididaen Anodyne",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "numbered_nonsteps"
+  ],
+  "notes": "A clean five-rung Abyssea loop, but the page has a trap at the bottom: the '== Augments ==' section's contents are rendered as top-level bullets [7] to [11] ('Resist Paralyze+1~3', '+1~5', 'Attack+1~6'). They continue the walkthrough's numbering but they are the reward ring's augment table, not steps -- a verb-scanner would produce five nonsense rungs from them.\n\nBullet 2 is only the journey to the grass at (I-10), so it merges into bullet 3's interaction rather than becoming a travel rung to the zone you are already standing in. The Rockhopper is a targetable spot that only appears after you /clap in the right patch, so the marker for it can never be early; the key item of the same name (res id 1623) is the evidence.\n\nThe Phial of counteragent is carried to the Gasponia flowers -- the Description says the phial is the formula that stops the fumes -- so it is items on step 4, and evidence only where it is handed over. Jakaka (A) is the page's own 'Optional:', information only. Fame 'aatt' is an Abyssea area code, not one of the nine regions, so it gates nothing and only the raw survives.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "aatt / 3"
+   },
+   "prev": [
+    {
+     "title": "Something in the Air",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Yoran-Oran (A)",
+   "zone": "Abyssea - Attohwa",
+   "grid": "G-10",
+   "raw": "Yoran-Oran (A) (G-10), Abyssea - Attohwa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "at the base camp"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Jakaka (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     1
+    ],
+    "note": "the page's own 'Optional:' sub-bullet -- background on the quest, nothing else"
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Rockhopper"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "I-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Rockhopper",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "the small grass patch by the bones in the south-east of (I-10). Move around using /clap until the glowing Rockhopper spot appears, then interact with it. Veridical Conflux #03 is near, but the smoke at (J-9) may block the way -- running from base camp is often quicker."
+   },
+   {
+    "n": 4,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "G-10",
+    "items": [
+     {
+      "name": "Rockhopper",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Phial of counteragent",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the page says 'speak to'; the Rockhopper key item goes to him either way"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Gasponia"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "F-8",
+    "items": [
+     {
+      "name": "Phial of counteragent",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the targetable flowers spread across (F-8) and (F-9); (F-8) is recorded and both are here. Veridical Conflux #00 is nearby."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Yoran-Oran (A)"
+    },
+    "zone": "Abyssea - Attohwa",
+    "grid": "G-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "the ring reward comes with a random augment, which is what bullets 7 to 11 are listing"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Tigress Strikes",
+   "page_id": 19726,
+   "revision_id": 747000,
+   "source_sha256": "ba73f30bdadf66f64ce879822503213a95f237c5887e00729d4408e33c87d1b7",
+   "cache_file": "0019726_the_tigress_strikes"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 18,
+   "dat_name": "The Tigress Strikes",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "unverified_page",
+   "bullet_split"
+  ],
+  "notes": "A straight there-and-back ladder with one split: bullet 3 is two actions on the same ??? at (I-9) -- touch once for a cutscene, touch again to pop War Lynx -- and then bullet 4 sends you back to the same ??? a third time after the kill. Touch one and touch two are kept as a single rung because nothing observable separates them; the post-kill touch is its own rung because the fight sits between them, exactly as the page has it.\n\n'Leave the fortress back to the main map' is a map change inside Fort Karugo-Narugo (S), not a zone change, so steps 2 to 5 all stay in that one zone. The sub-bullet on bullet 2 (Cavalry Gate at (F-8), or the Phosphorous Ward at (I-9) to drop the magic gate) is route advice for reaching the Fivespires map and is kept as a note rather than a rung -- it is an OR between two ways in, and neither is observable.\n\nThe page is in Category:Verification and its own War Lynx HP figure is tagged unverified; nothing that affects the ladder depends on it. The Notes section is a reminder to touch a Cavernous Maw for a later mission, not a step of this quest. No key item appears anywhere, so this quest has no evidence at all -- the ladder rests on the session latch.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "(empty) / (empty)"
+   },
+   "prev": [
+    {
+     "title": "The Tigress Stirs",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Dhea Prandoleh",
+   "zone": "Windurst Waters (S)",
+   "grid": "H-10",
+   "raw": "Dhea Prandoleh - Windurst Waters (S) (H-10)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "she sends you to Rotih Moalghett"
+   },
+   {
+    "n": 2,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Rotih Moalghett"
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": "I-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "(I-8) of the Fivespires map -- the second-floor ledge east of centre, by The Spiritwell between Spiderleg and Tigermaw. Get onto that map through the Cavalry Gate at (F-8), or touch the Phosphorous Ward at (I-9) to lower the magic gate."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "War Lynx",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "back out on the main map. The first touch is a cutscene; touch it again to spawn the NM."
+   },
+   {
+    "n": 4,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "War Lynx",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "roughly 7,000 HP by the page's own unverified figure; sleepable, resists Thunder, and many TP moves can be avoided by facing away"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Fort Karugo-Narugo (S)",
+    "grid": "I-9",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "the same ??? once more, after the kill, for another cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Dhea Prandoleh"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "H-10",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "True Will",
+   "page_id": 11370,
+   "revision_id": 754961,
+   "source_sha256": "7965377dcd8f62248125e4fc8671b55c179db84d24fe6f76f77e86a0c5b56ed4",
+   "cache_file": "0011370_true_will"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 145,
+   "dat_name": "True Will",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "or_branch_modelled"
+  ],
+  "notes": "Ten bullets, but bullet 4 is not a step at all -- it is the roster of the three Sahagin that bullet 3 spawned, so its names go onto the spawn and the fight and it never gets a rung of its own. Bullet 2 is only the walk to (I-7), where bullet 3's ??? already is, so the two merge; the Survival Guide and Unity Warp lines under it are travel advice.\n\nOnly ONE of Kappa Akuso, Kappa Biwa and Kappa Bonze has to die, which is why all three are recorded with count 1 and the note carries the constraint -- there is no count that means 'any one of these'. The ??? is touched twice, before and after, and the second touch is where the Old trick box arrives, so that is its evidence and the fight has none.\n\nThree separate key/box items make this an unusually well-evidenced ladder: Old trick box at the ???, Kuftal Coffer Key in the tunnel, Large trick box from the coffer, each on exactly the step that grants it. The coffer key's two sources (drop in Kuftal Tunnel, or the Curio Vendor Moogle) both end in the same item, so items_partial stays false -- nothing is inexpressible, it is the same evidence either way. 'Level: 50+ Ninja' is both gates.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "OT / (empty)"
+   },
+   "prev": [
+    {
+     "title": "I'll Take the Big Box",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "NIN"
+   ],
+   "repeatable": true,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Ryoma",
+   "zone": "Norg",
+   "grid": "H-8",
+   "raw": "Ryoma - Norg (H-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ryoma"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "as Ninja"
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Yhoator Jungle",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kappa Akuso",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Kappa Biwa",
+      "count": 1,
+      "role": "spawn"
+     },
+     {
+      "name": "Kappa Bonze",
+      "count": 1,
+      "role": "spawn"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "northwest of Bloodlet Spring. Survival Guide (Elshimo Uplands to Yhoator Jungle) from east of Home Point #1 in Norg is quickest; Unity Warp lands at (J-7). Be prepared before touching it -- all three pop at once."
+   },
+   {
+    "n": 3,
+    "kind": "fight",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Yhoator Jungle",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Kappa Akuso",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Kappa Biwa",
+      "count": 1,
+      "role": "kill"
+     },
+     {
+      "name": "Kappa Bonze",
+      "count": 1,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4,
+     5
+    ],
+    "note": "Monk, Bard and White Mage. Only ONE of the three has to be killed -- the recommended play is to zone to Den of Rancor and fight one while the others despawn. All three are listed because the page does not say which."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Yhoator Jungle",
+    "grid": "I-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Old trick box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the same ??? again. The key item will not appear until the Sahagin have fully despawned, corpses included."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Ryoma"
+    },
+    "zone": "Norg",
+    "grid": "H-8",
+    "items": [
+     {
+      "name": "Old trick box",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "another cutscene"
+   },
+   {
+    "n": 6,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Leodarion"
+    },
+    "zone": "Rabao",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "west side of the lake, near the windmill"
+   },
+   {
+    "n": 7,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Kuftal Coffer Key",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "a drop in the tunnel, or bought from the Curio Vendor Moogle -- both end in the same key, so nothing is left inexpressible. Survival Guide (Vollbow to Kuftal Tunnel) or Unity Warp are the fast routes. The page names no drop source, so no mobs are recorded."
+   },
+   {
+    "n": 8,
+    "kind": "trade",
+    "target": {
+     "type": "object",
+     "name": "Treasure Coffer"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [
+     {
+      "name": "Kuftal Coffer Key",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Large trick box",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the page gives no grid for the coffer -- they wander the zone"
+   },
+   {
+    "n": 9,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Leodarion"
+    },
+    "zone": "Rabao",
+    "grid": "F-7",
+    "items": [
+     {
+      "name": "Large trick box",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     10
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "A Mightier Martello (Altepa)",
+   "page_id": 67161,
+   "revision_id": 625411,
+   "source_sha256": "56269a8337fa277faae54e70b1fac1e13dc6baa79cb18de09820d370281dd263",
+   "cache_file": "0067161_a_mightier_martello_altepa"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "abyssea",
+   "id": 157,
+   "dat_name": "A Mightier Martello (Altepa)",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "time_gated",
+   "consumed_key_item",
+   "grid_unknown"
+  ],
+  "notes": "Five bullets that are really three rungs. Bullets 2, 3 and 4 are one continuous interaction with a single Martello -- find it, open its menu, choose 'Prepare to upgrade martello', confirm, then stand where the MENU says (the page warns the log gives a different, wrong direction). Splitting those into three would put two unmarkable rungs on the same object and gain nothing.\n\nThe key-item swap is the quest's only observable: the Fuel reservoir arrives at bullet 1 and is silently replaced by the Cracked fuel reservoir at the martello, which the page notes never reaches the log. Two key items, two steps, no overlap. Both resolve (res 1560 and 1562).\n\nThe unnumbered line above bullet 1 is a cooldown -- one Refuel and Replenish OR A Mightier Martello per Vana'dielian day across all of Abyssea -- and is not a step. Nor is the warning that zoning mid-quest destroys the key item, but it is worth keeping in the note because it is the one way to lose the ladder halfway. The page deliberately gives no martello grids, pointing at the Martello page and the Confluxes instead, so the middle step has a zone and no grid.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": 3,
+    "raw": "aalt / 3"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": true,
+   "expansion": "abyssea"
+  },
+  "start": {
+   "npc": "Machine Outfitter (Altepa)",
+   "zone": "Abyssea - Altepa",
+   "grid": null,
+   "raw": "Machine Outfitter (Altepa), Abyssea - Altepa"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Altepa)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "near the zone entrance; choose 'Assist with upgrades'. Do not zone at any point after this -- it destroys the key item and you start over."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Martello"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Cracked fuel reservoir",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     4
+    ],
+    "note": "any martello in the zone, usually near a Conflux; the page lists no grids. Pick 'Prepare to upgrade martello' and confirm, then stand in the direction the MENU gives -- the log names a different one and is wrong. One already at 100% still works. The Fuel reservoir becomes the Cracked fuel reservoir with no log message."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Machine Outfitter (Altepa)"
+    },
+    "zone": "Abyssea - Altepa",
+    "grid": null,
+    "items": [
+     {
+      "name": "Cracked fuel reservoir",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "the cruor paid depends on which direction you completed the upgrade from"
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Downward Helix",
+   "page_id": 27299,
+   "revision_id": 751922,
+   "source_sha256": "be8ab0a5a70067ddcc550f406b2e43fa85ad6d6e16bae993b1e2df645a223a4a",
+   "cache_file": "0027299_downward_helix"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 33,
+   "dat_name": "Downward Helix",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "af_job_gate",
+   "weather_unobservable",
+   "zone_entry_trigger",
+   "time_gated"
+  ],
+  "notes": "Scholar AF, and two of its six bullets are pure zone-line triggers rather than places to click: bullet 2 fires on zoning into Southern San d'Oria (S) specifically from East Ronfaure (S) -- the page says Survival Guide and telecrystal do not count -- and bullet 4 the same for Sauromugue Champaign (S) from Rolanberry Fields (S). Those are travel steps targeting the destination zone, with the required approach in the note; there is no entity to point at, and inventing one would be worse than a zone marker.\n\nBullet 5 is the only rung with anything observable on it: the Indescript Markings targetable spot in the south-eastern corner of (J-7), which grants Ulbrecht's mortarboard (res 985). The page also warns it VANISHES in Dusty weather, which nothing in the packets reports, so the marker can point at empty ground -- flagged rather than hidden. There is a ??? beside it that is not part of this quest, so the target is the Markings by name and not the ???.\n\nBullet 1's sub-bullet is a game-day wait after On Sabbatical, not a step. The Notes section is a pointer to Loussaire in Bastok Markets (S) for the remaining AF pieces after this quest, and its transcluded content is unavailable here anyway -- nothing there belongs in this ladder.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Crystal War / (empty)"
+   },
+   "prev": [
+    {
+     "title": "On Sabbatical",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 50,
+   "jobs": [
+    "SCH"
+   ],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Erlene",
+   "zone": "The Eldieme Necropolis (S)",
+   "grid": "J-8",
+   "raw": "Erlene, The Eldieme Necropolis (S) (J-8)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on Scholar. You must zone and wait for the next game day after finishing On Sabbatical."
+   },
+   {
+    "n": 2,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Southern San d'Oria (S)"
+    },
+    "zone": "Southern San d'Oria (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2
+    ],
+    "note": "the cutscene only fires if you walk in from East Ronfaure (S) -- Survival Guide and telecrystal do not trigger it"
+   },
+   {
+    "n": 3,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": null
+   },
+   {
+    "n": 4,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Sauromugue Champaign (S)"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "again a zone-line cutscene, and again only from one side: in from Rolanberry Fields (S)"
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Indescript Markings"
+    },
+    "zone": "Sauromugue Champaign (S)",
+    "grid": "J-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Ulbrecht's mortarboard",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "on the ledge in the south-eastern part of (J-7), beside an unrelated ???. They disappear entirely during Dusty weather, which the addon cannot see."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Erlene"
+    },
+    "zone": "The Eldieme Necropolis (S)",
+    "grid": "J-8",
+    "items": [
+     {
+      "name": "Ulbrecht's mortarboard",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": null
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "The Kuftal Tour",
+   "page_id": 38759,
+   "revision_id": 767316,
+   "source_sha256": "07411d73a4c7d2d32481da655731fbe02d0b16aca10dda445d5f6ee68e091ed6",
+   "cache_file": "0038759_the_kuftal_tour"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "outlands",
+   "id": 195,
+   "dat_name": "The Kuftal Tour",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-04",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "max_level_gate_unmodelled",
+   "party_requirement_unmodelled",
+   "header_npc_unused"
+  ],
+  "notes": "Short and mostly correct, with one gate that has to be thrown away deliberately. 'Level: 40 or lower' is a CEILING, not a floor -- writing 40 into the level field would gate the quest to characters of level 40 and above, the exact opposite of what the page says -- so level stays null and the ceiling lives in a flag and this note. The party requirement (a second real player under 40; Trusts and Fellows do not count, Level Sync does) has no slot and nothing observable behind it either, so bullet 2 gets no rung at all: it is a precondition with no target, no zone and no evidence, and a rung for it would be pure noise.\n\nThe header names Hawk Nose as Datta's partner you are to 'meet with', but the walkthrough never has you speak to him -- the cutscene fires off a ??? near the Kuftal Tunnel entrance -- so he is not a step. The page gives no grid for that ???, only 'near the entrance', which is where the Survival Guide sits.\n\nThe Notes section is trivia: the cutscene showing your party members is rare, and you can replay it from the Goblin Footprint afterwards. Neither is a step, and the Goblin Footprint replay is post-quest.",
+  "gates": {
+   "fame": {
+    "region": "Rabao",
+    "level": null,
+    "raw": "r / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "rotz"
+  },
+  "start": {
+   "npc": "Datta",
+   "zone": "Rabao",
+   "grid": "F-7",
+   "raw": "Datta, Rabao (F-7)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Datta"
+    },
+    "zone": "Rabao",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": null
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": "Kuftal Tunnel",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "on the cliff just inside the entrance; the page gives no grid. You need a party of at least two players of level 40 or lower first -- Trusts and Adventuring Fellows do not count, Level Sync does. The Survival Guide is right at the entrance; otherwise a Rabao chocobo crosses the desert without aggro. Only non-aggressive Sand Lizards are nearby."
+   },
+   {
+    "n": 3,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Datta"
+    },
+    "zone": "Rabao",
+    "grid": "F-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "8,000 gil; the cutscene can be watched again afterwards from the Goblin Footprint"
+   }
+  ]
+ }
+]

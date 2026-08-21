@@ -1,0 +1,816 @@
+[
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Riding on the Clouds",
+   "page_id": 25425,
+   "revision_id": 773550,
+   "source_sha256": "afd3c596adc3065333c34d903893493988d9d914e32d42f572bad18e14293e9e",
+   "cache_file": "0025425_riding_on_the_clouds"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "jeuno",
+   "id": 131,
+   "dat_name": "Riding on the Clouds",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 0
+   }
+  },
+  "confidence": "high",
+  "review_flags": [
+   "clue_dependent_target",
+   "or_branch_unmodelled",
+   "unnamed_target",
+   "unmarkable_sequence_merged"
+  ],
+  "notes": "A limit-break quest whose middle is deliberately unmarkable, and that is the honest answer rather than a defect. Maat gives four riddles and the person each riddle points at is drawn per player from the four tables on the page: eight candidates in San d'Oria, eight in Bastok, eight in Windurst, eight across Selbina/Mhaura, with exactly one taken from each of the four groups. Thirty-two named NPCs are on the page and only four of them are yours, so naming any of them would place up to twenty-eight wrong markers -- exactly the failure this rebuild exists to avoid. The four trades therefore collapse into ONE step with a null target and a null zone (they span three cities and a port town, so no single zone is true), carrying all four stones as one AND-list. That is also the only correct evidence shape: bullet 4 says a seal buys 'either a Smiling stone, Scowling stone, Somber stone, or Spirited stone', so which stone comes from which region is unknowable and no stone can be pinned to its own rung. Holding all four is what proves the trading is finished, and it is exactly the condition bullet 5 gates the hand-in on.\n\nBullets 2 and 3 are not advice to discard: the header's 'Item Reqs: x4 Kindred's Seals' is a real requirement the quest never supplies, and the seals are ordinary inventory items, so they make a genuine obtain rung with real evidence. Bullet 2's warning about Kindred's Crest and the note about buying five more seals for New Worlds Await are shopping advice and stay in the note. Seals held in the Currencies pane at Shemo/Shami are NOT in inventory and will not satisfy the rung until withdrawn -- worth knowing, since the page tells you to look there.\n\n'Level 61' and 'on a level 61+ job' are the same gate stated twice: any job at 61, so jobs stays empty.",
+  "gates": {
+   "fame": {
+    "region": "Jeuno",
+    "level": 1,
+    "raw": "Jeuno / 1"
+   },
+   "prev": [
+    {
+     "title": "Whence Blows the Wind",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": 61,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": null
+  },
+  "start": {
+   "npc": "Maat",
+   "zone": "Ru'Lude Gardens",
+   "grid": "H-5",
+   "raw": "Maat, Ru'Lude Gardens (H-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1
+    ],
+    "note": "on a level 61+ job. He hands over four clues and no seals -- the page is explicit that you must supply those yourself."
+   },
+   {
+    "n": 2,
+    "kind": "obtain",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "item",
+       "name": "Kindred's Seal",
+       "count": 4
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3
+    ],
+    "note": "four seals, from any normal level 50-69 mob that checks Easy Prey or better, or 3:1 from Shemo for other seal types, or 5 login points each from the Greeter Moogle. Seals sitting in the Currencies pane at Shemo/Shami are not in inventory and will not read as held. Not Kindred's Crests, which drop from level 70+ mobs."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "none",
+     "name": null
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Kindred's Seal",
+      "count": 4,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Smiling stone",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Scowling stone",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Somber stone",
+       "count": 1
+      },
+      {
+       "kind": "ki",
+       "name": "Spirited stone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     4
+    ],
+    "note": "One seal traded to each of the four people your clues describe, one seal per person. Three clues take one person each from San d'Oria, Bastok and Windurst; the fourth takes one from Selbina or Mhaura. The page tabulates all thirty-two candidates but which four are yours is per player, so no target and no zone can be named without guessing. Order is free. Each trade returns one of the four stones, unspecified which, so the whole set is one AND-list rather than four rungs."
+   },
+   {
+    "n": 4,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Maat"
+    },
+    "zone": "Ru'Lude Gardens",
+    "grid": "H-5",
+    "items": [
+     {
+      "name": "Smiling stone",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Scowling stone",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Somber stone",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Spirited stone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "all four stones at once. The level cap rise is the reward, not a step."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Howl from the Heavens",
+   "page_id": 50594,
+   "revision_id": 753801,
+   "source_sha256": "c0a688c5f8e5a5c3da26221364933acbd695f8cedb358e0c707e08cf2f9d325c",
+   "cache_file": "0050594_howl_from_the_heavens"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "crystal_war",
+   "id": 54,
+   "dat_name": "Howl from the Heavens",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 3
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unordered_group",
+   "walkthrough_in_table",
+   "time_gated",
+   "start_is_zone_entry",
+   "zone_unnamed_by_page",
+   "mob_names_singularised"
+  ],
+  "notes": "Three of the ten rungs live inside a wikitable, not in the numbered bullets: bullet 3 says only 'collect the Magicite from the three present day beastmen strongholds again (these may be done in any order)' and the table under it holds the actual routes. Because the page says in any order outright, the three share a group and all draw at once; a strict ladder would mark Davoi and nothing else.\n\nTwo of those three sit in zones the page never names, and that decided their targets. Davoi: the Magicite is beyond the Wall of Dark Arts at (G-7), 'down the path into a large room' -- an inner zone the page does not name, so instead of inventing one the step targets the Wall of Dark Arts itself, which is a real resolvable entity standing at a named grid in a named zone, and carries the optistone as its evidence. That is a better marker than the Magicite would have been. Castle Oztroja: after the brass door 'the zone is just ahead', again unnamed, so Castle Oztroja is kept as written; if the Magicite really is over a zone line that step loses its zone and nothing else. Beadeaux is the clean one -- the page names Qulun Dome outright, so the Magicite there gets a true zone.\n\nThe Qulun Dome door is a real requirement the page only mentions sideways, in the 'glow faintly / shine brightly' troubleshooting note: the silver bell, coruscant rosary and black matinee necklace are the three key items that open it, and they are recorded as that step's items.\n\nBullet 1 is a game-day wait after Sins of the Mothers, not a step -- nothing in the packets reports Vana'diel time, so it is a note on the zone entry it gates. Bullets 6, 7 and 8 are three separate clicks on the same Windurstian Bulwark and are kept as three rungs because the page really does that: cutscene, then fight, then a SECOND cutscene that bullet 8 warns you must take before zoning or you refight the whole thing. Consecutive steps on one object are one marker anyway. The fight's sub-bullets are tactics: Romaa Mihgo and the Protective Wards must survive (Wards cannot be Cured but can be Waltzed), the Tiny Lycopodiums are optional clearing, 30 minutes, 18 players, only the initiator needs the quest, and a loss is retryable by zoning and reinspecting. None of that is a rung. The four waves are written plural -- 'Yagudo Parivirs', 'Giganotaurs', 'Blurry Eyes' -- and were singularised so they can match live entity names; 'Blurry Eyes' may genuinely be the mob's own name, in which case that one entry simply never matches. The closing 'return to Fate in Haze' line is a mission pointer.\n\nStart: the header names Robel-Akbel and the walkthrough never once speaks to him -- the quest opens on a cutscene when you zone in. Robel-Akbel is kept as the pre-start pointer because he is a real NPC standing in the right zone and the header's own giver, but step 1 is the zone entry, which is the thing you actually do. Fame 'Wings of the Goddess' is an expansion name, not one of the nine regions, so it gates nothing and only raw survives.\n\nStage D: step 2 demoted to medium and the quest with it; nothing else altered. The Davoi rung has exactly the defect the Castle Oztroja rung was already called medium for, and one more besides. The page's own words put the Shard of optistone in 'a large room' reached by walking down a path PAST the Wall of Dark Arts -- behind a zone line the page never names -- so the rung's target stands in Davoi at (G-7) while its evidence is picked up somewhere the step does not claim to be. The Wall is still the best available marker and the shard still arrives from one continuous action, so the rung stands as written; but 'high' overstated a rung whose zone the page declines to give, while the structurally identical Oztroja rung was honestly called medium, and the corpus convention is that a quest carrying a medium step is itself medium. Everything else survived: each of the three shards is obtained at its own rung and none is reused as evidence twice, the Cobra Staff is correctly refused because it is the header Reward, the three group members each carry their own zone, the wait in bullet 1 is correctly a note rather than a rung, and the three consecutive Bulwark clicks are what the page really describes rather than a split invented for it. The four wave names were left singularised rather than deleted: if 'Blurry Eyes' is the true name then that entry simply never matches, which costs no more than removing it would.",
+  "gates": {
+   "fame": {
+    "region": null,
+    "level": null,
+    "raw": "Wings of the Goddess / (empty)"
+   },
+   "prev": [
+    {
+     "title": "Sins of the Mothers",
+     "cat": null,
+     "area": null,
+     "id": null
+    }
+   ],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "wotg"
+  },
+  "start": {
+   "npc": "Robel-Akbel",
+   "zone": "Windurst Waters (S)",
+   "grid": null,
+   "raw": "Robel-Akbel, Windurst Waters (S)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Windurst Waters (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "in from West Sarutabaruta (S); the cutscene on arrival is what activates the quest. Bullet 1's game-day wait after Sins of the Mothers gates this and is invisible to the addon."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Wall of Dark Arts"
+    },
+    "zone": "Davoi",
+    "grid": "G-7",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shard of optistone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicite",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "click the Wall, then walk down the path into the large room beyond and inspect the Magicite there. The room is in an inner zone the page never names, which is why the Wall -- named, gridded and in Davoi -- is the target rather than the Magicite."
+   },
+   {
+    "n": 3,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Qulun Dome",
+    "grid": null,
+    "items": [
+     {
+      "name": "silver bell",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "coruscant rosary",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "black matinee necklace",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shard of aurastone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicite",
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "in via Beadeaux from Pashhow Marshlands (L-11), or the Beadeaux Survival Guide; back to the tunnel at (H-7), then follow the left wall to the Qulun Dome zone line. The three key items are what open that door -- if they only 'glow faintly' move closer until they 'shine brightly'."
+   },
+   {
+    "n": 4,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Magicite"
+    },
+    "zone": "Castle Oztroja",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Shard of orastone",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": "magicite",
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     3
+    ],
+    "note": "Castle Oztroja is at (L-8) in Meriphataud Mountains, or take its Survival Guide. Door at (I-8): stand between the two levers, trigger one and run straight into the door to stay on the ledge if the trapdoor opens. Second floor (G-7) into the courtyard, north to the corridor at (I-7), right wall to the door at (H-9) -- much higher level mobs here -- light the torch to be taken through, south then right, click the brass door. The page says 'the zone is just ahead' without naming it, so the Magicite may be one zone past Castle Oztroja; medium for that reason."
+   },
+   {
+    "n": 5,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Velda-Galda"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": "K-9",
+    "items": [
+     {
+      "name": "Shard of optistone",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Shard of aurastone",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Shard of orastone",
+      "count": 1,
+      "kind": "ki"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     4
+    ],
+    "note": "all three shards in hand; cutscene."
+   },
+   {
+    "n": 6,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "West Sarutabaruta (S)"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     5
+    ],
+    "note": "out from Windurst Waters (S), for another cutscene."
+   },
+   {
+    "n": 7,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Windurstian Bulwark"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     6
+    ],
+    "note": "just ahead of the zone line; cutscene only, no fight yet."
+   },
+   {
+    "n": 8,
+    "kind": "fight",
+    "target": {
+     "type": "object",
+     "name": "Windurstian Bulwark"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [
+     {
+      "name": "Yagudo Parivir",
+      "count": 6,
+      "role": "kill"
+     },
+     {
+      "name": "Giganotaur",
+      "count": 3,
+      "role": "kill"
+     },
+     {
+      "name": "Kindred Incantor",
+      "count": 6,
+      "role": "kill"
+     },
+     {
+      "name": "Blurry Eye",
+      "count": 3,
+      "role": "kill"
+     }
+    ],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     7
+    ],
+    "note": "examining the Bulwark a second time starts the fight IMMEDIATELY, on the field -- buff first. Four waves in this order; keep Romaa Mihgo and at least one of the three Protective Wards alive. Wards cannot be Cured but can be healed with Curing Waltz, and take AoE damage. 30 minutes, up to 18 players, only the initiator needs the quest. Clearing the Tiny Lycopodiums first makes targeting easier. On a loss, zone and reinspect to retry. The page writes the waves plural; singularised here to match live names, and 'Blurry Eyes' may be the real name."
+   },
+   {
+    "n": 9,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "Windurstian Bulwark"
+    },
+    "zone": "West Sarutabaruta (S)",
+    "grid": "J-8",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     8
+    ],
+    "note": "a real rung, not a flourish: take this long cutscene BEFORE zoning or the whole fight has to be done again."
+   },
+   {
+    "n": 10,
+    "kind": "travel",
+    "target": {
+     "type": "zone",
+     "name": "Windurst Waters (S)"
+    },
+    "zone": "Windurst Waters (S)",
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     9
+    ],
+    "note": "the final cutscene and the Cobra Staff come on zoning in; there is no hand-in NPC."
+   }
+  ]
+ },
+ {
+  "schema": "questmarks-authoring/1",
+  "source": {
+   "wiki_title": "Get the Picture",
+   "page_id": 38768,
+   "revision_id": 553011,
+   "source_sha256": "143dfa609e35d2aa2c06dc6fd8997a7fa7060d923bcbc40bd8731a0e0441b7b7",
+   "cache_file": "0038768_get_the_picture"
+  },
+  "identity": {
+   "cat": "quest",
+   "area": "toau",
+   "id": 4,
+   "dat_name": "Get the Picture",
+   "match_rule": "exact_verbatim",
+   "match_conf": "high"
+  },
+  "extraction": {
+   "reader": "automated",
+   "reader_version": "extract/2",
+   "extracted_at": "2026-08-03",
+   "verify": {
+    "verdict": "pass",
+    "changes": 1
+   }
+  },
+  "confidence": "medium",
+  "review_flags": [
+   "unnamed_target",
+   "unmarkable_sequence_merged",
+   "walkthrough_in_table",
+   "time_gated",
+   "weather_unobservable",
+   "reward_item_not_used_as_evidence",
+   "unverified_page"
+  ],
+  "notes": "The eight photographs are ONE rung, not eight. They are taken at ??? locations -- the page only lets that slip in bullet 14, 'revisit every ??? location' -- and a ??? can never carry a marker; they are in a fixed order; and not one of them is observable, because the Imperial Silver Piece each correct shot pays is listed in the header's Reward, which hard rule 7 forbids as evidence (and which players hold by the dozen from Besieged and Assault anyway). Eight rungs the player cannot be tracked through and cannot be marked at are the noise the pilot warned about, so the whole sequence is one step with the table in its note. That also keeps the schema's one-zone rule honest: eight pictures span eight zones, so the merged step's zone is null.\n\nBullets 5 to 11 are Balakaf's own flavour descriptions of the same eight pictures the '== Required Pictures ==' table tabulates -- they are the in-game riddles, not extra steps, and the table is the usable form of them. Pictures two and three are the SAME spot in Arrapago Reef shot twice, crystal then cluster; his 'too dark' on the second is not a failure. The header's Light Crystal x5 and Light Cluster x3 corroborate the table exactly, which is a good sign it is right.\n\nThe Image recorder is the one real surprise: the header files it under Item Reqs but it is a KEY ITEM (res/key_items 773), not an inventory item, so it is recorded as ki and it makes step 1 genuinely observable. That is the only evidence in the quest.\n\nBullet 4's Ahriman Lens repair is a conditional trade back to Balakaf, so it is an optional rung rather than a line in a note -- it is markable, it has a real item, and the header says multiple may be needed. The Imperial Gold Piece of bullets 14 and 15 is deliberately NOT evidence: it is in the header's Reward. That costs the bonus sequence its tracking but keeps rule 7, and using it would have tripped validate's evidence_is_reward demotion and dropped this quest to start-NPC only, which would cost far more.\n\nMedium overall: the page carries the wiki's own 'unverified' flag, two table rows are marked unverified, it misspells Balakaf as 'Balahaf' in bullet 13, and every gate that matters here -- weather, Vana'diel time, JP Midnight -- is invisible to the addon.\n\nStage D: no field altered; one ambiguity the reading pass did not record. Bullet 12's 'After turning in all eight correct pictures' is the only place the page hints the correct shots are handed BACK to Balakaf -- bullet 3 has the Imperial Silver Piece arrive at the picture itself and never sends you to him, and bullet 4 sends you to him only after a WRONG shot. If there is a return trip per picture then the merged rung is hiding eight talks to Balakaf and the ladder is eight rungs short. Nothing is added for it: the quest is already medium and the picture rung already medium, which is where that doubt belongs. The attacks otherwise found nothing to take away. The Image recorder is the quest's only evidence and is granted at the very rung that carries it, and the resolver confirms it is key item 773 and not an inventory item at all, so the reading pass was right to overrule the header. Both Imperial pieces are correctly refused as evidence under rule 7 even though doing so costs the bonus sequence its tracking. The lens is correctly optional -- it is reached only by failing. The merged picture rung's null zone is the only honest answer for eight zones, and its ??? target is unmarkable by nature rather than by omission. Every NPC, item, key item and zone named on this quest resolves.",
+  "gates": {
+   "fame": {
+    "region": "Aht Urhgan",
+    "level": null,
+    "raw": "au / (empty)"
+   },
+   "prev": [],
+   "level": null,
+   "jobs": [],
+   "repeatable": false,
+   "expansion": "toau"
+  },
+  "start": {
+   "npc": "Balakaf",
+   "zone": "Aht Urhgan Whitegate",
+   "grid": "I-5",
+   "raw": "Balakaf, Aht Urhgan Whitegate (I-5)"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balakaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": {
+     "all": [
+      {
+       "kind": "ki",
+       "name": "Image recorder",
+       "count": 1
+      }
+     ],
+     "alt": []
+    },
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     1,
+     2
+    ],
+    "note": "he hands over the Image recorder, which is a key item despite the header listing it under Item Reqs."
+   },
+   {
+    "n": 2,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [
+     {
+      "name": "Image recorder",
+      "count": 1,
+      "kind": "ki"
+     },
+     {
+      "name": "Light Crystal",
+      "count": 5,
+      "kind": "item"
+     },
+     {
+      "name": "Light Cluster",
+      "count": 3,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "note": "Eight pictures in this fixed order, one per JP Midnight -- zone and wait between each. 1: Wajaom Woodlands (E-6), cloudy (fully overcast with no other weather; avoid the early-morning fog), Light Crystal, cutscene option 1st. 2: Arrapago Reef (G-8) map 1, snowy, Light Crystal, option 2nd -- he calls it too dark, which is not a failure. 3: the same Arrapago Reef spot, snowy, Light Cluster, option 2nd. 4: Mount Zhayolm (C-9), 16:00-20:00, Light Crystal, option 3rd. 5: Halvung (I-8) map 1, 4:00-10:00 (the page marks this unverified), Light Crystal, option 1st. 6: Aydeewa Subterrane (G-10), windy, entered from Wajaom Woodlands (D-9), Light Cluster, option 3rd. 7: Mamook (E-8) map 1, sunny, 7:00-11:00 (unverified), Light Crystal, option 3rd. 8: Caedarva Mire (E-10), 20:00-4:00, Light Cluster, option 1st. Never use an Aurora Crystal -- it inscribes your name and he rejects the photo. Weather, Vana'diel time and JP Midnight are all unobservable, and each correct shot pays an Imperial Silver Piece which is a header Reward and so cannot be evidence."
+   },
+   {
+    "n": 3,
+    "kind": "trade",
+    "target": {
+     "type": "npc",
+     "name": "Balakaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Ahriman Lens",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": true,
+    "source_bullets": [
+     4
+    ],
+    "note": "only after a wrong picture: zone, speak to him again, then trade the lens to fix his camera. The header says multiples may be required, which no count can express."
+   },
+   {
+    "n": 4,
+    "kind": "talk",
+    "target": {
+     "type": "npc",
+     "name": "Balakaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-5",
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     12,
+     13
+    ],
+    "note": "after all eight correct pictures, zone and wait for JP Midnight again; he then remembers dropping gold on his travels. The page misspells him 'Balahaf' in this bullet."
+   },
+   {
+    "n": 5,
+    "kind": "examine",
+    "target": {
+     "type": "object",
+     "name": "???"
+    },
+    "zone": null,
+    "grid": null,
+    "items": [],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "medium",
+    "optional": false,
+    "source_bullets": [
+     14
+    ],
+    "note": "revisit every one of the eight picture locations; exactly one random location yields the Imperial Gold Piece. The page's recommended route is 8, 1, 7, 5, 6, 2/3, 4. Zone is null because it spans all eight. The Gold Piece is not used as evidence -- it is in the header's Reward."
+   },
+   {
+    "n": 6,
+    "kind": "turnin",
+    "target": {
+     "type": "npc",
+     "name": "Balakaf"
+    },
+    "zone": "Aht Urhgan Whitegate",
+    "grid": "I-5",
+    "items": [
+     {
+      "name": "Imperial Gold Piece",
+      "count": 1,
+      "kind": "item"
+     }
+    ],
+    "items_alt": [],
+    "items_partial": false,
+    "evidence": null,
+    "mobs": [],
+    "group": null,
+    "confidence": "high",
+    "optional": false,
+    "source_bullets": [
+     15
+    ],
+    "note": "he takes the Gold Piece and gives it straight back, and Five Seconds of Fame can then be flagged."
+   }
+  ]
+ }
+]
