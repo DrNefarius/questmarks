@@ -19,10 +19,7 @@ it sits at `Windower4/addons/questmarks/`, then in game:
 ```
 
 To load it every session, add `lua load questmarks` to your Windower init
-script. **Windower 4 is all you need**: no other addon at runtime and none to
-build the index either, which `tools/test_standalone.lua` enforces on every run.
-The quest data ships with the addon, so there is nothing else to install and
-nothing to configure.
+script.
 
 **A browsable list, if you want one.** [questmarks-ui](https://github.com/DrNefarius/questmarks-ui/) is a
 separate addon, in its own repository, that puts your accepted quests in an
