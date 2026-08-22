@@ -9,10 +9,26 @@ of the quest you are on**, and draws a marker above the NPC (or the monster)
 
 ![questmarks working in game](assets/teaser.gif)
 
+**Contents**
+
+- [Install](#install)
+- [Markers](#markers)
+  - [The glyph vocabulary](#the-glyph-vocabulary)
+- [Steps](#steps)
+- [Commands](#commands)
+- [Fame](#fame)
+- [Known limitations](#known-limitations)
+- [Notifications](#notifications)
+- [Contributing](#contributing)
+  - [Correcting quest data](#correcting-quest-data)
+  - [Working on the addon](#working-on-the-addon)
+- [Licence](#licence)
+- [Thanks](#thanks)
+
 ## Install
 
 Download or clone this repository into your Windower `addons` folder, so that
-it sits at `Windower4/addons/questmarks/`, then in game:
+it sits at `Windower4/addons/questmarks/` (you might need to remove the suffixes that GitHub adds when downloading (`-1.0.0`) or cloning (`-main`)), then in game:
 
 ```
 //lua load questmarks
